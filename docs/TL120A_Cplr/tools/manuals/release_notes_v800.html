@@ -1,0 +1,3121 @@
+---
+layout: default
+title: release_notes_v800
+nav_order: 197
+parent: Cplr (TL120A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>MULTI Compiler 2015.1 Release Notes</b></p>
+<p><b>for Embedded V850 and RH850</b></p>
+<p><b>Green Hills Software</b></p>
+<p><b>30 West Sola Street</b></p>
+<p><b>Santa Barbara, California 93101</b></p>
+<p><b>USA</b></p>
+<p><b>Tel: 805-965-6044</b></p>
+<p><b>Fax: 805-965-6343</b></p>
+<p><b>www.ghs.com</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>LEGAL NOTICES AND DISCLAIMERS</b></p>
+<p>GREEN HILLS SOFTWARE MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY</p>
+<p>OR FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software reserves the right to revise this</p>
+<p>publication and to make changes from time to time in the content hereof without obligation of Green Hills Software to</p>
+<p>notify any person of such revision or changes.</p>
+<p>Copyright © 1983-2015 by Green Hills Software. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or</p>
+<p>otherwise, without prior written permission from Green Hills Software.</p>
+<p>Green Hills, the Green Hills logo, CodeBalance, GMART, GSTART, INTEGRITY, MULTI, and Slingshot are registered</p>
+<p>trademarks of Green Hills Software. AdaMULTI, Built with INTEGRITY, EventAnalyzer, G-Cover, GHnet, GHnetLite,</p>
+<p>Green Hills Probe, Integrate, ISIM, u-velOSity, PathAnalyzer, Quick Start, ResourceAnalyzer, Safety Critical Products,</p>
+<p>SuperTrace Probe, TimeMachine, TotalDeveloper, DoubleCheck, and velOSity are trademarks of Green Hills Software.</p>
+<p>All other company, product, or service names mentioned in this book may be trademarks or service marks of their respective</p>
+<p>owners.</p>
+<p>For a partial listing of Green Hills Software and periodically updated patent marking information, please visit</p>
+<p>http://www.ghs.com/copyright_patent.html.</p>
+<p>PubID: release_notes_v800-544152</p>
+<p>Branch: http://toolsvc/branches/release-branch-70-bto</p>
+<p>Date: October 21, 2015</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Contents</b></p>
+<p><b>1. Changes in Version 2015.1</b></p>
+<p><b>1</b></p>
+<p>System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Windows . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Linux . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Solaris . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Project Build Configurations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Automated Setup of Multicore Targets . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Using Interprocedural Optimizations with Makefiles . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Duplicate Symbol Detection in Linker and Archiver . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Preserving Temporary Preprocessor Files . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Support for Stripping Debug Information From Relocatable Objects</p>
+<p>and Libraries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Section Sorting in Linker . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Assigning Variables to SDA and ZDA From a Text File . . . . . . . . . . .</p>
+<p>7</p>
+<p>Generating Both Numerically and Alphabetically Sorted Symbols</p>
+<p>in Map File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Annotating ELF Files with Toolchain Version Information . . . . . . . . .</p>
+<p>8</p>
+<p>Link-time Global Variable Type Checking . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Support for COMMON Variables in the Zero Data Area on</p>
+<p>Additional Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Aligned Data Sections . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Individual Function and Variable Sections . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>64-Bit Linker and dblink on Windows and Linux Hosts . . . . . . . . . . .</p>
+<p>9</p>
+<p>Options to Modify Message Severity Supported for asm and</p>
+<p>elxr . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>Specify the Output Name of a Dependency File . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>Additional Documentation of Diagnostic Messages for Assemblers</p>
+<p>and elxr . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>Ability to Specify Diagnostics by Symbolic Tag Names . . . . . . . . . .</p>
+<p>10</p>
+<p>Support for %= Format String in GNU Extended Assembly . . . . . . .</p>
+<p>10</p>
+<p><i>iii</i></p>
+<p><i>Green Hills Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Interfacing with the Function Entry/Exit Feature . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Diagnostic Messages When Building INTEGRITY 5.x and</p>
+<p>10.x . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>bcmp and bcopy now treat their size arguments as unsigned . . . . . . .</p>
+<p>11</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p><b>2. Changes in Version 2014.1</b></p>
+<p><b>13</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>Cross-Project Implicit Dependency Analysis . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>New Undefined Behavior Checking . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>Range-Based For Loops . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>15</p>
+<p>auto Type Keyword . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>15</p>
+<p>Improved Inlining in C++ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>15</p>
+<p>Ability to Check for Use of Floating Point . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Calls to pow(x, y) Now Optimized in Certain Cases . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Support for FPSIMD in RH850 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Inlining Constant Math Functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Changes in the Behavior of Some #pragma Directives . . . . . . . . . . . .</p>
+<p>17</p>
+<p>index() and rindex() Prototypes Now Hidden . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Change in Default Behavior for Virtual Function Table Size . . . . . .</p>
+<p>17</p>
+<p>New C++ Restrictions Regarding --large_vtbl_offsets . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Link-Once Template Instantiation Now Enabled by Default . . . . . . .</p>
+<p>19</p>
+<p>Limited Support for C-Like Structure Packing in C++ . . . . . . . . . . . .</p>
+<p>19</p>
+<p>-gs No Longer Implies -gtws . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Instantiate Extern Inline Now Enabled by Default . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>sqrt() and sqrtf() Now Return NAN for Negative Input . . . . . . . . . . .</p>
+<p>20</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p><b>3. Changes in Version 2013.5</b></p>
+<p><b>21</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Static Assertions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Specify a Compiler Inside a Project File . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>iv</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Ability to Specify the Size of wchar_t . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>23</p>
+<p>Stack Smashing Protection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>23</p>
+<p>Updated gstack Utility Program for Better C++ Analysis . . . . . . . . .</p>
+<p>23</p>
+<p>New Attribute and Intrinsic to Remove Specific Functions from</p>
+<p>Profiling Reports . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>GNU Compatibility Updated for Better Compatibility with Version</p>
+<p>4.3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p><b>4. Changes in Version 2013.1</b></p>
+<p><b>27</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Relaxed Size Restrictions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>protrans Supports Converting Section Dumps to .pro Files . . . . . . . .</p>
+<p>28</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Some C and C++ Libraries Have New Names Based on Floating</p>
+<p>Point</p>
+<p>Support</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p><b>5. Changes in Version 2012.5</b></p>
+<p><b>31</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>Updated gstack Utility Program . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>New Block Profiling System . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>New ax Modifier . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>New Linker Options to Control Linker p_align Behavior . . . . . . . . .</p>
+<p>33</p>
+<p>New Stack Check Attribute . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Clean Builds Recommended . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Error Compiling ind_initmem.c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Vector's Clear Method No Longer Deallocates . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Implicit Inclusion is No Longer Enabled By Default . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Eclipse Plug-in Option Type Changes . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>ghide No Longer Hides COMMON Symbols . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p><i>v</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>6. Changes in Version 2012.1</b></p>
+<p><b>37</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>38</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>38</p>
+<p>Separate Releases Allow Greater Flexibility When Upgrading . . . . .</p>
+<p>38</p>
+<p>Faster Builds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>38</p>
+<p>Define Macros in Any Project File . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>New Coding Standard Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>UTF-8 Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>New Licenses Required . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>Clean Builds Recommended . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>gbuild Defaults to Parallel Builds . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>Different malloc() Implementation Used By Default in Stand-Alone</p>
+<p>Projects . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>__MULTI_DIR__ Customization File Macro Changes . . . . . . . . . . .</p>
+<p>40</p>
+<p>Pointers Are Now Unsigned by Default . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>memmove Moved to libind.a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p><b>7. Changes in Version 5.4</b></p>
+<p><b>43</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>UTF-8 Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Updated MULTI Eclipse Plug-In . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Driver No Longer Accepts .bld Files . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p><b>8. Changes in Version 5.3</b></p>
+<p><b>45</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>New -Omoredebug Optimization Strategy . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Updated Compiler Front-End . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Updated Fast Flash Programmer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>General</p>
+<p>Improvements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>vi</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>New Warnings Enabled by Default . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Changes to Line Continuations in GNU C Mode . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Changes in std::string . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>Options Enabled by Default . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>Map File Format Changes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>Loops with an Iteration Variable Shorter than int May Execute</p>
+<p>Slower than in Previous Releases . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>__alt_init Hook Removed From Stand-Alone Run-time Library . . .</p>
+<p>49</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>Deprecated Features and Discontinued Support . . . . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<p>Deprecated K&amp;R C Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<p>Deprecated -gnu Option . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p><b>9. Changes in Version 5.0.6</b></p>
+<p><b>53</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Improved Code Generation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Improved Dependency Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>DoubleCheck Static Source Code Analyzer . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Fast Flash Programmer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>55</p>
+<p>Changes to Driver Option Defaults . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>55</p>
+<p>Options Enabled by Standard C++ Dialects . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>Libind.a Splitup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>Building System Libraries from 4.x Distributions . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>Global Const Variables Placed in Read-Only Data . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Unbundled Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Unbundled in 5.0.6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Deprecated Features and Discontinued Support . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>Deprecated Options . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>The ghexfile Utility is No Longer Available . . . . . . . . . . . . . . . . . . . .</p>
+<p>59</p>
+<p>Manual Template Instantiation Mode Options No Longer</p>
+<p>Supported . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>59</p>
+<p>Programming flash from grun . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>59</p>
+<p><i>vii</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>10. Known Issues</b></p>
+<p><b>61</b></p>
+<p>Installation and Licensing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Green Hills Debug Probe CD Compatibility . . . . . . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Name of Install Directory Cannot Contain Spaces . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Host Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>UNC Paths Are Not Supported in the MULTI Debugger . . . . . . . . . .</p>
+<p>62</p>
+<p>UNC Paths to Virtual Machines Are Not Supported . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Target</p>
+<p>Support</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>Some u-velOSity Kernel Libraries Do Not Build with Default</p>
+<p>Options . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>Toolchain Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>Building Previous Releases of INTEGRITY or u-velOSity May</p>
+<p>Produce New Diagnostic Messages . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>No Function Prototypes For INTEGRITY 5 strdup() and</p>
+<p>strnlen() . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>gstack Provides Warnings for Green Hills Library Functions . . . . . .</p>
+<p>63</p>
+<p>gstack Provides Warnings for INTEGRITY . . . . . . . . . . . . . . . . . . . . .</p>
+<p>64</p>
+<p>Exported Templates With Inline Functions May Produce Incorrect</p>
+<p>Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>64</p>
+<p>ThreadX Build Failure When Customizing Startup and System</p>
+<p>Libraries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>64</p>
+<p>Non-flat Directory Structure in Multi-core Builds Causes Warnings</p>
+<p>in gcores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>64</p>
+<p>Output Filename in Multi-Core Builds with extension different to</p>
+<p>.mca Causes Warnings in gcores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>65</p>
+<p>Use of -a, -p, or -pg in INTEGRITY KernelSpace Requires</p>
+<p>-Onomemfuncs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>65</p>
+<p>Building u-velOSity with Compiler 2014.1 or Later . . . . . . . . . . . . . .</p>
+<p>65</p>
+<p>Target Connection Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Flash Driver Library libflash.a Limited to Four CFI Drivers . . . . . . .</p>
+<p>66</p>
+<p>Debugging Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Auto Trace Collection Reduces Performance . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Target Agent May Cause Failures When Programming Flash . . . . . .</p>
+<p>67</p>
+<p>References Not Available for Inlined Functions . . . . . . . . . . . . . . . . .</p>
+<p>67</p>
+<p>Cannot Debug Executables in Eclipse Projects with a Space in the</p>
+<p>Name . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>67</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>viii</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>File System Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>67</p>
+<p>Two Dots (..) Not Supported After Symbolic Links in Paths . . . . . . .</p>
+<p>67</p>
+<p>NFS May Cause Poor Performance . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p>Miscellaneous . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p><b>11. V850 and RH850 Release Notes</b></p>
+<p><b>69</b></p>
+<p>V850 and RH850 Toolchain . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>70</p>
+<p>Changes and Known Issues in 2015.1 . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>70</p>
+<p>Changes and Known Issues in 2014.1 . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>73</p>
+<p>Changes and Known Issues in 2013.5 . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>76</p>
+<p>Changes and Known Issues in 2013.1 . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>78</p>
+<p>Changes and Known Issues in 2012.5 . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>82</p>
+<p>Changes and Known Issues in 2012.1 . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>85</p>
+<p>MULTI 6.1.6 Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>88</p>
+<p><i>ix</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1</b></p>
+<p><b>Changes in Version 2015.1</b></p>
+<p><b>Contents</b></p>
+<p>System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>System Requirements</b></p>
+<p>The MULTI IDE may have different system requirements than the Compiler. For</p>
+<p>information about IDE requirements, see the release notes for the MULTI IDE.</p>
+<p><b>Windows</b></p>
+<p>Running a full installation on Windows requires:</p>
+<p>•</p>
+<p>A modern, x86 processor.</p>
+<p>•</p>
+<p>One of the following:</p>
+<p>○</p>
+<p>Windows XP Service Pack 2 or greater (IA-32, 32-bit mode only).</p>
+<p><b>Note</b></p>
+<p>Support for Windows XP is deprecated and will be removed in</p>
+<p>a future release.</p>
+<p>○</p>
+<p>Windows Vista (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Windows 7 (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Windows 8 (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Windows 10 (64- or 32-bit mode).</p>
+<p>•</p>
+<p>4 GB of RAM (16 GB is recommended).</p>
+<p>•</p>
+<p>2 GB of free disk space per installation (100 GB of free space and a solid state</p>
+<p>drive are recommended).</p>
+<p>•</p>
+<p>A monitor running at a display resolution of 1024x768 or higher. (Two</p>
+<p>high-resolution monitors are recommended.)</p>
+<p>•</p>
+<p>A DVD-ROM drive or access to the Green Hills FTP site. If neither is available,</p>
+<p>contact Green Hills Support.</p>
+<p>•</p>
+<p>An Ethernet connection.</p>
+<p>•</p>
+<p>The ability to write to the Windows System directories. On most Windows</p>
+<p>systems, you must also be a member of the Administrators group. End users</p>
+<p>must have full access to installed files.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>2</i></p>
+<p><i>Chapter 1. Changes in Version 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Linux</b></p>
+<p>Running a full installation on Linux requires:</p>
+<p>•</p>
+<p>A modern, multi-core x86 processor.</p>
+<p>•</p>
+<p>One of the following:</p>
+<p>○</p>
+<p>Ubuntu 14.04.1 LTS (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Ubuntu 12.04.5 LTS (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Ubuntu 10.04 (64- or 32-bit mode).</p>
+<p>○</p>
+<p>CentOS 7.x (64- or 32-bit mode).</p>
+<p>○</p>
+<p>CentOS 6.x (64- or 32-bit mode).</p>
+<p>•</p>
+<p>32-bit compatibility libraries are required when running on 64-bit systems. If</p>
+<p>you are using Ubuntu 14, run:</p>
+<p>sudo dpkg --add-architecture i386</p>
+<p>sudo apt-get install libc6:i386 libncurses5:i386</p>
+<p>sudo apt-get install libstdc++6:i386 libx11-6:i386 lib32z1</p>
+<p>If you are using Ubuntu 12 or earlier, run:</p>
+<p>sudo apt-get install ia32-libs</p>
+<p>•</p>
+<p>4 GB of RAM (16 GB is recommended).</p>
+<p>•</p>
+<p>2 GB of free disk space per installation (100 GB of free space and a solid state</p>
+<p>drive are recommended).</p>
+<p>•</p>
+<p>A monitor running at a resolution of 1024x768 or higher. (Two high-resolution</p>
+<p>monitors are recommended.)</p>
+<p>•</p>
+<p>A mounted DVD-ROM drive or access to the Green Hills FTP site. If neither</p>
+<p>is available, contact Green Hills Support.</p>
+<p>•</p>
+<p>An Ethernet connection.</p>
+<p>•</p>
+<p>Write permissions to the installation directory.</p>
+<p><b>Solaris</b></p>
+<p>Running a full installation on Solaris requires:</p>
+<p><i>3</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Linux</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>A sun4u SPARC-based workstation.</p>
+<p>•</p>
+<p>One of the following:</p>
+<p>○</p>
+<p>Solaris 10 (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Solaris 9 (64- or 32-bit mode).</p>
+<p>○</p>
+<p>Solaris 8 (64- or 32-bit mode).</p>
+<p><b>Note</b></p>
+<p>Native development of 64-bit applications is not supported on Solaris.</p>
+<p>•</p>
+<p>256 MB of physical memory (1 GB is recommended).</p>
+<p>•</p>
+<p>2 GB of free disk space per installation.</p>
+<p>•</p>
+<p>A graphical display running the X Windowing System.</p>
+<p>•</p>
+<p>A mounted DVD-ROM drive or access to the Green Hills FTP site. If neither</p>
+<p>is available, contact Green Hills Support.</p>
+<p>•</p>
+<p>An Ethernet connection.</p>
+<p>•</p>
+<p>Write permissions to the installation directory.</p>
+<p><b>Note</b></p>
+<p>Support for all Solaris-hosted toolchain components is deprecated and</p>
+<p>may be removed in a future release.</p>
+<p><b>Product Compatibility</b></p>
+<p>Green Hills Compiler 2015.1 is officially supported with:</p>
+<p>•</p>
+<p>MULTI version 6.1.6.</p>
+<p>•</p>
+<p>MULTI version 7.x.</p>
+<p>•</p>
+<p>ThreadX 5.5.x or newer.</p>
+<p>•</p>
+<p>INTEGRITY-MZ version 15.0.1.</p>
+<p>•</p>
+<p>INTEGRITY version 5.x.</p>
+<p>•</p>
+<p>INTEGRITY version 10.0.2.</p>
+<p>•</p>
+<p>INTEGRITY version 11.0.2, 11.0.4, 11.2.4, and 11.4.4.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>4</i></p>
+<p><i>Chapter 1. Changes in Version 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>u-velOSity version 2.2.9 and 2.6.2.</p>
+<p>For information about compatibility with newer versions of INTEGRITY, see the</p>
+<p>INTEGRITY release notes.</p>
+<p><b>Warning</b></p>
+<p>Using Compiler 2015.1 with MULTI 6 or later and a Green Hills Debug</p>
+<p>Probe requires Green Hills Debug Probe software version 4.4.4 or newer.</p>
+<p>Do not install Green Hills Debug Probe software version 4.2.x or earlier</p>
+<p>over your Compiler 2015.1 installation if you intend to use it with MULTI</p>
+<p>6 or later.</p>
+<p><b>Note</b></p>
+<p>If your MULTI IDE is newer than the compiler, see the IDE release notes</p>
+<p>for up-to-date product compatibility.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Project Build Configurations</b></p>
+<p>Compiler 2015.1 makes it much easier to set up multiple build configurations of</p>
+<p>the same project. In previous releases, you might have created multiple Top</p>
+<p>Projects—each of which included shared source—to manually set up multiple build</p>
+<p>configurations. Now you can easily create your own build configurations within a</p>
+<p>single project structure. For more information, see the description of<b> defineConfig</b></p>
+<p>in “Group 1 Directives” in Appendix C, “Green Hills Project File Format” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Note</b></p>
+<p>This feature is only available with MULTI 7.x and newer.</p>
+<p><b>Automated Setup of Multicore Targets</b></p>
+<p>Two new options,<b> -ghsmc_file</b> and<b> -ghsmc_core_count</b>, enable the automated</p>
+<p>setup of multicore targets. Note that these options are only available for MULTI 7</p>
+<p>or newer. For more information, see “Multicore Configuration File” in Chapter 3,</p>
+<p><i>5</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New Features and Enhancements</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>. See also “Multicore Core Count” in Chapter 3, “Builder and Driver</p>
+<p>Options” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Using Interprocedural Optimizations with Makefiles</b></p>
+<p>Interprocedural optimizations are now officially supported for programs built using</p>
+<p>makefiles. See “Interprocedural Optimizations” in Chapter 3, “Builder and Driver</p>
+<p>Options” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>, and</p>
+<p>see Example 1.5. Using Interprocedural Optimizations With Makefiles in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Duplicate Symbol Detection in Linker and Archiver</b></p>
+<p>The linker now has an option to detect symbols that are present in more than one</p>
+<p>library being linked. While legal, and often useful, symbols being defined in multiple</p>
+<p>libraries can also be the source of subtle problems. The options</p>
+<p><b>-link_reject_duplicate_lib_syms</b>,<b> -link_allow_duplicate_ghs_syms</b>,</p>
+<p><b>-link_allow_duplicate_linkonce_syms</b>, and<b> -duplicate_whitelist</b> are added to</p>
+<p>control the behavior of the linker. For more information, see “Report an Error When</p>
+<p>Multiple Libraries on a Link Line Contain a Definition of the Same Symbol” in</p>
+<p>Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i>.</p>
+<p>The archiver now has an option to detect multiple definitions of a symbol when</p>
+<p>creating a library. The options<b> -reject_duplicates</b>,<b> -allow_cxx_duplicates</b>, and</p>
+<p><b>-allow_linkonce_duplicates</b> are added to control the behavior of the archiver. For</p>
+<p>more information, see “Error on Duplicate Symbols in an Archive” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>Preserving Temporary Preprocessor Files</b></p>
+<p>Two new options,<b> -keepcppfiles</b> and<b> -keepasmfiles</b> can be used to keep the</p>
+<p>preprocessor output from the compiler and the assembly file, respectively. See</p>
+<p>“Temporary Preprocessor Output” in Chapter 3, “Builder and Driver Options” in</p>
+<p><i>MULTI: Building Applications for Embedded V850 and RH850</i> and “Temporary</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>6</i></p>
+<p><i>Chapter 1. Changes in Version 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Assembly Output” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i> for more information.</p>
+<p><b>Support for Stripping Debug Information From Relocatable Objects and</b></p>
+<p><b>Libraries</b></p>
+<p>A new option,<b> -stripreloc</b> has been added to the<b> gstrip</b> utility. When this option is</p>
+<p>passed,<b> gstrip</b> can be run on relocatable object files and libraries, in addition to</p>
+<p>executable files. When stripping relocatable object files and libraries,<b> gstrip</b> will</p>
+<p>preserve any symbols necessary for linking. See “The gstrip Utility Program” in</p>
+<p>Chapter 11, “Utility Programs” in<i> MULTI: Building Applications for Embedded</i></p>
+<p><i>V850 and RH850</i> for more information.</p>
+<p><b>Section Sorting in Linker</b></p>
+<p>The linker now supports the new</p>
+<p>SORT</p>
+<p>and</p>
+<p>SORT_BY_NAME</p>
+<p>commands in linker</p>
+<p>directives files to allow sections included with wildcards to be sorted by name. See</p>
+<p>“Using Wildcards in Section Inclusion Commands” in Chapter 9, “The elxr Linker”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i> for more</p>
+<p>information.</p>
+<p><b>Assigning Variables to SDA and ZDA From a Text File</b></p>
+<p>Two new options,<b> -sda_file</b> and<b> -zda_file</b>, enable assigning variables to the Small</p>
+<p>Data Area or the Zero Data Area by listing them in a control file. See “Small Data</p>
+<p>Area File” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i> and “Zero Data Area File” in</p>
+<p>Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i> for more information.</p>
+<p><b>Generating Both Numerically and Alphabetically Sorted Symbols in Map</b></p>
+<p><b>File</b></p>
+<p>A new option,<b> -Man</b> is now supported by the linker to produce both a list of symbols</p>
+<p>sorted alphabetically (as with the<b> -Ma</b> option) and numerically (as with the<b> -Mn</b></p>
+<p>option). See “Map File Sorting” in Chapter 3, “Builder and Driver Options” in</p>
+<p><i>MULTI: Building Applications for Embedded V850 and RH850</i> for more information.</p>
+<p><i>7</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Support for Stripping Debug Information From Relocatable Objects and Libraries</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Annotating ELF Files with Toolchain Version Information</b></p>
+<p>A new option,<b> -version_info</b> is now supported to add information about the compiler</p>
+<p>and assembler version and command line options to the</p>
+<p>.comment</p>
+<p>section of the</p>
+<p>output file. See “Write Version Info To .comment section” in Chapter 3, “Builder</p>
+<p>and Driver Options” in<i> MULTI: Building Applications for Embedded V850 and</i></p>
+<p><i>RH850</i> for more information.</p>
+<p><b>Link-time Global Variable Type Checking</b></p>
+<p>Two new options,<b> -globalcheck=[full|normal|none]</b> and<b> -globalcheck_qualifiers</b>,</p>
+<p>are now supported to perform link-time checks of global variable types. When</p>
+<p><b>-globalcheck</b> is enabled, the compiler generates information about global variable</p>
+<p>data-types at their definition and uses. The linker checks that the types are compatible</p>
+<p>with respect to size and signedness. With<b> -globalcheck_qualifiers</b>, the qualifiers</p>
+<p>(such as</p>
+<p>const</p>
+<p>and</p>
+<p>volatile</p>
+<p>) are also checked. See “Link-Time Global Variable</p>
+<p>Type Checking” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i> and “Link-Time Global Variable</p>
+<p>Type Qualifiers” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i> for more information.</p>
+<p><b>Support for COMMON Variables in the Zero Data Area on Additional Targets</b></p>
+<p>Support for</p>
+<p>COMMON</p>
+<p>variables in the Zero Data Area is now available on SH, TriCore,</p>
+<p>and Power Architecture targets. See “Allow Common Variables in ZDA” in</p>
+<p>Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i>.</p>
+<p><b>Aligned Data Sections</b></p>
+<p>A new option,<b> -split_data_sections_by_alignment</b>, is now supported to allocate</p>
+<p>variables into aligned data sections. See “Aligned Data Sections” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i> for more information.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>8</i></p>
+<p><i>Chapter 1. Changes in Version 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Individual Function and Variable Sections</b></p>
+<p>Individual function and variable sections are now supported for assigning functions</p>
+<p>(including static functions), global variables and static variables (including function</p>
+<p>scope local static variables) in default sections or custom sections to their own</p>
+<p>individual sections by the compiler. These individual sections can then be placed</p>
+<p>at arbitrary addresses via linker directives file or be merged back to the sections</p>
+<p>they derived from implicitly at link time. For more information, see “Individual</p>
+<p>Function and Variable Sections” in Chapter 2, “Developing for V850 and RH850”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>64-Bit Linker and dblink on Windows and Linux Hosts</b></p>
+<p>The</p>
+<p>elxr</p>
+<p>linker and<b> dblink</b> debug information linker are now supported in 64-bit</p>
+<p>mode on 64-bit Windows and Linux hosts. For more information, see “Use 64-bit</p>
+<p>Toolchain Components” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Options to Modify Message Severity Supported for asm and elxr</b></p>
+<p>asm</p>
+<p>and</p>
+<p>elxr</p>
+<p>now support setting discretionary diagnostic messages to different</p>
+<p>levels of severity. For more information, see “Toolchain Messages” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>Specify the Output Name of a Dependency File</b></p>
+<p>A new option,<b> -MF</b>, has been added to specify the output name of a dependency</p>
+<p>file. This name will be used for files created by the<b> -MD</b> or<b> -MMD</b> options. For</p>
+<p>more information, see “Generating Dependency and Header File Information” in</p>
+<p>Chapter 1, “The Compiler Driver” in<i> MULTI: Building Applications for Embedded</i></p>
+<p><i>V850 and RH850</i>.</p>
+<p><i>9</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Individual Function and Variable Sections</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Additional Documentation of Diagnostic Messages for Assemblers and</b></p>
+<p><b>elxr</b></p>
+<p>Additional documentation of diagnostic messages has been added to the<i> MULTI:</i></p>
+<p><i>Toolchain Error Messages</i> book.</p>
+<p><b>Ability to Specify Diagnostics by Symbolic Tag Names</b></p>
+<p>Several constructs that previously required a diagnostic to be specified by number</p>
+<p>now accept symbolic tag names as well. These constructs include:</p>
+<p>•</p>
+<p>The<b> --diag_[suppress|remark|warning|error]</b> compiler options. (See “Varying</p>
+<p>Message Severity” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.)</p>
+<p>•</p>
+<p>The</p>
+<p>ghs nowarning #pragma</p>
+<p>directive. (See “Green Hills Extension Pragma</p>
+<p>Directives” in Chapter 15, “Macros, Pragma Directives, and Intrinsics” in</p>
+<p><i>MULTI: Building Applications for Embedded V850 and RH850</i>.)</p>
+<p>For example, these two options are now equivalent:</p>
+<p>•</p>
+<p><b>--diag_error=9</b></p>
+<p>•</p>
+<p><b>--diag_error=nested_comment</b></p>
+<p>See the<i> MULTI: Toolchain Error Messages</i> book for the new symbolic tag names.</p>
+<p><b>Support for %= Format String in GNU Extended Assembly</b></p>
+<p>The compiler now accepts the</p>
+<p>%=</p>
+<p>special format string in GNU Extended Assembly.</p>
+<p>The string expands to a number that is unique to each specific instantiation of an</p>
+<p>asm</p>
+<p>statement. For more information, see Chapter 19, “GNU Extended Assembly”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>10</i></p>
+<p><i>Chapter 1. Changes in Version 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Changes in Behavior</b></p>
+<p><b>Interfacing with the Function Entry/Exit Feature</b></p>
+<p>#pragma ghs function_entry_exit</p>
+<p>is now</p>
+<p>#pragma ghs</p>
+<p>entry_exit_history</p>
+<p>. In addition, the following now use the term “</p>
+<p>history</p>
+<p>”</p>
+<p>in place of “</p>
+<p>log</p>
+<p>”:</p>
+<p>•</p>
+<p><b>-gen_entry_exit_log</b></p>
+<p>•</p>
+<p><b>-no_gen_entry_exit_log</b></p>
+<p>•</p>
+<p><b>-gen_entry_exit_arg_log</b></p>
+<p>•</p>
+<p><b>-no_gen_entry_exit_arg_log</b></p>
+<p>•</p>
+<p>attribute ((entry_exit_log))</p>
+<p>For example,<b> -gen_entry_exit_log</b> is now<b> -gen_entry_exit_history</b>.</p>
+<p><b>Diagnostic Messages When Building INTEGRITY 5.x and 10.x</b></p>
+<p>In some rare cases, building INTEGRITY 5.x or 10.x from source may generate</p>
+<p>additional diagnostic messages. To disable these messages, see “Varying Message</p>
+<p>Severity” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i> or contact Green Hills support.</p>
+<p><b>bcmp and bcopy now treat their size arguments as unsigned</b></p>
+<p>The library functions</p>
+<p>bcmp()</p>
+<p>and</p>
+<p>bcopy()</p>
+<p>now treat a size argument larger than</p>
+<p>INT_MAX</p>
+<p>as representing a large size, rather than a negative one. This will cause a</p>
+<p>long run time due to iteration over large arrays. Previously, both functions would</p>
+<p>do nothing if their size arguments were larger than</p>
+<p>INT_MAX</p>
+<p>.</p>
+<p><b>Removed and Deprecated Features</b></p>
+<p>The following feature has been deprecated:</p>
+<p><i>11</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes in Behavior</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Support for the<b> --prelink_objects</b> option. As an alternative for build systems</p>
+<p>that use<b> clearmake</b>, please see the<b> --link_once_templates</b> option.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>12</i></p>
+<p><i>Chapter 1. Changes in Version 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2</b></p>
+<p><b>Changes in Version 2014.1</b></p>
+<p><b>Contents</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Product Compatibility</b></p>
+<p>Green Hills Compiler 2014.1 is officially supported with INTEGRITY versions</p>
+<p>5.x, 10.0.2, 11.0.2, 11.0.4, and 11.2.2. For information about compatibility with</p>
+<p>newer versions of INTEGRITY, see the INTEGRITY release notes.</p>
+<p>Green Hills Compiler 2014.1 is officially supported with ThreadX 5.5.x and newer.</p>
+<p><b>Warning</b></p>
+<p>Using Compiler 2014.1 with MULTI 6 or later and a Green Hills Debug</p>
+<p>Probe requires Green Hills Debug Probe software version 4.4.4 or newer.</p>
+<p>Do not install Green Hills Debug Probe software version 4.2.x or earlier</p>
+<p>over your Compiler 2015.1 installation if you intend to use it with MULTI</p>
+<p>6 or later.</p>
+<p><b>Note</b></p>
+<p>If your MULTI IDE is newer than the compiler, see the IDE release notes</p>
+<p>for up-to-date product compatibility.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Cross-Project Implicit Dependency Analysis</b></p>
+<p>Implicit dependency analysis is now supported across Top Projects. As a result,</p>
+<p>building a Top Project that depends on libraries or objects in another Top Project</p>
+<p>now builds the defined dependencies. Previously, you had to remember to build</p>
+<p>these dependencies yourself. This feature is especially useful for INTEGRITY users</p>
+<p>whose applications depend on source code in the INTEGRITY project tree. For</p>
+<p>more information, see “Implicit Dependency Analysis” in Chapter 11, “Utility</p>
+<p>Programs” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>New Undefined Behavior Checking</b></p>
+<p>The compiler now checks for undefined behavior resulting from improperly</p>
+<p>sequenced expressions. By default, these diagnostics are issued as warnings, but</p>
+<p>they may be issued as errors via the<b> --diag_error=2017,2018</b> option. Alternatively,</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>14</i></p>
+<p><i>Chapter 2. Changes in Version 2014.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>these diagnostics may be suppressed altogether via the<b> --diag_suppress=2017,2018</b></p>
+<p>option.</p>
+<p>For more information, see “Sequence Related Undefined Behavior Checking” in</p>
+<p>Chapter 12, “Green Hills C” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>Range-Based For Loops</b></p>
+<p>This release adds support for C++11-style range-based for loops. For more</p>
+<p>information, see “Range-Based For Loops” in Chapter 3, “Builder and Driver</p>
+<p>Options” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>auto Type Keyword</b></p>
+<p>This release allows you to use the</p>
+<p>auto</p>
+<p>keyword as a type specifier, as opposed to</p>
+<p>a storage class, for C++11-style type deduction. For more information, see “auto</p>
+<p>Type Keyword Support” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Improved Inlining in C++</b></p>
+<p>The heuristics used by the compiler to determine whether or not to inline functions</p>
+<p>in C++ have been updated. Depending upon the circumstances, this may result in</p>
+<p>slight improvements in both size and speed in C++ programs.</p>
+<p>Additionally, when using GNU C++ compatibility mode, function templates are</p>
+<p>now considered for inlining under a broader range of compiler options. Previously,</p>
+<p>function templates were only considered for inlining in GNU C++ compatibility</p>
+<p>mode when the function qualified for automatic inlining or when either intermodule</p>
+<p>inlining or<b> --max_inlining</b> was enabled for the compilation.</p>
+<p>For more information, see:</p>
+<p>•</p>
+<p>“Automatic Inlining” in Chapter 4, “Optimizing Your Programs” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>,</p>
+<p>•</p>
+<p>“Intermodule Inlining” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>, and</p>
+<p><i>15</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Range-Based For Loops</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>“C++ Inlining Level” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Ability to Check for Use of Floating Point</b></p>
+<p>The compiler is now able to give a warning or error for the use of floating point.</p>
+<p>Furthermore, this diagnostic can be given for the use of double precision and long</p>
+<p>double precision floating type, or for all floating point types. Previously, the only</p>
+<p>checking the compiler offered was to give a fatal error for all floating point types.</p>
+<p>For more information, see “Do not allow types double or long double” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>Calls to pow(x, y) Now Optimized in Certain Cases</b></p>
+<p>If the optimization strategy<b> -Ospace</b>,<b> -Ogeneral</b>, or<b> -Ospeed</b> is enabled, and</p>
+<p><b>-ffunctions</b> is enabled, calls to</p>
+<p>pow(x, y)</p>
+<p>will be optimized if either</p>
+<p>x</p>
+<p>or</p>
+<p>y</p>
+<p>has</p>
+<p>one of the following constant integer values:</p>
+<p>•</p>
+<p>If</p>
+<p>x</p>
+<p>has constant value</p>
+<p>2</p>
+<p>or</p>
+<p>10</p>
+<p>,</p>
+<p>pow</p>
+<p>is converted to an equivalent call to</p>
+<p>exp2</p>
+<p>or</p>
+<p>exp</p>
+<p>.</p>
+<p>•</p>
+<p>If</p>
+<p>y</p>
+<p>has constant value</p>
+<p>2</p>
+<p>,</p>
+<p>3</p>
+<p>, ...</p>
+<p>8</p>
+<p>,</p>
+<p>pow</p>
+<p>is converted to a series of multiplies.</p>
+<p>If the optimization strategy<b> -Ospace</b>,<b> -Ogeneral</b>, or<b> -Ospeed</b> is enabled, and the</p>
+<p>optimization is not disabled by the new option<b> -Ono_inline_constant_math</b>, calls</p>
+<p>to</p>
+<p>exp2(x)</p>
+<p>(where</p>
+<p>x</p>
+<p>is a constant integer) and calls to</p>
+<p>sqrt(x)</p>
+<p>(where</p>
+<p>x</p>
+<p>is a</p>
+<p>finite, positive constant) will be replaced with an equivalent constant value.</p>
+<p><b>Support for FPSIMD in RH850</b></p>
+<p>This release adds support for the Floating-Point SIMD coprocessor (FPSIMD) in</p>
+<p>RH850 devices. For more information, see “Floating-Point SIMD” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>16</i></p>
+<p><i>Chapter 2. Changes in Version 2014.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Inlining Constant Math Functions</b></p>
+<p>Calls to certain math functions with constant parameters are now optimized into a</p>
+<p>constant expression. For more information, see “Inlining Constant Math Functions”</p>
+<p>in Chapter 4, “Optimizing Your Programs” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i>.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>Changes in the Behavior of Some #pragma Directives</b></p>
+<p>The following</p>
+<p>#pragma</p>
+<p>directives now have no effect when used inside a function.</p>
+<p>Additionally, using any of these</p>
+<p>#pragma</p>
+<p>directives inside a function will trigger</p>
+<p>a compiler warning:</p>
+<p>•</p>
+<p>#pragma ghs extra_stack</p>
+<p>•</p>
+<p>#pragma ghs max_stack</p>
+<p>•</p>
+<p>#pragma ghs max_instances</p>
+<p>•</p>
+<p>#pragma alignfunc</p>
+<p>Previously, when used inside a function, these</p>
+<p>#pragma</p>
+<p>directives silently affected</p>
+<p>the next function declared (not the enclosing function).</p>
+<p><b>index() and rindex() Prototypes Now Hidden</b></p>
+<p>The prototypes for functions</p>
+<p>index()</p>
+<p>and</p>
+<p>rindex()</p>
+<p>, which are non-standard, are</p>
+<p>no longer visible unless:</p>
+<p>•</p>
+<p>The</p>
+<p>__BSD_INDEX_PROTOTYPE</p>
+<p>symbol is defined, or</p>
+<p>•</p>
+<p>The operating system is INTEGRITY and</p>
+<p>_POSIX_SOURCE</p>
+<p>is not defined.</p>
+<p><b>Change in Default Behavior for Virtual Function Table Size</b></p>
+<p>The<b> --large_vtbl_offsets</b> option (see “Virtual Function Table Offset Size” in</p>
+<p>Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i>) is now enabled by default. Code built with this option</p>
+<p><i>17</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Inlining Constant Math Functions</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>is not compatible with INTEGRITY 11 or earlier, with code built using Green Hills</p>
+<p>Compiler 2012.5 or earlier, or with code built using the<b> --no_large_vtbl_offsets</b></p>
+<p>option. It is also not compatible with versions of MULTI that shipped with prior</p>
+<p>releases, such as MULTI 6.1.4.</p>
+<p>The<b> --no_large_vtbl_offsets</b> option is now deprecated.</p>
+<p><b>New C++ Restrictions Regarding --large_vtbl_offsets</b></p>
+<p>When using<b> --large_vtbl_offsets</b> (either explicitly or by default), you must use a</p>
+<p>C++ library with the same exception handling support as the compiled code. In</p>
+<p>general, the driver will select an appropriate library for you, but if you explicitly</p>
+<p>select a library (for example, with<b> --stdl</b> or<b> --stdle</b>), you must ensure that it matches</p>
+<p>your selected level of exception handling.</p>
+<p>If you use an invalid combination of options according to the above rules (for</p>
+<p>example, by specifying<b> --stdl</b> and<b> --exceptions</b>), the driver will issue a diagnostic</p>
+<p>similar to the one below:</p>
+<p>Error: Option &quot;--stdl&quot; requires option &quot;--no_exceptions&quot;</p>
+<p>See “Specifying C++ Libraries” in Chapter 13, “Green Hills C++” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>, and see “C++ Exception</p>
+<p>Handling” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i>.</p>
+<p>Furthermore, the<b> --large_vtbl_offsets</b> option now requires that the</p>
+<p><b>--link_once_templates</b> option is also used. Note that while<b> --link_once_templates</b></p>
+<p>is also enabled by default, manually disabling it with the<b> --no_link_once_templates</b></p>
+<p>option will imply<b> --no_large_vtbl_offsets</b>. Explicitly specifying both</p>
+<p><b>--no_link_once_templates</b> and<b> --large_vtbl_offsets</b> is an invalid combination.</p>
+<p>See “Virtual Function Table Offset Size” in Chapter 3, “Builder and Driver Options”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i>, and see</p>
+<p>“Link-Once Template Instantiation” in Chapter 13, “Green Hills C++” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>18</i></p>
+<p><i>Chapter 2. Changes in Version 2014.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Link-Once Template Instantiation Now Enabled by Default</b></p>
+<p>The<b> --link_once_templates</b> option is now enabled by default.</p>
+<p><b>Note</b></p>
+<p>For targets that support large virtual function table offsets, disabling</p>
+<p>link-once template instantiation (via the<b> --no_link_once_templates</b></p>
+<p>option) will imply<b> --no_large_vtbl_offsets</b>.</p>
+<p><b>Limited Support for C-Like Structure Packing in C++</b></p>
+<p>The compiler now has more explicit support for C-like structure packing in C++.</p>
+<p>In general, only C-like usage of packed structures (or classes) is supported. Most</p>
+<p>C++ specific features (for example, references, pointers to members, etc.) are not</p>
+<p>supported in combination with structure packing, nor were they before.</p>
+<p>Packing of non-POD (Plain Old Data) classes is not supported unless the</p>
+<p><b>-misalign_pack</b> option is enabled.</p>
+<p>In conjunction with the above restriction, a warning will be issued if you explicitly</p>
+<p>attempt to pack a non-POD. Additionally, a warning will be issued if the current</p>
+<p>structure packing level, which is determined by the<b> -pack=<i>n</b></i> command line option</p>
+<p>and any active</p>
+<p>#pragma pack</p>
+<p>directives, would have otherwise had an effect on</p>
+<p>a non-POD (that is, only if one of the fields of a non-POD would have had its</p>
+<p>alignment changed by the current structure packing level).</p>
+<p><b>Note</b></p>
+<p>A “Plain Old Data” class is a class that has no constructors, no destructors,</p>
+<p>no private non-static data members, no protected non-static data members,</p>
+<p>no base classes, no virtual functions, and no non-POD members.</p>
+<p><b>-gs No Longer Implies -gtws</b></p>
+<p>The option<b> -gs</b> no longer implies<b> -gtws</b>. This improves code size and speed.</p>
+<p><b>Instantiate Extern Inline Now Enabled by Default</b></p>
+<p>The<b> --instantiate_extern_inline</b> option is now enabled by default.</p>
+<p><i>19</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Link-Once Template Instantiation Now Enabled by Default</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>While<b> --instantiate_extern_inline</b> usually results in smaller program sizes, the</p>
+<p>results depend upon the code being compiled. In general,<b> --instantiate_extern_inline</b></p>
+<p>leads to better program size when the majority of non-static inline functions have</p>
+<p>more than one call site (across the entire program). However, when the majority of</p>
+<p>non-static inline functions have exactly one call site, this option may lead to</p>
+<p>worsened program size. This can be mitigated (without disabling</p>
+<p><b>--instantiate_extern_inline</b>) by marking inline functions as static when they are</p>
+<p>only used in one module.</p>
+<p><b>sqrt() and sqrtf() Now Return NAN for Negative Input</b></p>
+<p>Library functions</p>
+<p>sqrt()</p>
+<p>and</p>
+<p>sqrtf()</p>
+<p>now return a quiet</p>
+<p>NAN</p>
+<p>instead of</p>
+<p>0.0</p>
+<p>when the input is less than zero.</p>
+<p><b>Removed and Deprecated Features</b></p>
+<p>The following features are no longer available:</p>
+<p>•</p>
+<p>The<b> regnum</b> debug server command</p>
+<p>•</p>
+<p>The<b> rg</b> debug server command</p>
+<p>The following feature has been deprecated:</p>
+<p>•</p>
+<p>Support for Exported Templates (<b>--export</b>).</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>20</i></p>
+<p><i>Chapter 2. Changes in Version 2014.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 3</b></p>
+<p><b>Changes in Version 2013.5</b></p>
+<p><b>Contents</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Product Compatibility</b></p>
+<p>Green Hills Compiler 2013.5 is officially supported with INTEGRITY versions</p>
+<p>5.x, 10.0.2, 11.0.2, 11.0.4, and 11.2.2. For information about compatibility with</p>
+<p>newer versions of INTEGRITY, see the INTEGRITY release notes.</p>
+<p>Green Hills Compiler 2013.5 is officially supported with ThreadX 5.5.x and newer.</p>
+<p><b>Warning</b></p>
+<p>Using Compiler 2013.5 with MULTI 6 or later and a Green Hills Debug</p>
+<p>Probe requires Green Hills Debug Probe software version 4.4.4 or newer.</p>
+<p>Do not install Green Hills Debug Probe software version 4.2.x or earlier</p>
+<p>over your Compiler 2015.1 installation if you intend to use it with MULTI</p>
+<p>6 or later.</p>
+<p><b>Note</b></p>
+<p>If your MULTI IDE is newer than the compiler, see the IDE release notes</p>
+<p>for up-to-date product compatibility.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Static Assertions</b></p>
+<p>This release adds a C11/C++11 style</p>
+<p>static_assert</p>
+<p>in permissive C and C++</p>
+<p>language dialects, that allow you to statically check conditions at compile time with</p>
+<p>a standard mechanism. For more information, see “Static Assertions” in Chapter 15,</p>
+<p>“Macros, Pragma Directives, and Intrinsics” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i>.</p>
+<p><b>Specify a Compiler Inside a Project File</b></p>
+<p>You can now specify the location of the Compiler installation directory that should</p>
+<p>be used to build your project from the Project Manager using the<b> gbuildDir</b> option</p>
+<p>inside a project (<b>.gpj</b>) file as a Group 1 option. For example:</p>
+<p>#!gbuild</p>
+<p>gbuildDir=c:\ghs\comp_201354</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>22</i></p>
+<p><i>Chapter 3. Changes in Version 2013.5</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>primaryTarget=ppc_standalone.tgt</p>
+<p>[Project]</p>
+<p>...</p>
+<p>This option only affects projects built from the Project Manager; it is ignored by</p>
+<p>the<b> gbuild</b> utility program.</p>
+<p>With MULTI 6 and earlier, this option silently defaults to the Compiler installation</p>
+<p>directory that the MULTI IDE is linked with in the event that a bad path is supplied.</p>
+<p>For more information, see “Group 1 Directives” in Appendix C, “Green Hills Project</p>
+<p>File Format” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Ability to Specify the Size of wchar_t</b></p>
+<p>You can now select the size of the</p>
+<p>wchar_t</p>
+<p>type using the<b> -wchar_u16</b> and</p>
+<p><b>-wchar_s32</b> options to conserve memory when necessary. For more information,</p>
+<p>see “WChar Size” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Stack Smashing Protection</b></p>
+<p>The new<b> -stack_protector</b> option provides protection against stack smashing attacks</p>
+<p>by using a<i> stack canary</i> — a random number on the stack — that is compared to</p>
+<p>an expected value in function epilogues. For more information, see “Check for</p>
+<p>Stack Smashing Attacks” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Updated gstack Utility Program for Better C++ Analysis</b></p>
+<p>The<b> gstack</b> utility program has been updated to provide better support for analyzing</p>
+<p>function calls involving C++ virtual functions, startup code, and libraries. For more</p>
+<p>information about<b> gstack</b>, see “The gstack Utility Program” in Chapter 11, “Utility</p>
+<p>Programs” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><i>23</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Ability to Specify the Size of wchar_t</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Attribute and Intrinsic to Remove Specific Functions from Profiling</b></p>
+<p><b>Reports</b></p>
+<p>The new</p>
+<p>ghs_noprofile</p>
+<p>attribute and</p>
+<p>__ghs_noprofile_func()</p>
+<p>intrinsic</p>
+<p>allow you to mark functions so that any code paths they appear in are not considered</p>
+<p>when MULTI builds reports from coverage data gathered with<b> -coverage=</b>.</p>
+<p>If you are using MULTI 6.1.4, you must enable the<b> -Xprofileignorefatalblocks</b></p>
+<p>switch to use this feature. With this version of MULTI, the following caveats apply:</p>
+<p>•</p>
+<p>The<b> Coverage</b> tab will always display</p>
+<p>0</p>
+<p>for<b> % Covered</b>, but the<b> Block Detailed</b></p>
+<p>tab will continue to display count information for the block.</p>
+<p>•</p>
+<p>Coverage line coloring in the Debugger is reversed for functions with the</p>
+<p>ghs_noprofile</p>
+<p>attribute.</p>
+<p>•</p>
+<p>The</p>
+<p>ghs_noprofile</p>
+<p>attribute is ignored by<b> TimeMachine</b> profiling.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>GNU Compatibility Updated for Better Compatibility with Version 4.3</b></p>
+<p>The GNU C and C++ dialects have been updated to provide closer compatibility</p>
+<p>with the 4.3 version of the GNU compiler. To revert to a version of these dialects</p>
+<p>that is more closely compatible with version 3.3, use<b> --gnu_version=30300</b> in</p>
+<p>conjunction with the<b> -gcc</b> or<b> --g++</b> language dialect option. Make sure that you have</p>
+<p>also selected a GNU dialect before specifying this option.</p>
+<p>Additionally, dependent name processing is now on by default when using the GNU</p>
+<p>C++ dialect, even when emulating version 3.3 of the GNU compiler. To disable</p>
+<p>dependent name processing, use<b> --no_dep_name</b>.</p>
+<p>Furthermore, the parsing of function template definitions is done lazily in the GNU</p>
+<p>C++ dialect. Even though the parsing of a template in its generic form (without</p>
+<p>argument substitution) is typically done to resolve non-dependent names, this parse</p>
+<p>is only done for templates that are actually instantiated, and the parse itself is deferred</p>
+<p>until the entire input file has been processed. This may result in the apparent</p>
+<p>suppression of errors in unused function templates. This may be disabled with the</p>
+<p><b>--no_defer_parse_function_templates</b> option.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>24</i></p>
+<p><i>Chapter 3. Changes in Version 2013.5</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>For more information, see:</p>
+<p>•</p>
+<p>“GNU C/C++ Extensions” in Chapter 12, “Green Hills C” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i></p>
+<p>•</p>
+<p>“Dependent Name Lookup” in Chapter 13, “Green Hills C++” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i></p>
+<p>•</p>
+<p>“Deferral of Function Template Parsing” in Chapter 3, “Builder and Driver</p>
+<p>Options” in<i> MULTI: Building Applications for Embedded V850 and RH850</i></p>
+<p><i>25</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>GNU Compatibility Updated for Better Compatibility with Version 4.3</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4</b></p>
+<p><b>Changes in Version 2013.1</b></p>
+<p><b>Contents</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Product Compatibility</b></p>
+<p>Green Hills Compiler 2013.1 is officially supported with INTEGRITY versions</p>
+<p>5.x, 10.0.2, and 11.0.4. For information about compatibility with newer versions</p>
+<p>of INTEGRITY, see the INTEGRITY release notes.</p>
+<p>Green Hills Compiler 2013.1 is officially supported with ThreadX 5.5.x and newer.</p>
+<p><b>Warning</b></p>
+<p>Do not install Green Hills Debug Probe software version 4.2 or earlier</p>
+<p>over your compiler installation.</p>
+<p><b>Note</b></p>
+<p>If your MULTI IDE is newer than the compiler, see the IDE release notes</p>
+<p>for up-to-date product compatibility.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Relaxed Size Restrictions</b></p>
+<p>The compiler no longer restricts arrays and structures to 256 megabytes in size. It</p>
+<p>now allows uninitialized arrays and structures declared as up to 2 gigabytes on</p>
+<p>32-bit targets, and over 2 gigabytes on 64-bit targets.</p>
+<p>There may be some issues with debugging information for large arrays and structures,</p>
+<p>such as warnings issued from<b> dblink</b>, problems viewing these objects in the MULTI</p>
+<p>Debugger, or problems when these objects are involved in command line procedure</p>
+<p>calls. In addition, large programs may not load into the simulator if they consume</p>
+<p>too much RAM on the host.</p>
+<p><b>protrans Supports Converting Section Dumps to .pro Files</b></p>
+<p>If you use one of the<b> -coverage=</b> options to collect profiling information from your</p>
+<p>program and dump that program into a file on your host computer, you can now</p>
+<p>use<b> protrans</b> to convert that file into a<b> .pro</b> file using the<b> -cc</b>,<b> -cd</b>, or<b> -cf</b> option.</p>
+<p>For more information, see “The protrans Utility” in Chapter 11, “Utility Programs”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>28</i></p>
+<p><i>Chapter 4. Changes in Version 2013.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Changes in Behavior</b></p>
+<p><b>Some C and C++ Libraries Have New Names Based on Floating Point</b></p>
+<p><b>Support</b></p>
+<p>Some C and C++ libraries have been renamed based on the level of floating point</p>
+<p>support they provide. For more information, see “Libraries” in Chapter 16, “Libraries</p>
+<p>and Header Files” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Removed and Deprecated Features</b></p>
+<p>The following features have been deprecated:</p>
+<p>•</p>
+<p>Call count and call graph profiling (<b>-p</b> and<b> -pg</b>).</p>
+<p>•</p>
+<p>Run-mode debug over a freeze-mode debug connection with hardware targets</p>
+<p>running INTEGRITY 5. Run-mode connections are still supported over Ethernet</p>
+<p>and serial ports.</p>
+<p>•</p>
+<p>Socket emulation over freeze-mode host I/O with hardware targets running</p>
+<p>INTEGRITY 5. Socket emulation is still supported over run-mode debug, or</p>
+<p>you can use the GHnet v2 TCP/IP stack on the target.</p>
+<p><i>29</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes in Behavior</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 5</b></p>
+<p><b>Changes in Version 2012.5</b></p>
+<p><b>Contents</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<h1 style="page-break-before:always; "></h1>
+<p>In the Green Hills Compiler 2012.5 release, we focused on improving the<b> gstack</b></p>
+<p>utility program, improving profiling data collection, and increasing C++</p>
+<p>performance.</p>
+<p><b>Product Compatibility</b></p>
+<p>Green Hills Compiler 2012.5 is officially supported with INTEGRITY versions</p>
+<p>5.x, 10.0.2, and 11.0.4. For information about compatibility with newer versions</p>
+<p>of INTEGRITY, see the INTEGRITY release notes.</p>
+<p>Green Hills Compiler 2012.5 is officially supported with ThreadX 5.5.x and newer.</p>
+<p><b>Warning</b></p>
+<p>Do not install Green Hills Debug Probe software version 4.2 or earlier</p>
+<p>over your compiler installation.</p>
+<p><b>Note</b></p>
+<p>If your MULTI IDE is newer than the compiler, see the IDE release notes</p>
+<p>for up-to-date product compatibility.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Updated gstack Utility Program</b></p>
+<p>The<b> gstack</b> stack analysis program has been greatly improved with the ability to</p>
+<p>analyze recursive functions, function pointers, and interrupts. Its output has also</p>
+<p>been improved to provide detailed information to guide you in annotating your</p>
+<p>program for the most accurate results. For more information, see “The gstack Utility</p>
+<p>Program” in Chapter 11, “Utility Programs” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i>.</p>
+<p><b>New Block Profiling System</b></p>
+<p>The<b> -coverage=</b> option provides a faster method for measuring both performance</p>
+<p>and code coverage than the legacy<b> -a</b> method. If you only want to test for coverage</p>
+<p>and not execution counts,<b> -coverage=flag</b> provides a significantly more efficient</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>32</i></p>
+<p><i>Chapter 5. Changes in Version 2012.5</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>method than<b> -a</b>. For more information, see “Enabling Instrumented Coverage or</p>
+<p>Performance Profiling” in Chapter 2, “Developing for V850 and RH850” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>New ax Modifier</b></p>
+<p>The<b> ax</b> librarian now includes the<b> u</b> modifier for compatibility with the GNU</p>
+<p>archiver.</p>
+<p><b>New Linker Options to Control Linker p_align Behavior</b></p>
+<p>The new</p>
+<p>-max_p_align</p>
+<p>,</p>
+<p>-any_p_align</p>
+<p>, and</p>
+<p>-no_p_align</p>
+<p>options allow you</p>
+<p>to specify how the linker determines the maximum value of the</p>
+<p>p_align</p>
+<p>field in</p>
+<p>ELF program headers. For more information, see “Linker-Specific Options” in</p>
+<p>Chapter 9, “The elxr Linker” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>New Stack Check Attribute</b></p>
+<p>The new C/C++</p>
+<p>stackcheck</p>
+<p>attribute allows you to enable stack checking on a</p>
+<p>per-function basis. For more information, see “</p>
+<p>stackcheck</p>
+<p>” in “Attributes” in</p>
+<p>Chapter 12, “Green Hills C” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>Clean Builds Recommended</b></p>
+<p>To mitigate any problems that may occur due to small changes in behavior from</p>
+<p>previous versions, we recommend that you clean and rebuild your programs from</p>
+<p>scratch when you build them for the first time with the upgraded compiler.</p>
+<p><i>33</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New ax Modifier</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Error Compiling ind_initmem.c</b></p>
+<p>When porting a customized<b> libstartup</b> from an earlier version to Green Hills</p>
+<p>Compiler 2012.5, one of the following messages may be given when compiling</p>
+<p><b>ind_initmem.c</b>:</p>
+<p>#error This file should only be included from another file in the same directory</p>
+<p>#error Please include &lt;stddef.h&gt; instead of ghs_null.h</p>
+<p>To fix this problem, edit<b> ind_initmem.c</b> to replace:</p>
+<p>#include &lt;ghs_null.h&gt;</p>
+<p>with:</p>
+<p>#include &lt;stddef.h&gt;</p>
+<p>For more information, see “C and C++ Header Files” in Chapter 16, “Libraries and</p>
+<p>Header Files” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Vector's Clear Method No Longer Deallocates</b></p>
+<p>Prior to Green Hills Compiler 2012.5, vector's</p>
+<p>clear()</p>
+<p>method deallocated memory,</p>
+<p>resetting the capacity to zero, even if the</p>
+<p>reserve()</p>
+<p>method had been called. In</p>
+<p>Green Hills Compiler 2012.5,</p>
+<p>clear()</p>
+<p>no longer deallocates memory.</p>
+<p>To deallocate a vector's memory, call the</p>
+<p>swap()</p>
+<p>method instead. This technique</p>
+<p>is portable across versions of the Green Hills Compiler and other STL</p>
+<p>implementations:</p>
+<p>std::vector&lt;T&gt; v;</p>
+<p>...</p>
+<p>std::vector&lt;T&gt;().swap(v);</p>
+<p>std::vector&lt;T&gt; v;</p>
+<p>...</p>
+<p>std::vector&lt;T&gt;(v).swap(v);</p>
+<p>This change to</p>
+<p>clear()</p>
+<p>can be reverted by defining the</p>
+<p>__GHS_VECTOR_CLEAR_DEALLOCATES</p>
+<p>macro to 1. This macro might be removed</p>
+<p>in a future version of the compiler.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>34</i></p>
+<p><i>Chapter 5. Changes in Version 2012.5</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Implicit Inclusion is No Longer Enabled By Default</b></p>
+<p>Implicit inclusion is no longer enabled by default. If you require this feature, pass</p>
+<p>the<b> --implicit_include</b> option to the driver.</p>
+<p><b>Eclipse Plug-in Option Type Changes</b></p>
+<p>In the Green Hills Eclipse plug-in, the types of a few options have changed. If you</p>
+<p>have existing Green Hills Eclipse Managed Make projects that you created using</p>
+<p>an older version of the Green Hills Eclipse plug-in and you encounter options that</p>
+<p>do not work well (for example, they display erroneous or garbled text values in the</p>
+<p>C/C++ Build Settings dialog) we recommend creating a new project using the 2012.5</p>
+<p>version of the plug-in and re-importing your sources into the new project, rather</p>
+<p>than reusing the old project with the new plug-in.</p>
+<p><b>ghide No Longer Hides COMMON Symbols</b></p>
+<p>The<b> ghide</b> utility no longer hides</p>
+<p>COMMON</p>
+<p>symbols. For more information about</p>
+<p><b>ghide</b>, see “The ghide Utility Program” in Chapter 11, “Utility Programs” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Removed and Deprecated Features</b></p>
+<p>The following features have been deprecated:</p>
+<p>•</p>
+<p>The<b> Legacy Coverage Profiling</b> (<b>-a</b>) driver option.</p>
+<p><i>35</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Implicit Inclusion is No Longer Enabled By Default</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 6</b></p>
+<p><b>Changes in Version 2012.1</b></p>
+<p><b>Contents</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>38</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>38</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>Removed and Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<h1 style="page-break-before:always; "></h1>
+<p>In the Green Hills Compiler 2012.1 release, we focused on improving build</p>
+<p>performance, enhancing existing optimizations, and making architectural changes</p>
+<p>that allow you to upgrade the MULTI IDE and Compiler separately. This version</p>
+<p>of the compiler also adds GHS Standard Mode and coding standard profiles, two</p>
+<p>new features that help you improve code quality.</p>
+<p><b>Product Compatibility</b></p>
+<p>Green Hills Compiler 2012.1 is officially supported with INTEGRITY versions</p>
+<p>5.x, 10.0.2, and 11.0.4. For information about compatibility with newer versions</p>
+<p>of INTEGRITY, see the INTEGRITY release notes.</p>
+<p>Green Hills Compiler 2012.1 is officially supported with ThreadX 5.5.x and newer.</p>
+<p><b>Warning</b></p>
+<p>Do not install Green Hills Debug Probe software version 4.2 or earlier</p>
+<p>over your compiler installation.</p>
+<p><b>Note</b></p>
+<p>If your MULTI IDE is newer than the compiler, see the IDE release notes</p>
+<p>for up-to-date product compatibility.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Separate Releases Allow Greater Flexibility When Upgrading</b></p>
+<p>The Compiler and IDE products now release independently of each other, allowing</p>
+<p>you to upgrade them separately. This makes it possible to freeze on one version of</p>
+<p>the Compiler while upgrading the version of the IDE, or vice versa. This release</p>
+<p>structure also allows Green Hills Software to release compilers with new CPU</p>
+<p>support on a faster schedule.</p>
+<p><b>Faster Builds</b></p>
+<p>Build speeds have increased significantly in this release of the MULTI Compiler.</p>
+<p>Build speed on Windows hosts has increased, and parallel build speed has improved</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>38</i></p>
+<p><i>Chapter 6. Changes in Version 2012.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>up to 50%. In addition,<b> gbuild</b> now builds in parallel by default, so users that did</p>
+<p>not explicitly pass<b> -parallel=</b> in previous versions of MULTI may see much larger</p>
+<p>improvements. In one real-world case, a customer reported a 4.5x increase in build</p>
+<p>speed.</p>
+<p><b>Define Macros in Any Project File</b></p>
+<p>You can now define macros in any project file, not just your Top Project.</p>
+<p><b>New Coding Standard Features</b></p>
+<p>The Green Hills Compiler now ships with GHS Standard Mode, an</p>
+<p>internally-designed collection of diagnostics that help you avoid common pitfalls</p>
+<p>while developing programs. We use this standard internally because its rules are</p>
+<p>pragmatic to apply to existing projects and helpful for improving code quality.</p>
+<p>The compiler also provides coding standard profiles, a feature that allows you to</p>
+<p>create your own coding standards by packaging diagnostic severity levels into a</p>
+<p>single file to distribute among all developers in your organization. For more</p>
+<p>information, see Chapter 14, “Coding Standards” in<i> MULTI: Building Applications</i></p>
+<p><i>for Embedded V850 and RH850</i>.</p>
+<p><b>UTF-8 Support</b></p>
+<p>The Green Hills Compiler now supports multi-byte characters encoded in UTF-8.</p>
+<p>For more information, see “Host and Target Character Encoding” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>New Licenses Required</b></p>
+<p>The MULTI licensing system was updated in this release. If you are upgrading from</p>
+<p>an older release, you must obtain new licenses. For more information, please contact</p>
+<p>Green Hills support.</p>
+<p><i>39</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Define Macros in Any Project File</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Clean Builds Recommended</b></p>
+<p>To mitigate any problems that may occur due to small changes in behavior from</p>
+<p>previous versions, we recommend that you clean and rebuild your programs from</p>
+<p>scratch when you build them for the first time with the upgraded compiler.</p>
+<p><b>gbuild Defaults to Parallel Builds</b></p>
+<p><b>gbuild</b> now builds programs in parallel by default, and automatically determines</p>
+<p>the number of builds to run at once based on the number of CPUs on your host</p>
+<p>machine. You do not need to specify<b> parallel=<i>n</b></i> to<b> gbuild</b> unless you want to limit</p>
+<p>the number of CPUs used for building programs.</p>
+<p><b>Different malloc() Implementation Used By Default in Stand-Alone Projects</b></p>
+<p>The compiler uses a new</p>
+<p>malloc()</p>
+<p>implementation by default for all Stand-Alone</p>
+<p>projects. This implementation generally provides better performance, but has a</p>
+<p>slightly larger library footprint. To use the old implementation instead, pass the</p>
+<p><b>-no_fast_malloc</b> option.</p>
+<p><b>__MULTI_DIR__ Customization File Macro Changes</b></p>
+<p>If you use the predefined</p>
+<p>__MULTI_DIR__</p>
+<p>macro in your customization files,</p>
+<p>replace each instance with</p>
+<p>__TOOLS_DIR__</p>
+<p>, which points to your MULTI Compiler</p>
+<p>installation directory. There is no longer a macro defined for the MULTI IDE</p>
+<p>installation directory.</p>
+<p><b>Pointers Are Now Unsigned by Default</b></p>
+<p>Pointers are now unsigned by default for all architectures, and shipping libraries</p>
+<p>are built with<b> --unsigned_pointer</b>. If you require signed pointers, pass the</p>
+<p><b>--signed_pointer</b> option, but keep in mind that operations that rely on memory</p>
+<p>spanning</p>
+<p>0</p>
+<p>may not work consistently between user code and the libraries.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>40</i></p>
+<p><i>Chapter 6. Changes in Version 2012.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>memmove Moved to libind.a</b></p>
+<p>The</p>
+<p>memmove()</p>
+<p>function has been moved from<b> libansi.a</b> to<b> libind.a</b>. If your build</p>
+<p>fails because</p>
+<p>memmove()</p>
+<p>cannot be located, include<b> libind.a</b>.</p>
+<p><b>Removed and Deprecated Features</b></p>
+<p>The following features are no longer available:</p>
+<p>•</p>
+<p>Windows 2000 support</p>
+<p>•</p>
+<p>Elan licenses</p>
+<p>•</p>
+<p>The<b> gbldconvert</b> utility that converts<b> .bld</b> files to<b> .gpj</b> files. If you are migrating</p>
+<p>from MULTI 4 or earlier and need to convert your<b> .bld</b> files, contact Green</p>
+<p>Hills Support for more information.</p>
+<p>The following features have been deprecated:</p>
+<p>•</p>
+<p><b>gproxy</b></p>
+<p>•</p>
+<p><b>grun</b></p>
+<p>•</p>
+<p>P&amp;E Lightning card support in<b> peserv</b></p>
+<p>•</p>
+<p>The</p>
+<p>truncate()</p>
+<p>function in<b> libsys.a</b>.</p>
+<p>•</p>
+<p><b>--cxx_include_directory</b> (use the<b> -I</b> driver option instead).</p>
+<p><i>41</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>memmove Moved to libind.a</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 7</b></p>
+<p><b>Changes in Version 5.4</b></p>
+<p><b>Contents</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Features and Enhancements</b></p>
+<p><b>UTF-8 Support</b></p>
+<p>The compiler now supports UTF-8 encoding for extended characters, in addition</p>
+<p>to EUC-JP and Shift-JS. For more information, see “Extended Character Support”</p>
+<p>in the<i> MULTI: Building Applications</i> book.</p>
+<p><b>Updated MULTI Eclipse Plug-In</b></p>
+<p>The MULTI Eclipse plug-in now supports Eclipse 3.7.x and CDT 8.0.x. For more</p>
+<p>information, see the documentation about the MULTI Eclipse plug-in in the<i> MULTI:</i></p>
+<p><i>Building Applications</i> book.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>Removed Features</b></p>
+<p><b>Driver No Longer Accepts .bld Files</b></p>
+<p>The driver and Project Manager no longer build projects in the legacy<b> .bld</b> format,</p>
+<p>and the<b> gbldconvert</b> utility that converts files from<b> .bld</b> to the newer<b> .gpj</b> format</p>
+<p>has been deprecated. Support for converting<b> .bld</b> files will be removed in the next</p>
+<p>release.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>44</i></p>
+<p><i>Chapter 7. Changes in Version 5.4</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8</b></p>
+<p><b>Changes in Version 5.3</b></p>
+<p><b>Contents</b></p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>Deprecated Features and Discontinued Support . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Product Compatibility</b></p>
+<p>The MULTI 5.3 compiler has been tested for compatibility and is officially supported</p>
+<p>with:</p>
+<p>For information about the compatibility of the MULTI 5.3 compiler with older</p>
+<p>versions of these products, contact your Green Hills sales representative. For</p>
+<p>information about compatibility with newer versions of these products, see the</p>
+<p>release notes for the appropriate product.</p>
+<p><b>New Features and Enhancements</b></p>
+<p><b>New -Omoredebug Optimization Strategy</b></p>
+<p>The new<b> -Omoredebug</b> optimization strategy has been added in this release and is</p>
+<p>enabled by default for new projects. This strategy enables only optimizations that</p>
+<p>do not affect debugging ability. Additionally, the compiler intentionally generates</p>
+<p>code so that:</p>
+<p>•</p>
+<p>Variable lifetimes are extended to let you view variable values at any point in</p>
+<p>the function, and</p>
+<p>•</p>
+<p>Every statement has a breakdot.</p>
+<p>Note that in some cases,<b> -Omoredebug</b> may cause your program's stack size to</p>
+<p>increase.</p>
+<p><b>Updated Compiler Front-End</b></p>
+<p>MULTI Compiler 5.3 is based on a newer version of the EDG C++ front-end. The</p>
+<p>new front-end includes many bug fixes, improvements in standard compliance, and</p>
+<p>improvements in GNU compatibility. The default severity levels of some diagnostics</p>
+<p>may have changed.</p>
+<p><b>Updated Fast Flash Programmer</b></p>
+<p>The fast flash programmer includes several enhancements:</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>46</i></p>
+<p><i>Chapter 8. Changes in Version 5.3</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>faster SREC handling</p>
+<p>•</p>
+<p>delta flashing capabilities (only re-flash changed sectors)</p>
+<p>•</p>
+<p>improved logging</p>
+<p>•</p>
+<p>support for new flash parts</p>
+<p>For more information about which flash parts are supported, contact your Green</p>
+<p>Hills sales representative.</p>
+<p><b>General Improvements</b></p>
+<p>The following features have seen major improvements:</p>
+<p>•</p>
+<p>Wholeprogram optimizations</p>
+<p>•</p>
+<p>Interprocedural optimizations</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>New Warnings Enabled by Default</b></p>
+<p>The<b> --prototype_warnings</b> option is now set by default. This option may generate</p>
+<p>warnings that indicate bugs in your code.</p>
+<p><b>Changes to Line Continuations in GNU C Mode</b></p>
+<p>In versions of the MULTI compiler earlier than 5.2, a backslash (</p>
+<p>\</p>
+<p>) followed by a</p>
+<p>space was never parsed as a line continuation. As of 5.2, in the GNU C or C++</p>
+<p>dialect, the compiler parses backslash as a line continuation character whether or</p>
+<p>not it is followed by a space.</p>
+<p>If you compile your code using the GNU C or C++ dialect and it has a line that</p>
+<p>contains a backslash followed by a whitespace, it might create an unintentional line</p>
+<p>continuation. The following example shows one of these cases (the space is indicated</p>
+<p>by an underscore, because it does not display in print):</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main(void) {</p>
+<p>int i = 42; // use space after backslash, as in C:\_</p>
+<p><i>47</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>General Improvements</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>i = 0; // ignored in GNU</p>
+<p>if (i != 0) {</p>
+<p>printf(&quot;i = %d, should be 0\n&quot;, i);</p>
+<p>}</p>
+<p>}</p>
+<p>When the compiler encounters one of these cases, it issues diagnostic 1400. If you</p>
+<p>need to hide this diagnostic, pass the option<b> --diag_suppress=1400</b> to the driver.</p>
+<p><b>Changes in std::string</b></p>
+<p>Due to changes in</p>
+<p>std::string</p>
+<p>, the C++ libraries included with this release are</p>
+<p>incompatible with the C++ libraries shipped with previous versions of MULTI.</p>
+<p><b>Options Enabled by Default</b></p>
+<p>The following options are now enabled by default in MULTI 5:</p>
+<p>•</p>
+<p><b>--alternative_tokens</b></p>
+<p>•</p>
+<p><b>--no_implicit_extern_c_type_conversion</b></p>
+<p>•</p>
+<p><b>--no_guiding_decls</b></p>
+<p>•</p>
+<p><b>--readonly_typeinfo</b></p>
+<p>•</p>
+<p><b>--readonly_virtual_tables</b></p>
+<p>The following options are enabled by default unless you pass<b> --guiding_decls</b>:</p>
+<p>•</p>
+<p><b>--no_old_specializations</b></p>
+<p>•</p>
+<p><b>--no_implicit_typename</b></p>
+<p><b>Map File Format Changes</b></p>
+<p>The format of map files generated by the<b> elxr</b> linker has changed in version 5.3.</p>
+<p>The map file now lists the size of each symbol in addition to its address (in the</p>
+<p>format</p>
+<p><i>address</i>+<i>size</i></p>
+<p>).</p>
+<p>To force the linker to produce map files in the old format, pass the following option</p>
+<p>to the driver:</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>48</i></p>
+<p><i>Chapter 8. Changes in Version 5.3</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>-lnk=-old_mapfile</p>
+<p>This option is not supported in conjunction with the<b> -Mu</b> or<b> -Ml</b> linker options.</p>
+<p><b>Loops with an Iteration Variable Shorter than int May Execute Slower than</b></p>
+<p><b>in Previous Releases</b></p>
+<p>If you have enabled speed optimizations and your program has a loop that uses an</p>
+<p>iteration variable of a type smaller than</p>
+<p>int</p>
+<p>, that loop may execute slower than it</p>
+<p>did with previous versions of MULTI. To work around this issue, use an iteration</p>
+<p>variable of type</p>
+<p>int</p>
+<p>or larger, or</p>
+<p>int_fast<i>N</i>_t</p>
+<p>or</p>
+<p>uint_fast<i>N</i>_t</p>
+<p>, defined in</p>
+<p><b>stdint.h</b>.</p>
+<p><b>__alt_init Hook Removed From Stand-Alone Run-time Library</b></p>
+<p>The call to</p>
+<p>__alt_init</p>
+<p>from the stand-alone run-time routine</p>
+<p>__ghs_ind_crt1</p>
+<p>has been removed as of the 5.2 release. We recommend renaming</p>
+<p>__alt_init</p>
+<p>to</p>
+<p>__ghs_board_devices_init</p>
+<p>, which is called at approximately the same point</p>
+<p>in the startup sequence. A second approach is to add the following C code to your</p>
+<p>project:</p>
+<p>#if defined(__GHS_VERSION_NUMBER) &amp;&amp; (__GHS_VERSION_NUMBER &gt;= 520)</p>
+<p>void __alt_init(void);</p>
+<p>void __ghs_board_devices_init(void) {</p>
+<p>__alt_init();</p>
+<p>}</p>
+<p>#endif</p>
+<p>If neither of these approaches work for you, you can customize<b> libsys.a</b> and modify</p>
+<p>__ghs_ind_crt1</p>
+<p>in<b> ind_crt1.c</b> to call</p>
+<p>__alt_init</p>
+<p>prior to calling</p>
+<p>main()</p>
+<p>. For</p>
+<p>more information, see “Creating a Project with a Customizable Run-Time</p>
+<p>Environment” in “Libraries and Header Files” in the<i> MULTI: Building Applications</i></p>
+<p>book.</p>
+<p><b>Removed Features</b></p>
+<p>The following features are no longer included in MULTI, but may still be available</p>
+<p>for purchase separately. For more information, contact your Green Hills sales</p>
+<p>representative.</p>
+<p><i>49</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Loops with an Iteration Variable Shorter than int May Execute Slower than in Previous Releases</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Elan licensing tools</p>
+<p>•</p>
+<p>HP-UX host support</p>
+<p>•</p>
+<p>The following driver options:</p>
+<p>○</p>
+<p><b>--array_new_and_delete</b></p>
+<p>○</p>
+<p><b>--common_implicit_initialization</b>/<b>--no_common_implicit_initialization</b></p>
+<p>○</p>
+<p><b>--distinct_template_signatures</b></p>
+<p>○</p>
+<p><b>--early_tiebreaker</b>/<b>--late_tiebreaker</b></p>
+<p>○</p>
+<p><b>--enum_overloading</b>/<b>--no_enum_overloading</b></p>
+<p>○</p>
+<p><b>--explicit</b></p>
+<p>○</p>
+<p><b>--extern_inline</b>/<b>--no_extern_inline</b></p>
+<p>○</p>
+<p><b>--friend_injection</b>/<b>--no_friend_injection</b></p>
+<p>○</p>
+<p><b>--include_once</b>/<b>--include_never</b></p>
+<p>○</p>
+<p><b>--initpipointers</b></p>
+<p>○</p>
+<p><b>--memory_description_file</b></p>
+<p>○</p>
+<p><b>--new_for_init</b>/<b>-old_for_init</b></p>
+<p>○</p>
+<p><b>-Owholeprogram_libs</b></p>
+<p>○</p>
+<p><b>--relative_xof_path</b>/<b>--no_relative_xof_path</b></p>
+<p>○</p>
+<p><b>--short_lifetime_temps</b>/<b>--long_lifetime_temps</b></p>
+<p>○</p>
+<p><b>--std_qualifier_deduction</b></p>
+<p>○</p>
+<p><b>--typename</b></p>
+<p>○</p>
+<p><b>-use_vp_as_dbg_source_root</b>/<b>-no_use_vp_as_dbg_source_root</b></p>
+<p><b>Deprecated Features and Discontinued Support</b></p>
+<p><b>Deprecated K&amp;R C Support</b></p>
+<p>Support for the K&amp;R C dialect (<b>-k+r</b>) is deprecated and will be removed in the next</p>
+<p>MULTI release. Certain old-style features, such as K&amp;R-style parameter declarations,</p>
+<p>will continue to be supported outside of the K&amp;R C dialect.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>50</i></p>
+<p><i>Chapter 8. Changes in Version 5.3</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Deprecated -gnu Option</b></p>
+<p>The<b> -gnu</b> driver option is deprecated. To get the same behavior as<b> -gnu</b>, pass both</p>
+<p>the<b> -gcc</b> and<b> --g++</b> options instead.</p>
+<p><i>51</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Deprecated -gnu Option</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 9</b></p>
+<p><b>Changes in Version 5.0.6</b></p>
+<p><b>Contents</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>55</p>
+<p>Unbundled Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Deprecated Features and Discontinued Support . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Improved Code Generation</b></p>
+<p>MULTI 5 comes complete with Green Hills Software's world class compilers,</p>
+<p>including new interprocedural optimization and link-time optimization. MULTI 5</p>
+<p>boasts compilers which generate some of the industry's smallest and fastest code.</p>
+<p>Additionally, you can use MULTI 5 to enforce programming guidelines such as</p>
+<p>the MISRA 2004 coding standards.</p>
+<p><b>Improved Dependency Analysis</b></p>
+<p>Building programs with complicated dependencies (such as an INTEGRITY kernel)</p>
+<p>has historically required that the user identify libraries that might have changed</p>
+<p>since the last build in order to avoid link-time errors. MULTI's Improved</p>
+<p>Dependency Analysis solves this problem by automatically building out of date</p>
+<p>libraries if the current program is dependent on those libraries. This capability</p>
+<p>extends to prebuilt libraries or other libraries linked in with an option such as<b> -l</b> or</p>
+<p><b>-kernel</b>.</p>
+<p><b>DoubleCheck Static Source Code Analyzer</b></p>
+<p>The DoubleCheck static source code analyzer reviews code, searching for problems</p>
+<p>which may lead to bugs in the final product. DoubleCheck is fully integrated with</p>
+<p>the MULTI IDE. It executes automatically when you build your application. Any</p>
+<p>problems discovered by DoubleCheck are reported to you alongside syntax errors</p>
+<p>reported by the compiler. This creates an opportunity for you to immediately fix</p>
+<p>bugs, saving many hours of debugging time later in your development process.</p>
+<p><b>Fast Flash Programmer</b></p>
+<p>The MULTI IDE's Fast Flash Programmer solves several problems which occur in</p>
+<p>firmware development. It significantly cuts down on the time and effort required</p>
+<p>to repair corrupted boot code, fix bugs in firmware and program production boards.</p>
+<p>The Fast Flash Programmer uses little or no RAM and runs with greater speed than</p>
+<p>its predecessor. Additionally, the Fast Flash programmer provides effective feedback</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>54</i></p>
+<p><i>Chapter 9. Changes in Version 5.0.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>when hardware causes a programming failure. Operation of the Fast Flash</p>
+<p>Programmer can be scripted using the MULTI command interface for greater</p>
+<p>flexibility and power.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>Changes to Driver Option Defaults</b></p>
+<p><b>MULTI 5.0.6 Default</b></p>
+<p><b>MULTI 4.2.4 Default</b></p>
+<p><b>Builder Option</b></p>
+<p>On (<b>--alternative_tokens</b>)</p>
+<p>Off (<b>--no_alternative_tokens</b>)</p>
+<p>Alternative C++ Tokens</p>
+<p>Off (<b>-noconsistentcode</b>)</p>
+<p>Option does not exist</p>
+<p>Consistent Code Without Debug</p>
+<p>Information</p>
+<p>Depends on optimization strategy</p>
+<p>Off (<b>-Onoconstprop</b>)</p>
+<p>Constant Propagation</p>
+<p>None (<b>-double_check.level=none</b>)</p>
+<p>Option does not exist</p>
+<p>DoubleCheck Level</p>
+<p>Off (<b>-double_check.stop_build=off</b>)</p>
+<p>Option does not exist</p>
+<p>DoubleCheck Output that Stops</p>
+<p>Builds</p>
+<p>Off (<b>--no_guiding_decls</b>)</p>
+<p>On (<b>--guiding_decls</b>)</p>
+<p>Guiding Declarations of</p>
+<p>Template Functions</p>
+<p>Off (<b>--no_link_once_templates</b>)</p>
+<p>Option does not exist</p>
+<p>Link-Once Template</p>
+<p>Instantiation</p>
+<p>Off (<b>-noglimits</b>)</p>
+<p>Option does not exist</p>
+<p>-Olimit= Without Debug</p>
+<p>Information</p>
+<p>On (<b>-Oprintfuncs</b>)</p>
+<p>Option does not exist</p>
+<p>Simplify C Print Functions</p>
+<p>Off (<b>-no_stack_check</b>)</p>
+<p>Option does not exist</p>
+<p>Stack Limit Checking</p>
+<p>Errors on Non-Zero Overlap</p>
+<p>(<b>-nooverlap</b>)</p>
+<p>Warnings (<b>-overlap_warn</b>)</p>
+<p>Section Overlap Checking</p>
+<p>Off</p>
+<p>(<b>--no_implicit_Extern_c_type_conversion</b>)</p>
+<p>On</p>
+<p>(<b>--implicit_extern_c_type_conversion)</b></p>
+<p>Support for Implicit Extern C</p>
+<p>Type Conversion</p>
+<p>Off (<b>--no_old_specializations</b>)</p>
+<p>On (<b>--old_specializations</b>)</p>
+<p>Support for Old-Style</p>
+<p>Specializations</p>
+<p>Off (<b>--no_implicit_typename</b>)</p>
+<p>On (<b>--implicit_typename)</b></p>
+<p>Support for Implicit Typenames</p>
+<p>Off (<b>-nofloatsingle</b>)</p>
+<p>Option does not exist</p>
+<p>Treat Doubles as Singles</p>
+<p><i>55</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes in Behavior</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Options Enabled by Standard C++ Dialects</b></p>
+<p>When you select either of the Green Hills Standard C++ dialects (</p>
+<p>--std</p>
+<p>or</p>
+<p>--STD</p>
+<p>),</p>
+<p>MULTI enables various options in order to conform more closely to the C++ standard</p>
+<p>as defined in International Standard ISO/IEC 14882:1998. MULTI 5 enables a</p>
+<p>slightly different set of options from MULTI 4:</p>
+<p>Options enabled by</p>
+<p>--std</p>
+<p>and</p>
+<p>--STD</p>
+<p>:</p>
+<p>•</p>
+<p>--alternative_tokens</p>
+<p>•</p>
+<p>--no_implicit_extern_c_type_conversion</p>
+<p>•</p>
+<p>--no_old_specializations</p>
+<p>•</p>
+<p>--no_implicit_typename</p>
+<p>•</p>
+<p>--no_guiding_decls</p>
+<p>Additional options enabled by</p>
+<p>--STD</p>
+<p>:</p>
+<p>•</p>
+<p>--dep_name</p>
+<p><b>Libind.a Splitup</b></p>
+<p>Some of the contents of the libind.a library from previous releases have been split</p>
+<p>out into a new library. The libmath.a library is new in MULTI 5, and contains math</p>
+<p>routines.</p>
+<p><b>Building System Libraries from 4.x Distributions</b></p>
+<p>The MULTI 4 System Libraries and headers make use of<b> stdio.h</b> field names that</p>
+<p>are not preceded by an underscore. In MULTI 5, the names are all defined with a</p>
+<p>leading underscore.</p>
+<p>If you are using MULTI 5 to build a project with system libraries (libsys.a) from a</p>
+<p>MULTI 4 distribution, you must pass<b> -D__GHS_OLD_STDIO_FIELD_NAMES</b></p>
+<p>so that MULTI 5's<b> stdio.h</b> defines the old names as well.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>56</i></p>
+<p><i>Chapter 9. Changes in Version 5.0.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Global Const Variables Placed in Read-Only Data</b></p>
+<p>In prior versions of MULTI, global</p>
+<p>const</p>
+<p>variables without an initializer, such as:</p>
+<p>const int i;</p>
+<p>were output as common variables (see “Allocation of Uninitialized Global Variables”</p>
+<p>in Chapter 3, “Builder and Driver Options” in the<i> MULTI: Building Applications</i></p>
+<p>book). This could cause inconsistencies when using special data areas or when</p>
+<p>referencing the variable with position-independent code (PIC) or</p>
+<p>position-independent data (PID).</p>
+<p>In MULTI 5, these variables are output as if they have been initialized to zero. The</p>
+<p>example above would be output in the same way as:</p>
+<p>const int i = 0;</p>
+<p>As a result, these variables are typically placed in read-only data.</p>
+<p><b>Unbundled Features</b></p>
+<p>Unbundled features are no longer included in MULTI, but are still available for</p>
+<p>purchase separately.</p>
+<p><b>Unbundled in 5.0.6</b></p>
+<p>The following features have been unbundled from MULTI:</p>
+<p>•</p>
+<p>FORTRAN compiler</p>
+<p>•</p>
+<p>CodeBalance</p>
+<p>•</p>
+<p>Distributed Build System</p>
+<p>•</p>
+<p>Remote serial connections</p>
+<p>•</p>
+<p>TraceEdge and In-Memory TimeMachine</p>
+<p>•</p>
+<p>Pre-MULTI-4 debug server protocol compatibility</p>
+<p>•</p>
+<p>EST ICE integration</p>
+<p>•</p>
+<p>PMON ROM monitor integration</p>
+<p>•</p>
+<p>IDT ROM monitor integration</p>
+<p><i>57</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Global Const Variables Placed in Read-Only Data</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Green Hills ROM monitor integration</p>
+<p>•</p>
+<p>HP-UX host support</p>
+<p><b>Deprecated Features and Discontinued Support</b></p>
+<p><b>Deprecated Options</b></p>
+<p>The following options have been deprecated in this release:</p>
+<p><b>Driver Options</b></p>
+<p><b>Builder Option</b></p>
+<p><b>--discretionary_errors</b>,<b> --discretionary_warnings</b>,</p>
+<p><b>-pedantic-errors</b>,<b> -pedantic</b></p>
+<p>ANSI C and Standard C++</p>
+<p>Extensions</p>
+<p><b>--auto_instantiation</b>,<b> -template=auto</b>,</p>
+<p><b>--no_auto_instantiation</b>,<b> -template=noauto</b></p>
+<p>Auto-Instantiation of Templates</p>
+<p><b>-nodotciscxx</b>,<b> -dotciscxx</b></p>
+<p>.c Files are C++</p>
+<p><b>--no_include_never</b>,<b> --include_never</b>,<b> --include_once</b>,</p>
+<p><b>--no_include_once</b></p>
+<p>Ignore #include Directives</p>
+<p><b>-default_lnk</b>,<b> -no_default_lnk</b>,<b> -default_i</b>,</p>
+<p><b>-no_default_i</b></p>
+<p>Link Map Method</p>
+<p><b>--struct_min_alignment</b></p>
+<p>Minimum Structure Alignment</p>
+<p><b>--no_for_init_diff_warning</b>,<b> --for_init_diff_warning</b></p>
+<p>New-Style 'for-init'</p>
+<p>Code</p>
+<p><b>--pch_messages</b>,<b> --no_pch_messages</b>,<b> --no_pch_silent</b>,</p>
+<p><b>--pch_silent</b></p>
+<p>PCH Messages</p>
+<p><b>--no_pch</b>,<b> --use_pch</b>,<b> --pch</b>,<b> --create_pch</b></p>
+<p>Precompiled Header File</p>
+<p><b>--unsigned_enum_fields</b>,<b> --signed_enum_fields</b></p>
+<p>Signedness of Enum Type</p>
+<p><b>-Ounroll8</b>,<b> -Onounroll8</b></p>
+<p>Unroll Loops Up to 8 Times</p>
+<p><b>-no_use_demo_library</b>,<b> -use_demo_library</b></p>
+<p>Use ThreadX Demo Library</p>
+<p><b>--no_use_before_set_warnings</b>,</p>
+<p><b>--use_before_set_warnings</b></p>
+<p>Use Before 'Set'</p>
+<p><b>-no_use_dli_files</b>,<b> -use_dli_files</b></p>
+<p>Use Debug Library List (.dli) Files</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>58</i></p>
+<p><i>Chapter 9. Changes in Version 5.0.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The ghexfile Utility is No Longer Available</b></p>
+<p>The<b> ghexfile</b> utility is no longer available. If you used<b> ghexfile</b> in a previous version</p>
+<p>of MULTI, reconfigure your projects to use<b> gsrec</b> instead.<b> gsrec</b> includes</p>
+<p>functionality that was formerly included in the<b> ghexfile</b> utility. For more information,</p>
+<p>see “The gsrec Utility Program” in “Utility Programs” in the<i> MULTI: Building</i></p>
+<p><i>Applications</i> book.</p>
+<p><b>Manual Template Instantiation Mode Options No Longer Supported</b></p>
+<p>The following<b> Manual Template Instantiation Mode</b> options are no longer</p>
+<p>supported:</p>
+<p>•</p>
+<p><b>-tall</b></p>
+<p>•</p>
+<p><b>-tlocal</b></p>
+<p>•</p>
+<p><b>-tused</b></p>
+<p>•</p>
+<p><b>-tnone</b></p>
+<p><b>Programming flash from grun</b></p>
+<p>Programming flash memory from grun is no longer supported in MULTI 5. Similar</p>
+<p>functionality can be obtained by scripting the flash burn command in the debugger.</p>
+<p><i>59</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The ghexfile Utility is No Longer Available</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 10</b></p>
+<p><b>Known Issues</b></p>
+<p><b>Contents</b></p>
+<p>Installation and Licensing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Host Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Target</p>
+<p>Support</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>Toolchain Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>Target Connection Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Debugging Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>File System Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>67</p>
+<p>Miscellaneous . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Installation and Licensing</b></p>
+<p><b>Green Hills Debug Probe CD Compatibility</b></p>
+<p>Some previous revisions of the Green Hills Debug Probes software (shipped with</p>
+<p>the Green Hills Probe, SuperTrace Probe, and Slingshot) are not compatible with</p>
+<p>MULTI 5. If your Green Hills Debug Probe CD is not marked “Compatible with</p>
+<p>MULTI 5,” do not install it with MULTI 5. Contact Green Hills customer support</p>
+<p>for a replacement CD.</p>
+<p><b>Name of Install Directory Cannot Contain Spaces</b></p>
+<p>The MULTI Compiler cannot be run from a directory whose name contains spaces.</p>
+<p><b>Host Support</b></p>
+<p><b>UNC Paths Are Not Supported in the MULTI Debugger</b></p>
+<p>On Windows hosts with MULTI 6.1.4 or older, creating new projects or debugging</p>
+<p>projects over a UNC path is not supported. In general, we recommend mapping</p>
+<p>UNC paths to network drives before trying to access them in the MULTI IDE.</p>
+<p><b>UNC Paths to Virtual Machines Are Not Supported</b></p>
+<p>When remotely accessing a MULTI or Green Hills Compiler installation on a</p>
+<p>Windows virtual machine using a UNC path, you may get errors that the application</p>
+<p>could not be found or that it could not obtain a license. To work around this issue,</p>
+<p>map the path to a network drive and use the drive letter instead of the UNC path.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>62</i></p>
+<p><i>Chapter 10. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Target Support</b></p>
+<p><b>Some u-velOSity Kernel Libraries Do Not Build with Default Options</b></p>
+<p>Some kernel libraries for u-velOSity 2.2.9 do not build with the default option set.</p>
+<p>If you cannot build the u-velOSity kernel libraries:</p>
+<p>•</p>
+<p>In the following files, remove</p>
+<p>70</p>
+<p>from the list of rules specified with</p>
+<p>--saferc</p>
+<p>.</p>
+<p>If your target is a V850, V850E, or V850F, remove</p>
+<p>70</p>
+<p>and</p>
+<p>3</p>
+<p>.</p>
+<p>○</p>
+<p><b>src/kernel/libuv.gpj</b></p>
+<p>○</p>
+<p><b>src/kernel/libuv_debug.gpj</b></p>
+<p>○</p>
+<p><b>src/kernel/libuv_min.gpj</b></p>
+<p><b>Toolchain Issues</b></p>
+<p><b>Building Previous Releases of INTEGRITY or u-velOSity May Produce New</b></p>
+<p><b>Diagnostic Messages</b></p>
+<p>When building u-velOSity 2.2.9 or earlier, INTEGRITY 5, or INTEGRITY 10, the</p>
+<p>compiler may output new errors or warnings. To avoid compatibility problems, set</p>
+<p>the<b> -act_like</b> option in your Top Project to</p>
+<p>5.0</p>
+<p>.</p>
+<p>If you encounter other warnings, you may need to further adjust the compiler</p>
+<p>diagnostics options.</p>
+<p><b>No Function Prototypes For INTEGRITY 5 strdup() and strnlen()</b></p>
+<p>There are no function prototypes available for</p>
+<p>strdup()</p>
+<p>and</p>
+<p>strnlen()</p>
+<p>on</p>
+<p>INTEGRITY 5.</p>
+<p><b>gstack Provides Warnings for Green Hills Library Functions</b></p>
+<p>Some functions in the Green Hills libraries are not annotated for<b> gstack</b>. If you link</p>
+<p>your program with these libraries, you may receive warnings about these Green</p>
+<p>Hills library functions when using<b> gstack</b>.</p>
+<p><i>63</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Target Support</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>gstack Provides Warnings for INTEGRITY</b></p>
+<p>INTEGRITY has not been modified to take advantage of new<b> gstack</b> features. If</p>
+<p>you use<b> gstack</b> with an INTEGRITY program, you may receive warnings about</p>
+<p>INTEGRITY functions.</p>
+<p><b>Exported Templates With Inline Functions May Produce Incorrect Code</b></p>
+<p>If your code contains the following:</p>
+<p>•</p>
+<p>A C++</p>
+<p>extern inline</p>
+<p>function that contains a class definition that contains</p>
+<p>a static function definition that contains a static variable</p>
+<p>•</p>
+<p>C++ export templates</p>
+<p>the compiler may produce incorrect code.</p>
+<p><b>ThreadX Build Failure When Customizing Startup and System Libraries</b></p>
+<p>If using ThreadX and your project includes customizable<b> Startup</b> and<b> System</b></p>
+<p>library source code, you may get build errors like “[elxr] (error) symbol ___ghsLock</p>
+<p>multiply defined in: ...libsys.a(ind_lock.o) ...tx.a(tx_ghs.o)”. This combination is</p>
+<p>not supported.</p>
+<p><b>Non-flat Directory Structure in Multi-core Builds Causes Warnings in gcores</b></p>
+<p>If a full path is provided in the output filename of a Core or a SharedMemory, the</p>
+<p>directory component of the output filename will be truncated and a warning will</p>
+<p>be issued. Those truncated items will be generated in the project's root directory</p>
+<p>and will not be cleaned properly by the command<b> gbuild -clean</b>.</p>
+<p>For example, given the following<b> .gpj</b> corresponding to a SharedMemory subproject</p>
+<p>file:</p>
+<p>#!gbuild</p>
+<p>[SharedMemory]</p>
+<p>-o shared/shared_imp.so</p>
+<p>shared.c</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>64</i></p>
+<p><i>Chapter 10. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>The output of that build will be placed in<b> shared_imp.so</b> instead of in</p>
+<p><b>shared/shared_imp.so</b> and the following warning will be issued:</p>
+<p>gcores: warning: The path shared/shared_imp.so has</p>
+<p>been flattened to shared_imp.so.</p>
+<p><b>Output Filename in Multi-Core Builds with extension different to .mca</b></p>
+<p><b>Causes Warnings in gcores</b></p>
+<p>If the output filename (specified with the option<b> -o</b>) of a MultiCoreArchive has no</p>
+<p>extension, or the extension is different to<b> .mca</b>, the extension will automatically be</p>
+<p>set to<b> .mca</b>. That changed output will not be cleaned properly by the command</p>
+<p><b>gbuild -clean</b>.</p>
+<p>For example, if the option<b> -o demo.mcb</b> is provided in a MultiCoreArchive project</p>
+<p>file, the output filename will be changed to<b> demo.mca</b> and the following warning</p>
+<p>will be issued:</p>
+<p>gcores: warning: The output filename demo.mcb has</p>
+<p>been changed to demo.mca</p>
+<p><b>Use of -a, -p, or -pg in INTEGRITY KernelSpace Requires -Onomemfuncs</b></p>
+<p>If<b> -a</b>,<b> -p</b>, or<b> -pg</b> are used with INTEGRITY KernelSpace code,<b> -Onomemfuncs</b></p>
+<p>should be used at the same time.</p>
+<p><b>Building u-velOSity with Compiler 2014.1 or Later</b></p>
+<p>If you are building C++ applications for u-velOSity 2.2.9 or earlier with Compiler</p>
+<p>2014.1 or later, they may not link when using default compile options. You may</p>
+<p>see the following link-time error (note that filenames may vary):</p>
+<p>[elxr] (error) Possible C++ virtual function table format</p>
+<p>incompatibility between modules libuv_debug.a(ind_exit.o) and foo.o</p>
+<p>To resolve this problem, take one of the following actions:</p>
+<p><i>65</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Output Filename in Multi-Core Builds with extension different to .mca Causes Warnings in gcores</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>If you have the full version of u-velOSity, rebuild your u-velOSity libraries</p>
+<p>with Compiler 2014.1 or later. For information about rebuilding these libraries,</p>
+<p>see the<i> u-velOSity User's Guide</i>.</p>
+<p>•</p>
+<p>If you are using an evaluation version of u-velOSity, make sure to use the</p>
+<p><b>--no_large_vtbl_offsets</b> option when compiling all of your application's files.</p>
+<p><b>Target Connection Issues</b></p>
+<p><b>Flash Driver Library libflash.a Limited to Four CFI Drivers</b></p>
+<p>The flash driver library distributed with the MULTI IDE offers support for Common</p>
+<p>Flash Interface (CFI)-compatible flash devices. Drivers for these devices are</p>
+<p>configured at run time. Previous versions of<b> libflash.a</b> supported only targets with</p>
+<p>a single CFI flash device. MULTI 5 now includes support for up to four CFI flash</p>
+<p>devices. Calls to</p>
+<p>FLASH_loadDriver()</p>
+<p>on a fifth CFI flash device will return an</p>
+<p>error code. Multiple calls to</p>
+<p>FLASH_loadDriver()</p>
+<p>on a single flash base address</p>
+<p>will return the same CFI driver, even if the hardware is changed or remapped in</p>
+<p>memory. These limitations do not affect non-CFI drivers. You can force a non-CFI</p>
+<p>driver by setting the</p>
+<p>disableCFI</p>
+<p>flag in</p>
+<p>FLASH_loadDriver_2()</p>
+<p>.</p>
+<p><b>Debugging Issues</b></p>
+<p><b>Auto Trace Collection Reduces Performance</b></p>
+<p>Automatically enabled trace collection reduces the performance of simulated targets</p>
+<p>by a significant amount. This is especially noticeable with INTEGRITY simulators</p>
+<p>on Solaris.</p>
+<p>To work around this issue, disable automatic trace collection. For instructions, see</p>
+<p>the documentation about enabling and disabling trace collection in the<i> MULTI:</i></p>
+<p><i>Debugging</i> book.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>66</i></p>
+<p><i>Chapter 10. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Target Agent May Cause Failures When Programming Flash</b></p>
+<p>The MULTI<b> Fast Flash Programmer</b> dialog contains an input field for the RAM</p>
+<p>base address. During a program operation, the flash programmer downloads target</p>
+<p>agents to this address. If the memory used by the target agent conflicts with reserved</p>
+<p>memory sections, programming may fail. Error messages printed by the flash</p>
+<p>programmer may indicate that either a hardware exception was hit or the target</p>
+<p>agent stalled. Check the link map of your executable or the memory map of the</p>
+<p>board to confirm that the RAM base address entered in the flash dialog is located</p>
+<p>after the end of any reserved sections.</p>
+<p><b>References Not Available for Inlined Functions</b></p>
+<p>Issuing the<b> browseref</b> or<b> xref</b> command or right-clicking a symbol (a function,</p>
+<p>type, member, variable, etc.) and selecting<b> Browse References</b> allows you to view</p>
+<p>all references of a symbol. However, references are not stored, and consequently</p>
+<p>not displayed, for inlined functions.</p>
+<p><b>Workaround:</b> Disable inlining by compiling your program with<b> --no_inlining</b>.</p>
+<p>Note that functions defined in header files may be implicitly inlined by the compiler</p>
+<p>if this option is not used.</p>
+<p><b>Cannot Debug Executables in Eclipse Projects with a Space in the Name</b></p>
+<p>You cannot debug executables in Eclipse projects with a space in the name. Do not</p>
+<p>put a space in the name of an Eclipse project.</p>
+<p><b>File System Issues</b></p>
+<p><b>Two Dots (..) Not Supported After Symbolic Links in Paths</b></p>
+<p>MULTI and other Green Hills tools do not support paths that use two dots (</p>
+<p>..</p>
+<p>) to</p>
+<p>indicate the parent directory of a symbolic link. For example, if</p>
+<p>symlink</p>
+<p>is a</p>
+<p>symbolic link, the following paths are not supported:</p>
+<p>/projects/symlink/..</p>
+<p>/projects/symlink/foo/../../bar</p>
+<p><i>67</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Target Agent May Cause Failures When Programming Flash</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>NFS May Cause Poor Performance</b></p>
+<p>This release note applies to Linux/Solaris hosts only.</p>
+<p>MULTI tools may hang if they are accessing files over an NFS server that is slow</p>
+<p>or is not responding. In certain cases, it may not be possible to terminate them, even</p>
+<p>when using</p>
+<p>kill -9</p>
+<p>. These problems are caused by a fundamental limitation in</p>
+<p>the design and implementation of NFS.</p>
+<p><b>Workaround:</b> To help prevent these problems, eliminate references to broken file</p>
+<p>system mount points in your user configuration directory (<b>~/.ghs/*</b>) — in particular</p>
+<p>in the<b> integrity.dist</b> and/or<b> uvelosity.dist</b> files located there.</p>
+<p><b>Miscellaneous</b></p>
+<p><b>Links to Connecting Book</b></p>
+<p>The MULTI documentation set contains links to the<i> MULTI: Configuring</i></p>
+<p><i>Connections</i> book. These links are disabled for MULTI and compiler versions</p>
+<p>designated for native targets.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>68</i></p>
+<p><i>Chapter 10. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 11</b></p>
+<p><b>V850 and RH850 Release</b></p>
+<p><b>Notes</b></p>
+<p><b>Contents</b></p>
+<p>V850 and RH850 Toolchain . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>70</p>
+<p>MULTI 6.1.6 Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>88</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>V850 and RH850 Toolchain</b></p>
+<p><b>Changes and Known Issues in 2015.1</b></p>
+<p><b>Coprocessor Register Usage in the Assembler</b></p>
+<p>Coprocessor registers, such as FPU system registers, are now rejected by the</p>
+<p>assembler unless the appropriate coprocessor is enabled when building.</p>
+<p><b>Interrupt routines and nofloat and -no_callt</b></p>
+<p>Interrupt routines written in C using</p>
+<p>#pragma ghs nofloat interrupt</p>
+<p>will</p>
+<p>now avoid using the FPU registers in this release. Interrupt routines written in C</p>
+<p>compiled with the<b> -no_callt</b> option will now avoid using the CALLT-related registers</p>
+<p>in this release if they are also compiled with the<b> -ignore_callt_state_in_interrupts</b></p>
+<p>option.</p>
+<p><b>RTESERV2 Support is Deprecated</b></p>
+<p>Support for the<b> rteserv2</b> debug server is now deprecated. While the debug server</p>
+<p>is still provided with this release, it is provided on an &quot;as is&quot; basis. Customers</p>
+<p>wishing to make inquiries about future support needs for<b> rteserv2</b> should contact</p>
+<p>their local Green Hills sales office or contact Green Hills support.</p>
+<p><b>MCTL.MA Support in Startup Libraries and Simulator</b></p>
+<p>The default RH850 startup code included with the libraries (<b>crt0.800</b>) will now</p>
+<p>initialize the MCTL.MA bit to one (1) if the program is linked with<b> -misalign_pack</b>.</p>
+<p>Furthermore, the simulator will now simulate this bit to determine if the simulated</p>
+<p>RH850 processor should support a misaligned memory access or not. Code built</p>
+<p>with previous versions of the tools and expecting misaligned memory access support</p>
+<p>may require changes to enable MCTL.MA to properly simulate in this release.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>70</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>64-bit Misaligned Memory Accesses</b></p>
+<p>Previous releases did not account for the fact that 64-bit load and store instructions</p>
+<p>on RH850 devices do not support misaligned memory accesses for alignments</p>
+<p>below 32-bits, even when MCTL.MA is enabled. This release alters the behavior</p>
+<p>of the<b> -misalign_pack</b> option in the compiler to now properly account for this</p>
+<p>limitation of the RH850 hardware.</p>
+<p><b>FE-level Interrupt Support in Compiler</b></p>
+<p>The compiler now supports creation of FE-level interrupt routines. For more</p>
+<p>information, please see “Interrupt Routines” in Chapter 2, “Developing for V850</p>
+<p>and RH850” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>.</p>
+<p><b>Use of CALLT Instruction for Function Prologue</b></p>
+<p>The compiler will now make use of the</p>
+<p>CALLT</p>
+<p>instruction when support for</p>
+<p>CALLT</p>
+<p>is enabled (See “Epilogues and Prologues via callt” in Chapter 3, “Builder and</p>
+<p>Driver Options” in<i> MULTI: Building Applications for Embedded V850 and RH850</i>)</p>
+<p>and the optimization strategy is set to optimize for size. As the library routines</p>
+<p>called use the</p>
+<p>PREPARE</p>
+<p>and</p>
+<p>DISPOSE</p>
+<p>instructions, support for these must also be</p>
+<p>enabled (See “Epilogues and Prologues via prepare and dispose” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>). Furthermore, inline prologue must be disabled (See “Function</p>
+<p>Prologues” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i>).</p>
+<p><b>Placing read-only Small Data in the Zero Data Area</b></p>
+<p>The compiler now supports the<b> -rosda_is_zda</b> option to put data that would normally</p>
+<p>be allocated to the</p>
+<p>.rosdata</p>
+<p>section into</p>
+<p>.rozdata</p>
+<p>. (See “Place all read-only</p>
+<p>SDA items in ZDA instead” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i>).</p>
+<p><i>71</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2015.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>RH850G3MH and RH850G3KH support</b></p>
+<p>Support for the RH850G3MH and RH850G3KH devices are now included in this</p>
+<p>release. This includes two new CPU options (<b>-cpu=rh850g3mh</b> and</p>
+<p><b>-cpu=rh850g3kh</b> respectively) for the command line drivers<b> ccrh850</b> and<b> cxrh850</b>,</p>
+<p>the assembler<b> ease850</b> and the simulator<b> simrh850</b> (See “V850 and RH850 Processor</p>
+<p>Variants” in Chapter 2, “Developing for V850 and RH850” in<i> MULTI: Building</i></p>
+<p><i>Applications for Embedded V850 and RH850</i>).</p>
+<p><b>-EVA_load_nops is Removed</b></p>
+<p>The<b> -EVA_load_nops</b> option to control a software workaround for a hardware bug</p>
+<p>on the uPD703191Eva ICE core is no longer supported.</p>
+<p><b>Connecting to Hardware via a Remote Server</b></p>
+<p>The<b> 850eserv2</b> debug server can only directly connect to hardware on Windows.</p>
+<p>In this release it is now possible to connect indirectly from a non-Windows host,</p>
+<p>such as Linux, by using<b> 850eserv2_server</b> on Windows and<b> 850eserv2</b> on the other</p>
+<p>host. For more information, see “Connecting Through a Remote Server</p>
+<p>(850eserv2_server)” in Chapter 3, “Renesas V850/V850E ICE (850eserv2)</p>
+<p>Connections” in<i> MULTI: Configuring Connections for V850 and RH850 Targets</i>.</p>
+<p><b>New Project Wizard support for iev850e is Removed</b></p>
+<p>The New Project Wizard no longer supports the iev850e board (</p>
+<p>-bsp=iev850e</p>
+<p>).</p>
+<p>Compiler and debugger support for the v850e processor is unchanged.</p>
+<p><b>Trace can restart when using Stop Trace triggers</b></p>
+<p>Stop Trace triggers on hardware are implemented using section trace, which requires</p>
+<p>both a starting address and ending address. The current PC is used for the starting</p>
+<p>address when setting a Stop Trace trigger. Trace will stop as expected when the</p>
+<p>ending address is hit, but if the starting address is hit again after that point (if it is</p>
+<p>in a loop, for example) then trace will be reenabled.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>72</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>-asm_far_jumps is Removed</b></p>
+<p>The<b> -asm_far_jumps</b> option to the assembler is no longer supported.</p>
+<p><b>Passing structures to functions</b></p>
+<p>Structures that are passed to functions by value may be in registers (if available) or</p>
+<p>on the stack. A structure with 64-bit alignment will be passed at a 64-bit aligned</p>
+<p>address. When passed in registers, such a structure will start in an even register,</p>
+<p>which may result in a register being skipped. Since how the structure is passed is</p>
+<p>dependent on the alignment of the type, it can change with the use of structure</p>
+<p>packing options and pragma directives.</p>
+<p><b>Support for Additional SDA Registers</b></p>
+<p>The toolchain now supports using up to five additional SDA registers. This is</p>
+<p>controlled via the<b> -additional_sda_reg</b>=<i>n</i> and<b> -additional_sda_common</b> options.</p>
+<p>See “Specifying Additional Registers for Special Data Areas” in Chapter 2,</p>
+<p>“Developing for V850 and RH850” in<i> MULTI: Building Applications for Embedded</i></p>
+<p><i>V850 and RH850</i> for more information.</p>
+<p><b>Support for RAM initialization at Startup</b></p>
+<p>The toolchain now supports initializing RAM at startup. This is controlled via the</p>
+<p><b>-init_ram_at_startup</b> and<b> -ram_init_val</b>=<i>value</i> options. See “Run-Time RAM</p>
+<p>Initialization and RAM Initialization Table” in Chapter 9, “The elxr Linker” in</p>
+<p><i>MULTI: Building Applications for Embedded V850 and RH850</i> for more information.</p>
+<p><b>Changes and Known Issues in 2014.1</b></p>
+<p><b>Memory Clearing Optimization Control</b></p>
+<p>An optimization that changes</p>
+<p>memset()</p>
+<p>filled with zeros to optimized calls to</p>
+<p>memclr()</p>
+<p>can now be controlled using the<b> -Omemclr</b> and<b> -Onomemclr</b> options.</p>
+<p>For more information, see “Convert C Memset to Memclr” in Chapter 3, “Builder</p>
+<p><i>73</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2014.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>and Driver Options” in<i> MULTI: Building Applications for Embedded V850 and</i></p>
+<p><i>RH850</i>.</p>
+<p><b>Check Incompatible RH850 ABI flags</b></p>
+<p><b>-check_rh850_abi_flags</b> is now turned ON by default for checking incompatible</p>
+<p>RH850 ABI flags in the linker. This is a change of behavior from 2013.5 where the</p>
+<p>feature is turned off by default. To turn off the check, pass</p>
+<p><b>-no_check_rh850_abi_flags</b>.</p>
+<p><b>-cpu=v850e3v5 now implies RH850G3M</b></p>
+<p>Selecting V850E3V5 as the target CPU will now assume the target is an RH850G3M</p>
+<p>device. This is a change of behavior from 2013.5 where the target was assumed to</p>
+<p>be an RH850G3K device.</p>
+<p><b>Software Trace Load Address Logging Support</b></p>
+<p>The RH850 software trace support has been extended to support automatically</p>
+<p>logging the addresses of loads, excluding those known to be from the stack. Please</p>
+<p>refer to “Logging Load Addresses” in Chapter 2, “Developing for V850 and RH850”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i> for more details.</p>
+<p><b>New Project Wizard Support for RH850/E1x-fcc1</b></p>
+<p>The New Project Wizard now has support for the RH850/E1x-fcc1 board. The</p>
+<p>corresponding command line option is</p>
+<p>-bsp=rh850_e1x_fcc1</p>
+<p>. This board has</p>
+<p>two cores, and the linker directives file can be used for either core, as well as for</p>
+<p>memory shared by the two cores. The memory layout of the directives file is</p>
+<p>controlled by the preprocessor macros</p>
+<p>__ghs_GC_core_1__</p>
+<p>,</p>
+<p>__ghs_GC_core_2__</p>
+<p>, and</p>
+<p>__ghs_GC_shared__</p>
+<p>, which specify a layout for core</p>
+<p>1, core 2, and shared memory, respectively. If none of the preprocessor macros are</p>
+<p>defined, the memory layout maximizes the memory available for the first core.</p>
+<p>Both cores of this board must be running in order for either to advance, even if code</p>
+<p>is only built and downloaded for a single core. In order to facilitate debugging in</p>
+<p>this case, a new option is supported in 850eserv2. The options</p>
+<p>-force_coreid=0</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>74</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>or</p>
+<p>-force_coreid=1</p>
+<p>can be used to make the board act like a single-core board</p>
+<p>(using just the first or second core, respectively).</p>
+<p><b>IECUBE2 Support for RH850/E1x-fcc1</b></p>
+<p>The 850eserv2 debug server in this release can be used to connect to an IECUBE2</p>
+<p>with an RH850/E1x-fcc1 emulation pod. The RH850/E1x-fcc1 New Project Wizard</p>
+<p>entry (</p>
+<p>-bsp=rh850_e1x_fcc1</p>
+<p>) can be used with this configuration. The connection</p>
+<p>options for 850eserv2 must be edited to use IECUBE as the debug type. The</p>
+<p>corresponding command line will be similar to the following:</p>
+<p>connect 850eserv2 -rh850 -iecube \</p>
+<p>-df=c:/ghs/comp_201413/rh850/dr7f701z07.dvf \</p>
+<p>-dclock=20000,0,swoff -id ffffffffffffffffffffffffffffffff \</p>
+<p>-fastflashload</p>
+<p><b>New Project Wizard Support for RH850/P1x</b></p>
+<p>The New Project Wizard now has support for the RH850/P1x board. The</p>
+<p>corresponding command line option is</p>
+<p>-bsp=rh850_p1x</p>
+<p>. There is a known</p>
+<p>hardware problem with this board that can make it sometimes fail to connect with</p>
+<p>850eserv2. For best results, the board should be powered with an external power</p>
+<p>supply, as opposed to through the E1 probe. When the board fails to connect, MULTI</p>
+<p>displays a message similar to the following:</p>
+<p>RSU info write error 0xca5: fatal err (could not connect to target)</p>
+<p>Please check target connection and main clock specified with -dclock.</p>
+<p>This connection failure is intermittent, and may succeed if tried again.</p>
+<p><b>Library change for __mcopy</b></p>
+<p>The</p>
+<p>__mcopy</p>
+<p>support routine has been moved from</p>
+<p>libarch.a</p>
+<p>to</p>
+<p>libstartup.a</p>
+<p>.</p>
+<p>Under some circumstances, this may result in a linker error similar to the following</p>
+<p>when building a project that was created with previous versions of the tools and</p>
+<p>that rebuild</p>
+<p>libstartup.a</p>
+<p>from source:</p>
+<p>[elxr] (error) unresolved symbols: 1</p>
+<p>___mcopy</p>
+<p>from libfmalloc.a(ccmalloc.o)</p>
+<p><i>75</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2014.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>To fix this issue, replace the copy of</p>
+<p>ind_mcpy.800</p>
+<p>in the project with an updated</p>
+<p>one from the new release.</p>
+<p><b>Data trace triggers on RH850</b></p>
+<p>Qualifying trace based on data read/write events is now supported on RH850.</p>
+<p>However, unlike on other boards, all PC trace data will be generated when qualifying</p>
+<p>trace on data events. Only the data trace will be qualified based on the trigger. To</p>
+<p>achieve a result equivalent to that on other boards, disable</p>
+<p>'Trace PC'</p>
+<p>and enable</p>
+<p>'Trace Data Access PC'</p>
+<p>in the trace options.</p>
+<p><b>Renesas RH850/E1x-fcc1 Data Trace</b></p>
+<p>The data trace packets that are generated for the</p>
+<p>PREPARE</p>
+<p>instruction by the</p>
+<p>RH850/E1x-fcc1 hardware are sometimes not correct. When multiple registers are</p>
+<p>stored to the stack with this instruction, the trace information does not always include</p>
+<p>packets for all of the stores, and may have the wrong value for some registers. This</p>
+<p>incorrect trace data can interfere with register reconstruction in TimeMachine.</p>
+<p><b>-no_prepare_dispose and -callt</b></p>
+<p>When<b> -no_prepare_dispose</b> and<b> -callt</b> are both enabled (the default for V850E),</p>
+<p>the compiler now will not use the</p>
+<p>CALLT</p>
+<p>instruction function prologues and epilogues</p>
+<p>that use the</p>
+<p>PREPARE</p>
+<p>/</p>
+<p>DISPOSE</p>
+<p>instruction for space-saving optimization. This may</p>
+<p>impact the code size for<b> -Osize</b> when<b> -no_prepare_dispose</b> and<b> -callt</b> are enabled.</p>
+<p><b>Changes and Known Issues in 2013.5</b></p>
+<p><b>gsrec now supports multi-core archives</b></p>
+<p><b>gsrec</b> now supports operating on multi-core archives created by the<b> gcores</b> utility</p>
+<p>to produce HEX and S-Record files. Please see “GCores Generate Additional</p>
+<p>Output” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications</i></p>
+<p><i>for Embedded V850 and RH850</i> for more information.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>76</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>AUTOSAR and OSEK Operating System Awareness</b></p>
+<p>Provides operating systems awareness (OSA) for ORTI-enabled operating systems</p>
+<p>such as many AUTOSAR and OSEK operating systems. See its documentation in</p>
+<p>“AUTOSAR and OSEK Operating System Awareness” in Chapter 11, “Utility</p>
+<p>Programs” in<i> MULTI: Building Applications for Embedded V850 and RH850</i> for</p>
+<p>more information.</p>
+<p><b>Interrupt routines and nofloat and -no_callt</b></p>
+<p>Interrupt routines written in C using</p>
+<p>#pragma ghs nofloat interrupt</p>
+<p>or</p>
+<p><b>-no_callt</b> build option should be built with the<b> -inline_prologue</b> build option.</p>
+<p>Otherwise library routines may be used to save and restore registers, and these</p>
+<p>routines will save and restore system registers relating to the FPU and to the call</p>
+<p>table unconditionally.</p>
+<p><b>Software Trace Logging Support</b></p>
+<p>Support for the software trace functionality of the RH850 family of processors has</p>
+<p>been added in this release. Please refer to “Software Trace Logging Support” in</p>
+<p>Chapter 2, “Developing for V850 and RH850” in<i> MULTI: Building Applications</i></p>
+<p><i>for Embedded V850 and RH850</i> for more details.</p>
+<p><b>Preventing the use of double-precision floating point</b></p>
+<p>Two new options have been added to give users greater control over restricting the</p>
+<p>usage of double-precision floating point in their programs. Please refer to “Warn</p>
+<p>for types double or long double” in Chapter 3, “Builder and Driver Options” in</p>
+<p><i>MULTI: Building Applications for Embedded V850 and RH850</i> and “Do not allow</p>
+<p>types double or long double” in Chapter 3, “Builder and Driver Options” in<i> MULTI:</i></p>
+<p><i>Building Applications for Embedded V850 and RH850</i> for more details.</p>
+<p><b>gcores -target option deprecated</b></p>
+<p>For users of the<b> gcores</b> utility, the<b> -target</b> option has been deprecated. Using it will</p>
+<p>result in an error or warning. Users should instead use the new<b> -driver</b> option. For</p>
+<p>more information about this new option, please refer to“GCores Driver” in Chapter 3,</p>
+<p><i>77</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2013.5</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i>.</p>
+<p><b>RH850G3x loss of target control with some trace options</b></p>
+<p>For RH850 hardware with 850eserv2, if the &quot;Real-Time Trace Mode&quot; option is</p>
+<p>disabled and either the &quot;When Trace Buffer Fills Since Last Halt&quot; option is set to</p>
+<p>&quot;Stop Trace&quot; or a Delay Trace trigger is set and &quot;When Delay Trigger is Hit&quot; is set</p>
+<p>to &quot;Stop Trace at Delay Trigger&quot;, control of the target may be lost. This is due to a</p>
+<p>limitation of the current hardware. If the problem comes up, disconnect from</p>
+<p>850eserv2, power cycle the target, and reconnect to 850eserv2.</p>
+<p><b>Name change from RH850/F1A to RH850/F1L</b></p>
+<p>The New Project Wizard now refers to the RH850/F1L board, not the RH850/F1A.</p>
+<p>The corresponding command line option is</p>
+<p>-bsp=rh850_f1l</p>
+<p>.</p>
+<p><b>Changes and Known Issues in 2013.1</b></p>
+<p><b>RH850G3x support</b></p>
+<p>Support for the RH850G3K, RH850G3M and RH850G3H devices is now included</p>
+<p>in this release. The previous RH850 setting available in 2012.5 (<b>-cpu=rh850</b>) is</p>
+<p>now treated as an RH850G3K (same as<b> -cpu=rh850g3k</b>). When connecting to the</p>
+<p>simulator or other debug server targeting the RH850G3H or RH850G3K, the</p>
+<p>debugger may still report them as the RH850G3M. This does not affect support for</p>
+<p>these devices, and will change in a future release to reflect the correct CPU. When</p>
+<p>using the<b> ccrh850</b> driver, if no CPU is specified on the command line, then the</p>
+<p>default setting will be RH850G3K. Please note that whenever the CPU is specified</p>
+<p>as RH850G3K, software floating-point will be enabled by default (<b>-fsoft</b>). To enable</p>
+<p>hardware floating-point instead, please specify<b> -fhard</b> or<b> -fsingle</b> as appropriate</p>
+<p>for your floating-point unit. Please refer to “Floating-Point Mode” in Chapter 3,</p>
+<p>“Builder and Driver Options” in<i> MULTI: Building Applications for Embedded V850</i></p>
+<p><i>and RH850</i> for more details on these FPU settings.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>78</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>RH850G3x trace support</b></p>
+<p>The<b> 850eserv2</b> debug server included in this release supports the collection of trace</p>
+<p>from trace-enabled hardware using the Renesas E1 emulator. For multi-core</p>
+<p>configurations, the debug server currently has the limitation that any trace</p>
+<p>configuration setting made will affect all cores. Per-core trace setting support is</p>
+<p>planned for a future release. Multi-core trace support is also included in this release,</p>
+<p>however, it is provided in preliminary form only, and should be considered alpha</p>
+<p>release quality.</p>
+<p><b>RH850G3x loss of target control with some trace options</b></p>
+<p>For RH850 hardware with 850eserv2, if the &quot;Real-Time Trace Mode&quot; option is</p>
+<p>disabled and either the &quot;When Trace Buffer Fills Since Last Halt&quot; option is set to</p>
+<p>&quot;Stop Trace&quot; or a Delay Trace trigger is set and &quot;When Delay Trigger is Hit&quot; is set</p>
+<p>to &quot;Stop Trace at Delay Trigger&quot;, control of the target may be lost, and attempting</p>
+<p>to halt would give errors such as &quot;user system err (cannot break)&quot;. This is due to a</p>
+<p>limitation of the current version of the Renesas EXEC library shipped with this</p>
+<p>release. If the problem comes up, disconnect from 850eserv2, power cycle the target,</p>
+<p>and reconnect to 850eserv2. This will be resolved in a future release of the Renesas</p>
+<p>EXEC library. Users experiencing this problem should contact support@ghs.com</p>
+<p>to see if an updated Renesas EXEC library patch is available.</p>
+<p><b>PUSHSP/POPSP support</b></p>
+<p>The options<b> -push_pop</b> and<b> -no_push_pop</b> have been added to control the compiler's</p>
+<p>use of the</p>
+<p>PUSHSP</p>
+<p>and</p>
+<p>POPSP</p>
+<p>instructions. See “Use pushsp and popsp instructions”</p>
+<p>in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications for</i></p>
+<p><i>Embedded V850 and RH850</i> for more information.</p>
+<p><b>PREPARE/DISPOSE support</b></p>
+<p>The option<b> -prepare_dispose</b> is now on by default whenever the option<b> -no_callt</b></p>
+<p>is used. This represents a change from previous default behavior. See “Epilogues</p>
+<p>and Prologues via prepare and dispose” in Chapter 3, “Builder and Driver Options”</p>
+<p>in<i> MULTI: Building Applications for Embedded V850 and RH850</i> for more</p>
+<p>information.</p>
+<p><i>79</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2013.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>SIMD support in interrupt routines</b></p>
+<p>The compiler in this release does not generate code to save or restore the SIMD</p>
+<p>coprocessor state for interrupt routines. Interrupt routines should either not modify</p>
+<p>the SIMD coprocessor state, or should use assembly code to manually save its state</p>
+<p>beforehand.</p>
+<p><b>FPU version 3 support</b></p>
+<p>The version 3 FPU supported on most RH850 devices is now supported and enabled</p>
+<p>by default when compiling for RH850 devices. Users who are using an</p>
+<p>early-generation RH850 device may need to enable the legacy version 2 FPU support.</p>
+<p>Consult your device manual for more information. For information about how to</p>
+<p>enable the legacy FPU support, please see “Use FPU 3.0 instructions (RH850 and</p>
+<p>later)” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications</i></p>
+<p><i>for Embedded V850 and RH850</i> for more information.</p>
+<p><b>Coprocessor initialization</b></p>
+<p>The compiler library startup code for RH850 processors will now initialize the</p>
+<p>PSW.CU0 and PSW.CU1 register fields to enable these coprocessors on</p>
+<p>implementations which support them.</p>
+<p><b>Legacy simulator for V850 and RH850 (sim850)</b></p>
+<p>The legacy<b> sim850</b> simulator has been discontinued. It has been replaced with the</p>
+<p>new multi-core simulator for V850 and RH850,<b> simrh850</b>. A<b> sim850</b> executable</p>
+<p>is still included in this release for compatibility with project connections from</p>
+<p>previous releases. However, it simply invokes<b> simrh850</b> with the appropriate</p>
+<p>options. Users should transition existing projects from previous releases to use the</p>
+<p>new simulator. The new simulator, in addition to full multi-core and shared memory</p>
+<p>support, is also significantly faster at simulation than the legacy simulator. For more</p>
+<p>information about using the new simulator, please refer to Chapter 5, “Multi-core</p>
+<p>Simulator for V850 and RH850 (simrh850) Connections” in<i> MULTI: Configuring</i></p>
+<p><i>Connections for V850 and RH850 Targets</i>.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>80</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>simrh850 coprocessor simulation</b></p>
+<p>The<b> simrh850</b> simulator now simulates the coprocessor fields of the PSW register</p>
+<p>available on RH850 processors, specifically the PSW.CU0 and PSW.CU1 fields.</p>
+<p>By default, the simulator will rely on information provided by the compiler in the</p>
+<p>ELF file to set determine whether or not it will simulate the appropriate coprocessor</p>
+<p>as enabled or disabled. If the coprocessors are disabled and an associated coprocessor</p>
+<p>instruction is encountered, the simulator will simulate a coprocessor exception and</p>
+<p>print and error. Users can forcefully disable the coprocessors in the simulator using</p>
+<p>the<b> -fpu=none</b> and<b> -no_rh850_simd</b> options. Please refer to Chapter 5, “Multi-core</p>
+<p>Simulator for V850 and RH850 (simrh850) Connections” in<i> MULTI: Configuring</i></p>
+<p><i>Connections for V850 and RH850 Targets</i> for more details.</p>
+<p><b>simrh850 hyper-threading simulation</b></p>
+<p>The<b> simrh850</b> simulator now reflects recent changes to the RH850 specification</p>
+<p>and resets the HTSCCTL.RND register field to zero. In previous releases it was</p>
+<p>reset to</p>
+<p>0x3F</p>
+<p>. Users of previous releases should take care to ensure they initialize</p>
+<p>this register appropriately.</p>
+<p><b>Extended GNU asm support in V850 and RH850</b></p>
+<p>The option<b> --gnu_asm</b> is supported and enabled by default. See Chapter 19, “GNU</p>
+<p>Extended Assembly” in<i> MULTI: Building Applications for Embedded V850 and</i></p>
+<p><i>RH850</i> for more information.</p>
+<p><b>Renesas RH850 E1x connections</b></p>
+<p>The New Project Wizard does not support the multi-core E1x board. To connect to</p>
+<p>the board, invoke 850eserv2 with options similar to the following:</p>
+<p>connect 850eserv2 -rh850 -e1lpd4=11000 \</p>
+<p>-df=c:/ghs/comp_201315/rh850/dr7f701z006ebg.dvf \</p>
+<p>-dclock=4000,0,swoff -id ffffffffffffffffffffffffffffffff \</p>
+<p>-fastflashload</p>
+<p><i>81</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2013.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Renesas RH850 Data Trace</b></p>
+<p>Trace packets for loads and stores can sometimes be dropped or issued out-of-order</p>
+<p>by the hardware, resulting in data trace packets that cannot be correlated with the</p>
+<p>appropriate instructions in the trace list.</p>
+<p><b>Stop Execution on Trace Buffer Full for Renesas RH850 E1x</b></p>
+<p>When the Buffer Full trace option is set to Stop Execution on the multi-core E1x</p>
+<p>board, the behavior is unreliable. Sometimes both cores halt with a full trace buffer</p>
+<p>message at the same time, but other times only a single core will display the full</p>
+<p>trace buffer message. Retrieving trace in the latter case can lead to problems with</p>
+<p>decoding the data.</p>
+<p><b>Trace Delay Triggers Across System Calls</b></p>
+<p>When a trace delay trigger is set to disable trace for a certain condition, such as</p>
+<p>execution of a specific address, trace may be re-enabled upon execution of a system</p>
+<p>call (for example, during printf). This may lead to the trace list containing extra</p>
+<p>instructions or overflowing.</p>
+<p><b>Errors when re-enabling trace on multi-core E1x board</b></p>
+<p>On the multi-core E1x board, when trace is manually disabled and re-enabled</p>
+<p>repeatedly, it is possible to get an error from 850eserv2 like the following:</p>
+<p>Target: BRS condition write error 0x404: param err (event num overflow)</p>
+<p><b>Changes and Known Issues in 2012.5</b></p>
+<p><b>RH850 Support</b></p>
+<p>Full support for the RH850 processor family is included in this release. This includes</p>
+<p>new CPU options (<b>-cpu=rh850</b>), new command line drivers (<b>ccrh850</b> and<b> cxrh850</b>)</p>
+<p>and a new simulator (<b>simrh850</b>). The new simulator supports multi-core simulation</p>
+<p>of the V850 and RH850 processors, as well as simulation of hyper-threading on</p>
+<p>RH850 processors. See Part I. Using the MULTI Compiler in<i> MULTI: Building</i></p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>82</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><i>Applications for Embedded V850 and RH850</i> and Chapter 5, “Multi-core Simulator</p>
+<p>for V850 and RH850 (simrh850) Connections” in<i> MULTI: Configuring Connections</i></p>
+<p><i>for V850 and RH850 Targets</i> for more details.</p>
+<p><b>Multi-core Support</b></p>
+<p>Multi-core building and debugging is supported in this release. This includes the</p>
+<p>new utility program<b> gcores</b>, the new driver options:<b> -exportall</b> and</p>
+<p><b>-exported_absolutes_only</b>, the new project files types: MultiCoreArchive, Core</p>
+<p>and SharedMemory. See “The gcores Utility Program” in Chapter 11, “Utility</p>
+<p>Programs” in<i> MULTI: Building Applications for Embedded V850 and RH850</i> for</p>
+<p>more information about building for multiple cores. Multi-core debugging is</p>
+<p>supported in the new MULTI provided in this release, including as well a new</p>
+<p>configuration file type<b> .ghsmc</b>. Please see “Multi-Core Debugging” in Chapter 25,</p>
+<p>“Freeze-Mode Debugging and OS-Awareness” in<i> MULTI: Debugging</i> for more</p>
+<p>detailed information.</p>
+<p><b>V850 and RH850 Target Connections</b></p>
+<p>Renesas E1 Emulator support in 850eserv2</p>
+<p>E1 Emulator support in 850eserv2 is included in this release. See Chapter 3, “Renesas</p>
+<p>V850/V850E ICE (850eserv2) Connections” in<i> MULTI: Configuring Connections</i></p>
+<p><i>for V850 and RH850 Targets</i> for more details.</p>
+<p>Renesas V850/V850E ICE connections (850eserv2)</p>
+<p>In the Connection Editor, selecting the box labeled “Write 0's into BSS section”</p>
+<p>has no effect.</p>
+<p>When initially connecting to 850eserv2, if you abort the connection attempt, the</p>
+<p>target hardware may need to be power-cycled before you can connect to it again.</p>
+<p><i>83</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2012.5</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Limitation in Retrieve Trace when Buffer Fills Option</p>
+<p>The trace option “Retrieve trace when buffer fills” has a limitation for V850 targets</p>
+<p>that trace might not be stopped immediately when the buffer fills. This means that</p>
+<p>some trace from the beginning of the buffer may be missing.</p>
+<p>Some unsupported trace trigger conditions shown for IECUBE2</p>
+<p>For trace on IECUBE2, the<b> Set Triggers</b> window shows some trigger conditions</p>
+<p>that are not supported by the hardware. Selecting a condition that involves data</p>
+<p>reads or writes such as<b> Data Written</b> will result in an error message like “Trace</p>
+<p>event write error 0xc60: param err (invalid event condition)”.</p>
+<p>Problem When Using Section Sub-Switch Off to Enable Trace</p>
+<p>For trace with the Midas ICE, e.g., for the KIT-V850E2/MN4, using the Section</p>
+<p>Sub-Switch Off trace options to enable PC or data trace does not work properly.</p>
+<p>Some instructions/data will not appear while Section Sub-Switch is Off.</p>
+<p>SuperTrace Probe with Renesas IE Cube Deprecated</p>
+<p>Support for using a SuperTrace Probe to collect trace from a Renesas IE Cube is</p>
+<p>deprecated in this release and may be removed from a future release.</p>
+<p><b>V850 and RH850 Debugging</b></p>
+<p>Spawn Window Script</p>
+<p>A new Python script allows you to spawn a Debugger window for a target listed in</p>
+<p>the current Debugger window. If the new Debugger window is spawned for the</p>
+<p>currently selected target, the script attempts to select a different target in the target</p>
+<p>list.</p>
+<p>You can specify the script with or without a target name. If specified without a</p>
+<p>target name, it is applied to the currently selected target.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>84</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>You can either use the script as a script or you can import and run it. To run it as a</p>
+<p>script from the Debugger command pane, enter:</p>
+<p>py -f<i> compiler_installation</i>/python/ghs_examples/spawn/spawn.py</p>
+<p>or</p>
+<p>py -f<i> compiler_installation</i>/python/ghs_examples/spawn/spawn.py \</p>
+<p><i>target_name</i></p>
+<p>To import and run it from a script, from the<b> Py</b> pane, the<b> Py Window</b>, or the</p>
+<p><b>MULTI-Python GUI</b>, use:</p>
+<p>sys.path.append(&quot;<i>compiler_installation</i>/python/ghs_examples/spawn&quot;);</p>
+<p>import spawn;</p>
+<p>spawn.spawn();</p>
+<p>or</p>
+<p>spawn.spawn(&quot;<i>target_name</i>&quot;);</p>
+<p><b>Changes and Known Issues in 2012.1</b></p>
+<p><b>Improvements to V850E CALLT usage</b></p>
+<p>In previous releases of the tools the compiler would, when compiled with -callt (the</p>
+<p>default), optionally use the CALLT instruction for certain prologue and epilogue</p>
+<p>space-saving optimizations. The use of this instruction, and the method with which</p>
+<p>it is implemented, has changed. This creates some important noteworthy differences</p>
+<p>in this release that customers making use of this feature should be aware of. Please</p>
+<p>see “Generate a backwards-compatible (MULTI 5.1.x and earlier) call table in the</p>
+<p>linker” in Chapter 3, “Builder and Driver Options” in<i> MULTI: Building Applications</i></p>
+<p><i>for Embedded V850 and RH850</i> and “Function Call Pragma Directives” in Chapter 2,</p>
+<p>“Developing for V850 and RH850” in<i> MULTI: Building Applications for Embedded</i></p>
+<p><i>V850 and RH850</i> for more details.</p>
+<p><i>85</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2012.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>V850 Global Registers (-globalreg)</b></p>
+<p>The V850 global registers (those declared with the “register” keyword) are always</p>
+<p>r20-r24; previous release notes indicated additional registers may be used, but that</p>
+<p>is no longer the case.</p>
+<p><b>V850E1F Signed Zero Treatment</b></p>
+<p>A new driver option has been added to the tools as of MULTI 5 which provides</p>
+<p>some control over the treatment of floating point zero values. This option is</p>
+<p>-precise_signed_zero_compare and its corresponding antithesis</p>
+<p>-no_precise_signed_zero_compare. The behavior of the compiler for the V850E1F</p>
+<p>architecture in older versions of the compiler does not correspond to the default</p>
+<p>value of this new option. Users wishing to revert to previous behavior should use</p>
+<p>-no_precise_signed_zero_compare. Users should consult their manual before</p>
+<p>enabling this option so that they are fully aware of the consequences of its use.</p>
+<p><b>V850 TDA Support</b></p>
+<p>-notda is now the default compilation mode with V850. The linker will give an error</p>
+<p>when a user attempts to link a module compiled with -notda together with one that</p>
+<p>uses the TDA.</p>
+<p>Users migrating from older releases who want to use TDA should compile with</p>
+<p>-single_tda</p>
+<p><b>EP Register Usage</b></p>
+<p>-notda is now the default compilation mode with V850. See the note above on V850</p>
+<p>TDA Support.</p>
+<p>Additionally, -allocate_ep is also now the default compilation mode with V850. In</p>
+<p>this mode, EP is allocated to as a temporary register.</p>
+<p>Users migrating from older releases who want to disable TDA and limit the use of</p>
+<p>the EP register should compile with -no_allocate_ep.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>86</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Force Save/Restore of R4/R5 for Interrupt Service Routines</b></p>
+<p>It is now possible to force the save and subsequent restore of the small data area</p>
+<p>(SDA) and read-only small data area (ROSDA) base registers (r4 and r5) during</p>
+<p>the prologue and epilogue of interrupt service routines. A new command line driver</p>
+<p>option<b> -v850_isr_save_r4r5</b> enables this behavior. This behavior is off by default.</p>
+<p>Earlier releases of the V850 tools would save and restore these registers under</p>
+<p>certain circumstances. As that was a violation of the ABI, and resulted in inefficient</p>
+<p>code generation, that behavior was removed. However, customers who relied on</p>
+<p>this behavior can use this new option to retain this previous behavior. Most customers</p>
+<p>will not need to use this option.</p>
+<p><b>V850E and Later C/C++ Interrupt Routines Compiled with -no_callt</b></p>
+<p>In previous releases, a library compatibility issue existed when compiling a C/C++</p>
+<p>interrupt routine with the<b> -no_callt</b> driver option, the<b> -Osize</b> size optimization, and</p>
+<p>the default<b> -no_inline_prologue</b> driver option enabled. This issue was addressed</p>
+<p>in MULTI 5, but requires that C/C++ interrupt routines built with these options and</p>
+<p>targeting V850E and later cores be recompiled to ensure compatibility with libraries</p>
+<p>going forward.</p>
+<p>For reference, C/C++ interrupt routines are those routines declared with the</p>
+<p>__interrupt</p>
+<p>keyword or the</p>
+<p>#pragma ghs interrupt</p>
+<p>pragma.</p>
+<p><b>V850E -no_v850e_mul_errata Option</b></p>
+<p>When targeting the V850E processor (<b>-cpu=v850e</b>), the compiler does not by default</p>
+<p>emit instructions of the following forms:</p>
+<p>mul<i> reg1</i>,<i> reg2</i>,<i> reg3</i></p>
+<p>mulu<i> reg1</i>,<i> reg2</i>,<i> reg3</i></p>
+<p>mul imm1,<i> reg2</i>,<i> reg3</i></p>
+<p>mulu imm1,<i> reg2</i>,<i> reg3</i></p>
+<p>where<i> reg3</i> is</p>
+<p>r0</p>
+<p>, or<i> reg2</i> is the same as<i> reg3</i>. This is to work around an erratum</p>
+<p>with the V850ES implementation.</p>
+<p>The assembler and linker flag any occurrences of the above instructions, but do not</p>
+<p>attempt to change them.</p>
+<p><i>87</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Known Issues in 2012.1</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>To disable both the checks in the assembler and linker, and the compiler's avoidance</p>
+<p>of these instructions, specify the<b> -no_v850e_mul_errata</b> driver option.</p>
+<p><b>MULTI 6.1.6 Compatibility</b></p>
+<p>This Compiler release should be used with the version of MULTI provided on this</p>
+<p>CD , the SH CD or the TriCore CD. If you have MULTI 6.1.6 installed from a</p>
+<p>previous version of V800 , SH or TriCore Compiler 2014.1, ARM, Power, Coldfire,</p>
+<p>Solaris native or x86 platforms Compiler 2014.1, you can install a patch to MULTI</p>
+<p>to make it compatible with this release, using the following steps:</p>
+<p>•</p>
+<p>Completely exit the MULTI IDE before applying the patch.</p>
+<p>•</p>
+<p>Change into the<b> multi-v6.1.6-patch</b> directory on the CD.</p>
+<p>•</p>
+<p>Run<b> install.bat</b> (on Windows) or<b> install.sh</b> (on Linux or Solaris).</p>
+<p>•</p>
+<p>When prompted for an Installation Directory, enter your existing MULTI</p>
+<p>installation directory.</p>
+<p><i>MULTI Compiler 2015.1 Release Notes for Embedded V850 and RH850</i></p>
+<p><i>88</i></p>
+<p><i>Chapter 11. V850 and RH850 Release Notes</i></p>
+</body>
+</html>
+{% endraw %}

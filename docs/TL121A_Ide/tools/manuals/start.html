@@ -1,0 +1,1180 @@
+---
+layout: default
+title: start
+nav_order: 17
+parent: Ide (TL121A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>MULTI: Getting Started</b></p>
+<p><b>Green Hills Software</b></p>
+<p><b>30 West Sola Street</b></p>
+<p><b>Santa Barbara, California 93101</b></p>
+<p><b>USA</b></p>
+<p><b>Tel: 805-965-6044</b></p>
+<p><b>Fax: 805-965-6343</b></p>
+<p><b>www.ghs.com</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>DISCLAIMER</b></p>
+<p>GREEN HILLS SOFTWARE MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY</p>
+<p>OR FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software reserves the right to revise this</p>
+<p>publication and to make changes from time to time in the content hereof without obligation of Green Hills Software to</p>
+<p>notify any person of such revision or changes.</p>
+<p>Copyright © 1983-2014 by Green Hills Software. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or</p>
+<p>otherwise, without prior written permission from Green Hills Software.</p>
+<p>Green Hills, the Green Hills logo, CodeBalance, GMART, GSTART, INTEGRITY, MULTI, and Slingshot are registered</p>
+<p>trademarks of Green Hills Software. AdaMULTI, Built with INTEGRITY, EventAnalyzer, G-Cover, GHnet, GHnetLite,</p>
+<p>Green Hills Probe, Integrate, ISIM, u-velOSity, PathAnalyzer, Quick Start, ResourceAnalyzer, Safety Critical Products,</p>
+<p>SuperTrace Probe, TimeMachine, TotalDeveloper, DoubleCheck, and velOSity are trademarks of Green Hills Software.</p>
+<p>All other company, product, or service names mentioned in this book may be trademarks or service marks of their respective</p>
+<p>owners.</p>
+<p>PubID: start-506382</p>
+<p>Branch: http://toolsvc/branches/release-branch-60</p>
+<p>Date: April 24, 2014</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Contents</b></p>
+<p><b>Preface</b></p>
+<p><b>v</b></p>
+<p>About This Book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>vi</p>
+<p>The MULTI 6 Document Set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>vii</p>
+<p>Conventions Used in the MULTI Document Set . . . . . . . . . . . . . . . . . . . .</p>
+<p>viii</p>
+<p><b>1. Introduction</b></p>
+<p><b>1</b></p>
+<p>The MULTI Integrated Development Environment . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>MULTI Launcher . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Editing Tools . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Building Tools . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Debugging Tools . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Administrative Tools . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>The MULTI Launcher . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>MULTI Workspaces . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Accessing Online Help . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Full Online Manuals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Context-Sensitive Help . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Command, Configuration Option, and Keyword Help . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>The Help Viewer Window . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Navigating Help . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Searching Manuals in the Help Viewer . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p><b>2. MULTI Tutorial</b></p>
+<p><b>15</b></p>
+<p>Creating Your First Project . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Building Your Program . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Starting the Debugger . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Connecting to a Simulator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Debugging Your Program . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p>Connecting to Your Target Hardware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p><i>iii</i></p>
+<p><i>Green Hills Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Preparing Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>23</p>
+<p>Setting Up a Workspace . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Adding Actions to Your Workspace . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Additional Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Configuring MULTI for Use with INTEGRITY or u-velOSity . . . . . . . . .</p>
+<p>26</p>
+<p><b>Index</b></p>
+<p><b>27</b></p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>iv</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Preface</b></p>
+<p><b>Contents</b></p>
+<p>About This Book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>vi</p>
+<p>The MULTI 6 Document Set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>vii</p>
+<p>Conventions Used in the MULTI Document Set . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>viii</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This preface discusses the purpose of the manual, the MULTI documentation set,</p>
+<p>and typographical conventions used.</p>
+<p><b>About This Book</b></p>
+<p>The<i> MULTI: Getting Started</i> book provides an introduction to the MULTI Integrated</p>
+<p>Development Environment. For installation instructions, see the installation</p>
+<p>document located in the root directory of the installation CD.</p>
+<p>This book is divided into the following chapters:</p>
+<p>•</p>
+<p><i>Chapter 1: Introduction</i> provides an overview of the MULTI Integrated</p>
+<p>Development Environment, the MULTI Launcher, and online help. See</p>
+<p>Chapter 1, “Introduction” on page 1.</p>
+<p>•</p>
+<p><i>Chapter 2: MULTI Tutorial</i> introduces you to the basic components of the</p>
+<p>MULTI IDE and leads you through creating, building, running, and debugging</p>
+<p>a simple “Hello World” program. See Chapter 2, “MULTI Tutorial” on page 15.</p>
+<p><b>Note</b></p>
+<p>New or updated information may have become available while this book</p>
+<p>was in production. For additional material that was not available at press</p>
+<p>time, or for revisions that may have become necessary since this book</p>
+<p>was printed, please check your installation directory for release notes,</p>
+<p><b>README</b> files, and other supplementary documentation.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>vi</i></p>
+<p><i>Preface</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The MULTI 6 Document Set</b></p>
+<p>The primary documentation for using MULTI is provided in the following books:</p>
+<p>•</p>
+<p><i>MULTI: Getting Started</i> — Provides an introduction to the MULTI Integrated</p>
+<p>Development Environment and leads you through a simple tutorial.</p>
+<p>•</p>
+<p><i>MULTI: Licensing</i> — Describes how to obtain, install, and administer MULTI</p>
+<p>licenses.</p>
+<p>•</p>
+<p><i>MULTI: Managing Projects and Configuring the IDE</i> — Describes how to</p>
+<p>create and manage projects and how to configure the MULTI IDE.</p>
+<p>•</p>
+<p><i>MULTI: Building Applications</i> — Describes how to use the compiler driver</p>
+<p>and the tools that compile, assemble, and link your code. Also describes the</p>
+<p>Green Hills implementation of supported high-level languages.</p>
+<p>•</p>
+<p><i>MULTI: Configuring Connections</i> — Describes how to configure connections</p>
+<p>to your target.</p>
+<p>•</p>
+<p><i>MULTI: Debugging</i> — Describes how to set up your target debugging interface</p>
+<p>for use with MULTI and how to use the MULTI Debugger and associated tools.</p>
+<p>•</p>
+<p><i>MULTI: Debugging Command Reference</i> — Explains how to use Debugger</p>
+<p>commands and provides a comprehensive reference of Debugger commands.</p>
+<p>•</p>
+<p><i>MULTI: Scripting</i> — Describes how to create MULTI scripts. Also contains</p>
+<p>information about the MULTI-Python integration.</p>
+<p>For a comprehensive list of the books provided with your MULTI installation, see</p>
+<p>the<b> Help</b> →<b> Manuals</b> menu accessible from most MULTI windows.</p>
+<p>Most books are available in the following formats:</p>
+<p>•</p>
+<p>A printed book (select books are not available in print).</p>
+<p>•</p>
+<p>Online help, accessible from most MULTI windows via the<b> Help</b> →<b> Manuals</b></p>
+<p>menu.</p>
+<p>•</p>
+<p>An electronic PDF, available in the<b> manuals</b> subdirectory of your IDE or</p>
+<p>Compiler installation.</p>
+<p><i>vii</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The MULTI 6 Document Set</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Conventions Used in the MULTI Document Set</b></p>
+<p>All Green Hills documentation assumes that you have a working knowledge of your</p>
+<p>host operating system and its conventions, including its command line and graphical</p>
+<p>user interface (GUI) modes.</p>
+<p>Green Hills documentation uses a variety of notational conventions to present</p>
+<p>information and describe procedures. These conventions are described below.</p>
+<p><b>Example</b></p>
+<p><b>Indication</b></p>
+<p><b>Convention</b></p>
+<p><b>C:\MyProjects</b></p>
+<p>Filename or pathname</p>
+<p><b>bold</b> type</p>
+<p><b>setup</b> command</p>
+<p>Command</p>
+<p><b>-G</b> option</p>
+<p>Option</p>
+<p>The<b> Breakpoints</b> window</p>
+<p>Window title</p>
+<p>The<b> File</b> menu</p>
+<p>Menu name or menu choice</p>
+<p><b>Working Directory:</b></p>
+<p>Field name</p>
+<p>The<b> Browse</b> button</p>
+<p>Button name</p>
+<p><b>-o<i> filename</b></i></p>
+<p>Replaceable text</p>
+<p><i>italic</i> type</p>
+<p>A task may be called a<i> process</i></p>
+<p>or a<i> thread</i></p>
+<p>A new term</p>
+<p><i>MULTI: Debugging</i></p>
+<p>A book title</p>
+<p>Type</p>
+<p>help<i> command_name</i></p>
+<p>Text you should enter as presented</p>
+<p>monospace</p>
+<p>type</p>
+<p>The<b> wait</b> [-global] command</p>
+<p>blocks command processing,</p>
+<p>where</p>
+<p>-global</p>
+<p>blocks</p>
+<p>command processing for all</p>
+<p>MULTI processes.</p>
+<p>A word or words used in a</p>
+<p>command or example</p>
+<p>int a = 3;</p>
+<p>Source code</p>
+<p>&gt; print Test</p>
+<p>Test</p>
+<p>Input/output</p>
+<p>GHS_System()</p>
+<p>A function</p>
+<p><b>debugbutton</b> [<i>name</i>]...</p>
+<p>The preceding argument or option</p>
+<p>can be repeated zero or more times.</p>
+<p>ellipsis (...)</p>
+<p>(in command line</p>
+<p>instructions)</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>viii</i></p>
+<p><i>Preface</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Example</b></p>
+<p><b>Indication</b></p>
+<p><b>Convention</b></p>
+<p>&gt; print Test</p>
+<p>Test</p>
+<p>Represents a prompt. Your actual</p>
+<p>prompt may be a different symbol</p>
+<p>or string. The &gt; prompt helps to</p>
+<p>distinguish input from output in</p>
+<p>examples of screen displays.</p>
+<p>greater than sign ( &gt; )</p>
+<p><b>call<i></b> proc</i> |<i> expr</i></p>
+<p>One (and only one) of the</p>
+<p>parameters or options separated by</p>
+<p>the pipe or pipes should be</p>
+<p>specified.</p>
+<p>pipe ( | )</p>
+<p>(in command line</p>
+<p>instructions)</p>
+<p>.macro<i> name</i> [<i>list</i>]</p>
+<p>Optional argument, command,</p>
+<p>option, and so on. You can either</p>
+<p>include or omit the enclosed</p>
+<p>elements. The square brackets</p>
+<p>should not appear in your actual</p>
+<p>command.</p>
+<p>square brackets ( [ ] )</p>
+<p>(in command line</p>
+<p>instructions)</p>
+<p>The following command description demonstrates the use of some of these</p>
+<p>typographical conventions.</p>
+<p><b>gxyz</b> [<i>-option</i>]...<i> filename</i></p>
+<p>The formatting of this command indicates that:</p>
+<p>•</p>
+<p>The command<b> gxyz</b> should be entered as shown.</p>
+<p>•</p>
+<p>The option</p>
+<p><i>-option</i></p>
+<p>should either be replaced with one or more appropriate</p>
+<p>options or be omitted.</p>
+<p>•</p>
+<p>The word</p>
+<p><i>filename</i></p>
+<p>should be replaced with the actual filename of an</p>
+<p>appropriate file.</p>
+<p>The square brackets and the ellipsis should not appear in the actual command you</p>
+<p>enter.</p>
+<p><i>ix</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Conventions Used in the MULTI Document Set</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1</b></p>
+<p><b>Introduction</b></p>
+<p><b>Contents</b></p>
+<p>The MULTI Integrated Development Environment . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>The MULTI Launcher . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Accessing Online Help . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The MULTI Integrated Development Environment</b></p>
+<p>The MULTI Integrated Development Environment (IDE) is designed especially for</p>
+<p>embedded systems engineers to assist them in building, debugging, and editing</p>
+<p>embedded applications.</p>
+<p>The MULTI IDE includes the following tools, most of which can be launched from</p>
+<p>within the IDE or as a separate stand-alone program. Parenthetical text indicates</p>
+<p>corresponding executable files, which are located in your MULTI IDE installation.</p>
+<p><b>MULTI Launcher</b></p>
+<p>•</p>
+<p><b>MULTI Launcher</b> (<b>mstart</b>) — The gateway to the MULTI IDE, which allows</p>
+<p>you to quickly launch any of the primary MULTI tools, access open windows,</p>
+<p>and manage MULTI workspaces. For more information, see “The MULTI</p>
+<p>Launcher” on page 4.</p>
+<p><b>Editing Tools</b></p>
+<p>•</p>
+<p><b>MULTI Editor</b> (<b>me</b>) — A graphical editor for modifying text files.</p>
+<p>•</p>
+<p><b>Checkout Browser</b> (<b>mcobrowse</b>) — A graphical viewer for files managed</p>
+<p>under a version control system.</p>
+<p>•</p>
+<p><b>Diff Viewer</b> (<b>diffview</b>) — A graphical viewer that displays differences between</p>
+<p>two text files.</p>
+<p><b>Building Tools</b></p>
+<p>•</p>
+<p><b>MULTI Project Manager</b> (<b>mprojmgr</b>) — A graphical interface for managing</p>
+<p>and building projects.</p>
+<p>•</p>
+<p><b>Integrate</b> (<b>integrate</b>) — A graphical utility for configuring tasks, connections,</p>
+<p>and kernel objects across multiple AddressSpaces when using the INTEGRITY</p>
+<p>RTOS.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>2</i></p>
+<p><i>Chapter 1. Introduction</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Debugging Tools</b></p>
+<p>•</p>
+<p><b>MULTI Debugger</b> (<b>multi</b>) — A graphical source-level debugger.</p>
+<p>•</p>
+<p><b>EventAnalyzer</b> (<b>mevgui</b>) — A graphical viewer for monitoring the complex</p>
+<p>real-time interactions of an embedded RTOS such as INTEGRITY or</p>
+<p>u-velOSity.</p>
+<p>•</p>
+<p><b>ResourceAnalyzer</b> (<b>wperf</b>) — A graphical viewer for monitoring the CPU</p>
+<p>and memory usage of an embedded system running the INTEGRITY RTOS.</p>
+<p>•</p>
+<p><b>Serial Terminal</b> (<b>mterminal</b>) — A serial terminal emulator for connecting to</p>
+<p>serial ports on embedded devices.</p>
+<p>•</p>
+<p><b>MULTI TimeMachine Tool Suite</b> — A wide variety of trace analysis tools</p>
+<p>that dramatically extend MULTI's trace and debugging capabilities.</p>
+<p><b>Administrative Tools</b></p>
+<p>•</p>
+<p><b>Bug Report</b> (<b>gbugrpt</b>) — A utility for providing system configuration and</p>
+<p>tool version information to the Green Hills support staff.</p>
+<p>•</p>
+<p><b>Graphical Utilities</b> (<b>wgutils</b>) — A collection of utilities for analyzing and</p>
+<p>performing various operations on object files, libraries, and executables</p>
+<p>produced with the Green Hills toolchain.</p>
+<p>•</p>
+<p><b>MULTI License Administrator</b> (<b>mlmadmin</b>) — A graphical utility for</p>
+<p>managing Green Hills tools licenses.</p>
+<p><i>3</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Debugging Tools</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The MULTI Launcher</b></p>
+<p>The MULTI Launcher provides a convenient way to launch frequently used tools,</p>
+<p>to create or access files and projects, and to manage MULTI workspaces. To open</p>
+<p>the MULTI Launcher:</p>
+<p>•</p>
+<p>Windows — From the Windows<b> Start</b> menu, select the MULTI menu item.</p>
+<p>Alternatively, use Windows Explorer to navigate to the directory where you</p>
+<p>installed the MULTI IDE, and double-click<b> multi.exe</b>.</p>
+<p>•</p>
+<p>Linux/Solaris — Run the<b> multi</b> executable from your MULTI IDE installation</p>
+<p>directory.</p>
+<p><b>Tip</b></p>
+<p>If you cannot obtain a license to use MULTI, see Chapter 1, “Licensing</p>
+<p>for End Users” in the<i> MULTI: Licensing</i> book.</p>
+<p>All of the main MULTI components can be accessed from the Launcher toolbar:</p>
+<p>•</p>
+<p>— Runs a shortcut or an action sequence in the current workspace. Also</p>
+<p>allows you to create a new workspace or create or edit a shortcut.</p>
+<p>•</p>
+<p>— Opens the Project Manager on a recent or new project.</p>
+<p>•</p>
+<p>— Opens the Debugger on a recent or new executable.</p>
+<p>•</p>
+<p>— Opens the Editor on a recent or new file.</p>
+<p>•</p>
+<p>— Opens the Checkout Browser on a recent or new checkout.</p>
+<p>•</p>
+<p>— Establishes a target connection or opens the Connection Chooser or</p>
+<p>Connection Organizer.</p>
+<p>•</p>
+<p>— Opens a Serial Terminal using a recent or new connection.</p>
+<p>•</p>
+<p>— Opens the EventAnalyzer (licensed separately).</p>
+<p>•</p>
+<p>— Opens the ResourceAnalyzer (licensed separately).</p>
+<p>•</p>
+<p>— Shows/hides the detail pane of the Launcher.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>4</i></p>
+<p><i>Chapter 1. Introduction</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>You can also launch the Green Hills License Administrator and, if installed, the</p>
+<p>Green Hills Probe Administrator from the<b> Utilities</b> menu.</p>
+<p>During development, you can use the MULTI Launcher as a convenient, centralized</p>
+<p>window manager. You can access any of your open MULTI windows from the</p>
+<p><b>Windows</b> menu of the Launcher.</p>
+<p><b>MULTI Workspaces</b></p>
+<p>The MULTI Launcher allows you to create and use<i> workspaces</i>. A MULTI</p>
+<p>workspace is a virtual area where the tools, files, and actions required for a particular</p>
+<p>project can be organized, accessed, and executed.</p>
+<p>A workspace is typically created for each Top Project, and includes a working</p>
+<p>directory and a group of related<i> actions</i>—for example, opening a project in the</p>
+<p>MULTI Project Manager, connecting to a target, or performing a shell command.</p>
+<p>Actions are grouped into action sequences, so that a single mouse click can perform</p>
+<p>all the actions in the specified action sequence.</p>
+<p>For more information, see Chapter 3, “Managing Workspaces and Shortcuts with</p>
+<p>the Launcher” in the<i> MULTI: Managing Projects and Configuring the IDE</i> book.</p>
+<p><i>5</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>MULTI Workspaces</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Accessing Online Help</b></p>
+<p>Online help provides useful information about MULTI and can be accessed in</p>
+<p>several different ways. The following sections describe how to access online help</p>
+<p>and how to use the Help Viewer.</p>
+<p><b>Full Online Manuals</b></p>
+<p>You can open the MULTI Help Viewer on an indexed, hypertext version of any</p>
+<p>manual by selecting it from the list of installed manuals that appears in the<b> Help</b></p>
+<p>→<b> Manuals</b> menu. The list is populated with manuals from your IDE installation,</p>
+<p>linked Compiler installation, and configured OS installation (see “Configuring</p>
+<p>MULTI for Use with INTEGRITY or u-velOSity” on page 26). Note that the</p>
+<p>configured OS installation is overwritten in the current MULTI session if you open</p>
+<p>the Project Manager on an INTEGRITY or u-velOSity project that specifies a</p>
+<p>different OS installation.</p>
+<p>You can also access manuals from the command line. Ensure that the IDE installation</p>
+<p>directory is in your path, and enter the following command:</p>
+<p><b>helpview<i></b> pathname</i> | -m<i> manual_name</i></p>
+<p>where:</p>
+<p>•</p>
+<p><i>pathname</i></p>
+<p>opens the<b> .chm</b> file specified in</p>
+<p><i>pathname</i></p>
+<p>. You must provide a</p>
+<p>full path.</p>
+<p>•</p>
+<p>-m<i> manual_name</i></p>
+<p>opens the manual</p>
+<p><i>manual_name</i></p>
+<p>. An example manual name</p>
+<p>is</p>
+<p>&quot;MULTI: Debugging&quot;</p>
+<p>. If the manual name contains a space as in the</p>
+<p>preceding example, you must enclose it in quotation marks.</p>
+<p><b>Context-Sensitive Help</b></p>
+<p>Many MULTI windows and dialog boxes are linked to specific topics in the online</p>
+<p>manuals. To view the topic for an active window or dialog box, press<b> F1</b>.</p>
+<p>If you are using the MULTI Editor, you can also open context-sensitive help about</p>
+<p>a button or a menu item by selecting<b> Help</b> →<b> Identify</b> and then clicking the button</p>
+<p>or selecting the menu item.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>6</i></p>
+<p><i>Chapter 1. Introduction</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Command, Configuration Option, and Keyword Help</b></p>
+<p>You can obtain help information about a MULTI Debugger command, a MULTI</p>
+<p>configuration option, or a keyword by typing</p>
+<p>help<i> command_name</i></p>
+<p>,</p>
+<p>help</p>
+<p><i>configuration_option</i></p>
+<p>, or</p>
+<p>help<i> keyword</i></p>
+<p>in the Debugger command pane. If</p>
+<p>you specify the name of a command or configuration option, the Help Viewer opens</p>
+<p>on documentation for the command or option. If you specify a keyword (a word</p>
+<p>that is not a command or configuration option), the Help Viewer searches all manuals</p>
+<p>for</p>
+<p><i>keyword</i></p>
+<p>.</p>
+<p>To print the basic syntax of a MULTI Debugger command to the command pane,</p>
+<p>type</p>
+<p>usage<i> command_name</i></p>
+<p>.</p>
+<p><b>The Help Viewer Window</b></p>
+<p>The following graphic displays the Help Viewer window.</p>
+<p>The Help Viewer toolbar contains the following buttons, from left to right:</p>
+<p>•</p>
+<p><b>Back</b> (</p>
+<p>) and<b> Forward</b> (</p>
+<p>) — Returns to pages you have visited during the</p>
+<p>current help session. Click the button once for each page you want to revisit.</p>
+<p>Click and hold the button to select from a list of pages you have visited. These</p>
+<p>buttons function across books.</p>
+<p><i>7</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Command, Configuration Option, and Keyword Help</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p><b>View All Subtrees</b> (</p>
+<p>) — Toggles the display of the current selection's</p>
+<p>sub-topics (if any) in the view pane. When you open the Help Viewer, this</p>
+<p>button defaults to its last value.</p>
+<p>•</p>
+<p><b>Contract All Unselected</b> (</p>
+<p>) — Collapses expanded topics in the<b> Contents</b></p>
+<p>tab if the topics do not contain any selections.</p>
+<p>•</p>
+<p><b>Print</b> (</p>
+<p>) — Prints the help page displayed in the view pane. To create a help</p>
+<p>page consisting of mixed topics, hold down the<b> Ctrl</b> key while clicking separate</p>
+<p>topics. MULTI combines the separate topics and orders them by their location</p>
+<p>in the<b> Contents</b> tab.</p>
+<p>•</p>
+<p><b>Previous Page</b> (</p>
+<p>) and<b> Next Page</b> (</p>
+<p>) (located at far right) — Displays the</p>
+<p>previous or following topic as ordered in the<b> Contents</b> tab. If the previous or</p>
+<p>next topic includes sub-topics and the<b> View All Subtrees</b> button is enabled,</p>
+<p>the Help Viewer displays the sub-topics along with the section.</p>
+<p>The MULTI Help Viewer contains two panes. The right-hand pane, or the<i> view</i></p>
+<p><i>pane</i>, displays the help page for your selection. The left-hand pane contains the</p>
+<p>following three tabs:</p>
+<p>•</p>
+<p><b>Contents</b> — Displays topics in the manual you are viewing. Click a plus or</p>
+<p>minus icon to show or hide nested topics. Click a topic to display it in the view</p>
+<p>pane.</p>
+<p>•</p>
+<p><b>Index</b> — Displays index entries for the manual. To search the index entries,</p>
+<p>enter a word or words in the text box located at the top of the pane. MULTI</p>
+<p>returns results that contain the word(s) you typed. Click an index entry to</p>
+<p>display the associated topic in the view pane.</p>
+<p>•</p>
+<p><b>Search</b> — Allows you to search for specific words in the current manual or in</p>
+<p>all manuals. For information about searching from this tab, see “Searching</p>
+<p>Manuals in the Help Viewer” on page 12.</p>
+<p><b>Navigating Help</b></p>
+<p>Navigating manuals in the MULTI Help Viewer is easy. This section describes</p>
+<p>different ways to find information.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>8</i></p>
+<p><i>Chapter 1. Introduction</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Viewing Previous and Next Topics</b></p>
+<p>To display the previous or following topic as ordered in the<b> Contents</b> tab, do one</p>
+<p>of the following:</p>
+<p>•</p>
+<p>Click the</p>
+<p>or</p>
+<p>button located in the upper-right corner of the Help Viewer</p>
+<p>window.</p>
+<p>•</p>
+<p>Select<b> View</b> →<b> Previous Contents Entry</b> or<b> View</b> →<b> Next Contents Entry</b>.</p>
+<p>If the previous or next topic includes sub-topics and the<b> View All Subtrees</b> button</p>
+<p>(</p>
+<p>) is enabled, the Help Viewer displays the sub-topics along with the topic.</p>
+<p><b>Returning to Previously Viewed Help Pages</b></p>
+<p>To return to pages you have visited during the current help session, do one of the</p>
+<p>following:</p>
+<p>•</p>
+<p>Click the</p>
+<p>or</p>
+<p>button located in the left corner of the toolbar. Click the</p>
+<p>button once for each page you want to revisit. Click and hold the button to</p>
+<p>select from a complete list of pages you have visited during the current help</p>
+<p>session. These buttons function across books.</p>
+<p>•</p>
+<p>Select<b> View</b> →<b> Back</b> or<b> View</b> →<b> Forward</b> from the menu bar. This feature</p>
+<p>functions across books.</p>
+<p><b>Linking to Related Topics</b></p>
+<p>The underlined links available in the view pane allow you to jump to related topics.</p>
+<p>If, when you click a link, a dialog box appears with the message:</p>
+<p>You have requested information that the Help Viewer is unable</p>
+<p>to retrieve.</p>
+<p>one of the following factors may be the cause:</p>
+<p>•</p>
+<p>The manual that the link points to may not be included with your distribution.</p>
+<p>•</p>
+<p>If the link points to an INTEGRITY or u-velOSity manual, you may need to</p>
+<p>set the location of the installed OS distribution so that the Help Viewer can</p>
+<p><i>9</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Navigating Help</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>locate the relevant help files. For information about how to do this, see</p>
+<p>“Configuring MULTI for Use with INTEGRITY or u-velOSity” on page 26.</p>
+<p>•</p>
+<p>If the link points to an INTEGRITY or u-velOSity manual, you may be using</p>
+<p>a version of the operating system that does not support links from MULTI help.</p>
+<p><b>Note</b></p>
+<p>If you are using MULTI with multiple target architectures (such as ARM</p>
+<p>and Power Architecture), you may install tools of the same version number</p>
+<p>into a single directory. If you click a link to a target-specific book in this</p>
+<p>case, MULTI chooses which version of the book to link to (ARM or</p>
+<p>Power Architecture in this example).</p>
+<p><b>Bookmarking Help Pages</b></p>
+<p>You can use bookmarks to return to pages you have visited across MULTI sessions.</p>
+<p>To bookmark a page, select<b> Bookmarks</b> →<b> Bookmark This Page</b>.</p>
+<p>You can bookmark a help page consisting of mixed topics by holding down the</p>
+<p><b>Ctrl</b> key while clicking separate topics. MULTI combines the separate topics in</p>
+<p>the view pane and orders them by their location in the<b> Contents</b> tab. Bookmark the</p>
+<p>page as usual.</p>
+<p>The<b> Bookmarks</b> menu lists all your bookmarks from across MULTI manuals and</p>
+<p>sessions. To return to a bookmarked page, do one of the following:</p>
+<p>•</p>
+<p>Select<b> Bookmarks</b>, and choose a bookmark.</p>
+<p>•</p>
+<p>Select<b> Bookmarks</b> →<b> Manage Bookmarks</b>, and double-click a bookmark.</p>
+<p>•</p>
+<p>From any MULTI tool, select<b> Help</b> →<b> Bookmarks</b>, and choose a bookmark.</p>
+<p>To rename, delete, or reorder existing bookmarks, launch the<b> Bookmark Manager</b></p>
+<p>as described in the next section, “Managing Bookmarks” on page 10.</p>
+<p><b>Managing Bookmarks</b></p>
+<p>You can use the<b> Bookmark Manager</b> to rename or delete bookmarks, navigate to</p>
+<p>bookmarks, or modify the ordering of bookmarks in the<b> Bookmarks</b> menu.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>10</i></p>
+<p><i>Chapter 1. Introduction</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>To open the<b> Bookmark Manager</b>, do one of the following:</p>
+<p>•</p>
+<p>In the Help Viewer, select<b> Bookmarks</b> →<b> Manage Bookmarks</b>.</p>
+<p>•</p>
+<p>From any MULTI tool, select<b> Help</b> →<b> Bookmarks</b> →<b> Manage Bookmarks</b>.</p>
+<p>The list on the left side of the<b> Bookmark Manager</b> displays the names of all the</p>
+<p>bookmarks you have created. When a bookmark is selected, the topic(s) and the</p>
+<p>manual marked by that bookmark are displayed in the right side of the window.</p>
+<p>The bookmark may reference multiple topics if, for example, you created the</p>
+<p>bookmark with multiple entries selected in the<b> Contents</b> tab or if you selected an</p>
+<p>index entry associated with multiple topics. Double-clicking a bookmark or a topic</p>
+<p>displays that bookmark or topic in the Help Viewer.</p>
+<p>The toolbar buttons in the<b> Bookmark Manager</b> allow you to perform the following</p>
+<p>operations on bookmarks:</p>
+<p>•</p>
+<p>— Display the selected bookmark(s) in the Help Viewer.</p>
+<p>•</p>
+<p>— Rename the selected bookmark.</p>
+<p>•</p>
+<p>— Delete the selected bookmark(s).</p>
+<p>•</p>
+<p>and</p>
+<p>— Move the selected bookmark up or down in the list. The order</p>
+<p>of the bookmarks in the<b> Bookmarks</b> menu mirrors the order of the bookmarks</p>
+<p>in the<b> Bookmark Manager</b>.</p>
+<p><b>Note</b></p>
+<p>The</p>
+<p>and</p>
+<p>buttons are available for use on multiple bookmarks. You</p>
+<p>can select multiple bookmarks from the left side of the window by</p>
+<p>dragging to select rows or by using<b> Shift</b> or<b> Ctrl</b> to select items.</p>
+<p><i>11</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Navigating Help</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Opening Additional Manuals from the Help Viewer</b></p>
+<p>To open a new manual in the current window, do one of the following:</p>
+<p>•</p>
+<p>Select<b> File</b> →<b> Open Manual</b> and choose from the list of installed manuals.</p>
+<p>For information about how the list is populated, see “Full Online Manuals”</p>
+<p>on page 6.</p>
+<p>•</p>
+<p>Select<b> File</b> →<b> Open Manual File</b> and navigate to a particular file in the file</p>
+<p>chooser that appears.</p>
+<p>To open a new manual in a new window, select<b> View</b> →<b> Open Other Manuals in</b></p>
+<p><b>New Window</b> and then open the manual as usual. When you open the Help Viewer,</p>
+<p>the<b> Open Other Manuals in New Window</b> toggle option defaults to its last value.</p>
+<p><b>Searching Manuals in the Help Viewer</b></p>
+<p>With the Help Viewer's<b> Search</b> feature, you can search the current manual or all</p>
+<p>manuals simultaneously. Follow these steps to perform a search:</p>
+<p>1.</p>
+<p>Type a word or words in the<b> Search</b> tab's text box.</p>
+<p>To search for a phrase, put quotation marks around the phrase. To exclude a</p>
+<p>word from the search, prefix it with an exclamation point (!). For example,</p>
+<p>typing</p>
+<p>help !MULTI</p>
+<p>displays all the search results for</p>
+<p>help</p>
+<p>that do not contain</p>
+<p>the word</p>
+<p>MULTI</p>
+<p>in their content. To search for an exclamation point at the</p>
+<p>beginning of a word, you must enter a plus sign followed by an exclamation</p>
+<p>point (</p>
+<p>+!</p>
+<p>). Full regular expressions are not supported.</p>
+<p>2.</p>
+<p>To search for<i> all</i> keywords — Select<b> all</b> from the<b> Find pages matching</b></p>
+<p>drop-down list. The search function returns results that contain all the search</p>
+<p>words; however, they may not occur as a phrase unless you enclosed them in</p>
+<p>quotation marks.</p>
+<p>To search for<i> any</i> keywords — Select<b> any</b> from the<b> Find pages matching</b></p>
+<p>drop-down list. The search function returns results that contain one of the</p>
+<p>words, a combination of the words, or all of the words.</p>
+<p>3.</p>
+<p>Select the<b> Match whole word only</b> check box if you want the search results</p>
+<p>to contain the keyword as you typed it. For example, if you select this option,</p>
+<p>search results for a singular word do not contain the plural form of the word.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>12</i></p>
+<p><i>Chapter 1. Introduction</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>4.</p>
+<p>To search all installed manuals, select the<b> Search all manuals</b> check box. For</p>
+<p>information about what installations the manuals are pulled from, see “Full</p>
+<p>Online Manuals” on page 6. To search only the current manual, clear this</p>
+<p>check box.</p>
+<p>5.</p>
+<p>Press<b> Enter</b> to display a list of search results. Click any entry in the list to</p>
+<p>display the entry's help page in the view pane. If no results appear, no matches</p>
+<p>were found.</p>
+<p><i>13</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Searching Manuals in the Help Viewer</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2</b></p>
+<p><b>MULTI Tutorial</b></p>
+<p><b>Contents</b></p>
+<p>Creating Your First Project . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Building Your Program . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Starting the Debugger . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Connecting to a Simulator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Debugging Your Program . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p>Connecting to Your Target Hardware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Preparing Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>23</p>
+<p>Setting Up a Workspace . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Additional Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Configuring MULTI for Use with INTEGRITY or u-velOSity . . . . . . . . . . . . .</p>
+<p>26</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This chapter introduces you to the basic components of the MULTI IDE, and leads</p>
+<p>you through creating and building a simple<b> Hello World</b> program. You will then</p>
+<p>run and debug this program on both a simulator and your target hardware.</p>
+<p><b>Creating Your First Project</b></p>
+<p>A project is a collection of source code and resource files that is used to build one</p>
+<p>or more programs or libraries. Follow the steps below to create the<b> Hello World</b></p>
+<p>project that is used for the remainder of this tutorial.</p>
+<p>1.</p>
+<p>Start the Launcher as described in “The MULTI Launcher” on page 4.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>16</i></p>
+<p><i>Chapter 2. MULTI Tutorial</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>2.</p>
+<p>Select<b> File</b> →<b> Create Workspace</b> to open the<b> Select Workspace Type</b> dialog.</p>
+<p>3.</p>
+<p>Enter</p>
+<p>Hello World</p>
+<p>in the<b> Name</b> field. Click<b> OK</b> to create a workspace and</p>
+<p>launch the<b> Project Wizard</b>.</p>
+<p><i>17</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Creating Your First Project</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>4.</p>
+<p>Click<b> Next</b> to accept the default settings for the project name and directory.</p>
+<p>5.</p>
+<p>Select the<b> Stand-alone</b> operating system. Click<b> Next</b>.</p>
+<p>6.</p>
+<p>If only one processor family is available, the<b> Project Wizard</b> automatically</p>
+<p>selects it and continues to the next screen. Otherwise, select your processor</p>
+<p>family and click<b> Next</b>.</p>
+<p>7.</p>
+<p>Select your target board. If it is not listed or if you have not yet decided on</p>
+<p>one, expand the<b> Generic</b> list and select the processor you intend to target.</p>
+<p>Click<b> Finish</b>.</p>
+<p>8.</p>
+<p>In the<b> Top Project Created</b> dialog box that appears next, click<b> OK</b>.</p>
+<p>9.</p>
+<p>The<b> Project Manager: Select Item to Add</b> screen appears next. This screen</p>
+<p>allows you to add an example or executable to the framework just created by</p>
+<p>the<b> Project Wizard</b>.</p>
+<p>For this tutorial, select<b> Hello World (C)</b> and click<b> Finish</b> to accept the defaults</p>
+<p>for the remaining settings. The Project Manager will open on your new project.</p>
+<p>For information about creating an INTEGRITY project, see “Building INTEGRITY</p>
+<p>Applications” in the<i> INTEGRITY Development Guide</i>.</p>
+<p>For comprehensive information about the<b> Project Wizard</b>, see “Creating a Project”</p>
+<p>in Chapter 1, “Creating a Project” in the<i> MULTI: Managing Projects and</i></p>
+<p><i>Configuring the IDE</i> book.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>18</i></p>
+<p><i>Chapter 2. MULTI Tutorial</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Building Your Program</b></p>
+<p>In the previous section, you created a project and added all the files necessary to</p>
+<p>build your<b> Hello World</b> executable.</p>
+<p>The project is ready to build at this point. Click</p>
+<p>(<b>Build</b>) to build the executable</p>
+<p>program,<b> hello</b>. You can follow the progress of the build in the<b> Status</b> pane at the</p>
+<p>bottom of the Project Manager window.</p>
+<p>For more information about the MULTI Project Manager, see Chapter 2, “Managing</p>
+<p>and Building Projects with the Project Manager” in the<i> MULTI: Managing Projects</i></p>
+<p><i>and Configuring the IDE</i> book.</p>
+<p><i>19</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Building Your Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Starting the Debugger</b></p>
+<p>Now that your project is built, click</p>
+<p>(<b>Debug</b>) to open the MULTI Debugger on</p>
+<p>the<b> hello</b> executable.</p>
+<p>For information about the MULTI Debugger, see Chapter 2, “The Main Debugger</p>
+<p>Window” in the<i> MULTI: Debugging</i> book.</p>
+<p><b>Connecting to a Simulator</b></p>
+<p>Before debugging the program in the MULTI Debugger, you must connect to a</p>
+<p>hardware target or simulator that will run the program. The simulators provide an</p>
+<p>easy-to-use platform to develop and debug your application before you begin</p>
+<p>working with actual hardware. Perform the following steps to connect to a Green</p>
+<p>Hills simulator:</p>
+<p>1.</p>
+<p>Click</p>
+<p>(<b>Connect</b>) on the MULTI Debugger toolbar to open the<b> Connection</b></p>
+<p><b>Chooser</b>.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>20</i></p>
+<p><i>Chapter 2. MULTI Tutorial</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>2.</p>
+<p>MULTI creates several<i> Connection Methods</i> for your target board as part of</p>
+<p>your project. Select the simulator connection from the drop-down list and click</p>
+<p><b>Connect</b>.</p>
+<p>For more information about connecting to a target, see Chapter 3, “Connecting to</p>
+<p>Your Target” in the<i> MULTI: Debugging</i> book.</p>
+<p><b>Debugging Your Program</b></p>
+<p>Now that you are connected to the simulator, you can step through your code, use</p>
+<p>breakpoints, view registers and memory, and perform many other debug tasks with</p>
+<p>the MULTI Debugger.</p>
+<p>Try the following basic debugging techniques:</p>
+<p>•</p>
+<p>To step into the program, click</p>
+<p>(<b>Step (into Functions) on Selected Items</b>)</p>
+<p>on the Debugger toolbar.</p>
+<p><b>Note</b></p>
+<p>MULTI will automatically download your program to the simulator</p>
+<p>when you first begin executing the code.</p>
+<p>•</p>
+<p>To set a breakpoint (</p>
+<p>), click any of the green breakdots (</p>
+<p>).</p>
+<p>•</p>
+<p>To step to the next line, click</p>
+<p>(<b>Next (over Functions) on Selected Items</b>)</p>
+<p>on the Debugger toolbar.</p>
+<p>•</p>
+<p>To view register values, click</p>
+<p>(<b>Registers</b>) on the Debugger toolbar.</p>
+<p>•</p>
+<p>To view interlaced command and target output, see the Debugger<b> Cmd</b></p>
+<p>(command) pane at the bottom of the window. To view just the target output,</p>
+<p>select the<b> I/O</b> tab.</p>
+<p><i>21</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Debugging Your Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>To view interlaced assembly and source code, click</p>
+<p>(<b>Assembly</b>) on the</p>
+<p>Debugger toolbar.</p>
+<p>For more information about debugging your program, see the<i> MULTI: Debugging</i></p>
+<p>book.</p>
+<p>For a quick reference to the commands available in the MULTI Debugger, see the</p>
+<p><i>Quick Reference Card</i> (only available in print).</p>
+<p><b>Connecting to Your Target Hardware</b></p>
+<p>Earlier, you connected to a simulator to debug your program. Now, use the following</p>
+<p>steps to connect to your target board:</p>
+<p>1.</p>
+<p>If you are still connected to the simulator, disconnect from it by clicking</p>
+<p>(<b>Disconnect</b>) on the MULTI Debugger toolbar.</p>
+<p>2.</p>
+<p>Connect your target board to the host computer via a debug device or serial</p>
+<p>cable, depending on which protocol you will be using to debug your board.</p>
+<p>3.</p>
+<p>Click</p>
+<p>(<b>Connect</b>) to open the<b> Connection Chooser</b>.</p>
+<p>4.</p>
+<p>Select the Connection Method corresponding to your debug device from the</p>
+<p>drop-down list.</p>
+<p>If your debug device is not listed, click</p>
+<p>(<b>Create a new Connection Method</b>)</p>
+<p>and enter a name and type for your connection.</p>
+<p>Click<b> Create</b> and review the information to verify that this Connection Method</p>
+<p>is configured correctly for your board setup. Double-check the connection</p>
+<p>type and name (or address), and any other relevant settings. Click<b> OK</b> when</p>
+<p>all of the settings are correct.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>22</i></p>
+<p><i>Chapter 2. MULTI Tutorial</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>5.</p>
+<p>Click<b> Connect</b> to connect to your target hardware.</p>
+<p>6.</p>
+<p>If more than one CPU is present on your target, the<b> Bind to which</b></p>
+<p><b>Remote/CPU</b> dialog box appears. Select a CPU and click<b> OK</b>.</p>
+<p>For more information about connecting to a target, see Chapter 3, “Connecting to</p>
+<p>Your Target” in the<i> MULTI: Debugging</i> book.</p>
+<p><b>Preparing Your Target</b></p>
+<p>Before you can run or debug an executable on your target, you must download or</p>
+<p>flash the executable to your target's memory, or verify that the executable is already</p>
+<p>present on the target. To accomplish this, perform the following steps:</p>
+<p>1.</p>
+<p>Select the<b> hello</b> executable in the target list (located at the top of the Debugger</p>
+<p>window).</p>
+<p>2.</p>
+<p>Click</p>
+<p>(<b>Prepare Target</b>) on the Debugger toolbar to open the<b> Prepare</b></p>
+<p><b>Target</b> dialog box.</p>
+<p>3.</p>
+<p>MULTI recommends settings for preparing your target based on the executable</p>
+<p>you are debugging. Click<b> OK</b> to accept the recommended settings and</p>
+<p>download the<b> hello</b> executable to your target.</p>
+<p><b>Note</b></p>
+<p>Some target boards may require modifications to the setup script provided</p>
+<p>by Green Hills. For more information, see “Configuring Your Target</p>
+<p>Hardware for Debugging” in Chapter 6, “Configuring Your Target</p>
+<p>Hardware” in the<i> MULTI: Debugging</i> book.</p>
+<p>You are now ready to debug your program on your target board.</p>
+<p>Once you are finished debugging, click</p>
+<p>(<b>Disconnect</b>) to disconnect from your</p>
+<p>target hardware. Then close the MULTI Debugger and the MULTI Project Manager.</p>
+<p><i>23</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Preparing Your Target</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Setting Up a Workspace</b></p>
+<p>MULTI workspaces allow you to easily associate actions with a project and perform</p>
+<p>those actions from within the Launcher. You will now add actions to the workspace</p>
+<p>created at the beginning of this tutorial.</p>
+<p><b>Adding Actions to Your Workspace</b></p>
+<p>Workspace actions are grouped into action sequences. Your new workspace contains</p>
+<p>the automatically created<b> Startup</b> action sequence. The<b> Startup</b> action sequence</p>
+<p>contains an action that launches the MULTI Project Manager on your project.</p>
+<p>Follow the steps below to add additional actions that connect to your target and</p>
+<p>open your program in the MULTI Debugger:</p>
+<p>1.</p>
+<p>Switch to or start the Launcher, and select the<b> Hello World</b> workspace from</p>
+<p>the drop-down list.</p>
+<p>2.</p>
+<p>Right-click the<b> Startup</b> action sequence and select<b> Add Action</b> from the</p>
+<p>shortcut menu.</p>
+<p>3.</p>
+<p>Select<b> Connection</b> in the<b> Action</b> drop-down list.</p>
+<p>4.</p>
+<p>Select your hardware target Connection Method in the<b> Target</b> drop-down list</p>
+<p>and click<b> OK</b>.</p>
+<p>5.</p>
+<p>Right-click the<b> Startup</b> action sequence and select<b> Add Action</b> from the</p>
+<p>shortcut menu.</p>
+<p>6.</p>
+<p>Select<b> Debug Program</b> in the<b> Action</b> drop-down list.</p>
+<p>7.</p>
+<p>Select your<b> hello</b> executable in the<b> Prog</b> drop-down list and click<b> OK</b>.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>24</i></p>
+<p><i>Chapter 2. MULTI Tutorial</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>The<b> Startup</b> action sequence in your workspace now contains two additional actions,</p>
+<p>one each of type<b> Connection</b> and<b> Debug Program</b>. Now, whenever you run the</p>
+<p><b>Startup</b> action sequence, MULTI will open your project in the MULTI Project</p>
+<p>Manager, connect to your target, and open your program in the MULTI Debugger.</p>
+<p>Run the<b> Startup</b> action sequence by clicking the</p>
+<p>(<b>Run Action Sequences or</b></p>
+<p><b>Shortcuts</b>) button and selecting<b> Hello World: Startup</b>.</p>
+<p>For more information about workspaces, see Chapter 3, “Managing Workspaces</p>
+<p>and Shortcuts with the Launcher” in the<i> MULTI: Managing Projects and Configuring</i></p>
+<p><i>the IDE</i> book.</p>
+<p><b>Additional Examples</b></p>
+<p>There are a number of example projects that highlight particular features of the</p>
+<p>MULTI Debugger. To access these examples, perform the following steps:</p>
+<p>1.</p>
+<p>Switch to or start the Launcher, and select the<b> Hello World</b> workspace from</p>
+<p>the drop-down list.</p>
+<p>2.</p>
+<p>Double-click the<b> Project Manager</b> action.</p>
+<p>3.</p>
+<p>In the Project Manager, select the<b> default.gpj</b> file for the<b> Hello World</b> project</p>
+<p>you created earlier, and click</p>
+<p>(<b>Add Item into default.gpj</b>).</p>
+<p>4.</p>
+<p>Select one of the demo projects in the<b> Project Manager: Select Item to Add</b></p>
+<p>dialog box. The<b> Basic Debugging</b> project is a good one to start with. Click</p>
+<p><b>Finish</b>.</p>
+<p><i>25</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Additional Examples</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>5.</p>
+<p>Select the demo project you just added, and click</p>
+<p>(<b>Build</b>).</p>
+<p>6.</p>
+<p>Click</p>
+<p>(<b>Debug</b>), and follow the<b> Cmd</b> pane directions, which lead you through</p>
+<p>the example.</p>
+<p><b>Configuring MULTI for Use with INTEGRITY or u-velOSity</b></p>
+<p>In the preceding tutorial, you created a stand-alone project. If you plan to use</p>
+<p>INTEGRITY or u-velOSity for future projects, you should provide MULTI with</p>
+<p>the location of the installed OS distribution. This information is used to:</p>
+<p>•</p>
+<p>Determine the default OS distribution directory used by the<b> Project Wizard</b></p>
+<p>•</p>
+<p>Add relevant documentation to MULTI's<b> Help</b> menu (see “Full Online Manuals”</p>
+<p>on page 6)</p>
+<p>•</p>
+<p>Enable cross-book links between MULTI and INTEGRITY books or between</p>
+<p>MULTI and u-velOSity books if the version of the operating system you are</p>
+<p>using supports this</p>
+<p>•</p>
+<p>Determine the location of the Event Analyzer configuration file (see the</p>
+<p><i>EventAnalyzer User's Guide</i>)</p>
+<p>To define the location of the installed OS distribution:</p>
+<p>1.</p>
+<p>Select<b> Set INTEGRITY Distribution</b> or<b> Set u-velOSity Distribution</b> from</p>
+<p>one of the following locations:</p>
+<p>•</p>
+<p>The<b> Config</b> menu located in the MULTI Launcher, Debugger, or Help</p>
+<p>Viewer</p>
+<p>•</p>
+<p>The<b> Tools</b> →<b> Configuration</b> submenu located in the MULTI Project</p>
+<p>Manager</p>
+<p>The dialog box that appears is an interface to the per-user file<b> integrity.dist</b></p>
+<p>or<b> uvelosity.dist</b>.</p>
+<p>2.</p>
+<p>Type the path to your INTEGRITY or u-velOSity installation directory, or use</p>
+<p>the browse button to navigate to the directory.</p>
+<p>3.</p>
+<p>Click<b> Save</b>.</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>26</i></p>
+<p><i>Chapter 2. MULTI Tutorial</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Index</b></p>
+<p><b>A</b></p>
+<p>adding actions to workspaces, 24</p>
+<p><b>B</b></p>
+<p>breakpoints</p>
+<p>setting, 21</p>
+<p>building projects, 19</p>
+<p><b>C</b></p>
+<p>command help, 7</p>
+<p>commands</p>
+<p>help regarding, 7</p>
+<p>helpview, 6</p>
+<p>configuration options</p>
+<p>help regarding, 7</p>
+<p>connecting</p>
+<p>to hardware, 22</p>
+<p>to simulator, 20</p>
+<p>context-sensitive help, 6</p>
+<p>conventions</p>
+<p>typographical, viii</p>
+<p>creating</p>
+<p>projects, 16</p>
+<p>workspaces, 17</p>
+<p><b>D</b></p>
+<p>Debugger</p>
+<p>starting, 20</p>
+<p>using, 21</p>
+<p>document set, vi, vii</p>
+<p><b>E</b></p>
+<p>example projects, 25</p>
+<p><b>F</b></p>
+<p>F1 key, for help, 6</p>
+<p><b>H</b></p>
+<p>hardware</p>
+<p>connecting to, 22</p>
+<p>help (see online help)</p>
+<p>Help menu</p>
+<p>online help, obtaining, 6</p>
+<p>Help Viewer</p>
+<p>navigating, 8, 9, 10</p>
+<p>opening additional manuals in, 12</p>
+<p>searching, 12</p>
+<p>window, 7</p>
+<p>helpview command, 6</p>
+<p><b>I</b></p>
+<p>Integrated Development Environment (IDE) (see MULTI</p>
+<p>Integrated Development Environment (IDE))</p>
+<p>INTEGRITY</p>
+<p>using with MULTI IDE, 26</p>
+<p>interlaced assembly</p>
+<p>viewing, 22</p>
+<p><b>K</b></p>
+<p>keyword help, 7</p>
+<p><b>L</b></p>
+<p>Launcher (see MULTI Launcher)</p>
+<p><b>M</b></p>
+<p>MULTI Integrated Development Environment (IDE)</p>
+<p>document set, vii</p>
+<p>online help, 6</p>
+<p>overview, 2</p>
+<p>using with INTEGRITY or u-velOSity, 26</p>
+<p>MULTI Launcher</p>
+<p>overview, 4</p>
+<p><b>O</b></p>
+<p>online help, 6</p>
+<p>(see also Help Viewer)</p>
+<p>for commands, 7</p>
+<p>for configuration options, 7</p>
+<p>context-sensitive, 6</p>
+<p>for keywords, 7</p>
+<p>limitations, 10</p>
+<p>online manuals, 6</p>
+<p>overview, 6</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>P</b></p>
+<p>preparing your target, 23</p>
+<p>programs</p>
+<p>stepping into, 21</p>
+<p>Project Wizard, 17</p>
+<p>projects</p>
+<p>building, 19</p>
+<p>creating, 16</p>
+<p>examples, 25</p>
+<p><b>R</b></p>
+<p>registers</p>
+<p>viewing, 21</p>
+<p><b>S</b></p>
+<p>setting breakpoints, 21</p>
+<p>simulator</p>
+<p>connecting to, 20</p>
+<p>starting</p>
+<p>Debugger, 20</p>
+<p>stepping into programs, 21</p>
+<p><b>T</b></p>
+<p>target</p>
+<p>preparing, 23</p>
+<p>typographical conventions, viii</p>
+<p><b>U</b></p>
+<p>u-velOSity</p>
+<p>using with MULTI IDE, 26</p>
+<p><b>V</b></p>
+<p>viewing</p>
+<p>interlaced assembly, 22</p>
+<p>registers, 21</p>
+<p><b>W</b></p>
+<p>workspaces</p>
+<p>adding actions to, 24</p>
+<p>creating, 17</p>
+<p>overview, 5</p>
+<p><i>MULTI: Getting Started</i></p>
+<p><i>28</i></p>
+<p><i>preparing your target</i></p>
+</body>
+</html>
+{% endraw %}

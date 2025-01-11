@@ -1,0 +1,258 @@
+---
+layout: default
+title: CM012A_FordT3McuCfg_DmaConfig
+nav_order: 3
+parent: Component Design
+---
+{% raw %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+	<meta name="author" content="Erlenbeck, Jason M"/>
+	<meta name="created" content="2014-12-29T21:00:06"/>
+	<meta name="changedby" content="Mohan, Raghavendran"/>
+	<meta name="changed" content="2017-08-17T17:33:39"/>
+	<meta name="AppVersion" content="16.0300"/>
+	<meta name="Company" content="Nexteer"/>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+<table cellspacing="0" border="0">
+	<colgroup width="101"></colgroup>
+	<colgroup width="114"></colgroup>
+	<colgroup width="197"></colgroup>
+	<colgroup width="210"></colgroup>
+	<colgroup width="128"></colgroup>
+	<colgroup width="356"></colgroup>
+	<colgroup width="380"></colgroup>
+	<colgroup width="130"></colgroup>
+	<colgroup width="211"></colgroup>
+	<tr>
+		<td height="36" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DMAC&quot;}"><b><i><font face="Arial" size=3 color="#000000">DMAC</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Channel&quot;}"><b><i><font face="Arial" size=3 color="#000000">Channel</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Description&quot;}"><b><i><font face="Arial" size=3 color="#000000">Description</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Trigger Name\u000am File&quot;}"><b><i><font face="Arial" size=3 color="#000000">Trigger Name<br>m File</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Trigger\u000aPhysical&quot;}"><b><i><font face="Arial" size=3 color="#000000">Trigger<br>Physical</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Source&quot;}"><b><i><font face="Arial" size=3 color="#000000">Source</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Destination&quot;}"><b><i><font face="Arial" size=3 color="#000000">Destination</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Transfer Size&quot;}"><b><i><font face="Arial" size=3 color="#000000">Transfer Size</font></i></b></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Transfer Length&quot;}"><b><i><font face="Arial" size=3 color="#000000">Transfer Length</font></i></b></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Adc0 Results Read&quot;}"><font color="#006100">Adc0 Results Read</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DmaAdc0ResTrig\u000a(CM301A)&quot;}"><font color="#006100">DmaAdc0ResTrig<br>(CM301A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;INTADCF0I1&quot;}"><font color="#006100">INTADCF0I1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;RegInpADCD0DR00\u000a(CM301A)&quot;}"><font color="#006100">RegInpADCD0DR00<br>(CM301A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot; MotCtrlAdc0RawRes\u000a(CM012A)&quot;}"><font color="#006100"> MotCtrlAdc0RawRes<br>(CM012A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;128 bit&quot;}"><font color="#006100">128 bit</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="3" sdnum="1033;"><font color="#006100">3</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="2" sdnum="1033;"><font color="#006100">2</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="3" sdnum="1033;"><font color="#006100">3</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="4" sdnum="1033;"><font color="#006100">4</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="5" sdnum="1033;"><font color="#006100">5</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="6" sdnum="1033;"><font color="#006100">6</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="7" sdnum="1033;"><font color="#006100">7</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="0" sdnum="1033;"><font color="#006100">0</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;2mSec to MotCtrl&quot;}"><font color="#006100">2mSec to MotCtrl</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DmaVlyTrig\u000a(CM770A)&quot;}"><font color="#006100">DmaVlyTrig<br>(CM770A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;INTGTM0ATOM07&quot;}"><font color="#006100">INTGTM0ATOM07</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MotCtrlMgr_TwoMilliSecToMotCtrl_Rec\u000a(CM201A)&quot;}"><font color="#006100">MotCtrlMgr_TwoMilliSecToMotCtrl_Rec<br>(CM201A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MotCtrlMgr_MotCtrlFromTwoMilliSec_Rec\u000a(CM201A)&quot;}"><font color="#006100">MotCtrlMgr_MotCtrlFromTwoMilliSec_Rec<br>(CM201A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;128 bit&quot;}"><font color="#006100">128 bit</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DMA9 Source (bits)\/128&quot;}"><font color="#006100">DMA9 Source (bits)/128</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="2" sdnum="1033;"><font color="#006100">2</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="3" sdnum="1033;"><font color="#006100">3</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="4" sdnum="1033;"><font color="#006100">4</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="5" sdnum="1033;"><font color="#006100">5</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Not Used&quot;}"><font color="#006100">Not Used</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="6" sdnum="1033;"><font color="#006100">6</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Adc1 Results&quot;}"><font color="#006100">Adc1 Results</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DmaAdc1ResTrig\u000a(CM321A)&quot;}"><font color="#006100">DmaAdc1ResTrig<br>(CM321A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;INTADCF1I1&quot;}"><font color="#006100">INTADCF1I1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;RegInpADCF1DR00\u000a(CM321A)&quot;}"><font color="#006100">RegInpADCF1DR00<br>(CM321A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MotCtrlAdc1RawRes\u000a(CM012A)&quot;}"><font color="#006100">MotCtrlAdc1RawRes<br>(CM012A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;128 bit&quot;}"><font color="#006100">128 bit</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="3" sdnum="1033;"><font color="#006100">3</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="center" valign=middle bgcolor="#C6EFCE" sdval="1" sdnum="1033;"><font color="#006100">1</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" sdval="7" sdnum="1033;"><font color="#006100">7</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MotCtrl to 2mSec&quot;}"><font color="#006100">MotCtrl to 2mSec</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;--&quot;}"><font color="#006100">--</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DMA 1.6 Chain&quot;}"><font color="#006100">DMA 1.6 Chain</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MotCtrlMgr_MotCtrlToTwoMilliSec_Rec\u000a(CM201A)&quot;}"><font color="#006100">MotCtrlMgr_MotCtrlToTwoMilliSec_Rec<br>(CM201A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MotCtrlMgr_TwoMilliSecFromMotCtrl_Rec\u000a(CM201A)&quot;}"><font color="#006100">MotCtrlMgr_TwoMilliSecFromMotCtrl_Rec<br>(CM201A)</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;128 bit&quot;}"><font color="#006100">128 bit</font></td>
+		<td align="center" valign=middle bgcolor="#C6EFCE" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DMA15 Source (bits)\/128&quot;}"><font color="#006100">DMA15 Source (bits)/128</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=bottom data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;********* ORIGINAL DATA BELOW THIS LINE FOR COMPARISON USE ONLY ************************&quot;}"><font face="Arial" size=3 color="#000000">********* ORIGINAL DATA BELOW THIS LINE FOR COMPARISON USE ONLY ************************</font></td>
+		<td align="center" valign=bottom data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><font face="Arial" size=3 color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
+
+{% endraw %}

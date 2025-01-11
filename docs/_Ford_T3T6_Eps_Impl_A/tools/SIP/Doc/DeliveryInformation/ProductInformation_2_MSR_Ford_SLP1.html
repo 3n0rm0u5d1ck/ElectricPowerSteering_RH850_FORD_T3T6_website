@@ -1,0 +1,329 @@
+---
+layout: default
+title: ProductInformation_2_MSR_Ford_SLP1
+nav_order: 50
+parent: Component Implementation
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>1 </p>
+<p>based on template version 4.7.2 </p>
+<p><b>1 </b></p>
+<p><b>Product Overview </b></p>
+<p>All program specific details are described in this data sheet as an extension to the general </p>
+<p>Product Information MICROSAR 4. This data sheet covers the following aspects:  </p>
+<p><b>&gt; </b></p>
+<p>Software architecture and supported specifications </p>
+<p><b>&gt; </b></p>
+<p>Tool support and workflow </p>
+<p><b>&gt; </b></p>
+<p>Bootloader </p>
+<p><b>1.1 </b></p>
+<p><b>Supported Specifications </b></p>
+<p>The offered software modules are based on AUTOSAR 4.x specifications (we agreed with </p>
+<p>Ford to use the newest available versions). </p>
+<p>They  cover  the  communication  requirements  based  on  the  Ford  specification  “High  &amp; </p>
+<p>Medium  Speed  CAN  CGEA  ECU  Level  Functional  Requirements  Specification”,  version </p>
+<p>2009. </p>
+<p>The DCM/DEM is extended to support the Ford specification “Generic Global Diagnostic </p>
+<p>Specification  (GGDS)”,  issue  index  004,  volume  1,  document  no.  00.06.15.001  dated </p>
+<p>2013-05-02. </p>
+<p>The Ford security algorithm is based on “EESE Diagnostic Application Security Algorithm” </p>
+<p>document no. 00.06.15.150, Rev. 001. </p>
+<p>The offered Ethernet / IP modules are based on AUTOSAR 4.2.1 specifications.   </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>2 </p>
+<p>based on template version 4.7.2 </p>
+<p><b>1.2 </b></p>
+<p><b>Software Architecture </b></p>
+<p> </p>
+<p>Figure 1-1 </p>
+<p>Software Architecture </p>
+<p>All  modules  for  Ford AUTOSAR  are  colored  green  (FNOS  Modules).    Only  the  protocol </p>
+<p>components needed for a specific ECU will be included in the requested package i.e. CAN </p>
+<p>and/or LIN per the customer request based on Ford requirements.  Additional AUTOSAR </p>
+<p>components can be requested but are optional for a Ford ECU. </p>
+<p><b>1.3 </b></p>
+<p><b>MICROSAR Ford SLP1 specific modules </b></p>
+<p><b>1.3.1 </b></p>
+<p><b>Lib delivery of security algorithm </b></p>
+<p>The  Ford-specific  security  algorithm  is  delivered  as  a  lib  file,  please  note  that  this  file </p>
+<p>depends on the compiler options used for the delivery.  </p>
+<p>A </p>
+<p>change </p>
+<p>of </p>
+<p>the </p>
+<p>compiler </p>
+<p>or </p>
+<p>compiler </p>
+<p>options </p>
+<p>later </p>
+<p>in </p>
+<p>the </p>
+<p>project </p>
+<p>might </p>
+<p>result </p>
+<p>in </p>
+<p>incompatibilities. </p>
+<p>The  security  algorithm  is  implemented  as  a  SWC,  which  uses  the  BSW  module  CSM </p>
+<p>(CRY) and an additional module &quot;CRY (SW-based) Ford&quot; with specific content from Ford. </p>
+<p><b>1.3.2 </b></p>
+<p><b>E2E algorithm </b></p>
+<p>There is no common agreement within Ford which algorithm (profile) is used for end to end </p>
+<p>protection  (calculation  of  CRC  and  message  counter).  It  is  defined  within  a  project  and </p>
+<p>might even be different within one project from one PDU to the next PDU as it depends on </p>
+<p>the agreement involving all ECUs sending/receiving the specific PDU. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>3 </p>
+<p>based on template version 4.7.2 </p>
+<p>Vector can only offer the AUTOSAR conform profiles, they can be mixed within one ECU, </p>
+<p>please let us know which profile you need. Profile 1 and 2 is suitable for ECUs connected </p>
+<p>to CAN (CRC is 8 bit) and will be supported by the protection wrapper as well.  </p>
+<p>If  the  algorithm  doesn’t  match  to  the  AUTOSAR  profiles  the  application  has  to  do  the </p>
+<p>implementation. </p>
+<p><b>1.3.3 </b></p>
+<p><b>VSG for diagnostics </b></p>
+<p>For </p>
+<p>details </p>
+<p>about </p>
+<p>VSG </p>
+<p>support </p>
+<p>(vehicle </p>
+<p>system </p>
+<p>group, </p>
+<p>Ford </p>
+<p>internally </p>
+<p>called </p>
+<p>Dependencies) </p>
+<p>we </p>
+<p>provide </p>
+<p>an </p>
+<p>Application </p>
+<p>Note </p>
+<p>AN-ISC-8-</p>
+<p>1189_Vehicle_System_Group_Support.  This  feature  can  be  used  to  support  different </p>
+<p>diagnostic requirements in one Ecu software. </p>
+<p><b>1.3.4 </b></p>
+<p><b>Ford transparent gateway </b></p>
+<p>For ECUs that need to support the transparent gateway according to GGDS004 Annex F a </p>
+<p>complex device driver is available. </p>
+<p><b>1.3.5 </b></p>
+<p><b>Limitation DEM </b></p>
+<p><b>&gt; </b></p>
+<p>No integrated support of ISO 15031-5 / SAE J1979 (OBD services) </p>
+<p><b>&gt; </b></p>
+<p>No support for separate aging counter for testFailedSinceLastClear Bit versus </p>
+<p>confirmed DTC bit (typically only needed for ECM/TCM) </p>
+<p><b>&gt; </b></p>
+<p>All supported snapshot records must contain the same list of DIDs for a given DTC </p>
+<p><b>&gt; </b></p>
+<p>No integrated support for ISO 14229-1 service function $19 sub –function $17, $18 </p>
+<p>and $19 </p>
+<p><b>&gt; </b></p>
+<p>There are some additional requirements by Ford to implement OnDemand DTCs. This </p>
+<p>is not in the scope of the DEM. There is no support in the Ford SLP1 for this so the </p>
+<p>application has to implement it. </p>
+<p><b>1.3.6 </b></p>
+<p><b>Limitation DCM </b></p>
+<p>Support for the following features is planned  </p>
+<p><b>&gt; </b></p>
+<p>SID 0x2F with CEMR and bitmapped signals </p>
+<p></p>
+<p> R18 (April 2017) </p>
+<p><b>&gt; </b></p>
+<p>SID 0x31 &quot;RoutineInfo&quot; and OBD2 routines </p>
+<p></p>
+<p> R17 (December 2016) </p>
+<p><b>1.3.7 </b></p>
+<p><b>Integration Review </b></p>
+<p>For Ford projects an integration review is required it will be offered with the FNOS stack. </p>
+<p><b>1.3.8 </b></p>
+<p><b>Priority inversion avoidance (PIA) </b></p>
+<p>If PIA is required in your project please note the following (typically external PIA is not of </p>
+<p>interest to Ford). </p>
+<p>Autosar defines Can driver features for implementing PIA: </p>
+<p><b>&gt; </b></p>
+<p>Multiplexed Tx for external PIA (multiple Tx mailboxes are used for BasicCAN </p>
+<p>transmission). </p>
+<p><b>&gt; </b></p>
+<p>Hardware (Transmit) Cancellation for internal PIA </p>
+<p>But not all hardware platforms support this, due to hardware limitations. So if this topic is </p>
+<p>important  for  your  Ford  project,  please  select  a  hardware  platform  without  limitations  in </p>
+<p>regard to PIA. Internal PIA can be fulfilled as well by putting all send PDUs into a FullCAN </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>4 </p>
+<p>based on template version 4.7.2 </p>
+<p>buffer,  but  this  solution  depends  on  the  available  mailboxes  and  on  the  communication </p>
+<p>description distributed by Ford. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>5 </p>
+<p>based on template version 4.7.2 </p>
+<p><b>2 </b></p>
+<p><b>Tool Chain </b></p>
+<p>This </p>
+<p>chapter </p>
+<p>gives </p>
+<p>an </p>
+<p>overview </p>
+<p>over </p>
+<p>the </p>
+<p>available </p>
+<p>tool </p>
+<p>chain, </p>
+<p>which </p>
+<p>supports </p>
+<p>the </p>
+<p>configuration  of  the  Basic  Software  (BSW),  the  Runtime  Environment  (RTE),  Software </p>
+<p>Components (SWC) and, if available, of the boot loader. </p>
+<p>Please  refer to  the  Vector Knowledge  Base for a  list  of  supported  operating  systems  of </p>
+<p>each tool.</p>
+<p> </p>
+<p><b>2.1 </b></p>
+<p><b>Configuration Tools </b></p>
+<p>The basic delivery set includes the following tools: </p>
+<p> (mandated by Ford) </p>
+<p><b>&gt; </b></p>
+<p><b>DaVinci Configurator Pro Version 5</b>:  </p>
+<p><b>&gt; </b></p>
+<p>Recommended editor for MICROSAR BSW, MICROSAR OS </p>
+<p><b>&gt; </b></p>
+<p>Recommended configurator for MICROSAR RTE </p>
+<p><b>&gt; </b></p>
+<p>Generic Configuration editor (GCE) which allows the configuration of any software </p>
+<p>module which provides an AUTOSAR Basic Software Module Description (BSWMD). </p>
+<p><b>&gt; </b></p>
+<p>Use Case editors and validators </p>
+<p><b>2.2 </b></p>
+<p><b>Additional Tools </b></p>
+<p><b>&gt; </b></p>
+<p><b>DaVinci Developer</b>:  SWC editor. Basic features are  </p>
+<p><b>&gt; </b></p>
+<p>Creation and configuration of atomic SWC and SWC compositions </p>
+<p><b>&gt; </b></p>
+<p>Support of several AUTOSAR versions when importing SWC descriptions that have </p>
+<p>been created by AUTOSAR-compliant tools </p>
+<p><b>&gt; </b></p>
+<p><b>CANdela Studio</b>: This tool provides easy editing and creation of diagnostic </p>
+<p>configuration files (CDD) as used by the MICROSAR DCM and DEM. </p>
+<p><b>2.3 </b></p>
+<p><b>Supported Interchange Formats </b></p>
+<p><b>&gt; </b></p>
+<p><b>CAN  </b></p>
+<p>DBC, (AUTOSAR System Description 4.2.1 planned for future) </p>
+<p><b>&gt; </b></p>
+<p><b>LIN  </b></p>
+<p>LDF 2.1 , (AUTOSAR System Description 4.2.1 planned for future) </p>
+<p><b>&gt; </b></p>
+<p><b>CDD </b></p>
+<p>CDD manufacturer type “Ford” required. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>6 </p>
+<p>based on template version 4.7.2 </p>
+<p><b>3 </b></p>
+<p><b>Workflow </b></p>
+<p> </p>
+<p>Figure 3-1 </p>
+<p>Workflow, of BSW configuration </p>
+<p><b>DBC</b></p>
+<p><b>LDF</b></p>
+<p>Input files provided by </p>
+<p>Ford</p>
+<p>Contains communication</p>
+<p>information, needed</p>
+<p>for the ECU</p>
+<p>Software Component </p>
+<p>Description files</p>
+<p><b>.xml</b></p>
+<p><b>Embedded Coder</b></p>
+<p><b>TargetLink</b></p>
+<p><b>.cdd</b></p>
+<p>CANdela </p>
+<p>Diagnostic Data</p>
+<p><b>Other AUTOSAR tools</b></p>
+<p><b>DaVinci Developer</b></p>
+<p><b>DaVinci Configurator Pro</b></p>
+<p><b>Configuration of RTE + BSW</b></p>
+<p>ECU Extract of </p>
+<p>System Description</p>
+<p>ECU Configuration</p>
+<p>Description</p>
+<p><b>.xml</b></p>
+<p><b>.xml</b></p>
+<p>SystemDesc </p>
+<p>Conversion</p>
+<p>Base ECUC </p>
+<p>Generation</p>
+<p>Editing and</p>
+<p>Generation</p>
+<p><b>.c</b></p>
+<p><b>.h</b></p>
+<p>BSW module </p>
+<p>configuration header </p>
+<p>and code files</p>
+<p>RTE header and code </p>
+<p>files</p>
+<p>SWC header files</p>
+<p>OEM Preconfig.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>7 </p>
+<p>based on template version 4.7.2 </p>
+<p><b>4 </b></p>
+<p><b>Additional Information </b></p>
+<p><b>&gt; </b></p>
+<p><b>Legislative On Board Diagnostic (OBD)</b></p>
+<p><b> </b></p>
+<p>Legislative OBD2 support can be ordered as an optional extension to the MICROSAR </p>
+<p>DCM module. This add-on supports the OBD diagnostic services $01 to $0A according </p>
+<p>to AUTOSAR and SAE J1979 / ISO 15031.</p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Product Information MICROSAR Ford SLP1 </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 2.03.01 </p>
+<p>8 </p>
+<p>based on template version 4.7.2 </p>
+<p><b>5 </b></p>
+<p><b>Bootloader </b></p>
+<p>For  Ford  projects  an  additional  FBL  package  is  required.  A  FNOS  FBL  according  to </p>
+<p>“Software Download Specification” Document No. 00.06.15.002, Rev. 006 dated: 2013-05-</p>
+<p>02 will be offered. </p>
+<p> </p>
+</body>
+</html>
+{% endraw %}

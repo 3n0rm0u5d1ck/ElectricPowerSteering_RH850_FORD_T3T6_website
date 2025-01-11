@@ -1,0 +1,2921 @@
+---
+layout: default
+title: sv-rte-us-72
+nav_order: 243
+parent: Cplr (TL120A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>RTE Server </b></p>
+<p><b>Reference Manual</b></p>
+<p>Document #10951 Rev.7.2</p>
+<p>Copyright © 2005 by</p>
+<p>All rights reserved.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Copyright © 1983-2005 by Green Hills Software, Inc. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise,</p>
+<p>without prior written permission from Green Hills Software, Inc.</p>
+<p>DISCLAIMER</p>
+<p>GREEN  HILLS  SOFTWARE,  INC.  MAKES  NO  REPRESENTATIONS  OR  WARRANTIES  WITH  RESPECT  TO  THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR</p>
+<p>FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software, Inc. reserves the right to revise this publication</p>
+<p>and to make changes from time to time in the content hereof without obligation of Green Hills Software, Inc. to notify any person</p>
+<p>of such revision or changes.</p>
+<p>Green Hills Software and the Green Hills logo are trademarks, MULTI and AdaMULTI are registered trademarks, of</p>
+<p> </p>
+<p>Green Hills</p>
+<p>Software, Inc.</p>
+<p>System V is a trademark of AT&amp;T.</p>
+<p>Java is a registered trademark, and Sun is a trademark of Sun Microsystems, Inc.</p>
+<p>UNIX and Open Look are registered trademarks of UNIX System Laboratories.</p>
+<p>4.2BSD is a trademark of the Board of Regents of the University of California at Berkeley.</p>
+<p>X and X Window System are trademarks of the Massachusetts Institute of Technology.</p>
+<p>Intel, i960, and Pentium are registered trademarks, and i386 and i486 are trademarks of Intel Corporation.</p>
+<p>Motif is a trademark of Open Software Foundation, Inc.</p>
+<p>Microsoft is a registered trademark, and Windows, Windows 95, Windows 98, Windows Me, Windows NT, Windows 2000, and</p>
+<p>Windows XP are trademarks of Microsoft Corporation.</p>
+<p>VxWorks is a registered trademark of Wind River.</p>
+<p>INTEGRITY is a trademark of Green Hills Software, Inc.</p>
+<p>OSE is a registered trademark of Enea OSE Systems AB.</p>
+<p>ThreadX is a registered trademark of Express Logic, Inc.</p>
+<p>All other trademarks and registered trademarks are property of their respective companies.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>CONTENTS</b></p>
+<p><i><b>C-1</b></i></p>
+<p>Preface </p>
+<p>..............................................................................................1</p>
+<p>About this Manual ....................................................................................2</p>
+<p>Notation Conventions  ..............................................................................2</p>
+<p>Chapter 1</p>
+<p>Installation  ...........................................................................3</p>
+<p>The RTEserv Software Package  .............................................................4</p>
+<p>Installing the RTE Server .........................................................................4</p>
+<p>Setting The RTE ......................................................................................4</p>
+<p>Checking the Connection  ........................................................................4</p>
+<p>Chapter 2</p>
+<p>Editing a MULTI Resource File ............................................7</p>
+<p>Resource Files .........................................................................................8</p>
+<p>RTE.RC ....................................................................................................... 8</p>
+<p>_INIT_SP .................................................................................................9</p>
+<p>Starting RTEserv  .....................................................................................9</p>
+<p>Target Commands ...................................................................................9</p>
+<p>Chapter 3</p>
+<p>Creating an Executable File  ..............................................11</p>
+<p>RTE-xxxx-PC .........................................................................................12</p>
+<p>RTE-xxxx-IE, RTE-xxxx-TP ...................................................................12</p>
+<p>Chapter 4</p>
+<p>Activating MULTI with RTEserv .........................................13</p>
+<p>Starting RTE ..........................................................................................14</p>
+<p>Address Specification ............................................................................14</p>
+<p>Setting _INIT_SP ...................................................................................14</p>
+<p>Chapter 5</p>
+<p>Target Window  ..................................................................15</p>
+<p>Target Window  ......................................................................................16</p>
+<p>Chapter 6</p>
+<p>Target Commands .............................................................17</p>
+<p>Server Troubleshooting Command ........................................................18</p>
+<p>debug [on|off]  ............................................................................................ 18</p>
+<p>Download Suppress Command .............................................................18</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>C-2</b></i></p>
+<p><b>CONTENTS</b></p>
+<p>noload ....................................................................................................... 18</p>
+<p>Target Commands .................................................................................18</p>
+<p>Chapter 7</p>
+<p>Trace Data Display Function  ............................................ 19</p>
+<p>Menus and Buttons in the Trace Window ..............................................21</p>
+<p>How to get trace data  ............................................................................23</p>
+<p>Setting trace triggers ................................................................................. 23</p>
+<p>Setting Trace Display Mode ...................................................................... 23</p>
+<p>Execution of the Program and Break ........................................................ 25</p>
+<p>Trace Data Display  ................................................................................... 25</p>
+<p>Saving Trace Data to a File  ...................................................................27</p>
+<p>Trigger Setting (when using KIT-VR5432-TP, KIT-VR5464-TP)  ...........28</p>
+<p>eve Setup... Menu ..................................................................................... 28</p>
+<p>eva Setup... Menu ..................................................................................... 29</p>
+<p>Trace Setup... Menu  ................................................................................. 30</p>
+<p>Trace Data Display (when using KIT-VR5432-TP, KIT-VR5464-TP)  ....32</p>
+<p>Assembler Display Mode  .......................................................................... 32</p>
+<p>C Source/Assembler Mixed Display Mode  ............................................... 34</p>
+<p>Trigger Setting (when using KIT-NB85E-TP)  ........................................35</p>
+<p>tp Setup... Menu  ....................................................................................... 35</p>
+<p>td Setup... Menu  ....................................................................................... 36</p>
+<p>tsp Setup... Menu ...................................................................................... 37</p>
+<p>Trace Setup... Menu  ................................................................................. 38</p>
+<p>Trace Data Display (when using KIT-NB85E-TP)  .................................41</p>
+<p>Assembler Display Mode  .......................................................................... 41</p>
+<p>C Source/Assembler Mixed Display Mode  ............................................... 43</p>
+<p>Trigger Setting (when using RTE-V850E/GP1-IE)  ................................44</p>
+<p>tp Setup... Menu  ....................................................................................... 44</p>
+<p>td Setup... Menu  ....................................................................................... 45</p>
+<p>tsp Setup... Menu ...................................................................................... 46</p>
+<p>Trace Setup... Menu  ................................................................................. 47</p>
+<p>SubSwitch Setup...Menu  .......................................................................... 49</p>
+<p>eva Setup... Menu ..................................................................................... 55</p>
+<p>Trace Data Display (when using RTE-V850E/GP1-IE)  .........................57</p>
+<p>Assembler Display Mode  .......................................................................... 57</p>
+<p>C Source/Assembler Mixed Display Mode  ............................................... 60</p>
+<p>Trigger Setting (when using KIT-V850E/MA3-IE) ..................................61</p>
+<p>tp Setup... Menu  ....................................................................................... 61</p>
+<p>td Setup... Menu  ....................................................................................... 62</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>CONTENTS</b></p>
+<p><i><b>C-3</b></i></p>
+<p>tsp Setup... Menu ...................................................................................... 63</p>
+<p>Trace Setup... Menu .................................................................................. 64</p>
+<p>SubSwitchOn Setup...Menu ...................................................................... 66</p>
+<p>SubSwitchOff Setup...Menu ...................................................................... 70</p>
+<p>eva Setup... Menu ..................................................................................... 74</p>
+<p>eve Setup... Menu ..................................................................................... 76</p>
+<p>Trace Data Display (when using KIT-V850E/MA3-IE) ...........................77</p>
+<p>Assembler Display Mode  .......................................................................... 77</p>
+<p>C Source/Assembler Mixed Display Mode ................................................ 80</p>
+<p>Trace Data Display (when using KIT-NA85E2-TP, KIT-V850E2/ME3-TP) ... 81</p>
+<p>Trace Data Display (when using KT-OMAP_ARM-TP)  .........................83</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>C-4</b></i></p>
+<p><b>CONTENTS</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Preface</p>
+<p><i><b>1</b></i></p>
+<p><b>Preface</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>About this Manual</p>
+<p>o</p>
+<p>Notation Conventions</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>2</b></i></p>
+<p>Preface</p>
+<p><b>About this Manual</b></p>
+<p>This manual describes the combined use of MULTI and an RTE server, <b>rteserv</b>, including the files con-</p>
+<p>stituting the package and how to customize them. The Midas Lab RTE set up is covered briefly. For</p>
+<p>details,  as  well  as  an  explanation  For  details  on  using  MULTI,  refer  to  the  &quot;</p>
+<p>MULTI  2000  User's</p>
+<p>Guide</p>
+<p>&quot;.</p>
+<p>The following Midas Lab emulators and boards are supported.</p>
+<p>RTE-XXXX-IE,  RTE-XXXX-TP  indicate  the  names  of  emulators  and  RTE-XXXX-PC  indicates  the</p>
+<p>name of boards manufactured by Midas Lab. The &quot;XXXX&quot; mostly varies with the target MPU.</p>
+<p><b>Notation Conventions</b></p>
+<p>This manual uses the following typographical conventions:.</p>
+<p>Emulator</p>
+<p>Board</p>
+<p>RTE-XXXX-IE</p>
+<p>RTE-XXXX-TP</p>
+<p>RTE-XXXX-PC</p>
+<p>Convention</p>
+<p>Example</p>
+<p>Description</p>
+<p><b>bold </b>text</p>
+<p><b>-noansi</b></p>
+<p>name of program, command, directory, or file</p>
+<p><b>bold </b>characters in quotes</p>
+<p>&quot;<b>A</b>&quot;</p>
+<p>name to enter as shown, without quotes</p>
+<p>courier font</p>
+<p><b>setenv TMPDIR</b></p>
+<p>samples of code, or instructions to enter</p>
+<p><i>italic </i>text in a command line</p>
+<p><b>-o <i></b>filename</i></p>
+<p>place-holder for user-supplied information</p>
+<p>square brackets, []</p>
+<p><b>.macro <i></b>name </i>[<i>list</i>]</p>
+<p>encloses optional commands or terms</p>
+<h1 style="page-break-before:always; "></h1>
+<p>1. Installation</p>
+<p><i><b>3</b></i></p>
+<p><b>Chapter 1</b></p>
+<p><b>Installation</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>The RTEserv Software Package</p>
+<p>o</p>
+<p>Installing the RTE Server</p>
+<p>o</p>
+<p>Setting The RTE</p>
+<p>o</p>
+<p>Checking the Connection</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>4</b></i></p>
+<p>1. Installation</p>
+<p><b>The RTEserv Software Package</b></p>
+<p>The Midas Lab RTE server package includes the following file:</p>
+<p>The package also includes files that are implicitly used for starting MULTI, as well as those required for</p>
+<p>installation. When using the RTE server with other target MPUs, change the target command or the ini-</p>
+<p>tial value of the stack pointer as required.</p>
+<p><b>Installing the RTE Server</b></p>
+<p>Insert the supplied disk into the appropriate drive of the PC then, from the Windows Program Manager,</p>
+<p>execute </p>
+<p><b>setup.exe</b></p>
+<p> on the diskette. This completes basic installation of the server.</p>
+<p><b>Setting The RTE</b></p>
+<p>Next, set up the RTE as necessary and connect it to the PC's serial port, a bus or LAN, as described in</p>
+<p>the  installation  section  of  the  manual  provided  with  the  RTE.  Then  install  the  software  supplied  by</p>
+<p>Midas Lab.</p>
+<p><b>Checking the Connection</b></p>
+<p>Check the connection between the RTE and PC, and the RTE operation from the PC. After the supplied</p>
+<p>Midas Lab software has been installed, the </p>
+<p><b>RTE for Windows</b></p>
+<p> group is created in the Windows Pro-</p>
+<p>gram Manager window. To check the connection, start </p>
+<p><b>Check RTE2</b></p>
+<p> from within Windows. Using</p>
+<p><b>Check RTE2</b></p>
+<p>, allows you to:</p>
+<p>o</p>
+<p>Set the operating environment (ports to be used, communication speed, I/O address, etc.)</p>
+<p>o</p>
+<p>Check the connection between the RTE and PC</p>
+<p>o</p>
+<p>Test the RTE functions</p>
+<p>When starting </p>
+<p><b>Check RTE2</b></p>
+<p>, a dialog box appears allowing you to select the type of emulator or board.</p>
+<p>Select the RTE to be used. For bus connections, select the port address. For serial connections, select the</p>
+<p>port connected to the RTE, then select the communication speed. For LAN connection, Select IP address</p>
+<p>of RTE. Finally, click the confirmation button. This starts both the connection check and function test.</p>
+<p>If </p>
+<p><b>Check RTE2</b></p>
+<p> does not terminate normally in a serial connection case, check the RS-232C cable</p>
+<p>between the RTE and PC, and the RTE settings, such as the communication speed and port setting. For</p>
+<p>bus connections, check the I/O address setting (the address must not conflict with that being used by</p>
+<p>File</p>
+<p>Description</p>
+<p>rteserv</p>
+<p>RTE server</p>
+<h1 style="page-break-before:always; "></h1>
+<p>1. Installation</p>
+<p><i><b>5</b></i></p>
+<p>another  board)  and  the  board  connection.  Also  check  the  RTE  dip  switch  settings  (communication</p>
+<p>speed, I/O address, etc.). For details, refer to the manual provided with the RTE.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>6</b></i></p>
+<p>1. Installation</p>
+<h1 style="page-break-before:always; "></h1>
+<p>2. Editing a MULTI Resource File</p>
+<p><i><b>7</b></i></p>
+<p><b>Chapter 2</b></p>
+<p><b>Editing </b></p>
+<p><b>a </b></p>
+<p><b>MULTI </b></p>
+<p><b>Resource</b></p>
+<p><b>File</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>Resource Files</p>
+<p>o</p>
+<p>_INIT_SP</p>
+<p>o</p>
+<p>Starting RTEserv</p>
+<p>o</p>
+<p>Target Commands</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>8</b></i></p>
+<p>2. Editing a MULTI Resource File</p>
+<p><b>Resource Files</b></p>
+<p>Resource files set server-specific commands, rather than commands for the MULTI debugger. In Win-</p>
+<p>dows,  a  resource  file  is  stored  in  the  same  directory  where  MULTI  is  installed.  Suppose  MULTI  is</p>
+<p>started as follows:</p>
+<p><b>multi</b></p>
+<p>The resource file in the directory in which MULTI has been installed is read. In the resource file, you</p>
+<p>can specify fonts and configure commands such as </p>
+<p><b>button</b></p>
+<p> and </p>
+<p><b>mouse</b></p>
+<p>. A simple resource file exam-</p>
+<p>ple is shown below:</p>
+<p><b>/* sample initial configuration commands */</b></p>
+<p><b>button toggle $_DISPMODE := !$_DISPMODE</b></p>
+<p><b>mouse mouse3=disconnect</b></p>
+<p><b>configure tabsize=8</b></p>
+<p><b>Note:</b></p>
+<p>Never add RTE target commands in the </p>
+<p><b>multi.rc</b></p>
+<p> resource file. Specifying RTE target commands in</p>
+<p>the </p>
+<p><b>multi.rc</b></p>
+<p>  resource  file  may  cause  unexpected  behavior  in  MULTI's  Builder.  RTE  target  com-</p>
+<p>mands are used only with the MULTI debugger.</p>
+<p><b>RTE.RC</b></p>
+<p>MULTI provides a function that automatically reads a resource file associated with a debug target file.</p>
+<p>For example, suppose that the debugger is started by specifying a debug target file named </p>
+<p><b>test.out</b></p>
+<p>,</p>
+<p>either from the command line or with the builder, as follows:</p>
+<p><b>multi test.out</b></p>
+<p>If a file named </p>
+<p><b>multi.rc</b></p>
+<p> exists, the </p>
+<p><b>multi.rc</b></p>
+<p> resource file is read. In addition, if a resource file</p>
+<p>named </p>
+<p><b>test.out.rc</b></p>
+<p> exists in the current directory, the </p>
+<p><b>test.out.rc</b></p>
+<p> resource file is also automat-</p>
+<p>ically read and executed. The loaded resource file has the same filename as the target program being</p>
+<p>debugged. The package includes </p>
+<p><b>rteie.rc</b></p>
+<p> (for the RTE-xxxx-IE) or </p>
+<p><b>rtepc.rc</b></p>
+<p> (for the RTE-xxxx-</p>
+<p>PC), an example resource file.</p>
+<p>This method allows you to use a resource file for each debug target object file. In this case, a resource</p>
+<p>file is read only when debugging of the corresponding object file is started. Accordingly, you can code</p>
+<p>target commands in such a resource file and perform pre-debugging initialization for the RTE. When the</p>
+<p><b>remote rteserv</b></p>
+<p> command is in the </p>
+<p><b>rte.rc</b></p>
+<p> resource file, it must appear prior to all </p>
+<p><b>target</b></p>
+<p> com-</p>
+<p>mands, because </p>
+<p><b>target</b></p>
+<p> commands can be executed only after </p>
+<p><b>rteserv</b></p>
+<p> has been started by executing</p>
+<p>the </p>
+<p><b>remote rteserv</b></p>
+<p> command.</p>
+<p>The resource filename can be unrelated to the object file. In this case, such a file</p>
+<p> </p>
+<p>can be used as a play-</p>
+<p>back file after MULTI has been started in debug mode, or</p>
+<p> </p>
+<p>specified with an option flag (<b>-p </b>option) when</p>
+<p>starting MULTI.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>2. Editing a MULTI Resource File</p>
+<p><i><b>9</b></i></p>
+<p>For example, after MULTI has been started in debug mode, the resource file can</p>
+<p> </p>
+<p>be played back as a</p>
+<p>MULTI command, as follows:</p>
+<p><b>&lt; rte.rc</b></p>
+<p>When starting MULTI, the <b>-p </b>option can be specified as follows:</p>
+<p><b>multi -p rte.rc a.out</b></p>
+<p><b>_INIT_SP</b></p>
+<p><b>_INIT_SP </b>is an internal MULTI symbol that indicates the initial stack pointer value. Suppose the fol-</p>
+<p>lowing command is entered:</p>
+<p><b>_INIT_SP=0x11f000</b></p>
+<p>MULTI sets </p>
+<p><b>0x11f000</b></p>
+<p> as the initial value in the stack pointer. This command can also be coded in a</p>
+<p>resource file as shown above. In such a case when MULTI is started, the stack pointer is initialized to</p>
+<p><b>0x11f000</b></p>
+<p>. This command is not required if you create your own startup routine in which initialization</p>
+<p>of the stack pointer is explicitly specified.</p>
+<p>Regardless of whether <b>_INIT_SP </b>is used, the stack pointer must point to an address within the usable</p>
+<p>RAM area on the RTE. That RAM area must not overlap the user program area (see &quot;</p>
+<p>Chapter 3 Creat-</p>
+<p>ing an Executable File</p>
+<p>&quot; on page 11).</p>
+<p><b>Starting RTEserv</b></p>
+<p>To start <b>rteserv</b>, enter:</p>
+<p><b>remote rteserv</b></p>
+<p><b>Target Commands</b></p>
+<p>The </p>
+<p><b>target</b></p>
+<p> command and commands entered using the </p>
+<p><b>TARGET</b></p>
+<p> window are sent directly to the RTE</p>
+<p>and then executed, with few exceptions. The output is also displayed. For details see &quot;</p>
+<p>Chapter 6 Target</p>
+<p>Commands</p>
+<p>&quot; on page 17.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>10</b></i></p>
+<p>2. Editing a MULTI Resource File</p>
+<h1 style="page-break-before:always; "></h1>
+<p>3. Creating an Executable File</p>
+<p><i><b>11</b></i></p>
+<p><b>Chapter 3</b></p>
+<p><b>Creating an Executable File</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>RTE-xxxx-PC</p>
+<p>o</p>
+<p>RTE-xxxx-IE, RTE-xxxx-TP</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>12</b></i></p>
+<p>3. Creating an Executable File</p>
+<p>When creating an executable file that can be debugged by MULTI for the Midas Lab RTE, carefully</p>
+<p>determine the address when linking the program. The location address must be determined so that the</p>
+<p>file can be loaded into the memory of the actual device or into the mapped emulation memory.</p>
+<p><b>RTE-xxxx-PC</b></p>
+<p>For the RTE-xxxx-PC, profiling and coverage using the RTE are supported. System calls which can be</p>
+<p>used  for  the  simulator  are  also  supported.  Finally,  an  I/O  window  exists  for  RTE-xxxx-PC  allowing</p>
+<p>input/output processing.</p>
+<p><b>RTE-xxxx-IE, RTE-xxxx-TP</b></p>
+<p>For the RTE-xxxx-IE and RTE-xxxx-TP, profiling and coverage using the RTE are not supported. Thus,</p>
+<p>the profile option cannot be specified for compilation. System calls and I/O window which can be used</p>
+<p>for the simulator are supported.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>4. Activating MULTI with RTEserv</p>
+<p><i><b>13</b></i></p>
+<p><b>Chapter 4</b></p>
+<p><b>Activating </b></p>
+<p><b>MULTI </b></p>
+<p><b>with</b></p>
+<p><b>RTEserv</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>Starting RTE</p>
+<p>o</p>
+<p>Address Specification</p>
+<p>o</p>
+<p>Setting _INIT_SP</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>14</b></i></p>
+<p>4. Activating MULTI with RTEserv</p>
+<p><b>Starting RTE</b></p>
+<p>In the case of serial connection, once connection is established normally, the MULTI command window</p>
+<p>displays the following:</p>
+<p><b>Connected to debug server 'rteserv'.</b></p>
+<p><b>Remote cpu: xxxx</b></p>
+<p>where xxxx denotes the CPU you have connected to.</p>
+<p>The following message may appear in the MULTI command window:</p>
+<p><b>Couldn't start 'rteserv' as a remote debug server.</b></p>
+<p><b>remote: no remote connection established</b></p>
+<p>In such a case, check whether </p>
+<p><b>rteserv</b></p>
+<p> is included correctly in the execution path. If not, you must</p>
+<p>specify the PATH environment variable. It is also possible, however, to attempt reconnection by using a</p>
+<p>command that fully specifies the path, as indicated below.</p>
+<p><b>remote /usr/green/rteserv</b></p>
+<p>If an error message other than the above is output, execute </p>
+<p><b>Check RTE2</b></p>
+<p>, supplied by Midas Lab, and</p>
+<p>note whether it terminates normally.</p>
+<p><b>Address Specification</b></p>
+<p>Once MULTI is connected to the RTE, clicking the </p>
+<p><b>go</b></p>
+<p> or </p>
+<p><b>step</b></p>
+<p> button causes the program to be down-</p>
+<p>loaded then executed. At this time, the following message may appear in the MULTI command window:</p>
+<p><b>Download  failed,  access  error  during  block  write  0xnnnnnnnn  -</b></p>
+<p><b>0xmmmmmmmm</b></p>
+<p><b>Couldn't run program.</b></p>
+<p>This message indicates that the specified address cannot be used on the RTE. In such a case, check the</p>
+<p>address specified for linking.</p>
+<p><b>Setting _INIT_SP</b></p>
+<p>The following message may appear when downloading is complete:</p>
+<p><b>Download complete.</b></p>
+<p><b>Couldn't run program.</b></p>
+<p>This message indicates that <b>_INIT_SP </b>has not been set, or that the set value is invalid. In such a case,</p>
+<p>set  a  valid  value  for <b> _INIT_SP </b> then  click  the </p>
+<p><b>Go</b></p>
+<p>, </p>
+<p><b>Next</b></p>
+<p>, </p>
+<p><b>Restart</b></p>
+<p>,  or </p>
+<p><b>Step</b></p>
+<p>  button  again  (see</p>
+<p>&quot;</p>
+<p>_INIT_SP</p>
+<p>&quot; on page 9) to download and re-run the program.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>5. Target Window</p>
+<p><i><b>15</b></i></p>
+<p><b>Chapter 5</b></p>
+<p><b>Target Window</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>Target Window</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>16</b></i></p>
+<p>5. Target Window</p>
+<p><b>Target Window</b></p>
+<p>The  Target  window  lets  you  issue  commands  for  communicating  with  the  RTE  directly.  Commands</p>
+<p>include those for initialization (i.e. </p>
+<p><b>map</b></p>
+<p> for the V851), as well as those for checking the connection with</p>
+<p>the monitor (i.e. </p>
+<p><b>ver</b></p>
+<p> command). When used from the MULTI Debugger, these commands can be used,</p>
+<p>provided they are prefixed with </p>
+<p><b>target</b></p>
+<p>. For example, for the V851 MPU, the following command can</p>
+<p>be entered from the </p>
+<p><b>Target</b></p>
+<p> window:</p>
+<p><b>map 100000 128</b></p>
+<p>When used from the MULTI Debugger, the above command can be executed as:</p>
+<p><b>target map 100000 128</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p>6. Target Commands</p>
+<p><i><b>17</b></i></p>
+<p><b>Chapter 6</b></p>
+<p><b>Target Commands</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>Server Troubleshooting Command</p>
+<p>o</p>
+<p>Download Suppress Command</p>
+<p>o</p>
+<p>Target Commands</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>18</b></i></p>
+<p>6. Target Commands</p>
+<p>This chapter lists information and limitations on the target commands that are executed from the Target</p>
+<p>window. It also describes those target commands not supported by the RTE.</p>
+<p>Basically, all the commands supported by the RTE are executed from the Target window. In addition,</p>
+<p>the following three target commands can also be used.</p>
+<p><b>Server Troubleshooting Command</b></p>
+<p><b>debug [on|off]</b></p>
+<p>This command is used for troubleshooting when using </p>
+<p><b>rteserv</b></p>
+<p>. Specifying </p>
+<p><b>debug on</b></p>
+<p> causes subse-</p>
+<p>quent communication between the RTE and </p>
+<p><b>rteserv</b></p>
+<p> to be saved. The log is output to the window</p>
+<p>from which MULTI was started.</p>
+<p><b>Creating a log file</b></p>
+<p>Once MULTI has been started, open the Target window (connect to the board using the RTE server),</p>
+<p>and enter the following:</p>
+<p><b>debug on</b></p>
+<p>To enable entry from the MULTI command window, enter </p>
+<p><b>target debug on</b></p>
+<p>, instead of the above.</p>
+<p>Once  this  command  is  executed,  all  subsequent  communication  between  the  RTE  and </p>
+<p><b>rteserv</b></p>
+<p>  is</p>
+<p>logged. To terminate logging, enter the following:</p>
+<p><b>debug off</b></p>
+<p><b>Note:</b></p>
+<p>Logging too much data on the PC may cause MULTI to hang.</p>
+<p><b>Download Suppress Command</b></p>
+<p><b>noload</b></p>
+<p>This command controls downloading to </p>
+<p><b>rteserv</b></p>
+<p>. By default, downloading begins upon the execution</p>
+<p>of an object to be debugged (when the </p>
+<p><b>Go</b></p>
+<p>, </p>
+<p><b>Step</b></p>
+<p>, </p>
+<p><b>Next</b></p>
+<p>, or </p>
+<p><b>Restart</b></p>
+<p> button is clicked). When this</p>
+<p>command is entered, however, execution of the object to be debugged is started without downloading.</p>
+<p>This command is used to avoid duplicate downloading if, for example, an object already exists in mem-</p>
+<p>ory. To re-enable downloading, enter this command once again.</p>
+<p><b>Target Commands</b></p>
+<p>The following tables list the commands that can be used with the </p>
+<p><b>target</b></p>
+<p> command from the Target</p>
+<p>window or MULTI command window, for each target MPU. For details of each command, refer to the</p>
+<p>manual provided with the RTE.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>19</b></i></p>
+<p><b>Chapter 7</b></p>
+<p><b>Trace Data Display Function</b></p>
+<p>This chapter describes the following items.</p>
+<p>o</p>
+<p>Menus and Buttons in the Trace Window</p>
+<p>o</p>
+<p>How to get trace data</p>
+<p>o</p>
+<p>Saving Trace Data to a File</p>
+<p>o</p>
+<p>Trigger Setting (when using KIT-VR5432-TP, KIT-VR5464-TP)</p>
+<p>o</p>
+<p>Trace Data Display (when using KIT-VR5432-TP, KIT-VR5464-TP)</p>
+<p>o</p>
+<p>Trigger Setting (when using KIT-NB85E-TP)</p>
+<p>o</p>
+<p>Trace Data Display (when using KIT-NB85E-TP)</p>
+<p>o</p>
+<p>Trigger Setting (when using RTE-V850E/GP1-IE)</p>
+<p>o</p>
+<p>Trace Data Display (when using RTE-V850E/GP1-IE)</p>
+<p>o</p>
+<p>Trigger Setting (when using KIT-V850E/MA3-IE)</p>
+<p>o</p>
+<p>Trace Data Display (when using KIT-V850E/MA3-IE)</p>
+<p>o</p>
+<p>Trace Data Display (when using KIT-NA85E2-TP, KIT-V850E2/ME3-TP)</p>
+<p>o</p>
+<p>Trace Data Display (when using KT-OMAP_ARM-TP)</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>20</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>The window for the trace utility is available when you use the following products:</p>
+<p><b>[Product Names]</b></p>
+<p>KIT-VR5400-TP</p>
+<p>KIT-NB85E-TP</p>
+<p>RTE-V850E/GP1-IE</p>
+<p>KIT-V850E/MA3-IE</p>
+<p>After starting </p>
+<p><b>rteserv</b></p>
+<p>, enter </p>
+<p><b>TRACEWIN</b></p>
+<p> in the MULTI command pane to open the window for the</p>
+<p>trace utility.</p>
+<p>As for the following products, only trace display is available. You cannot specify trigger conditions of</p>
+<p>the trace function from this window. Specify trace trigger conditions using the target instruction.</p>
+<p><b>[Product Names]</b></p>
+<p>KIT-NA85E2-TP</p>
+<p>KIT-OMAP_ARM-TP</p>
+<p>KIT-V850E2/ME3</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>21</b></i></p>
+<p><b>Menus and Buttons in the Trace Window</b></p>
+<p>The trace window has two menus.</p>
+<p><b>Display menu</b></p>
+<p><b>Trigger menu</b></p>
+<p>[When using KIT-VR5432-TP, KIT-VR5464-TP]</p>
+<p>[When using KIT-NB85E-TP]</p>
+<p>[When using RTE-V850E/GP1-IE]</p>
+<p><b>Mode...</b></p>
+<p>Opens a window from which you can specify the display range and type of</p>
+<p>trace data.</p>
+<p><b>Save To File...</b></p>
+<p>Saves the trace data to a file.</p>
+<p><b>Close...</b></p>
+<p>Closes the trace window.</p>
+<p><b>eve Setup...</b></p>
+<p>Opens a window from which you can specify execution address events.</p>
+<p><b>eva Setup...</b></p>
+<p>Opens a window from which you can specify access cycle events.</p>
+<p><b>Trace Setup...</b></p>
+<p>Opens a window from which you can specify various trace settings.</p>
+<p><b>tp Setup...</b></p>
+<p>Opens a window from which you can specify trace triggers.</p>
+<p><b>td Setup...</b></p>
+<p>Opens a window from which you can specify conditions for access cycles</p>
+<p>to take data into trace.</p>
+<p><b>tsp Setup...</b></p>
+<p>Opens a window from which you can specify trace switch points.</p>
+<p><b>Trace Setup...</b></p>
+<p>Opens a window from which you can specify various trace settings.</p>
+<p><b>tp Setup...</b></p>
+<p>Opens a window from which you can specify trace triggers.</p>
+<p><b>td Setup...</b></p>
+<p>Opens  a  window  from  which  you  can  specify  conditions  for  access</p>
+<p>cycles to take data into trace.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>22</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>[When using KIT-V850E/MA3-IE]</p>
+<p>There are three buttons in the bottom of the trace window:</p>
+<p><b>tsp Setup...</b></p>
+<p>Opens  a  window  from  which  you  can  specify  trace  section  points</p>
+<p>(addresses).</p>
+<p><b>Trace Setup...</b></p>
+<p>Opens a window from which you can specify various trace settings.</p>
+<p><b>SubSwitch Setup...</b></p>
+<p>Opens  a  window  from  which  you  can  specify  conditions  for  sub</p>
+<p>switches.</p>
+<p><b>eva Setup...</b></p>
+<p>Opens a window from which you can specify events related to access.</p>
+<p><b>tp Setup...</b></p>
+<p>Opens a window from which you can specify trace triggers.</p>
+<p><b>td Setup...</b></p>
+<p>Opens a window from which you can specify conditions for access</p>
+<p>cycles to take data into trace.</p>
+<p><b>tsp Setup...</b></p>
+<p>Opens a window from which you can specify trace section points</p>
+<p>(addresses).</p>
+<p><b>Trace Setup...</b></p>
+<p>Opens a window from which you can specify various trace settings.</p>
+<p><b>SubSwitchOn Setup...</b></p>
+<p>Opens a window from which you can specify conditions for sub-</p>
+<p>switch on.</p>
+<p><b>SubSwitchOff Setup...</b></p>
+<p>Opens a window from which you can specify conditions for sub-</p>
+<p>switch off.</p>
+<p><b>eva Setup...</b></p>
+<p>Opens  a  window  from  which  you  can  specify  events  related  to</p>
+<p>access.</p>
+<p><b>eve Setup...</b></p>
+<p>Open a window from which you can specify events related to exe-</p>
+<p>cution.</p>
+<p><b>Start</b></p>
+<p>Starts tracing.</p>
+<p><b>Stop</b></p>
+<p>Stops tracing.</p>
+<p><b>Next Page</b></p>
+<p>When there is more trace data, you can display the data in the next page by</p>
+<p>pushing this.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>23</b></i></p>
+<p><b>How to get trace data</b></p>
+<p>To get trace data, follow the procedure below:</p>
+<p><b>Setting trace triggers</b></p>
+<p>Specify conditions  to get tracing.  From  the Trigger menu in the  trace window,  specify  an event and</p>
+<p>specify trace trigger conditions. Trace trigger conditions depend on the MPU you are using. For more</p>
+<p>information,  see  &quot;</p>
+<p>Trigger  Setting  (when  using  KIT-VR5432-TP,  KIT-VR5464-TP)</p>
+<p>&quot;  on  page  28,</p>
+<p>&quot;</p>
+<p>Trigger Setting (when using KIT-NB85E-TP)</p>
+<p>&quot; on page 35,  &quot;</p>
+<p>Trigger Setting (when using RTE-</p>
+<p>V850E/GP1-IE)</p>
+<p>&quot; on page 44, and &quot;</p>
+<p>Trigger Setting (when using KIT-V850E/MA3-IE)</p>
+<p>&quot; on page 61</p>
+<p>respectively.</p>
+<p>Upon setting trigger conditions, push the </p>
+<p><b>Start</b></p>
+<p> button at the bottom of the trace window and specify to</p>
+<p>get tracing. Once you set trigger conditions, they are enabled until you change them, so you can just</p>
+<p>push the </p>
+<p><b>Start</b></p>
+<p> button to set tracing on when you do not have to change trace trigger conditions.</p>
+<p><b>Setting Trace Display Mode</b></p>
+<p>From </p>
+<p><b>Mode...</b></p>
+<p> under Display menu, specify the trace display conditions. When you select </p>
+<p><b>Mode...</b></p>
+<p>,</p>
+<p>a window like the one below will be displayed:</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>24</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>&lt;Cycle&gt;</b></p>
+<p>Specify how much data from what position in the trace buffer you want to display at one time.</p>
+<p><b>&lt;Mode&gt;</b></p>
+<p>Specify the display mode of the traced instruction.</p>
+<p>Set each item and push </p>
+<p><b>OK</b></p>
+<p> button to set the trace display mode.</p>
+<p><b>Start:</b></p>
+<p>Specify the Cycle number to start display. Enter the position to start</p>
+<p>trace display assuming somewhere around the trigger cycle or the end</p>
+<p>cycle  as  0.  When  you  are  using  KIT-VR5432-TP,  KIT-VR5464-TP,</p>
+<p>KIT-NB85E-TP,  RTE-V850E/GP1-IE,  or  KIT-V850E/MA3-IE,  you</p>
+<p>can  enter  a  value  between </p>
+<p><b>-0x1ffff</b></p>
+<p>  and </p>
+<p><b>0x1ffff</b></p>
+<p>.  The  default</p>
+<p>value is </p>
+<p><b>-0x1ffff</b></p>
+<p> (The oldest Cycle number). When you are using</p>
+<p>other </p>
+<p>MPUs, </p>
+<p>you </p>
+<p>can </p>
+<p>enter </p>
+<p>a </p>
+<p>value </p>
+<p>between </p>
+<p><b>-0x3ffff</b></p>
+<p> </p>
+<p>and</p>
+<p><b>0x3ffff</b></p>
+<p>. The default value in this case is </p>
+<p><b>-0x3ffff</b></p>
+<p>.</p>
+<p><b>Length:</b></p>
+<p>Specify the number of cycles to display at one time from the Cycle</p>
+<p>number that is specified by </p>
+<p><b>Start:</b></p>
+<p>. You can enter a value between</p>
+<p><b>0x1</b></p>
+<p> and </p>
+<p><b>0x4000</b></p>
+<p> and the default value is </p>
+<p><b>0x32</b></p>
+<p>.</p>
+<p><b>Instruction</b></p>
+<p>Disassemble the traced instruction.</p>
+<p><b>Source Mixed</b></p>
+<p>If there is C source code that corresponds to the traced instruction, the</p>
+<p>source line and the disassembled instruction are displayed together.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>25</b></i></p>
+<p><b>Execution of the Program and Break</b></p>
+<p>Execute the program and get tracing. You cannot display trace data while the program is running. If you</p>
+<p>want to display trace data, display it after a break point is hit or after pushing the </p>
+<p><b>Halt</b></p>
+<p> button to forc-</p>
+<p>ibly breaking execution.</p>
+<p><b>Trace Data Display</b></p>
+<p>Run the user program while the trace window is open. When the user program breaks, trace data is auto-</p>
+<p>matically read according to the current trace mode and displayed in the trace window.</p>
+<p>Similarly, the current trace data is read and displayed when you push the </p>
+<p><b>OK</b></p>
+<p> button in the trace mode</p>
+<p>window. If the trace window is not open, you can display trace data using this method.</p>
+<p>When there is no trace data, nothing will be displayed in the trace window. In this case, a message as</p>
+<p>below will be output in the command pane of MULTI.</p>
+<p><b>(0x5f) No Trace Data</b></p>
+<p>If you left-click a disassembled line, the debugger window display is switched to show around the corre-</p>
+<p>sponding source program. While C source code is displayed in the trace display, display in the debugger</p>
+<p>will change at the same time as you click the disassembled line.</p>
+<p>When you push the </p>
+<p><b>Next Page</b></p>
+<p> button at the bottom of the trace window, the next page will be dis-</p>
+<p>played if there is trace data in that page.</p>
+<p>Precautions about tracing:</p>
+<p>o</p>
+<p>When you run the user program after specifying trace settings, tracing will be set to OFF forcibly</p>
+<p>when the  program breaks. If you want to trace again,  push the </p>
+<p><b>Start</b></p>
+<p> button to set tracing ON</p>
+<p>before running the user program.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>26</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>o</p>
+<p>When you get trace data, the data you have gotten previously will be cleared.</p>
+<p>o</p>
+<p>If the trace buffer becomes full, the oldest trace data will be overwritten.</p>
+<p>o</p>
+<p>If you want to display C source code in C source mixed mode, specify the debug option when you</p>
+<p>compile the program. </p>
+<p><b>rteserv</b></p>
+<p> refers to the debug information file and displays C source code in</p>
+<p>the trace window. Do not specify the optimization option.</p>
+<p>o</p>
+<p>You can enter symbols to some items of the trigger input window, but they become available after</p>
+<p>you download the user program.</p>
+<p>Displayed items depend on MPUs. For more information, see description on trace data display for each</p>
+<p>MPU.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>27</b></i></p>
+<p><b>Saving Trace Data to a File</b></p>
+<p>You can save trace data that is displayed in the trace window to a file. Select the </p>
+<p><b>Save to File...</b></p>
+<p>item under Display menu to open the dialog as below:</p>
+<p>Enter the file name and push the Save button to save the trace data to the specified file. If you do not</p>
+<p>specify the extension of the file name, </p>
+<p><b>.trc</b></p>
+<p> will be automatically added when a file is created. Note</p>
+<p>that if the specified file already exists, it will be overwritten.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>28</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>Trigger </b></p>
+<p><b>Setting </b></p>
+<p><b>(when </b></p>
+<p><b>using </b></p>
+<p><b>KIT-VR5432-TP, </b></p>
+<p><b>KIT-</b></p>
+<p><b>VR5464-TP)</b></p>
+<p>You can specify trace triggers from Trigger menu. To specify a trace trigger, set an event first and then</p>
+<p>specify the event as the trigger of tracing.</p>
+<p><b>eve Setup... Menu</b></p>
+<p>Specify an event of an execution address. This window corresponds to the </p>
+<p><b>eve</b></p>
+<p> command and you can</p>
+<p>specify conditions that can be specified using the </p>
+<p><b>eve</b></p>
+<p> command.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>NOT:</b></p>
+<p>Checking  this  check  box  means  that  you  have  specified </p>
+<p><b>NOT</b></p>
+<p>  of  the</p>
+<p>address you entered in the </p>
+<p><b>Address:</b></p>
+<p> field.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>Mask:</b></p>
+<p>Specify the mask value to the </p>
+<p><b>address</b></p>
+<p>. The '1' bits are masked.</p>
+<p><b>ASID:</b></p>
+<p>If you check this check box, </p>
+<p><b>ASID</b></p>
+<p> will be compared.</p>
+<p><b>ASID value:</b></p>
+<p>Specify the </p>
+<p><b>ASID</b></p>
+<p> value.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>29</b></i></p>
+<p><b>eva Setup... Menu</b></p>
+<p>Specify an event for the access cycle. This window corresponds to the </p>
+<p><b>eva</b></p>
+<p> command and you can spec-</p>
+<p>ify conditions that can be specified using the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>Address condition section</b></p>
+<p><b>Data condition section</b></p>
+<p><b>EQUAL</b></p>
+<p> button:</p>
+<p>The address and mask conditions you have specified will be set.</p>
+<p><b>NOT</b></p>
+<p> button:</p>
+<p><b>NOT</b></p>
+<p> of the address and mask conditions you have specified will be set.</p>
+<p><b>NONE</b></p>
+<p> button:</p>
+<p>Address is not included in the condition.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>Mask:</b></p>
+<p>Specify the mask value to the </p>
+<p><b>address</b></p>
+<p>. The '1' bits are masked.</p>
+<p><b>EQUAL</b></p>
+<p> button:</p>
+<p>The address and mask conditions you have specified will be set.</p>
+<p><b>NOT</b></p>
+<p> button:</p>
+<p><b>NOT</b></p>
+<p> of the address and mask conditions you have specified will be set.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>30</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>Trace Setup... Menu</b></p>
+<p>Specify various trace settings. This window corresponds to the </p>
+<p><b>tron</b></p>
+<p> command and you can specify</p>
+<p>conditions that can be specified using the </p>
+<p><b>tron</b></p>
+<p> command.</p>
+<p><b>&lt;Trigger&gt;</b></p>
+<p><b>NONE</b></p>
+<p> button:</p>
+<p>Address is not included in the condition.</p>
+<p><b>ASID:</b></p>
+<p>If you check this check box, </p>
+<p><b>ASID</b></p>
+<p> will be compared.</p>
+<p><b>ASID value:</b></p>
+<p>Specify the </p>
+<p><b>ASID</b></p>
+<p> value.</p>
+<p><b>&lt;eve&gt;</b></p>
+<p>Select whether you want to specify an event </p>
+<p><b>eve</b></p>
+<p> (execution event) as a trace</p>
+<p>trigger (ON/OFF).</p>
+<p><b>&lt;eva&gt;</b></p>
+<p>Select whether you want to specify an event </p>
+<p><b>eva</b></p>
+<p> (access cycle event) as a</p>
+<p>trace trigger (ON/OFF).</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>31</b></i></p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>&lt;EXT&gt;</b></p>
+<p>Specify the external input terminal (EXIO) as a trigger.</p>
+<p><b>Noext</b></p>
+<p>EXIO is not specified as a trigger.</p>
+<p><b>Posi</b></p>
+<p>The rising edge of EXIO is specified as a trigger.</p>
+<p><b>Nega</b></p>
+<p>The falling edge of EXIO is specified as a trigger.</p>
+<p><b>Delay</b></p>
+<p>Specify forced delay mode. If you specify the forced delay mode, tracing will</p>
+<p>be started after you finish setting in this window and tracing will be forcibly</p>
+<p>finished after getting trace data for the number of times specified in the delay</p>
+<p>counter.</p>
+<p><b>Delay Count:</b></p>
+<p>Specify the delay counter value. You can input a value</p>
+<p>between </p>
+<p><b>0x2</b></p>
+<p> and </p>
+<p><b>0x1fffd</b></p>
+<p>.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>32</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>Trace  Data  Display  (when  using  KIT-VR5432-TP,  KIT-</b></p>
+<p><b>VR5464-TP)</b></p>
+<p>There  are  two  trace  display  modes:  assembler  display  mode  and  C  source/assembler  mixed  display</p>
+<p>mode.</p>
+<p><b>Assembler Display Mode</b></p>
+<p><b>Cycle</b></p>
+<p>The relative position in the trace buffer is displayed in hexadecimal. It</p>
+<p>will  be  displayed  as  a  relative  value  with  +/-  assuming  somewhere</p>
+<p>around the trigger cycle or the end cycle as 0. </p>
+<p><b>Sub</b></p>
+<p>The sub cycle number that is generated based on the information on</p>
+<p>branches and number of execution instructions. Sometimes, more than</p>
+<p>one disassembled line must be displayed as the result of trace analysis</p>
+<p>of one cycle. In such cases, sub cycle numbers are assigned to the mul-</p>
+<p>tiple lines.</p>
+<p><b>Ext</b></p>
+<p>The status of the external input terminal (EXI3..0) is displayed as a bit</p>
+<p>sequence.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>33</b></i></p>
+<p><b>Stat</b></p>
+<p>The type of the trace packet on which displayed information is based</p>
+<p>is displayed.</p>
+<p><b>TPC</b></p>
+<p>A branch from the instruction that cannot be traced has</p>
+<p>occurred.</p>
+<p><b>EXP</b></p>
+<p>An exception has occurred.</p>
+<p><b>LSEQ</b></p>
+<p>An instruction is executed for more then 255 times in</p>
+<p>succession.</p>
+<p><b>NSEQ</b></p>
+<p>A branch has occurred.</p>
+<p><b>Addr/LineNo</b></p>
+<p>The execution address or the bus cycle address is displayed.</p>
+<p><b>Opecode/FileName</b></p>
+<p>Operation code or the bus cycle data is displayed.</p>
+<p><b>Inst/Source</b></p>
+<p>instruction mnemonic or the bus type is displayed.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>34</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>C Source/Assembler Mixed Display Mode</b></p>
+<p>When there is a C source file that corresponds to the traced address, the corresponding source line and</p>
+<p>the  assemble  result  are  displayed  together.  The  corresponding  address  is  searched  based  on  the  line</p>
+<p>information in the debug information file. If the corresponding C source line is in the debug information</p>
+<p>file, only assemble result is displayed.</p>
+<p>Displayed items of the disassembled line are the same as those of &quot;</p>
+<p>Assembler Display Mode</p>
+<p>&quot; on page</p>
+<p>32. The following items are displayed in C source lines.</p>
+<p><b>Addr/LineNo</b></p>
+<p>The line number that corresponds to the address is displayed in a 6-</p>
+<p>digit decimal number.</p>
+<p><b>Opecode/FileName</b></p>
+<p>The source file name that corresponds to the address is displayed. Up</p>
+<p>to 20 characters are displayed right-aligned.</p>
+<p><b>Inst/Source</b></p>
+<p>The corresponding source line is displayed from the top to the end.</p>
+<p>However, the bytes after 80 are not displayed. A TAB is displayed as a</p>
+<p>4-column tab.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>35</b></i></p>
+<p><b>Trigger Setting (when using KIT-NB85E-TP)</b></p>
+<p>You can specify trace triggers from Trigger menu. To specify a trace trigger, set an event first and then</p>
+<p>specify the event as the trigger of tracing.</p>
+<p><b>tp Setup... Menu</b></p>
+<p>Specify the trigger point of tracing. This window corresponds to the </p>
+<p><b>tp</b></p>
+<p> command and you can specify</p>
+<p>conditions that can be specified using the </p>
+<p><b>tp</b></p>
+<p> command.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled. If delay mode is set in the Trace Setup window, trigger point setting will be</p>
+<p>ignored. In this case, cancel the delay mode.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>ASID:</b></p>
+<p>If you check this check box, </p>
+<p><b>ASID</b></p>
+<p> will be compared.</p>
+<p><b>ASID value:</b></p>
+<p>Specify the </p>
+<p><b>ASID</b></p>
+<p> value.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>36</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>td Setup... Menu</b></p>
+<p>Specify the conditions of data access cycle to take into tracing. You can specify </p>
+<p><b>td1</b></p>
+<p> and </p>
+<p><b>td2</b></p>
+<p>. This win-</p>
+<p>dow corresponds to the </p>
+<p><b>td</b></p>
+<p> (1|2) commands and you can specify conditions that can be specified using</p>
+<p>the </p>
+<p><b>td</b></p>
+<p> (1|2) commands.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>ASID</b></p>
+<p> is provided for future extension. Do not usually use it.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>Mask:</b></p>
+<p>Specify the mask value to the </p>
+<p><b>address</b></p>
+<p>. The '1' bits are masked.</p>
+<p><b>ASID:</b></p>
+<p>If you check this check box, </p>
+<p><b>ASID</b></p>
+<p> will be compared.</p>
+<p><b>ASID value:</b></p>
+<p>Specify the </p>
+<p><b>ASID</b></p>
+<p> value.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>37</b></i></p>
+<p><b>tsp Setup... Menu</b></p>
+<p>Specify 2 trace switch points (addresses). You can change conditions to get trace information by the</p>
+<p>specified switch points. For how to specify conditions to get trace data, see the TraceSetup window.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>ASID</b></p>
+<p> is provided for future extension. Do not usually use it.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>Mask:</b></p>
+<p>Specify the mask value to the </p>
+<p><b>address</b></p>
+<p>. The '1' bits are masked.</p>
+<p><b>ASID:</b></p>
+<p>If you check this check box, </p>
+<p><b>ASID</b></p>
+<p> will be compared.</p>
+<p><b>ASID value:</b></p>
+<p>Specify the </p>
+<p><b>ASID</b></p>
+<p> value.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>38</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>Trace Setup... Menu</b></p>
+<p>Specify various trace settings. This window corresponds to the </p>
+<p><b>tron</b></p>
+<p> command and you can specify</p>
+<p>conditions that can be specified using the </p>
+<p><b>tron</b></p>
+<p> command.</p>
+<p><b>Real</b></p>
+<p>Specify  the  execution  mode  while  tracing.  If  you  check  this  check</p>
+<p>box, the program will be run in real time execution mode. In real time</p>
+<p>execution mode, trace information could overflow. If you deselect this</p>
+<p>check box, the program will be run in non-real time execution mode.</p>
+<p>Overflow will not occur in this mode, but execution rate is slower.</p>
+<p><b>Force</b></p>
+<p>Specify  forced  start  of  tracing.  If  you  do  not  check  this  check  box,</p>
+<p>tracing will be started according to the </p>
+<p><b>tsp1</b></p>
+<p> conditions.</p>
+<p><b>Clock2</b></p>
+<p>Specify the trace sampling clock. Checking this check box means you</p>
+<p>have specified 1/2 of the </p>
+<p><b>VBCLK</b></p>
+<p>. If you deselect this check box, that</p>
+<p>means you have specified 1/1. Normally, deselect the check box (1/1).</p>
+<p><b>Stop</b></p>
+<p>Specify trace output in the mode. If you check this check box, tracing</p>
+<p>will be stopped in the </p>
+<p><b>STOP</b></p>
+<p> mode. If you deselect the check box, trac-</p>
+<p>ing will not stop.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>39</b></i></p>
+<p><b>Trace Condition1</b></p>
+<p>Specify trace information to get after </p>
+<p><b>tsp1</b></p>
+<p> switch point. Trace data</p>
+<p>will be gotten when the following factors occur.</p>
+<p><b>Interrupt</b></p>
+<p>interrupt</p>
+<p><b>Exception</b></p>
+<p>exception</p>
+<p><b>RETI</b></p>
+<p><b>RETI</b></p>
+<p> instruction</p>
+<p><b>JMP</b></p>
+<p><b>JMP</b></p>
+<p> instruction</p>
+<p><b>JR</b></p>
+<p><b>JR</b></p>
+<p> instruction</p>
+<p><b>JARL</b></p>
+<p><b>JARL</b></p>
+<p> instruction</p>
+<p><b>Cond Br(FALSE)</b></p>
+<p>conditional branch (false)</p>
+<p><b>Cond Br(TRUE)</b></p>
+<p>conditional branch (true)</p>
+<p><b>CALLT</b></p>
+<p><b>CALLT</b></p>
+<p> instruction</p>
+<p><b>SWITCH</b></p>
+<p><b>SWITCH</b></p>
+<p> instruction</p>
+<p><b>DISPOSE</b></p>
+<p><b>DISPOSE</b></p>
+<p> instruction</p>
+<p><b>CTRET</b></p>
+<p><b>CTRET</b></p>
+<p> instruction</p>
+<p><b>TR1 read cyc</b></p>
+<p>at read cycle of </p>
+<p><b>td1</b></p>
+<p><b>TD1 write cyc</b></p>
+<p>at write cycle of </p>
+<p><b>td1</b></p>
+<p><b>TD2 read cyc</b></p>
+<p>at read cycle of </p>
+<p><b>td2</b></p>
+<p><b>TD2 write cyc</b></p>
+<p>at write cycle of </p>
+<p><b>td2</b></p>
+<p><b>TP</b></p>
+<p>when </p>
+<p><b>tp</b></p>
+<p> is true</p>
+<p><b>Trace Condition2</b></p>
+<p>Specify trace information to get after </p>
+<p><b>tsp2</b></p>
+<p> switch point. Items you</p>
+<p>can specify are the same as those of </p>
+<p><b>Trace Condition1</b></p>
+<p>.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>40</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>&lt;EXT&gt;</b></p>
+<p>Specify the external input terminal (EXIO) as a trigger.</p>
+<p><b>Noext</b></p>
+<p>EXIO is not specified as a trigger.</p>
+<p><b>Posi</b></p>
+<p>The rising edge of EXIO is specified as a</p>
+<p>trigger.</p>
+<p><b>Nega</b></p>
+<p>The falling edge of EXIO is specified as a</p>
+<p>trigger.</p>
+<p><b>Delay</b></p>
+<p>Specify forced delay mode. If you specify the forced delay mode, trac-</p>
+<p>ing will be started after you finish setting in this window and tracing</p>
+<p>will  be  forcibly  finished  after  getting  trace  data  for  the  number  of</p>
+<p>times specified in the delay counter.</p>
+<p><b>Delay Count:</b></p>
+<p>Specify the delay counter value. You can input a value between </p>
+<p><b>0x2</b></p>
+<p>and </p>
+<p><b>0x1fffd</b></p>
+<p>.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>41</b></i></p>
+<p><b>Trace Data Display (when using KIT-NB85E-TP)</b></p>
+<p>There  are  two  trace  display  modes:  assembler  display  mode  and  C  source/assembler  mixed  display</p>
+<p>mode.</p>
+<p><b>Assembler Display Mode</b></p>
+<p><b>*</b></p>
+<p> mark</p>
+<p>Indicates the trigger cycle.</p>
+<p><b>Cycle</b></p>
+<p>The relative position in the trace buffer is displayed in hexadecimal. It</p>
+<p>will  be  displayed  as  a  relative  value  with  +/-  assuming  somewhere</p>
+<p>around the trigger cycle or the end cycle as 0. </p>
+<p><b>Sub</b></p>
+<p>The sub cycle number that is generated based on the information on</p>
+<p>branches and number of execution instructions. Sometimes, more than</p>
+<p>one disassembled line must be displayed as the result of trace analysis</p>
+<p>of one cycle. In such cases, sub cycle numbers are assigned to the mul-</p>
+<p>tiple lines.</p>
+<p><b>Ext</b></p>
+<p>The status of the external input terminal (EXI3..0) is displayed as a bit</p>
+<p>sequence.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>42</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>Stat</b></p>
+<p>The type of the trace packet on which displayed information is based</p>
+<p>is displayed.</p>
+<p><b>NOP</b></p>
+<p><b>NOP</b></p>
+<p><b>TRGSTART</b></p>
+<p>Trace start</p>
+<p><b>MATCH</b></p>
+<p>Trigger address</p>
+<p><b>OVF</b></p>
+<p>Overflow</p>
+<p><b>JMPD</b></p>
+<p>Branch: Branch destination</p>
+<p><b>JMPDS</b></p>
+<p>Continuous branch: branch source/destination</p>
+<p><b>JMPS</b></p>
+<p>Branch: Branch source</p>
+<p><b>DATAW1</b></p>
+<p>Write access of data trace 1 (</p>
+<p><b>td1</b></p>
+<p>)</p>
+<p><b>DATAR1</b></p>
+<p>Read access of data trace 1 (</p>
+<p><b>td1</b></p>
+<p>)</p>
+<p><b>DATAW2</b></p>
+<p>Write access of data trace 2 (</p>
+<p><b>td2</b></p>
+<p>)</p>
+<p><b>DATAR2</b></p>
+<p>Read access of data trace 2 (</p>
+<p><b>td2</b></p>
+<p>)</p>
+<p><b>Addr/LineNo</b></p>
+<p>The execution address or the bus cycle address is displayed.</p>
+<p><b>Opecode/FileName</b></p>
+<p>Operation code or the bus cycle data is displayed.</p>
+<p><b>Inst/Source</b></p>
+<p>instruction mnemonic or the bus type is displayed.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>43</b></i></p>
+<p><b>C Source/Assembler Mixed Display Mode</b></p>
+<p>When there is a C source file that corresponds to the traced address, the corresponding source line and</p>
+<p>the  assemble  result  are  displayed  together.  The  corresponding  address  is  searched  based  on  the  line</p>
+<p>information in the debug information file. If the corresponding C source line is in the debug information</p>
+<p>file, only assemble result is displayed.</p>
+<p>Displayed items of the disassembled line are the same as those of &quot;</p>
+<p>Assembler Display Mode</p>
+<p>&quot; on page</p>
+<p>41. The following items are displayed in C source lines.</p>
+<p><b>Addr/LineNo</b></p>
+<p>The line number that corresponds to the address is displayed in a 6-</p>
+<p>digit decimal number.</p>
+<p><b>Opcode/FileName</b></p>
+<p>The source file name that corresponds to the address is displayed. Up</p>
+<p>to 20 characters are displayed right-aligned.</p>
+<p><b>Inst/Source</b></p>
+<p>The corresponding source line is displayed from the top to the end.</p>
+<p>However, the bytes after 80 are not displayed. A TAB is displayed as a</p>
+<p>4-column tab.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>44</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>Trigger Setting (when using RTE-V850E/GP1-IE)</b></p>
+<p>You can specify various conditions related to tracing such as trace trigger conditions, conditions to get</p>
+<p>trace data, and on/off of sub switch from Trigger menu. </p>
+<p><b>tp Setup... Menu</b></p>
+<p>Specify the trigger point of tracing. This window corresponds to the </p>
+<p><b>tp</b></p>
+<p> command and you can specify</p>
+<p>conditions that can be specified using the </p>
+<p><b>tp</b></p>
+<p> command.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled. </p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>45</b></i></p>
+<p><b>td Setup... Menu</b></p>
+<p>Specify the conditions of data access cycle to take into tracing. This window corresponds to the </p>
+<p><b>td1</b></p>
+<p>,</p>
+<p><b>td2</b></p>
+<p>, </p>
+<p><b>td3</b></p>
+<p>, and </p>
+<p><b>td4</b></p>
+<p> commands and you can specify conditions that can be specified using these com-</p>
+<p>mands.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>Mask:</b></p>
+<p>Specify the mask value to the </p>
+<p><b>address</b></p>
+<p>. The '1' bits are excluded from</p>
+<p>comparison. Only </p>
+<p><b>bit9</b></p>
+<p> - </p>
+<p><b>bit2</b></p>
+<p> are enabled.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>46</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>tsp Setup... Menu</b></p>
+<p>Specify 2 trace switch points (addresses). You can change conditions to get trace information by the</p>
+<p>specified switch points. Specify conditions to get trace data from the SubSwitch Setup... menu.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>47</b></i></p>
+<p><b>Trace Setup... Menu</b></p>
+<p>Specify  trace environment  settings  and  other  conditions. This  window  corresponds  to  the </p>
+<p><b>tenv</b></p>
+<p>  and</p>
+<p><b>tron</b></p>
+<p> commands and you can specify conditions that can be specified using these commands.</p>
+<p><b>&lt;TENV&gt;</b></p>
+<p><b>subor:</b></p>
+<p><b>OR</b></p>
+<p> of Section condition and qualify condition is specified as the sub switch.</p>
+<p><b>suband:</b></p>
+<p><b>AND</b></p>
+<p> of Section condition and qualify condition is specified as the sub switch.</p>
+<p><b>dmatrc:</b></p>
+<p>DMA cycles are traces.</p>
+<p><b>tendbrk:</b></p>
+<p>The program breaks at the end of tracing.</p>
+<p><b>stop:</b></p>
+<p>Tracing is paused in the stop mode.</p>
+<p><b>phold:</b></p>
+<p>When execution of the user program is stopped during trace in complete mode</p>
+<p>(non-real time mode), the packet that notifies the status is taken into trace data.</p>
+<p><b>once:</b></p>
+<p>Trigger output is output only once when the trigger conditions are met.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>48</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>&lt;TRON&gt;</b></p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>Real:</b></p>
+<p>Specify the execution mode while tracing. If you check this check box, the</p>
+<p>program will be run in real time execution mode. In real time execution mode,</p>
+<p>trace information could overflow. If you deselect this check box, the program</p>
+<p>will be run in non-real time execution mode. Overflow will not occur in this</p>
+<p>mode, but execution rate is slower.</p>
+<p><b>Force:</b></p>
+<p>Specify forced start of tracing. If you do not check this check box, tracing will</p>
+<p>be  started  according  to  the </p>
+<p><b>tsp1</b></p>
+<p>  conditions.  If  tracing  is  started  forcibly,</p>
+<p><b>tsp1</b></p>
+<p> and </p>
+<p><b>tsp2</b></p>
+<p> are valid.</p>
+<p><b>Delay:</b></p>
+<p>Specify forced delay mode. If you specify the forced delay mode, tracing will</p>
+<p>be started after you finish setting in this window and tracing will be forcibly</p>
+<p>finished after getting trace data for the number of times specified in the delay</p>
+<p>counter. While this mode is specified, trigger events are ignored.</p>
+<p><b>Delay Count:</b></p>
+<p>Specifies the number of frames in memory that are to be loaded in response to</p>
+<p>a trigger. You can input a value from </p>
+<p><b>0x0</b></p>
+<p> to </p>
+<p><b>0x1ffff</b></p>
+<p>.</p>
+<p><b>&lt;EXT&gt;:</b></p>
+<p>Specify the external input terminal (EXIO) as a trigger.</p>
+<p><b>Noext</b></p>
+<p>EXIO is not specified as a trigger.</p>
+<p><b>Posi</b></p>
+<p>The rising edge of EXIO is specified as a trigger.</p>
+<p><b>Nega</b></p>
+<p>The falling edge of EXIO is specified as a trigger.</p>
+<p><b>TD1 - TD4:</b></p>
+<p>Specify trace data conditions (TD1 - TD4) as trigger conditions.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>49</b></i></p>
+<p><b>SubSwitch Setup...Menu</b></p>
+<p>Specify cycles to take into tracing when sub switch is on/off. This window corresponds to the </p>
+<p><b>sswon</b></p>
+<p>and </p>
+<p><b>sswoff</b></p>
+<p> commands and you can specify conditions that can be specified using these commands.</p>
+<p><b>&lt;SubSwitch On&gt;</b></p>
+<p>Specify the cycle to take into tracing when sub switch is ON.</p>
+<p>Specify the cycles to take into execution tracing. The checked factors are taken into tracing.</p>
+<p><b>Interrupt</b></p>
+<p>interrupt</p>
+<p><b>Exception</b></p>
+<p>exception</p>
+<p><b>RETI</b></p>
+<p>RETI instruction</p>
+<p><b>JMP</b></p>
+<p>JMP instruction</p>
+<p><b>JR</b></p>
+<p>JR instruction</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>50</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>Normally, check all cycles. If you restrict cycles, trace disassemble may not properly</p>
+<p>displayed.</p>
+<p><b>JARL</b></p>
+<p>JARL instruction</p>
+<p><b>Cond JMP(FALSE)</b></p>
+<p>conditional branch (false)</p>
+<p><b>Cond JMP(TRUE)</b></p>
+<p>conditional branch (true)</p>
+<p><b>CALLT</b></p>
+<p>CALLT instruction</p>
+<p><b>SWITCH</b></p>
+<p>SWITCH instruction</p>
+<p><b>DISPOSE</b></p>
+<p>DISPOSE instruction</p>
+<p><b>CTRET</b></p>
+<p>CTRET instruction</p>
+<p><b>tp</b></p>
+<p>when tp is true</p>
+<p><b>evt_match</b></p>
+<p>trigger points from the event unit</p>
+<p><b>OPCODE</b></p>
+<p>OPCODE</p>
+<p><b>All Cycle:</b></p>
+<p>Specify types of cycles to take into unconditionally.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>51</b></i></p>
+<p><b>TD1 - TD4:</b></p>
+<p>Specify cycles to take into for the conditions specified by </p>
+<p><b>td Setup...</b></p>
+<p>or the </p>
+<p><b>td</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>EVAP1 - EVAP6:</b></p>
+<p>Specify  cycles  to  take  into  for  the  event  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>52</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>&lt;SubSwitch Off&gt;</b></p>
+<p>Specify the cycle to take into tracing when sub switch is OFF.</p>
+<p>Specify the cycles to take into execution tracing. The checked factors are taken into tracing.</p>
+<p><b>EVAR1, EVAR3, </b></p>
+<p><b>EVAR5:</b></p>
+<p>Specify  cycles  to  take  into  for  the  range  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>Interrupt</b></p>
+<p>interrupt</p>
+<p><b>Exception</b></p>
+<p>exception</p>
+<p><b>RETI</b></p>
+<p>RETI instruction</p>
+<p><b>JMP</b></p>
+<p>JMP instruction</p>
+<p><b>JR</b></p>
+<p>JR instruction</p>
+<p><b>JARL</b></p>
+<p>JARL instruction</p>
+<p><b>Cond JMP(FALSE)</b></p>
+<p>conditional branch (false)</p>
+<p><b>Cond JMP(TRUE)</b></p>
+<p>conditional branch (true)</p>
+<p><b>CALLT</b></p>
+<p>CALLT instruction</p>
+<p><b>SWITCH</b></p>
+<p>SWITCH instruction</p>
+<p><b>DISPOSE</b></p>
+<p>DISPOSE instruction</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>53</b></i></p>
+<p>Normally, check all cycles. If you restrict cycles, trace disassemble may not properly</p>
+<p>displayed.</p>
+<p><b>CTRET</b></p>
+<p>CTRET instruction</p>
+<p><b>tp</b></p>
+<p>when tp is true</p>
+<p><b>evt_match</b></p>
+<p>trigger points from the event unit</p>
+<p><b>OPCODE</b></p>
+<p>OPCODE</p>
+<p><b>All Cycle:</b></p>
+<p>Specify types of cycles to take into unconditionally.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>TD1 - TD4:</b></p>
+<p>Specify cycles to take into for the conditions specified by </p>
+<p><b>td Setup...</b></p>
+<p>or the </p>
+<p><b>td</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>54</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>EVAP1 - EVAP6:</b></p>
+<p>Specify  cycles  to  take  into  for  the  event  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>EVAR1, EVAR3, </b></p>
+<p><b>EVAR5:</b></p>
+<p>Specify  cycles  to  take  into  for  the  range  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>55</b></i></p>
+<p><b>eva Setup... Menu</b></p>
+<p>Specify events related to access. You can specify the events that you set as trace conditions by </p>
+<p><b>SubSwitch Setup...</b></p>
+<p> or the </p>
+<p><b>sswon</b></p>
+<p>/</p>
+<p><b>sswoff</b></p>
+<p> commands.</p>
+<p><b>No.:</b></p>
+<p>Specify the channel of the access event. If an event is already set, its setting</p>
+<p>values are displayed.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols, glo-</p>
+<p>bal variables and functions names are available. On the right of the address</p>
+<p>input field, specify the condition for the address value specified in </p>
+<p><b>Address:</b></p>
+<p><b>EQ</b></p>
+<p>True when address = event address</p>
+<p><b>LT</b></p>
+<p>True when address &gt; event address</p>
+<p><b>GT</b></p>
+<p>True when address &lt; event address</p>
+<p><b>IGN</b></p>
+<p>Address is not used for comparison</p>
+<p><b>NEQ</b></p>
+<p>True when address != event address</p>
+<p><b>GTE</b></p>
+<p>True when address =&lt; event address</p>
+<p><b>LTE</b></p>
+<p>True when address =&gt; event address</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>56</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>Data:</b></p>
+<p>Specify data.</p>
+<p><b>DataMask:</b></p>
+<p>Specify data mask. The bits where '1' is specified are not used for comparison.</p>
+<p><b>Data Cmp:</b></p>
+<p>Specify data comparison condition.</p>
+<p><b>eq</b></p>
+<p>Data is compared using equal.</p>
+<p><b>neq</b></p>
+<p>Data is compared using not equal.</p>
+<p><b>Access:</b></p>
+<p>Specify the cycle condition.</p>
+<p><b>read</b></p>
+<p>Read cycles are specified.</p>
+<p><b>write</b></p>
+<p>Write cycles are specified.</p>
+<p><b>accs</b></p>
+<p>Read or write cycles are specified.</p>
+<p><b>Size:</b></p>
+<p>Specify the access size.</p>
+<p><b>byte</b></p>
+<p>Byte access (8 bits) is specified.</p>
+<p><b>hword</b></p>
+<p>Half word access (16 bits) is specified.</p>
+<p><b>word</b></p>
+<p>Word access (32 bits) is specified.</p>
+<p><b>nosize</b></p>
+<p>Invalid condition is specified.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>57</b></i></p>
+<p><b>Trace Data Display (when using RTE-V850E/GP1-IE)</b></p>
+<p>There  are  two  trace  display  modes:  assembler  display  mode  and  C  source/assembler  mixed  display</p>
+<p>mode.</p>
+<p><b>Assembler Display Mode</b></p>
+<p><b>*</b></p>
+<p> mark</p>
+<p>Indicates the trigger cycle.</p>
+<p><b>Cycle</b></p>
+<p>The relative position in the trace buffer is displayed in hexadecimal. It</p>
+<p>will  be  displayed  as  a  relative  value  with  +/-  assuming  somewhere</p>
+<p>around the trigger cycle or the end cycle as </p>
+<p><b>0x0</b></p>
+<p>.</p>
+<p><b>Sub</b></p>
+<p>The sub cycle number that is generated based on the information on</p>
+<p>branches and number of execution instructions.</p>
+<p><b>Ext</b></p>
+<p>The status of the external input terminal (EXI3..0) is displayed as a bit</p>
+<p>sequence.</p>
+<p><b>TimeTag</b></p>
+<p>Time tab value is displayed in the absolute time.</p>
+<p><b>Addr/LineNo</b></p>
+<p>The execution address or the bus cycle address is displayed.</p>
+<p><b>Opcode/FileName</b></p>
+<p>Operation code or the bus cycle data is displayed.</p>
+<p><b>Inst/Source</b></p>
+<p>instruction mnemonic or the bus type is displayed.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>58</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>In the &quot;</p>
+<p><b>&lt;&gt;</b></p>
+<p>&quot;, the following strings are placed. These are instructions or events that caused a branch.</p>
+<p><b>Stat</b></p>
+<p>The type of the trace packet on which displayed information is based</p>
+<p>is displayed.</p>
+<p><b>TRGSTARTON</b></p>
+<p>START packet occurs and sub switch is turned</p>
+<p>ON.</p>
+<p><b>TRGSTARTOFF</b></p>
+<p>START packet occurs and sub switch is turned</p>
+<p>OFF.</p>
+<p><b>MATCH</b></p>
+<p>MATCH packet occurs.</p>
+<p><b>OVF</b></p>
+<p>Overflow occurs.</p>
+<p><b>TRCEND</b></p>
+<p>TRCEND packet occurs.</p>
+<p><b>JMPD &lt;&gt;</b></p>
+<p>JMPD packet occurs.</p>
+<p><b>JMPDS &lt;&gt;</b></p>
+<p>JMPDS packet occurs.</p>
+<p><b>JMPS &lt;&gt;</b></p>
+<p>JMPS packet occurs.</p>
+<p><b>OPCODE</b></p>
+<p>Operation code access (execution) occurs.</p>
+<p><b>DATAW</b></p>
+<p>Memory write occurs (trace packet)</p>
+<p><b>DATAR</b></p>
+<p>Memory read occurs (trace packet)</p>
+<p><b>SFRW</b></p>
+<p>SFR write occurs (trace packet)</p>
+<p><b>SFRR</b></p>
+<p>SFR read occurs (trace packet)</p>
+<p><b>DMAW</b></p>
+<p>iRAM write by DMA occurs (bus trace)</p>
+<p><b>DMAR</b></p>
+<p>iRAM read by DMA occurs (bus trace)</p>
+<p><b>SUB</b></p>
+<p>sub cycle</p>
+<p><b>NMI/INT</b></p>
+<p>Caused by interruption.</p>
+<p><b>EXP/TRAP</b></p>
+<p>Caused by exception.</p>
+<p><b>RETI</b></p>
+<p>Caused by the instruction.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>59</b></i></p>
+<p><b>JMP</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JR</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JARL</b></p>
+<p>Caused by the instruction. </p>
+<p><b>BcondNT</b></p>
+<p>Caused by the instruction. </p>
+<p><b>Bcond</b></p>
+<p>Caused by the instruction.</p>
+<p><b>CALLT</b></p>
+<p>Caused by the instruction.</p>
+<p><b>SWITCH</b></p>
+<p>Caused by the instruction.</p>
+<p><b>DISPOSE</b></p>
+<p>Caused by the instruction.</p>
+<p><b>CTRET</b></p>
+<p>Caused by the instruction.</p>
+<p><b>STORE</b></p>
+<p>Caused by the instruction.</p>
+<p><b>LOAD</b></p>
+<p>Caused by the instruction.</p>
+<p><b>FSTART</b></p>
+<p>Caused by the instruction.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>60</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>C Source/Assembler Mixed Display Mode</b></p>
+<p>When there is a C source file that corresponds to the traced address, the corresponding source line and</p>
+<p>the  assemble  result  are  displayed  together.  The  corresponding  address  is  searched  based  on  the  line</p>
+<p>information in the debug information file. If the corresponding C source line is in the debug information</p>
+<p>file, only assemble result is displayed.</p>
+<p>Displayed items of the disassembled line are the same as those of &quot;</p>
+<p>Assembler Display Mode</p>
+<p>&quot; on page</p>
+<p>57. Items displayed in C source lines are the same as those displayed for other MPUs.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>61</b></i></p>
+<p><b>Trigger Setting (when using KIT-V850E/MA3-IE)</b></p>
+<p><b>tp Setup... Menu</b></p>
+<p>Specify the trigger point of tracing. This window corresponds to the </p>
+<p><b>tp</b></p>
+<p> command and you can specify</p>
+<p>conditions that can be specified using the </p>
+<p><b>tp</b></p>
+<p> command.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled. </p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>62</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>td Setup... Menu</b></p>
+<p>Specify the conditions of data access cycle to take into tracing. This window corresponds to the </p>
+<p><b>td1</b></p>
+<p> -</p>
+<p><b>td8</b></p>
+<p> commands and you can specify conditions that can be specified using these commands.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<p><b>Mask:</b></p>
+<p>Specify the mask value to the </p>
+<p><b>address</b></p>
+<p>. The '1' bits are excluded from</p>
+<p>comparison. Only </p>
+<p><b>bit9</b></p>
+<p> - </p>
+<p><b>bit2</b></p>
+<p> are enabled.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>63</b></i></p>
+<p><b>tsp Setup... Menu</b></p>
+<p>Specify 2 trace switch points (addresses). You can change conditions to get trace information by the</p>
+<p>specified switch points. Specify conditions to get trace data from the </p>
+<p><b>SubSwitchOn Setup...</b></p>
+<p> or</p>
+<p><b>SubSwitchOff Setup...</b></p>
+<p> menu.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols,</p>
+<p>global variables and functions names are available.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>64</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>Trace Setup... Menu</b></p>
+<p>Specify trace  environment  settings  and  other  conditions.  This window  corresponds to  the </p>
+<p><b>tenv</b></p>
+<p>  and</p>
+<p><b>tron</b></p>
+<p> commands and you can specify conditions that can be specified using these commands.</p>
+<p><b>&lt;TENV&gt;</b></p>
+<p><b>subor:</b></p>
+<p><b>OR</b></p>
+<p> of Section condition and qualify condition is specified as the sub switch.</p>
+<p><b>suband:</b></p>
+<p><b>AND</b></p>
+<p> of Section condition and qualify condition is specified as the sub switch.</p>
+<p><b>phold:</b></p>
+<p>When execution of the user program is stopped during trace in complete mode</p>
+<p>(non-real time mode), the packet that notifies the status is taken into trace data.</p>
+<p><b>once:</b></p>
+<p>Trigger output is output only once when the trigger conditions are met.</p>
+<p><b>sss_st_off:</b></p>
+<p>If you check this check box, Starts the section sub-switch in the off state. If</p>
+<p>you do not check this check box, it starts the sub-switch in the on state.</p>
+<p><b>qss_st_off:</b></p>
+<p>If you check this check box, Starts the qualify sub-switch in the off state. If</p>
+<p>you do not check this check box, it starts the sub-switch in the on state.</p>
+<p><b>sss_on_dly1:</b></p>
+<p>If you check this check box, Delays setting the section sub-switch to on one</p>
+<p>instruction after the condition is satisfied. If you do not check this check box,</p>
+<p>it set the sub-switch to on immediately.</p>
+<p><b>sss_off_dly1:</b></p>
+<p>If you check this check box, Delays setting the section sub-switch to off one</p>
+<p>instruction after the condition is satisfied. If you do not check this check box,</p>
+<p>it set the sub-switch to off immediately.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>65</b></i></p>
+<p><b>&lt;TRON&gt;</b></p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>Real:</b></p>
+<p>Specify the execution mode while tracing. If you check this check box, the</p>
+<p>program will be run in real time execution mode. In real time execution mode,</p>
+<p>trace information could overflow. If you deselect this check box, the program</p>
+<p>will be run in non-real time execution mode. Overflow will not occur in this</p>
+<p>mode, but execution rate is slower.</p>
+<p><b>Force:</b></p>
+<p>Specify forced start of tracing. If you do not check this check box, tracing will</p>
+<p>be  started  according  to  the </p>
+<p><b>tsp1</b></p>
+<p>  conditions.  If  tracing  is  started  forcibly,</p>
+<p><b>tsp1</b></p>
+<p> and </p>
+<p><b>tsp2</b></p>
+<p> are valid.</p>
+<p><b>Delay:</b></p>
+<p>Specify forced delay mode. If you specify the forced delay mode, tracing will</p>
+<p>be started after you finish setting in this window and tracing will be forcibly</p>
+<p>finished after getting trace data for the number of times specified in the delay</p>
+<p>counter. While this mode is specified, trigger events are ignored.</p>
+<p><b>Delay Count:</b></p>
+<p>Specifies the number of frames in memory that are to be loaded in response to</p>
+<p>a trigger. You can input a value from </p>
+<p><b>0x0</b></p>
+<p> to </p>
+<p><b>0x3fffd</b></p>
+<p>.</p>
+<p><b>&lt;EXT&gt;:</b></p>
+<p>Specify the external input terminal (EXIO) as a trigger.</p>
+<p><b>Noext</b></p>
+<p>EXIO is not specified as a trigger.</p>
+<p><b>Posi</b></p>
+<p>The rising edge of EXIO is specified as a trigger.</p>
+<p><b>Nega</b></p>
+<p>The falling edge of EXIO is specified as a trigger.</p>
+<p><b>TD1 - TD8:</b></p>
+<p>Specify trace data conditions (TD1 - TD8) as trigger conditions.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>66</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>SubSwitchOn Setup...Menu</b></p>
+<p>Specify cycles to take into tracing when sub switch is on/off. This window corresponds to the </p>
+<p><b>sswon</b></p>
+<p>command and you can specify conditions that can be specified using this command.</p>
+<p><b>&lt;SubSwitch On&gt;</b></p>
+<p>Specify the cycle to take into tracing when sub switch is ON.</p>
+<p>Specify the cycles to take into execution tracing. The checked factors are taken into tracing.</p>
+<p><b>Interrupt</b></p>
+<p>interrupt</p>
+<p><b>Exception</b></p>
+<p>exception</p>
+<p><b>RETI</b></p>
+<p>RETI instruction</p>
+<p><b>JMP</b></p>
+<p>JMP instruction</p>
+<p><b>JR</b></p>
+<p>JR instruction</p>
+<p><b>JARL</b></p>
+<p>JARL instruction</p>
+<p><b>Cond JMP(FALSE)</b></p>
+<p>conditional branch (false)</p>
+<p><b>Cond JMP(TRUE)</b></p>
+<p>conditional branch (true)</p>
+<p><b>CALLT</b></p>
+<p>CALLT instruction</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>67</b></i></p>
+<p>Normally, check all cycles. If you restrict cycles, trace disassemble may not properly</p>
+<p>displayed.</p>
+<p><b>SWITCH</b></p>
+<p>SWITCH instruction</p>
+<p><b>DISPOSE</b></p>
+<p>DISPOSE instruction</p>
+<p><b>CTRET</b></p>
+<p>CTRET instruction</p>
+<p><b>tp</b></p>
+<p>when tp is true</p>
+<p><b>evt_match</b></p>
+<p>trigger points from the event unit</p>
+<p><b>OPCODE</b></p>
+<p>OPCODE</p>
+<p><b>All Cycle:</b></p>
+<p>Specify types of cycles to take into unconditionally.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>68</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>TD1 - TD8:</b></p>
+<p>Specify cycles to take into for the conditions specified by </p>
+<p><b>td Setup...</b></p>
+<p>or the </p>
+<p><b>td</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>EVAP1 - EVAP6:</b></p>
+<p>Specify  cycles  to  take  into  for  the  event  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>69</b></i></p>
+<p><b>EVAR1, EVAR3, </b></p>
+<p><b>EVAR5:</b></p>
+<p>Specify  cycles  to  take  into  for  the  range  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>EVEP1 - EVEP8:</b></p>
+<p>Specifies whether to load data for each point condition specified by the</p>
+<p><b>eve Setup...</b></p>
+<p>menu or the </p>
+<p><b>eve</b></p>
+<p> command. When you click on check</p>
+<p>box, data is loaded.</p>
+<p><b>EVER1,EVER3,</b></p>
+<p><b>EVER5,EVER7:</b></p>
+<p>Specifies whether to load data for each range condition specified by the</p>
+<p><b>eve  Setup...</b></p>
+<p>menu  or  the </p>
+<p><b>eve</b></p>
+<p>  command.  When  you  click  on  the</p>
+<p>check box, data is loaded.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>70</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>SubSwitchOff Setup...Menu</b></p>
+<p>Specify cycles to take into tracing when sub switch is on/off. This window corresponds to the </p>
+<p><b>sswoff</b></p>
+<p>command and you can specify conditions that can be specified using this command.</p>
+<p><b>&lt;SubSwitch Off&gt;</b></p>
+<p>Specify the cycle to take into tracing when sub switch is OFF.</p>
+<p>Specify the cycles to take into execution tracing. The checked factors are taken into tracing.</p>
+<p><b>Interrupt</b></p>
+<p>interrupt</p>
+<p><b>Exception</b></p>
+<p>exception</p>
+<p><b>RETI</b></p>
+<p>RETI instruction</p>
+<p><b>JMP</b></p>
+<p>JMP instruction</p>
+<p><b>JR</b></p>
+<p>JR instruction</p>
+<p><b>JARL</b></p>
+<p>JARL instruction</p>
+<p><b>Cond JMP(FALSE)</b></p>
+<p>conditional branch (false)</p>
+<p><b>Cond JMP(TRUE)</b></p>
+<p>conditional branch (true)</p>
+<p><b>CALLT</b></p>
+<p>CALLT instruction</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>71</b></i></p>
+<p>Normally, check all cycles. If you restrict cycles, trace disassemble may not properly</p>
+<p>displayed.</p>
+<p><b>SWITCH</b></p>
+<p>SWITCH instruction</p>
+<p><b>DISPOSE</b></p>
+<p>DISPOSE instruction</p>
+<p><b>CTRET</b></p>
+<p>CTRET instruction</p>
+<p><b>tp</b></p>
+<p>when tp is true</p>
+<p><b>evt_match</b></p>
+<p>trigger points from the event unit</p>
+<p><b>OPCODE</b></p>
+<p>OPCODE</p>
+<p><b>All Cycle:</b></p>
+<p>Specify types of cycles to take into unconditionally.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>72</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>TD1 - TD8:</b></p>
+<p>Specify cycles to take into for the conditions specified by </p>
+<p><b>td Setup...</b></p>
+<p>or the </p>
+<p><b>td</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>EVAP1 - EVAP6:</b></p>
+<p>Specify  cycles  to  take  into  for  the  event  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>73</b></i></p>
+<p><b>EVAR1, EVAR3, </b></p>
+<p><b>EVAR5:</b></p>
+<p>Specify  cycles  to  take  into  for  the  range  conditions  specified  by </p>
+<p><b>eva</b></p>
+<p><b>Setup...</b></p>
+<p> or the </p>
+<p><b>eva</b></p>
+<p> command.</p>
+<p><b>none</b></p>
+<p>No cycle is taken.</p>
+<p><b>read</b></p>
+<p>Only read cycles are taken.</p>
+<p><b>write</b></p>
+<p>Only write cycles are taken.</p>
+<p><b>accs</b></p>
+<p>Both read and write cycles are taken.</p>
+<p><b>readp</b></p>
+<p>Read cycles and their execution cycles are taken.</p>
+<p><b>writep</b></p>
+<p>Write cycles and their execution cycles are taken.</p>
+<p><b>accsp</b></p>
+<p>Read, </p>
+<p>write </p>
+<p>cycles </p>
+<p>and </p>
+<p>their </p>
+<p>execution </p>
+<p>cycles </p>
+<p>are</p>
+<p>taken.</p>
+<p><b>EVEP1 - EVEP8:</b></p>
+<p>Specifies whether to load data for each point condition specified by the</p>
+<p><b>eve Setup...</b></p>
+<p>menu or the </p>
+<p><b>eve</b></p>
+<p> command. When you click on check</p>
+<p>box, data is loaded.</p>
+<p><b>EVER1,EVER3,</b></p>
+<p><b>EVER5,EVER7:</b></p>
+<p>Specifies whether to load data for each range condition specified by the</p>
+<p><b>eve  Setup...</b></p>
+<p>menu  or  the </p>
+<p><b>eve</b></p>
+<p>  command.  When  you  click  on  the</p>
+<p>check box, data is loaded.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>74</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>eva Setup... Menu</b></p>
+<p>Specify events related to access. You can specify the events that you set as trace conditions by </p>
+<p><b>SubSwitchOn Setup...</b></p>
+<p>, </p>
+<p><b>SubSwitchOff Setup...</b></p>
+<p> or the </p>
+<p><b>sswon</b></p>
+<p>/</p>
+<p><b>sswoff</b></p>
+<p> commands.</p>
+<p><b>No.:</b></p>
+<p>Specify the channel of the access event. If an event is already set, its setting</p>
+<p>values are displayed.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols, glo-</p>
+<p>bal variables and functions names are available. On the right of the address</p>
+<p>input field, specify the condition for the address value specified in </p>
+<p><b>Address:</b></p>
+<p><b>EQ</b></p>
+<p>True when address = event address</p>
+<p><b>LT</b></p>
+<p>True when address &gt; event address</p>
+<p><b>GT</b></p>
+<p>True when address &lt; event address</p>
+<p><b>IGN</b></p>
+<p>Address is not used for comparison</p>
+<p><b>NEQ</b></p>
+<p>True when address != event address</p>
+<p><b>GTE</b></p>
+<p>True when address =&lt; event address</p>
+<p><b>LTE</b></p>
+<p>True when address =&gt; event address</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>75</b></i></p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>Data:</b></p>
+<p>Specify data.</p>
+<p><b>DataMask:</b></p>
+<p>Specify data mask. The bits where '1' is specified are not used for comparison.</p>
+<p><b>Data Cmp:</b></p>
+<p>Specify data comparison condition.</p>
+<p><b>eq</b></p>
+<p>Data is compared using equal.</p>
+<p><b>neq</b></p>
+<p>Data is compared using not equal.</p>
+<p><b>Access:</b></p>
+<p>Specify the cycle condition.</p>
+<p><b>read</b></p>
+<p>Read cycles are specified.</p>
+<p><b>write</b></p>
+<p>Write cycles are specified.</p>
+<p><b>accs</b></p>
+<p>Read or write cycles are specified.</p>
+<p><b>Size:</b></p>
+<p>Specify the access size.</p>
+<p><b>byte</b></p>
+<p>Byte access (8 bits) is specified.</p>
+<p><b>hword</b></p>
+<p>Half word access (16 bits) is specified.</p>
+<p><b>word</b></p>
+<p>Word access (32 bits) is specified.</p>
+<p><b>nosize</b></p>
+<p>Invalid condition is specified.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>76</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>eve Setup... Menu</b></p>
+<p>Specify events related to execution. You can specify the events that you set as trace conditions by </p>
+<p><b>SubSwitchOn Setup...</b></p>
+<p>, </p>
+<p><b>SubSwitchOff Setup...</b></p>
+<p> or the </p>
+<p><b>sswon</b></p>
+<p>/</p>
+<p><b>sswoff</b></p>
+<p> commands.</p>
+<p>If you push the </p>
+<p><b>OK</b></p>
+<p> button after entering items, an event will be set. If you push the </p>
+<p><b>Cancel</b></p>
+<p> button, your</p>
+<p>input will be canceled.</p>
+<p><b>No.:</b></p>
+<p>Specify the channel of the access event. If an event is already set, its setting</p>
+<p>values are displayed.</p>
+<p><b>DEL:</b></p>
+<p>If you check this check box, the specified event will be deleted.</p>
+<p><b>Address:</b></p>
+<p>Enter an address. You can specify a number or a symbol. As for symbols, glo-</p>
+<p>bal variables and functions names are available. On the right of the address</p>
+<p>input field, specify the condition for the address value specified in </p>
+<p><b>Address:</b></p>
+<p><b>EQ</b></p>
+<p>True when address = event address</p>
+<p><b>LT</b></p>
+<p>True when address &gt; event address</p>
+<p><b>GT</b></p>
+<p>True when address &lt; event address</p>
+<p><b>IGN</b></p>
+<p>Address is not used for comparison</p>
+<p><b>NEQ</b></p>
+<p>True when address != event address</p>
+<p><b>GTE</b></p>
+<p>True when address =&lt; event address</p>
+<p><b>LTE</b></p>
+<p>True when address =&gt; event address</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>77</b></i></p>
+<p><b>Trace Data Display (when using KIT-V850E/MA3-IE)</b></p>
+<p>There  are  two  trace  display  modes:  assembler  display  mode  and  C  source/assembler  mixed  display</p>
+<p>mode.</p>
+<p><b>Assembler Display Mode</b></p>
+<p><b>*</b></p>
+<p> mark</p>
+<p>Indicates the trigger cycle.</p>
+<p><b>Cycle</b></p>
+<p>The relative position in the trace buffer is displayed in hexadecimal. It</p>
+<p>will  be  displayed  as  a  relative  value  with  +/-  assuming  somewhere</p>
+<p>around the trigger cycle or the end cycle as </p>
+<p><b>0x0</b></p>
+<p>.</p>
+<p><b>Sub</b></p>
+<p>The sub cycle number that is generated based on the information on</p>
+<p>branches and number of execution instructions.</p>
+<p><b>Ext</b></p>
+<p>The status of the external input terminal (EXI3..0) is displayed as a bit</p>
+<p>sequence.</p>
+<p><b>TimeTag</b></p>
+<p>Time tab value is displayed in the absolute time.</p>
+<p><b>Addr/LineNo</b></p>
+<p>The execution address or the bus cycle address is displayed.</p>
+<p><b>Opcode/FileName</b></p>
+<p>Operation code or the bus cycle data is displayed.</p>
+<p><b>Inst/Source</b></p>
+<p>instruction mnemonic or the bus type is displayed.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>78</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p>In the &quot;</p>
+<p><b>&lt;&gt;</b></p>
+<p>&quot;, the following strings are placed. These are instructions or events that caused a branch.</p>
+<p><b>Stat</b></p>
+<p>The type of the trace packet on which displayed information is based</p>
+<p>is displayed.</p>
+<p><b>TRGSTARTON</b></p>
+<p>START packet occurs and sub switch is turned</p>
+<p>ON.</p>
+<p><b>TRGSTARTOFF</b></p>
+<p>START packet occurs and sub switch is turned</p>
+<p>OFF.</p>
+<p><b>MATCH</b></p>
+<p>MATCH packet occurs.</p>
+<p><b>OVF</b></p>
+<p>Overflow occurs.</p>
+<p><b>TRCEND</b></p>
+<p>TRCEND packet occurs.</p>
+<p><b>JMPD &lt;&gt;</b></p>
+<p>JMPD packet occurs.</p>
+<p><b>JMPDS &lt;&gt;</b></p>
+<p>JMPDS packet occurs.</p>
+<p><b>JMPS &lt;&gt;</b></p>
+<p>JMPS packet occurs.</p>
+<p><b>OPCODE</b></p>
+<p>Operation code access (execution) occurs.</p>
+<p><b>DATAW</b></p>
+<p>Memory write occurs (trace packet)</p>
+<p><b>DATAR</b></p>
+<p>Memory read occurs (trace packet)</p>
+<p><b>SFRW</b></p>
+<p>SFR write occurs (trace packet)</p>
+<p><b>SFRR</b></p>
+<p>SFR read occurs (trace packet)</p>
+<p><b>DMAW</b></p>
+<p>iRAM write by DMA occurs (bus trace)</p>
+<p><b>DMAR</b></p>
+<p>iRAM read by DMA occurs (bus trace)</p>
+<p><b>SUB</b></p>
+<p>sub cycle</p>
+<p><b>NMI/INT</b></p>
+<p>Caused by interruption.</p>
+<p><b>EXP/TRAP</b></p>
+<p>Caused by exception.</p>
+<p><b>RETI</b></p>
+<p>Caused by the instruction.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>79</b></i></p>
+<p><b>JMP</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JR</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JARL</b></p>
+<p>Caused by the instruction. </p>
+<p><b>BcondNT</b></p>
+<p>Caused by the instruction. </p>
+<p><b>Bcond</b></p>
+<p>Caused by the instruction.</p>
+<p><b>CALLT</b></p>
+<p>Caused by the instruction.</p>
+<p><b>SWITCH</b></p>
+<p>Caused by the instruction.</p>
+<p><b>DISPOSE</b></p>
+<p>Caused by the instruction.</p>
+<p><b>CTRET</b></p>
+<p>Caused by the instruction.</p>
+<p><b>STORE</b></p>
+<p>Caused by the instruction.</p>
+<p><b>LOAD</b></p>
+<p>Caused by the instruction.</p>
+<p><b>FSTART</b></p>
+<p>Caused by the instruction.</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>80</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>C Source/Assembler Mixed Display Mode</b></p>
+<p>When there is a C source file that corresponds to the traced address, the corresponding source line and</p>
+<p>the  assemble  result  are  displayed  together.  The  corresponding  address  is  searched  based  on  the  line</p>
+<p>information in the debug information file. If the corresponding C source line is in the debug information</p>
+<p>file, only assemble result is displayed.</p>
+<p>Displayed items of the disassembled line are the same as those of &quot;</p>
+<p>Assembler Display Mode</p>
+<p>&quot; on page</p>
+<p>77. Items displayed in C source lines are the same as those displayed for other MPUs.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>81</b></i></p>
+<p><b>Trace  Data  Display  (when  using  KIT-NA85E2-TP,  KIT-</b></p>
+<p><b>V850E2/ME3-TP)</b></p>
+<p>For  the  result  of  tracing,  see  &quot;</p>
+<p>Trace  Data  Display  (when  using  KIT-NB85E-TP)</p>
+<p>&quot;  on  page  41  of</p>
+<p>&quot;</p>
+<p>RTE Server Reference Manual</p>
+<p>.&quot; Additional information as below is displayed when you are using</p>
+<p>NA85E2 or V850E2/ME3.</p>
+<p>o</p>
+<p><b>'M'</b></p>
+<p>, </p>
+<p><b>'H'</b></p>
+<p>, or </p>
+<p><b>' '</b></p>
+<p> is displayed at the left edge. They indicate cache miss, cache hit, no information</p>
+<p>on cache hit respectively.</p>
+<p>o</p>
+<p>Status that is displayed in the </p>
+<p><b>Stat</b></p>
+<p> section is as follows:</p>
+<p>In </p>
+<p><b>{cond}</b></p>
+<p>, the following strings are placed. These are instructions or events that caused a branch.</p>
+<p><b>TRGSTARTON</b></p>
+<p>START packet occurs and sub switch is turned ON.</p>
+<p><b>TRGSTARTOFF</b></p>
+<p>START packet occurs and sub switch is turned OFF.</p>
+<p><b>MATCH</b></p>
+<p>MATCH packet occurs.</p>
+<p><b>OVF</b></p>
+<p>Overflow occurs.</p>
+<p><b>TRCEND</b></p>
+<p>TRCEND packet occurs.</p>
+<p><b>JMPD {cond}</b></p>
+<p>JMPD packet occurs.</p>
+<p><b>JMPDS {cond}</b></p>
+<p>JMPDS packet occurs.</p>
+<p><b>JMPS {cond}</b></p>
+<p>JMPS packet occurs.</p>
+<p><b>JMPSS {cond}</b></p>
+<p>JMPSS packet occurs.</p>
+<p><b>OPCODE</b></p>
+<p>Operation code access (execution) occurs.</p>
+<p><b>DATAW</b></p>
+<p>Memory write occurs (trace packet)</p>
+<p><b>DATAR</b></p>
+<p>Memory read occurs (trace packet)</p>
+<p><b>SFRW</b></p>
+<p>SFR write occurs (trace packet)</p>
+<p><b>SFRR</b></p>
+<p>SFR read occurs (trace packet)</p>
+<p><b>SUB</b></p>
+<p>sub cycle</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>82</b></i></p>
+<p>7. Trace Data Display Function</p>
+<p><b>NMI/INT</b></p>
+<p>Caused by interruption.</p>
+<p><b>EXP/TRAP</b></p>
+<p>Caused by exception.</p>
+<p><b>RETI</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JMP</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JR</b></p>
+<p>Caused by the instruction.</p>
+<p><b>JARL</b></p>
+<p>Caused by the instruction. </p>
+<p><b>BcondNT</b></p>
+<p>Caused by the instruction. </p>
+<p><b>Bcond</b></p>
+<p>Caused by the instruction.</p>
+<p><b>CALLT</b></p>
+<p>Caused by the instruction.</p>
+<p><b>SWITCH</b></p>
+<p>Caused by the instruction.</p>
+<p><b>DISPOSE</b></p>
+<p>Caused by the instruction.</p>
+<p><b>CTRET</b></p>
+<p>Caused by the instruction.</p>
+<p><b>STORE</b></p>
+<p>When WithPC is specified in data tracing.</p>
+<p><b>LOAD</b></p>
+<p>When WithPC is specified in data tracing.</p>
+<p><b>FSTART</b></p>
+<p>Forcible start of tracing.</p>
+<h1 style="page-break-before:always; "></h1>
+<p>7. Trace Data Display Function</p>
+<p><i><b>83</b></i></p>
+<p><b>Trace Data Display (when using KT-OMAP_ARM-TP)</b></p>
+<p>Assembler mode and C source/assembler mixed display mode are available like other MPUs. Status that</p>
+<p>is displayed in the </p>
+<p><b>Stat</b></p>
+<p> section is as follows:</p>
+<p><b>IE:</b></p>
+<p>Execution instruction</p>
+<p><b>ID:</b></p>
+<p>Execution (data access)</p>
+<p><b>IN:</b></p>
+<p>Instruction is not executed</p>
+<p><b>BE:</b></p>
+<p>Branch</p>
+<p><b>BD:</b></p>
+<p>Branch (data access)</p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b>84</b></i></p>
+<p>7. Trace Data Display Function</p>
+</body>
+</html>
+{% endraw %}

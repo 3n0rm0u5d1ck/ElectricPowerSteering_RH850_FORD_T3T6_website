@@ -1,0 +1,5411 @@
+---
+layout: default
+title: TechnicalReference_Nm
+nav_order: 2
+parent: Network Management Interface
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>MICROSAR Network Management </b></p>
+<p><b>Interface </b></p>
+<p>Technical Reference </p>
+<p> </p>
+<p> </p>
+<p>Version 10.00.00 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Authors </p>
+<p>Leticia Garcia; Markus Drescher </p>
+<p>Status </p>
+<p>Released </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>2 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>Document Information </b></p>
+<p><b>History </b></p>
+<p><b>Author </b></p>
+<p><b>Date </b></p>
+<p><b>Version </b></p>
+<p><b>Remarks </b></p>
+<p>Oliver Hornung </p>
+<p>2011-03-11 </p>
+<p>1.00.00 </p>
+<p>ESCAN00048893: Initial Version of Nm </p>
+<p>AUTOSAR Release 4 </p>
+<p>Philipp Ritter </p>
+<p>2012-07-20 </p>
+<p>2.00.00 </p>
+<p>ESCAN00058346: Updated to ASR 4.0.3 </p>
+<p>Markus Drescher </p>
+<p>2013-05-11 </p>
+<p>2.01.00 </p>
+<p>ESCAN00063146: Updated Figure 2-1 </p>
+<p>ESCAN00067284: Added chapter 1, </p>
+<p>merged Chapter ‘AUTOSAR Standard </p>
+<p>Compliance’ with chapter 3.1, removed </p>
+<p>chapter ‘Compiler Abstraction and Memory </p>
+<p>Mapping’, various improvements </p>
+<p>ESCAN00067285: Rewritten chapter 3.8 </p>
+<p>Markus Drescher </p>
+<p>2013-10-01 </p>
+<p>3.00.00 </p>
+<p>ESCAN00068794: Added J1939Nm </p>
+<p>Support </p>
+<p>ESCAN00068989: Adapted conditions for </p>
+<p>availability of Nm_PrepareBusSleepMode </p>
+<p>ESCAN00070593: Added Runtime </p>
+<p>Measurement Support as ‘Feature Beyond </p>
+<p>the AUTOSAR Standard’ </p>
+<p>ESCAN00070804: Updated Figure 2-1 </p>
+<p>Markus Drescher </p>
+<p>2014-02-14 </p>
+<p>3.01.00 </p>
+<p>ESCAN00071769: Updated chapters 1, </p>
+<p>3.1, 5.2, 5.4, 5.6, added chapter 3.9 </p>
+<p>ESCAN00073703: Updated Figure 2-1 </p>
+<p>ESCAN00073704: Updated chapter 3.1.3 </p>
+<p>ESCAN00073705: Updated chapter 3.11.1 </p>
+<p>ESCAN00073707: Added chapter 4.3.2 </p>
+<p>ESCAN00073709: Updated chapter 5.1 </p>
+<p>Markus Drescher </p>
+<p>2014-04-17 </p>
+<p>4.00.00 </p>
+<p>ESCAN00074299: Added chapter 3.1.2.8 </p>
+<p>ESCAN00075103: Updated chapter 3 </p>
+<p>ESCAN00075105: Updated Figure 2-1 </p>
+<p>ESCAN00075012: Updated Figure 3-1, </p>
+<p>added chapter 3.1.1.2 </p>
+<p>ESCAN00075311: Updated Figure 3-1 </p>
+<p>ESCAN00075118: Updated chapters 3.1.2, </p>
+<p>3.4.4 </p>
+<p>ESCAN00075812: Added chapter 3.3.1 </p>
+<p>Markus Drescher </p>
+<p>2014-10-07 </p>
+<p>5.00.00 </p>
+<p>ESCAN00076764: Updated chapters 2, 3.1 </p>
+<p>ESCAN00078802: Updated chapter 5.2.15 </p>
+<p>ESCAN00078803: Updated Figure 2-1 </p>
+<p>Markus Drescher </p>
+<p>2015-03-23 </p>
+<p>6.00.00 </p>
+<p>ESCAN00081207 Updated Table 3-7, </p>
+<p>updated Table 5-1 </p>
+<p>Leticia Garcia </p>
+<p>2015-07-21 </p>
+<p>7.00.00 </p>
+<p>ESCAN00080959: Updated chapter </p>
+<p>3.1.2.1 </p>
+<p>ESCAN00083545: Added chapters: </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>3 </p>
+<p>based on template version 4.8.0 </p>
+<p>3.1.2.9, 5.4.8 and 5.6.1.4. </p>
+<p>ESCAN00083555: Updated chapters.5.4.2, </p>
+<p>5.4.3, 5.4.4, 5.4.5 and 5.4.6 </p>
+<p>ESCAN00084339: Updated chapter 3.11.1 </p>
+<p>Leticia Garcia </p>
+<p>2015-12-16 </p>
+<p>8.00.00 </p>
+<p>ESCAN00084773 Updated chapter 5.6.1, </p>
+<p>3.1.2.3, 3.8.2, 4.2 </p>
+<p>ESCAN00085986: Updated chapter 5.2.16 </p>
+<p>ESCAN00087098: Updated chapter 3.1.1 </p>
+<p>Markus Drescher </p>
+<p>2016-03-08 </p>
+<p>9.00.00 </p>
+<p>ESCAN00088776: Updated Figure 2-1 </p>
+<p>ESCAN00088777: Update to new CI layout </p>
+<p>ESCAN00088778: Extended chapter 3.9.1 </p>
+<p>Leticia Garcia </p>
+<p>2016-07-04 </p>
+<p>10.00.00 </p>
+<p>ESCAN00089481 Extended chapters: </p>
+<p>3.1.2.6, 3.4.2 and 3.4.6. </p>
+<p><b>Reference Documents </b></p>
+<p><b>No. </b></p>
+<p><b>Source </b></p>
+<p><b>Title </b></p>
+<p><b>Version </b></p>
+<p>[1] </p>
+<p> AUTOSAR </p>
+<p>AUTOSAR_SWS_NetworkManagementInterface.pdf </p>
+<p>3.0.0 </p>
+<p>[2] </p>
+<p> AUTOSAR </p>
+<p>AUTOSAR_SWS_DevelopmentErrorTracer.pdf </p>
+<p>3.2.0 </p>
+<p>[3] </p>
+<p> AUTOSAR </p>
+<p>AUTOSAR_SWS_DiagnosticEventManager.pdf </p>
+<p>4.2.0 </p>
+<p>[4] </p>
+<p> AUTOSAR </p>
+<p>AUTOSAR_TR_BSWModuleList.pdf </p>
+<p>1.6.0 </p>
+<p>[5] </p>
+<p> AUTOSAR </p>
+<p>AUTOSAR_SWS_RTE.pdf </p>
+<p>3.2.0 </p>
+<p>[6] </p>
+<p> Vector </p>
+<p>TechnicalReference_CanNm.pdf </p>
+<p>See </p>
+<p>delivery </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>We have configured the programs in accordance with your specifications in the </p>
+<p>questionnaire. Whereas the programs do support other configurations than the one </p>
+<p>specified in your questionnaire, Vector’s release of the programs delivered to your </p>
+<p>company is expressly restricted to the configuration you have specified in the </p>
+<p>questionnaire. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>4 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>Contents </b></p>
+<p><b>1</b></p>
+<p> </p>
+<p><b>Component History ...................................................................................................... 9</b></p>
+<p> </p>
+<p><b>2</b></p>
+<p> </p>
+<p><b>Introduction................................................................................................................. 10</b></p>
+<p> </p>
+<p>2.1</p>
+<p> </p>
+<p>Architecture Overview ...................................................................................... 11</p>
+<p> </p>
+<p><b>3</b></p>
+<p> </p>
+<p><b>Functional Description ............................................................................................... 13</b></p>
+<p> </p>
+<p>3.1</p>
+<p> </p>
+<p>Features .......................................................................................................... 13</p>
+<p> </p>
+<p>3.1.1</p>
+<p> </p>
+<p>Deviations Against AUTOSAR 4.0.3 ................................................. 13</p>
+<p> </p>
+<p>3.1.1.1</p>
+<p> </p>
+<p>Set Sleep Ready Bit ....................................................... 14</p>
+<p> </p>
+<p>3.1.1.2</p>
+<p> </p>
+<p>Nm_NetworkStartIndication as trigger for Coordinated </p>
+<p>Shutdown Abortion ......................................................... 14</p>
+<p> </p>
+<p>3.1.2</p>
+<p> </p>
+<p>Additions/ Extensions ....................................................................... 14</p>
+<p> </p>
+<p>3.1.2.1</p>
+<p> </p>
+<p>Additional DET Error Codes ........................................... 14</p>
+<p> </p>
+<p>3.1.2.2</p>
+<p> </p>
+<p>Synchronization Timeout ................................................ 15</p>
+<p> </p>
+<p>3.1.2.3</p>
+<p> </p>
+<p>Configurable Notification Functions ................................ 15</p>
+<p> </p>
+<p>3.1.2.4</p>
+<p> </p>
+<p>Macro Layer Optimization .............................................. 15</p>
+<p> </p>
+<p>3.1.2.5</p>
+<p> </p>
+<p>Memory Initialization ...................................................... 15</p>
+<p> </p>
+<p>3.1.2.6</p>
+<p> </p>
+<p>Automatic Calculation of Shutdown Delay Timer ............ 15</p>
+<p> </p>
+<p>3.1.2.7</p>
+<p> </p>
+<p>Callback Nm_CoordReadyToSleepCancellation ............ 16</p>
+<p> </p>
+<p>3.1.2.8</p>
+<p> </p>
+<p>Passive Mode as Global Setting .................................... 16</p>
+<p> </p>
+<p>3.1.2.9</p>
+<p> </p>
+<p>BusNm Specific Pdu Rx Indication Support ................... 16</p>
+<p> </p>
+<p>3.1.2.9.1</p>
+<p> </p>
+<p>Macro Layer interaction with BusNm </p>
+<p>Specific Pdu Rx Indication ......................... 17</p>
+<p> </p>
+<p>3.1.3</p>
+<p> </p>
+<p>Limitations ........................................................................................ 17</p>
+<p> </p>
+<p>3.1.3.1</p>
+<p> </p>
+<p>Multiple BusNms on One Channel ................................. 17</p>
+<p> </p>
+<p>3.2</p>
+<p> </p>
+<p>Basic Functionality ........................................................................................... 18</p>
+<p> </p>
+<p>3.3</p>
+<p> </p>
+<p>Support of Generic BusNm Modules ................................................................ 18</p>
+<p> </p>
+<p>3.3.1</p>
+<p> </p>
+<p>Creating a Generic BusNm or a Generic BusNm Wrapper ............... 18</p>
+<p> </p>
+<p>3.3.1.1</p>
+<p> </p>
+<p>Providing the Interfaces that are called by the Nm </p>
+<p>module ........................................................................... 19</p>
+<p> </p>
+<p>3.3.1.2</p>
+<p> </p>
+<p>Implementing the functions called by Nm ....................... 20</p>
+<p> </p>
+<p>3.4</p>
+<p> </p>
+<p>Coordinator Functionality ................................................................................. 21</p>
+<p> </p>
+<p>3.4.1</p>
+<p> </p>
+<p>Coordinated Networks ...................................................................... 21</p>
+<p> </p>
+<p>3.4.2</p>
+<p> </p>
+<p>Shutdown Algorithm ......................................................................... 22</p>
+<p> </p>
+<p>3.4.3</p>
+<p> </p>
+<p>State Machine of Coordinator ........................................................... 24</p>
+<p> </p>
+<p>3.4.4</p>
+<p> </p>
+<p>Wake-up........................................................................................... 25</p>
+<p> </p>
+<p>3.4.5</p>
+<p> </p>
+<p>Sleep Master .................................................................................... 25</p>
+<p> </p>
+<p>3.4.6</p>
+<p> </p>
+<p>Wait Bus Sleep Extensions .............................................................. 25</p>
+<p> </p>
+<p>3.4.6.1</p>
+<p> </p>
+<p>CanNm and NmOsek on the same channel ................... 26</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>5 </p>
+<p>based on template version 4.8.0 </p>
+<p>3.5</p>
+<p> </p>
+<p>State Report ..................................................................................................... 26</p>
+<p> </p>
+<p>3.6</p>
+<p> </p>
+<p>Macro Layer Optimization ................................................................................ 26</p>
+<p> </p>
+<p>3.7</p>
+<p> </p>
+<p>Initialization ...................................................................................................... 26</p>
+<p> </p>
+<p>3.8</p>
+<p> </p>
+<p>Provision of the NM State ................................................................................ 27</p>
+<p> </p>
+<p>3.8.1</p>
+<p> </p>
+<p>Determining the NM State Using Nm_GetState ................................ 27</p>
+<p> </p>
+<p>3.8.2</p>
+<p> </p>
+<p>Using the ‘State Change Ind Enabled’ feature .................................. 27</p>
+<p> </p>
+<p>3.9</p>
+<p> </p>
+<p>Multiple BusNms on One Channel ................................................................... 27</p>
+<p> </p>
+<p>3.9.1</p>
+<p> </p>
+<p>Notification of Mode Changes in the BusNms .................................. 29</p>
+<p> </p>
+<p>3.9.2</p>
+<p> </p>
+<p>State Change Notifications ............................................................... 31</p>
+<p> </p>
+<p>3.9.3</p>
+<p> </p>
+<p>Remote Sleep Indication Statuses ................................................... 33</p>
+<p> </p>
+<p>3.9.4</p>
+<p> </p>
+<p>Other Aggregated Information and Caveats ..................................... 34</p>
+<p> </p>
+<p>3.10</p>
+<p> </p>
+<p>Main Functions ................................................................................................ 35</p>
+<p> </p>
+<p>3.11</p>
+<p> </p>
+<p>Error Handling .................................................................................................. 35</p>
+<p> </p>
+<p>3.11.1</p>
+<p> </p>
+<p>Development Error Reporting ........................................................... 35</p>
+<p> </p>
+<p>3.11.2</p>
+<p> </p>
+<p>Production Code Error Reporting ..................................................... 37</p>
+<p> </p>
+<p><b>4</b></p>
+<p> </p>
+<p><b>Integration ................................................................................................................... 38</b></p>
+<p> </p>
+<p>4.1</p>
+<p> </p>
+<p>Scope of Delivery ............................................................................................. 38</p>
+<p> </p>
+<p>4.1.1</p>
+<p> </p>
+<p>Static Files ....................................................................................... 38</p>
+<p> </p>
+<p>4.1.2</p>
+<p> </p>
+<p>Dynamic Files .................................................................................. 38</p>
+<p> </p>
+<p>4.2</p>
+<p> </p>
+<p>Include Structure .............................................................................................. 39</p>
+<p> </p>
+<p>4.3</p>
+<p> </p>
+<p>Critical Sections ............................................................................................... 40</p>
+<p> </p>
+<p>4.3.1</p>
+<p> </p>
+<p>Exclusive Area 0 .............................................................................. 40</p>
+<p> </p>
+<p>4.3.2</p>
+<p> </p>
+<p>Exclusive Area 1 .............................................................................. 41</p>
+<p> </p>
+<p><b>5</b></p>
+<p> </p>
+<p><b>API Description ........................................................................................................... 42</b></p>
+<p> </p>
+<p>5.1</p>
+<p> </p>
+<p>Type Definitions ............................................................................................... 42</p>
+<p> </p>
+<p>5.2</p>
+<p> </p>
+<p>Services Provided by Nm ................................................................................. 44</p>
+<p> </p>
+<p>5.2.1</p>
+<p> </p>
+<p>Nm_Init ............................................................................................ 44</p>
+<p> </p>
+<p>5.2.2</p>
+<p> </p>
+<p>Nm_PassiveStartUp ......................................................................... 45</p>
+<p> </p>
+<p>5.2.3</p>
+<p> </p>
+<p>Nm_NetworkRequest ....................................................................... 46</p>
+<p> </p>
+<p>5.2.4</p>
+<p> </p>
+<p>Nm_NetworkRelease ....................................................................... 47</p>
+<p> </p>
+<p>5.2.5</p>
+<p> </p>
+<p>Nm_DisableCommunication ............................................................. 48</p>
+<p> </p>
+<p>5.2.6</p>
+<p> </p>
+<p>Nm_EnableCommunication .............................................................. 49</p>
+<p> </p>
+<p>5.2.7</p>
+<p> </p>
+<p>Nm_SetUserData ............................................................................. 50</p>
+<p> </p>
+<p>5.2.8</p>
+<p> </p>
+<p>Nm_GetUserData ............................................................................ 51</p>
+<p> </p>
+<p>5.2.9</p>
+<p> </p>
+<p>Nm_GetPduData .............................................................................. 52</p>
+<p> </p>
+<p>5.2.10</p>
+<p> </p>
+<p>Nm_RepeatMessageRequest .......................................................... 53</p>
+<p> </p>
+<p>5.2.11</p>
+<p> </p>
+<p>Nm_GetNodeIdentifier ..................................................................... 54</p>
+<p> </p>
+<p>5.2.12</p>
+<p> </p>
+<p>Nm_GetLocalNodeIdentifier ............................................................. 55</p>
+<p> </p>
+<p>5.2.13</p>
+<p> </p>
+<p>Nm_CheckRemoteSleepIndication ................................................... 56</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>6 </p>
+<p>based on template version 4.8.0 </p>
+<p>5.2.14</p>
+<p> </p>
+<p>Nm_GetState ................................................................................... 57</p>
+<p> </p>
+<p>5.2.15</p>
+<p> </p>
+<p>Nm_GetVersionInfo .......................................................................... 58</p>
+<p> </p>
+<p>5.2.16</p>
+<p> </p>
+<p>Nm_MainFunction ............................................................................ 59</p>
+<p> </p>
+<p>5.2.17</p>
+<p> </p>
+<p>Nm_InitMemory ................................................................................ 60</p>
+<p> </p>
+<p>5.3</p>
+<p> </p>
+<p>Services Used by Nm ...................................................................................... 60</p>
+<p> </p>
+<p>5.4</p>
+<p> </p>
+<p>Callback Functions ........................................................................................... 61</p>
+<p> </p>
+<p>5.4.1</p>
+<p> </p>
+<p>Nm_NetworkStartIndication .............................................................. 61</p>
+<p> </p>
+<p>5.4.2</p>
+<p> </p>
+<p>Nm_NetworkMode ........................................................................... 62</p>
+<p> </p>
+<p>5.4.3</p>
+<p> </p>
+<p>Nm_BusSleepMode ......................................................................... 63</p>
+<p> </p>
+<p>5.4.4</p>
+<p> </p>
+<p>Nm_PrepareBusSleepMode ............................................................. 64</p>
+<p> </p>
+<p>5.4.5</p>
+<p> </p>
+<p>Nm_RemoteSleepIndication ............................................................. 65</p>
+<p> </p>
+<p>5.4.6</p>
+<p> </p>
+<p>Nm_RemoteSleepCancellation ........................................................ 66</p>
+<p> </p>
+<p>5.4.7</p>
+<p> </p>
+<p>Nm_SynchronizationPoint ................................................................ 66</p>
+<p> </p>
+<p>5.4.8</p>
+<p> </p>
+<p>Nm_&lt;BusNm&gt;_PduRxIndication ...................................................... 67</p>
+<p> </p>
+<p>5.4.9</p>
+<p> </p>
+<p>Nm_PduRxIndication ....................................................................... 68</p>
+<p> </p>
+<p>5.4.10</p>
+<p> </p>
+<p>Nm_StateChangeNotification ........................................................... 69</p>
+<p> </p>
+<p>5.4.11</p>
+<p> </p>
+<p>Nm_RepeatMessageIndication ........................................................ 70</p>
+<p> </p>
+<p>5.4.12</p>
+<p> </p>
+<p>Nm_TxTimeoutException ................................................................. 71</p>
+<p> </p>
+<p>5.4.13</p>
+<p> </p>
+<p>Nm_CarWakeUpIndication ............................................................... 72</p>
+<p> </p>
+<p>5.4.14</p>
+<p> </p>
+<p>Nm_CoordReadyToSleepIndication ................................................. 72</p>
+<p> </p>
+<p>5.4.15</p>
+<p> </p>
+<p>Nm_CoordReadyToSleepCancellation ............................................. 73</p>
+<p> </p>
+<p>5.5</p>
+<p> </p>
+<p>Callback Functions used by Nm ....................................................................... 73</p>
+<p> </p>
+<p>5.6</p>
+<p> </p>
+<p>Configurable Interfaces .................................................................................... 73</p>
+<p> </p>
+<p>5.6.1</p>
+<p> </p>
+<p>Notifications ..................................................................................... 73</p>
+<p> </p>
+<p>5.6.1.1</p>
+<p> </p>
+<p>UL_Nm_RemoteSleepIndication .................................... 74</p>
+<p> </p>
+<p>5.6.1.2</p>
+<p> </p>
+<p>UL_Nm_RemoteSleepCancellation ................................ 75</p>
+<p> </p>
+<p>5.6.1.3</p>
+<p> </p>
+<p>UL_Nm_PduRxIndication ............................................... 76</p>
+<p> </p>
+<p>5.6.1.4</p>
+<p> </p>
+<p>UL_Nm_BusNmSpecificPduRxIndication ....................... 77</p>
+<p> </p>
+<p>5.6.1.5</p>
+<p> </p>
+<p>UL_Nm_StateChangeNotification .................................. 78</p>
+<p> </p>
+<p>5.6.1.6</p>
+<p> </p>
+<p>UL_Nm_RepeatMessageIndication ................................ 79</p>
+<p> </p>
+<p>5.6.1.7</p>
+<p> </p>
+<p>UL_Nm_TxTimeoutException ........................................ 80</p>
+<p> </p>
+<p>5.6.1.8</p>
+<p> </p>
+<p>UL_Nm_CarWakeUpIndication ...................................... 81</p>
+<p> </p>
+<p><b>6</b></p>
+<p> </p>
+<p><b>Glossary and Abbreviations ...................................................................................... 82</b></p>
+<p> </p>
+<p>6.1</p>
+<p> </p>
+<p>Glossary .......................................................................................................... 82</p>
+<p> </p>
+<p>6.2</p>
+<p> </p>
+<p>Abbreviations ................................................................................................... 82</p>
+<p> </p>
+<p><b>7</b></p>
+<p> </p>
+<p><b>Contact ........................................................................................................................ 83</b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>7 </p>
+<p>based on template version 4.8.0 </p>
+<p>Illustrations </p>
+<p>Figure 2-1</p>
+<p> </p>
+<p>AUTOSAR 4.x Architecture Overview ....................................................... 11</p>
+<p> </p>
+<p>Figure 2-2</p>
+<p> </p>
+<p>Interfaces to adjacent modules of the Nm ................................................. 12</p>
+<p> </p>
+<p>Figure 3-1</p>
+<p> </p>
+<p>State Machine of Coordinator ................................................................... 24</p>
+<p> </p>
+<p>Figure 3-2</p>
+<p> </p>
+<p>Left: Architectural View in AUTOSAR. Right: Network Topology with </p>
+<p>multiple BusNms on one network .............................................................. 28</p>
+<p> </p>
+<p>Figure 3-3</p>
+<p> </p>
+<p>Not recommended use case having more than one node with multiple </p>
+<p>BusNms on the network ............................................................................ 28</p>
+<p> </p>
+<p>Figure 3-4</p>
+<p> </p>
+<p>Unsupported use case having more than one node with multiple </p>
+<p>BusNms .................................................................................................... 29</p>
+<p> </p>
+<p>Figure 3-5</p>
+<p> </p>
+<p>Mode Changes with two BusNms on one channel .................................... 30</p>
+<p> </p>
+<p>Figure 3-6</p>
+<p> </p>
+<p>State Machine of Remote Sleep callbacks for two BusNms on one </p>
+<p>channel ..................................................................................................... 33</p>
+<p> </p>
+<p>Figure 4-1</p>
+<p> </p>
+<p>Include structure ....................................................................................... 39</p>
+<p> </p>
+<p> </p>
+<p><b>Tables </b></p>
+<p>Table 1-1 </p>
+<p> </p>
+<p>Component history...................................................................................... 9</p>
+<p> </p>
+<p>Table 3-1 </p>
+<p> </p>
+<p>Supported AUTOSAR standard conform features ..................................... 13</p>
+<p> </p>
+<p>Table 3-2 </p>
+<p> </p>
+<p>Not supported AUTOSAR standard conform features ............................... 13</p>
+<p> </p>
+<p>Table 3-3 </p>
+<p> </p>
+<p>Features provided beyond the AUTOSAR standard .................................. 14</p>
+<p> </p>
+<p>Table 3-4 </p>
+<p> </p>
+<p>Configurable Notification Function Mapping .............................................. 15</p>
+<p> </p>
+<p>Table 3-5</p>
+<p> </p>
+<p>BusNm Shutdown Time Calculation .......................................................... 16</p>
+<p> </p>
+<p>Table 3-6 </p>
+<p> </p>
+<p>Nm State Change Signal Values ............................................................... 26</p>
+<p> </p>
+<p>Table 3-7 </p>
+<p> </p>
+<p>Overall State of two BusNms on one channel ........................................... 32</p>
+<p> </p>
+<p>Table 3-8 </p>
+<p> </p>
+<p>Service IDs ............................................................................................... 36</p>
+<p> </p>
+<p>Table 3-9 </p>
+<p> </p>
+<p>Errors reported to DET ............................................................................. 37</p>
+<p> </p>
+<p>Table 4-1 </p>
+<p> </p>
+<p>Static files ................................................................................................. 38</p>
+<p> </p>
+<p>Table 4-2 </p>
+<p> </p>
+<p>Generated files ......................................................................................... 38</p>
+<p> </p>
+<p>Table 4-3 </p>
+<p> </p>
+<p>Exclusive Area 0 ....................................................................................... 40</p>
+<p> </p>
+<p>Table 4-4 </p>
+<p> </p>
+<p>Exclusive Area 1 ....................................................................................... 41</p>
+<p> </p>
+<p>Table 5-1 </p>
+<p> </p>
+<p>Type definitions ......................................................................................... 43</p>
+<p> </p>
+<p>Table 5-2 </p>
+<p> </p>
+<p>Nm_Init ..................................................................................................... 44</p>
+<p> </p>
+<p>Table 5-3 </p>
+<p> </p>
+<p>Nm_PassiveStartUp ................................................................................. 45</p>
+<p> </p>
+<p>Table 5-4 </p>
+<p> </p>
+<p>Nm_NetworkRequest ................................................................................ 46</p>
+<p> </p>
+<p>Table 5-5 </p>
+<p> </p>
+<p>Nm_NetworkRelease ................................................................................ 47</p>
+<p> </p>
+<p>Table 5-6 </p>
+<p> </p>
+<p>Nm_DisableCommunication ..................................................................... 48</p>
+<p> </p>
+<p>Table 5-7 </p>
+<p> </p>
+<p>Nm_EnableCommunication ...................................................................... 49</p>
+<p> </p>
+<p>Table 5-8 </p>
+<p> </p>
+<p>Nm_SetUserData ..................................................................................... 50</p>
+<p> </p>
+<p>Table 5-9 </p>
+<p> </p>
+<p>Nm_GetUserData ..................................................................................... 51</p>
+<p> </p>
+<p>Table 5-10 </p>
+<p> </p>
+<p>Nm_GetPduData ...................................................................................... 52</p>
+<p> </p>
+<p>Table 5-11 </p>
+<p> </p>
+<p>Nm_RepeatMessageRequest ................................................................... 53</p>
+<p> </p>
+<p>Table 5-12 </p>
+<p> </p>
+<p>Nm_GetNodeIdentifier .............................................................................. 54</p>
+<p> </p>
+<p>Table 5-13 </p>
+<p> </p>
+<p>Nm_GetLocalNodeIdentifier ...................................................................... 55</p>
+<p> </p>
+<p>Table 5-14 </p>
+<p> </p>
+<p>Nm_CheckRemoteSleepIndication ........................................................... 56</p>
+<p> </p>
+<p>Table 5-15 </p>
+<p> </p>
+<p>Nm_GetState ............................................................................................ 57</p>
+<p> </p>
+<p>Table 5-16 </p>
+<p> </p>
+<p>Nm_GetNodeIdentifier .............................................................................. 58</p>
+<p> </p>
+<p>Table 5-17 </p>
+<p> </p>
+<p>Nm_MainFunction .................................................................................... 59</p>
+<p> </p>
+<p>Table 5-18 </p>
+<p> </p>
+<p>Nm_InitMemory ........................................................................................ 60</p>
+<p> </p>
+<p>Table 5-19 </p>
+<p> </p>
+<p>Services used by the Nm .......................................................................... 61</p>
+<p> </p>
+<p>Table 5-20 </p>
+<p> </p>
+<p>Nm_NetworkStartIndication ...................................................................... 61</p>
+<p> </p>
+<p>Table 5-21 </p>
+<p> </p>
+<p>Nm_NetworkMode .................................................................................... 62</p>
+<p> </p>
+<p>Table 5-22 </p>
+<p> </p>
+<p>Nm_BusSleepMode .................................................................................. 63</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>8 </p>
+<p>based on template version 4.8.0 </p>
+<p>Table 5-23 </p>
+<p> </p>
+<p>Nm_PrepareBusSleepMode ..................................................................... 64</p>
+<p> </p>
+<p>Table 5-24 </p>
+<p> </p>
+<p>Nm_RemoteSleepIndication ..................................................................... 65</p>
+<p> </p>
+<p>Table 5-25 </p>
+<p> </p>
+<p>Nm_RemoteSleepCancellation ................................................................. 66</p>
+<p> </p>
+<p>Table 5-26 </p>
+<p> </p>
+<p>Nm_SynchronizationPoint ......................................................................... 66</p>
+<p> </p>
+<p>Table 5-27 </p>
+<p> </p>
+<p>Nm_BusNmSpecificPduRxIndication ........................................................ 67</p>
+<p> </p>
+<p>Table 5-28 </p>
+<p> </p>
+<p>Nm_PduRxIndication ................................................................................ 68</p>
+<p> </p>
+<p>Table 5-29 </p>
+<p> </p>
+<p>Nm_StateChangeNotification .................................................................... 69</p>
+<p> </p>
+<p>Table 5-30 </p>
+<p> </p>
+<p>Nm_RepeatMessageIndication ................................................................. 70</p>
+<p> </p>
+<p>Table 5-31 </p>
+<p> </p>
+<p>Nm_TxTimeoutException .......................................................................... 71</p>
+<p> </p>
+<p>Table 5-32 </p>
+<p> </p>
+<p>Nm_CarWakeUpIndication ....................................................................... 72</p>
+<p> </p>
+<p>Table 5-33 </p>
+<p> </p>
+<p>Nm_CoordReadyToSleepIndication .......................................................... 72</p>
+<p> </p>
+<p>Table 5-34 </p>
+<p> </p>
+<p>Nm_CoordReadyToSleepCancellation ...................................................... 73</p>
+<p> </p>
+<p>Table 5-35 </p>
+<p> </p>
+<p>Callback Functions used by the Nm .......................................................... 73</p>
+<p> </p>
+<p>Table 5-36 </p>
+<p> </p>
+<p>UL_Nm_RemoteSleepIndication ............................................................... 74</p>
+<p> </p>
+<p>Table 5-37 </p>
+<p> </p>
+<p>UL_Nm_RemoteSleepCancellation .......................................................... 75</p>
+<p> </p>
+<p>Table 5-38 </p>
+<p> </p>
+<p>UL_Nm_PduRxIndication.......................................................................... 76</p>
+<p> </p>
+<p>Table 5-39 </p>
+<p> </p>
+<p>Standard Bus Nm Pdu Rx Indication ......................................................... 77</p>
+<p> </p>
+<p>Table 5-40 </p>
+<p> </p>
+<p>UL_Nm_StateChangeNotification ............................................................. 78</p>
+<p> </p>
+<p>Table 5-41 </p>
+<p> </p>
+<p>UL_Nm_RepeatMessageIndication .......................................................... 79</p>
+<p> </p>
+<p>Table 5-42 </p>
+<p> </p>
+<p>UL_Nm_TxTimeoutException ................................................................... 80</p>
+<p> </p>
+<p>Table 5-43 </p>
+<p> </p>
+<p>UL_Nm_CarWakeUpIndication ................................................................. 81</p>
+<p> </p>
+<p>Table 6-1 </p>
+<p> </p>
+<p>Glossary ................................................................................................... 82</p>
+<p> </p>
+<p>Table 6-2 </p>
+<p> </p>
+<p>Abbreviations ............................................................................................ 82</p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>9 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>1 </b></p>
+<p><b>Component History </b></p>
+<p>The </p>
+<p>component </p>
+<p>history </p>
+<p>gives </p>
+<p>an </p>
+<p>overview </p>
+<p>over </p>
+<p>the </p>
+<p>important </p>
+<p>milestones </p>
+<p>that </p>
+<p>are </p>
+<p>supported in the different versions of the component. </p>
+<p><b>Component Version </b></p>
+<p><b>New Features </b></p>
+<p>1.00.00 </p>
+<p>Creation for AUTOSAR 4.0.1  </p>
+<p>2.00.00 </p>
+<p>Adaption for AUTOSAR 4.0.3 </p>
+<p>Added Coordinator Support </p>
+<p>Added support for AUTOSAR Standard BusNms </p>
+<p>3.00.00 </p>
+<p>Added Runtime Measurement Support </p>
+<p>Added J1939Nm Support </p>
+<p>3.01.00 </p>
+<p>Added Support for Multiple BusNms on one CAN channel </p>
+<p>4.00.00 </p>
+<p>Added support for Variant Post-Build-Selectable </p>
+<p>Added wake-up support for NM Coordinator </p>
+<p>6.00.00 </p>
+<p>Added support for OSEK NM </p>
+<p>7.00.00 </p>
+<p>Added support for BusNm Pdu-Rx indications </p>
+<p>8.00.00 </p>
+<p>Added support for Class C and Class B BusNms </p>
+<p>Added support for Nm Gateway Extensions </p>
+<p>9.00.00 </p>
+<p>Adapter for Safe BSW feature. </p>
+<p>10.00.00 </p>
+<p>Added support for Wait Bus Sleep Extension </p>
+<p>Table 1-1  </p>
+<p>Component history </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>10 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>2 </b></p>
+<p><b>Introduction </b></p>
+<p>This document describes the functionality, API and configuration of the AUTOSAR BSW </p>
+<p>module Nm as specified in [1]. </p>
+<p> </p>
+<p><b>Supported AUTOSAR Release*: </b></p>
+<p>4 </p>
+<p><b>Supported Configuration Variants: </b></p>
+<p>pre-compile, post-build-selectable </p>
+<p><b>Vendor ID: </b></p>
+<p>NM_VENDOR_ID </p>
+<p>30 decimal </p>
+<p>(= Vector-Informatik, </p>
+<p>according to HIS) </p>
+<p><b>Module ID: </b></p>
+<p>NM_MODULE_ID  </p>
+<p>29 decimal </p>
+<p>(according to ref. [4]) </p>
+<p>* For the precise AUTOSAR Release 4.x please see the release specific documentation. </p>
+<p> </p>
+<p> </p>
+<p>The Nm module acts as an adaptation layer between the AUTOSAR BSW module ComM </p>
+<p>and  the  AUTOSAR  BSW  bus-specific  network  management </p>
+<p>modules </p>
+<p>(BusNm), </p>
+<p>e.g. </p>
+<p>CanNm. Therefore  a  call  of  the  ComM  on  a  network  is  forwarded  to  the  corresponding </p>
+<p>BusNm on this network.  Callback functions from  a  BusNm  are forwarded  to  the  ComM. </p>
+<p>This functionality is also called ‘basic functionality’. </p>
+<p>Beside  the  standard  BusNm  modules  defined  by  AUTOSAR,  the  Nm  module  can  also </p>
+<p>support generic lower layer modules to allow the integration of OEM specific or legacy NM </p>
+<p>components, e.g. OSEK NM (NmOsek). For this support it is required that the lower layer </p>
+<p>modules implements the requirements for a generic BusNm. </p>
+<p>Optionally  the  Nm  module  provides  a  coordination  algorithm  to  perform  a  synchronous </p>
+<p>shutdown </p>
+<p>handling </p>
+<p>of </p>
+<p>several </p>
+<p>connected </p>
+<p>networks </p>
+<p>and/or </p>
+<p>multiple </p>
+<p>BusNms </p>
+<p>on </p>
+<p>one </p>
+<p>channel. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>11 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>2.1 </b></p>
+<p><b>Architecture Overview </b></p>
+<p>The following figure shows where the Nm is located in the AUTOSAR architecture. </p>
+<p> </p>
+<p>Figure 2-1 </p>
+<p>AUTOSAR 4.x Architecture Overview   </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>12 </p>
+<p>based on template version 4.8.0 </p>
+<p>The next figure shows the interfaces to adjacent modules of the Nm. These interfaces are </p>
+<p>described in chapter 5. </p>
+<p> </p>
+<p>Figure 2-2 </p>
+<p>Interfaces to adjacent modules of the Nm </p>
+<p><b>class Architecture</b></p>
+<p><b>Com</b></p>
+<p><b>BusNm</b></p>
+<p><b>ComM</b></p>
+<p><b>Nm</b></p>
+<p><b>Det</b></p>
+<p><b>SchM</b></p>
+<p><b>BswM</b></p>
+<p>Nm_API</p>
+<p>Nm_Mainfunction</p>
+<p>Nm_Cbk_API</p>
+<p>Nm_API</p>
+<p>SchM_Nm_API</p>
+<p>Com_API</p>
+<p>«optional»</p>
+<p>BusNm_API</p>
+<p>ComM_Nm_API</p>
+<p>Det_API</p>
+<p>«optional»</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>13 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3 </b></p>
+<p><b>Functional Description </b></p>
+<p><b>3.1 </b></p>
+<p><b>Features </b></p>
+<p>The features listed in the following tables cover the complete functionality specified for the </p>
+<p>Nm. </p>
+<p>The AUTOSAR  standard  functionality  is  specified  in  [1],  the  corresponding  features  are </p>
+<p>listed in the tables </p>
+<p><b>&gt; </b></p>
+<p>Table 3-1   Supported AUTOSAR standard conform features </p>
+<p><b>&gt; </b></p>
+<p>Table 3-2   Not supported AUTOSAR standard conform features </p>
+<p>Vector Informatik provides further  Nm functionality beyond the AUTOSAR standard. The </p>
+<p>corresponding features are listed in the table </p>
+<p>Table 3-3  </p>
+<p>Features provided beyond the AUTOSAR standard </p>
+<p> </p>
+<p>The following features specified in [1] are supported: </p>
+<p><b>Supported AUTOSAR Standard Conform Features </b></p>
+<p>Basic Functionality </p>
+<p>Support of Generic BusNm Modules </p>
+<p>Coordinator Functionality </p>
+<p>State Report </p>
+<p>MICROSAR Identity Manager using Post-Build Selectable </p>
+<p>Table 3-1  </p>
+<p>Supported AUTOSAR standard conform features </p>
+<p><b>3.1.1 </b></p>
+<p><b>Deviations Against AUTOSAR 4.0.3 </b></p>
+<p>The following features specified in [1] are not supported: </p>
+<p> </p>
+<p><b>Category </b></p>
+<p><b>Description </b></p>
+<p><b>ASR </b></p>
+<p><b>Version </b></p>
+<p>- </p>
+<p>- </p>
+<p>4.0.3 </p>
+<p>Table 3-2  </p>
+<p>Not supported AUTOSAR standard conform features </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>14 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.1.1.1 </b></p>
+<p><b>Set Sleep Ready Bit </b></p>
+<p>According to [1], Sleep Ready Bit will be set before waiting for Synchronization Points. In </p>
+<p>this implementation, Sleep Ready Bit will be set after a Synchronization Point appears. </p>
+<p><b>3.1.1.2 </b></p>
+<p><b>Nm_NetworkStartIndication as trigger for Coordinated Shutdown Abortion </b></p>
+<p>The function Nm_NetworkStartIndication is not a trigger for aborting a shutdown in the NM </p>
+<p>Coordinator  algorithm  despite  the  requirements  in  [1].  The  NM  deviates  against  this </p>
+<p>requirement, because it has been removed in newer versions of [1]. </p>
+<p><b>3.1.2 </b></p>
+<p><b>Additions/ Extensions </b></p>
+<p>The following features are provided beyond the AUTOSAR standard: </p>
+<p><b>Features Provided Beyond The AUTOSAR Standard </b></p>
+<p>Additional DET Error Codes </p>
+<p>Synchronization Timeout </p>
+<p>Configurable Notification Functions </p>
+<p>Macro Layer Optimization </p>
+<p>Memory Initialization </p>
+<p>Support for J1939Nm </p>
+<p>Runtime Measurement Support </p>
+<p>Automatic Calculation of Shutdown Delay Timer </p>
+<p>Callback Nm_CoordReadyToSleepCancellation </p>
+<p>Multiple BusNms on One Channel </p>
+<p>Wake-up by Nm Coordinator </p>
+<p>Passive Mode as Global Setting </p>
+<p>BusNm Specific Pdu Rx Indication support </p>
+<p>Table 3-3  </p>
+<p>Features provided beyond the AUTOSAR standard </p>
+<p><b>3.1.2.1 </b></p>
+<p><b>Additional DET Error Codes </b></p>
+<p>The following error code is reported additionally to the errors defined in [1]: </p>
+<p><b>&gt; </b></p>
+<p>NM_E_SYNCHRONIZATION_TIMEOUT: </p>
+<p>Nm_SynchronizationPoint</p>
+<p> was not </p>
+<p>called within the configured synchronization timeout time. </p>
+<p><b>&gt; </b></p>
+<p>NM_E_INVALID_STATE: An invalid/unexpected state transition has been passed to </p>
+<p>Nm_StateChangeNotification</p>
+<p> (only available if the optimization for only one </p>
+<p>BusNm on a channel is OFF) (e.g. transition from Normal Operation to Ready Sleep if </p>
+<p>all BusNms are currently in Bus Sleep). </p>
+<p><b>&gt; </b></p>
+<p>NM_E_SAME_STATES: The same states have been passed to </p>
+<p>Nm_StateChangeNotification.</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>NM_E_FUNCTION_PTR_IS_NULL: The pointer that has been passed in order to call </p>
+<p>a function is equals to NULL. (E.g. BusNm function in the generated function table). </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>15 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.1.2.2 </b></p>
+<p><b>Synchronization Timeout </b></p>
+<p>If Nm Synchronizing Network is enabled, coordinator algorithm waits for a suitable point in </p>
+<p>time to  continue  shutdown  of  corresponding  networks.  If  such a point  is never reached, </p>
+<p>coordination  algorithm  will  wait  forever.  To  prevent  this,  a  timeout  for  this  point  can  be </p>
+<p>defined by setting the ‘Synchronization Timeout Time’. </p>
+<p><b>3.1.2.3 </b></p>
+<p><b>Configurable Notification Functions </b></p>
+<p>Some  of  the  callback  functions  provided  by  the  Nm  may  be  needed  by  upper  layers. </p>
+<p>Therefore  the  Nm  was  extended  to  provide  a  configurable  notification  interface  where </p>
+<p>those callbacks can be configured to be forwarded to another module. Therefore a name </p>
+<p>has to be entered into the corresponding configuration parameter. </p>
+<p>The following table shows which Nm callbacks can be forwarded and the corresponding </p>
+<p>configuration parameter where a function name has to be entered. </p>
+<p><b>Nm Callback </b></p>
+<p><b>Configuration Parameter </b></p>
+<p>Nm_StateChangeNotification </p>
+<p>State Change Indication Callback </p>
+<p>Nm_RemoteSleepIndication </p>
+<p>Remote Sleep Indication Callback </p>
+<p>Nm_RemoteSleepCancellation </p>
+<p>Remote Sleep Cancellation Callback </p>
+<p>Nm_PduRxIndication </p>
+<p>PDU Receive Indication Callback </p>
+<p>Nm_RepeatMessageIndication </p>
+<p>Repeat Message Indication Callback </p>
+<p>Nm_TxTimeoutException </p>
+<p>Transmission Timeout Error Callback </p>
+<p>Nm_&lt;Specific Standard BusNm&gt;_PduRxIndication </p>
+<p>Standard Bus Nm Pdu Rx Indication </p>
+<p>Nm_&lt;Specific Generic BusNm&gt;_PduRxIndication </p>
+<p>Generic Bus Nm Pdu Rx Indication </p>
+<p>Table 3-4  </p>
+<p>Configurable Notification Function Mapping </p>
+<p>Note that the prototypes for the forwarded functions must be provided by the module that </p>
+<p>wants  to  implement  those  notifications.  Therefore  header  files  containing  the  prototype </p>
+<p>definitions can be entered in the configuration. </p>
+<p>The API prototype for these functions are described in chapter 5.6.1 ‘Notifications’. </p>
+<p><b>3.1.2.4 </b></p>
+<p><b>Macro Layer Optimization </b></p>
+<p>When having only one type of BusNm the Nm can be configured to be realized completely </p>
+<p>as a macro layer to save resources (ROM, RAM and run-time). </p>
+<p>For further information refer to chapter 3.6 ‘Macro Layer Optimization’. </p>
+<p><b>3.1.2.5 </b></p>
+<p><b>Memory Initialization </b></p>
+<p>Not every start-up code of embedded targets and neither CANoe provide initialized RAM. </p>
+<p>It thus may happen that the state of a variable that needs initialized RAM may not be set to </p>
+<p>the  expected  initial  value. Therefore  an  explicit  initialization  of  such  variables  has  to  be </p>
+<p>provided at start-up by calling the additional function </p>
+<p>Nm_InitMemory</p>
+<p>. </p>
+<p>For more information refer to chapter 3.7 ‘Initialization’. </p>
+<p><b>3.1.2.6 </b></p>
+<p><b>Automatic Calculation of Shutdown Delay Timer </b></p>
+<p>The shutdown delay timer is determined automatically. Therefore, the shutdown time of the </p>
+<p>corresponding  BusNm  is  calculated  and  cannot  be  set  by  the  user.  The  computation </p>
+<p>formula for each type is listed in the following table. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>16 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>NM Type </b></p>
+<p><b>Shutdown Time </b></p>
+<p>CAN Nm </p>
+<p>CanNmWaitBusSleepTime</p>
+<p>1</p>
+<p> + CanNmTimeoutTime</p>
+<p>1</p>
+<p> </p>
+<p>FlexRay Nm </p>
+<p>((FrNmReadySleepCnt</p>
+<p>2</p>
+<p> + 2) * FrNmRepetitionCycle</p>
+<p>3</p>
+<p> * FrCycleTime</p>
+<p>4</p>
+<p> ) </p>
+<p>Udp Nm </p>
+<p>UdpNmWaitBusSleepTime</p>
+<p>1</p>
+<p> + UdpNmTimeoutTime</p>
+<p>1</p>
+<p> </p>
+<p>Lin Nm </p>
+<p>0 </p>
+<p>Generic Nm </p>
+<p>Value of GenericBusNmShutdownTime</p>
+<p>1</p>
+<p> </p>
+<p>Table 3-5 </p>
+<p>BusNm Shutdown Time Calculation </p>
+<p>If BusNm is a Generic Nm, Generic Bus Nm Shutdown Time is used. The shutdown time is </p>
+<p>subtracted from the Global Coordinator Time and the result is used as the shutdown delay </p>
+<p>timer. </p>
+<p><b>3.1.2.7 </b></p>
+<p><b>Callback Nm_CoordReadyToSleepCancellation </b></p>
+<p>When </p>
+<p>the </p>
+<p>NM </p>
+<p>Coordinator </p>
+<p>Sleep </p>
+<p>Ready </p>
+<p>Bit </p>
+<p>in </p>
+<p>the </p>
+<p>Control </p>
+<p>Bit </p>
+<p>Vector </p>
+<p>is </p>
+<p>set, </p>
+<p>the </p>
+<p>corresponding  BusNm  sets  an  indication  and  coordination  algorithm  assumes  that  the </p>
+<p>corresponding  network  is  ready  to  sleep.  But  when  the  Sleep  Ready  Bit  is  not  set </p>
+<p>anymore, </p>
+<p>and </p>
+<p>therefore </p>
+<p>the </p>
+<p>network </p>
+<p>is </p>
+<p>not </p>
+<p>ready </p>
+<p>to </p>
+<p>sleep </p>
+<p>anymore, </p>
+<p>there </p>
+<p>is </p>
+<p>no </p>
+<p>indication/cancellation according to [1]. For this reason, this callback is introduced. </p>
+<p>For further information refer to chapter 5.4.15 ‘Nm_CoordReadyToSleepCancellation’. </p>
+<p><b>3.1.2.8 </b></p>
+<p><b>Passive Mode as Global Setting </b></p>
+<p>The setting ‘Passive Mode Enabled’ can either be configured for each NM channel (note: </p>
+<p>the BusNm setting is globally) or globally for all channels. </p>
+<p>The possibility to configure this setting for each channel exists due to the requirements in </p>
+<p>[1]; however newer versions of [1] have moved the ‘Passive Mode Enabled’ setting to a </p>
+<p>global configuration container so that this setting is applied for the whole ECU. </p>
+<p>The  NM  module  supports  both  possibilities,  but  the  parameter  may  either  only  exist  in </p>
+<p>every channel configuration container or exist in the global container. </p>
+<p><b>3.1.2.9 </b></p>
+<p><b>BusNm Specific Pdu Rx Indication Support </b></p>
+<p>The  setting  ‘Bus  Nm  Specific  Pdu  Rx  Indication  Enabled’  allows  the  generation  of  a </p>
+<p>BusNm  specific  callback  that  shall  be  called  by  the  BusNm  upon  reception  of  the </p>
+<p>RxNmPdu. This function is called to notify the reception of a NmPdu in order to distinguish </p>
+<p>between each BusNm on the same channel (Multiple BusNms on a Channel, chapter 3.9) </p>
+<p>by using different identifiers for each BusNm. </p>
+<p>Any function can be configured that shall be called on NM PDU reception. </p>
+<p>Please note that this feature is relevant for rare cases. </p>
+<p>                                            </p>
+<p>1</p>
+<p> In the 'Wait Bus Sleep Extensions' feature is activated and in presence of NmOsek BusNm, the NM </p>
+<p>coordination algorithm permits two different shut-down times, depending on the NmOsek state (Normal or </p>
+<p>LimpHome), this times are calculated during run time. Refer to chapter 3.4.6 for more information. </p>
+<p>  In all cases the timing value given in s. </p>
+<p>2</p>
+<p> Ready Sleep Counter is given in number of Repetition Cycles. </p>
+<p>3</p>
+<p> Repetition Cycle is given in number of FlexRay Cycles </p>
+<p>4</p>
+<p> FlexRay Cycle Time (duration of one FlexRay cycle) given in ms. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>17 </p>
+<p>based on template version 4.8.0 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Example </b></p>
+<p> </p>
+<p>In a setup with one channel equipped with CanNm and NmOsek on the same channel, </p>
+<p>a distinction of which BusNm has received a NM PDU cannot be made by the </p>
+<p>NmPduReceiveIndCallback, since the provided Network Handle is the same. </p>
+<p>Therefore, for a distinction, define the parameter ‘Standard Bus Nm Pdu Rx Indication’ </p>
+<p>to a certain value for CanNm and the ‘Generic Bus Nm Pdu Rx Indication’ for the </p>
+<p>NmOsek to yet another certain value. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p> </p>
+<p>Use case not needed if, for example:  </p>
+<p>In a setup with two channels, one of them equipped with CanNm, the other one </p>
+<p>equipped with FrNm, there is no distinction required between the BusNms, because the </p>
+<p>Network Handle parameter is different for each channel. </p>
+<p>Therefore it suffices to use ‘Pdu Rx Indication Enabled’ with ‘Pdu Receive Ind </p>
+<p>Callback’. (see also chapter 5.4.9 and 5.6.1.3). </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>‘Bus Nm Specific Pdu Rx Indication Support’ cannot be turned on if ‘Standard Bus </p>
+<p>Type’ is not equal to NM_BUSNM_CANNM. This functionality works only for CAN </p>
+<p>channels. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>It is not necessary to configure the function if there is only one BusNm on the channel. The </p>
+<p>‘Pdu  Receive  Ind  Callback’  (See  chapter  5.4.9)  can  be  used  as  an  alternative  for  this </p>
+<p>purpose. </p>
+<p><b>3.1.2.9.1 </b></p>
+<p><b>Macro Layer interaction with BusNm Specific Pdu Rx Indication </b></p>
+<p>It is possible to use ‘Bus Nm Specific Pdu Rx Indication’ with the Macro Layer optimization </p>
+<p>active. </p>
+<p>The  BusNm  should  call  Nm_&lt;BusNm&gt;_PduRxIndication  which  is  a  macro  definition  in </p>
+<p>Nm_Cfg.h,  therefore,  at  most  one  upper  layer  BusNm  Specific  Pdu  Rx  Indication  is </p>
+<p>allowed if 'Macro Layer Enabled' is turned ON. </p>
+<p><b>3.1.3 </b></p>
+<p><b>Limitations </b></p>
+<p><b>3.1.3.1 </b></p>
+<p><b>Multiple BusNms on One Channel </b></p>
+<p>There are several restrictions for multiple BusNms on one channel: </p>
+<p>The  BusNms  on one channel are either  coordinated  completely  actively  or passively  on </p>
+<p>one node. </p>
+<p>Multiple BusNms on one channel can only be used on CAN channels. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>18 </p>
+<p>based on template version 4.8.0 </p>
+<p>The  NM  Coordinator  needs  to  be  activated  if  at  least  one  channel  exists  that  contains </p>
+<p>more  than  one  BusNm.  The  channel  can  however  be  inside  a  coordination  cluster  that </p>
+<p>contains multiple channels or can form a coordination cluster on its own. This implies that, </p>
+<p>if the channel is coordinated actively by the node, the node is the last one that withdraws </p>
+<p>its communication request. </p>
+<p>Furthermore, it is required that the BusNms either call the required functions for an active </p>
+<p>coordination </p>
+<p>(Nm_RemoteSleepIndication, </p>
+<p>Nm_RemoteSleepCancellation) </p>
+<p>/ </p>
+<p>passive </p>
+<p>coordination </p>
+<p>(Nm_CoordReadyToSleepIndication, </p>
+<p>Nm_CoordReadyToSleepCancellation) </p>
+<p>or that the BusNm is a Channel Sleep Master, i.e. other nodes cannot keep the bus awake </p>
+<p>while the own node is ready to sleep. </p>
+<p>Passive Mode can only have the same value for all BusNms on a channel. </p>
+<p>The feature ‘State Report Enabled’ only reports the aggregated state (numerically highest </p>
+<p>state is considered as current state) of all BusNms on a channel to a Com signal. </p>
+<p>If </p>
+<p>‘Synchronized </p>
+<p>Network’ </p>
+<p>is </p>
+<p>enabled, </p>
+<p>it </p>
+<p>is </p>
+<p>only </p>
+<p>waited </p>
+<p>for </p>
+<p>one </p>
+<p>function </p>
+<p>call </p>
+<p>of </p>
+<p>Nm_SynchronizationPoint  by  one  of  the  BusNms  until  the  Shutdown  Delay  Timers  are </p>
+<p>started. </p>
+<p>Many service functions aggregate data retrieved from the BusNms in a manner that is not </p>
+<p>useful for the application (see also chapter 3.9.4). </p>
+<p><b>3.2 </b></p>
+<p><b>Basic Functionality </b></p>
+<p>The  Nm module  is a bus-independent adaptation  layer between  the  ComM module  and </p>
+<p>the  bus-specific  network  management  modules  (e.g.  CanNm,  FrNm,  LinNm,  UdpNm  or </p>
+<p>J1939Nm). </p>
+<p>Therefore </p>
+<p>it </p>
+<p>forwards </p>
+<p>function </p>
+<p>calls </p>
+<p>from </p>
+<p>the </p>
+<p>ComM </p>
+<p>module </p>
+<p>to </p>
+<p>the </p>
+<p>corresponding bus-specific network management and vice versa. </p>
+<p>Further details can be found in [1]. </p>
+<p>The API description can be found in chapter 5 ‘API Description’. </p>
+<p><b>3.3 </b></p>
+<p><b>Support of Generic BusNm Modules </b></p>
+<p>Beside  the  bus-specific  network  management  modules  defined  by  AUTOSAR  the  Nm </p>
+<p>module  is  able  to  support  further  OEM-specific  or  legacy  Nm  modules  if  they  fulfill  the </p>
+<p>requirements for generic BusNm modules. This means that such modules have to provide </p>
+<p>the  same  APIs  as  the  standard  BusNm  modules  but  with  an  own  prefix.  Also  these </p>
+<p>modules have to take care about the Nm module configuration. </p>
+<p><b>3.3.1 </b></p>
+<p><b>Creating a Generic BusNm or a Generic BusNm Wrapper </b></p>
+<p>If a Generic BusNm needs to be created or a legacy Nm module needs to be wrapped by </p>
+<p>Generic BusNm interfaces, the following (not necessarily complete) list of aspects has to </p>
+<p>be considered: </p>
+<p><b>&gt; </b></p>
+<p>The Generic BusNm interfaces that are called by the Nm module have to be provided </p>
+<p>by the &lt;GenericBusNmPrefix&gt;.h. The &lt;GenericBusNmPrefix&gt; has to be configured in </p>
+<p>the configuration tool in the Nm module. This parameter determines the header file </p>
+<p>name as well as the prefix of the APIs called by the Nm module. </p>
+<p><b>&gt; </b></p>
+<p>At least the interface of Nm concerning the current mode (Nm_NetworkMode / </p>
+<p>Nm_BusSleepMode and optionally Nm_PrepareBusSleepMode has to be used). </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>19 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>&gt; </b></p>
+<p>If the Generic BusNm sends or receives messages, the corresponding Bus Interface </p>
+<p>module (e.g. CanIf) has to be configured to forward the RxIndication / TxConfirmation </p>
+<p>towards the Generic BusNm and to have the possibility to use &lt;BusIf&gt;_Transmit. </p>
+<p>The last aspect is not covered by this document, because this document describes only </p>
+<p>the aspects of the NM Interface module. </p>
+<p><b>3.3.1.1 </b></p>
+<p><b>Providing the Interfaces that are called by the Nm module </b></p>
+<p>The &lt;GenericBusNmPrefix&gt;.h needs to provide the following function declarations: </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_PassiveStartUp </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_NetworkRequest</p>
+<p>5</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_NetworkRelease</p>
+<p>5</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_EnableCommunication</p>
+<p>6</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_DisableCommunication</p>
+<p>6</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_SetUserData</p>
+<p>7</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_GetUserData</p>
+<p>8</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_GetPduData</p>
+<p>9</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_RepeatMessageRequest</p>
+<p>10</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_GetNodeIdentifier</p>
+<p>11</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_GetLocalNodeIdentifier</p>
+<p>11</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_CheckRemoteSleepIndication</p>
+<p>12</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_GetState </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_RequestBusSynchronization</p>
+<p>13</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNmPrefix&gt;_SetSleepReadyBit</p>
+<p>14</p>
+<p> </p>
+<p>It  is recommended  to copy  the function  prototypes  from  Nm.h  and  replace  the  compiler </p>
+<p>abstraction </p>
+<p>and </p>
+<p>memory </p>
+<p>mapping </p>
+<p>parts </p>
+<p>to </p>
+<p>the </p>
+<p>sections/keywords </p>
+<p>of </p>
+<p>NM </p>
+<p>to </p>
+<p>&lt;GENERICBUSNMPREFIX&gt;. </p>
+<p>Since </p>
+<p>there </p>
+<p>are </p>
+<p>no </p>
+<p>prototypes </p>
+<p>of </p>
+<p>Nm_RequestBusSynchronization and Nm_SetSleepReadyBit, an example header for the </p>
+<p>exemplary Generic Bus Nm ‘SpecialBusNm’ is provided for these function prototypes as </p>
+<p>                                            </p>
+<p>5</p>
+<p> Function is only required if ‘Passive Mode Enabled’ is OFF in the Nm channel/module configuration settings </p>
+<p>6</p>
+<p> Function is only required if ‘Com Control Enabled’ is ON in the Nm module configuration settings </p>
+<p>7</p>
+<p> Function is only required if ‘User Data Enabled’ is ON, ‘Passive Mode Enabled’ is OFF, ‘Com User Data </p>
+<p>Support’ is OFF in the Nm module configuration settings </p>
+<p>8</p>
+<p> Function is only required if ‘User Data Enabled’ is ON in the Nm module configuration settings </p>
+<p>9</p>
+<p> Function is only required if ‘Node Id Enabled’ is ON or ‘User Data Enabled’ is ON in the Nm module </p>
+<p>configuration settings </p>
+<p>10</p>
+<p> Function is only required if ‘Node Detection Enabled’ is ON in the Nm module configuration settings </p>
+<p>11</p>
+<p> Function is only required if ‘Node Id Enabled’ is ON in the Nm module configuration settings </p>
+<p>12</p>
+<p> Function is only required if ‘Remote Sleep Ind Enabled’ is ON in the Nm module configuration settings </p>
+<p>13</p>
+<p> Function is only required if ‘Bus Synchronization Enabled’ is ON in the Nm module configuration settings </p>
+<p>14</p>
+<p> Function is only required if ‘Passive Mode Enabled’ is OFF in the Nm channel/module configuration </p>
+<p>settings and if ‘Coordinator Sync Support’ is ON in the Nm module configuration settings </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>20 </p>
+<p>based on template version 4.8.0 </p>
+<p>follows.  Note  that  Compiler_Cfg.h  has  to  be  extended  by  the  SPECIALBUSNM_CODE </p>
+<p>keyword and MemMap.h has to be adapted by the SPECIALBUSNM_START_SEC_CODE </p>
+<p>/ SPECIALBUSNM_STOP_SEC_CODE section begin/end parts. </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Example </b></p>
+<p>If a Generic Bus Nm called ‘SpecialBusNm’ needs to be implemented, a header file </p>
+<p>called ‘SpecialBusNm.h’ also needs to be provided. Note that this header does not </p>
+<p>contain all prototypes, only those that cannot be derived from the prototypes of Nm.h. </p>
+<p>#if !defined(SPECIALBUSNM_H) </p>
+<p>#define SPECIALBUSNM_H </p>
+<p> </p>
+<p>#include &quot;Nm_Cfg.h&quot; </p>
+<p> </p>
+<p>#define SPECIALBUSNM_START_SEC_CODE </p>
+<p>#include &quot;MemMap.h&quot; </p>
+<p> </p>
+<p>/* Insert other function prototypes like </p>
+<p> * SpecialNm_PassiveStartUp here... </p>
+<p> */ </p>
+<p> </p>
+<p>#if (NM_BUS_SYNCHRONIZATION_ENABLED == STD_ON) </p>
+<p>extern FUNC(Std_ReturnType, SPECIALBUSNM_CODE) </p>
+<p>SpecialBusNm_RequestBusSynchronization </p>
+<p>( CONST( NetworkHandleType, AUTOMATIC ) nmNetworkHandle ); </p>
+<p>#endif </p>
+<p> </p>
+<p>#if (NM_PASSIVE_MODE_ENABLED == STD_OFF) &amp;&amp; \ </p>
+<p>    (NM_COORDINATOR_SYNC_SUPPORT == STD_ON) </p>
+<p>extern FUNC(Std_ReturnType, SPECIALBUSNM_CODE) </p>
+<p>GenericBusNm_SetSleepReadyBit </p>
+<p>(CONST(NetworkHandleType, AUTOMATIC) nmNetworkHandle, </p>
+<p>CONST(boolean, AUTOMATIC) nmSleepReadyBit); </p>
+<p>#endif </p>
+<p> </p>
+<p>#define SPECIALBUSNM_STOP_SEC_CODE </p>
+<p>#include &quot;MemMap.h&quot; </p>
+<p> </p>
+<p>#endif</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>3.3.1.2 </b></p>
+<p><b>Implementing the functions called by Nm </b></p>
+<p>As  next  step,  implement  these  functions  in  a  C  file  of  the  application  that  includes </p>
+<p>&lt;GenericBusNm&gt;.h. As a minimum requirement, </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>21 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNm&gt;_PassiveStartUp </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNm&gt;_NetworkRequest </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNm&gt;_NetworkRelease </p>
+<p><b>&gt; </b></p>
+<p>&lt;GenericBusNm&gt;_GetState </p>
+<p>should be implemented. </p>
+<p>It is useful to use a variable of the Nm_StateType that holds the current state towards the </p>
+<p>NM Interface. </p>
+<p>When </p>
+<p>the </p>
+<p>&lt;GenericBusNm&gt; </p>
+<p>is </p>
+<p>asleep, </p>
+<p>&lt;GenericBusNm&gt;_PassiveStartUp </p>
+<p>and/or </p>
+<p>&lt;GenericBusNm&gt;_NetworkRequest </p>
+<p>have </p>
+<p>been </p>
+<p>called, </p>
+<p>this </p>
+<p>should </p>
+<p>lead </p>
+<p>to </p>
+<p>a </p>
+<p>call </p>
+<p>of </p>
+<p>Nm_NetworkMode  (not  necessarily  in  the  context  of  these  function,  may  be  delayed). </p>
+<p>When </p>
+<p>&lt;GenericBusNm&gt; </p>
+<p>is </p>
+<p>not </p>
+<p>asleep </p>
+<p>(i.e. </p>
+<p>Nm_NetworkMode </p>
+<p>has </p>
+<p>been </p>
+<p>called), </p>
+<p>Nm_BusSleepMode </p>
+<p>may </p>
+<p>only </p>
+<p>be </p>
+<p>called </p>
+<p>if </p>
+<p>there </p>
+<p>is </p>
+<p>no </p>
+<p>network </p>
+<p>request </p>
+<p>(i.e. </p>
+<p>&lt;GenericBusNm&gt;_NetworkRelease </p>
+<p>has </p>
+<p>been </p>
+<p>called </p>
+<p>after </p>
+<p>&lt;GenericBusNm&gt;_NetworkRequest  or  only  &lt;GenericBusNm&gt;_PassiveStartUp  led  to  the </p>
+<p>call of Nm_NetworkMode). </p>
+<p>The usage of </p>
+<p><b>&gt; </b></p>
+<p>Nm_BusSleepMode </p>
+<p><b>&gt; </b></p>
+<p>Nm_NetworkMode </p>
+<p>is mandatory for a Generic BusNm. The usage of the other callback functions (see chapter </p>
+<p>5.4) is optional. </p>
+<p>If </p>
+<p>a </p>
+<p>legacy </p>
+<p>module </p>
+<p>is </p>
+<p>wrapped, </p>
+<p>the </p>
+<p>&lt;GenericBusNm&gt;_PassiveStartUp, </p>
+<p>&lt;GenericBusNm&gt;_NetworkRequest, </p>
+<p>&lt;GenericBusNm&gt;_NetworkRelease </p>
+<p>functions </p>
+<p>(and </p>
+<p>eventually other &lt;GenericBusNm&gt; functions called by Nm) probably need to call a function </p>
+<p>of the legacy module. Vice versa, if the legacy module wants  to notify a higher module, </p>
+<p>these callbacks need to be implemented by &lt;GenericBusNm&gt; and to be forwarded to the </p>
+<p>Nm callbacks (e.g. Nm_BusSleepMode, Nm_NetworkMode). </p>
+<p><b>3.4 </b></p>
+<p><b>Coordinator Functionality </b></p>
+<p>The </p>
+<p>coordinator </p>
+<p>functionality </p>
+<p>can </p>
+<p>be </p>
+<p>used </p>
+<p>to </p>
+<p>shut </p>
+<p>down </p>
+<p>two </p>
+<p>or </p>
+<p>more </p>
+<p>networks </p>
+<p>synchronously. The coordination algorithm keeps all networks of a coordinator awake as </p>
+<p>long as at least one network is not ready to sleep. When all networks are ready to sleep, </p>
+<p>synchronous shutdown will start. </p>
+<p>The  coordinator  can  also  be  used  to  coordinate  the  usage  of  multiple  BusNms  on  one </p>
+<p>network. </p>
+<p><b>3.4.1 </b></p>
+<p><b>Coordinated Networks </b></p>
+<p>An ECU can have multiple, independent coordinators as long as every coordinator has at </p>
+<p>least two networks (or at least two BusNms one network). Not every network of an ECU </p>
+<p>must be part of a coordinator. </p>
+<p>A  network,  which  shall  be  part  of  a  coordinator,  must  have  a  configured  ‘Coordinator </p>
+<p>Cluster Index’. This index identifies the coordinator which is associated to the network. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>22 </p>
+<p>based on template version 4.8.0 </p>
+<p>Furthermore,  a  coordinated  network  can  either  be  an  active  or  a  passive  one.  On  an </p>
+<p>actively coordinated network, the current ECU is the last ECU which releases the Network. </p>
+<p>As long as any other ECU requests the network, the current ECU requests the network, </p>
+<p>too.  </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Caution </b></p>
+<p>A network should only have one active coordinator! </p>
+<p>If there were two or more active coordinators on one network, no ECU would enter </p>
+<p>sleep because the coordinators keep awake each other. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>Additionally, an actively coordinated network is kept awake as long as any other network of </p>
+<p>the same coordinator is requested.  </p>
+<p>If a coordinated network is not an active one, it is automatically a passively coordinated </p>
+<p>network. Passively coordinated networks are kept awake when a local request exists or as </p>
+<p>long as at least one actively coordinated network of the same coordinator is requested. </p>
+<p><b>3.4.2 </b></p>
+<p><b>Shutdown Algorithm </b></p>
+<p>The coordinator algorithm checks the communication status of all networks belonging to </p>
+<p>the same coordinator. Communication is required as long as a local or a remote request is </p>
+<p>present. </p>
+<p>A </p>
+<p>local </p>
+<p>request </p>
+<p>means, </p>
+<p>that </p>
+<p>Nm_NetworkRequest()</p>
+<p> </p>
+<p>was </p>
+<p>called </p>
+<p>and </p>
+<p>Nm_NetworkRelease() </p>
+<p>was  not  called  yet.  For  an  actively  coordinated  network  a </p>
+<p>remote  request  is  assumed  as  long  as  no  call  of </p>
+<p>Nm_RemoteSleepIndication()</p>
+<p> </p>
+<p>indicates that network is ready to sleep. </p>
+<p>Nm_RemoteSleepCancellation()</p>
+<p> restores a </p>
+<p>remote </p>
+<p>request. </p>
+<p>Nm_CoordReadyToSleepIndication()</p>
+<p> </p>
+<p>and </p>
+<p>Nm_CoordReady-</p>
+<p>ToSleepCancellation()</p>
+<p> are the counterpart of passively coordinated networks.  </p>
+<p>When no communication request for actively coordinated networks is present, shutdown </p>
+<p>algorithm </p>
+<p>starts.  Therefore, </p>
+<p>BusNm_NetworkRelease()</p>
+<p> </p>
+<p>will </p>
+<p>be </p>
+<p>called  on  passively </p>
+<p>coordinated networks if there is no local communication request present anymore. As soon </p>
+<p>as an actively coordinator on a remote ECU determines that no other ECU requests the </p>
+<p>network, it will locally initiate its shutdown algorithm. Hence, remaining ECUs do not have </p>
+<p>a remote communication request on its passively coordinated channels and can continue </p>
+<p>the shutdown procedure. </p>
+<p>If  one  of  the  networks  belonging  to  the  coordinator  is  awake  and  is  a  synchronizing </p>
+<p>network, the shutdown algorithm waits for a suitable point in time to continue the shutdown </p>
+<p>procedure. This point is indicated by </p>
+<p>Nm_SynchronizationPoint()</p>
+<p>. </p>
+<p>If  no  synchronizing  network  is  available  or  the  synchronization  point  has  occurred,  a </p>
+<p>network-specific  delay  time  starts  for  each  actively  coordinated  network.  The  timing  is </p>
+<p>predetermined  and  depends  on  the  Global  Coordination  Delay  Time  and  the  network-</p>
+<p>specific shutdown time (refer to chapter 3.1.2.6 ‘Automatic Calculation of Shutdown Delay </p>
+<p>Timer’ for more information). In case the network has NmOsek and all NmOsek members </p>
+<p>are  in  “Normal State”  the  shutdown  delay  time  is calculated  differently.  (refer to  chapter </p>
+<p>3.4.6  ‘Wait Bus  Sleep  Extension’)  Additionally,  the  Sleep  Ready  Bit  is  set  by  calling  the </p>
+<p>corresponding </p>
+<p>BusNm_SetSleepReadyBit()</p>
+<p> function. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>23 </p>
+<p>based on template version 4.8.0 </p>
+<p>When </p>
+<p>a </p>
+<p>timer </p>
+<p>of </p>
+<p>a </p>
+<p>network </p>
+<p>expires, </p>
+<p>this </p>
+<p>network </p>
+<p>will </p>
+<p>be </p>
+<p>released </p>
+<p>by </p>
+<p>calling </p>
+<p>the </p>
+<p>corresponding </p>
+<p>BusNm_RequestBusSynchronization()</p>
+<p> </p>
+<p>and </p>
+<p>BusNm_Network-</p>
+<p>Release()</p>
+<p> function. </p>
+<p>Finally,  when  all  timers  are  expired  and  every  network  has  notified  Bus  Sleep,  the </p>
+<p>coordinator is shut down. </p>
+<p>If the coordinator detects any need for communication during the shutdown procedure, the </p>
+<p>algorithm  ensures  that  all  not  sleeping  networks  are  restarted  again.  Additionally,  on </p>
+<p>actively coordinated networks, the Sleep Ready Bit will be set back. For networks which </p>
+<p>are already asleep </p>
+<p>ComM_Nm_RestartIndication() </p>
+<p>will be called. </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>When a new request on a network occurs and coordinator is already shut down, neither </p>
+<p>a restart nor an indication will be invoked on networks belonging to the same </p>
+<p>coordinator. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>24 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.4.3 </b></p>
+<p><b>State Machine of Coordinator </b></p>
+<p> </p>
+<p> </p>
+<p>Figure 3-1 </p>
+<p>State Machine of Coordinator </p>
+<p><b> stm Cooordinator</b></p>
+<p><b>for each coordinator</b></p>
+<p><b>Network Passiv ed </b></p>
+<p><b>Released</b></p>
+<p><b>Network Requested</b></p>
+<p><b>for each coordinated network</b></p>
+<p><b>Shut Down</b></p>
+<p><b>Start Timers</b></p>
+<p><b>Timer Expired</b></p>
+<p><b>Wait For Sync</b></p>
+<p><b>Wait For Timers</b></p>
+<p><b>Abort Shutdown</b></p>
+<p><b>Ready_To_Sleep</b></p>
+<p><b>Bus_Awake </b></p>
+<p><b>Local_Request</b></p>
+<p><b>Bus_Awake </b></p>
+<p><b>Remote_Request</b></p>
+<p><b>Bus_Sleep</b></p>
+<p><b>Abort=</b></p>
+<p>Nm_PassiveStartUp() </p>
+<p>|| Nm_NetworkRequest()</p>
+<p>|| Nm_NetworkMode()</p>
+<p>|| Nm_RemoteSleepCancellation()</p>
+<p>|| Nm_CoordReadyToSleepCancellation()</p>
+<p>Nm_SynchronizationPoint()</p>
+<p>Nm_CoordReadyToSleepIndication(),</p>
+<p>Nm_RemoteSleepIndication()</p>
+<p>Nm_NetworkRelease()</p>
+<p>[Nm_RemoteSleepIndication() ||</p>
+<p>Nm_CoordReadyToSleepIndication()</p>
+<p>c alled]</p>
+<p>Nm_NetworkRelease()</p>
+<p>[Nm_RemoteSleepIndication() &amp;&amp;</p>
+<p>Nm_CoordReadyToSleepIndication()</p>
+<p>not called]</p>
+<p>Nm_NetworkRequest()</p>
+<p>Nm_RemoteSleepCancellation(),</p>
+<p>Nm_CoordReadyToSleepCancellation()</p>
+<p>Nm_BusSleepMode()</p>
+<p>/Nm_NeworkRequest() on</p>
+<p>not sleeping networks &amp;&amp;</p>
+<p>ComM_RestartIndication</p>
+<p>on sleeping networks</p>
+<p>Abort</p>
+<p>Timer of network expired</p>
+<p>/BusNm_RequestBusSynchronization()</p>
+<p>&amp; BusNm_NetworkRelease()</p>
+<p>Timer not expired</p>
+<p>/Decrease timer</p>
+<p>All Bus Timer</p>
+<p>expired</p>
+<p>Nm_NetworkRequest()</p>
+<p>Abort</p>
+<p>Every network is in</p>
+<p>BusSleep</p>
+<p>Abort</p>
+<p>Abort</p>
+<p>/start timers &amp;&amp;</p>
+<p>set ready sleep bit on</p>
+<p>active coordinated</p>
+<p>networks</p>
+<p>Nm_NetworkMode()  [on any network if</p>
+<p>NmCoordinatorRequestChannelsInBusSleep</p>
+<p>== false]</p>
+<p>all active coordinated</p>
+<p>networks are</p>
+<p>Ready_To_Sleep ||</p>
+<p>Bus_Sleep</p>
+<p>/BusNm_NetworkRelease()</p>
+<p>for all networks which are in</p>
+<p>Remote_Request</p>
+<p>all passive coordinated networks are</p>
+<p>Ready_To_Sleep || Bus_Sleep [any awake</p>
+<p>network is a synchronizing network]</p>
+<p>Abort</p>
+<p>all passive coordinated networks are Ready_To_Sleep ||</p>
+<p>Bus_Sleep [no awake network is a synchronizing network]</p>
+<p>Network changes state from Local_Request to Remote_Request</p>
+<p>/BusNm_NetworkRelease()</p>
+<p>Nm_NetworkMode()</p>
+<p>[Nm_NetworkRequest() called]</p>
+<p>Nm_NetworkMode()</p>
+<p>[Nm_PassiveStartup() called]</p>
+<p>Abort [NmCoordinatorRequestChannelsInBusSleep == true]</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>25 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.4.4 </b></p>
+<p><b>Wake-up </b></p>
+<p>The  wake-up  of  networks  is  outside  the  scope  of  the  Nm  according  to  AUTOSAR, </p>
+<p>independent of coordinator support being enabled or not. Further details can be found in </p>
+<p>[1]. </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>ComM can be configured to automatically start all networks when one network is </p>
+<p>requested (Synchronous Wake-up). </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>However, </p>
+<p>the </p>
+<p>NM </p>
+<p>Coordinator </p>
+<p>can </p>
+<p>also </p>
+<p>be </p>
+<p>used </p>
+<p>to </p>
+<p>indicate </p>
+<p>to </p>
+<p>ComM </p>
+<p>via </p>
+<p>ComM_Nm_RestartIndication </p>
+<p>that </p>
+<p>an </p>
+<p>asleep </p>
+<p>network </p>
+<p>should </p>
+<p>be </p>
+<p>requested </p>
+<p>in </p>
+<p>the </p>
+<p>coordinator  state  ‘Shut  Down’  (see  Figure  3-1).  This  requires  the  configuration  setting </p>
+<p>‘Coordinator Request Channels In Bus Sleep’ to be turned ON. </p>
+<p>Thus an alternative way of waking up networks synchronously can be realized: if one of </p>
+<p>the  networks that  is  inside  a  coordinator cluster is  woken  up  by  bus  or is  requested  by </p>
+<p>ComM while the NM Coordinator is in the ‘Shut Down’ state, all networks are woken up in </p>
+<p>the  coordinator  cluster.  So  this feature  permits  the  NM  coordinator  to  wake  up  only  the </p>
+<p>channels </p>
+<p>in </p>
+<p>one </p>
+<p>NM </p>
+<p>coordinator </p>
+<p>cluster, </p>
+<p>not </p>
+<p>every </p>
+<p>communication </p>
+<p>channel </p>
+<p>like </p>
+<p>‘Synchronous Wake-up’ of ComM does. </p>
+<p>If  the  configuration  setting  ‘Coordinator Request  Channels In Bus  Sleep’  is not  ON,  this </p>
+<p>behavior is disabled. </p>
+<p><b>3.4.5 </b></p>
+<p><b>Sleep Master </b></p>
+<p>If a coordinated network is a Sleep Master, the current ECU can absolutely decide when to </p>
+<p>shut down this network. Therefore, the coordinator assumes that this bus is always ready </p>
+<p>to sleep when no local request exists and does not evaluate the remote sleep indication </p>
+<p>status. </p>
+<p><b>3.4.6 </b></p>
+<p><b>Wait Bus Sleep Extensions </b></p>
+<p>Within NM Coordination, the shutdown time of each BusNm is considered as a static time </p>
+<p>and therefore generated into constant arrays. </p>
+<p>However, the feature 'Wait Bus Sleep Extensions' permits NmOsek to have two different </p>
+<p>shutdown  times.  Thus,  the  NM  Coordination  algorithm  needs  to  decide  during  run-time </p>
+<p>which of the two shutdown times will be applied by NmOsek depending on the status of </p>
+<p>NmOsek (either Normal or LimpHome). </p>
+<p>When at least one of the NmOsek BusNms is in 'LimpHome' status, the regular shut down </p>
+<p>time is used. </p>
+<p>On the other hand, when the NmOsek BusNms are in 'Normal' status on every channel, a </p>
+<p>shorter shut down timer is used. The timer calculation is realized by Nm and it depends on </p>
+<p>the configured <i>NmGenericBusNmShutdownTime</i>. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>26 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.4.6.1 </b></p>
+<p><b>CanNm and NmOsek on the same channel </b></p>
+<p>CanNm behaves differently regarding its shutdown time if NmOsek is located on the same </p>
+<p>channel and if Wait Bus Sleep Extensions are turned ON [6]. This is also considered by </p>
+<p>the Nm code generator for the shutdown delay timer calculation. </p>
+<p><b>3.5 </b></p>
+<p><b>State Report </b></p>
+<p>The feature ‘State Report’ writes state change notifications about a network as bit-coded </p>
+<p>values in a configured Com signal for every network which has enabled the feature. </p>
+<p>The following table provides all state changes (from previous state to current state) and </p>
+<p>the corresponding signal values that are set by the NM Interface. </p>
+<p><b>Previous State </b></p>
+<p><b>Current State </b></p>
+<p><b>Signal Value </b></p>
+<p>Bus Sleep Mode</p>
+<p>15</p>
+<p> </p>
+<p>Repeat Message </p>
+<p>1 </p>
+<p>Prepare Bus Sleep Mode</p>
+<p>16</p>
+<p> </p>
+<p>Repeat Message </p>
+<p>2 </p>
+<p>Repeat Message </p>
+<p>Normal Operation </p>
+<p>4 </p>
+<p>Ready Sleep </p>
+<p>Normal Operation </p>
+<p>8 </p>
+<p>Ready Sleep </p>
+<p>Repeat Message </p>
+<p>16 </p>
+<p>Normal Operation </p>
+<p>Repeat Message </p>
+<p>32 </p>
+<p>Table 3-6  </p>
+<p>Nm State Change Signal Values </p>
+<p><b>3.6 </b></p>
+<p><b>Macro Layer Optimization </b></p>
+<p>The Nm module implementation can be optionally configured to be only a macro layer if </p>
+<p>only one BusNm type is used. All function calls beside </p>
+<p>Nm_GetVersionInfo()</p>
+<p> are then </p>
+<p>realized </p>
+<p>as </p>
+<p>preprocessor </p>
+<p>defines </p>
+<p>that </p>
+<p>forward </p>
+<p>the </p>
+<p>calls </p>
+<p>directly </p>
+<p>to </p>
+<p>calls </p>
+<p>of </p>
+<p>the </p>
+<p>corresponding  BusNm  module. Also  all  callback  functions  from  the  BusNm  module  are </p>
+<p>redefined directly to callbacks to the upper layer (e.g. ComM). </p>
+<p><b>3.7 </b></p>
+<p><b>Initialization </b></p>
+<p>Before </p>
+<p>calling </p>
+<p>any </p>
+<p>other </p>
+<p>functionality </p>
+<p>of </p>
+<p>the </p>
+<p>Nm </p>
+<p>module </p>
+<p>the </p>
+<p>initialization </p>
+<p>function </p>
+<p>Nm_Init()</p>
+<p>has to be called by the application. The initialization call shall take place after </p>
+<p>initializing the BusNm modules and prior to the initialization of the ComM module. </p>
+<p>For API details refer to chapter 5.2.1 ‘Nm_Init’. </p>
+<p>The Nm module assumes that some variables are initialized with certain values at start-up, </p>
+<p>if the feature ‘Macro Layer Optimization’ is disabled and ‘Coordinator Support’ is enabled. </p>
+<p>As not all embedded targets support the initialization of RAM within the start-up code the </p>
+<p>Nm module provides the function Nm_InitMemory(). This function has to be called during </p>
+<p>start-up and before Nm_Init() is called. Refer also to chapter 3.1.2.5 ‘Memory Initialization’. </p>
+<p>For API details refer to chapter 5.2.17 ‘Nm_InitMemory’. </p>
+<p>                                            </p>
+<p>15</p>
+<p> As FlexRay NM does not perform a transition directly from Bus Sleep Mode to Repeat Message State the </p>
+<p>value is set in the transition from Synchronize Mode to Repeat Message State. </p>
+<p>16</p>
+<p> This transition is not available for FlexRay NM. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>27 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.8 </b></p>
+<p><b>Provision of the NM State </b></p>
+<p>The NM State can be determined either by using the function </p>
+<p>Nm_GetState()</p>
+<p> (see also </p>
+<p>chapter  5.2.14)  or  by  activating  the  feature  ‘State  Change  Ind  Enabled’.  Both  of  these </p>
+<p>features are implemented according to [1]. </p>
+<p>Note that the NM state may also be optionally reported into Com signals using the ‘State </p>
+<p>Report Enabled’ feature (refer to chapter 3.5 for details). </p>
+<p><b>3.8.1 </b></p>
+<p><b>Determining the NM State Using Nm_GetState </b></p>
+<p>If </p>
+<p>Nm_GetState()</p>
+<p> (see also chapter 5.2.14) has been called, the current NM state and </p>
+<p>the  current  NM  mode  of  the  bus-specific  Nm  (e.g.  CanNm,  FrNm)  associated  with  the </p>
+<p>system  channel  index </p>
+<p>nmChannelHandle</p>
+<p>  are  written  to  the  passed  pointer  variables. </p>
+<p>Possible state and mode values that are returned into these variables can be seen in the </p>
+<p>definition of </p>
+<p>Nm_StateType</p>
+<p> / </p>
+<p>Nm_ModeType</p>
+<p> in NmStack_Types.h. </p>
+<p><b>3.8.2 </b></p>
+<p><b>Using the ‘State Change Ind Enabled’ feature </b></p>
+<p>The ‘State Change Ind Enabled’ feature enables a callback that is called each time the NM </p>
+<p>state  has  been  changed.  To  use  this  feature,  activate  the  ‘State  Change  Ind  Enabled’ </p>
+<p>setting in configuration. Furthermore, enter the name of the function that shall be called in </p>
+<p>case of a NM state change into the ‘State Change Ind Callback’ field and provide the file </p>
+<p>name of the header file that contains the function prototype of this function as one of the </p>
+<p>‘Callbacks Prototype Header’ setting. </p>
+<p>Note that the function prototype of the function given in ‘State Change Ind Callback’ has to </p>
+<p>be  the  same  as  (except  the  function  name) </p>
+<p>Nm_StateChangeNotification</p>
+<p>  (refer  to </p>
+<p>chapter 5.4.10 for details). </p>
+<p><b>3.9 </b></p>
+<p><b>Multiple BusNms on One Channel </b></p>
+<p>The Nm module provides the possibility to support multiple BusNms on one channel (e.g. </p>
+<p>CanNm  and  J1939Nm,  see  Figure  3-2  Left). That  means  that  there  can  be  several  NM </p>
+<p>algorithms running on one network and they can be coordinated by one node (see Figure </p>
+<p>3-2 Right). </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>28 </p>
+<p>based on template version 4.8.0 </p>
+<p> </p>
+<p> </p>
+<p>Figure 3-2 </p>
+<p>Left: Architectural View in AUTOSAR. Right: Network Topology with multiple BusNms on one network </p>
+<p>In  the  bus  topology  example  (Figure  3-2  Right),  two  ECUs  are  equipped  with  CanNm </p>
+<p>(ECU  1,  ECU  2)  and  two  other ECUs  (ECU  3,  ECU  4) are  equipped  with  a  proprietary </p>
+<p>BusNm. ECU 5 is equipped with both BusNms (CanNm and the proprietary one). </p>
+<p>To  realize  the  functionality  of  ECU  5,  this  feature  can  be  used.  It  requires  the  NM </p>
+<p>Coordinator to be used. </p>
+<p>There should be only one node that has multiple BusNms on the network (ECU 5 in this </p>
+<p>example).  If  there  is  more  than  one  node,  only  one  of  the  nodes  that  have  multiple </p>
+<p>BusNms is allowed to be coordinated actively (thus the other nodes with multiple BusNms </p>
+<p>need to be coordinated passively, Figure 3-3). This use case is not recommended. </p>
+<p> </p>
+<p>Figure 3-3 </p>
+<p>Not recommended use case having more than one node with multiple BusNms on the network </p>
+<p>Even  worse </p>
+<p>would  be  a  setup  with  three  different  types  of  BusNms  (e.g.  CanNm, </p>
+<p>proprietary BusNm Type 1, and proprietary BusNm Type 2) without having one node that </p>
+<p>provides all three types of BusNms. Instead there could be two nodes having two BusNms </p>
+<p><b> cmp CanNm and J1939Nm on one channel</b></p>
+<p><b>ComM</b></p>
+<p><b>Nm</b></p>
+<p><b>CanNm</b></p>
+<p><b>J1939Nm</b></p>
+<p><b>CanIf</b></p>
+<p><b> object Network View</b></p>
+<p><b>ECU 1</b></p>
+<p><b>ECU 2</b></p>
+<p><b>ECU 4</b></p>
+<p><b>ECU 3</b></p>
+<p><b>ECU 5</b></p>
+<p>Equipped with CanNm </p>
+<p>and proprietary BusNm </p>
+<p>(Generic BusNm)</p>
+<p>CAN</p>
+<p>Equipped with CanNm</p>
+<p>Equipped with proprietary BusNm (Generic BusNm)</p>
+<p><b> </b></p>
+<p><b>object Network View of not recommended use case</b></p>
+<p><b>ECU 3</b></p>
+<p><b>ECU 1</b></p>
+<p><b>ECU 2</b></p>
+<p><b>ECU 4</b></p>
+<p><b>ECU 5</b></p>
+<p><b>ECU 6</b></p>
+<p>Equipped with CanNm</p>
+<p>Equipped with proprietary BusNm</p>
+<p>Equipped with CanNm </p>
+<p>and proprietary BusNm </p>
+<p>(actively coordinated)</p>
+<p>Equipped with CanNm </p>
+<p>and proprietary BusNm </p>
+<p>(passively coordinated)</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>29 </p>
+<p>based on template version 4.8.0 </p>
+<p>of a certain type, for instance one having the two first types and the other having the last </p>
+<p>two types (Figure 3-4). Such setups are not supported! </p>
+<p> </p>
+<p>Figure 3-4 </p>
+<p>Unsupported use case having more than one node with multiple BusNms </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>Currently, multiple BusNms are only supported on CAN channels. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>The following sections explain the basic principles how information is exchanged between </p>
+<p>the BusNms, Nm and the upper layers. </p>
+<p><b>3.9.1 </b></p>
+<p><b>Notification of Mode Changes in the BusNms </b></p>
+<p>The  BusNms  notify  the  Nm  module  about  changes  in  their  modes  (Bus  Sleep  Mode, </p>
+<p>Prepare Bus Sleep Mode, Network Mode). </p>
+<p>This mode is notified towards ComM. If multiple BusNms are configured on one channel, </p>
+<p>the modes need to be aggregated before ComM is notified. In other words, the ‘highest’ </p>
+<p>mode of all BusNms on a channel needs to be determined before ComM is notified about </p>
+<p>mode changes. The set of modes of all BusNms on a channel is an unordered one (the </p>
+<p>order does not matter to Nm). </p>
+<p>The  mode  requests  (Nm_PassiveStartUp,  Nm_NetworkRequest,  Nm_NetworkRelease) </p>
+<p>are  propagated  towards  the  BusNm  by  the  NM  Coordinator  (refer  to  chapter  3.4  for </p>
+<p>details). </p>
+<p>Figure 3-5 provides an example of two BusNms on one channel. The encoding of the sub-</p>
+<p>states  ‘00’,  ‘01’,  ‘02’,  ‘11’,  ‘12’,  ‘22’  represents  the  current  modes  of  the  underlying </p>
+<p>BusNms, where ‘0’ indicates ‘Bus Sleep Mode’, ‘1’ refers to ‘Prepare Bus Sleep Mode’ and </p>
+<p>‘2’ stands for ‘Network Mode’. </p>
+<p>Note that the super-states ‘Bus Sleep Mode’, ‘Prepare Bus Sleep Mode’ and ‘Bus Sleep </p>
+<p>Mode’ indicate the mode that is forwarded as an aggregated mode towards ComM. </p>
+<p><b> object Network View of not supported use case</b></p>
+<p><b>ECU 1</b></p>
+<p><b>ECU 2</b></p>
+<p><b>ECU 3</b></p>
+<p><b>ECU 4</b></p>
+<p><b>ECU 5</b></p>
+<p><b>ECU 6</b></p>
+<p><b>ECU 8</b></p>
+<p><b>ECU 7</b></p>
+<p>Equipped with CanNm</p>
+<p>Equipped with proprietary BusNm (Type 1)</p>
+<p>Equipped with </p>
+<p>proprietary BusNm </p>
+<p>(Type 2)</p>
+<p>Equipped with CanNm </p>
+<p>and proprietary BusNm </p>
+<p>(Type 2)</p>
+<p>Equipped with CanNm </p>
+<p>and proprietary BusNm </p>
+<p>(Type 1)</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>30 </p>
+<p>based on template version 4.8.0 </p>
+<p> </p>
+<p>Figure 3-5 </p>
+<p>Mode Changes with two BusNms on one channel </p>
+<p>The states ‘01’ of ‘Prepare Bus Sleep Mode’ and ’12’ of ‘Network Mode’ need to recalculate </p>
+<p>the </p>
+<p>Overall </p>
+<p>Mode </p>
+<p>of </p>
+<p>all </p>
+<p>BusNms </p>
+<p>for </p>
+<p>certain </p>
+<p>triggers </p>
+<p>(01: </p>
+<p>Nm_NetworkMode, </p>
+<p>12: </p>
+<p>Nm_BusSleepMode).  This  is  because  these  triggers  are  ambiguous  inside  these  states </p>
+<p>(e.g.  possible  target  states  from  ‘01’  for  the  trigger  Nm_NetworkMode  are  ‘02’  and  ‘12’, </p>
+<p>because either the one BusNm or the other may have changed to Network Mode). </p>
+<p>In  ambiguous  cases,  BusNm_GetState  is  called  for  each  BusNm.  This  requires  each </p>
+<p>BusNm  to  provide  the  correct  new  mode  in  the  context  of  the  Nm_BusSleepMode, </p>
+<p>Nm_PrepareBusSleepMode, Nm_NetworkMode calls by the BusNm. </p>
+<p>Figure </p>
+<p>3-5 </p>
+<p>also </p>
+<p>contains </p>
+<p>transitions </p>
+<p>annotated </p>
+<p>as </p>
+<p>‘irregular </p>
+<p>transitions’. </p>
+<p>These </p>
+<p>are </p>
+<p>transitions  that  shall  normally  not  occur  because  they  are  not  intended  by  AUTOSAR. </p>
+<p>Example: Nm_PrepareBusSleepMode() shall not be called in Bus Sleep Mode. However, if </p>
+<p>it was called, it would not lead to any problems. </p>
+<p> </p>
+<p><b> stm State Machine for Mode Changes with Two BusNms</b></p>
+<p><b>Bus Sleep Mode</b></p>
+<p><b>Prepare Bus Sleep Mode</b></p>
+<p><b>Network Mode</b></p>
+<p><b>00</b></p>
+<p><b>01</b></p>
+<p><b>11</b></p>
+<p><b>12</b></p>
+<p><b>22</b></p>
+<p><b>02</b></p>
+<p>Regular transition</p>
+<p>Irregular transition</p>
+<p><b>Legend</b></p>
+<p>Nm_BusSleepMode</p>
+<p>/ComM_Nm_BusSleepMode()</p>
+<p>Nm_BusSleepMode</p>
+<p>/ComM_Nm_BusSleepMode()</p>
+<p>Nm_NetworkMode</p>
+<p>/ComM_Nm_NetworkMode()</p>
+<p>Nm_BusSleepMode</p>
+<p>Nm_PrepareBusSleepMode</p>
+<p>/ComM_Nm_PrepareBusSleepMode()</p>
+<p>Nm_NetworkMode</p>
+<p>/ComM_Nm_NetworkMode()</p>
+<p>Nm_NetworkMode [Overall</p>
+<p>Mode is 12]</p>
+<p>/ComM_Nm_NetworkMode()</p>
+<p>Nm_NetworkMode [Overall Mode is 02]</p>
+<p>/ComM_Nm_NetworkMode()</p>
+<p>Nm_BusSleepMode</p>
+<p>[Overall Mode is 01]</p>
+<p>/ComM_Nm_PrepareBusSleepMode()</p>
+<p>Nm_PrepareBusSleepMode</p>
+<p>/ComM_Nm_PrepareBusSleepMode()</p>
+<p>Nm_NetworkMode</p>
+<p>Nm_BusSleepMode</p>
+<p>[Overall Mode is 02]</p>
+<p>Nm_BusSleepMode</p>
+<p>Nm_NetworkMode</p>
+<p>Nm_PrepareBusSleepMode</p>
+<p>Nm_NetworkMode</p>
+<p>Nm_PrepareBusSleepMode</p>
+<p>Nm_PrepareBusSleepMode</p>
+<p>Nm_PrepareBusSleepMode</p>
+<p>Nm_BusSleepMode</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>31 </p>
+<p>based on template version 4.8.0 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>Take care that BusNm_GetState returns the correct new mode in the context of the </p>
+<p>Nm_BusSleepMode, Nm_PrepareBusSleepMode, Nm_NetworkMode calls by the </p>
+<p>BusNm when implementing a Generic BusNm. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>The ‘Synchronize Mode’ is not explicitly notified through a callback function and is </p>
+<p>therefore considered as ‘Bus Sleep Mode’ concerning the aggregation. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p><b>3.9.2 </b></p>
+<p><b>State Change Notifications </b></p>
+<p>If  the  ‘State  Change  Ind  Enabled’  feature  is  used  (see  chapter  3.8.2),  the  state  change </p>
+<p>notifications are aggregated over all BusNms on a channel. Only the numerically highest </p>
+<p>state  is  forwarded  to  the  ‘State  Change  Ind  Callback’  function  (e.g.  implemented  by </p>
+<p>BswM). In other words, the current overall state of <i>n </i>BusNms is max</p>
+<p><i>i</i>=<i>1,…,n</i></p>
+<p>{<i>state</i></p>
+<p><i>i</i></p>
+<p>}. </p>
+<p>Since the previous state is also provided by the call of Nm_StateChangeNotification, there </p>
+<p>are no ambiguities and errors in state changes can also be detected and reported to Det </p>
+<p>(see chapter 3.11.1). </p>
+<p>An example for two BusNms on one channel is provided in Table 3-7. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>32 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>Current State of BusNm 1 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Current State of BusNm 2 </b></p>
+<p>0: NM_STATE_UNINIT </p>
+<p>1: NM_STATE_BUS_SLEEP </p>
+<p>2: NM_STATE_PREPARE_BUS_SLEEP </p>
+<p>3: NM_STATE_READY_SLEEP </p>
+<p>4: NM_STATE_NORMAL_OPERATION </p>
+<p>5: NM_STATE_REPEAT_MESSAGE </p>
+<p>6: NM_STATE_SYNCHRONIZE </p>
+<p>7: NM_STATE_OFFLINE </p>
+<p>8: NM_STATE_CHECK_WAKEUP </p>
+<p>9: NM_STATE_WAIT_STARTUP </p>
+<p>10: NM_STATE_WAIT_NETWORK_GW_MSG_ACTIVE </p>
+<p>11: NM_STATE_WAIT_NETWORK_GW_AND_EVENT_MSG_ACTIVE </p>
+<p>12: NM_STATE_BUS_OFF  </p>
+<p>0: NM_STATE_UNINIT </p>
+<p>0 </p>
+<p>1 </p>
+<p>2 </p>
+<p>3 </p>
+<p>4 </p>
+<p>5 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>1: NM_STATE_BUS_SLEEP </p>
+<p>1 </p>
+<p>1 </p>
+<p>2 </p>
+<p>3 </p>
+<p>4 </p>
+<p>5 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>2: </p>
+<p>NM_STATE_PREPARE_BUS_SLEEP </p>
+<p>2 </p>
+<p>2 </p>
+<p>2 </p>
+<p>3 </p>
+<p>4 </p>
+<p>5 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>3: NM_STATE_READY_SLEEP </p>
+<p>3 </p>
+<p>3 </p>
+<p>3 </p>
+<p>3 </p>
+<p>4 </p>
+<p>5 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>4: NM_STATE_NORMAL_OPERATION </p>
+<p>4 </p>
+<p>4 </p>
+<p>4 </p>
+<p>4 </p>
+<p>4 </p>
+<p>5 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>5: NM_STATE_REPEAT_MESSAGE </p>
+<p>5 </p>
+<p>5 </p>
+<p>5 </p>
+<p>5 </p>
+<p>5 </p>
+<p>5 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>6: NM_STATE_SYNCHRONIZE </p>
+<p>6 </p>
+<p>6 </p>
+<p>6 </p>
+<p>6 </p>
+<p>6 </p>
+<p>6 </p>
+<p>6 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>7: NM_STATE_OFFLINE </p>
+<p>7 </p>
+<p>7 </p>
+<p>7 </p>
+<p>7 </p>
+<p>7 </p>
+<p>7 </p>
+<p>7 </p>
+<p>7 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>8: NM_STATE_CHECK_WAKEUP </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>8 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>9: NM_STATE_WAIT_STARTUP </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>9 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>10: </p>
+<p>NM_STATE_WAIT_NETWORK_GW_M</p>
+<p>SG_ACTIVE </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>10 </p>
+<p>11 </p>
+<p>12 </p>
+<p>11: </p>
+<p>NM_STATE_WAIT_NETWORK_GW_A</p>
+<p>ND_EVENT_MSG_ACTIVE </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>11 </p>
+<p>12 </p>
+<p>12: NM_STATE_BUS_OFF  </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>12 </p>
+<p>Table 3-7  </p>
+<p>Overall State of two BusNms on one channel </p>
+<p>Note that the initial state of each BusNm is ‘Bus Sleep’ (1). </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>33 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.9.3 </b></p>
+<p><b>Remote Sleep Indication Statuses </b></p>
+<p>The Remote Sleep status for actively coordinated channels and the Coordinator Ready to </p>
+<p>Sleep  status  for  passively  coordinated  channels  is  aggregated  over  all  BusNms  on  a </p>
+<p>channel. </p>
+<p>The ‘Remote Sleep Ind Callback’ / ‘Remote Sleep Cancel Callback’ notifications that may </p>
+<p>be  implemented  by  an  upper  layer  are  thus  also  augmented  by  an  aggregation  of  the </p>
+<p>Remote Sleep Indication overall state of all BusNms. </p>
+<p>The  initial  Remote  Sleep  state  is  ‘Number  of  BusNms  that  are  Channel  Sleep  Masters’. </p>
+<p>Currently, J1939Nm is always considered as a Channel Sleep Master (see chapter3.4.5) </p>
+<p>and each Generic BusNm can be configured individually as Channel Sleep Master. </p>
+<p>The ‘Remote Sleep Ind Callback’ function is called when all BusNms that are not ‘Channel </p>
+<p>Sleep </p>
+<p>Masters’ </p>
+<p>have </p>
+<p>indicated </p>
+<p>the </p>
+<p>readiness </p>
+<p>to </p>
+<p>sleep </p>
+<p>of </p>
+<p>the </p>
+<p>other </p>
+<p>nodes </p>
+<p>(call </p>
+<p>of </p>
+<p>Nm_RemoteSleepIndication </p>
+<p>on </p>
+<p>actively </p>
+<p>coordinated </p>
+<p>channels </p>
+<p>/ </p>
+<p>Nm_CoordReadyToSleepIndication on passively coordinated channels). </p>
+<p>If ‘Remote Sleep Ind Callback’ has already been called and one BusNm has detected that </p>
+<p>at least one remote node is not ready to sleep (call of Nm_RemoteSleepCancellation on </p>
+<p>actively </p>
+<p>coordinated </p>
+<p>channels </p>
+<p>/ </p>
+<p>Nm_CoordReadyToSleepCancellation </p>
+<p>passively </p>
+<p>coordinated channels), the ‘Remote Sleep Cancel Callback’ function is called. </p>
+<p>A  call  of  Nm_NetworkMode  by  the  first  BusNm  that  enters  Network  Mode  resets  the </p>
+<p>Remote sleep to its initial value (‘Number of BusNms that are Channel Sleep Masters’). </p>
+<p>An example state machine of the remote sleep callbacks is illustrated in Figure 3-6. </p>
+<p> </p>
+<p>Figure 3-6 </p>
+<p>State Machine of Remote Sleep callbacks for two BusNms on one channel </p>
+<p>As it can be seen, the total number of states is ‘Number of BusNms on the channel’ + 1. </p>
+<p><b> stm Remote Sleep for Two BusNms</b></p>
+<p><b>0</b></p>
+<p><b>1</b></p>
+<p><b>2</b></p>
+<p>Nm_CoordReadyToSleepIndication</p>
+<p>/Nm_ChannelState =</p>
+<p>NM_BUS_STATE_READY_TO_SLEEP;</p>
+<p>Nm_RemoteSleepIndication</p>
+<p>Nm_CoordReadyToSleepIndication</p>
+<p>Nm_NetworkMode [Number</p>
+<p>of BusNms in Network Mode</p>
+<p>== 0 &amp;&amp; Channel Sleep</p>
+<p>Masters == 0]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in</p>
+<p>Network Mode == 0 &amp;&amp; Channel Sleep Masters</p>
+<p>== 1]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in Network Mode == 0 &amp;&amp;</p>
+<p>Channel Sleep Masters == 2]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_RemoteSleepCancellation</p>
+<p>Nm_CoordReadyToSleepCancellation</p>
+<p>Nm_RemoteSleepIndication</p>
+<p>/Nm_ChannelState = NM_BUS_STATE_READY_TO_SLEEP;</p>
+<p>UL_Nm_RemoteSleepIndication;</p>
+<p>Nm_CoordReadyToSleepCancellation</p>
+<p>Nm_NetworkMode [Number of BusNms in Network Mode == 0 &amp;&amp;</p>
+<p>Channel Sleep Masters == 1]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in Network</p>
+<p>Mode == 0 &amp;&amp; Channel Sleep Masters == 1]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in Network Mode == 0 &amp;&amp;</p>
+<p>Channel Sleep Masters == 0]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in Network Mode == 0 &amp;&amp;</p>
+<p>Channel Sleep Masters == 2]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in Network Mode == 0 &amp;&amp; Channel Sleep Masters == 2]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_NetworkMode [Number of BusNms in Network Mode == 0 &amp;&amp;</p>
+<p>Channel Sleep Masters == 0]</p>
+<p>/ComM_Nm_NetworkMode();</p>
+<p>Nm_RemoteSleepCancellation</p>
+<p>/Nm_ChannelState =</p>
+<p>NM_BUS_STATE_BUS_AWAKE;</p>
+<p>Nm_AbortShutdown();</p>
+<p>UL_Nm_RemoteSleepCancellation();</p>
+<p>Nm_CoordReadyToSleepCancellation</p>
+<p>/Nm_ChannelState =</p>
+<p>NM_BUS_STATE_BUS_AWAKE;</p>
+<p>Nm_AbortShutdown();</p>
+<p>Nm_CoordReadyToSleepIndication</p>
+<p>Nm_RemoteSleepIndication</p>
+<p>Nm_RemoteSleepCancellation</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>34 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>3.9.4 </b></p>
+<p><b>Other Aggregated Information and Caveats </b></p>
+<p>If the following service functions are used by the application, the data that is retrieved from </p>
+<p>the  BusNms  is  aggregated  overall  BusNms.  It  is  therefore  recommended  to  call  the </p>
+<p>corresponding BusNm function directly if multiple BusNms are used on one channel. Refer </p>
+<p>to the detailed service description chapters for details. </p>
+<p>Nm_GetUserData (chapter 5.2.8) </p>
+<p>Nm_GetPduData (chapter 5.2.9) </p>
+<p>Nm_GetNodeIdentifier (chapter 5.2.11) </p>
+<p>Nm_GetLocalNodeIdentifier (chapter 5.2.12) </p>
+<p>Nm_CheckRemoteSleepIndication (chapter 5.2.13) </p>
+<p>Nm_GetState (chapter 5.2.14) </p>
+<p>The service function Nm_SetUserData (chapter 5.2.7) propagates the provided user data </p>
+<p>to  all  BusNms  on  the  channel.  Therefore  the  pointer  nmUserDataPtr  has  to  point  to  a </p>
+<p>buffer that is large enough to fit into the user data bytes of the BusNm that has greatest </p>
+<p>number </p>
+<p>of </p>
+<p>user </p>
+<p>data </p>
+<p>bytes. </p>
+<p>Even </p>
+<p>though </p>
+<p>E_NOT_OK </p>
+<p>may </p>
+<p>be </p>
+<p>returned </p>
+<p>from </p>
+<p>Nm_SetUserData,  the  user  data  has  been  accepted  by  the  BusNms  that  support  the </p>
+<p>service BusNm_SetUserData. No DET Error is thrown by Nm itself (but maybe thrown by </p>
+<p>the BusNm, depends on the BusNm). </p>
+<p>Also consider the following caveats: </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>35 </p>
+<p>based on template version 4.8.0 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>The function Nm_PduRxIndication (and thus the user callback </p>
+<p>UL_Nm_PduRxIndication) can be called by any BusNm on the channel and it </p>
+<p>cannot be determined during run-time which BusNm has called the function. Refer </p>
+<p>to chapter 5.6.1.3 for details. </p>
+<p><b>&gt; </b></p>
+<p>The functions Nm_&lt;BusNm&gt;_PduRxIndication (and thus the configured user </p>
+<p>callbacks) can be called by any BusNm on the channel and they can determine </p>
+<p>which BusNm has called the function by using different identifiers for each BusNm. </p>
+<p><b>&gt; </b></p>
+<p>The function Nm_StateChangeNotification (and thus the callback </p>
+<p>UL_Nm_StateChangeNotification) can be called by any BusNm on the channel and </p>
+<p>the numerically highest state is reported as current state towards the </p>
+<p>UL_Nm_StateChangeNotification callback and the Com Signal if ‘State Report </p>
+<p>Enabled’ is used. Refer to chapter 5.6.1.5 for details. </p>
+<p><b>&gt; </b></p>
+<p>The function Nm_RepeatMessageIndication (and thus the callback </p>
+<p>UL_Nm_RepeatMessageIndication) can be called by any BusNm on the channel </p>
+<p>and thus it cannot be determined which of the BusNms has entered Repeat </p>
+<p>Message. The repeat message request is not forwarded to the other BusNms on the </p>
+<p>channel by the Nm. Refer to chapter 5.6.1.6 for details. </p>
+<p><b>&gt; </b></p>
+<p>The function Nm_TxTimeoutException and Nm_CarWakeUpIndication (and thus the </p>
+<p>callbacks UL_Nm_TxTimeoutException, UL_Nm_CarWakeUpIndication) can be </p>
+<p>called by any BusNm on the channel and thus it cannot be determined which of the </p>
+<p>BusNms has called it. </p>
+<p><b>&gt; </b></p>
+<p>The return values of the service functions are aggregated (i.e. if one BusNm call </p>
+<p>returns E_NOT_OK, E_NOT_OK is returned by the corresponding Nm function). </p>
+<p><b>&gt; </b></p>
+<p>The data behind the pointer(s) in Nm_GetNodeIdentifier, </p>
+<p>Nm_GetLocalNodeIdentifier might have been manipulated although E_NOT_OK is </p>
+<p>returned. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>3.10 </b></p>
+<p><b>Main Functions </b></p>
+<p>The Nm module implementation provides one main function. When the NM Coordinator is </p>
+<p>enabled this main function has to be called cyclically on task level. The default cycle time </p>
+<p>is 10 milliseconds. The value has to be set in the component configuration. </p>
+<p>For API details refer to chapter 5.2.16 ‘Nm_MainFunction’. </p>
+<p><b>3.11 </b></p>
+<p><b>Error Handling </b></p>
+<p><b>3.11.1 </b></p>
+<p><b>Development Error Reporting </b></p>
+<p>Reporting of development errors is done by the service </p>
+<p>Std_ReturnType <b>Det_ReportError </b>( </p>
+<p> </p>
+<p> </p>
+<p>uint16 ModuleId, uint8 InstanceId, </p>
+<p> </p>
+<p> </p>
+<p>uint8 ApiId, uint8 ErrorId ) </p>
+<p>(5.3)</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>36 </p>
+<p>based on template version 4.8.0 </p>
+<p>Please </p>
+<p>refer </p>
+<p>to </p>
+<p>the </p>
+<p>documentation </p>
+<p>of </p>
+<p>the </p>
+<p>development </p>
+<p>error </p>
+<p>tracer </p>
+<p>[2] </p>
+<p>for </p>
+<p>further </p>
+<p>information and a detailed description of the API.  </p>
+<p>The reported Nm ID is 29. </p>
+<p>The  reported  service  IDs  identify  the  services  which  are  described  in  5.2. The following </p>
+<p>table presents the service IDs and the related services: </p>
+<p><b>Service ID </b></p>
+<p><b>Service </b></p>
+<p>NM_SID_INIT </p>
+<p>Nm_Init  </p>
+<p>NM_SID_PASSIVESTARTUP </p>
+<p>Nm_PassiveStartUp </p>
+<p>NM_SID_NETWORKREQUEST </p>
+<p>Nm_NetworkRequest  </p>
+<p>NM_SID_NETWORKRELEASE </p>
+<p>Nm_NetworkRelease </p>
+<p>NM_SID_DISABLECOMMUNICATION </p>
+<p>Nm_DisableCommunication  </p>
+<p>NM_SID_ENABLECOMMUNICATION </p>
+<p>Nm_EnableCommunication  </p>
+<p>NM_SID_SETUSERDATA </p>
+<p>Nm_SetUserData </p>
+<p>NM_SID_GETUSERDATA </p>
+<p>Nm_GetUserData </p>
+<p>NM_SID_GETPDUDATA </p>
+<p>Nm_GetPduData  </p>
+<p>NM_SID_REPEATMESSAGEREQUEST </p>
+<p>Nm_RepeatMessageRequest </p>
+<p>NM_SID_GETNODEIDENTIFIER_ </p>
+<p>Nm_GetNodeIdentifier  </p>
+<p>NM_SID_GETLOCALNODEIDENTIFIER </p>
+<p>Nm_GetLocalNodeIdentifier  </p>
+<p>NM_SID_CHECKREMOTESLEEPINDICATION </p>
+<p>Nm_CheckRemoteSleepIndication </p>
+<p>NM_SID_GETSTATE </p>
+<p>Nm_GetState  </p>
+<p>NM_SID_GETVERSIONINFO </p>
+<p>Nm_GetVersionInfo </p>
+<p>NM_SID_MAINFUNCTION </p>
+<p>Nm_MainFunction </p>
+<p>NM_SID_NETWORKSTARTINDICATION </p>
+<p>Nm_NetworkStartIndication  </p>
+<p>NM_SID_NETWORKMODE </p>
+<p>Nm_NetworkMode </p>
+<p>NM_SID_PREPAREBUSSLEEPMODE </p>
+<p>Nm_PrepareBusSleepMode </p>
+<p>NM_SID_BUSSLEEPMODE </p>
+<p>Nm_BusSleepMode </p>
+<p>NM_SID_PDURXINDICATION </p>
+<p>Nm_PduRxIndication </p>
+<p>NM_SID_STATECHANGENOTIFICATION </p>
+<p>Nm_StateChangeNotification </p>
+<p>NM_SID_REMOTESLEEPINDICATION </p>
+<p>Nm_RemoteSleepIndication  </p>
+<p>NM_SID_REMOTESLEEPCANCELLATION </p>
+<p>Nm_RemoteSleepCancellation </p>
+<p>NM_SID_SYNCHRONIZATIONPOINT </p>
+<p>Nm_SynchronizationPoint </p>
+<p>NM_SID_REPEATMESSAGEINDICATION </p>
+<p>Nm_RepeatMessageIndication  </p>
+<p>NM_SID_TXTIMEOUTEXCEPTION </p>
+<p>Nm_TxTimeoutException </p>
+<p>NM_SID_BUSNMSPECIFICPDURXINDICATION </p>
+<p>Nm_&lt;BusNm&gt;_PduRxIndication </p>
+<p>NM_SID_CARWAKEUPINDICATION </p>
+<p>Nm_CarWakeUpIndication </p>
+<p>NM_SID_COORDREADYTOSLEEPINDICATION </p>
+<p>Nm_CoordReadyToSleepIndication </p>
+<p>NM_SID_COORDREADYTOSLEEPCANCELLATION </p>
+<p>Nm_CoordReadyToSleepCancellation </p>
+<p>NM_SID_INITMEMORY </p>
+<p>Nm_InitMemory </p>
+<p>Table 3-8  </p>
+<p>Service IDs </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>37 </p>
+<p>based on template version 4.8.0 </p>
+<p>The errors reported to DET are described in the following table: </p>
+<p><b>Error Code </b></p>
+<p><b>Description </b></p>
+<p>0x00 </p>
+<p>NM_E_UNINIT </p>
+<p>API service used without module initialization. </p>
+<p>0x01 </p>
+<p>NM_E_HANDLE_UNDEF </p>
+<p>API service used with wrong network handle. </p>
+<p>0x02 </p>
+<p>NM_E_PARAM_POINTER </p>
+<p>API service called with a NULL pointer </p>
+<p>0x20 </p>
+<p>NM_E_SYNCHRONIZATION</p>
+<p>_TIMEOUT</p>
+<p>17</p>
+<p> </p>
+<p>Nm_SynchronizationPoint</p>
+<p> was not called within the </p>
+<p>configured synchronization timeout time. </p>
+<p>0x21 </p>
+<p>NM_E_FUNCTION_PTR_IS</p>
+<p>_NULL </p>
+<p>Pointer to a function to be called is equals NULL </p>
+<p>0x22 </p>
+<p>NM_E_INVALID_STATE</p>
+<p>17</p>
+<p> </p>
+<p>An invalid state has been passed to </p>
+<p>Nm_StateChangeNotification </p>
+<p>(only available if </p>
+<p>the optimization for only one BusNm on a channel is </p>
+<p>OFF) </p>
+<p>0x23 </p>
+<p>NM_E_SAME_STATES</p>
+<p>17</p>
+<p> </p>
+<p>The same states have been passed to </p>
+<p>Nm_StateChangeNotification</p>
+<p> </p>
+<p>0x24 </p>
+<p>NM_E_NOT_AVAILABLE_IN</p>
+<p>_PASSIVE_MODE </p>
+<p>Nm Passive Mode is not enabled for this channel </p>
+<p>Table 3-9  </p>
+<p>Errors reported to DET </p>
+<p><b>3.11.2 </b></p>
+<p><b>Production Code Error Reporting </b></p>
+<p>The Nm module currently does not have any error which has to be reported to the DEM. </p>
+<p>                                            </p>
+<p>17</p>
+<p> This error code is an extension to AUTOSAR. Refer also to chapter 3.1.2.1 ‘Additional DET Error Codes’. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>38 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>4 </b></p>
+<p><b>Integration </b></p>
+<p>This chapter gives necessary information for the integration of the MICROSAR Nm into an </p>
+<p>application environment of an ECU. </p>
+<p><b>4.1 </b></p>
+<p><b>Scope of Delivery </b></p>
+<p>The delivery of the  Nm contains the files which are described in the chapters  4.1.1 and </p>
+<p>4.1.2: </p>
+<p><b>4.1.1 </b></p>
+<p><b>Static Files </b></p>
+<p><b>File Name </b></p>
+<p><b>Source </b></p>
+<p><b>Code </b></p>
+<p><b>Delivery </b></p>
+<p><b>Object </b></p>
+<p><b>Code </b></p>
+<p><b>Delivery </b></p>
+<p><b>Description </b></p>
+<p>Nm.c </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p>This is the source file of the Nm.</p>
+<p> </p>
+<p>Nm.lib </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>This is the library file built from the source file </p>
+<p>Nm.h </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>This is the header file of the Nm. </p>
+<p>Nm_Cbk.h </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>This is the callback header file of the Nm.</p>
+<p> </p>
+<p>NmStack_</p>
+<p>Types.h </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>This is the Nm type definition header file of the Nm. </p>
+<p>Table 4-1  </p>
+<p>Static files </p>
+<p><b>4.1.2 </b></p>
+<p><b>Dynamic Files </b></p>
+<p>The dynamic files are generated by the configuration tool DaVinci Configurator. </p>
+<p><b>File Name </b></p>
+<p><b>Description </b></p>
+<p>Nm_Cfg.h </p>
+<p>This is the configuration header file. </p>
+<p>Nm_Cfg.c </p>
+<p>This is the configuration source file containing all pre-compile relevant content. </p>
+<p>Nm_Lcfg.c </p>
+<p>This is the configuration source file containing all link-time relevant content. </p>
+<p>Table 4-2  </p>
+<p>Generated files </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>39 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>4.2 </b></p>
+<p><b>Include Structure </b></p>
+<p> </p>
+<p>Figure 4-1 </p>
+<p>Include structure </p>
+<p>Some includes are optional and depend on the configuration. </p>
+<p>BusNm.h</p>
+<p> stands for every </p>
+<p>used </p>
+<p>BusNm </p>
+<p>module </p>
+<p>and </p>
+<p>if </p>
+<p>multiple </p>
+<p>BusNm </p>
+<p>modules </p>
+<p>are </p>
+<p>used </p>
+<p>for </p>
+<p>each </p>
+<p>one </p>
+<p>the </p>
+<p>corresponding header is included. For example if CanNm and FrNm are used, the header </p>
+<p>files </p>
+<p>CanNm.h</p>
+<p>  and </p>
+<p>FrNm.h</p>
+<p>  are  included.  The  files  are  included  either  in </p>
+<p>Nm_Cfg.h</p>
+<p>  or </p>
+<p>Nm_Cfg.c</p>
+<p> </p>
+<p>depending </p>
+<p>on </p>
+<p>the </p>
+<p>configuration </p>
+<p>settings </p>
+<p>for </p>
+<p>‘Macro </p>
+<p>Layer </p>
+<p>Optimization’. </p>
+<p><b> class File Include Structure_extended</b></p>
+<p>Det.h</p>
+<p>Nm.c</p>
+<p>NmStack_Types.h</p>
+<p>Nm.h</p>
+<p>Nm_Cbk.h</p>
+<p>Nm_Cfg.c</p>
+<p>Nm_Cfg.h</p>
+<p>Nm_Lcfg.c</p>
+<p>ComM_Nm.h</p>
+<p>SchM_Nm.h</p>
+<p>Compiler.h</p>
+<p>MemMap.h</p>
+<p>Platform_Types.h</p>
+<p>Std_Types.h</p>
+<p>BusNm.h</p>
+<p>ComStack_Types.h</p>
+<p>UserCfg.h</p>
+<p>CallbacksPrototype.h</p>
+<p>Rtm.h</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>0..1</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>1..*</p>
+<p>«include»</p>
+<p>0..1</p>
+<p>«include»</p>
+<p>0..1</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>0..1</p>
+<p>«include»</p>
+<p>0..1</p>
+<p>«include»</p>
+<p>0..*</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>40 </p>
+<p>based on template version 4.8.0 </p>
+<p>CallbacksPrototype.h</p>
+<p> and </p>
+<p>UserCfg.h</p>
+<p> stand for the respectively configured header </p>
+<p>files. </p>
+<p><b>4.3 </b></p>
+<p><b>Critical Sections </b></p>
+<p>The AUTOSAR standard provides with the BSW Scheduler (SchM) a BSW module, which </p>
+<p>handles entering and leaving critical sections. </p>
+<p>The NM Interface calls the following function when entering a critical section: </p>
+<p>void <b>SchM_Enter_Nm_NM_EXCLUSIVE_AREA_<i></b>i</i>() </p>
+<p>() </p>
+<p>When the critical section is left the following function is called by the NM Interface: </p>
+<p>void <b>SchM_Exit_Nm_NM_EXCLUSIVE_AREA_<i></b>i</i>() </p>
+<p>() </p>
+<p>The critical sections have to be defined and mapped to corresponding interrupt locks by </p>
+<p>the BSW Scheduler. Details which section needs what kind of interrupt lock are provided in </p>
+<p>the following section. For more information about the BSW Scheduler please refer to [5]. </p>
+<p><b>4.3.1 </b></p>
+<p><b>Exclusive Area 0 </b></p>
+<p><b>Interrupt Lock </b></p>
+<p>No interruption by any interrupt is allowed. Therefore this section must always lock global </p>
+<p>interrupts. </p>
+<p><b>Interfaces </b></p>
+<p><b>&gt; </b></p>
+<p>SchM_Enter_Nm_NM_EXCLUSIVE_AREA_0 </p>
+<p><b>&gt; </b></p>
+<p>SchM_Exit_Nm_NM_EXCLUSIVE_AREA_0 </p>
+<p><b>Purpose </b></p>
+<p>Ensures data consistency between BusNm and coordination algorithm. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This critical section is only relevant if the Nm coordinator is used. </p>
+<p>Table 4-3  </p>
+<p>Exclusive Area 0 </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>41 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>4.3.2 </b></p>
+<p><b>Exclusive Area 1 </b></p>
+<p><b>Interrupt Lock </b></p>
+<p>No interruption by an interrupt is allowed if one of the following functions is executed in the </p>
+<p>context of an interrupt service routine: </p>
+<p>&gt; </p>
+<p>Nm_NetworkMode </p>
+<p>&gt; </p>
+<p>Nm_BusSleepMode </p>
+<p>&gt; </p>
+<p>Nm_PrepareBusSleepMode </p>
+<p>&gt; </p>
+<p>Nm_RemoteSleepIndication </p>
+<p>&gt; </p>
+<p>Nm_RemoteSleepCancellation </p>
+<p>&gt; </p>
+<p>Nm_CoordReadyToSleepIndication </p>
+<p>&gt; </p>
+<p>Nm_CoordReadyToSleepCancellation</p>
+<p> </p>
+<p>If at least one of the above mentioned functions is executed in interrupt context, this section must </p>
+<p>always lock global interrupts. </p>
+<p><b>Interfaces </b></p>
+<p><b>&gt; </b></p>
+<p>SchM_Enter_Nm_NM_EXCLUSIVE_AREA_1 </p>
+<p><b>&gt; </b></p>
+<p>SchM_Exit_Nm_NM_EXCLUSIVE_AREA_1<b> </b></p>
+<p><b>Purpose </b></p>
+<p>Ensures data consistency between BusNm and coordination algorithm. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This critical section is only relevant if the Nm coordinator is used and at least one channel </p>
+<p>contains more than one BusNm (e.g. CanNm and J1939Nm on one channel). </p>
+<p>Table 4-4  </p>
+<p>Exclusive Area 1 </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>42 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5 </b></p>
+<p><b>API Description </b></p>
+<p>For an interfaces overview please see Figure 2-2. </p>
+<p><b>5.1 </b></p>
+<p><b>Type Definitions </b></p>
+<p>The types defined by the Nm are described in this chapter. </p>
+<p><b>Type Name </b></p>
+<p><b>C-Type </b></p>
+<p><b>Description </b></p>
+<p><b>Value Range </b></p>
+<p>Nm_StateType </p>
+<p>uint8 </p>
+<p>States of the bus-</p>
+<p>specific network </p>
+<p>management state </p>
+<p>machine. Not all states </p>
+<p>will be reached by each </p>
+<p>BusNm. For details </p>
+<p>refer to the Technical </p>
+<p>Reference or the </p>
+<p>AUTOSAR SWS of the </p>
+<p>corresponding BusNm. </p>
+<p>NM_STATE_UNINIT </p>
+<p>No initialization has been performed. </p>
+<p>NM_STATE_BUS_SLEEP </p>
+<p>Nm entered sleep state due to </p>
+<p>initialization or shutdown. </p>
+<p>NM_STATE_PREPARE_BUS_SLEEP </p>
+<p>Nm prepares for entering sleep. This </p>
+<p>state is only relevant for BusNm </p>
+<p>modules on CAN, e.g. CanNm. </p>
+<p>NM_STATE_READY_SLEEP </p>
+<p>Communication is not needed any </p>
+<p>more by the application and no NM </p>
+<p>messages are transmitted. </p>
+<p>NM_STATE_NORMAL_OPERATION </p>
+<p>Communication is needed by the </p>
+<p>application and the NM message is </p>
+<p>transmitted </p>
+<p>NM_STATE_REPEAT_MESSAGE </p>
+<p>Nm has (re-)started and </p>
+<p>communication is enabled. Nm stays </p>
+<p>a configurable amount of time in this </p>
+<p>state and transmits its Nm message. </p>
+<p>NM_STATE_SYNCHRONIZE </p>
+<p>Start-up has been requested and Nm </p>
+<p>waits to be synchronized to the </p>
+<p>Repetition Cycle. This state is only </p>
+<p>relevant for FrNm. </p>
+<p>NM_STATE_OFFLINE </p>
+<p>Address Claiming is running or </p>
+<p>Address Loss has occurred. This </p>
+<p>state is only relevant for J1939Nm. </p>
+<p>NM_STATE_CHECK_WAKEUP </p>
+<p>State that is entered on external bus </p>
+<p>wake-up event. This state is only </p>
+<p>relevant for NmStMgr. </p>
+<p>NM_STATE_WAIT_STARTUP </p>
+<p>State that is entered on internal </p>
+<p>network request on NmStMgr </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>43 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>Type Name </b></p>
+<p><b>C-Type </b></p>
+<p><b>Description </b></p>
+<p><b>Value Range </b></p>
+<p>channels. </p>
+<p>Nm is starting up and sends a wake-</p>
+<p>up message. No other messages can </p>
+<p>be transmitted in this state on </p>
+<p>NmOsek channels. This state is only </p>
+<p>relevant for NmStMgr and NmOsek. </p>
+<p>NM_STATE_WAIT_NETWORK_GW_MS</p>
+<p>G_ACTIVE </p>
+<p>Nm is starting up and was in state </p>
+<p>NM_STATE_WAIT_STARTUP </p>
+<p>before. The transmission of  </p>
+<p>gateway messages is enabled in this </p>
+<p>state. This state is only relevant for </p>
+<p>NmOsek. </p>
+<p>NM_STATE_WAIT_NETWORK_GW_AN</p>
+<p>D_EVENT_MSG_ACTIVE </p>
+<p>Nm is starting up and was in state </p>
+<p>NM_STATE_WAIT_NETWORK_GW_MS</p>
+<p>G_ACTIVE</p>
+<p> before. Gateway as well </p>
+<p>as event triggered messages can be </p>
+<p>transmitted in this state. This state is </p>
+<p>only relevant for NmOsek. </p>
+<p>NM_STATE_BUS_OFF </p>
+<p>This state is entered upon a BusOff </p>
+<p>notification. This state is only </p>
+<p>relevant for NmOsek. </p>
+<p>Nm_ModeType </p>
+<p>uint8 </p>
+<p>Modes of the bus-</p>
+<p>specific network </p>
+<p>management state </p>
+<p>machine. Not all modes </p>
+<p>will be reached by each </p>
+<p>BusNm. For details </p>
+<p>refer to the Technical </p>
+<p>Reference or the </p>
+<p>AUTOSAR SWS of the </p>
+<p>corresponding BusNm. </p>
+<p>NM_MODE_BUS_SLEEP </p>
+<p>Nm entered sleep mode due to </p>
+<p>initialization or shutdown. </p>
+<p>NM_MODE_PREPARE_BUS_SLEEP </p>
+<p>Nm prepares for entering sleep. This </p>
+<p>mode is only relevant for BusNm </p>
+<p>modules on CAN, e.g. CanNm. </p>
+<p>NM_MODE_SYNCHRONIZE </p>
+<p>Start-up has been requested and Nm </p>
+<p>waits to be synchronized to the </p>
+<p>Repetition Cycle. This mode is only </p>
+<p>relevant for FrNm. </p>
+<p>NM_MODE_NETWORK </p>
+<p>Nm has (re-)started and </p>
+<p>communication is (partly) enabled. </p>
+<p>Table 5-1  </p>
+<p>Type definitions </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>44 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2 </b></p>
+<p><b>Services Provided by Nm </b></p>
+<p><b>5.2.1 </b></p>
+<p><b>Nm_Init </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_Init</b></p>
+<p> </p>
+<p>( void )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>This function initializes the Nm. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function has to be called after the initialization of the respective bus interface. </p>
+<p><b>&gt; </b></p>
+<p>This API is realized as a macro if ‘Coordinator Support’ is disabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task level only. </p>
+<p>Table 5-2  </p>
+<p>Nm_Init </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>45 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.2 </b></p>
+<p><b>Nm_PassiveStartUp </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_PassiveStartUp</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Passive start of network management has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function requests a passive start-up of the network management. The Nm calls therefore the passive </p>
+<p>start-up function of the respective BusNm (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>When Nm_PassiveStartUp is called for a coordinated network the network request </p>
+<p>function of the respective BusNm(s) on the network is called instead of the passive </p>
+<p>start-up function. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-3  </p>
+<p>Nm_PassiveStartUp </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>46 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.3 </b></p>
+<p><b>Nm_NetworkRequest </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_NetworkRequest</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Requesting the network has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function requests the network and the bus communication. The Nm calls therefore the network request </p>
+<p>function of the respective BusNm(s) on the network (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if at least one network is not passive or CONFIG-VARIANT is </p>
+<p>LINK-TIME. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-4  </p>
+<p>Nm_NetworkRequest </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>47 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.4 </b></p>
+<p><b>Nm_NetworkRelease </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_NetworkRelease</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Releasing the network has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function releases the network and the bus communication. The Nm calls therefore the network release </p>
+<p>function of the respective BusNm (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>When Nm_NetworkRelease is called for a coordinated network, the network release </p>
+<p>function of the respective BusNm(s) is/are not called immediately. Instead, the network </p>
+<p>release function(s) is/are called when every network of the corresponding coordinator </p>
+<p>is ready to sleep. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous for not coordinated networks. </p>
+<p><b>&gt; </b></p>
+<p>This function is asynchronous for coordinated networks. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available, if at least one network is not passive or CONFIG-VARIANT is </p>
+<p>LINK-TIME. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-5  </p>
+<p>Nm_NetworkRelease </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>48 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.5 </b></p>
+<p><b>Nm_DisableCommunication </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_DisableCommunication</b></p>
+<p> </p>
+<p>(const NetworkHandleType nmNetworkHandle)</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Disabling the communication has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function disables the NM PDU transmission ability. The Nm calls therefore the disable communication </p>
+<p>function of the respective BusNm(s) on the network (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Com Control Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-6  </p>
+<p>Nm_DisableCommunication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>49 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.6 </b></p>
+<p><b>Nm_EnableCommunication </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_EnableCommunication</b></p>
+<p> </p>
+<p>(const NetworkHandleType nmNetworkHandle)</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Enabling the communication has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function enables the NM PDU transmission ability. The Nm calls therefore the enable communication </p>
+<p>function of the respective BusNm(s) on the network (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Com Control Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-7  </p>
+<p>Nm_EnableCommunication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>50 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.7 </b></p>
+<p><b>Nm_SetUserData </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_SetUserData</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>const uint8 * const nmUserDataPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmUserDataPtr </p>
+<p>Pointer to the user data that shall be transmitted in the next NM messages </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Setting of user data has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function sets the user data that shall be transmitted within the next NM messages. The Nm calls </p>
+<p>therefore the set user data function of the respective BusNm(s) (see also chapter 5.3 ‘Services Used by </p>
+<p>Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘User Data Enabled’ is enabled, ‘Com User Data Support’ is </p>
+<p>disabled and at least one network is not passive or CONFIG-VARIANT is LINK-TIME. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Set User Data API will be called for all </p>
+<p>BusNms on the channel. This implies that the buffer behind the nmUserDataPtr has to provide </p>
+<p>enough data bytes so that all BusNms copy valid user data bytes. If the user data bytes shall </p>
+<p>be different for each BusNm, call the BusNm_SetUserData function directly instead. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-8  </p>
+<p>Nm_SetUserData </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>51 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.8 </b></p>
+<p><b>Nm_GetUserData </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_GetUserData</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>uint8 * const nmUserDataPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmUserDataPtr </p>
+<p>Pointer where the user data of the last received NM message shall be copied </p>
+<p>to </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Getting of user data has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function copies the user data of the last received NM message to the location provided by the pointer. </p>
+<p>The Nm calls therefore the get user data function of the respective BusNm(s) on the network (see also </p>
+<p>chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘User Data Enabled’ is enabled. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Get User Data API will be called for all </p>
+<p>BusNms on the channel. This implies that the buffer will contain the most recent user data </p>
+<p>bytes of one of the BusNms that is configured on the channel and that has implemented the </p>
+<p>service. It is recommended to call each BusNm_GetUserData function directly for channels </p>
+<p>with multiple BusNms, otherwise (one BusNm is configured on the channel) use </p>
+<p>Nm_GetUserData. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-9  </p>
+<p>Nm_GetUserData </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>52 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.9 </b></p>
+<p><b>Nm_GetPduData </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_GetPduData</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>uint8 * const nmPduDataPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmUserDataPtr </p>
+<p>Pointer where the PDU data of the last received NM message shall be copied </p>
+<p>to </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Getting of PDU data has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function copies the complete PDU data (system bytes and user data) of the last received NM message </p>
+<p>to the location provided by the pointer. The Nm calls therefore the get PDU data function of the respective </p>
+<p>BusNm(s) on the network (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘User Data Enabled’ is enabled or ‘Node Id Enabled’ is </p>
+<p>enabled. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Get Pdu Data API will be called for all </p>
+<p>BusNms on the channel. This implies that the buffer will contain the most recent PDU data </p>
+<p>bytes of one of the BusNms that is configured on the channel and that has implemented the </p>
+<p>service. It is recommended to call each BusNm_GetPduData function directly for channels </p>
+<p>with multiple BusNms, otherwise (one BusNm is configured on the channel) use </p>
+<p>Nm_GetPduData. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-10  </p>
+<p>Nm_GetPduData </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>53 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.10 </b></p>
+<p><b>Nm_RepeatMessageRequest </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_RepeatMessageRequest</b></p>
+<p> </p>
+<p>(const NetworkHandleType nmNetworkHandle)</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Repeat message request has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function sets the repeat message request bit for the next NM message transmitted on the bus. This </p>
+<p>will force all NM nodes on the bus (including itself) to enter state ‘Repeat Message’ again and transmit NM </p>
+<p>messages. The Nm calls therefore the repeat message request function of the respective BusNm(s) on the </p>
+<p>network (see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant for the same network handle, reentrant otherwise. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Node Detection Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-11  </p>
+<p>Nm_RepeatMessageRequest </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>54 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.11 </b></p>
+<p><b>Nm_GetNodeIdentifier </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_GetNodeIdentifier</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>uint8 * const nmNodeIdPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmNodeIdPtr </p>
+<p>Pointer where the node identifier of the last received NM message shall be </p>
+<p>copied to </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Getting of node identifier has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function copies the node identifier of the last received NM message to the location provided by the </p>
+<p>pointer. The Nm calls therefore the get node identifier function of the respective BusNm(s) on the network </p>
+<p>(see also chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Node Id Enabled’ is enabled. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Get Node Identifier API will be called for </p>
+<p>all BusNms on the channel. This implies that the buffer will contain the most recent node </p>
+<p>identifier of one of the BusNms that is configured on the channel and that has implemented the </p>
+<p>service. If one of the BusNm_GetNodeIdentifier calls returns E_NOT_OK, the buffer behind </p>
+<p>the nmNodeIdPtr may still have been manipulated due to the call of Nm_GetNodeIdentifier. It </p>
+<p>is recommended to call each BusNm_GetNodeIdentifier function directly for channels with </p>
+<p>multiple BusNms, otherwise (one BusNm is configured on the channel) use </p>
+<p>Nm_GetNodeIdentifier. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-12  </p>
+<p>Nm_GetNodeIdentifier </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>55 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.12 </b></p>
+<p><b>Nm_GetLocalNodeIdentifier </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_GetLocalNodeIdentifier</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>uint8 * const nmNodeIdPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmNodeIdPtr </p>
+<p>Pointer where the node identifier of the local node shall be copied to </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Getting of local node identifier has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function copies the node identifier of the local node to the location provided by the pointer. The Nm </p>
+<p>calls therefore the get local node identifier function of the respective BusNm(s) on the network (see also </p>
+<p>chapter 5.3 ‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Node Id Enabled’ is enabled. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Get Local Node Identifier API will be </p>
+<p>called for all BusNms on the channel. This implies that the buffer will contain the local node </p>
+<p>identifier of one of the BusNms that is configured on the channel and that has implemented the </p>
+<p>service. If one of the BusNm_GetLocalNodeIdentifier calls returns E_NOT_OK, the buffer </p>
+<p>behind the nmNodeIdPtr may still have been manipulated due to the call of </p>
+<p>Nm_GetLocalNodeIdentifier. It is recommended to call each BusNm_GetLocalNodeIdentifier </p>
+<p>function directly for channels with multiple BusNms, otherwise (one BusNm is configured on </p>
+<p>the channel) use Nm_GetLocalNodeIdentifier. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-13  </p>
+<p>Nm_GetLocalNodeIdentifier </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>56 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.13 </b></p>
+<p><b>Nm_CheckRemoteSleepIndication </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_CheckRemoteSleepIndication</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>boolean * const nmRemoteSleepIndPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmRemoteSleepIndPtr </p>
+<p>Pointer where the remote sleep status shall be copied to </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Checking of remote sleep status has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function copies the remote sleep status to the location provided by the pointer. The Nm calls therefore </p>
+<p>the check remote sleep indication function of the respective BusNm(s) on the network (see also chapter 5.3 </p>
+<p>‘Services Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Remote Sleep Ind Enabled’ is enabled. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Check Remote Sleep Indication API will </p>
+<p>be called for all BusNms on the channel. This implies that the buffer will contain the overall </p>
+<p>remote sleep statuses of all BusNms on the channel. That means that if one of the Remote </p>
+<p>Sleep Indication statuses is false, the result will be false. Also, if one of the </p>
+<p>BusNm_CheckRemoteSleepIndication returns E_NOT_OK, the result will not be returned. If </p>
+<p>one is interested the Remote Sleep Indication status of a particular BusNm on the channel, it </p>
+<p>is recommended to call BusNm_CheckRemoteSleepIndication directly for channels with </p>
+<p>multiple BusNms. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-14  </p>
+<p>Nm_CheckRemoteSleepIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>57 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.14 </b></p>
+<p><b>Nm_GetState </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType</p>
+<p> </p>
+<p><b>Nm_GetState</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>Nm_StateType * const nmStatePtr, </p>
+<p> </p>
+<p>Nm_ModeType * const nmModePtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmStatePtr </p>
+<p>Pointer where the current network management state shall be copied to </p>
+<p>nmModePtr </p>
+<p>Pointer where the current network management mode shall be copied to </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK </p>
+<p>No error </p>
+<p>Checking of remote sleep status has failed </p>
+<p><b>Functional Description </b></p>
+<p>This function copies the NM state and the NM mode to the location provided by the pointers. The Nm calls </p>
+<p>therefore the get state function of the respective BusNm(s) on the network (see also chapter 5.3 ‘Services </p>
+<p>Used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are configured on the channel, the Get State API will be called for all </p>
+<p>BusNms on the channel. This implies that the state buffer and the mode buffer will contain the </p>
+<p>numerically greatest state/mode of all BusNms. Also, if one of the BusNm_GetState returns </p>
+<p>E_NOT_OK, the result will not be returned. If one is interested in the state of a particular </p>
+<p>BusNm on the channel, it is recommended to call BusNm_GetState directly for channels with </p>
+<p>multiple BusNms. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-15  </p>
+<p>Nm_GetState </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>58 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.15 </b></p>
+<p><b>Nm_GetVersionInfo </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_GetVersionInfo</b></p>
+<p> </p>
+<p>( Std_VersionInfoType * nmVerInfoPtr )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmVerInfoPtr </p>
+<p>Pointer where the version information shall be copied to </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Nm_GetVersionInfo() returns version information, vendor ID and AUTOSAR module ID of the component. </p>
+<p>The versions are BCD-coded. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Version Info Api’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-16  </p>
+<p>Nm_GetNodeIdentifier </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>59 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.16 </b></p>
+<p><b>Nm_MainFunction </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_MainFunction</b></p>
+<p> </p>
+<p>( void )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>This function implements the handling of coordinated networks of the NM Interface. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>This function is not available if ‘Coordinator Support’ is turned OFF. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is not reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function has to be called cyclically on task level by BSW Scheduler </p>
+<p><b>&gt; </b></p>
+<p>This function must not be called by the application. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task level only. </p>
+<p>Table 5-17  </p>
+<p>Nm_MainFunction </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>60 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.2.17 </b></p>
+<p><b>Nm_InitMemory </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_InitMemory</b></p>
+<p> </p>
+<p>( void )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>If RAM is not automatically initialized at start-up, this function must be called from start-up code to ensure </p>
+<p>that variables which must be initialized with a certain value (e.g. initialization status with UNINIT value) are </p>
+<p>set to those values. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs'  </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is non-reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is a Vector Extension. Refer also to chapter 3.1.2.5 ‘Memory Initialization’. </p>
+<p><b>&gt; </b></p>
+<p>This function has to be called during start-up and before the initialization is executed. </p>
+<p><b>&gt; </b></p>
+<p>This function is realized as a macro if ‘Coordinator Support’ is disabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task level only </p>
+<p>Table 5-18  </p>
+<p>Nm_InitMemory </p>
+<p><b>5.3 </b></p>
+<p><b>Services Used by Nm </b></p>
+<p>In the following table services provided by other components, which are used by the Nm </p>
+<p>are listed. For details about prototype and functionality refer to the documentation of the </p>
+<p>providing component. </p>
+<p><b>Component </b></p>
+<p><b>API </b></p>
+<p>DET </p>
+<p>Det_ReportError </p>
+<p>BusNm (e.g. CanNm, FrNm, NmOsek) </p>
+<p>BusNm_PassiveStartUp </p>
+<p>BusNm_NetworkRequest </p>
+<p>BusNm_NetworkRelease </p>
+<p>BusNm_DisableCommunication </p>
+<p>BusNm_EnableCommunication </p>
+<p>BusNm_SetUserData </p>
+<p>BusNm_GetUserData </p>
+<p>BusNm_GetPduData </p>
+<p>BusNm_RepeatMessageRequest </p>
+<p>BusNm_GetNodeIdentifier </p>
+<p>BusNm_GetLocalNodeIdentifier </p>
+<p>BusNm_CheckRemoteSleepIndication </p>
+<p>BusNm_RequestBusSynchronization </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>61 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>Component </b></p>
+<p><b>API </b></p>
+<p>BusNm_SetSleepReadyBit </p>
+<p>BusNm_GetState </p>
+<p>Table 5-19  </p>
+<p>Services used by the Nm </p>
+<p><b>5.4 </b></p>
+<p><b>Callback Functions </b></p>
+<p>This chapter describes the callback functions that are implemented by the Nm and can be </p>
+<p>invoked  by  other  modules. The  prototypes  of  the  callback  functions  are  provided  in  the </p>
+<p>header file </p>
+<p>Nm_Cbk.h</p>
+<p> by the Nm. </p>
+<p><b>5.4.1 </b></p>
+<p><b>Nm_NetworkStartIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_NetworkStartIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message has been received in state ‘Bus Sleep’. This indicates that some nodes in </p>
+<p>the network have restarted and already entered ‘Network Mode’. This notification is forwarded to the ComM </p>
+<p>(see also chapter 5.5 ‘Callback Functions used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-20  </p>
+<p>Nm_NetworkStartIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>62 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.2 </b></p>
+<p><b>Nm_NetworkMode </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_NetworkMode</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has entered ‘Network Mode’. This notification is forwarded to the </p>
+<p>ComM (see also chapter 5.5 ‘Callback Functions used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant if NM_COORDINATOR_SUPPORT_ENABLED is STD_OFF, </p>
+<p>otherwise it is reentrant only for different channel handles. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on a channel, the notification is only forwarded to ComM if it is </p>
+<p>the first BusNm that has entered ‘Network Mode’ on this channel. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on a channel, the new mode must also be returned by a </p>
+<p>BusNm_GetState call within the context of the Nm_NetworkMode call. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-21  </p>
+<p>Nm_NetworkMode </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>63 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.3 </b></p>
+<p><b>Nm_BusSleepMode </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_BusSleepMode</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has entered ‘Bus Sleep Mode’. This notification is forwarded to the </p>
+<p>ComM (see also chapter 5.5 ‘Callback Functions used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant if NM_COORDINATOR_SUPPORT_ENABLED is STD_OFF, </p>
+<p>otherwise it is reentrant only for different channel handles. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on a channel, the notification is only forwarded to ComM if it is </p>
+<p>the last BusNm that enters ‘Bus Sleep Mode’. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on a channel, the new mode must also be returned by a </p>
+<p>BusNm_GetState call within the context of the Nm_BusSleepMode call. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-22  </p>
+<p>Nm_BusSleepMode </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>64 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.4 </b></p>
+<p><b>Nm_PrepareBusSleepMode </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_PrepareBusSleepMode</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has entered ‘Prepare Bus Sleep Mode’. This notification is forwarded </p>
+<p>to the ComM (see also chapter 5.5 ‘Callback Functions used by Nm’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant if NM_COORDINATOR_SUPPORT_ENABLED is STD_OFF, </p>
+<p>otherwise it is reentrant only for different channel handles. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if CanNm, UdpNm or a Generic BusNm is used or if the </p>
+<p>Configuration Variant is VARIANT-LINK-TIME </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel, the notification is only forwarded if all other </p>
+<p>BusNms have left ‘Network Mode’. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on a channel, the new mode must also be returned by a </p>
+<p>BusNm_GetState call within the context of the Nm_PrepareBusSleepMode call. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-23  </p>
+<p>Nm_PrepareBusSleepMode </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>65 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.5 </b></p>
+<p><b>Nm_RemoteSleepIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_RemoteSleepIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has detected that all other nodes on the network are ready to sleep. </p>
+<p>This notification is optionally forwarded to an upper layer by a configurable notification function (see also </p>
+<p>chapter 5.6.1.1 ’UL_Nm_RemoteSleepIndication’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant if NM_COORDINATOR_SUPPORT_ENABLED is STD_OFF, </p>
+<p>otherwise it is reentrant only for different channel handles. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Remote Sleep Ind Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-24  </p>
+<p>Nm_RemoteSleepIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>66 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.6 </b></p>
+<p><b>Nm_RemoteSleepCancellation </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_RemoteSleepCancellation</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has detected that some other nodes on the network are not ready to </p>
+<p>sleep any more. This notification is optionally forwarded to an upper layer by a configurable notification </p>
+<p>function (see also chapter 5.6.1.2 ‘UL_Nm_RemoteSleepCancellation’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant if NM_COORDINATOR_SUPPORT_ENABLED is STD_OFF, </p>
+<p>otherwise it is reentrant only for different channel handles. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Remote Sleep Ind Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-25  </p>
+<p>Nm_RemoteSleepCancellation </p>
+<p><b>5.4.7 </b></p>
+<p><b>Nm_SynchronizationPoint </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_SynchronizationPoint </b>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification to the NM Coordinator functionality that this is a suitable point in time to initiate the coordination </p>
+<p>algorithm. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Coordinator Support’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-26  </p>
+<p>Nm_SynchronizationPoint </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>67 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.8 </b></p>
+<p><b>Nm_&lt;BusNm&gt;_PduRxIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void <b>Nm_&lt;BusNm&gt;_PduRxIndication</b>( const NetworkHandleType nmNetworkHandle, </p>
+<p>                                 const PduInfoType* const pduInfo );</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>pduInfo </p>
+<p>Pointer to the received PDU data </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message has been received by a specific BusNm on a channel. This notification is </p>
+<p>optionally forwarded to an upper layer by a configurable notification function (see also chapter 5.6.1.4 </p>
+<p>‘UL_Nm_BusNmSpecificPduRxIndication’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Bus Nm Specific Pdu Rx Indication Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-27  </p>
+<p>Nm_BusNmSpecificPduRxIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>68 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.9 </b></p>
+<p><b>Nm_PduRxIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_PduRxIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message has been received. This notification is optionally forwarded to an upper </p>
+<p>layer by a configurable notification function (see also chapter 5.6.1.3 ‘UL_Nm_PduRxIndication’). </p>
+<p>This notification may also be forwarded to another configurable notication (see chapter 5.6.1.4 </p>
+<p>‘UL_Nm_BusNmSpecificPduRxIndication’ for details). Note that the latter upper layer notification function </p>
+<p>will contain a NULL pointer for the pduInfo argument. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Pdu Rx Indication Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-28  </p>
+<p>Nm_PduRxIndication </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>69 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.10 </b></p>
+<p><b>Nm_StateChangeNotification </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_StateChangeNotification</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>const Nm_StateType nmPreviousState, </p>
+<p> </p>
+<p>const Nm_StateType nmCurrentState )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmPreviousState </p>
+<p>Previous state of the BusNm on the respective network </p>
+<p>nmCurrentState </p>
+<p>Current state of the BusNm on the respective network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management state of the BusNm has changed. This notification is optionally </p>
+<p>forwarded to an upper layer by a configurable notification function (see also chapter 5.6.1.5 </p>
+<p>‘UL_Nm_StateChangeNotification’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘State Change Ind Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-29  </p>
+<p>Nm_StateChangeNotification </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>70 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.11 </b></p>
+<p><b>Nm_RepeatMessageIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_RepeatMessageIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message with set repeat message request bit has been received. This notification is </p>
+<p>optionally forwarded to an upper layer by a configurable notification function (see also chapter 5.6.1.6 </p>
+<p>‘UL_Nm_RepeatMessageIndication’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Repeat Msg Ind Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-30  </p>
+<p>Nm_RepeatMessageIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>71 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.12 </b></p>
+<p><b>Nm_TxTimeoutException </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_TxTimeoutException</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that NM message could not be sent for a certain time period. This notification is optionally </p>
+<p>forwarded to an upper layer by a configurable notification function (see also chapter 5.6.1.7 </p>
+<p>‘UL_Nm_TxTimeoutException’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if at least one network is not passive or CONFIG-VARIANT is </p>
+<p>LINK-TIME. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-31  </p>
+<p>Nm_TxTimeoutException </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>72 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.13 </b></p>
+<p><b>Nm_CarWakeUpIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_CarWakeUpIndication </b>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message with set Car Wake Up request bit has been received. This notification is </p>
+<p>optionally forwarded to an upper layer by a configurable notification function (see also chapter 5.6.1.8) </p>
+<p>‘UL_Nm_CarWakeUpIndication’). </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Car Wake Up Rx Enabled’ is enabled. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-32  </p>
+<p>Nm_CarWakeUpIndication </p>
+<p><b>5.4.14 </b></p>
+<p><b>Nm_CoordReadyToSleepIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_CoordReadyToSleepIndication </b>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message with set Sleep Ready bit has been received. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Coordinator Support’ and ‘Coordinator Sync Support’ are </p>
+<p>enabled </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-33  </p>
+<p>Nm_CoordReadyToSleepIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>73 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.4.15 </b></p>
+<p><b>Nm_CoordReadyToSleepCancellation </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>Nm_CoordReadyToSleepCancellation </b>(const NetworkHandleType nmNetworkHandle)</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message, which has not set Sleep Ready bit anymore, has been received. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: see table 'Service IDs' </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Coordinator Support’ and ‘Coordinator Sync Support’ are </p>
+<p>enabled </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-34  </p>
+<p>Nm_CoordReadyToSleepCancellation </p>
+<p><b>5.5 </b></p>
+<p><b>Callback Functions used by Nm </b></p>
+<p>In the following table services provided by other components, which are used by the Nm </p>
+<p>are listed. For details about prototype and functionality refer to the documentation of the </p>
+<p>providing component. </p>
+<p><b>Component </b></p>
+<p><b>API </b></p>
+<p>ComM </p>
+<p>ComM_Nm_NetworkStartIndication </p>
+<p>ComM_Nm_RestartIndication </p>
+<p>ComM_Nm_NetworkMode </p>
+<p>ComM_Nm_BusSleepMode </p>
+<p>ComM_Nm_PrepareBusSleepMode </p>
+<p>Table 5-35  </p>
+<p>Callback Functions used by the Nm </p>
+<p><b>5.6 </b></p>
+<p><b>Configurable Interfaces </b></p>
+<p><b>5.6.1 </b></p>
+<p><b>Notifications </b></p>
+<p>At its configurable interfaces the Nm defines notifications that can be mapped to callback </p>
+<p>functions provided by other modules. The mapping is not statically defined by the Nm but </p>
+<p>can be performed at configuration time. The function prototypes that can be used for the </p>
+<p>configuration  have  to  match  the  appropriate  function  prototype  signatures,  which  are </p>
+<p>described in the following sub-chapters. The name of those functions is configurable and </p>
+<p>provided names here are just examples. The header file names where the prototypes for </p>
+<p>those functions are provided has to be provided also in the configuration. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>74 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.1 </b></p>
+<p><b>UL_Nm_RemoteSleepIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_RemoteSleepIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has detected that all other nodes on the network are ready to sleep. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Remote Sleep Ind Enabled’ is enabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel, this function is only called if the last BusNm has </p>
+<p>indicated ‘Remote Sleep’. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-36  </p>
+<p>UL_Nm_RemoteSleepIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>75 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.2 </b></p>
+<p><b>UL_Nm_RemoteSleepCancellation </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_RemoteSleepCancellation</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management has detected that some other nodes on the network are not ready to </p>
+<p>sleep any more. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Remote Sleep Ind Enabled’ is enabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel, this function is only called if the first BusNm has </p>
+<p>cancelled ‘Remote Sleep’. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-37  </p>
+<p>UL_Nm_RemoteSleepCancellation </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>76 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.3 </b></p>
+<p><b>UL_Nm_PduRxIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_PduRxIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message has been received. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Pdu Rx Indication Enabled’ is enabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel and this function is called, it cannot be </p>
+<p>distinguished which BusNm has triggered the call of this function. If the PDU contents are </p>
+<p>different between the PDUs of BusNms, one can use BusNm_GetPduData in the context of </p>
+<p>the callback function to get the most recently received PDU data of each BusNm. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-38  </p>
+<p>UL_Nm_PduRxIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>77 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.4 </b></p>
+<p><b>UL_Nm_BusNmSpecificPduRxIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void &lt;FunctionName&gt;( NetworkHandleType nmNetworkHandle, const PduInfoType* </p>
+<p>const pduInfo)</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>pduInfo </p>
+<p>Pointer to the received PDU data </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message has been received. </p>
+<p>It can be differentiated from which BusNm it comes, in contrast to Nm_PduRxIndication 5.6.1.3. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Specific Pdu Rx Indication Enabled’ is enabled and a function </p>
+<p>name is configured. </p>
+<p><b>&gt; </b></p>
+<p>This function can be used to distinguish between each BusNm on the same channel by using </p>
+<p>different identifiers for each BusNm. It is not necessary to configure the function if there is only </p>
+<p>one BusNm on the channel. The ‘Pdu Receive Ind Callback’ can be used as an alternative for </p>
+<p>this purpose. </p>
+<p><b>&gt; </b></p>
+<p>The argument pduInfo will always be NULL if the function is called from the context of </p>
+<p>Nm_PduRxIndication (see also chapter 5.4.9). </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-39  </p>
+<p>Standard Bus Nm Pdu Rx Indication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>78 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.5 </b></p>
+<p><b>UL_Nm_StateChangeNotification </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_StateChangeNotification</b></p>
+<p> </p>
+<p>( </p>
+<p> </p>
+<p>const NetworkHandleType nmNetworkHandle, </p>
+<p> </p>
+<p>const Nm_StateType nmPreviousState, </p>
+<p> </p>
+<p>const Nm_StateType nmCurrentState )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p>nmPreviousState </p>
+<p>Previous state of the BusNm on the respective network </p>
+<p>nmCurrentState </p>
+<p>Current state of the BusNm on the respective network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that network management state of the BusNm has changed. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘State Change Ind Enabled’ is enabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel and if this function used, it cannot be </p>
+<p>distinguished which BusNm has triggered the state change notification. The current state is </p>
+<p>always the numerically highest overall state of the BusNms on the channel. If an exact state </p>
+<p>needs to be determined for each BusNm, call BusNm_GetState directly. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-40  </p>
+<p>UL_Nm_StateChangeNotification </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>79 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.6 </b></p>
+<p><b>UL_Nm_RepeatMessageIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_RepeatMessageIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message with set repeat message request bit has been received. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Repeat Msg Ind Enabled’ is enabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel, it cannot be distinguished which BusNm has </p>
+<p>called this function. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-41  </p>
+<p>UL_Nm_RepeatMessageIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>80 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.7 </b></p>
+<p><b>UL_Nm_TxTimeoutException </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_TxTimeoutException</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that NM message could not be sent for a certain time period. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Passive Mode Enabled’ is disabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel, it cannot be distinguished which BusNm has </p>
+<p>called this function. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-42  </p>
+<p>UL_Nm_TxTimeoutException </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>81 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>5.6.1.8 </b></p>
+<p><b>UL_Nm_CarWakeUpIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void</p>
+<p> </p>
+<p><b>UL_Nm_CarWakeUpIndication</b></p>
+<p> </p>
+<p>( const NetworkHandleType nmNetworkHandle )</p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p>nmNetworkHandle </p>
+<p>Identification of the network </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Notification that a NM message with set Car Wake Up request bit has been received. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b>&gt; </b></p>
+<p>Service ID: Has to be provided by the module that implements this notification. </p>
+<p><b>&gt; </b></p>
+<p>This function is synchronous. </p>
+<p><b>&gt; </b></p>
+<p>This function is reentrant. </p>
+<p><b>&gt; </b></p>
+<p>The name of this function is configurable. </p>
+<p><b>&gt; </b></p>
+<p>This function is only available if ‘Car Wake Up Rx Enabled ‘is enabled and a function name is </p>
+<p>configured. </p>
+<p><b>&gt; </b></p>
+<p>If multiple BusNms are used on the channel, it cannot be distinguished which BusNm has </p>
+<p>called this function. </p>
+<p>Expected Caller Context </p>
+<p><b>&gt; </b></p>
+<p>This function can be called from task and interrupt level. </p>
+<p>Table 5-43  </p>
+<p>UL_Nm_CarWakeUpIndication </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>82 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>6 </b></p>
+<p><b>Glossary and Abbreviations </b></p>
+<p><b>6.1 </b></p>
+<p><b>Glossary </b></p>
+<p><b>Term </b></p>
+<p><b>Description </b></p>
+<p>BusNm </p>
+<p>Bus-specific network management, e.g. CanNm, FrNm, NmOsek </p>
+<p>DaVinci Configurator </p>
+<p>Generation tool for MICROSAR components </p>
+<p>Table 6-1  </p>
+<p>Glossary </p>
+<p><b>6.2 </b></p>
+<p><b>Abbreviations </b></p>
+<p><b>Abbreviation </b></p>
+<p><b>Description </b></p>
+<p>API </p>
+<p>Application Programming Interface </p>
+<p> </p>
+<p>AUTOSAR </p>
+<p>Automotive Open System Architecture </p>
+<p>BSW </p>
+<p>Basis Software </p>
+<p>BswM </p>
+<p>Basis Software Manager </p>
+<p>ComM </p>
+<p>Communication Manager </p>
+<p>DEM </p>
+<p>Diagnostic Event Manager </p>
+<p>DET </p>
+<p>Development Error Tracer </p>
+<p>DLL </p>
+<p>Data Link Layer </p>
+<p>ECU </p>
+<p>Electronic Control Unit </p>
+<p>MICROSAR </p>
+<p>Microcontroller Open System Architecture (the Vector AUTOSAR </p>
+<p>solution) </p>
+<p>Nm </p>
+<p>AUTOSAR Network Management Interface (this module) </p>
+<p>NM </p>
+<p>Network Management </p>
+<p>NmOsek </p>
+<p>OSEK Network Management (Vector module) </p>
+<p>OSEK </p>
+<p>Open Systems and the Corresponding Interfaces for Automotive </p>
+<p>Electronics (German term: “Offene Systeme und deren Schnittstellen für </p>
+<p>die Elektronik im Kraftfahrzeug”) </p>
+<p>SchM </p>
+<p>Schedule Manager </p>
+<p>SWS </p>
+<p>Software Specification </p>
+<p>Table 6-2  </p>
+<p>Abbreviations </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR Network Management Interface </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 10.00.00 </p>
+<p>83 </p>
+<p>based on template version 4.8.0 </p>
+<p><b>7 </b></p>
+<p><b>Contact </b></p>
+<p>Visit our website for more information on </p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>News </p>
+<p><b>&gt; </b></p>
+<p>Products </p>
+<p><b>&gt; </b></p>
+<p>Demo software </p>
+<p><b>&gt; </b></p>
+<p>Support </p>
+<p><b>&gt; </b></p>
+<p>Training data </p>
+<p><b>&gt; </b></p>
+<p>Addresses </p>
+<p> </p>
+<p>www.vector.com </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+</body>
+</html>
+{% endraw %}

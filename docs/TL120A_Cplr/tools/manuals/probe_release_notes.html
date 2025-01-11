@@ -1,0 +1,2787 @@
+---
+layout: default
+title: probe_release_notes
+nav_order: 193
+parent: Cplr (TL120A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>Green Hills Debug Probes Release Notes</b></p>
+<p><b>Green Hills Software</b></p>
+<p><b>30 West Sola Street</b></p>
+<p><b>Santa Barbara, California 93101</b></p>
+<p><b>USA</b></p>
+<p><b>Tel: 805-965-6044</b></p>
+<p><b>Fax: 805-965-6343</b></p>
+<p><b>www.ghs.com</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>DISCLAIMER</b></p>
+<p>GREEN HILLS SOFTWARE MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY</p>
+<p>OR FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software reserves the right to revise this</p>
+<p>publication and to make changes from time to time in the content hereof without obligation of Green Hills Software to</p>
+<p>notify any person of such revision or changes.</p>
+<p>Copyright © 1983-2014 by Green Hills Software. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or</p>
+<p>otherwise, without prior written permission from Green Hills Software.</p>
+<p>Green Hills, the Green Hills logo, CodeBalance, GMART, GSTART, INTEGRITY, MULTI, and Slingshot are registered</p>
+<p>trademarks of Green Hills Software. AdaMULTI, Built with INTEGRITY, EventAnalyzer, G-Cover, GHnet, GHnetLite,</p>
+<p>Green Hills Probe, Integrate, ISIM, u-velOSity, PathAnalyzer, Quick Start, ResourceAnalyzer, Safety Critical Products,</p>
+<p>SuperTrace Probe, TimeMachine, TotalDeveloper, DoubleCheck, and velOSity are trademarks of Green Hills Software.</p>
+<p>All other company, product, or service names mentioned in this book may be trademarks or service marks of their respective</p>
+<p>owners.</p>
+<p>For a partial listing of Green Hills Software and periodically updated patent marking information, please visit</p>
+<p>http://www.ghs.com/copyright_patent.html.</p>
+<p>PubID: probe_release_notes-525955</p>
+<p>Branch: http://toolsvc/branches/probe-branch-5.2</p>
+<p>Date: February 19, 2015</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Contents</b></p>
+<p><b>Preface</b></p>
+<p><b>xi</b></p>
+<p>Host System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>xii</p>
+<p><b>1. Version 5.2.2 Release Notes</b></p>
+<p><b>1</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>New Supported Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Additional New Project Wizard Support . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>New Trace Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>New Flash Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>New Support for Synchronous Multi-Core Systems . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>New Feature Support for Cortex-A15 . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>TMC-ETB Support Added . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Support for Heterogeneous Multi-Core CoreSight Systems . . . . . . . . .</p>
+<p>3</p>
+<p>Probe Configuration Files Automatically Added to Projects and</p>
+<p>Loaded at Connection to MULTI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>IEEE 1149.7 cJTAG Support for Freescale Targets . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Support Added for MPC5744P Cut 2 . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Improved Support for Freescale Vybrid . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>New Probe Configuration Options . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>use_swd Configuration Option Removed . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>New Syntax for Specifying CoreSight Targets . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>detect Command Changes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Big Endian Cortex-M Targets Now Supported . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>MPC5746M and MPC5777M e200z0 Core No Longer</p>
+<p>Available . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p><b>2. Version 5.0.8 Release Notes</b></p>
+<p><b>7</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>New Supported Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p><i>iii</i></p>
+<p><i>Green Hills Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Additional New Project Wizard Support . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>New Trace Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>New Support for Target Trace Buffers . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>AXI-AP Support Added . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>New TraceEverywhere Parallel Trace Interface . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Support Through the High-Speed Serial Trace (HSST) Aurora</p>
+<p>Interface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Probe Run Mode Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Faster Power Architecture Trace Decoders . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>New Options for Fujitsu FCR4 Processors . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Programming Spansion SPI Flash Memory Chips from Renesas</p>
+<p>RZ/A1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Changed Use of trace_clock_phase Value . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Changed Default of disable_swt Setting . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>Changes to Trace List Options . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>Defaults For jrst_ and rst_ Commands Changed . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>New Probe Configuration Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>MULTI 4 No Longer Supported . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p><b>3. Version 4.4.4 Release Notes</b></p>
+<p><b>15</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>New Supported Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Additional New Project Wizard Support . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Support for Reading and Writing MPU Region Descriptors on</p>
+<p>Freescale MPC57xx . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Support for Cortex-M4F VFP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Parallel Trace Decoding for ETMv3 Targets . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p><b>4. Version 4.2.2 Release Notes</b></p>
+<p><b>19</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>SWD Debug Interface Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>SuperTrace Probe v3 Debug and Trace Support for Additional</p>
+<p>Interfaces . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>BE8 Support for ARM11 and Cortex-R4 . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>New Supported Targets for v3 Probes . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Serial Port Forwarding Now Available . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>iv</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Diagnostics Pane of Probe Administrator is Not Available in MULTI</p>
+<p>6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>New Online Probe Manuals No Longer Available for MULTI 4.x</p>
+<p>on Linux/Solaris . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p><b>5. Version 4.0.2 Release Notes</b></p>
+<p><b>23</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>New Supported Targets for v3 Probes . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>SuperTrace Probe v3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>selftest Command . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Changes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Changes to Timestamps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>SuperTrace Probe v3 Does Not Have GPIO Pins . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p><b>6. Version 3.8.2 Release Notes</b></p>
+<p><b>27</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Additional PowerPC Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>TraceEverywhere Cabling System . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Changes and Fixes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Updated USB Driver . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Probe Now Polls for Adapter and Power Status . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Deprecated and Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>IDT32 Processors Are No Longer Supported . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p><b>7. Version 3.6.4 Release Notes</b></p>
+<p><b>31</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>New ARM Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>Changes and Fixes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>General Changed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p><b>8. Version 3.4.1 Release Notes</b></p>
+<p><b>35</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>General New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>New ColdFire Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>37</p>
+<p><i>v</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>New PowerPC Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>38</p>
+<p>Changes and Fixes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>General Changed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>ColdFire Changed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>MIPS Changed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>PowerPC Changed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p><b>9. Known Issues and Limitations</b></p>
+<p><b>43</b></p>
+<p>General Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>USB Driver Installation Fails on Windows Vista . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Cannot Downgrade Firmware On Some Probes . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>MULTI 4/5 gpatch Does Not Roll Back On Linux/Solaris . . . . . . . .</p>
+<p>44</p>
+<p>Installation on MULTI 4 Clears Licenses . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Installation Disables ecomarm2 License . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>45</p>
+<p>Connecting to Multiple USB Probes via the Probe</p>
+<p>Administrator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>45</p>
+<p>Setup Script Fails when Running Diagnostics in the Probe</p>
+<p>Administrator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>45</p>
+<p>Issues Interleaving MULTI Script and mpserv Commands . . . . . . . .</p>
+<p>45</p>
+<p>target tc and target th Behavior Changes when Halt Cores</p>
+<p>Synchronously is Selected . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Break on Trigger Only Halts Target If Target is Not Already</p>
+<p>Halted . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Missing Documentation for Exceptions in the Set Triggers</p>
+<p>Window . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Setting Options in the Trace Options Window Has No Effect When</p>
+<p>Data Trace is Disabled . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Slow Trace Decompression on Windows While the PathAnalyzer</p>
+<p>or Trace List is Open . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Gap Between Timestamps in the Trace List or Path Analyzer . . . . . .</p>
+<p>47</p>
+<p>Trace Data Lost when Trace is Disabled Immediately After</p>
+<p>Retrieval</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>AddressSpaces Not Traced by Default After Disabling Trace . . . . . .</p>
+<p>48</p>
+<p>TimeMachine Demo Requires Specific Trace Options . . . . . . . . . . . .</p>
+<p>48</p>
+<p>Some Tabs are Empty in the Register View Window . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>Tracing a Program Running from ROM with a Setup Script . . . . . . .</p>
+<p>49</p>
+<p>TE Pod logic_high Setting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>vi</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Enabling Outputs Does Not Report an Error with Incorrect TE</p>
+<p>Adapter Setting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>Issues Updating Probe Firmware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<p>RTCK Failure Can Cause Long Delays . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<p>ARM Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>Cannot View I-Cache or L2 Cache on Cortex-A5 Targets . . . . . . . . .</p>
+<p>51</p>
+<p>Cannot Debug Certain Cache Configurations on Cortex-A5 and</p>
+<p>Cortex-A9 Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>Many TMS570 and R4x Processors Incorrectly Detected as a</p>
+<p>Cortex-R4F . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>No Access to XScale Cache Operations Register . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>bl Displays Duplicate Breakpoints . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>Slow Halt On ARM920 Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>Trigger Immediately Causes Two Triggers on CoreSight ETM11</p>
+<p>Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>Cannot Collect Trace Data on a Trigger on OMAP3 . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>Freescale i.MX51 Does Not Work at Slow Clock Speeds . . . . . . . . .</p>
+<p>52</p>
+<p>Trace Count For Accesses To or Execution Of a Single Address on</p>
+<p>ETM Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>Trace May Not Decode Correctly While Booting Cortex-A</p>
+<p>INTEGRITY Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>53</p>
+<p>Missed Trace Triggers in INTEGRITY Virtual AddressSpaces . . . .</p>
+<p>53</p>
+<p>Some ARM Cores Must Be Halted When Enabling Trace . . . . . . . . .</p>
+<p>53</p>
+<p>ARM ETM 64-Bit Data Accesses Displayed as 32-Bit Accesses in</p>
+<p>Trace List</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>In MULTI 5, Trace Does Not Work in BE8 Mode for Some ARM</p>
+<p>Cores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Probe Cannot Detect Some ICEPick Targets . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Some Data Missing from Trace Buffer on Cortex-M3 Targets . . . . .</p>
+<p>54</p>
+<p>Some ARM11 CPUs Cause Incorrect Trace Data . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Break on Trigger Does Not Trace Final Instruction on</p>
+<p>Cortex-R4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Enabling Trace on Multiple Running Cores . . . . . . . . . . . . . . . . . . . . .</p>
+<p>55</p>
+<p>ARM Multi-Core Trace Targets with MULTI 6.x and Earlier May</p>
+<p>Require Enabling Trace Manually . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>55</p>
+<p>Tracing ARM Targets Triggering Close to the Beginning of the</p>
+<p>Trace Buffer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>55</p>
+<p>Function and Callees Filter Issue . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p><i>vii</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>SWD May be Unreliable on Freescale Vybrid . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>Flash Programming May Be Unreliable on Renesas RZ/A1</p>
+<p>Board . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>Data Trace of Load/Store Multiple Instructions on ARM Targets</p>
+<p>with ETMv3.x with Incomplete Data . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>ColdFire Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Power Detection Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Breakpoint Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Detecting a ColdFire Target with SuperTrace Probe . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>MIPS Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>freeze_timers Disables the EN Bit in CTC1, CTC2, and CTC3 . . . .</p>
+<p>58</p>
+<p>Low Level JTAG Procedures May Disrupt M4K Processors . . . . . . .</p>
+<p>58</p>
+<p>Stepping Off of Breakpoints May Not Work When Debugging a</p>
+<p>Virtual Task . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>Hardware Breakpoint Types on the Au1500 . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>Accessible Physical Address Range Limited to 512 MB . . . . . . . . . .</p>
+<p>59</p>
+<p>TC Restrictions on MIPS 34K and 1004K Processors . . . . . . . . . . . .</p>
+<p>59</p>
+<p>Power Architecture Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>60</p>
+<p>Incorrect Trace Decoding on PPC405 Processors . . . . . . . . . . . . . . . .</p>
+<p>60</p>
+<p>MPC5744P Stalls With Certain Trace Settings . . . . . . . . . . . . . . . . . .</p>
+<p>60</p>
+<p>Incorrect Trace With PowerPC e200 and MULTI 6 . . . . . . . . . . . . . .</p>
+<p>60</p>
+<p>Censorship Unlock Requires Two Resets on PPC560x</p>
+<p>Processors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>61</p>
+<p>Viewing QorIQ P4080 or MPC567xF Peripheral Registers in MULTI</p>
+<p>5 Requires Configuration File Changes . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>61</p>
+<p>Little Endian Mode Is Not Supported on PowerPC e500-, e500mc-,</p>
+<p>e5500-, or e6500-based Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>61</p>
+<p>Incorrect PC Location After Halting Target . . . . . . . . . . . . . . . . . . . . .</p>
+<p>61</p>
+<p>Locked Data Cache Not Supported on PowerPC 4xx Targets . . . . . .</p>
+<p>62</p>
+<p>Corrupted Registers When Setting an Execute Hardware Breakpoint</p>
+<p>on Some PowerPC Cores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>62</p>
+<p>Register Definitions Require Setting MULTI Variables . . . . . . . . . . .</p>
+<p>62</p>
+<p>External Trace Trigger In Not Supported on PowerPC 405</p>
+<p>Targets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p>Modifying Trigger Settings on PowerPC 4xx Targets . . . . . . . . . . . .</p>
+<p>63</p>
+<p>MPC564xC z0 Core Does Not Emit Trace Data on Single Step . . . .</p>
+<p>63</p>
+<p>Trace Errors With Code That Switches Between VLE and Non-VLE</p>
+<p>Modes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>viii</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Nexus Trace Does Not Support Read- or Write-Only Triggers . . . . .</p>
+<p>64</p>
+<p>Nexus e200 MDO Width Limitations . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>64</p>
+<p>Nexus e200 Trace Is Only Supported on One Core at a Time . . . . . .</p>
+<p>64</p>
+<p>Standard Nexus Trace Adapter Does Not Support 5 V signals . . . . .</p>
+<p>65</p>
+<p>Single Stepping Over mtspr dbsrwr, rn May Not Execute As</p>
+<p>Expected on QorIQ P4040 and P4080 . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>65</p>
+<p>Triggers Are Not Supported on the e200z0 Core of the</p>
+<p>MPC564xC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>65</p>
+<p>Incorrect Error Message When Tracing A 564xB or 564xC . . . . . . .</p>
+<p>65</p>
+<p>Unexpected Machine Check On 567xR and 567xF . . . . . . . . . . . . . .</p>
+<p>65</p>
+<p>Trace Limitations with Stalling Enabled on MPC5777M e200z7</p>
+<p>Cores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Incorrect Trace Decoding on MPC5777M Processors . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Incorrect Trace Decoding on MPC577xK Processors . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Example T4240QDS Setup Script Should Not Be Canceled . . . . . . .</p>
+<p>66</p>
+<p>Multi-Core Debug Limitations on QorIQ P3041 . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Trace Errata on Certain P4080/P4040 Silicon Revisions . . . . . . . . . .</p>
+<p>67</p>
+<p>x86 Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p>x86 TraceEverywhere Adapters Not Supported with</p>
+<p>TraceEverywhere Trace Pod . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p>Probe Cannot Configure Memory Mapping . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p>tr Command Does Not Work as Expected on Some x86 Targets . . . .</p>
+<p>68</p>
+<p>MULTI Reports Any x86 Processor as a Pentium Pro . . . . . . . . . . . .</p>
+<p>68</p>
+<p>64-Bit Mode Debug Is Not Yet Supported . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p>Access to MSRs or IO Memory Is Not Yet Supported . . . . . . . . . . . .</p>
+<p>69</p>
+<p>Cannot Write to Segment or Table Registers . . . . . . . . . . . . . . . . . . . .</p>
+<p>69</p>
+<p>Simultaneous Run-Mode and Freeze-Mode INTEGRITY Debugging</p>
+<p>Is Not Supported . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>69</p>
+<p>Halt and Breakpoints on Sandy Bridge Targets Is Synchronous . . . .</p>
+<p>69</p>
+<p>Running Programs that Change Address Mappings . . . . . . . . . . . . . .</p>
+<p>69</p>
+<p>Target Strings for Multi-Core and SMP Debugging . . . . . . . . . . . . . .</p>
+<p>70</p>
+<p>Booting a Multi-Core Target After Reset . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>71</p>
+<p>Booting a Multi-Core OS Clears Hardware Breakpoints on Secondary</p>
+<p>Cores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>71</p>
+<p>Target Halts in System Management Mode Code . . . . . . . . . . . . . . . .</p>
+<p>71</p>
+<p>Nehalem-Based Target Cannot Leave System Management</p>
+<p>Mode . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>71</p>
+<p><i>ix</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Preface</b></p>
+<p><b>Contents</b></p>
+<p>Host System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>xii</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Thank you for choosing a Green Hills debug probe. These release notes cover what</p>
+<p>is new in this probe firmware release, what has changed, and other release-specific</p>
+<p>information that is not available in the standard documentation.</p>
+<p>For installation information and instructions that explain how to configure your</p>
+<p>probe for your target, see the<i> Getting Started</i> book for your probe.</p>
+<p>For reference information, see the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>Host System Requirements</b></p>
+<p>Green Hills debug probe software runs on the same operating systems as MULTI.</p>
+<p>If your installation disc contains only debug probe software, you can use it to upgrade</p>
+<p>MULTI 5, or 6. If your disc contains MULTI, the Green Hills Compiler, and Probe</p>
+<p>software, you can use it to upgrade MULTI 6.</p>
+<p>If you upgrade MULTI 4, the probe firmware and support software version 4.4.2</p>
+<p>will be installed, which is the newest version to support MULTI 4.</p>
+<p>The installation requires 40 MB of disk space.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>xii</i></p>
+<p><i>Preface</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1</b></p>
+<p><b>Version 5.2.2 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 5.2.</p>
+<p><b>New Features</b></p>
+<p><b>New Supported Targets</b></p>
+<p>Support for the following targets was added in version 5.2.2:</p>
+<p>•</p>
+<p>Avago AXX55xx (</p>
+<p>axx5500</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC577xK (</p>
+<p>ppc5775K</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale QorIQ T4160 (</p>
+<p>ppcT4160</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale QorIQ T4240 (</p>
+<p>ppcT4240</p>
+<p>)</p>
+<p><b>Additional New Project Wizard Support</b></p>
+<p>New Project Wizard support for the following boards was added in version 5.2.2:</p>
+<p>•</p>
+<p>Freescale MPC5775K Demo Board</p>
+<p>•</p>
+<p>Freescale T4240DS</p>
+<p>Support for these boards will be installed into Compiler 2012.5 or newer.</p>
+<p><b>New Trace Support</b></p>
+<p>The SuperTrace Probe v3 now supports debugging and tracing the following targets:</p>
+<p>•</p>
+<p>Freescale Qorivva 57xx targets, over the high-speed serial trace (HSST) Aurora</p>
+<p>interface.</p>
+<p><b>New Flash Support</b></p>
+<p>The following flash chips are now supported:</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>2</i></p>
+<p><i>Chapter 1. Version 5.2.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>MPC57xx and SPC57x processors – for more information, see “Programming</p>
+<p>the UTest Block on MPC57xx and SPC57x” in Appendix D, “Troubleshooting</p>
+<p>and Usage Notes” in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>New Support for Synchronous Multi-Core Systems</b></p>
+<p>The probe now supports locking cores in a multi-core system, so that all cores in</p>
+<p>the system always resume and halt at the same time. This feature also enables</p>
+<p>software breakpoints to be set on all cores at the same time. For more information,</p>
+<p>see<b> Halt cores synchronously</b> in “Green Hills Debug Probe (mpserv) Advanced</p>
+<p>Settings” in Chapter 3, “Probe Connection Reference” in<i> Green Hills Debug Probes</i></p>
+<p><i>User's Guide</i>. This feature is only supported on ARM Cortex-A and POWER</p>
+<p>e500mc, e5500, and e6500 targets at this time, and requires MULTI 7 or later.</p>
+<p><b>New Feature Support for Cortex-A15</b></p>
+<p>The following features are now supported on the Cortex-A15:</p>
+<p>•</p>
+<p>L1 and L2 cache visualization</p>
+<p>•</p>
+<p>TLB visualization</p>
+<p>•</p>
+<p>Trace Support</p>
+<p><b>TMC-ETB Support Added</b></p>
+<p>This release adds support for ARM's Trace Memory Controller when configured</p>
+<p>as an Embedded Trace Buffer (TMC-ETB). This feature allows targets containing</p>
+<p>a TMC-ETB to be tracked with a Green Hills Probe as well as a SuperTrace Probe.</p>
+<p><b>Support for Heterogeneous Multi-Core CoreSight Systems</b></p>
+<p>The Green Hills Probe now supports debugging systems that contain multiple CPU</p>
+<p>cores of different types behind a single CoreSight DAP. See “Specifying CoreSight</p>
+<p>Targets” in Chapter 4, “Probe Option Reference” in<i> Green Hills Debug Probes</i></p>
+<p><i>User's Guide</i> for more information.</p>
+<p><i>3</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New Support for Synchronous Multi-Core Systems</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Probe Configuration Files Automatically Added to Projects and Loaded at</b></p>
+<p><b>Connection to MULTI</b></p>
+<p>When creating a project with the New Project Wizard, if a probe configuration file</p>
+<p>exists for the target you select, that file will be copied into the new project and will</p>
+<p>be added to the<b> Probe Config</b> tab of the Connection Editor. When you connect to</p>
+<p>MULTI, the settings in that file will be written to the probe, and will override any</p>
+<p>current settings on the probe. If you want your probe settings to remain unchanged,</p>
+<p>you can remove the file from the Connection Editor, and no settings will be written</p>
+<p>to the probe. If you would like to modify the settings that are written to the probe,</p>
+<p>you may save your probe's current configuration using the following command:</p>
+<p>mpadmin -cfgsave<i> probe filename</i></p>
+<p>For more information, see “Loading and Saving Configuration Files” in Chapter 1,</p>
+<p>“Administering Your Probe” in<i> Green Hills Debug Probes User's Guide</i> and “Green</p>
+<p>Hills Debug Probe (mpserv) Probe Config Settings” in Chapter 3, “Probe Connection</p>
+<p>Reference” in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>IEEE 1149.7 cJTAG Support for Freescale Targets</b></p>
+<p>The Green Hills Probe now supports reduced-pin IEEE 1149.7 debug modes on</p>
+<p>Freescale MPC57xx and Kinetis targets. For more information, see the</p>
+<p>documentation about the<b> debug_type</b> option in “Selecting the Target Communication</p>
+<p>Protocol” in Chapter 4, “Probe Option Reference” in<i> Green Hills Debug Probes</i></p>
+<p><i>User's Guide</i>.</p>
+<p>For IEEE 1149.7 support for other targets, please contact Green Hills Support.</p>
+<p><b>Support Added for MPC5744P Cut 2</b></p>
+<p>The probe firmware, register definitions, and New Project Wizard entry all now</p>
+<p>support the Freescale MPC5744P cut 2 silicon.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>4</i></p>
+<p><i>Chapter 1. Version 5.2.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Improved Support for Freescale Vybrid</b></p>
+<p>The</p>
+<p>vybrid</p>
+<p>target setting now also debugs the Vybrid's Cortex-M4 core (in addition</p>
+<p>to the Cortex-A5). Vybrid CPUs that are configured with Cortex-M4 as the primary</p>
+<p>core can be debugged with the</p>
+<p>vybrid.m4pri</p>
+<p>target setting.</p>
+<p><b>New Probe Configuration Options</b></p>
+<p>GTL-capable adapters (used for x86 targets) now present a<b> use_gtl</b> option which</p>
+<p>can be used to control the use of the GTL drivers. For more information, see<b> use_gtl</b></p>
+<p>in “x86” in Chapter 4, “Probe Option Reference” in<i> Green Hills Debug Probes</i></p>
+<p><i>User's Guide</i>.</p>
+<p>The probe now allows users to configure how a soft reset is performed on Cortex-A8</p>
+<p>targets via the new<b> rst_dpll3</b> configuration option. For more information, see</p>
+<p>“ARM” in Chapter 4, “Probe Option Reference” in<i> Green Hills Debug Probes</i></p>
+<p><i>User's Guide</i>.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>use_swd Configuration Option Removed</b></p>
+<p>The<b> use_swd</b> configuration option has been removed. The functionality formerly</p>
+<p>provided by<b> use_swd</b> is now available with the<b> debug_type</b> option. For more</p>
+<p>information, see “Selecting the Target Communication Protocol” in Chapter 4,</p>
+<p>“Probe Option Reference” in<i> Green Hills Debug Probes User's Guide</i></p>
+<p><b>New Syntax for Specifying CoreSight Targets</b></p>
+<p>CoreSight targets are specified using the target setting</p>
+<p>csdap()</p>
+<p>which describes</p>
+<p>the set of CoreSight cores and peripherals. Note that the earlier target settings used</p>
+<p>to specify CoreSight targets will remain in the firmware but are considered</p>
+<p>deprecated.</p>
+<p>When using the new</p>
+<p>csdap()</p>
+<p>syntax, the probe does not scan the ROM Table to</p>
+<p>set</p>
+<p>cortex_addr</p>
+<p>,</p>
+<p>etm_addr</p>
+<p>,</p>
+<p>ptm_addr</p>
+<p>,</p>
+<p>tpiu_addr</p>
+<p>or</p>
+<p>tpiu_type</p>
+<p>. In addition,</p>
+<p>the probe no longer automatically detects the index of the AHB-AP, AXI-AP or</p>
+<p><i>5</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Improved Support for Freescale Vybrid</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>APB-AP, but provides new options to specify the index. These options must be</p>
+<p>correctly set for proper debug operation. In most cases, the<b> detect</b> command is able</p>
+<p>to detect the correct values. For more information, see “Specifying CoreSight</p>
+<p>Targets” in Chapter 4, “Probe Option Reference” in<i> Green Hills Debug Probes</i></p>
+<p><i>User's Guide</i>.</p>
+<p><b>detect Command Changes</b></p>
+<p>The<b> detect</b> command now detects several options in addition to</p>
+<p>target</p>
+<p>and</p>
+<p>endianness</p>
+<p>. Furthermore, for a target that has a CoreSight DAP, the detected</p>
+<p>values for</p>
+<p>target</p>
+<p>use the new syntax described in “Specifying CoreSight Targets”</p>
+<p>in Chapter 4, “Probe Option Reference” in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>Big Endian Cortex-M Targets Now Supported</b></p>
+<p>Cortex-M targets are now supported in Big Endian data mode. The<b> inst_endianness</b></p>
+<p>option may be used to select the instruction endianness when in Big Endian data</p>
+<p>mode.</p>
+<p><b>Removed Features</b></p>
+<p><b>MPC5746M and MPC5777M e200z0 Core No Longer Available</b></p>
+<p>Debug access to the e200z0 core on MPC5746M and MPC5777M is no longer</p>
+<p>present in the v5.2 firmware. Contact Green Hills Support if you require debug</p>
+<p>access to the e200z0 core on these devices.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>6</i></p>
+<p><i>Chapter 1. Version 5.2.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2</b></p>
+<p><b>Version 5.0.8 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 5.0.</p>
+<p><b>New Features</b></p>
+<p><b>New Supported Targets</b></p>
+<p>Support for the following targets was added in version 5.0.8:</p>
+<p>•</p>
+<p>Cortex-R5 (</p>
+<p>cortexr5</p>
+<p>)</p>
+<p>•</p>
+<p>Cortex-A15 (</p>
+<p>cortexa15</p>
+<p>)</p>
+<p>•</p>
+<p>TI OMAP5432 (</p>
+<p>omap5</p>
+<p>)</p>
+<p>Support for the following targets was added in version 5.0.4:</p>
+<p>•</p>
+<p>Cortex-M0+ (</p>
+<p>cortexm0</p>
+<p>)</p>
+<p>•</p>
+<p>Cortex-A5 (</p>
+<p>cortexa5</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Vybrid (</p>
+<p>vybrid</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC5602P (</p>
+<p>ppc560xP.n1</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC5602D (</p>
+<p>ppc560xB.n1</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MCF 5301x (</p>
+<p>mcf5301x</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale QorIQ P2041 (</p>
+<p>ppcP2041</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale QorIQ P5020 (</p>
+<p>ppcP5020</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale QorIQ P5040 (</p>
+<p>ppcP5040</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC5744K (</p>
+<p>ppc5744K</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC5746R (</p>
+<p>ppc5746R</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC5748G (</p>
+<p>ppc5748G</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale MPC5777M (</p>
+<p>ppc5777M</p>
+<p>)</p>
+<p>•</p>
+<p>Fujitsu FCR4 (</p>
+<p>fcr4</p>
+<p>)</p>
+<p>•</p>
+<p>MIPS 14K (</p>
+<p>mips32_14kc</p>
+<p>,</p>
+<p>mips32_14kf</p>
+<p>)</p>
+<p>•</p>
+<p>MIPS 74K (</p>
+<p>mips32_74kc</p>
+<p>,</p>
+<p>mips32_74kf</p>
+<p>)</p>
+<p>•</p>
+<p>MIPS 1004K (</p>
+<p>mips32_1004kc</p>
+<p>,</p>
+<p>mips32_1004kf</p>
+<p>)</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>8</i></p>
+<p><i>Chapter 2. Version 5.0.8 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>ST Micro SPC56AP60 (</p>
+<p>spc56AP60</p>
+<p>)</p>
+<p>•</p>
+<p>ST Micro SPC570S50 (</p>
+<p>spc570S50</p>
+<p>)</p>
+<p>•</p>
+<p>ST Micro SPC572L64 (</p>
+<p>spc572L64</p>
+<p>)</p>
+<p>•</p>
+<p>ST Micro SPC574K72 (</p>
+<p>spc574K72</p>
+<p>)</p>
+<p>•</p>
+<p>TI AM389x (</p>
+<p>am389x</p>
+<p>)</p>
+<p>•</p>
+<p>Xilinx Zynq (</p>
+<p>cortexa9</p>
+<p>)</p>
+<p><b>Additional New Project Wizard Support</b></p>
+<p>New Project Wizard support for the following board was added in version 5.0.8:</p>
+<p>•</p>
+<p>TI OMAP5432 uEVM ES2.0 GP</p>
+<p>New Project Wizard support for the following boards was added in version 5.0.4:</p>
+<p>•</p>
+<p>Atmel SAMA5 D3x Evaluation Kit</p>
+<p>•</p>
+<p>Freescale iMX6-based targets:</p>
+<p>○</p>
+<p>Freescale Armadillo 2</p>
+<p>○</p>
+<p>Boundary Devices Nitrogen 6X</p>
+<p>○</p>
+<p>Boundary Devices SabreLite</p>
+<p>•</p>
+<p>Freescale Kinetis K20</p>
+<p>•</p>
+<p>Freescale Kinetis K53</p>
+<p>•</p>
+<p>Freescale Kinetis KL25Z</p>
+<p>•</p>
+<p>Freescale MCF53015EVB</p>
+<p>•</p>
+<p>Freescale MPC5744K Demo Board</p>
+<p>•</p>
+<p>Freescale MPC5746R Demo Board</p>
+<p>•</p>
+<p>Freescale MPC5748G Demo Board</p>
+<p>•</p>
+<p>Freescale MPC5777M Demo Board</p>
+<p>•</p>
+<p>Freescale P2041RDB</p>
+<p>•</p>
+<p>Freescale P5020DS</p>
+<p>•</p>
+<p>Freescale P5040DS</p>
+<p>•</p>
+<p>Freescale PX TWR PXD10</p>
+<p><i>9</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Additional New Project Wizard Support</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Freescale PX TWR PXD20</p>
+<p>•</p>
+<p>Freescale PX TWR PXN20</p>
+<p>•</p>
+<p>Freescale PX TWR PXR40</p>
+<p>•</p>
+<p>Freescale PX TWR PXS20</p>
+<p>•</p>
+<p>Freescale PX TWR PXS30</p>
+<p>•</p>
+<p>Freescale TWR-VF65GS10 (Vybrid)</p>
+<p>•</p>
+<p>Fujitsu SK-MB9DF125 (Atlas-L)</p>
+<p>•</p>
+<p>Fujitsu SK-MB9EF120 (Calypso)</p>
+<p>•</p>
+<p>ST SPC56AP60</p>
+<p>•</p>
+<p>ST SPC570S50 EVB</p>
+<p>•</p>
+<p>ST SPC574K72 Demo Board</p>
+<p>•</p>
+<p>ST SPC572L64 EVB</p>
+<p>•</p>
+<p>TI AM335x EVM or BeagleBone</p>
+<p>•</p>
+<p>TI RM42 Hercules Development Kit</p>
+<p>•</p>
+<p>TI RM46 Hercules Development Kit</p>
+<p>•</p>
+<p>TI RM48 Hercules Development Kit</p>
+<p>•</p>
+<p>TI TMS570LS31x Hercules Development Kit</p>
+<p>•</p>
+<p>TI TMS570LS12x Hercules Development Kit</p>
+<p>•</p>
+<p>TI TMS570LS04x Hercules Development Kit</p>
+<p>•</p>
+<p>Xilinx Zynq</p>
+<p>Support for these boards will be installed into Compiler 2012.1 or newer.</p>
+<p><b>New Trace Support</b></p>
+<p>The SuperTrace Probe v3 now supports debugging and tracing the following targets:</p>
+<p>•</p>
+<p>ColdFire v2, v3, and v4 targets (requires MULTI 6 or newer)</p>
+<p>•</p>
+<p>ARM Cortex targets with a Program Trace Macrocell (PTM) interface, such</p>
+<p>as the Cortex-A9 (requires MULTI 6 or newer)</p>
+<p>•</p>
+<p>PowerPC 405</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>10</i></p>
+<p><i>Chapter 2. Version 5.0.8 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Freescale QorIQ e500mc and e5500 targets, over the high-speed serial trace</p>
+<p>(HSST) Aurora interface.</p>
+<p>•</p>
+<p>Serial STPv3 can now collect PTM trace on Cortex-A9 targets via the Serial</p>
+<p>trace interface.</p>
+<p><b>New Support for Target Trace Buffers</b></p>
+<p>This release adds support for embedded trace buffers (ETB) on Cortex-R and</p>
+<p>Cortex-A targets for which trace is already supported. This feature allows these</p>
+<p>targets to be traced with a Green Hills Probe, as well as with a SuperTrace Probe</p>
+<p>v3. See “Supported Devices” in Appendix E, “Supported Devices and Adapter</p>
+<p>Types” in<i> Green Hills Debug Probes User's Guide</i> for information about for more</p>
+<p>information about which targets have a supported ETB.</p>
+<p><b>AXI-AP Support Added</b></p>
+<p>The probe now supports the AXI-AP bus, which is present on certain Cortex devices.</p>
+<p>For more information, see “Target-Specific Special Registers” in Chapter 5, “Probe</p>
+<p>Command Reference” in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>New TraceEverywhere Parallel Trace Interface</b></p>
+<p>This release includes support for a new TraceEverywhere trace pod that supports</p>
+<p>all existing TE5 adapters and allows the SuperTrace Probe v3 to connect to a much</p>
+<p>wider set of targets.</p>
+<p><b>Support Through the High-Speed Serial Trace (HSST) Aurora Interface</b></p>
+<p>As of this release, the SuperTrace Probe v3 supports debugging and tracing using</p>
+<p>the high speed serial trace Aurora interface. This firmware includes support for</p>
+<p>ARM CoreSight trace on Cortex-R4 and PowerPC Nexus, in both 1 lane and 2 lane</p>
+<p>configurations.</p>
+<p><i>11</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New Support for Target Trace Buffers</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Probe Run Mode Support</b></p>
+<p>This release adds support for Probe Run Mode for INTEGRITY, allowing targets</p>
+<p>with live memory access, such as PowerPC and ARM Cortex, to be debugged with</p>
+<p>a run-mode connection via the JTAG interface without the use of a dedicated serial</p>
+<p>or Ethernet port on the target, and without halting the target via JTAG. For more</p>
+<p>information, see “Probe Run Mode” in Chapter 3, “Probe Connection Reference”</p>
+<p>in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>Faster Power Architecture Trace Decoders</b></p>
+<p>This release includes a new PowerPC 440 and Nexus e200 trace decoders that</p>
+<p>increase decompression performance and improve reliability. These decoders require</p>
+<p>MULTI 6 or newer.</p>
+<p><b>New Options for Fujitsu FCR4 Processors</b></p>
+<p>New options have been added to configure the base addresses and size of</p>
+<p>tightly-coupled memory (TCM). For more information, see “ARM” in Chapter 4,</p>
+<p>“Probe Option Reference” in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>Programming Spansion SPI Flash Memory Chips from Renesas RZ/A1</b></p>
+<p>Support has been added for programming Spansion SPI flash memory chips from</p>
+<p>the Renesas RZ/A1. For more information, see “Base Address for Renesas RZ/A1</p>
+<p>Flash Chip” in Appendix D, “Troubleshooting and Usage Notes” in<i> Green Hills</i></p>
+<p><i>Debug Probes User's Guide</i>.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>Changed Use of trace_clock_phase Value</b></p>
+<p>The use of</p>
+<p>trace_clock_phase</p>
+<p>has been updated from previous releases. To</p>
+<p>calculate the new correct phase, use one of the following equations. If your old</p>
+<p>setting was greater than or equal to zero:</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>12</i></p>
+<p><i>Chapter 2. Version 5.0.8 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><i>new_phase</i> =<i> old_phase</i> - 127</p>
+<p>otherwise:</p>
+<p><i>new_phase</i> =<i> old_phase</i> + 128</p>
+<p><b>Changed Default of disable_swt Setting</b></p>
+<p>The default for the<b> disable_swt</b> setting has changed from</p>
+<p>off</p>
+<p>to</p>
+<p>on</p>
+<p>.</p>
+<p><b>Changes to Trace List Options</b></p>
+<p>The<b> Disable trace when trace retrieved due to trigger</b> check box in the trace list</p>
+<p>options affects the<b> Retrieve trace when buffer fills</b> check box, because the<b> Retrieve</b></p>
+<p><b>trace when buffer fills</b> feature uses an internal trigger. If<b> Disable trace when trace</b></p>
+<p><b>retrieved due to trigger</b> is enabled, trace collection is disabled when the buffer</p>
+<p>fills up and trace is retrieved. Trace collection will not be automatically re-enabled</p>
+<p>for the duration of the connection.</p>
+<p>To repeatedly fill and retrieve the buffer, disable the<b> Disable trace when retrieved</b></p>
+<p><b>due to trigger</b> option.</p>
+<p><b>Defaults For jrst_ and rst_ Commands Changed</b></p>
+<p>The following commands used to default to</p>
+<p>300ms</p>
+<p>, but now default to</p>
+<p>10ms</p>
+<p>:</p>
+<p>•</p>
+<p><b>jrst_pulse</b></p>
+<p>•</p>
+<p><b>jrst_settle</b></p>
+<p>•</p>
+<p><b>rst_pulse</b></p>
+<p>•</p>
+<p><b>rst_settle</b></p>
+<p><b>New Probe Configuration Files</b></p>
+<p>Some probe configuration files use the new<b> .ghpcfg</b> extension. They are similar to</p>
+<p><b>.cfg</b> files, but are not yet supported in the graphical probe administrator (<b>gpadmin</b>).</p>
+<p>To load a configuration file with<b> mpadmin</b>, use the following command:</p>
+<p><i>13</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changed Default of disable_swt Setting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>mpadmin -cfgload<i> probe file.ghpcfg</i></p>
+<p><b>MULTI 4 No Longer Supported</b></p>
+<p>The 5.0.8 version of the probe support software no longer supports MULTI 4. If</p>
+<p>you attempt to install the software on MULTI 4, the 4.4.2 version of the probe</p>
+<p>firmware and support software will be installed instead.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>14</i></p>
+<p><i>Chapter 2. Version 5.0.8 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 3</b></p>
+<p><b>Version 4.4.4 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 4.4.</p>
+<p><b>New Features</b></p>
+<p><b>New Supported Targets</b></p>
+<p>•</p>
+<p>Intel Atom (Pineview) (</p>
+<p>atom_pv</p>
+<p>)</p>
+<p>•</p>
+<p>Intel Atom (Tunnel Creek) (</p>
+<p>atom_pv</p>
+<p>)</p>
+<p>•</p>
+<p>Intel Sandy Bridge (</p>
+<p>sandy_bridge</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale i.MX6 (</p>
+<p>mx6</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Qorivva MPC560xE (</p>
+<p>ppc560xE</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Qorivva MPC564xB (</p>
+<p>ppc564xB</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Qorivva MPC564xC (</p>
+<p>ppc564xC</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Qorivva MPC567xR (</p>
+<p>ppc567xR</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Qorivva MPC5746M (</p>
+<p>ppc5746M</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Qorivva MPC5744P (</p>
+<p>ppc5744P</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale QorIQ P3041 (</p>
+<p>ppcP3041</p>
+<p>)</p>
+<p><b>Additional New Project Wizard Support</b></p>
+<p>Unless otherwise noted, the following items require MULTI 5.2.4 or newer.</p>
+<p>•</p>
+<p>Freescale Kinetis K70 (requires MULTI 6.1 or newer)</p>
+<p>•</p>
+<p>Freescale MPC560x Demo Board (MPC560xE)</p>
+<p>•</p>
+<p>Freescale MPC564x Demo Board (MPC564xB)</p>
+<p>•</p>
+<p>Freescale MPC564x Demo Board (MPC564xC)</p>
+<p>•</p>
+<p>Freescale MPC567x Demo Board (MPC567xR)</p>
+<p>•</p>
+<p>Freescale MPC5746M Demo Board (MPC5746M) (requires Green Hills</p>
+<p>Compiler 2012.5.4 or newer)</p>
+<p>•</p>
+<p>Freescale MPC5744P Demo Board (MPC5744P) (requires Green Hills Compiler</p>
+<p>2012.5.4 or newer)</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>16</i></p>
+<p><i>Chapter 3. Version 4.4.4 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Freescale P3041DS</p>
+<p>•</p>
+<p>STMicro STM3240G-EVAL (STM32F407) (requires MULTI 6.1 or newer)</p>
+<p><b>Support for Reading and Writing MPU Region Descriptors on Freescale</b></p>
+<p><b>MPC57xx</b></p>
+<p>You can now use the<b> tlbr</b> and<b> tlbw</b> commands to read and write MPU region</p>
+<p>descriptors on Freescale MPC57xx targets. For example, to limit the first 64KB of</p>
+<p>SRAM so that it can only be executed in supervisor mode, use:</p>
+<p>tlbw 0 0x40000000 Inst 0x4000ffff V,Sxsr,W</p>
+<p>To make sure that it is set correctly, use:</p>
+<p>tlbr 0</p>
+<p>or, if you prefer to view all of the MPU entries in a table:</p>
+<p>tlbr *</p>
+<p>The probe's representation of the MPU index is as follows:</p>
+<p>MPU</p>
+<p>Probe</p>
+<p>instruction-only entries</p>
+<p>0-5</p>
+<p>0-5</p>
+<p>data-only entries</p>
+<p>0-11</p>
+<p>6-17</p>
+<p>shared entries</p>
+<p>0-5</p>
+<p>18-23</p>
+<p><b>Support for Cortex-M4F VFP</b></p>
+<p>This release adds support for the Cortex-M4F's VFP floating-point unit. To specify</p>
+<p>that your Cortex-M has a VFP, suffix the target type with</p>
+<p>.vfp</p>
+<p>when using the<b> set</b></p>
+<p><b>target</b> command.</p>
+<p><b>Parallel Trace Decoding for ETMv3 Targets</b></p>
+<p>This release adds support for ETMv3 parallel trace decoding, which increases trace</p>
+<p>processing performance for ETMv3 targets. This feature requires MULTI 6.1 or</p>
+<p>newer.</p>
+<p><i>17</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Support for Reading and Writing MPU Region Descriptors on Freescale MPC57xx</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4</b></p>
+<p><b>Version 4.2.2 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 4.2.</p>
+<p><b>New Features</b></p>
+<p><b>SWD Debug Interface Support</b></p>
+<p>This release adds support for the SWD debug interface. For more information, see</p>
+<p>the documentation about the<b> use_swd</b> option in “ARM” in Chapter 4, “Probe Option</p>
+<p>Reference” in<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>SuperTrace Probe v3 Debug and Trace Support for Additional Interfaces</b></p>
+<p>The SuperTrace Probe v3 now supports debugging and tracing the following targets:</p>
+<p>•</p>
+<p>ARM targets with ETM v3 and CoreSight debug interface</p>
+<p>•</p>
+<p>PowerPC 55xx and 56xx targets with Nexus debug interface</p>
+<p>For a list of supported targets, see “Supported Devices” in Appendix E, “Supported</p>
+<p>Devices and Adapter Types” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>BE8 Support for ARM11 and Cortex-R4</b></p>
+<p>The probe now supports BE8 mode for ARM11, Cortex-R4, and the newly-added</p>
+<p>PJ4 and Cortex-A9 targets. For more information, see the documentation about the</p>
+<p><b>be_mode</b> option in Chapter 4, “Probe Option Reference” in the<i> Green Hills Debug</i></p>
+<p><i>Probes User's Guide</i>.</p>
+<p><b>New Supported Targets for v3 Probes</b></p>
+<p>The Green Hills Probe and SuperTrace Probe v3 now support run control for the</p>
+<p>following targets:</p>
+<p>•</p>
+<p>Cortex-A9 (</p>
+<p>cortexa9</p>
+<p>)</p>
+<p>•</p>
+<p>OMAP 4 (</p>
+<p>omap4</p>
+<p>)</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>20</i></p>
+<p><i>Chapter 4. Version 4.2.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>ARM11MP (</p>
+<p>arm11mp</p>
+<p>)</p>
+<p>•</p>
+<p>Marvell PJ4 (</p>
+<p>pj4_v6</p>
+<p>,</p>
+<p>pj4_v7</p>
+<p>)</p>
+<p>•</p>
+<p>Cortex-M4 (</p>
+<p>cortexm4</p>
+<p>)</p>
+<p>•</p>
+<p>Freescale Kinetis (</p>
+<p>kinetis</p>
+<p>)</p>
+<p>•</p>
+<p>Cortex-M0 (</p>
+<p>cortexm0</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 564xA (</p>
+<p>ppc564xA</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 564xL (</p>
+<p>ppc564xL_LSM</p>
+<p>,</p>
+<p>ppc564xL_DPM</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 564xS (</p>
+<p>ppc564xS</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 567xK (</p>
+<p>ppc567xK_LSM</p>
+<p>,</p>
+<p>ppc567xK_DPM</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 440GR (</p>
+<p>ppc440gr</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 440EPx (</p>
+<p>ppc440epx</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 440GRx (</p>
+<p>ppc440grx</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 440SPe (</p>
+<p>ppc440spe</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 460GT (</p>
+<p>ppc460gt</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 460EX (</p>
+<p>ppc460ex</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 460GTx (</p>
+<p>ppc460gtx</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 460SX (</p>
+<p>ppc460sx</p>
+<p>)</p>
+<p>•</p>
+<p>Applied Micro APM82181 (</p>
+<p>apm82181</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 405EX (</p>
+<p>ppc405ex</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 405EZ (</p>
+<p>ppc405ez</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC 405EXr (</p>
+<p>ppc405exr</p>
+<p>)</p>
+<p>•</p>
+<p>QorIQ P1020 (</p>
+<p>ppcP1020</p>
+<p>)</p>
+<p>•</p>
+<p>QorIQ P1011 (</p>
+<p>ppcP1011</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC MPC8308 (</p>
+<p>ppc8308</p>
+<p>)</p>
+<p>•</p>
+<p>PowerPC MPC5125 (</p>
+<p>ppc5125</p>
+<p>)</p>
+<p>•</p>
+<p>ColdFire 5441x (</p>
+<p>cf54418</p>
+<p>)</p>
+<p>•</p>
+<p>Intel Atom (</p>
+<p>atom</p>
+<p>)</p>
+<p>•</p>
+<p>Intel Core 2 (</p>
+<p>core2</p>
+<p>)</p>
+<p>•</p>
+<p>Intel Nehalem (</p>
+<p>nehalem</p>
+<p>)</p>
+<p><i>21</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New Supported Targets for v3 Probes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Note</b></p>
+<p>The</p>
+<p>atom</p>
+<p>setting is for any Bonnell or Silverthorne device. Processors</p>
+<p>based on Pineview, Tunnel Creek, or later are not currently supported.</p>
+<p>The</p>
+<p>nehalem</p>
+<p>setting is for any Core i3, i5, i7, or Xeon device based on</p>
+<p>the Nehalem architecture. Processors based on Sandy Bridge or later are</p>
+<p>not currently supported.</p>
+<p>If you require support for a newer Atom, Core i3, i5, i7, or Xeon</p>
+<p>processor, contact Green Hills support.</p>
+<p>For a list of supported targets, see “Supported Devices” in Appendix E, “Supported</p>
+<p>Devices and Adapter Types” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>Serial Port Forwarding Now Available</b></p>
+<p>The Green Hills Probe and SuperTrace Probe v3 now support the<b> pterminal</b></p>
+<p>command, which allows you to connect your target to your probe using the probe's</p>
+<p>serial port, and initiate a serial terminal session from your host machine over</p>
+<p>Ethernet.</p>
+<p><b>Removed Features</b></p>
+<p><b>Diagnostics Pane of Probe Administrator is Not Available in MULTI 6</b></p>
+<p>The<b> Diagnostics</b> pane of the<b> Probe Administrator</b> will no longer be available after</p>
+<p>installing MULTI 6 or newer. This pane will continue to be available for MULTI</p>
+<p>5.x.</p>
+<p><b>New Online Probe Manuals No Longer Available for MULTI 4.x on</b></p>
+<p><b>Linux/Solaris</b></p>
+<p>MULTI 4.x on Linux/Solaris uses a legacy help viewer that does not support newer</p>
+<p>manuals. If you have MULTI 4.x on Linux/Solaris, use the PDF documentation</p>
+<p>instead of the online help.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>22</i></p>
+<p><i>Chapter 4. Version 4.2.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 5</b></p>
+<p><b>Version 4.0.2 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Changes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 4.0.2.</p>
+<p><b>New Features</b></p>
+<p><b>New Supported Targets for v3 Probes</b></p>
+<p>The Green Hills Probe and SuperTrace Probe v3 now support run control for the</p>
+<p>following targets:</p>
+<p>•</p>
+<p>QorIQ P4040 (</p>
+<p>ppcP4040</p>
+<p>)</p>
+<p>•</p>
+<p>QorIQ P4080 (</p>
+<p>ppcP4080</p>
+<p>) — Revision 1.x silicon (</p>
+<p>svr</p>
+<p>=</p>
+<p>0x82080010</p>
+<p>) is not</p>
+<p>supported.</p>
+<p>For more information about viewing registers on the P4080, see “Viewing QorIQ</p>
+<p>P4080 or MPC567xF Peripheral Registers in MULTI 5 Requires Configuration File</p>
+<p>Changes” on page 61.</p>
+<p>For a list of supported targets, see “Supported Devices” in Appendix E, “Supported</p>
+<p>Devices and Adapter Types” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>SuperTrace Probe v3</b></p>
+<p>Green Hills Probe firmware 4.0.2 adds support for the new SuperTrace Probe v3</p>
+<p>hardware. This new model features:</p>
+<p>•</p>
+<p>RoHS compliance</p>
+<p>•</p>
+<p>A 4 GB or larger trace buffer</p>
+<p>•</p>
+<p>External Trace Trigger I/O</p>
+<p>•</p>
+<p>USB 2.0</p>
+<p>•</p>
+<p>Gigabit Ethernet</p>
+<p>For a list of supported targets, see “Supported Devices” in Appendix E, “Supported</p>
+<p>Devices and Adapter Types” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>24</i></p>
+<p><i>Chapter 5. Version 4.0.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>selftest Command</b></p>
+<p>The new<b> selftest</b> command runs several diagnostic tests on the probe's trace</p>
+<p>components. It is available on the SuperTrace Probe v3. For more information, see</p>
+<p>the Green Hills Debug Probes User's Guide.</p>
+<p><b>Changes to Existing Features</b></p>
+<p><b>Changes to Timestamps</b></p>
+<p>The SuperTrace Probe v3 probe uses a new method to communicate timestamp data</p>
+<p>to<b> mpserv</b>. To collect timestamp data in MULTI from one of these probes, you</p>
+<p>must update your MULTI installation using the probe installer that ships with this</p>
+<p>release.</p>
+<p><b>SuperTrace Probe v3 Does Not Have GPIO Pins</b></p>
+<p>The SuperTrace Probe v3 does not have GPIO pins and does not support the<b> iop</b></p>
+<p>command.</p>
+<p><i>25</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>selftest Command</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 6</b></p>
+<p><b>Version 3.8.2 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Changes and Fixes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Deprecated and Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 3.8.2.</p>
+<p><b>New Features</b></p>
+<p>This section lists new features available in version 3.8.2.</p>
+<p><b>Additional PowerPC Support</b></p>
+<p><b>New PowerPC Processor Support</b></p>
+<p><b>Target String</b></p>
+<p><b>Supported Processor</b></p>
+<p>ppc8536</p>
+<p>PowerPC 8536</p>
+<p>ppc8569</p>
+<p>PowerPC 8569</p>
+<p>ppc560xB</p>
+<p>PowerPC 560xB</p>
+<p>ppc560xC</p>
+<p>PowerPC 560xC</p>
+<p>ppc560xP</p>
+<p>PowerPC 560xP</p>
+<p>ppc560xS</p>
+<p>PowerPC 560xS</p>
+<p>ppc563xM</p>
+<p>PowerPC 563xM</p>
+<p>ppc5668</p>
+<p>PowerPC 5668G/E</p>
+<p>ppc5674</p>
+<p>PowerPC 567xF</p>
+<p>ppcP2020</p>
+<p>QorIQ P2020</p>
+<p><b>New PowerPC MULTI Project Wizard Entries</b></p>
+<p>The following PowerPC boards are now available for stand-alone projects in the</p>
+<p>MULTI<b> Project Wizard</b>:</p>
+<p>•</p>
+<p>Freescale MPC8536DS</p>
+<p>•</p>
+<p>Freescale MPC8569-MDS-PB</p>
+<p>•</p>
+<p>Freescale P2020DS</p>
+<p>Entries for newly-supported PowerPC 56xx cores will be available in a future</p>
+<p>release.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>28</i></p>
+<p><i>Chapter 6. Version 3.8.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>TraceEverywhere Cabling System</b></p>
+<p>New probe shipments for some architectures contain TraceEverywhere cabling,</p>
+<p>designed to provide longer cables with better reliability than the legacy cabling</p>
+<p>system. Over time, all architectures will be supported over a TraceEverywhere</p>
+<p>connection.</p>
+<p><b>Changes and Fixes to Existing Features</b></p>
+<p>This section lists changes and fixes to existing features in version 3.8.2.</p>
+<p><b>Updated USB Driver</b></p>
+<p>The 3.8.2 firmware ships with an updated version of the probe USB driver that</p>
+<p>supports additional operating systems, is easier to install, and is more reliable. This</p>
+<p>driver supports the following operating systems:</p>
+<p>•</p>
+<p>Windows XP (32-bit)</p>
+<p>•</p>
+<p>Windows Vista (32- and 64-bit)</p>
+<p>•</p>
+<p>Windows 7 (32- and 64-bit)</p>
+<p>This new driver is not backwards compatible with earlier versions of some probe</p>
+<p>software components. These components are updated when you perform a standard</p>
+<p>install from the probe CD that contains this firmware release.</p>
+<p>If you are using Windows 2000, the installer installs the older version of the USB</p>
+<p>driver.</p>
+<p><b>Probe Now Polls for Adapter and Power Status</b></p>
+<p>If you have configured the probe to detect your target adapter automatically using</p>
+<p>set adapter auto</p>
+<p>, the probe now updates the setting whenever you plug in or</p>
+<p>unplug an adapter. It is no longer necessary to type</p>
+<p>set adapter auto</p>
+<p>or cycle</p>
+<p>the probe's outputs in order to refresh this setting. Removing an adapter now causes</p>
+<p>the probe to report an error. The probe also polls to check for the target's power</p>
+<p>status. The<b> checker</b> setting does not affect either of these polling behaviors.</p>
+<p><i>29</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>TraceEverywhere Cabling System</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Deprecated and Removed Features</b></p>
+<p>This section lists features that have been deprecated or removed and are no longer</p>
+<p>supported as of version 3.8.2.</p>
+<p><b>IDT32 Processors Are No Longer Supported</b></p>
+<p>The IDT 32334, IDT 32335, and IDT 32438 processors are no longer supported.</p>
+<p>The last firmware to support these processors was version 1.4.1.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>30</i></p>
+<p><i>Chapter 6. Version 3.8.2 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 7</b></p>
+<p><b>Version 3.6.4 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>Changes and Fixes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This document covers changes to the Green Hills Probe firmware that were added</p>
+<p>for version 3.6.4.</p>
+<p><b>New Features</b></p>
+<p>This section lists new features available in version 3.6.4.</p>
+<p><b>New ARM Features</b></p>
+<p><b>Support for New ARM Processors</b></p>
+<p>The following ARM processors are now supported:</p>
+<p><b>Target String</b></p>
+<p><b>Supported Processor</b></p>
+<p>cortexa8</p>
+<p>ARM Cortex-A8</p>
+<p>cortexm3</p>
+<p>ARM Cortex-M3</p>
+<p>imx51_t02</p>
+<p>Freescale i.MX51 Revision T02</p>
+<p>icepick(3:omap3)</p>
+<p>TI OMAP3</p>
+<p>omap2430</p>
+<p>TI OMAP2430</p>
+<p>In addition to supporting these new processors, this release improves support for</p>
+<p>ARM11, ARM920, and PXA320 processors.</p>
+<p><b>New MULTI Project Wizard ARM Board Entries</b></p>
+<p>The following ARM boards are now available for stand-alone projects in the MULTI</p>
+<p><b>Project Wizard</b>:</p>
+<p><b>Notes</b></p>
+<p><b>Board Name</b></p>
+<p>ARM Evaluation Baseboard Cortex-M3</p>
+<p>Freescale i.MX51 Boards (Babbage and Elvis)</p>
+<p>Logic PD OMAP 3430 Zoom SDK</p>
+<p>TI OMAP 3430 EVM</p>
+<p>TI BeagleBoard OMAP 3530</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>32</i></p>
+<p><i>Chapter 7. Version 3.6.4 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Notes</b></p>
+<p><b>Board Name</b></p>
+<p>Full stand-alone MULTI flash</p>
+<p>support</p>
+<p>ST STM32F10x Evaluation Board</p>
+<p><i>33</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New ARM Features</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Changes and Fixes to Existing Features</b></p>
+<p>This section lists changes and fixes to existing features in version 3.6.4.</p>
+<p><b>General Changed Features</b></p>
+<p><b>Additional Commands Supported by gpadmin and mpserv</b></p>
+<p>The<b> support</b> and<b> xswitch</b> commands are now available in the<b> Graphical Probe</b></p>
+<p><b>Administrator</b> (<b>gpadmin</b>) and<b> mpserv</b>.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>34</i></p>
+<p><i>Chapter 7. Version 3.6.4 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8</b></p>
+<p><b>Version 3.4.1 Release Notes</b></p>
+<p><b>Contents</b></p>
+<p>New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>Changes and Fixes to Existing Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Features</b></p>
+<p>This section lists new features available in version 3.4.1.</p>
+<p><b>General New Features</b></p>
+<p><b>New Probe Commands</b></p>
+<p>The following commands are now available:</p>
+<p><b>Use</b></p>
+<p><b>Command</b></p>
+<p>Prints information useful for Green Hills Support.</p>
+<p><b>support</b></p>
+<p>Sets or modifies internal xswitches. Do not use this command unless</p>
+<p>instructed to do so by Green Hills Support.</p>
+<p><b>xswitch</b></p>
+<p>For more information about these commands, see Chapter 5, “Probe Command</p>
+<p>Reference” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>36</i></p>
+<p><i>Chapter 8. Version 3.4.1 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New ColdFire Features</b></p>
+<p><b>Support for New ColdFire Processors</b></p>
+<p>The following ColdFire processors are now supported:</p>
+<p><b>Target String</b></p>
+<p><b>Supported Processor</b></p>
+<p>cf5373</p>
+<p>MCF537x family (5372, 5372L, 53721, 5373 and 5373L)</p>
+<p>cf52223</p>
+<p>MCF5222x family (52221, 52223)</p>
+<p>cf52259</p>
+<p>MCF5225x family (52252, 52254, 52255, 52256, 52258,</p>
+<p>52259)</p>
+<p>cf52277</p>
+<p>MCF5227x family (52274, 52277)</p>
+<p>cf54455</p>
+<p>MCF5445x family (54450, 54451, 54452, 54453, 54454,</p>
+<p>54455)</p>
+<p><b>New MULTI Project Wizard ColdFire Board Entries</b></p>
+<p>The following ColdFire boards are now available for stand-alone projects in the</p>
+<p>MULTI<b> Project Wizard</b>:</p>
+<p><b>Notes</b></p>
+<p><b>Board Name</b></p>
+<p>Freescale ColdFire M5373EVB</p>
+<p>Freescale ColdFire M52223EVB</p>
+<p>Freescale ColdFire M52259EVB</p>
+<p>Freescale ColdFire M52277EVB</p>
+<p>See<b> board_info.txt</b> in your</p>
+<p>target resources project</p>
+<p>Freescale ColdFire M54455EVB</p>
+<p><i>37</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>New ColdFire Features</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New PowerPC Features</b></p>
+<p><b>Support for New PowerPC Processors</b></p>
+<p>The following PowerPC processors are now supported:</p>
+<p><b>Target String</b></p>
+<p><b>Supported Processor</b></p>
+<p>ppc8610</p>
+<p>PowerPC 8610</p>
+<p>ppc8641</p>
+<p>PowerPC 8641</p>
+<p>ppc8641D</p>
+<p>PowerPC 8641D</p>
+<p><b>New MULTI Project Wizard PowerPC Board Entries</b></p>
+<p>The following PowerPC boards are now available for stand-alone projects in the</p>
+<p>MULTI<b> Project Wizard</b>:</p>
+<p><b>Notes</b></p>
+<p><b>Board Name</b></p>
+<p>Also known as Lyra</p>
+<p>Freescale HPCD 8610</p>
+<p>Also known as ArgoNavis</p>
+<p>Freescale HPCnet (8641)</p>
+<p><b>New sync_cores Option for PowerPC 8641D</b></p>
+<p>The<b> sync_cores</b> option is now available for PowerPC 8641D targets. This option</p>
+<p>allows you to enable synchronous debugging, for use when debugging a program</p>
+<p>that shares memory between two cores. For more information, see the documentation</p>
+<p>for this option in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>38</i></p>
+<p><i>Chapter 8. Version 3.4.1 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Changes and Fixes to Existing Features</b></p>
+<p>This section lists changes and fixes to existing features in version 3.4.1.</p>
+<p><b>General Changed Features</b></p>
+<p><b>Changes to rst_tap_then_sys</b></p>
+<p>Previous Green Hills Probe firmware releases included an option called</p>
+<p><b>rst_tap_then_sys</b>, which controlled the waveforms generated on the JTAG TAP</p>
+<p>and CPU reset lines when the target was reset through the probe. This option has</p>
+<p>been enhanced, and renamed to<b> target_reset_pin</b>. If you set this option on your</p>
+<p>probe, consult the following table to determine which value to use for</p>
+<p><b>target_reset_pin</b>.</p>
+<p><b>Corresponding target_reset_pin Setting</b></p>
+<p><b>rst_tap_then_sys Setting</b></p>
+<p>independent</p>
+<p>off</p>
+<p>freezes_tap</p>
+<p>or</p>
+<p>resets_tap</p>
+<p>on</p>
+<p>For more information, see “Setting Reset Pin and JTAG TAP Interaction” in Chapter</p>
+<p>4, “Probe Option Reference” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>ColdFire Changed Features</b></p>
+<p><b>Improvements to the Detect Command</b></p>
+<p>The<b> detect</b> command now detects all supported ColdFire processors, except for</p>
+<p>cf5206e</p>
+<p>and</p>
+<p>cf5307</p>
+<p>. If you are using one of these processors, set your target</p>
+<p>string manually.</p>
+<p><i>39</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Changes and Fixes to Existing Features</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>MIPS Changed Features</b></p>
+<p><b>EJTAG 2.5 Adapter Power Detection Fixed</b></p>
+<p>The EJTAG 2.5 adapters have been modified to stop reporting erroneous power</p>
+<p>detection when the adapters were not plugged into a target.</p>
+<p><b>EJTAG 2.5 Targets Ignore rst_pulse and rst_settle</b></p>
+<p>For EJTAG 2.5 targets, the Green Hills Probe now implements a reset handshaking</p>
+<p>sequence with the target. Consequently, the<b> rst_pulse</b> and<b> rst_settle</b> times are</p>
+<p>ignored. Subsequent releases will give the option of either method.</p>
+<p><b>Detecting External Reset on EJTAG 2.5 Targets</b></p>
+<p>For EJTAG 2.5 targets, the Green Hills Probe now detects when an external (to the</p>
+<p>probe) reset has occurred by monitoring the</p>
+<p>ROCC</p>
+<p>bit of the</p>
+<p>ECR</p>
+<p>debug register.</p>
+<p><b>Changes to the rr * Command</b></p>
+<p>For MIPS32 and MIPS64 cores, the registers displayed using the<b> rr *</b> command</p>
+<p>are now limited to those that are available on target variant under test.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>40</i></p>
+<p><i>Chapter 8. Version 3.4.1 Release Notes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>PowerPC Changed Features</b></p>
+<p><b>Probe No Longer Sets MSR[SPE] After Target Reset</b></p>
+<p>For PowerPC 55xx targets, the probe no longer sets the</p>
+<p>MSR[SPE]</p>
+<p>bit after target</p>
+<p>reset. If your application requires this bit to be set, you may set it in your setup</p>
+<p>script or in the appropriate target initialization code.</p>
+<p><b>eTPU Is Available for Debugging</b></p>
+<p>For PowerPC 55xx processors that have an eTPU, the probe now makes the eTPU</p>
+<p>available for debug as an additional core. For example, if debugging an MPC5553,</p>
+<p>the 5553 will be core 0, and its eTPU will be available as core 1.</p>
+<p><b>MSR[SPE] Bit Not Set During Reset Sequence</b></p>
+<p>Firmware previous to version 3.0.0 supporting MPC85xx processors set the</p>
+<p>MSR[SPE]</p>
+<p>bit as part of the reset sequence. In firmware 3.0.0 and higher, that no</p>
+<p>longer happens, and the</p>
+<p>MSR[SPE]</p>
+<p>bit remains 0 at reset. If your application requires</p>
+<p>the</p>
+<p>MSR[SPE]</p>
+<p>bit to be set, you may have to set it in your setup script, or set it in</p>
+<p>your initialization code, for proper operation. Also note that the probe's<b> vc</b> diagnostic</p>
+<p>tests require the</p>
+<p>MSR[SPE]</p>
+<p>bit to be set and will not pass otherwise.</p>
+<p><i>41</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>PowerPC Changed Features</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 9</b></p>
+<p><b>Known Issues and</b></p>
+<p><b>Limitations</b></p>
+<p><b>Contents</b></p>
+<p>General Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>ARM Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>ColdFire Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>MIPS Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>Power Architecture Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>60</p>
+<p>x86 Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This chapter lists known issues and limitations with the current probe release.</p>
+<p><b>General Known Issues</b></p>
+<p><b>USB Driver Installation Fails on Windows Vista</b></p>
+<p>If USB driver installation fails on Windows Vista and you see a dialog box with</p>
+<p>the following message:</p>
+<p>Windows encountered a problem installing the driver software for your device</p>
+<p>1.</p>
+<p>Reboot your computer.</p>
+<p>2.</p>
+<p>Run<i><b> install_directory</i>/driver/drivertool.exe</b>.</p>
+<p>3.</p>
+<p>Click<b> Install Driver</b>.</p>
+<p>The second installation should work without any errors.</p>
+<p><b>Cannot Downgrade Firmware On Some Probes</b></p>
+<p>Due to a manufacturing change, probes with serial numbers 15000 - 15299 and</p>
+<p>probes with serial numbers greater than 15500 require firmware 3.6.4 or higher.</p>
+<p>The firmware on these probes cannot be downgraded to an earlier version.</p>
+<p><b>MULTI 4/5 gpatch Does Not Roll Back On Linux/Solaris</b></p>
+<p>On Linux/Solaris with MULTI 4 or 5,<b> gpatch</b> installing an update provides a new</p>
+<p>version of<b> gpatch</b> and uninstalling does not return<b> gpatch</b> to its original version.</p>
+<p><b>Installation on MULTI 4 Clears Licenses</b></p>
+<p>Installing the Green Hills Probe CD over a MULTI 4 installation will overwrite the</p>
+<p><b>mpserv.exe</b> (Windows) or<b> mpserv</b> (Linux and Solaris) executable. Because licenses</p>
+<p>in MULTI 4 are stored in the executable, you must re-install licenses after installing</p>
+<p>the Green Hills Probe CD over a previously licensed MULTI 4 installation.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>44</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Installation Disables ecomarm2 License</b></p>
+<p>If, after installing your probe software,<b> ecomarm2.exe</b> cannot obtain a license:</p>
+<p>1.</p>
+<p>Navigate to your MULTI install directory.</p>
+<p>2.</p>
+<p>Rename<b> ecomarm.exe</b> to<b> ecomarm.old</b>.</p>
+<p>3.</p>
+<p>Rename<b> ecomarm2.exe</b> to<b> ecomarm.exe</b>.</p>
+<p>4.</p>
+<p>Run</p>
+<p>update.exe -i -f<i> filename</i>.lck -na ecomarm</p>
+<p>.</p>
+<p>5.</p>
+<p>Rename<b> ecomarm.exe</b> back to<b> ecomarm2.exe</b>.</p>
+<p>6.</p>
+<p>Rename<b> ecomarm.old</b> back to<b> ecomarm.exe</b>.</p>
+<p><b>Connecting to Multiple USB Probes via the Probe Administrator</b></p>
+<p>On a system that has more than one Green Hills Probe or SuperTrace Probe</p>
+<p>connected via USB, it is not possible to specify which one to connect to via the</p>
+<p><b>Add New Probe</b> menu option in the Probe Administrator. The first one will always</p>
+<p>be chosen.</p>
+<p>To connect to additional probes connected via USB, run the Probe Administrator</p>
+<p>from the command line:</p>
+<p>gpadmin -usb<i> index</i></p>
+<p>where<i> index</i> is the numerical index of the probe you want to connect to, beginning</p>
+<p>with 1.</p>
+<p><b>Setup Script Fails when Running Diagnostics in the Probe Administrator</b></p>
+<p>If you run diagnostics using the<b> diagnostics</b> pane in the Graphical Probe</p>
+<p>Administrator while your target is running, your setup script may fail. To work</p>
+<p>around this problem, halt the target before running diagnostics.</p>
+<p><b>Issues Interleaving MULTI Script and mpserv Commands</b></p>
+<p>In certain situations, if you issue a run-control command to<b> mpserv</b> after a MULTI</p>
+<p>run-control command, MULTI may not report the correct status of your target. This</p>
+<p>may cause a subsequent command to fail.</p>
+<p><i>45</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Installation Disables ecomarm2 License</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>For example, if you issue the following commands in a board setup (<b>.mbs</b>) script</p>
+<p>or the MULTI Debugger's<b> cmd</b> pane:</p>
+<p>&gt;halt</p>
+<p>&gt;target run</p>
+<p>and then hit a breakpoint,</p>
+<p>target tc</p>
+<p>may not cause the target to run, even in cases</p>
+<p>where the probe reports the target as halted. To work around this scenario, do not</p>
+<p>interleave MULTI script commands with debug server run-control commands. This</p>
+<p>issue is under investigation and will be addressed in a future release.</p>
+<p><b>target tc and target th Behavior Changes when Halt Cores Synchronously</b></p>
+<p><b>is Selected</b></p>
+<p>When the<b> Halt Cores Synchronously</b> mpserv connection option is selected, the</p>
+<p>behavior of the<b> target tc</b> and<b> target th</b> commands changes.</p>
+<p>•</p>
+<p><b>target tc</b> changes a core's status from</p>
+<p>Stopped</p>
+<p>to</p>
+<p>Paused</p>
+<p>. If all other cores</p>
+<p>are</p>
+<p>Paused</p>
+<p>, MULTI runs all cores.</p>
+<p>•</p>
+<p>Similarly,<b> target th</b> changes a core's status to</p>
+<p>Stopped</p>
+<p>. If any other cores were</p>
+<p>running, MULTI changes their status to</p>
+<p>Paused</p>
+<p>.</p>
+<p>You may need to modify your setup script if it contains<b> target tc</b> or<b> target th</b></p>
+<p>commands that are directed to specific cores via the<b> t</b> command (e.g.,</p>
+<p>target t</p>
+<p>3..4 th</p>
+<p>). Instead of using<b> target tc</b> or<b> target th</b>, use</p>
+<p>groupaction -r @all</p>
+<p>to resume all cores and</p>
+<p>groupaction -h @all</p>
+<p>to halt all cores.</p>
+<p><b>Break on Trigger Only Halts Target If Target is Not Already Halted</b></p>
+<p>If you use the target-specific<b> Break on Trigger</b> trace option, the probe does not</p>
+<p>halt the target if the target is already halted when the trigger is hit. On ETM targets,</p>
+<p>if you have enabled this setting, have an execute trigger set on an address range,</p>
+<p>and are halted in that range, the trigger occurs immediately; the probe does not halt</p>
+<p>the target after you run.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>46</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Missing Documentation for Exceptions in the Set Triggers Window</b></p>
+<p>The documentation for the<b> Set Triggers</b> window is missing information for a few</p>
+<p>items:</p>
+<p>•</p>
+<p>The<b> Exception</b> option makes the trigger active when the specified exception</p>
+<p>is taken. It is only available on ARM ETM targets.</p>
+<p>•</p>
+<p>The exception type descriptions that end in<b> (High)</b> are intended for applications</p>
+<p>that use high exception vectors (starting at</p>
+<p>0xffff0000</p>
+<p>).</p>
+<p><b>Setting Options in the Trace Options Window Has No Effect When Data</b></p>
+<p><b>Trace is Disabled</b></p>
+<p>When<b> Data Trace</b> is not enabled in the<b> Trace Triggers</b> window, MULTI will still</p>
+<p>allow you to select different<b> Data Capture</b> modes in the<b> Trace Options</b> window,</p>
+<p>but trace data will not be collected.</p>
+<p><b>Slow Trace Decompression on Windows While the PathAnalyzer or Trace</b></p>
+<p><b>List is Open</b></p>
+<p>On Windows hosts running MULTI 5 or earlier, trace data is decompressed very</p>
+<p>slowly while the<b> PathAnalyzer</b> or<b> Trace List</b> is open. While you can use these</p>
+<p>windows to control trace, start trace retrieval, or check on the decompression process,</p>
+<p>if your trace buffer is large (&gt; 100 MB) you should close them when they are not</p>
+<p>in use. You can reopen the windows after the decompression process is complete.</p>
+<p><b>Gap Between Timestamps in the Trace List or Path Analyzer</b></p>
+<p>When the host buffer is full, MULTI attempts to discard unnecessary trace data.</p>
+<p>This behavior may cause side effects as buffers are discarded over time, such as a</p>
+<p>gap when viewing timestamps in the<b> PathAnalyzer</b> or<b> Trace List</b>.</p>
+<p><b>Trace Data Lost when Trace is Disabled Immediately After Retrieval</b></p>
+<p>When controlling trace operations through a MULTI script, trace data collected</p>
+<p>while the target was running may be lost due to a race condition when trace is turned</p>
+<p>off, trace data retrieved, trace is turned on, and the target is run.</p>
+<p><i>47</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Missing Documentation for Exceptions in the Set Triggers Window</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Because it is a race condition, this issue only occurs when these commands are run</p>
+<p>consecutively in a setup script; it does not occur when you execute these commands</p>
+<p>manually. To work around this issue, insert a</p>
+<p>wait -time 1000</p>
+<p>command between</p>
+<p>trace retrieval and turning trace on.</p>
+<p><b>AddressSpaces Not Traced by Default After Disabling Trace</b></p>
+<p>When you right-click any AddressSpace in the Debugger's target list and clear the</p>
+<p><b>Trace</b> menu item, subsequently created AddressSpaces are not traced by default.</p>
+<p>To work around this issue, manually activate trace for new AddressSpaces.</p>
+<p><b>TimeMachine Demo Requires Specific Trace Options</b></p>
+<p>In order to run the TimeMachine demo, you must select the following options in</p>
+<p>the<b> Trace Options</b> window:</p>
+<p>•</p>
+<p><b>Automatically enable trace collection</b></p>
+<p>•</p>
+<p><b>Retrieve trace when target halts</b></p>
+<p>•</p>
+<p><b>Retrieve trace when buffer fills</b></p>
+<p><b>Some Tabs are Empty in the Register View Window</b></p>
+<p>Some peripherals are not initialized by the default setup script. If you attempt to</p>
+<p>access an uninitialized peripheral, you can put the target in a bad state. For this</p>
+<p>reason, registers that are not initialized are sometimes marked<i> hidden</i> in the register</p>
+<p>definition (<b>.grd</b>) file, and do not display in the<b> Register View</b> window. In some</p>
+<p>cases, an entire group of registers is hidden, so the tab for that group in the<b> Register</b></p>
+<p><b>View</b> window is empty. To view these registers, make the following modifications</p>
+<p>to your<b> .grd</b> file:</p>
+<p>1.</p>
+<p>Look for registers with the attribute</p>
+<p>hide = ${<i>FLAG</i>}</p>
+<p>2.</p>
+<p>Change the value of<i> FLAG</i> to</p>
+<p>false</p>
+<p>to show all registers marked with that</p>
+<p>flag.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>48</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Tracing a Program Running from ROM with a Setup Script</b></p>
+<p>When running out of ROM while using a setup script and trace enabled, the probe</p>
+<p>will trace the action of the setup script, which may result in decompression errors.</p>
+<p>To resolve this, issue<b> trace clear</b> after running the<b> setup</b> command. You can also</p>
+<p>add<b> trace clear</b> to the end of your setup script.</p>
+<p><b>TE Pod logic_high Setting</b></p>
+<p>TE Pods through Revision D (serial numbers less than 1000) cannot reliably drive</p>
+<p>the following pins of the following adapters when the setting for</p>
+<p>logic_high</p>
+<p>is</p>
+<p>greater than 3.5 volts. These pins will still continue to function as inputs.</p>
+<p>•</p>
+<p>MIPI-34 —</p>
+<p>DBGACK</p>
+<p>and</p>
+<p>nTRST_PD</p>
+<p>•</p>
+<p>MIPI-60 —</p>
+<p>TRIGOUT</p>
+<p>and</p>
+<p>TRST_PD</p>
+<p>•</p>
+<p>Nexus-HS22 —</p>
+<p>EVTI</p>
+<p>•</p>
+<p>Nexus-HS34 —</p>
+<p>GEN_IO3</p>
+<p>and</p>
+<p>GEN_IO5</p>
+<p>•</p>
+<p>Nexus-HS70 —</p>
+<p>EVTI</p>
+<p>•</p>
+<p>Nexus-HP50 —</p>
+<p>BOOTCFG</p>
+<p>and</p>
+<p>TOOLIO5</p>
+<p>•</p>
+<p>Nexus-MICTOR —</p>
+<p>BOOTCFG</p>
+<p>•</p>
+<p>MIPS-PDTrace-MICTOR —</p>
+<p>TR_TRIGOUT</p>
+<p>and</p>
+<p>TR_PROBE_N</p>
+<p>•</p>
+<p>TI14 —</p>
+<p>EMU0</p>
+<p>If</p>
+<p>logic_high</p>
+<p>is set above 3.5V any affected pins will automatically be tri-stated.</p>
+<p>If any of these pins need to be driven, set</p>
+<p>logic_high</p>
+<p>to 3.5V or lower. Most</p>
+<p>targets that use a</p>
+<p>logic_high</p>
+<p>above 3.5V will work properly with a</p>
+<p>logic_high</p>
+<p>setting of 3.5V. You must reboot your probe or reconnect your adapter if you change</p>
+<p>logic_high</p>
+<p>within the supported range after a pin had been tri-stated.</p>
+<p><b>Enabling Outputs Does Not Report an Error with Incorrect TE Adapter</b></p>
+<p><b>Setting</b></p>
+<p>When the</p>
+<p>adapter</p>
+<p>setting is not set to</p>
+<p>auto</p>
+<p>and you connect a TE Adapter, the</p>
+<p>probe's outputs will be tri-stated and cannot be reenabled until the</p>
+<p>adapter</p>
+<p>setting</p>
+<p>is changed to</p>
+<p>auto</p>
+<p>. Neither of the two methods of enabling outputs (<b>jp on</b> command,</p>
+<p><i>49</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Tracing a Program Running from ROM with a Setup Script</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>or pressing the<b> user</b> button when</p>
+<p>user_button</p>
+<p>configuration option is set to</p>
+<p>tri-state) will reflect this error, and it will appear to succeed even though outputs</p>
+<p>remain tri-stated.</p>
+<p><b>Issues Updating Probe Firmware</b></p>
+<p>If you encounter an error updating firmware on your probe:</p>
+<p>1.</p>
+<p>Try updating again.</p>
+<p>2.</p>
+<p>Reboot the probe and try updating the firmware again.</p>
+<p>3.</p>
+<p>If the same error persists, contact Green Hills Support.</p>
+<p>This is most likely to occur with probes that have serial numbers between 10001</p>
+<p>and 10120, and may also happen with probes that are being updated from a firmware</p>
+<p>version earlier than 5.0.2.</p>
+<p><b>RTCK Failure Can Cause Long Delays</b></p>
+<p>If</p>
+<p>use_rtck</p>
+<p>is enabled and your target's RTCK pin stops working (due to a target</p>
+<p>problem, power failure, or similar), then the probe may become unresponsive for</p>
+<p>long periods of time. If this happens, restore your target to a known working state</p>
+<p>and either wait for the probe to recover or power cycle the probe.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>50</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>ARM Known Issues</b></p>
+<p><b>Cannot View I-Cache or L2 Cache on Cortex-A5 Targets</b></p>
+<p>For Cortex-A5 targets, the MULTI<b> Cacheview</b> window allows you to select</p>
+<p>I-cache</p>
+<p>and</p>
+<p>L2 cache</p>
+<p>, but no data is available or will be displayed for these</p>
+<p>caches.</p>
+<p><b>Cannot Debug Certain Cache Configurations on Cortex-A5 and Cortex-A9</b></p>
+<p><b>Targets</b></p>
+<p>The probe is unable to step off breakpoints on Cortex-A5 and Cortex-A9 targets</p>
+<p>when the L1 I-cache is enabled, L1 D-cache is disabled and the L2 cache is enabled.</p>
+<p>If the L1 D-cache is disabled, then the L2 cache must also be disabled or debug</p>
+<p>features including (but not limited to) software breakpoints may be disabled or</p>
+<p>unreliable.</p>
+<p><b>Many TMS570 and R4x Processors Incorrectly Detected as a Cortex-R4F</b></p>
+<p>Many TMS570 and R4x boards are incorrectly detected as a Cortex-R4F. If you</p>
+<p>have one of these targets connected to the probe, run the following commands to</p>
+<p>configure the probe correctly:</p>
+<p>&gt; dlh</p>
+<p>&gt; detect</p>
+<p>&gt; set target icepick(0:cortexr4)</p>
+<p><b>No Access to XScale Cache Operations Register</b></p>
+<p>The probe does not implement access to XScale coprocessor 15 register 7 (the cache</p>
+<p>operations register), but when it writes to the target's memory, it flushes the I-cache</p>
+<p>lines and cleans the D-cache lines to which the memory write maps. It also flushes</p>
+<p>the write buffer before resuming the target. That said, the lack of explicit cache</p>
+<p>invalidate, clean, and allocate commands may make it difficult to set up a bare</p>
+<p>board. Contact Green Hills support for information about when these facilities will</p>
+<p>be implemented.</p>
+<p><i>51</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>ARM Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>bl Displays Duplicate Breakpoints</b></p>
+<p>Under certain conditions, the<b> bl</b> command displays duplicate entries for breakpoints.</p>
+<p>These duplicates do not indicate a problem, and can be ignored.</p>
+<p><b>Slow Halt On ARM920 Target</b></p>
+<p>Halting an ARM920 with a slow JTAG clock and caches enabled may take a long</p>
+<p>time. This problem is most frequent with an AT91RM9200 running an application</p>
+<p>in ROM. To increase speed, configure the probe with the following command:</p>
+<p>xswitch -tmpl_arm7_arm9.upload_arm920_dcache_on_halt</p>
+<p>When using this setting,<b> Cacheview</b> does not work.</p>
+<p><b>Trigger Immediately Causes Two Triggers on CoreSight ETM11 Target</b></p>
+<p>Due to a workaround for ARM erratum 350999 that affects CoreSight ETM11,</p>
+<p>using<b> Trigger Immediately</b> on an ETMv3.2 target may result in two triggers.</p>
+<p><b>Cannot Collect Trace Data on a Trigger on OMAP3</b></p>
+<p>Because the TI OMAP3 does not connect the ETM trigger to the TPIU trigger</p>
+<p>output, the SuperTrace Probe cannot collect data on a trigger on this target.</p>
+<p><b>Freescale i.MX51 Does Not Work at Slow Clock Speeds</b></p>
+<p>The Freescale i.MX51 may not work reliably with</p>
+<p>TCK</p>
+<p>speeds slower than 8 kHz.</p>
+<p>It does work reliably at higher speeds. To work around this issue, use a higher clock</p>
+<p>speed.</p>
+<p><b>Trace Count For Accesses To or Execution Of a Single Address on ETM</b></p>
+<p><b>Targets</b></p>
+<p>For ETM trace, if you are counting accesses to or execution of a single address with</p>
+<p>a count, the count is exact. It counts the number of times the address was accessed</p>
+<p>or executed. If you are counting accesses to or execution within an address range</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>52</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>or a symbol the count is sticky. It counts the number of cycles between access or</p>
+<p>execution of an address in the range and access or execution of an address outside</p>
+<p>the range. For practical purposes, this means that using a count with an address</p>
+<p>range is unlikely to yield the desired results.</p>
+<p><b>Trace May Not Decode Correctly While Booting Cortex-A INTEGRITY</b></p>
+<p><b>Systems</b></p>
+<p>If the trace system is enabled while a Cortex-A INTEGRITY system is booting by</p>
+<p>download, it will collect trace data of boot loader execution and secondary core</p>
+<p>spin loops in the boot MMU configuration, which may not match the MMU</p>
+<p>mappings used after the kernel is up and running. If this happens, the affected portion</p>
+<p>of the trace buffer will not decode correctly and may abort and/or cause errant</p>
+<p>memory reads from the target if the corresponding trace decode options are enabled.</p>
+<p>To work around this issue, disable trace until after secondary cores are booted during</p>
+<p>BSP initialization. An alternative workaround is to disable decoding abort on opcode</p>
+<p>failure and reading unknown opcodes from the target, and disregard the incorrect</p>
+<p>portion of the trace buffer which occurs before secondary core initialization.</p>
+<p><b>Missed Trace Triggers in INTEGRITY Virtual AddressSpaces</b></p>
+<p>On the AT91RM9200, a trace trigger may be missed if trace is disabled in an</p>
+<p>INTEGRITY virtual AddressSpace while the trigger condition is met in that</p>
+<p>AddressSpace. To work around this issue, re-apply trigger settings or re-enable</p>
+<p>trace after modifying which address spaces are traced.</p>
+<p><b>Some ARM Cores Must Be Halted When Enabling Trace</b></p>
+<p>Some ARM cores, such as the ARM1156, ARM1176, and PJ-4, must be halted</p>
+<p>when trace is enabled. If you are using one of these cores, either:</p>
+<p>•</p>
+<p>Enable trace manually, only when the core is halted, or</p>
+<p>•</p>
+<p>pass the<b> -Xetm_halt_to_trace</b> argument to<b> mpserv</b>. This command halts and</p>
+<p>then resumes the target as needed when enabling trace.</p>
+<p><i>53</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Trace May Not Decode Correctly While Booting Cortex-A INTEGRITY Systems</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>ARM ETM 64-Bit Data Accesses Displayed as 32-Bit Accesses in Trace List</b></p>
+<p>When tracing ARM ETM targets, the<b> Trace List</b> displays 64-bit data accesses as</p>
+<p>two 32-bit accesses.</p>
+<p><b>In MULTI 5, Trace Does Not Work in BE8 Mode for Some ARM Cores</b></p>
+<p>Tracing an ARM11 or Cortex-R4 target in BE8 mode on MULTI 5 is not supported.</p>
+<p>If you need to trace one of these targets in BE8 mode, use MULTI 6 or newer.</p>
+<p><b>Probe Cannot Detect Some ICEPick Targets</b></p>
+<p>If your target has an ICEPick, and there is a device on the JTAG scan chain that is</p>
+<p>not controlled by the ICEPick, the probe's<b> detect</b> command will not be able to detect</p>
+<p>your target.</p>
+<p><b>Some Data Missing from Trace Buffer on Cortex-M3 Targets</b></p>
+<p>Some Cortex-M3 targets do not properly flush all trace to the SuperTrace Probe</p>
+<p>when halting. Due to this issue, small amounts of data from the end of the trace</p>
+<p>buffer may not be captured. To reduce the frequency of this issue, use a larger port</p>
+<p>size.</p>
+<p><b>Some ARM11 CPUs Cause Incorrect Trace Data</b></p>
+<p>Some ARM11 CPUs, including the Freescale i.MX31, contain a hardware erratum</p>
+<p>that can cause trace errors and incorrect trace when tracing execution in Virtual</p>
+<p>AddressSpaces. For more information, see ARM erratum 351599.</p>
+<p><b>Break on Trigger Does Not Trace Final Instruction on Cortex-R4</b></p>
+<p>When the<b> Break on Trigger</b> check box is enabled, some Cortex-R4 targets do not</p>
+<p>trace the final instruction before halting due to a trigger.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>54</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Enabling Trace on Multiple Running Cores</b></p>
+<p>Multi-core trace on ARM targets is enabled on each core sequentially. This means</p>
+<p>that if one or more cores are running when trace is enabled, you will capture a small</p>
+<p>amount of trace of the first enabled core before capturing any trace from the next</p>
+<p>one, and so on. If you are using a small trace capture buffer (such as ETB) and</p>
+<p>retrieving trace when the buffer fills or due to a trigger, you may fill your buffer or</p>
+<p>hit your trigger condition prior to trace being enabled on all cores. This can result</p>
+<p>in no trace being captured for some cores. One workaround is to halt cores you</p>
+<p>want to trace prior to enabling trace. Another is to choose your triggers with this</p>
+<p>behavior in mind, or manually enable/disable trace.</p>
+<p><b>ARM Multi-Core Trace Targets with MULTI 6.x and Earlier May Require</b></p>
+<p><b>Enabling Trace Manually</b></p>
+<p>Multi-core trace on ARM targets requires access to trace registers on each core</p>
+<p>when trace is initialized after the setup script is run. If your setup script does not</p>
+<p>enable access to those registers on all cores, trace will not be automatically enabled</p>
+<p>on those cores, and you may see the error message</p>
+<p>Debug server failed to</p>
+<p>connect to TraceServ</p>
+<p>. When the trace registers are available, you can manually</p>
+<p>initialize trace on those cores by taking a trace action (such as opening a trace</p>
+<p>window like the<b> Trace List</b> or<b> Trace Options</b> window).</p>
+<p>At that time, if the check box<b> Automatically enable trace collection</b> is selected,</p>
+<p>trace will be initialized again, which may cause problems if you are currently</p>
+<p>collecting or retrieving trace on another core. We recommend clearing that check</p>
+<p>box and manually enabling trace. When manually enabling trace, first download to</p>
+<p>all cores, initialize trace on all cores, and then enable trace.</p>
+<p><b>Tracing ARM Targets Triggering Close to the Beginning of the Trace Buffer</b></p>
+<p>ETM and PTM trace (all versions) output a periodic synchronization sequence,</p>
+<p>generally every 1024 bytes of trace. When decompressing trace, everything prior</p>
+<p>to the first synchronization sequence is discarded. If your trace buffer size and</p>
+<p>trigger position are configured so the trigger might be in the first 1024 bytes of the</p>
+<p>buffer, trace will still trigger and collect, however there may be no indication of the</p>
+<p>trigger position in the decompressed trace if it was discarded prior to the first</p>
+<p>synchronization sequence.</p>
+<p><i>55</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Enabling Trace on Multiple Running Cores</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Function and Callees Filter Issue</b></p>
+<p>On a Cortex-A9, if you create a trace filter using<b> Trace on: Function and Callees</b></p>
+<p><b>Executing</b>, the first instructions of the specified function (up to and including the</p>
+<p>first branch) might not be traced.</p>
+<p><b>SWD May be Unreliable on Freescale Vybrid</b></p>
+<p>The Green Hills Probe cannot reliably debug a Freescale Vybrid using SWD. To</p>
+<p>work around this issue, use JTAG to debug Freescale Vybrid SoCs. For more</p>
+<p>information, see “Selecting the Target Communication Protocol” in Chapter 4,</p>
+<p>“Probe Option Reference” in<i> Green Hills Debug Probes User's Guide</i>, or contact</p>
+<p>Green Hills Support.</p>
+<p><b>Flash Programming May Be Unreliable on Renesas RZ/A1 Board</b></p>
+<p>Writing to flash on the Renesas RZ/A1 board may be unreliable with gflash. If a</p>
+<p>write failure occurs, erase the flash, and try the write again. The second write will</p>
+<p>usually work, but in the rare case that it also fails, a third attempt will succeed.</p>
+<p><b>Data Trace of Load/Store Multiple Instructions on ARM Targets with ETMv3.x</b></p>
+<p><b>with Incomplete Data</b></p>
+<p>In some cases, a Load/Store Multiple instruction will not output trace packets for</p>
+<p>all data transactions that occurred. In this case, TimeMachine will treat the data</p>
+<p>transactions that were output as the last transactions. For example, if you trace an</p>
+<p>LDM instruction that loads data into registers R3, R4, and R5, but there are only</p>
+<p>two traced data transactions, those data transactions will be traced as having been</p>
+<p>loaded into R4 and R5. This behavior is as specified in the ETMv3 specification,</p>
+<p>but there are cases where hardware does not behave according to the specification</p>
+<p>that can result in incorrect TimeMachine memory and register reconstruction.</p>
+<p>If you encounter a case where a Load/Store Multiple instruction is traced, some but</p>
+<p>not all of the data transactions are traced, and the reconstructed values appear to be</p>
+<p>incorrect, please contact support.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>56</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>ColdFire Known Issues</b></p>
+<p><b>Power Detection Limitations</b></p>
+<p>Power detection is not supported for the 5235, 5271, and 5275. When using these</p>
+<p>processors, turn off power detection with the following probe command:</p>
+<p>set power_detect off</p>
+<p><b>Breakpoint Limitations</b></p>
+<p>Breakpoints on virtual tasks or virtual memory areas are not supported.</p>
+<p><b>Detecting a ColdFire Target with SuperTrace Probe</b></p>
+<p>To detect a ColdFire target with a SuperTrace Probe, the target should first be set</p>
+<p>to a ColdFire target before issuing the<b> detect</b> command. For example, the following</p>
+<p>sequence will work reliably:</p>
+<p>jp off</p>
+<p>set target cf5249</p>
+<p>detect</p>
+<p>If the target is not set to a ColdFire, the SuperTrace Probe will attempt JTAG</p>
+<p>detection, which does not work with ColdFire targets. The Green Hills Probe does</p>
+<p>not have this limitation.</p>
+<p><i>57</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>ColdFire Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>MIPS Known Issues</b></p>
+<p><b>freeze_timers Disables the EN Bit in CTC1, CTC2, and CTC3</b></p>
+<p>For IDT32438 targets, the<b> freeze_timers</b> option will freeze the core's</p>
+<p>general-purpose 32-bit counter/timers by disabling the</p>
+<p>EN</p>
+<p>bit in</p>
+<p>CTC0</p>
+<p>,</p>
+<p>CTC1</p>
+<p>, and</p>
+<p>CTC2</p>
+<p>while the target is in debug mode. When this option is enabled, any attempts</p>
+<p>to access these memory-mapped registers will not give the desired result. If you</p>
+<p>want to write to them, you must ensure that the<b> freeze_timers</b> option is off when</p>
+<p>the target is halted right before accessing these registers, or off when the target is</p>
+<p>run right after accessing these registers.</p>
+<p><b>Low Level JTAG Procedures May Disrupt M4K Processors</b></p>
+<p>When debugging an M4K processor, some low level JTAG procedures may disrupt</p>
+<p>the processor for a short time, causing problems with run control. The<b> detect</b></p>
+<p>command is an example. This issue is being investigated, and should not cause</p>
+<p>problems during normal debugging.</p>
+<p><b>Stepping Off of Breakpoints May Not Work When Debugging a Virtual Task</b></p>
+<p>When debugging a virtual task (for example, using OSA), stepping off of a</p>
+<p>breakpoint may not work. If you encounter this problem, launch<b> mpserv</b> with the</p>
+<p><b>-X_virtualPPC</b> argument.</p>
+<p><b>Hardware Breakpoint Types on the Au1500</b></p>
+<p>The Au1500 allows for two kinds of hardware breakpoints:</p>
+<p>•</p>
+<p><i>Watchpoint style</i> — These cannot match data, and the 3 least significant bits</p>
+<p>of the mask must be 0. (This means you cannot set a breakpoint on a single</p>
+<p>instruction, or single</p>
+<p>int</p>
+<p>.)</p>
+<p>•</p>
+<p><i>EJTAG 2.0 style</i> — (not supported by Green Hills Debug Probes) These only</p>
+<p>look at the system bus, so they cannot differentiate between instruction/data</p>
+<p>loads, and do not work well when running from cached memory. If you require</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>58</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>the capabilities of the EJTAG 2.0 style hardware breakpoints, contact Green</p>
+<p>Hills Software.</p>
+<p><b>Accessible Physical Address Range Limited to 512 MB</b></p>
+<p>The Green Hills Probe accesses physical memory on MIPS through a 512 MB</p>
+<p>window at</p>
+<p>0xa0000000</p>
+<p>or</p>
+<p>0xffffffffa0000000</p>
+<p>. This corresponds to a physical</p>
+<p>address range between</p>
+<p>0x00000000</p>
+<p>and</p>
+<p>0x1fffffff</p>
+<p>. Accesses outside the range</p>
+<p>fail, causing the probe to print the following error to the console:</p>
+<p>ERROR 55 (memory read error): Memory read failed ERROR 14 (invalid parameter):</p>
+<p>Currently physical addresses greater than 0x20000000 are not supported.</p>
+<p>If you are debugging a kernel that references addresses outside this range, OSA</p>
+<p>support in the MULTI Debugger may also be limited.</p>
+<p>This issue affects all firmware revisions from 3.0.0 to the current release.</p>
+<p><b>TC Restrictions on MIPS 34K and 1004K Processors</b></p>
+<p>The setup script activates only the first TC of each core on MIPS 34K and 1004K</p>
+<p>processors. Also,<b> mpserv</b> will not allow programs to be downloaded to RAM using</p>
+<p>alternate TCs. To work around this, use the first TC to download and run programs.</p>
+<p>The program running on the first TC should configure and activate alternate TCs.</p>
+<p><i>59</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Accessible Physical Address Range Limited to 512 MB</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Power Architecture Known Issues</b></p>
+<p><b>Incorrect Trace Decoding on PPC405 Processors</b></p>
+<p>If the first broadcast in a trace capture is one of the following, trace decoding may</p>
+<p>provide incorrect data:</p>
+<p>•</p>
+<p>INTEGRITY TaskContext information branch</p>
+<p>•</p>
+<p>mtctr</p>
+<p>•</p>
+<p>mtlr</p>
+<p>•</p>
+<p>sync</p>
+<p>If you run into this issue, contact Green Hills Support.</p>
+<p><b>MPC5744P Stalls With Certain Trace Settings</b></p>
+<p>The MPC5744P may stall indefinitely when:</p>
+<p>•</p>
+<p><b>Stall Processor to Avoid Overflows</b> is set to</p>
+<p>on</p>
+<p>•</p>
+<p><b>Use Branch History Messages</b> is set to</p>
+<p>off</p>
+<p>•</p>
+<p><b>Trace Clock Multiplier</b> is set to</p>
+<p>1/1x</p>
+<p>This issue is under investigation by Freescale. We recommend enabling branch</p>
+<p>history messages or using a</p>
+<p>1/2x</p>
+<p>trace clock multiplier when tracing this target.</p>
+<p><b>Incorrect Trace With PowerPC e200 and MULTI 6</b></p>
+<p>When tracing a PowerPC e200 target with MULTI 6, if you are using the<b> Trace</b></p>
+<p><b>on:</b> feature, the instructions shown for the beginning of trace after the</p>
+<p>start</p>
+<p>event</p>
+<p>may be incorrect. This may also result in trace errors. The instructions become</p>
+<p>correct again after a direct branch, or if branch history mode is enabled, after an</p>
+<p>indirect branch. This issue will be fixed in a future version of MULTI.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>60</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Censorship Unlock Requires Two Resets on PPC560x Processors</b></p>
+<p>When using the probe's<b> censor_unlock</b> option to unlock a PPC560x target, the</p>
+<p>probe may need to reset the target twice in order for the unlock to succeed.</p>
+<p><b>Viewing QorIQ P4080 or MPC567xF Peripheral Registers in MULTI 5</b></p>
+<p><b>Requires Configuration File Changes</b></p>
+<p>The probe software includes full peripheral register definitions for the QorIQ P4080</p>
+<p>and MPC567xF, but, for performance reasons, they are hidden from<b> Register View</b></p>
+<p>in MULTI 5 by default. To view a group of these registers:</p>
+<p>1.</p>
+<p>Open<i><b> install_dir</i>/defaults/registers/p4080_actual.grd</b> or</p>
+<p><i><b>install_dir</i>/defaults/registers/ppc_567xF.grd</b>.</p>
+<p>2.</p>
+<p>After the comments at the top of the file, there are one or more register group</p>
+<p>definitions that disable each group. To enable a group, change the</p>
+<p>0</p>
+<p>next to</p>
+<p>the group's definition to a</p>
+<p>1</p>
+<p>.</p>
+<p>3.</p>
+<p>From the<b> Register View</b> window, select<b> File</b> →<b> Reinitialize Register</b></p>
+<p><b>Information</b>. The newly-enabled registers should now appear.</p>
+<p>For Green Hills Probe connections, you can improve performance by connecting</p>
+<p>to one core only. To specify which core to debug, use the<b> -force_coreid</b> option with</p>
+<p><b>mpserv</b>.</p>
+<p><b>Little Endian Mode Is Not Supported on PowerPC e500-, e500mc-, e5500-,</b></p>
+<p><b>or e6500-based Targets</b></p>
+<p>Little endian mode is not currently supported on PowerPC e500-, e500mc-, e5500-,</p>
+<p>or e6500-based targets.</p>
+<p><b>Incorrect PC Location After Halting Target</b></p>
+<p>On PowerPC 603, 7xx, 5200, and 82xx, processors, if the processor is spinning at</p>
+<p>a branch-to-self opcode (</p>
+<p>0x48000000</p>
+<p>) that is in memory as the last instruction in</p>
+<p>an I-cache line (for example, at an address ending with</p>
+<p>0x1c</p>
+<p>or</p>
+<p>0x3c</p>
+<p>), and the</p>
+<p>I-cache is enabled, then halting the processor may result in a reported PC that is</p>
+<p><i>61</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Censorship Unlock Requires Two Resets on PPC560x Processors</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>four bytes past the true PC. This happens as a result of branch folding, and is</p>
+<p>currently being investigated with Freescale.</p>
+<p>One of Freescale's recommended workarounds is to set a hardware breakpoint,</p>
+<p>which disables the branch-folding behavior. On PowerPC 7xx processors, the probe</p>
+<p>sets a hardware breakpoint as long as the<b> disable_swbp</b> option is set to</p>
+<p>off</p>
+<p>.</p>
+<p><b>Locked Data Cache Not Supported on PowerPC 4xx Targets</b></p>
+<p>The probe does not currently support locked data cache. It is possible to set up</p>
+<p>locked cache lines with no memory backing them, and this is fully supported by</p>
+<p>the hardware, but the probe does not properly handle this situation with the current</p>
+<p>firmware. This configuration will be supported in a future release.</p>
+<p><b>Corrupted Registers When Setting an Execute Hardware Breakpoint on</b></p>
+<p><b>Some PowerPC Cores</b></p>
+<p>Registers on PowerPC 8343, 8347, 8349, 8358, and 8360 cores may become</p>
+<p>corrupted if you set an execute hardware breakpoint that has a range which includes</p>
+<p>the next instruction to be executed.</p>
+<p><b>Register Definitions Require Setting MULTI Variables</b></p>
+<p>Version 3.8.2 of the probe firmware includes full register support for three PowerPC</p>
+<p>targets: P2020, MPC8536, and MPC8569. The addresses of all peripheral registers</p>
+<p>on these targets are offset relative to the CCSR base address. To enable MULTI to</p>
+<p>read these peripheral registers, you must define the CCSR base address using the</p>
+<p>following MULTI variables:</p>
+<p>eval $E500_CCSRBAR_IS_SET=1</p>
+<p>eval $E500_CCSRBAR=<i> CCSR_base_address</i></p>
+<p>We recommend adding these lines to an<b> .mbs</b> or<b> .rc</b> script that you use to debug</p>
+<p>your target. These lines are already present in the included<b> .mbs</b> scripts.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>62</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>External Trace Trigger In Not Supported on PowerPC 405 Targets</b></p>
+<p>External trace triggers sent to the probe's<b> Trigger In</b> port are not supported on</p>
+<p>PowerPC 405 targets at this time.</p>
+<p><b>Modifying Trigger Settings on PowerPC 4xx Targets</b></p>
+<p>Trigger settings on PowerPC 4xx targets cannot be modified unless the target is</p>
+<p>halted. If you modify these settings while the target is running, the change is deferred</p>
+<p>until you halt the target. If you enable trace while the target is running, triggering</p>
+<p>is not active until you halt and resume the target. No warning or error is issued.</p>
+<p><b>MPC564xC z0 Core Does Not Emit Trace Data on Single Step</b></p>
+<p>While the MPC564xC z0 core supports trace, it does not emit trace data when the</p>
+<p>target is stepped. If you perform an instruction step on a load or store, no trace data</p>
+<p>is collected for that instruction.</p>
+<p><b>Trace Errors With Code That Switches Between VLE and Non-VLE Modes</b></p>
+<p>In MULTI 5, when tracing code that switches between VLE and non-VLE mode</p>
+<p>on e200 processors, there may be errors in the trace listing shortly after a mode</p>
+<p>change. Specifically, the trace listing may show instructions in the wrong VLE</p>
+<p>mode. This is most likely to happen if one of the following occurs shortly after a</p>
+<p>VLE mode change:</p>
+<p>•</p>
+<p>stalling is enabled and the CPU stalls to prevent a FIFO overflow</p>
+<p>•</p>
+<p>the CPU hits a breakpoint</p>
+<p>•</p>
+<p>the CPU executes 256 instructions with no branches</p>
+<p>•</p>
+<p>branch history mode is enabled, and the CPU executes a total of 32 or more</p>
+<p>direct branches with no indirect branches in-between them</p>
+<p>To minimize the chances of this type of error, we recommend tracing with the</p>
+<p>highest available MDO width and trace clock multiplier. Disabling data trace may</p>
+<p>help, and in some cases, disabling branch history mode may also help.</p>
+<p><i>63</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>External Trace Trigger In Not Supported on PowerPC 405 Targets</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Nexus Trace Does Not Support Read- or Write-Only Triggers</b></p>
+<p>Nexus trace supports read/write triggers that trigger on a read or write, but it does</p>
+<p>not support read-only triggers or write-only triggers.</p>
+<p><b>Nexus e200 MDO Width Limitations</b></p>
+<p>For e200 targets that support parallel Nexus trace, check your target documentation</p>
+<p>to determine supported MDO widths for your specific chip package. The probe</p>
+<p>supports tracing targets with 2-, 4-, 8-, 12-, and 16-bit MDO widths. 2- and 8-bit</p>
+<p>widths are only supported with MULTI 6 or newer. 16-bit widths are only supported</p>
+<p>with MULTI 6 or newer and the Nexus TraceEverywhere trace pod.</p>
+<p><b>Nexus e200 Trace Is Only Supported on One Core at a Time</b></p>
+<p>On Nexus e200 targets with more than one core, such as the MPC5516, MPC5668,</p>
+<p>and MPC5643 (in dual-processor mode), you can only trace one core at a time. By</p>
+<p>default, the probe traces core 0. To trace the second core, connect to<b> mpserv</b> using</p>
+<p>the<b> -nexus_trace_coreid 1</b> option and run your setup script on the core you want</p>
+<p>to trace. For example, if you have multiple executables to download to your target:</p>
+<p>1.</p>
+<p>In the MULTI Debugger, select the core you want to trace.</p>
+<p>2.</p>
+<p>Use the<b> load</b> command to run the script on the core.</p>
+<p>3.</p>
+<p>Select each additional core and use the<b> load -nosetup</b> command to prepare it.</p>
+<p>If you have a single executable:</p>
+<p>1.</p>
+<p>In the MULTI Debugger, select the core you want to trace.</p>
+<p>2.</p>
+<p>Use the<b> prepare_target -allcores</b> command to prepare all cores.</p>
+<p>After all cores are prepared, resume the target to begin your debugging session.</p>
+<p>Support for tracing both cores at the same time will be added in a future release.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>64</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Standard Nexus Trace Adapter Does Not Support 5 V signals</b></p>
+<p>Tracing a 5 V target is not supported with the Nexus trace adapter. If you need to</p>
+<p>trace or debug one of these targets with a SuperTrace Probe V3, contact Green Hills</p>
+<p>support.</p>
+<p><b>Single Stepping Over mtspr dbsrwr, rn May Not Execute As Expected on</b></p>
+<p><b>QorIQ P4040 and P4080</b></p>
+<p>When the<b> edm</b> option is set to</p>
+<p>off</p>
+<p>, single-stepping over a</p>
+<p>mtspr dbsrwr, r<i>n</i></p>
+<p>instruction may not execute as expected. The</p>
+<p>dbsr</p>
+<p>bits may not be updated. To</p>
+<p>work around this issue, avoid single-stepping over or setting breakpoints on</p>
+<p>mtspr dbsrwr, r<i>n</i></p>
+<p>instructions.</p>
+<p><b>Triggers Are Not Supported on the e200z0 Core of the MPC564xC</b></p>
+<p>Triggers are not supported on the e200z0 core of the MPC564xC processor.</p>
+<p><b>Incorrect Error Message When Tracing A 564xB or 564xC</b></p>
+<p>If you use MULTI 6.1 and trace a 564xB or 564xC target with 8-bit MDO width</p>
+<p>and data trace enabled, the following error message may appear when a 1-byte data</p>
+<p>access occurs in the trace data:</p>
+<p>Error: Invalid Data Packet. Trace data is corrupt.</p>
+<p>This error can be ignored and does not affect the correctness of trace. This incorrect</p>
+<p>error message will be removed in a future probe release, and has already been</p>
+<p>removed in MULTI 6.1.4. This message does not occur when using 12-bit MDO.</p>
+<p><b>Unexpected Machine Check On 567xR and 567xF</b></p>
+<p>On 567xR and 567xF processors, if a target hits a software breakpoint within 7</p>
+<p>non-branch instructions preceding an opcode that is expected to cause a machine</p>
+<p>check interrupt, the interrupt may occur even if, prior to resuming, the target state</p>
+<p>is changed so that the machine check condition is no longer met. To work around</p>
+<p><i>65</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Standard Nexus Trace Adapter Does Not Support 5 V signals</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>this issue, place your software breakpoint at least 8 instructions before any opcodes</p>
+<p>expected to cause machine checks.</p>
+<p><b>Trace Limitations with Stalling Enabled on MPC5777M e200z7 Cores</b></p>
+<p>When the<b> Stall Processor to Avoid Overflows</b> trace option is enabled on an</p>
+<p>MPC5777M e200z7 core, trace data may be corrupted if trace is enabled or disabled</p>
+<p>while the core is running. Always halt an MPC5777M e200z7 core before enabling</p>
+<p>or disabling trace, or disable stalling.</p>
+<p><b>Incorrect Trace Decoding on MPC5777M Processors</b></p>
+<p>If branch history mode is disabled while tracing an e200z7 core of an MPC5777M</p>
+<p>processor, and the PC is changed while in debug mode, then one or more instructions</p>
+<p>in the trace list may be wrong after the target is resumed. This does not occur with</p>
+<p>branch history enabled, or with the e200z4 core. This issue is being investigated</p>
+<p>with Freescale.</p>
+<p><b>Incorrect Trace Decoding on MPC577xK Processors</b></p>
+<p>If branch history mode is disabled, and more than one core on an MPC577xK</p>
+<p>processor is being traced, there may be an occasional corrupt trace packet that results</p>
+<p>in trace errors. This does not occur with branch history enabled. This issue is being</p>
+<p>investigated with Freescale.</p>
+<p><b>Example T4240QDS Setup Script Should Not Be Canceled</b></p>
+<p>If using MULTI 6, do not cancel execution of the example T4240QDS setup script</p>
+<p>provided by the stand-alone New Project Wizard. Instead, wait for the script to run</p>
+<p>to completion.</p>
+<p><b>Multi-Core Debug Limitations on QorIQ P3041</b></p>
+<p>In rare cases, running certain multi-core applications on the QorIQ P3041 can cause</p>
+<p>the target to become unresponsive. When this happens, the probe lists the cores'</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>66</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>status as</p>
+<p>unknown</p>
+<p>. To recover from this state, reset the target. This issue is being</p>
+<p>investigated with Freescale.</p>
+<p><b>Trace Errata on Certain P4080/P4040 Silicon Revisions</b></p>
+<p>Early silicon revisions of the P4080 and P4040 contain errata that can cause</p>
+<p>significant corruption of trace data. Affected silicon is identified by a major revision</p>
+<p>value of</p>
+<p>1</p>
+<p>or</p>
+<p>2</p>
+<p>in the SVR register.</p>
+<p>Examples of affected SVR values:</p>
+<p>•</p>
+<p>P4080:</p>
+<p>svr=0x82080010</p>
+<p>or</p>
+<p>svr=0x82080020</p>
+<p>•</p>
+<p>P4040:</p>
+<p>svr=0x82090010</p>
+<p>or</p>
+<p>svr=0x82090020</p>
+<p>Use P4080/P4040 silicon with major revision</p>
+<p>3</p>
+<p>or greater to avoid this issue.</p>
+<p><i>67</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Trace Errata on Certain P4080/P4040 Silicon Revisions</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>x86 Known Issues</b></p>
+<p><b>x86 TraceEverywhere Adapters Not Supported with TraceEverywhere Trace</b></p>
+<p><b>Pod</b></p>
+<p>The current hardware revisions of x86 TraceEverywhere adapters are not supported</p>
+<p>with the TraceEverywhere trace pod. An updated revision of these adapters will be</p>
+<p>available in the future.</p>
+<p><b>Probe Cannot Configure Memory Mapping</b></p>
+<p>The probe expects that your target already has a 32-bit flat memory mapping</p>
+<p>configured; it cannot create this mapping on its own. 16-bit code segments and</p>
+<p>segmented memory access are not currently supported.</p>
+<p>We recommend that you use a boot loader to initialize your target. For example, a</p>
+<p>USB stick configured to boot GRUB could quickly boot and initialize your target.</p>
+<p>For additional information, see<i><b> install_directory</i>/target/86/generic/board_info.txt</b>.</p>
+<p><b>tr Command Does Not Work as Expected on Some x86 Targets</b></p>
+<p>Certain x86 targets require 10-15 seconds to reset. If you are having difficulty when</p>
+<p>issuing the<b> tr</b> command to your target, try increasing the<b> rst_settle</b> setting.</p>
+<p><b>MULTI Reports Any x86 Processor as a Pentium Pro</b></p>
+<p>When connecting to your target with MULTI, MULTI reports the CPU as a Pentium</p>
+<p>Pro. MULTI does not have settings for newer processors at this time.</p>
+<p><b>64-Bit Mode Debug Is Not Yet Supported</b></p>
+<p>64-bit mode debug is not yet supported. This includes accessing registers specific</p>
+<p>to the 64-bit mode, as well as 64-bit memory addresses.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>68</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Access to MSRs or IO Memory Is Not Yet Supported</b></p>
+<p>The probe does not provide access to MSRs or IO memory at this time.</p>
+<p><b>Cannot Write to Segment or Table Registers</b></p>
+<p>The segment registers and table registers are currently read-only.</p>
+<p><b>Simultaneous Run-Mode and Freeze-Mode INTEGRITY Debugging Is Not</b></p>
+<p><b>Supported</b></p>
+<p>Simultaneous debug of INTEGRITY via run-mode (<b>rtserv</b>) and freeze-mode</p>
+<p>(<b>mpserv</b>) is not supported at this time. Use the<b> enable_debug</b> setting to specify</p>
+<p>whether the probe or the target handles debug exceptions.</p>
+<p>You can set freeze-mode software breakpoints on Sandy Bridge targets without</p>
+<p>having any effect on run-mode debugging. Doing so still requires an appropriate</p>
+<p>setting for the<b> enable_debug</b> option.</p>
+<p>INTEGRITY run-mode partnering is not currently supported on x86 targets.</p>
+<p><b>Halt and Breakpoints on Sandy Bridge Targets Is Synchronous</b></p>
+<p>The halt feature and breakpoints on Sandy Bridge are synchronous. When halting</p>
+<p>or breaking on any one core using the probe, all cores on the target halt, including</p>
+<p>cores that are not configured in the JTAG scan chain. It is not possible to halt one</p>
+<p>Sandy Bridge core and leave other cores running. The resume feature is not a</p>
+<p>synchronous operation by default. Halting a core halts all cores, but resuming that</p>
+<p>core may not resume the other cores. Synchronous resume is possible using the</p>
+<p>MULTI<b> groupaction</b> command, or the probe's<b> gc</b> command.</p>
+<p><b>Running Programs that Change Address Mappings</b></p>
+<p>To download and run a program that changes address mappings (such as an</p>
+<p>INTEGRITY kernel) on an x86 target, use the<b> -load_physical</b> option when</p>
+<p>connecting to your target. When using this option, you will not be able to set software</p>
+<p>breakpoints in your code until the address translation mapping is enabled, but</p>
+<p><i>69</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Access to MSRs or IO Memory Is Not Yet Supported</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>hardware breakpoints will work. To work around this issue, set a hardware</p>
+<p>breakpoint that resets all software breakpoints shortly after the kernel starts running.</p>
+<p>For example, if you are using INTEGRITY, you can set a hardware breakpoint by</p>
+<p>adding the following lines to your<b> .mbs</b> or<b> .rc</b> setup script:</p>
+<p>configure continuePlaybackFileOnError on</p>
+<p>hardbrk execute __ghs_ind_crt0 { Tog q off ; Tog q on ; resume }</p>
+<p>configure continuePlaybackFileOnError off</p>
+<p>This hardware breakpoint allows you to set software breakpoints before downloading</p>
+<p>your program. You can manually remove it during your debugging session if you</p>
+<p>need to use the hardware breakpoint slot that it occupies. If you do not remove the</p>
+<p>breakpoint and you run the program multiple times without reloading it, MULTI</p>
+<p>will warn you that this breakpoint is already set. You can ignore this warning.</p>
+<p>If you need MULTI to handle system calls, use the<b> -hwbpsc</b> option when connecting</p>
+<p>to your target to use a hardware breakpoint to catch system calls.</p>
+<p><b>Target Strings for Multi-Core and SMP Debugging</b></p>
+<p>To debug both cores of a Core 2 processor, add the suffix</p>
+<p>.duo</p>
+<p>to the target string.</p>
+<p>For example, if your board has two Core 2 processors (and no other devices on the</p>
+<p>JTAG scan chain) and you want to debug all four cores:</p>
+<p>&gt; set target core2.duo core2.duo</p>
+<p>If your target has an Atom- or Nehalem-based processor and you want to access</p>
+<p>both threads, add the suffix</p>
+<p>.ht</p>
+<p>to the target string. For example:</p>
+<p>&gt; set target atom.ht</p>
+<p>Software breakpoints are not currently supported in an SMP environment.</p>
+<p>Threads that are bound to the same core are always either both running, or both</p>
+<p>halted. They cannot be run or halted individually. If one thread hits a breakpoint,</p>
+<p>both threads halt. Stepping a thread may also be unreliable.</p>
+<p><i>Green Hills Debug Probes Release Notes</i></p>
+<p><i>70</i></p>
+<p><i>Chapter 9. Known Issues and Limitations</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Booting a Multi-Core Target After Reset</b></p>
+<p>Targets with Intel x86 processors typically have a BIOS check that prevents them</p>
+<p>from completing their boot sequence unless all cores are running. Be sure to resume</p>
+<p>all cores after a reset to allow for the BIOS to complete its startup sequence.</p>
+<p><b>Booting a Multi-Core OS Clears Hardware Breakpoints on Secondary Cores</b></p>
+<p>When any core is reset on an x86 target, hardware breakpoints set on that core are</p>
+<p>cleared. After the core begins to boot, you can halt it and set hardware breakpoints.</p>
+<p>Because booting a multi-core OS (such as INTEGRITY) on an SMP system causes</p>
+<p>secondary cores to go through a reset sequence, you should set hardware breakpoints</p>
+<p>on these cores after booting the OS.</p>
+<p><b>Target Halts in System Management Mode Code</b></p>
+<p>Some x86 targets enable system management mode (SMM). If SMM is enabled</p>
+<p>and you halt the target, it may halt in SMM code. If you did not intend to debug</p>
+<p>SMM code, resume the target and try halting again.</p>
+<p>When SMM is enabled, the<b> vc</b> and<b> vrh</b> diagnostics may fail.</p>
+<p><b>Nehalem-Based Target Cannot Leave System Management Mode</b></p>
+<p>Some Nehalem-based targets have a BIOS that performs a processor coherency</p>
+<p>check while in system management mode (SMM). This check asserts if any of the</p>
+<p>processors are not running. This may happen while debugging the system via JTAG</p>
+<p>if one core is halted while the others run. One of the running cores may assert, which</p>
+<p>causes the system to remain in SMM until restart. In this case, you may see a printed</p>
+<p>assertion in<b> SmmDispatcher.c</b>. To avoid this assert, halt and resume all cores</p>
+<p>simultaneously using the group run and group halt commands (see the documentation</p>
+<p>about synchronous run control in the<i> MULTI: Debugging</i> book). On such systems,</p>
+<p>software breakpoints and hardware breakpoints will probably not work, because</p>
+<p>they only halt one core. Synchronous breakpoints will be supported in a future</p>
+<p>firmware version.</p>
+<p><i>71</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Booting a Multi-Core Target After Reset</i></p>
+<h1 style="page-break-before:always; "></h1>
+</body>
+</html>
+{% endraw %}

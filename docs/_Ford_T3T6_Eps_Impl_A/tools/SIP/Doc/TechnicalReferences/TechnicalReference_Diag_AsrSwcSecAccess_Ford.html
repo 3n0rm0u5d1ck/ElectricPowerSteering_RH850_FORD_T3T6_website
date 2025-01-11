@@ -1,0 +1,944 @@
+---
+layout: default
+title: TechnicalReference_Diag_AsrSwcSecAccess_Ford
+nav_order: 63
+parent: Component Implementation
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>MICROSAR - SwcSecAccessFord </b></p>
+<p>Technical Reference </p>
+<p> </p>
+<p>FORD - Software Component Vector Security Access </p>
+<p>Version 1.0.0 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Authors </p>
+<p>Markus Schneider </p>
+<p>Status </p>
+<p>Released </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>2 / 18 </p>
+<p> </p>
+<p><b>Document Information </b></p>
+<p><b>History </b></p>
+<p><b>Author </b></p>
+<p><b>Date </b></p>
+<p><b>Version </b></p>
+<p><b>Remarks </b></p>
+<p>Markus Schneider </p>
+<p>2015-04-13 </p>
+<p>1.0.0 </p>
+<p>Creation </p>
+<p><b>Reference Documents </b></p>
+<p><b>No. </b></p>
+<p><b>Source </b></p>
+<p><b>Title </b></p>
+<p><b>Version </b></p>
+<p>[1] </p>
+<p> Vector </p>
+<p>TechnicalReference_Asr_Dcm_Vector.pdf </p>
+<p>3.33.00 </p>
+<p>[2] </p>
+<p> Vector </p>
+<p>TechnicalReference_Asr_Csm.pdf </p>
+<p>1.02.00 </p>
+<p>[3] </p>
+<p> Vector </p>
+<p>TechnicalReference_Asr_Cry.pdf </p>
+<p>1.01.00 </p>
+<p>[4] </p>
+<p> FORD </p>
+<p>EESE DIAGNOSTIC APPLICATION SECURITY ALGORITHM </p>
+<p>001 </p>
+<p> </p>
+<p>Scope of the Document  </p>
+<p>This  technical  reference  describes  the  general  use  of  the  Security  Access  software </p>
+<p>component.  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>3 / 18 </p>
+<p><b>Contents </b></p>
+<p><b>1</b></p>
+<p> </p>
+<p><b>Component History ...................................................................................................... 6</b></p>
+<p> </p>
+<p><b>2</b></p>
+<p> </p>
+<p><b>Introduction................................................................................................................... 7</b></p>
+<p> </p>
+<p>2.1</p>
+<p> </p>
+<p>Architecture Overview ........................................................................................ 7</p>
+<p> </p>
+<p><b>3</b></p>
+<p> </p>
+<p><b>Functional Description ................................................................................................. 9</b></p>
+<p> </p>
+<p>3.1</p>
+<p> </p>
+<p>Initialization ........................................................................................................ 9</p>
+<p> </p>
+<p>3.2</p>
+<p> </p>
+<p>Provide Entropy ................................................................................................. 9</p>
+<p> </p>
+<p>3.3</p>
+<p> </p>
+<p>States ................................................................................................................ 9</p>
+<p> </p>
+<p>3.3.1</p>
+<p> </p>
+<p>Sec_EntropyOp .................................................................................. 9</p>
+<p> </p>
+<p>3.3.2</p>
+<p> </p>
+<p>Sec_VerifyOp ................................................................................... 10</p>
+<p> </p>
+<p>3.3.3</p>
+<p> </p>
+<p>Sec_SeedState ................................................................................ 10</p>
+<p> </p>
+<p>3.3.4</p>
+<p> </p>
+<p>Sec_VerifyState ............................................................................... 10</p>
+<p> </p>
+<p>3.4</p>
+<p> </p>
+<p>Main Functions ................................................................................................ 10</p>
+<p> </p>
+<p><b>4</b></p>
+<p> </p>
+<p><b>Integration ................................................................................................................... 11</b></p>
+<p> </p>
+<p>4.1</p>
+<p> </p>
+<p>Scope of Delivery ............................................................................................. 11</p>
+<p> </p>
+<p>4.1.1</p>
+<p> </p>
+<p>Static Files ....................................................................................... 11</p>
+<p> </p>
+<p>4.1.2</p>
+<p> </p>
+<p>Dynamic Files .................................................................................. 11</p>
+<p> </p>
+<p>4.1.3</p>
+<p> </p>
+<p>CSM Configuration in DaVinci Configurator 5 ................................... 11</p>
+<p> </p>
+<p>4.1.4</p>
+<p> </p>
+<p>Integration in DaVinci Developer ...................................................... 11</p>
+<p> </p>
+<p>4.1.5</p>
+<p> </p>
+<p>Connecting ports and task mapping ................................................. 12</p>
+<p> </p>
+<p><b>5</b></p>
+<p> </p>
+<p><b>API Description ........................................................................................................... 13</b></p>
+<p> </p>
+<p>5.1</p>
+<p> </p>
+<p>Service Ports ................................................................................................... 13</p>
+<p> </p>
+<p>5.1.1</p>
+<p> </p>
+<p>SwcSecAccessFord_CallbackNotificationRandomGenerate ............ 13</p>
+<p> </p>
+<p>5.1.2</p>
+<p> </p>
+<p>SwcSecAccessFord_CallbackNotificationRandomSeed ................... 13</p>
+<p> </p>
+<p>5.1.3</p>
+<p> </p>
+<p>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt; ................................ 14</p>
+<p> </p>
+<p>5.1.4</p>
+<p> </p>
+<p>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt; ...................................... 14</p>
+<p> </p>
+<p>5.1.5</p>
+<p> </p>
+<p>SwcSecAccessFord_Init .................................................................. 15</p>
+<p> </p>
+<p>5.1.6</p>
+<p> </p>
+<p>SwcSecAccessFord_MainFunction .................................................. 15</p>
+<p> </p>
+<p>5.1.7</p>
+<p> </p>
+<p>SwcSecAccessFord_ProvideEntropy ............................................... 15</p>
+<p> </p>
+<p>5.1.8</p>
+<p> </p>
+<p>Client Server Interface ..................................................................... 16</p>
+<p> </p>
+<p>5.1.8.1</p>
+<p> </p>
+<p>Provide Ports on SwcSecAccessFord Side .................... 16</p>
+<p> </p>
+<p>5.1.8.2</p>
+<p> </p>
+<p>Require Ports on SwcSecAccessFord Side ................... 16</p>
+<p> </p>
+<p><b>6</b></p>
+<p> </p>
+<p><b>Glossary and Abbreviations ...................................................................................... 17</b></p>
+<p> </p>
+<p>6.1</p>
+<p> </p>
+<p>Abbreviations ................................................................................................... 17</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>4 / 18 </p>
+<p><b>7</b></p>
+<p> </p>
+<p><b>Contact ........................................................................................................................ 18</b></p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>5 / 18 </p>
+<p><b>Illustrations </b></p>
+<p>Figure 2-1</p>
+<p> </p>
+<p>Architecture Overview ................................................................................. 7</p>
+<p> </p>
+<p>Figure 2-2</p>
+<p> </p>
+<p>Interfaces to adjacent modules of the SwcSecAccessFord ......................... 8</p>
+<p> </p>
+<p>Figure 3-1</p>
+<p> </p>
+<p>State machine Sec_EntropyOp and Sec_VerifyOp ..................................... 9</p>
+<p> </p>
+<p>Figure 3-2</p>
+<p> </p>
+<p>State machine Sec_SeedState ................................................................. 10</p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Tables </b></p>
+<p>Table 1-1 </p>
+<p> </p>
+<p>Component history...................................................................................... 6</p>
+<p> </p>
+<p>Table 4-1 </p>
+<p> </p>
+<p>Static files ................................................................................................. 11</p>
+<p> </p>
+<p>Table 4-2 </p>
+<p> </p>
+<p>Generated files ......................................................................................... 11</p>
+<p> </p>
+<p>Table 5-1 </p>
+<p> </p>
+<p>SwcSecAccessFord_CallbackNotificationRandomGenerate ..................... 13</p>
+<p> </p>
+<p>Table 5-2 </p>
+<p> </p>
+<p>SwcSecAccessFord_CallbackNotificationRandomSeed ........................... 13</p>
+<p> </p>
+<p>Table 5-3 </p>
+<p> </p>
+<p>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt; ........................................ 14</p>
+<p> </p>
+<p>Table 5-4 </p>
+<p> </p>
+<p>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt; ............................................... 14</p>
+<p> </p>
+<p>Table 5-5 </p>
+<p> </p>
+<p>SwcSecAccessFord_Init ........................................................................... 15</p>
+<p> </p>
+<p>Table 5-6 </p>
+<p> </p>
+<p>SwcSecAccessFord_MainFunction ........................................................... 15</p>
+<p> </p>
+<p>Table 5-7 </p>
+<p> </p>
+<p>SwcSecAccessFord_ProvideEntropy ........................................................ 16</p>
+<p> </p>
+<p>Table 5-8 </p>
+<p> </p>
+<p>Provided ports by the SWC ....................................................................... 16</p>
+<p> </p>
+<p>Table 5-9 </p>
+<p> </p>
+<p>Required ports by the SWC ...................................................................... 16</p>
+<p> </p>
+<p>Table 6-1 </p>
+<p> </p>
+<p>Abbreviations ............................................................................................ 17</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>6 / 18 </p>
+<p><b>1 </b></p>
+<p><b>Component History </b></p>
+<p>The </p>
+<p>component </p>
+<p>history </p>
+<p>gives </p>
+<p>an </p>
+<p>overview </p>
+<p>over </p>
+<p>the </p>
+<p>important </p>
+<p>milestones </p>
+<p>that </p>
+<p>are </p>
+<p>supported in the different versions of the component.  </p>
+<p><b>Component Version </b></p>
+<p><b>New Features </b></p>
+<p>1.00.00 </p>
+<p>Initial creation </p>
+<p>Table 1-1  </p>
+<p>Component history </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>7 / 18 </p>
+<p><b>2 </b></p>
+<p><b>Introduction </b></p>
+<p>This document describes the functionality, API and configuration of the AUTOSAR  SWC </p>
+<p>SwcSecAccessFord, which implements a security access as specified in [4].  </p>
+<p> </p>
+<p><b>Supported AUTOSAR Release*: </b></p>
+<p>4 </p>
+<p>* For the detailed functional specification please also refer to the corresponding AUTOSAR SWS. </p>
+<p> </p>
+<p> </p>
+<p><b>2.1 </b></p>
+<p><b>Architecture Overview </b></p>
+<p>The  following  figure  shows  where  the  SwcSecAccessFord  is  located  in  the  AUTOSAR </p>
+<p>architecture. </p>
+<p> </p>
+<p>Figure 2-1 </p>
+<p>Architecture Overview </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>8 / 18 </p>
+<p> </p>
+<p>The next figure shows the port interfaces to adjacent modules of the SwcSecAccessFord. </p>
+<p>These interfaces are described in chapter 5.  </p>
+<p> </p>
+<p>Figure 2-2 </p>
+<p>Interfaces to adjacent modules of the SwcSecAccessFord </p>
+<p><b> cmp Architecture</b></p>
+<p><b>CSM</b></p>
+<p><b>Security Access</b></p>
+<p><b>Cry</b></p>
+<p><b>DCM</b></p>
+<p><b>Source of Entropy</b></p>
+<p>Csm_&lt;Service&gt;FinishNotification</p>
+<p>«async»</p>
+<p>Cry_&lt;Primitive&gt;Start</p>
+<p>Cry_&lt;Primitive&gt;Update</p>
+<p>Cry_&lt;Primitive&gt;Finish</p>
+<p>Cry_&lt;Primitive&gt;</p>
+<p>Csm_&lt;Service&gt;Start</p>
+<p>Csm_&lt;Service&gt;Update</p>
+<p>Csm_&lt;Service&gt;Finish</p>
+<p>Csm_&lt;Service&gt;</p>
+<p>&lt;Service&gt;Callback</p>
+<p>«optional»</p>
+<p>Csm_&lt;Service&gt;CallbackNotification</p>
+<p>«async»</p>
+<p>GetSeed()</p>
+<p>CompareKey()</p>
+<p>ProvideEntropy()</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>9 / 18 </p>
+<p><b>3 </b></p>
+<p><b>Functional Description </b></p>
+<p><b>3.1 </b></p>
+<p><b>Initialization </b></p>
+<p>The  initialization  of  the  component  SwcSecAccessFord  takes  place  within  the  RTE  by </p>
+<p>calling SwcSecAccessFord_Init. </p>
+<p><b>3.2 </b></p>
+<p><b>Provide Entropy </b></p>
+<p>After the initialization and before the usage of the security access a source of entropy has </p>
+<p>to be provided at least once by calling SwcSecAccessFord_ProvideEntropy. </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>Depending on the used (pseudo) random number generator, it may be necessary for </p>
+<p>the entropy to have a certain minimum length. </p>
+<p>E.g. in case FIPS186-2 is used, the length of the entropy has to be at least 20 bytes of </p>
+<p>random data. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>The entropy will be triggered in the main function task. </p>
+<p>While the entropy is passed to the random number generator a seed request will report a </p>
+<p>pending operation result. </p>
+<p><b>3.3 </b></p>
+<p><b>States </b></p>
+<p><b>3.3.1 </b></p>
+<p><b>Sec_EntropyOp </b></p>
+<p>The  state  machine  is  used  to  feed  the  entropy  into  the  Csm_RandomSeed  service. </p>
+<p>Internal </p>
+<p>processing </p>
+<p>in </p>
+<p>the </p>
+<p>main </p>
+<p>function </p>
+<p>task </p>
+<p>will </p>
+<p>be </p>
+<p>started </p>
+<p>by </p>
+<p>invoking </p>
+<p>the </p>
+<p>SwcSecAccessFord_ProvideEntropy while the component is in the ‘Initial’ state. </p>
+<p>  </p>
+<p>Figure 3-1 </p>
+<p>State machine Sec_EntropyOp and Sec_VerifyOp </p>
+<p><b> act State Machine</b></p>
+<p>Acti vi tyIni ti al</p>
+<p><b>INITIAL</b></p>
+<p><b>&lt;SERVICE&gt;START</b></p>
+<p><b>&lt;SERVICE&gt;FINISH</b></p>
+<p><b>&lt;SERVICE&gt;UPDATE</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>10 / 18 </p>
+<p><b>3.3.2 </b></p>
+<p><b>Sec_VerifyOp </b></p>
+<p>The </p>
+<p>state </p>
+<p>machine </p>
+<p>is </p>
+<p>used </p>
+<p>to </p>
+<p>verify </p>
+<p>the </p>
+<p>received </p>
+<p>key </p>
+<p>from </p>
+<p>the </p>
+<p>tester </p>
+<p>using </p>
+<p>the </p>
+<p>Csm_MacVerify service. </p>
+<p><b>3.3.3 </b></p>
+<p><b>Sec_SeedState </b></p>
+<p>The state machine is used to determine the progression of seed generation. </p>
+<p> </p>
+<p>Figure 3-2 </p>
+<p>State machine Sec_SeedState </p>
+<p><b>3.3.4 </b></p>
+<p><b>Sec_VerifyState </b></p>
+<p>The state machine is used to determine the progression of the MAC verification. </p>
+<p><b>3.4 </b></p>
+<p><b>Main Functions </b></p>
+<p>The  SwcSecAccessFord_MainFunction  triggers  the  processing  of  the  provided  entropy </p>
+<p>and the MAC verification. The function has to be called cyclically from RTE level.  </p>
+<p><b> act State Machine</b></p>
+<p>Acti vi tyIni ti al</p>
+<p><b>INITIAL</b></p>
+<p><b>GENERATION_PENDING</b></p>
+<p><b>INVALID</b></p>
+<p><b>VALID</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>11 / 18 </p>
+<p><b>4 </b></p>
+<p><b>Integration </b></p>
+<p>This </p>
+<p>chapter </p>
+<p>gives </p>
+<p>necessary </p>
+<p>information </p>
+<p>for </p>
+<p>the </p>
+<p>integration </p>
+<p>of </p>
+<p>the </p>
+<p>MICROSAR </p>
+<p>SwcSecAccessFord into an application environment of an ECU. </p>
+<p><b>4.1 </b></p>
+<p><b>Scope of Delivery </b></p>
+<p>The  delivery  of  the  SwcSecAccessFord  contains  the  files  which  are  described  in  the </p>
+<p>chapters 4.1.1 and 4.1.2: </p>
+<p><b>4.1.1 </b></p>
+<p><b>Static Files </b></p>
+<p><b>File Name </b></p>
+<p><b>Description </b></p>
+<p>SwcSecAccessFord.c </p>
+<p>Implementation of the SwcSecAccessFord</p>
+<p> </p>
+<p>SwcSecAccessFord.h </p>
+<p>Header file of the SWC </p>
+<p>SwcSecAccessFord_Cfg.c </p>
+<p>In this file the secret keys can be stored</p>
+<p> </p>
+<p>SwcSecAccessFord_Cfg.h </p>
+<p>Configuration header file of the SWC</p>
+<p> </p>
+<p>Table 4-1  </p>
+<p>Static files </p>
+<p> </p>
+<p><b>4.1.2 </b></p>
+<p><b>Dynamic Files </b></p>
+<p>The dynamic files are generated by the configuration tool DaVinci Configurator5. </p>
+<p><b>File Name </b></p>
+<p><b>Description </b></p>
+<p>Rte_SwcSecAccessFord.h </p>
+<p>Generated data types and function calls </p>
+<p>Table 4-2  </p>
+<p>Generated files </p>
+<p><b>4.1.3 </b></p>
+<p><b>CSM Configuration in DaVinci Configurator 5 </b></p>
+<p>Before the integration it is necessary to create the configurations of the random number </p>
+<p>generator primitives. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Step 1 </b></p>
+<p>Create the configurations for the CsmRandomSeed, CsmRandomGenerate and </p>
+<p>CsmMacVerify Services </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>On further  Information  about  the  configuration  of  the  CSM  please  refer to  the Technical </p>
+<p>Reference of the CSM [2] and CRY [3]. </p>
+<p> </p>
+<p><b>4.1.4 </b></p>
+<p><b>Integration in DaVinci Developer </b></p>
+<p>The SwcSecAccessFord consists of one AUTOSAR SWC component.  </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>12 / 18 </p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Step 2 </b></p>
+<p>Import software components / compositions </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>To use the software component the software component description must be imported in </p>
+<p>an existing DaVinci Developer workspace “<b>File | Import XML file…</b>” </p>
+<p> </p>
+<p> </p>
+<p><b>Step 3 </b></p>
+<p>Instantiate software components  </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Step 4 </b></p>
+<p>Create a SWC to provide a source of entropy to the open SWC port. </p>
+<p>When FIPS186-2 is used as random number generator this SWC has to provide at </p>
+<p>least 20 byte of random data. </p>
+<p>The quality of randomness highly depends on the quality of the entropy input. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>4.1.5 </b></p>
+<p><b>Connecting ports and task mapping </b></p>
+<p>To connect the ports and map the task you have to use the DaVinci Configurator 5 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Step 5 </b></p>
+<p>Connect the port prototypes from the SWC with the specific component prototypes </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Step 6 </b></p>
+<p>Mapping of the SwcSecAccessFord_MainFunction to a cyclically task and the </p>
+<p>SwcSecAccessFord_Init to the initialization  </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Step 7 </b></p>
+<p>Use DaVinci Configurator 5 to generate and add the provided files, as described in </p>
+<p>4.1.1 and 4.1.2, to your project. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>  </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>13 / 18 </p>
+<p><b>5 </b></p>
+<p><b>API Description </b></p>
+<p>For an interfaces overview please see Figure 2-2. </p>
+<p> </p>
+<p><b>5.1 </b></p>
+<p><b>Service Ports </b></p>
+<p><b>5.1.1 </b></p>
+<p><b>SwcSecAccessFord_CallbackNotificationRandomGenerate </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType <b>SwcSecAccessFord_CallbackNotificationRandomGenerate </b></p>
+<p>(Csm_ReturnType retVal) </p>
+<p><b>Parameter </b></p>
+<p>retVal </p>
+<p>Result of CSM operation </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>RTE_E_OK – allways succeed </p>
+<p><b>Functional Description </b></p>
+<p>This function is being called by the CSM after completion of the random number generation. The seed state </p>
+<p>will be set to SEEDSTATE_VALID if successful </p>
+<p>Call context </p>
+<p>Called by CSM </p>
+<p>Table 5-1  </p>
+<p>SwcSecAccessFord_CallbackNotificationRandomGenerate </p>
+<p> </p>
+<p><b>5.1.2 </b></p>
+<p><b>SwcSecAccessFord_CallbackNotificationRandomSeed </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType <b>SwcSecAccessFord_CallbackNotificationRandomSeed </b>(Csm_ReturnType </p>
+<p>retVal) </p>
+<p><b>Parameter </b></p>
+<p>retVal </p>
+<p>Result of CSM operation </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>RTE_E_OK – allways succeed </p>
+<p><b>Functional Description </b></p>
+<p>This function is being called by the CSM after completion of a random seed operation. The state of </p>
+<p>Sec_EntropyOp will be set to next processing step if successful. </p>
+<p>Call context </p>
+<p>Called by CSM </p>
+<p>Table 5-2  </p>
+<p>SwcSecAccessFord_CallbackNotificationRandomSeed </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>14 / 18 </p>
+<p><b>5.1.3 </b></p>
+<p><b>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt; </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType <b>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt; </b>(const UInt8 *Key, </p>
+<p>Dcm_OpStatusType OpStatus) </p>
+<p><b>Parameter </b></p>
+<p>Key </p>
+<p>Points to the requested key. </p>
+<p>OpStatus </p>
+<p>Status of the current operation. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>RTE_E_OK </p>
+<p>RTE_E_ SecurityAccess_E_COMPARE_KEY_FAILED </p>
+<p>RTE_E_ SecurityAccess_E_NOT_OK </p>
+<p>RTE_E_ SecurityAccess_E_PENDING </p>
+<p><b>Functional Description </b></p>
+<p>The routine calculates a key based on a previously calculated seed and compares the given key (from the </p>
+<p>parameter) against the calculated key. </p>
+<p>Call context </p>
+<p>Called by DCM </p>
+<p>Table 5-3  </p>
+<p>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt; </p>
+<p> </p>
+<p><b>5.1.4 </b></p>
+<p><b>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt; </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType <b>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt; </b>(Dcm_OpStatusType OpStatus, </p>
+<p>UInt8 *Seed, Dcm_NegativeResponseCodeType *ErrorCode) </p>
+<p><b>Parameter </b></p>
+<p>Seed </p>
+<p>Points to the response seed data </p>
+<p>OpStatus </p>
+<p>Status of the current operation. </p>
+<p>ErrorCode </p>
+<p>NRC to be sent in the negative response in case of failure (E_NOT_OK) </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>RTE_E_OK </p>
+<p>RTE_E_ SecurityAccess_E_NOT_OK </p>
+<p>RTE_E_ SecurityAccess_E_PENDING </p>
+<p><b>Functional Description </b></p>
+<p>This function is connected to the GetSeed port of the DCM to provide a seed for the tester. </p>
+<p>Call context </p>
+<p>Called by DCM </p>
+<p>Table 5-4  </p>
+<p>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt; </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>15 / 18 </p>
+<p><b>5.1.5 </b></p>
+<p><b>SwcSecAccessFord_Init </b></p>
+<p><b>Prototype </b></p>
+<p>void <b>SwcSecAccessFord_Init </b>(void) </p>
+<p><b>Functional Description </b></p>
+<p>This function initializes the state machines of the SwcSecAccessFord </p>
+<p>Call context </p>
+<p>Called by RTE on initialization </p>
+<p>Table 5-5  </p>
+<p>SwcSecAccessFord_Init </p>
+<p> </p>
+<p><b>5.1.6 </b></p>
+<p><b>SwcSecAccessFord_MainFunction </b></p>
+<p><b>Prototype </b></p>
+<p>void <b>SwcSecAccessFord_MainFunction </b>(void) </p>
+<p><b>Functional Description </b></p>
+<p>The main function triggers the internal processing in the background. </p>
+<p>Call context </p>
+<p>Called by RTE cyclically </p>
+<p>Table 5-6  </p>
+<p>SwcSecAccessFord_MainFunction </p>
+<p> </p>
+<p><b>5.1.7 </b></p>
+<p><b>SwcSecAccessFord_ProvideEntropy </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType <b>SwcSecAccessFord_ProvideEntropy </b>(const UInt8 *entropyBuffer, </p>
+<p>UInt32 entropyLength) </p>
+<p><b>Parameter </b></p>
+<p>entropyBuffer </p>
+<p>Points to the source of entropy </p>
+<p>entropyLength </p>
+<p>Length of the entropy buffer </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>RTE_E_OK </p>
+<p>RTE_E_SwcSecAccessFord_ProvideEntropy_E_BUSY </p>
+<p>RTE_E_SwcSecAccessFord_ProvideEntropy_E_NOT_OK </p>
+<p><b>Functional Description </b></p>
+<p>A provided source of entropy will be used to instantiate the random number generator for the GetSeed() </p>
+<p>function. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>In case of FIPS186-2 the provided source of entropy has to be at least 20 bytes. </p>
+<p>Call context </p>
+<p>Called by a SWC </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>16 / 18 </p>
+<p>Table 5-7  </p>
+<p>SwcSecAccessFord_ProvideEntropy </p>
+<p> </p>
+<p><b>5.1.8 </b></p>
+<p><b>Client Server Interface </b></p>
+<p>A client server interface is related to a Provide Port at the server side and a Require Port </p>
+<p>at client side.  </p>
+<p><b>5.1.8.1 </b></p>
+<p><b>Provide Ports on SwcSecAccessFord Side </b></p>
+<p>At  the  Provide  Ports  of  the  SwcSecAccessFord  the API  functions  described  in  5.1  are </p>
+<p>available  as  Runnable  Entities.  The  Runnable  Entities  are  invoked  via  Operations.  The </p>
+<p>mapping from a SWC client call to an Operation is performed by the RTE.  </p>
+<p><b>Operation </b></p>
+<p><b>Mapping </b></p>
+<p>CsmCallbackMacVerify </p>
+<p>Mapped to &lt;Instance&gt;_Callback of MacVerify primitive (CSM) </p>
+<p>CsmCallbackRandomGenerate </p>
+<p>Mapped to &lt;Instance&gt;_Callback of RandomGenerate primitive (CSM) </p>
+<p>CsmCallbackRandomSeed </p>
+<p>Mapped to &lt;Instance&gt;_Callback of RandomSeed primitive (CSM) </p>
+<p>SecurityAccessL&lt;LEVEL&gt; </p>
+<p>Mapped to SecurityAccess_&lt;SecurityLevelName&gt; of DCM </p>
+<p>ProvideEntropy </p>
+<p>SWC which provides a source of entropy at least once </p>
+<p>Table 5-8  </p>
+<p>Provided ports by the SWC </p>
+<p><b>5.1.8.2 </b></p>
+<p><b>Require Ports on SwcSecAccessFord Side </b></p>
+<p>At its Require Ports the SwcSecAccessFord calls Operations. These Operations have to </p>
+<p>be  provided  by  the  SWCs  by  means  of  Runnable  Entities.  These  Runnable  Entities </p>
+<p>implement the callback functions expected by the SwcSecAccessFord. </p>
+<p><b>Operation </b></p>
+<p><b>Mapping </b></p>
+<p>CsmRandomSeed </p>
+<p>Mapped to &lt;Instance&gt; of RandomSeed primitive (CSM) </p>
+<p>CsmRandomGenerate </p>
+<p>Mapped to &lt;Instance&gt; of RandomGenerate primitive (CSM) </p>
+<p>CsmMacVerify </p>
+<p>Mapped to &lt;Instance&gt; of MacVerify primitive (CSM) </p>
+<p>Table 5-9  </p>
+<p>Required ports by the SWC </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>17 / 18 </p>
+<p><b>6 </b></p>
+<p><b>Glossary and Abbreviations </b></p>
+<p><b>6.1 </b></p>
+<p><b>Abbreviations </b></p>
+<p><b>Abbreviation </b></p>
+<p><b>Description </b></p>
+<p>API </p>
+<p>Application Programming Interface </p>
+<p> </p>
+<p>AUTOSAR </p>
+<p>Automotive Open System Architecture </p>
+<p>BSW </p>
+<p>Basis Software </p>
+<p>CRY </p>
+<p>Cryptographic library module </p>
+<p>CSM </p>
+<p>Crypto Service Manager </p>
+<p>DCM </p>
+<p>Diagnostic Communication Manager </p>
+<p>MICROSAR </p>
+<p>Microcontroller Open System Architecture (the Vector AUTOSAR </p>
+<p>solution) </p>
+<p>PPORT </p>
+<p>Provide Port </p>
+<p>RPORT </p>
+<p>Require Port </p>
+<p>RTE </p>
+<p>Runtime Environment </p>
+<p>SWC </p>
+<p>Software Component </p>
+<p>SWS </p>
+<p>Software Specification </p>
+<p>Table 6-1  </p>
+<p>Abbreviations </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference MICROSAR - SwcSecAccessFord </p>
+<p></p>
+<p>2015, Vector Informatik GmbH </p>
+<p>Version: 1.0.0 </p>
+<p>based on template version 5.11.0 </p>
+<p>18 / 18 </p>
+<p><b>7 </b></p>
+<p><b>Contact </b></p>
+<p>Visit our website for more information on </p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>News </p>
+<p><b>&gt; </b></p>
+<p>Products </p>
+<p><b>&gt; </b></p>
+<p>Demo software </p>
+<p><b>&gt; </b></p>
+<p>Support </p>
+<p><b>&gt; </b></p>
+<p>Training data </p>
+<p><b>&gt; </b></p>
+<p>Addresses </p>
+<p> </p>
+<p>www.vector.com </p>
+<p> </p>
+<p> </p>
+</body>
+</html>
+{% endraw %}

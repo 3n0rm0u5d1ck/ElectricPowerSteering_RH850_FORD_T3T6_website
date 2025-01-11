@@ -1,0 +1,5166 @@
+---
+layout: default
+title: R20UT3652EJ0100-AUTOSAR
+nav_order: 4
+parent: MCU Driver
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3</p>
+<p> </p>
+<p>User’s Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>MCU Driver Component Ver.1.0.2 </p>
+<p> </p>
+<p>Generation Tool User’s Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Target Device: </p>
+<p>RH850/P1x-C</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>All information contained in these materials, including products and product specifications, </p>
+<p>represents information on the product at the time of publication and is subject to change by </p>
+<p>Renesas Electronics Corp. without notice. Please review the latest information published by </p>
+<p>Renesas Electronics Corp. through various means, including the Renesas Electronics Corp. </p>
+<p>website (http://www.renesas.com). </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>www.renesas.com </p>
+<p>Rev.1.00 Jan 2017</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>2 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>3 </b></p>
+<p> </p>
+<p> </p>
+<p>Notice </p>
+<p>1.</p>
+<p> </p>
+<p>Descriptions of circuits, software and other related information in this document are provided only to illustrate the operation of </p>
+<p>semiconductor products and application examples. You are fully responsible for the incorporation or any other use of the circuits, </p>
+<p>software, and information in the design of your product or system. Renesas Electronics disclaims any and all liability for any losses and </p>
+<p>damages incurred by you or third parties arising from the use of these circuits, software, or information. </p>
+<p>2.</p>
+<p> </p>
+<p>Renesas Electronics hereby expressly disclaims any warranties against and liability for infringement or any other disputes involving patents, </p>
+<p>copyrights, or other intellectual property rights of third parties, by or arising from the use of Renesas Electronics products or technical </p>
+<p>information described in this document, including but not limited to, the product data, drawing, chart, program, algorithm, application </p>
+<p>examples. </p>
+<p>3.</p>
+<p> </p>
+<p>No license, express, implied or otherwise, is granted hereby under any patents, copyrights or other intellectual property rights of Renesas </p>
+<p>Electronics or others. </p>
+<p>4.</p>
+<p> </p>
+<p>You shall not alter, modify, copy, or otherwise misappropriate any Renesas Electronics product, whether in whole or in part. Renesas </p>
+<p>Electronics disclaims any and all liability for any losses or damages incurred by you or third parties arising from such alteration, modification, </p>
+<p>copy or otherwise misappropriation of Renesas Electronics products. </p>
+<p>5.</p>
+<p> </p>
+<p>Renesas Electronics products are classified according to the following two quality grades: &quot;Standard&quot; and &quot;High Quality&quot;. The intended </p>
+<p>applications for each Renesas Electronics product depends on the product’s quality grade, as indicated below.  </p>
+<p>&quot;Standard&quot;:          Computers; office equipment; communications equipment; test and measurement equipment; audio and visual equipment; </p>
+<p>home electronic appliances; machine tools; personal electronic equipment; and industrial robots etc. </p>
+<p>&quot;High Quality&quot;:   Transportation equipment (automobiles, trains, ships, etc.); traffic control (traffic lights); large-scale communication </p>
+<p>equipment; key financial terminal systems; safety control equipment; etc. </p>
+<p>Renesas Electronics products are neither intended nor authorized for use in products or systems that may pose a direct threat to human life or </p>
+<p>bodily injury (artificial life support devices or systems, surgical implantations etc.), or may cause serious property damages (space and undersea </p>
+<p>repeaters; nuclear power control systems; aircraft control systems; key plant systems; military equipment; etc.). Renesas Electronics disclaims </p>
+<p>any and all liability for any damages or losses incurred by you or third parties arising from the use of any Renesas Electronics product for which </p>
+<p>the product is not intended by Renesas Electronics. </p>
+<p>6.</p>
+<p> </p>
+<p>When using the Renesas Electronics products, refer to the latest product information (data sheets, user’s manuals, application notes, &quot;General </p>
+<p>Notes for Handling and Using Semiconductor Devices&quot; in the reliability handbook, etc.), and ensure that usage conditions are within the ranges </p>
+<p>specified by Renesas Electronics with respect to maximum ratings, operating power supply voltage range, heat radiation characteristics, </p>
+<p>installation, etc. Renesas Electronics disclaims any and all liability for any malfunctions or failure or accident arising out of the use of Renesas </p>
+<p>Electronics products beyond such specified ranges. </p>
+<p>7.</p>
+<p> </p>
+<p>Although Renesas Electronics endeavors to improve the quality and reliability of Renesas Electronics products, semiconductor products have </p>
+<p>specific characteristics such as the occurrence of failure at a certain rate and malfunctions under certain use conditions. Further, Renesas </p>
+<p>Electronics products are not subject to radiation resistance design. Please ensure to implement safety measures to guard them against the </p>
+<p>possibility of bodily injury, injury or damage caused by fire, and social damage in the event of failure or malfunction of Renesas Electronics </p>
+<p>products, such as safety design for hardware and software including but not limited to redundancy, fire control and malfunction prevention, </p>
+<p>appropriate treatment for aging degradation or any other appropriate measures by your own responsibility as warranty for your products/system. </p>
+<p>Because the evaluation of microcomputer software alone is very difficult and not practical, please evaluate the safety of the final products or </p>
+<p>systems manufactured by you. </p>
+<p>8.</p>
+<p> </p>
+<p>Please contact a Renesas Electronics sales office for details as to environmental matters such as the environmental compatibility of each </p>
+<p>Renesas Electronics product. Please investigate applicable laws and regulations that regulate the inclusion or use of controlled substances, </p>
+<p>including without limitation, the EU RoHS Directive carefully and sufficiently and use Renesas Electronics products in compliance with all </p>
+<p>these applicable laws and regulations. Renesas Electronics disclaims any and all liability for damages or losses occurring as a result of your </p>
+<p>noncompliance with applicable laws and regulations. </p>
+<p>9.</p>
+<p> </p>
+<p>Renesas Electronics products and technologies shall not be used for or incorporated into any products or systems whose manufacture, use, or </p>
+<p>sale is prohibited under any applicable domestic or foreign laws or regulations. You shall not use Renesas Electronics products or technologies </p>
+<p>for (1) any purpose relating to the development, design, manufacture, use, stockpiling, etc., of weapons of mass destruction, such as nuclear </p>
+<p>weapons, chemical weapons, or biological weapons, or missiles (including unmanned aerial vehicles (UAVs)) for delivering such weapons, (2) </p>
+<p>any purpose relating to the development, design, manufacture, or use of conventional weapons, or (3) any other purpose of disturbing </p>
+<p>international peace and security, and you shall not sell, export, lease, transfer, or release Renesas Electronics products or technologies to any </p>
+<p>third party whether directly or indirectly with knowledge or reason to know that the third party or any other party will engage in the activities </p>
+<p>described above. When exporting, selling, transferring, etc., Renesas Electronics products or technologies, you shall comply with any applicable </p>
+<p>export control laws and regulations promulgated and administered by the governments of the countries asserting jurisdiction over the parties or </p>
+<p>transactions. </p>
+<p>10.</p>
+<p> </p>
+<p>Please acknowledge and agree that you shall bear all the losses and damages which are incurred from the misuse or violation of the terms and </p>
+<p>conditions described in this document, including this notice, and hold Renesas Electronics harmless, if such misuse or violation results from </p>
+<p>your resale or making Renesas Electronics products available any third party. </p>
+<p>11.</p>
+<p> </p>
+<p>This document shall not be reprinted, reproduced or duplicated in any form, in whole or in part, without prior written consent of Renesas </p>
+<p>Electronics. </p>
+<p>12.</p>
+<p> </p>
+<p>Please contact a Renesas Electronics sales office if you have any questions regarding the information contained in this document or Renesas </p>
+<p>Electronics products. </p>
+<p> </p>
+<p>(Note 1)   &quot;Renesas Electronics&quot; as used in this document means Renesas Electronics Corporation and also includes its majority-owned </p>
+<p>subsidiaries. </p>
+<p>(Note 2)   &quot;Renesas Electronics product(s)&quot; means any product developed or manufactured by or for Renesas Electronics. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>4 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>5 </b></p>
+<p> </p>
+<p> </p>
+<p><b>Abbreviations and Acronyms </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Abbreviation / Acronym</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>AUTOSAR</p>
+<p> </p>
+<p>AUTomotive Open System ARchitecture</p>
+<p> </p>
+<p> ARXML</p>
+<p> </p>
+<p>Autosar eXtensible Mark-up Language</p>
+<p> </p>
+<p>BSWMDT</p>
+<p> </p>
+<p>Basic Software Module Description Template</p>
+<p> </p>
+<p>CFD </p>
+<p>Control Flow Diagram </p>
+<p>DFD </p>
+<p>Data Flow Diagram </p>
+<p>DEM</p>
+<p> </p>
+<p>Diagnostic Event Manager</p>
+<p> </p>
+<p>ECM </p>
+<p>Error Control Module </p>
+<p>ECU</p>
+<p> </p>
+<p>Electronic Control Unit</p>
+<p> </p>
+<p>Id</p>
+<p> </p>
+<p>Identifier</p>
+<p> </p>
+<p>MCAL</p>
+<p> </p>
+<p>Micro Controller Abstraction Layer</p>
+<p> </p>
+<p>MCU</p>
+<p> </p>
+<p>Micro Controller Unit</p>
+<p> </p>
+<p>SPAL</p>
+<p> </p>
+<p>Standard Peripheral Abstraction Layer</p>
+<p> </p>
+<p>XML</p>
+<p> </p>
+<p>eXtensible Mark-up Language</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Definitions </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Terminology</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>BSWMDT File</p>
+<p> </p>
+<p>This file is the template for the Basic Software Module Description.</p>
+<p> </p>
+<p>Configuration XML File</p>
+<p> </p>
+<p>This file contains the setting of command line options.</p>
+<p> </p>
+<p>ECU Configuration Description </p>
+<p>File</p>
+<p> </p>
+<p>Input file to MCU Driver MCAL Code Generator Tool. It is </p>
+<p>generated by ECU Configuration Editor.</p>
+<p> </p>
+<p>Sl.No</p>
+<p> </p>
+<p>Serial Number.</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>6 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>7 </b></p>
+<p> </p>
+<p> </p>
+<p><b>Table of Contents </b></p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 1</b></p>
+<p> </p>
+<p><b>Introduction .................................................................................... 9</b></p>
+<p> </p>
+<p><b>1.1.</b></p>
+<p> </p>
+<p><b>Document Overview .......................................................................................................... 9</b></p>
+<p> </p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p><b>Reference ...................................................................................... 11</b></p>
+<p> </p>
+<p><b>2.1.</b></p>
+<p> </p>
+<p><b>Reference Documents .................................................................................................... 11</b></p>
+<p> </p>
+<p><b>2.2.</b></p>
+<p> </p>
+<p><b>Trademark Notice ............................................................................................................ 11</b></p>
+<p> </p>
+<p><b>Chapter 3</b></p>
+<p> </p>
+<p><b>Code Generation Overview .......................................................... 13</b></p>
+<p> </p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p><b>Input Files ..................................................................................... 15</b></p>
+<p> </p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p><b>Output Files .................................................................................. 17</b></p>
+<p> </p>
+<p><b>Chapter 6</b></p>
+<p> </p>
+<p><b>Precautions ................................................................................... 19</b></p>
+<p> </p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p><b>User Configuration Validation ..................................................... 21</b></p>
+<p> </p>
+<p><b>Chapter 8 Configuration Overview .................................................................... 23</b></p>
+<p> </p>
+<p><b>8.1</b></p>
+<p> </p>
+<p><b>Container Overview ......................................................................................................... 23</b></p>
+<p> </p>
+<p>8.1.1</p>
+<p> </p>
+<p>Pre Compile Time Configurable Parameters ....................................................... 24</p>
+<p> </p>
+<p>8.1.2</p>
+<p> </p>
+<p>Post Build Time Configurable Parameters ........................................................... 30</p>
+<p> </p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p><b>Messages ...................................................................................... 53</b></p>
+<p> </p>
+<p><b>9.1</b></p>
+<p> </p>
+<p><b>Error Messages ................................................................................................................ 53</b></p>
+<p> </p>
+<p><b>9.2</b></p>
+<p> </p>
+<p><b>Warning Messages .......................................................................................................... 61</b></p>
+<p> </p>
+<p><b>9.3</b></p>
+<p> </p>
+<p><b>Information Messages .................................................................................................... 61</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>8 </b></p>
+<p> </p>
+<p> </p>
+<p><b>List of Figures </b></p>
+<p><b> </b></p>
+<p>Figure 3-1</p>
+<p> </p>
+<p>Overview of Code Generation ............................................................................................. 13</p>
+<p> </p>
+<p>Figure 3-2       Flow-Diagram of Code Generation ...................................................................................... 14</p>
+<p> </p>
+<p>Figure 8-1</p>
+<p> </p>
+<p>Configuration overview ........................................................................................................ 23</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>List of Tables </b></p>
+<p><b> </b></p>
+<p>Table 5-1</p>
+<p> </p>
+<p>Output Files Description ........................................................................................................... 17</p>
+<p> </p>
+<p>Table 8-1</p>
+<p> </p>
+<p> Pre Compile Time Configurable Parameters .......................................................................... 24</p>
+<p> </p>
+<p>Table 8-2</p>
+<p> </p>
+<p> Post Build Time Configurable Parameters .............................................................................. 30</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>9 </b></p>
+<p><b>Introduction </b></p>
+<p><b>Chapter 1 </b></p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 1  Introduction </b></p>
+<p> </p>
+<p> </p>
+<p>The MCU Driver component provides services for basic microcontroller </p>
+<p>initialization, reset, standby modes, handles ECM and microcontroller </p>
+<p>specific functions required from other SPAL components. </p>
+<p> </p>
+<p> </p>
+<p>The MCU Driver Component comprises of two sections i.e., Embedded </p>
+<p>Software and MCAL Code Generator Tool to achieve scalability and </p>
+<p>configurability. </p>
+<p> </p>
+<p> </p>
+<p>The document describes the MCU module specific inputs and outputs of the </p>
+<p>MCAL Code Generator Tool that is the common code generator engine used </p>
+<p>for the generation of the configuration code for all MCAL modules.</p>
+<p> </p>
+<p>MCAL </p>
+<p>Code Generator Tool is a command line tool that extracts information from </p>
+<p>ECU Configuration Description File, BSWMDT File and generates MCU </p>
+<p>Driver Configuration source and header files (Mcu_PBcfg.c,  </p>
+<p>Mcu_Hardware.c, Mcu_Hardware.h, Mcu_Cbk.h and Mcu_Cfg.h). </p>
+<p> </p>
+<p>This document contains information on the options, input and output files of </p>
+<p>the MCAL Code Generator Tool. In addition, this manual covers a step-by-</p>
+<p>step procedure for the usage of MCAL Code Generator Tool. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>1.1. </b></p>
+<p><b>Document Overview </b></p>
+<p> </p>
+<p> </p>
+<p>This user manual is organized as given in the table below: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Section</b></p>
+<p> </p>
+<p><b>Contents</b></p>
+<p> </p>
+<p>Section 1 (Introduction)</p>
+<p> </p>
+<p>Provides an introduction to the document and explains how information </p>
+<p>is organized in this manual.</p>
+<p> </p>
+<p>Section 2 (Reference)</p>
+<p> </p>
+<p>Provides a list of documents referred while developing this document.</p>
+<p> </p>
+<p>Section 3 (Code Generation </p>
+<p>Overview)</p>
+<p> </p>
+<p>Provides the overview of Code generation.</p>
+<p> </p>
+<p>Section 4 (Input Files)</p>
+<p> </p>
+<p>Provides information about ECU Configuration Description File.</p>
+<p> </p>
+<p>Section 5 (Output Files)</p>
+<p> </p>
+<p>Explains the output files that are generated by the MCAL Code </p>
+<p>Generator Tool</p>
+<p> </p>
+<p>Section 6 (Precautions)</p>
+<p> </p>
+<p>Contains precautions to be taken during configuration of ECU </p>
+<p>Configuration Description File.</p>
+<p> </p>
+<p>Section 7 (User Configuration </p>
+<p>Validation)</p>
+<p> </p>
+<p>Describes about user configuration validation done by the MCAL Code </p>
+<p>Generator Tool</p>
+<p> </p>
+<p>Section 8 (Configuration </p>
+<p>overview) </p>
+<p>Describes the overview of the configuration parameters. </p>
+<p>Section 9 (Messages)</p>
+<p> </p>
+<p>Describes all the Error/Warning/Information messages of R4.0.3 which </p>
+<p>helps the user to understand the probable reason for the same.</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>10 </b></p>
+<p><b>Chapter 1                                                                                                                              Introduction </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>11 </b></p>
+<p><b>Reference </b></p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 2  Reference </b></p>
+<p> </p>
+<p> </p>
+<p><b>2.1. </b></p>
+<p><b>Reference Documents </b></p>
+<p> </p>
+<p> </p>
+<p>The following table lists the documents referred to develop this document: </p>
+<p> </p>
+<p><b>Sl. No</b></p>
+<p> </p>
+<p><b>Title</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>AUTOSAR_SWS_MCUDriver</p>
+<p> </p>
+<p>3.2.0</p>
+<p> </p>
+<p>2. </p>
+<p>MCAL_CodeGenerator_Tool_UserManual.pdf </p>
+<p>1.7 </p>
+<p>3. </p>
+<p>R20UT3828EJ0100-AUTOSAR.pdf </p>
+<p>1.0.2 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>2.2. </b></p>
+<p><b>Trademark Notice </b></p>
+<p> </p>
+<p> </p>
+<p>Microsoft and Windows are trademarks/registered trademarks of Microsoft </p>
+<p>Corporation. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>12 </b></p>
+<p><b>Chapter 2                                                                                                                                  Reference </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>13 </b></p>
+<p><b> Code Generation Overview </b></p>
+<p><b>Chapter 3</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Chapter 3  Code Generation Overview </b></p>
+<p> </p>
+<p> </p>
+<p>Overview of Code Generation is shown below </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 3-1 </b></p>
+<p><b>Overview of Code Generation </b></p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>ECU Configuration Description File (.arxml): </p>
+<p>This file will contain MCU Driver specific configuration information. </p>
+<p>This file should be generated by AUTOSAR specified Configuration </p>
+<p>Editor. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>BSWMDT File (.arxml): </p>
+<p>MCAL Code Generator Tool uses “Common Published Information” </p>
+<p>from MCU module specific BSWMDT File. MCU module specific </p>
+<p>BSWMDT File should not be updated manually since it is “Static </p>
+<p>Configuration” file. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Velocity template files: </p>
+<p>Mcu_PBcfg_c.vm, Mcu_Cfg_h.vm, Mcu_Hardware_h.vm, </p>
+<p>Mcu_Hardware_c.vm, Mcu_Validate.vm, Mcu_Cbk_h.vm and </p>
+<p>CommonHelper.vm </p>
+<p>They are interpreted by the MCAL Code Generator Tool in order to </p>
+<p>provide user input validation and generate the final output file </p>
+<p>needed by the AUTOSAR configuration chain.They are the &quot;logic&quot; of </p>
+<p>the Code Generator. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Configuration XML File (.xml): </p>
+<p>T</p>
+<p>his file is used to specify which velocity template to use and their </p>
+<p>location and the name of the output file generated. </p>
+<p> </p>
+<p>For the error free input file, the MCAL Code Generator Tool generates the </p>
+<p>following output files: Mcu_Cfg.h, Mcu_Hardware.h, Mcu_PBcfg.c, Mcu_Cbk.h </p>
+<p>and Mcu_Hardware.c and displays appropriate context sensitive error </p>
+<p>messages for wrong input and exits. </p>
+<p> </p>
+<p>ECU Configuration Description File can be created or edited using ECU </p>
+<p>Configuration Editor. </p>
+<p> </p>
+<p><b>Mcu_Cfg.h, </b></p>
+<p><b>Mcu_Hardware.h, </b></p>
+<p><b>Mcu_PBcfg.c, </b></p>
+<p><b>Mcu_Hardware.c,</b></p>
+<p><b>Mcu_Cbk.h </b></p>
+<p><b>ECU Configuration </b></p>
+<p><b>Description File and </b></p>
+<p><b>BSWMDT File </b></p>
+<p>                                                                                          </p>
+<p> </p>
+<p><b>MCAL Generator </b></p>
+<p><b>Velocity template </b></p>
+<p><b>files for MCU </b></p>
+<p><b>Configuration XML </b></p>
+<p><b>File </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>14 </b></p>
+<p><b>Chapter 3                                                                                                  Code Generation Overview</b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Concept of execution for MCU Driver MCAL Code </p>
+<p>Generator Tool is as follows: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 3-2       Flow-Diagram of Code Generation </b></p>
+<p><b> </b></p>
+<p>The module “Validate” will validate the configuration (contents of </p>
+<p>ECU Configuration Description File(s) as input). If there are </p>
+<p>incorrect values or incorrect dependencies, the MCAL Code </p>
+<p>Generator Tool will display error, warning and information </p>
+<p>messages. In case of errors, the MCAL Code Generator Tool will </p>
+<p>abort the execution.  </p>
+<p>Mcu_Cfg_h.vm / Mcu_PBcfg_c.vm will generate compiler switch / </p>
+<p>structures necessary to the AUTOSAR Configuration chain and </p>
+<p>vendor specific parameters. </p>
+<p>Mcu_Hardware_h.vm / Mcu_Hardware_c.vm will generate hardware </p>
+<p>related info (defines number of actual instances / channels used / </p>
+<p>structure to access to the I/O mapped peripheral). </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>Please consult the general MCAL Code Generator Tool User Manual </p>
+<p>(MCAL_CodeGenerator_Tool_UserManual.pdf) and </p>
+<p>GettingStarted_MCAL_Drivers_X1x (R20UT3828EJ0100-AUTOSAR.pdf) for </p>
+<p>details about the MCAL Code Generator Tool command line options.</p>
+<p>Generation start </p>
+<p>ECU Configuration </p>
+<p>Description Files </p>
+<p>And BSWMDT file </p>
+<p>(.arxml) </p>
+<p> </p>
+<p>Template files(.vm) </p>
+<p> </p>
+<p>config.xml </p>
+<p>Generate Output Files </p>
+<p>Validation </p>
+<p>successful </p>
+<p>Validate.vm </p>
+<p>Common </p>
+<p>Helper.vm </p>
+<p>Yes </p>
+<p>Display Error </p>
+<p> </p>
+<p>No </p>
+<p>    Generation stop </p>
+<p>MCAL Code Generator </p>
+<p>Tool </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>15 </b></p>
+<p><b>Input Files </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Chapter 4  Input Files </b></p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool will accept the config.xml file which has paths </p>
+<p>to the Velocity template files for generating Mcu Driver files. MCAL Code </p>
+<p>Generator Tool need ECU Configuration Description File(s) and BSWMDT </p>
+<p>File as inputs to generate Mcu Driver specific source files. Hence ECU </p>
+<p>Configuration Description File should contain configuration of MCU Driver </p>
+<p>module. MCAL Code Generator Tool ignores any other AUTOSAR </p>
+<p>component configured in the ECU Configuration Description File. ECU </p>
+<p>Configuration Description File can be generated using configuration editor. </p>
+<p> </p>
+<p>ECU Configuration Description File must comply with AUTOSAR standard </p>
+<p>ECU Configuration Description File format </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>The detailed explanation about the parameters and containers are found in </p>
+<p>Parameter Definition File. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>16 </b></p>
+<p><b>Chapter 4                                                                                                                                Input Files </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>17 </b></p>
+<p><b>Output Files </b></p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 5  Output Files </b></p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool generates configuration details in C Header and </p>
+<p>C Source files Mcu_Cfg.h, Mcu_Hardware.c, Mcu_Hardware.h, Mcu_PBcfg.c </p>
+<p>and Mcu_Cbk.h. </p>
+<p> </p>
+<p> </p>
+<p>The content of each output file is given in the table below:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Table 5-1 </b></p>
+<p><b>Output Files Description </b></p>
+<p> </p>
+<p><b>Output File</b></p>
+<p> </p>
+<p><b>Details</b></p>
+<p> </p>
+<p>Mcu_Cfg.h</p>
+<p> </p>
+<p>This file contains pre-compile time parameters.</p>
+<p> </p>
+<p>Mcu_Hardware.c</p>
+<p> </p>
+<p>This file contains the definitions for addresses of the hardware registers used in the </p>
+<p>MCU Driver Module.</p>
+<p> </p>
+<p>Mcu_Hardware.h</p>
+<p> </p>
+<p>This file contains the declarations for addresses of the hardware registers used in the </p>
+<p>MCU Driver Module.</p>
+<p> </p>
+<p>Mcu_PBcfg.c</p>
+<p> </p>
+<p>This file contains post-build configuration data.</p>
+<p> </p>
+<p>Mcu_Cbk.h</p>
+<p> </p>
+<p>This file contains call back function of Dem.</p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>Output files generated by MCAL Code Generator Tool should not be modified </p>
+<p>or edited manually. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>18 </b></p>
+<p><b>Chapter 5                                                                                                                             Output Files </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 6 </b></p>
+<p><b>Precautions </b></p>
+<p><b>19 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 6  Precautions </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>ECU Configuration Description File and BSWMDT File must comply with </p>
+<p>AUTOSAR standard for R4.0.3 ECU Configuration Description File and </p>
+<p>BSWMDT File respectively. </p>
+<p>• </p>
+<p>The input file must contain MCU Driver module. </p>
+<p> </p>
+<p>• </p>
+<p>All the function names and the string values configured should follow C </p>
+<p>syntax for variables. It can only contain alphanumeric characters and “_”. It </p>
+<p>should start with an alphabet. </p>
+<p> </p>
+<p>• </p>
+<p>MCU Configuration is dependent on DEM module description file. </p>
+<p>• </p>
+<p>Configuration xml file :config.xml should convey the velocity template file </p>
+<p>location and output file location. </p>
+<p>• </p>
+<p>Configuration XML File should contain the file extension ‘.xml’. </p>
+<p> </p>
+<p>• </p>
+<p>If the output files generated by MCAL Code Generator Tool are modified </p>
+<p>externally, then they may not produce the expected results or may lead to </p>
+<p>error/warning/Information messages. </p>
+<p> </p>
+<p>• </p>
+<p>Short Name for a container should be unique within a name space. </p>
+<p> </p>
+<p>• </p>
+<p>An error free ECU Configuration Description File generated from </p>
+<p>configuration editor has to be provided as input to the MCU Driver MCAL </p>
+<p>Code Generator Tool. Otherwise MCAL Code Generator Tool may not </p>
+<p>produce the expected results or may lead to errors/warnings/information </p>
+<p>messages. </p>
+<p> </p>
+<p> </p>
+<p><b>Remarks</b>: </p>
+<p>Please refer MCU Component User Manual (R20UT3651EJ0100-</p>
+<p>AUTOSAR.pdf) for deviations from AUTOSAR specifications. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>20 </b></p>
+<p><b>Chapter 6                                                                                                                              Precautions </b></p>
+<p> </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>User Configuration Validation </b></p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p> </p>
+<p>21 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 7  User Configuration Validation </b></p>
+<p> </p>
+<p> </p>
+<p>This section provides help to analyze the error, warning and information </p>
+<p>messages displayed during the execution of MCU Driver MCAL code </p>
+<p>generator tool. It ensures conformance of input file with syntax and </p>
+<p>semantics. It also performs validation on the input file for correctness of the </p>
+<p>data. </p>
+<p> </p>
+<p> </p>
+<p>For more details on list of Error/Warning/Information messages that are </p>
+<p>displayed as a result of input file(s) validation, refer Chapter 9 “<i>Messages</i>”. </p>
+<p> </p>
+<p> </p>
+<p>The MCAL Code Generator Tool displays error or warning or information </p>
+<p>when the user has configured incorrect inputs. The format of </p>
+<p>Error/Warning/Information message is as shown below. </p>
+<p> </p>
+<p> </p>
+<p>&lt;message_type&gt;_&lt;vendor_id&gt;_&lt;module_id&gt;_&lt;message_id&gt;:&lt;message_cont</p>
+<p>ent&gt;.  </p>
+<p>where, </p>
+<p></p>
+<p> </p>
+<p>&lt;message_type&gt;     : ERR/WARNING/INFO </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt; vendor_id &gt;           : vendor Id = 59 </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt; module_id &gt;          : 101- MCU Driver Module id (101) for user   </p>
+<p>                                   configuration checks. </p>
+<p>    </p>
+<p></p>
+<p> </p>
+<p>&lt; Message_id.&gt;       :  001-999  </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt;message_content&gt;:   Message content provides information   </p>
+<p>                                    about error or warning or information displayed          </p>
+<p>                                    when the user has configured incorrect inputs. </p>
+<p> </p>
+<p>                                                               </p>
+<p>File Name’ and ‘Path’ need not be present for all      </p>
+<p>                                                                                        Error/Warning/Information messages </p>
+<p>                   </p>
+<p>                                    File Name: Name of the file in which the error has </p>
+<p>                                    occurred. </p>
+<p> </p>
+<p>                                    Path: Absolute path of the container in which the  </p>
+<p>                                    parameter is present </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 7                                                                                                User Configuration Validation </b></p>
+<p> </p>
+<p>22 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>23 </p>
+<p><b>Chapter 8</b></p>
+<p><b> </b></p>
+<p><b>Configuration Overview </b></p>
+<p> </p>
+<p><b>8.1 </b></p>
+<p><b>Container Overview </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Figure 8-1 </b></p>
+<p><b>Configuration overview </b></p>
+<p>                                                                                 MCU </p>
+<p>McuPublishedInformation</p>
+<p> </p>
+<p>McuGeneralConfiguration</p>
+<p> </p>
+<p>McuModuleConfiguration</p>
+<p> </p>
+<p>McuClockSettingConfig </p>
+<p>McuSAWdtCounterClk </p>
+<p>McuPLLClkSetting </p>
+<p>McuInternalOscillatorClk</p>
+<p> </p>
+<p>McuExternalClkOutSetting </p>
+<p>McuWdtaCounterClk </p>
+<p>McuClockReferencePoint </p>
+<p>McuGTMClockSettingsConfig</p>
+<p> </p>
+<p>McuGTMClockSettings</p>
+<p> </p>
+<p>McuEcmErrorSourcesCfg </p>
+<p>McuDemEventParameterRefs </p>
+<p>McuModeSettingConf </p>
+<p>McuWakeUpFactorDetails </p>
+<p>McuRamSectorSettingConf</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>24 </p>
+<p> </p>
+<p><b>8.1.1 </b></p>
+<p><b> Pre Compile Time Configurable Parameters </b></p>
+<p><b>Table 8-1 </b></p>
+<p><b> Pre Compile Time Configurable Parameters </b></p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  Range </b></p>
+<p><b>Parameter </b></p>
+<p><b>Description  </b></p>
+<p>McuGener</p>
+<p>al </p>
+<p> </p>
+<p>McuVersionCheckExtern</p>
+<p>alModules </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Enable / disable </p>
+<p>AUTOSAR Version </p>
+<p>check for inter-</p>
+<p>module </p>
+<p>dependencies </p>
+<p>McuDevErrorDetect </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch for enabling </p>
+<p>the development </p>
+<p>error detection and </p>
+<p>reporting </p>
+<p>McuGetRamStateApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to </p>
+<p>enable/disable the </p>
+<p>API </p>
+<p>Mcu_GetRamState</p>
+<p>. </p>
+<p>McuInitClock </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to </p>
+<p>enable/disable the </p>
+<p>API Mcu_InitClock </p>
+<p>to initialize the </p>
+<p>clock settings. </p>
+<p>McuNoPll </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>shall be set true, if </p>
+<p>the H/W does not </p>
+<p>have a PLL or the </p>
+<p>PLL circuitry is </p>
+<p>enabled after the </p>
+<p>power on without </p>
+<p>S/W intervention. </p>
+<p>In this case </p>
+<p>MCU_DistributePll</p>
+<p>Clock has to be </p>
+<p>disabled and </p>
+<p>MCU_GetPllStatus </p>
+<p>has to return </p>
+<p>MCU_PLL_STATU</p>
+<p>S_UNDEFINED. </p>
+<p>Otherwise this </p>
+<p>parameters has to </p>
+<p>be set False. </p>
+<p>McuPerformResetApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the API to </p>
+<p>read out the </p>
+<p>modules version </p>
+<p>information </p>
+<p>McuVersionInfoApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the API to </p>
+<p>read out the </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>25 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  Range </b></p>
+<p><b>Parameter </b></p>
+<p><b>Description  </b></p>
+<p>modules version </p>
+<p>information </p>
+<p>McuCriticalSectionProtect</p>
+<p>ion </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>specifies if the </p>
+<p>MCU driver CPU </p>
+<p>load can be </p>
+<p>reduced by </p>
+<p>disabling the </p>
+<p>enter/exit critical </p>
+<p>section </p>
+<p>functionality by </p>
+<p>adding a </p>
+<p>precompiled </p>
+<p>configuration </p>
+<p>parameter to the </p>
+<p>MCU driver </p>
+<p>configuration. </p>
+<p>McuSwResetCallApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>shall decide if </p>
+<p>MCU_RESET_CAL</p>
+<p>LOUT API will be </p>
+<p>used for to reset </p>
+<p>software </p>
+<p>McuEcmDelayTimerOverf</p>
+<p>lowValue </p>
+<p>Integer </p>
+<p>0-65535 </p>
+<p>This parameter </p>
+<p>specifies to </p>
+<p>configure the </p>
+<p>overflow value for </p>
+<p>the ECM delay </p>
+<p>timer </p>
+<p>McuEcmErrorOutputMod</p>
+<p>e </p>
+<p>Enum </p>
+<p>NON_DYNAMIC_MO</p>
+<p>DE </p>
+<p>DYNAMIC_MODE </p>
+<p>This parameter </p>
+<p>used to configure </p>
+<p>the error output </p>
+<p>either in Dynamic </p>
+<p>or Non-Dynamic </p>
+<p>mode </p>
+<p>McuClm0Operation </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>enables or disables </p>
+<p>operation of clock </p>
+<p>monitor function for </p>
+<p>CLMA0 </p>
+<p>McuClm1Operation </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>enables or disables </p>
+<p>operation of clock </p>
+<p>monitor function for </p>
+<p>CLMA1 </p>
+<p>McuClm2Operation </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>enables or disables </p>
+<p>operation of clock </p>
+<p>monitor function for </p>
+<p>CLMA2 </p>
+<p>McuClm3Operation </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>enables or disables </p>
+<p>operation of clock </p>
+<p>monitor function for </p>
+<p>CLMA3 </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>26 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  Range </b></p>
+<p><b>Parameter </b></p>
+<p><b>Description  </b></p>
+<p>McuClm4Operation </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter </p>
+<p>enables or disables </p>
+<p>operation of clock </p>
+<p>monitor function for </p>
+<p>CLMA4 </p>
+<p>McuClm0MonitoringClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>0-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>monitoring clock </p>
+<p>accuracy of </p>
+<p>CLMA0 in </p>
+<p>percentage. </p>
+<p>McuClm1MonitoringClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>1-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>monitoring clock </p>
+<p>accuracy of </p>
+<p>CLMA1 in </p>
+<p>percentage. </p>
+<p>McuClm2MonitoringClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>2-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>monitoring clock </p>
+<p>accuracy of </p>
+<p>CLMA2 in </p>
+<p>percentage. </p>
+<p>McuClm3MonitoringClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>0-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>monitoring clock </p>
+<p>accuracy of </p>
+<p>CLMA3 in </p>
+<p>percentage. </p>
+<p>McuClm4MonitoringClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>0-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>monitoring clock </p>
+<p>accuracy of </p>
+<p>CLMA4 in </p>
+<p>percentage. </p>
+<p>McuClm0SamplingClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>6-26 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>sampling clock </p>
+<p>accuracy of </p>
+<p>CLMA0 in </p>
+<p>percentage </p>
+<p>McuClm1SamplingClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>3-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>sampling clock </p>
+<p>accuracy of </p>
+<p>CLMA1 in </p>
+<p>percentage </p>
+<p>McuClm2SamplingClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>5-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>sampling clock </p>
+<p>accuracy of </p>
+<p>CLMA2 in </p>
+<p>percentage </p>
+<p>McuClm3SamplingClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>2-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>sampling clock </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>27 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  Range </b></p>
+<p><b>Parameter </b></p>
+<p><b>Description  </b></p>
+<p>accuracy of </p>
+<p>CLMA3 in </p>
+<p>percentage </p>
+<p>McuClm4SamplingClock</p>
+<p>Accuracy </p>
+<p>Float </p>
+<p>2-20 </p>
+<p>This parameter </p>
+<p>specifies the </p>
+<p>sampling clock </p>
+<p>accuracy of </p>
+<p>CLMA4 in </p>
+<p>percentage </p>
+<p>McuLoopCount </p>
+<p>Integer </p>
+<p>1-255 </p>
+<p>The count value for </p>
+<p>the feed-back loop </p>
+<p>in Mcu module. </p>
+<p>McuEcmRstConfigure </p>
+<p>Enum </p>
+<p>SYSTEM_RESE</p>
+<p> </p>
+<p>APPLICATION_RES</p>
+<p>ET </p>
+<p>This parameter is </p>
+<p>used to configure </p>
+<p>the type of Ecm </p>
+<p>Reset.</p>
+<p><b> </b></p>
+<p>SYSTEM_RESET: </p>
+<p>ECM Module will </p>
+<p>generate System </p>
+<p>Reset.</p>
+<p><b> </b></p>
+<p>APPLICATION_RE</p>
+<p>SET: ECM Module </p>
+<p>will generate </p>
+<p>Application Reset.</p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p>McuDeviceName </p>
+<p>Enum </p>
+<p>R7F701370A, </p>
+<p>R7F701371, </p>
+<p>R7F701372, </p>
+<p>R7F701373,  </p>
+<p>R7F701374 </p>
+<p>This parameter </p>
+<p>contains the </p>
+<p>supported device </p>
+<p>name. </p>
+<p>McuGTMConfigurationSu</p>
+<p>pport </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the </p>
+<p>complete support </p>
+<p>of all GTM related </p>
+<p>functionality. </p>
+<p>McuInterruptConsistency</p>
+<p>Check </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the </p>
+<p>Interrupt </p>
+<p>Consistency Check </p>
+<p>functionality </p>
+<p>McuUseWriteVerifyErrorI</p>
+<p>nterface </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure error </p>
+<p>notification </p>
+<p>interface instead of </p>
+<p>DEM error for </p>
+<p>Write-Verify </p>
+<p>functionality. </p>
+<p>McuWriteVerifyErrorInterf</p>
+<p>ace </p>
+<p>function </p>
+<p>Null/WriteVerify </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the </p>
+<p>parameter is used </p>
+<p>to configure the </p>
+<p>name of the error </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>28 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  Range </b></p>
+<p><b>Parameter </b></p>
+<p><b>Description  </b></p>
+<p>notification which </p>
+<p>shall be called with </p>
+<p>the ApiID and </p>
+<p>ErrorId when there </p>
+<p>is a Write Verify </p>
+<p>error. </p>
+<p>McuWriteVerify </p>
+<p>Enum </p>
+<p>WV_DISABLE </p>
+<p>WV_INIT_ONLY </p>
+<p>WV_INIT_RUNTIME </p>
+<p>This parameter </p>
+<p>enables selection </p>
+<p>and support of </p>
+<p>WV_INIT_ONLY or </p>
+<p>WV_INIT_RUNTIM</p>
+<p>E register write-</p>
+<p>verify functionality </p>
+<p>of registers. </p>
+<p>McuClma0SelfDiagnostic</p>
+<p>Test </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure </p>
+<p>CLMA0 Self </p>
+<p>Diagnosis Support. </p>
+<p>McuClma1SelfDiagnostic</p>
+<p>Test </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure </p>
+<p>CLMA1Self </p>
+<p>DiagnosisSupport. </p>
+<p>McuClma2SelfDiagnostic</p>
+<p>Test </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure </p>
+<p>CLMA2 Self </p>
+<p>DiagnosisSupport. </p>
+<p>McuClma3SelfDiagnostic</p>
+<p>Test </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure </p>
+<p>CLMA3 Self </p>
+<p>DiagnosisSupport. </p>
+<p>McuClma4SelfDiagnostic</p>
+<p>Test </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure </p>
+<p>CLMA4 Self </p>
+<p>DiagnosisSupport. </p>
+<p>McuCvmSelfDiagnosticTe</p>
+<p>st </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure CVM </p>
+<p>Self Diagnosis </p>
+<p>Support </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>29 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  Range </b></p>
+<p><b>Parameter </b></p>
+<p><b>Description  </b></p>
+<p> </p>
+<p>McuEcmSelfDiagnosticTest </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable the user </p>
+<p>can configure ECM </p>
+<p>Self Diagnosis </p>
+<p>Support </p>
+<p>McuLockStepSelfDiagnostic</p>
+<p>Test </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Pre-processor </p>
+<p>switch to enable or </p>
+<p>disable Lockstep </p>
+<p>Self Diagnosis </p>
+<p>Support </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>30 </p>
+<p> </p>
+<p><b>8.1.2 </b></p>
+<p><b>Post Build Time Configurable Parameters </b></p>
+<p><b>Table 8-2 </b></p>
+<p><b> Post Build Time Configurable Parameters </b></p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuModul</p>
+<p>eConfigura</p>
+<p>tion </p>
+<p>McuClockSrcFailure</p>
+<p>Notification </p>
+<p>Enum </p>
+<p>DISABLED   </p>
+<p>ENABLED </p>
+<p>This parameter enables or </p>
+<p>disables clock failure </p>
+<p>notification. In case this </p>
+<p>feature is not supported by </p>
+<p>HW the setting should be </p>
+<p>disabled. This parameter is </p>
+<p>not used for </p>
+<p>implementation </p>
+<p>McuNumberOfMcuM</p>
+<p>odes </p>
+<p>Integer </p>
+<p>1-255 </p>
+<p>This parameter shall </p>
+<p>represent the number of </p>
+<p>Modes available for the </p>
+<p>MCU. This parameter is </p>
+<p>not used for </p>
+<p>implementation </p>
+<p>McuRamSectors </p>
+<p>Integer </p>
+<p>1-4294967295 </p>
+<p>This parameter shall </p>
+<p>represent the number of </p>
+<p>RAM sectors available for </p>
+<p>the MCU. This parameter </p>
+<p>is not used for </p>
+<p>implementation. </p>
+<p>McuResetSetting </p>
+<p>Integer </p>
+<p>1-255 </p>
+<p>This parameter relates to </p>
+<p>the MCU specific reset </p>
+<p>configuration. This applies </p>
+<p>to the function </p>
+<p>Mcu_PerformReset, which </p>
+<p>performs a microcontroller </p>
+<p>reset using the hardware </p>
+<p>feature of the </p>
+<p>microcontroller. This </p>
+<p>parameter is not used for </p>
+<p>implementation </p>
+<p>McuCvmOutMaskFb</p>
+<p>ist </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables the CVMOUT </p>
+<p>Output Mask for FBIST </p>
+<p>Operation </p>
+<p>McuCvmOutMaskDi</p>
+<p>ag </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables the CVMOUT </p>
+<p>Output Mask for DIAG </p>
+<p>Operation </p>
+<p>McuCvmOutputFilter </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables the CVMOUT </p>
+<p>Output Filter Control </p>
+<p>McuCvmDiagLockBit </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter lock or </p>
+<p>unlock the CVM Diagnosis </p>
+<p>during normal operation. </p>
+<p>McuCvmResetEnabl</p>
+<p>e </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enable or </p>
+<p>disable a reset of core </p>
+<p>voltage operation area </p>
+<p>upon detection of abnormal </p>
+<p>in core power supply. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>31 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuSwResetTrigger </p>
+<p>Enum </p>
+<p>SW_SYSTEM_RESE</p>
+<p>T </p>
+<p>SW_APPLICATION_</p>
+<p>RESET  NO_RESET </p>
+<p>This parameter will decide </p>
+<p>the type of software reset. </p>
+<p>McuCloc</p>
+<p>kSetting</p>
+<p>Config </p>
+<p>McuClockSettingId </p>
+<p>Integer </p>
+<p>0-255 </p>
+<p>The Id of this </p>
+<p>McuClockSettingConfig to </p>
+<p>be used as argument for </p>
+<p>the API call </p>
+<p>&quot;Mcu_InitClock&quot;.It should </p>
+<p>be unique and consecutive </p>
+<p>over multiple ClockSetting </p>
+<p>configurations. </p>
+<p>McuMainOsciFreque</p>
+<p>ncy </p>
+<p>Enum </p>
+<p>FREQ_16000000 </p>
+<p>FREQ_20000000 </p>
+<p>FREQ_24000000 </p>
+<p>This parameter selects the </p>
+<p>main oscillator frequency in </p>
+<p>Hz </p>
+<p>McuCpuMainSysClk </p>
+<p>Integer </p>
+<p>120000000- </p>
+<p>240000000 </p>
+<p>This parameter contains </p>
+<p>the CPU main system </p>
+<p>clock frequency. This </p>
+<p>parameter does not affect </p>
+<p>the behaviour of the MCU </p>
+<p>driver. It is a frequency that </p>
+<p>will be available to other </p>
+<p>modules for reference. It </p>
+<p>either needs to be </p>
+<p>calculated manually or by </p>
+<p>the configuration editor </p>
+<p>McuUnitName </p>
+<p>Enum </p>
+<p>CLK_CPUM </p>
+<p>This parameter contains </p>
+<p>the functional unit name for </p>
+<p>the CPU. </p>
+<p>McuInter</p>
+<p>nalOscill</p>
+<p>atorClk </p>
+<p>McuPeripheralClock </p>
+<p>Integer </p>
+<p>16000000 </p>
+<p>This parameter contains </p>
+<p>the Internal Oscillator </p>
+<p>Clock value. </p>
+<p>McuExte</p>
+<p>rnalClkO</p>
+<p>utSetting </p>
+<p>McuExternalClk0So</p>
+<p>urceSel </p>
+<p>Enum </p>
+<p>MCU_MAIN_OSCILL</p>
+<p>ATOR  </p>
+<p>MCU_CLK_LSB </p>
+<p>MCU_CLK_CPU </p>
+<p>MCU_BACKUP_CLO</p>
+<p>CK       </p>
+<p>This parameter is to select </p>
+<p>the external clock 0 source. </p>
+<p>MCU_MAIN_OSCILLATO</p>
+<p>R: 16 to 24 MHz MainOSC. </p>
+<p>MCU_CLK_LSB (Low </p>
+<p>Speed System Clock): 30 </p>
+<p>to 40 MHz </p>
+<p>MCU_CLK_CPU: 120 to </p>
+<p>240 MHz clock. </p>
+<p>MCU_BACKUP_CLOCK: 8 </p>
+<p>MHz. </p>
+<p>McuExternalClk1So</p>
+<p>urceSel </p>
+<p>Enum </p>
+<p>MCU_MAIN_OSCILL</p>
+<p>ATOR  </p>
+<p>MCU_CLK_LSB </p>
+<p>MCU_CLK_CPU </p>
+<p>MCU_BACKUP_CLO</p>
+<p>CK       </p>
+<p>This parameter is to select </p>
+<p>the external clock 1 source.  </p>
+<p>MCU_MAIN_OSCILLATOR</p>
+<p>: 16 to 24 MHz MainOSC. </p>
+<p>MCU_CLK_LSB: Low </p>
+<p>Speed System Clock. </p>
+<p>If MCU_CLK_CPU is 240 </p>
+<p>MHz or 160 MHz, </p>
+<p>MCU_CLK_LSB is 40 </p>
+<p>MHz. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>32 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>If MCU_CLK_CPU is 120 </p>
+<p>MHz, MCU_CLK_LSB is </p>
+<p>30 MHz </p>
+<p>MCU_CLK_CPU: 120 to </p>
+<p>240 MHz clock. </p>
+<p>MCU_BACKUP_CLOCK: </p>
+<p>Internal oscillator clock * </p>
+<p>1/2. </p>
+<p> </p>
+<p>McuExternalClk0Divi</p>
+<p>derSel </p>
+<p>Integer </p>
+<p>1-1023 </p>
+<p>This parameter is to select </p>
+<p>the divider for external </p>
+<p>clock 0 source </p>
+<p>McuExternalClk1Divi</p>
+<p>derSel </p>
+<p>Integer </p>
+<p>1-1023 </p>
+<p>This parameter is to select </p>
+<p>the divider for external </p>
+<p>clock 1 source </p>
+<p>McuExternalClock0 </p>
+<p>Integer </p>
+<p>250000- 20000000 </p>
+<p>This parameter contains </p>
+<p>the output of External </p>
+<p>Clock 0 value. </p>
+<p>McuExternalClock1 </p>
+<p>Integer </p>
+<p>250000- 20000000 </p>
+<p>This parameter contains </p>
+<p>the output of External </p>
+<p>Clock 1 value. </p>
+<p>McuPLL</p>
+<p>ClkSettin</p>
+<p>g </p>
+<p>McuSystemSourceS</p>
+<p>el </p>
+<p>Enum </p>
+<p>MCU_PLL  </p>
+<p>MCU_INTERNAL_OS</p>
+<p>CILLATOR </p>
+<p>This parameter is to select </p>
+<p>the System Clock source 0.  </p>
+<p>MCU_PLL: 320 to 480 </p>
+<p>MHz Clock. </p>
+<p>MCU_INTERNAL_OSCILL</p>
+<p>ATOR: 16 MHz IntOSC. </p>
+<p>McuPLLClk0Divider</p>
+<p>Sel </p>
+<p>Integer </p>
+<p>1-7 </p>
+<p>This parameter is to select </p>
+<p>the divider for PLL0 </p>
+<p>source. </p>
+<p>McuPLLClk1Divider</p>
+<p>Sel </p>
+<p>Integer </p>
+<p>1-7 </p>
+<p>This parameter is to select </p>
+<p>the divider for PLL1 </p>
+<p>source. </p>
+<p>McuPLLClock0 </p>
+<p>Integer </p>
+<p>320000000- </p>
+<p>480000000 </p>
+<p>This parameter contains </p>
+<p>the PLL0 Clock value. </p>
+<p>McuOPBT1Sel </p>
+<p>Integer </p>
+<p>0-4294967295 </p>
+<p>This parameter contains </p>
+<p>the  value that is to be </p>
+<p>written in OPBT1. </p>
+<p>McuSA</p>
+<p>WdtCou</p>
+<p>nterClk </p>
+<p>McuSAWdtCounterD</p>
+<p>ivider </p>
+<p>Enum </p>
+<p>DIVBY_ID_8  </p>
+<p>DIVBY_ID_9 </p>
+<p>This parameter contains </p>
+<p>the divider for the Secure </p>
+<p>Application WDTA counter </p>
+<p>clock  DIVBY_ID_8: </p>
+<p>Secure Application </p>
+<p>WdtacounterClk/80000  </p>
+<p>(or) WdtacounterClk/250 is </p>
+<p>selected as clock </p>
+<p>divider.Provided </p>
+<p>SAWDTMD=0/1.  </p>
+<p>DIVBY_ID_9: Secure </p>
+<p>Application </p>
+<p>WdtacounterClk/80000  </p>
+<p>(or) WdtacounterClk/250 is </p>
+<p>selected as clock </p>
+<p>divider.Provided </p>
+<p>SAWDTMD=1/0. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>33 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuUnitName </p>
+<p>Enum </p>
+<p>WDTCLKI </p>
+<p>This parameter contains </p>
+<p>the functional unit name for </p>
+<p>the Secure Application </p>
+<p>Wdta counter Clock. </p>
+<p>McuPeripheralClock </p>
+<p>Integer </p>
+<p>2000- 640000 </p>
+<p>This parameter contains </p>
+<p>the Wdta counter Clock. </p>
+<p>McuWdt</p>
+<p>aCounte</p>
+<p>rClk </p>
+<p>McuWdtCounterDivi</p>
+<p>der </p>
+<p>Enum </p>
+<p>DIVBY_1_ID_1  </p>
+<p>DIVBY_32_ID_1 </p>
+<p>This parameter contains </p>
+<p>the divider for the WDTA </p>
+<p>counter clock  </p>
+<p>DIVBY_1_ID_1: </p>
+<p>WdtacounterClk/1 is </p>
+<p>selected as clock divider.  </p>
+<p>DIVBY_32_ID_1: </p>
+<p>WdtacounterClk/32 is </p>
+<p>selected as clock divider </p>
+<p>McuUnitName </p>
+<p>Enum </p>
+<p>WDTCLKI </p>
+<p>This parameter contains </p>
+<p>the functional unit name for </p>
+<p>the Wdta counter Clock. </p>
+<p>McuPeripheralClock </p>
+<p>Integer </p>
+<p>250000- 8000000 </p>
+<p>This parameter contains </p>
+<p>the Wdta counter Clock. </p>
+<p>McuCloc</p>
+<p>kReferen</p>
+<p>cePoint </p>
+<p>McuClockReference</p>
+<p>PointFrequency </p>
+<p>Float </p>
+<p>0- 4294967295 </p>
+<p>This is the frequency for </p>
+<p>the specific instance of the </p>
+<p>McuClockReferencePoint </p>
+<p>container. It shall be given </p>
+<p>in Hz. This parameter is </p>
+<p>not used for </p>
+<p>implementation. So if it is </p>
+<p>used for reference </p>
+<p>frequency then user has to </p>
+<p>take care for configuration </p>
+<p>of valid clock domain </p>
+<p>associated with it </p>
+<p>McuGT</p>
+<p>MClockS</p>
+<p>ettings </p>
+<p>McuGTMClockSelec</p>
+<p>tion </p>
+<p>Enum </p>
+<p>CMU_CLK0 </p>
+<p>CMU_CLK1 </p>
+<p>CMU_CLK2 </p>
+<p>CMU_CLK3 </p>
+<p>CMU_CLK4 </p>
+<p>CMU_CLK5 </p>
+<p>CMU_CLK6 </p>
+<p>CMU_CLK7 </p>
+<p>This parameter used to </p>
+<p>configure the CMU clocks. </p>
+<p>CMU_CLK0: CMU clock 0. </p>
+<p>CMU_CLK1: CMU clock 1. </p>
+<p>CMU_CLK2: CMU clock 2. </p>
+<p>CMU_CLK3: CMU clock 3. </p>
+<p>CMU_CLK4: CMU clock 4. </p>
+<p>CMU_CLK5: CMU clock 5. </p>
+<p>CMU_CLK6: CMU clock 6. </p>
+<p>CMU_CLK7: CMU clock 7. </p>
+<p>McuGTMChannelClk</p>
+<p>SrcDivider </p>
+<p>Integer </p>
+<p>1-16777215 </p>
+<p>This parameter holds the </p>
+<p>Channel Clock Source </p>
+<p>Divider. </p>
+<p>McuGT</p>
+<p>MClockS</p>
+<p>ettingsC</p>
+<p>onfig </p>
+<p>McuGTMCMUGCLK</p>
+<p>Numerator </p>
+<p>Integer </p>
+<p>1-16777215 </p>
+<p>This parameter holds the </p>
+<p>Numerator for the CMU </p>
+<p>Global Clock Divider. </p>
+<p>McuGTMCMUGCLK</p>
+<p>Denominator </p>
+<p>Integer </p>
+<p>1-16777215 </p>
+<p>This parameter holds the </p>
+<p>Denominator for the CMU </p>
+<p>Global Clock Divider. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>34 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuEcm</p>
+<p>ErrorSou</p>
+<p>rcesCfg0 </p>
+<p>to </p>
+<p>McuEcm</p>
+<p>ErrorSou</p>
+<p>rcesCfg9</p>
+<p>2 </p>
+<p>McuEcmErrorMaska</p>
+<p>bleInterrupt </p>
+<p>Boolean  </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables generation of a </p>
+<p>maskable interrupt when </p>
+<p>the error occurs from each </p>
+<p>source </p>
+<p>McuEcmErrorNonM</p>
+<p>askableInterrupt </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables generation of a </p>
+<p>non maskable interrupt </p>
+<p>when the error occurs from </p>
+<p>each error source </p>
+<p>McuEcmErrorInterna</p>
+<p>lReset </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables generation of an </p>
+<p>internal reset when the </p>
+<p>error occurs from each </p>
+<p>error source </p>
+<p>McuEcmErrorNMIDe</p>
+<p>layTimer </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables delay timer start </p>
+<p>caused by non-maskable </p>
+<p>interrupts in response to </p>
+<p>errors from each error </p>
+<p>source </p>
+<p>McuEcmErrorMIDela</p>
+<p>yTimer </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables delay timer start </p>
+<p>caused by maskable </p>
+<p>interrupts in response to </p>
+<p>errors from each error </p>
+<p>source </p>
+<p>McuEcmErrorOutput</p>
+<p>Mask </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter mask or </p>
+<p>unmask the individual error </p>
+<p>sources of the error pin </p>
+<p>output from each error </p>
+<p>source </p>
+<p>McuMiNotification </p>
+<p>Function </p>
+<p>NA </p>
+<p>This parameter contains </p>
+<p>notification function for MI </p>
+<p>notification </p>
+<p>McuNmiNotification </p>
+<p>Function </p>
+<p>NA </p>
+<p>This parameter contains </p>
+<p>notification function for NMI </p>
+<p>notification. </p>
+<p>McuEcmInitialNotific</p>
+<p>ation </p>
+<p>function </p>
+<p>NA </p>
+<p>This parameter is used for </p>
+<p>notify the upper layer,if any </p>
+<p>ECM error has been </p>
+<p>already detected at system </p>
+<p>start-up. </p>
+<p> </p>
+<p> </p>
+<p>McuEcm</p>
+<p>ErrorSou</p>
+<p>rcesCfg9</p>
+<p>3 </p>
+<p>McuEcmErrorInterna</p>
+<p>lReset </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter enables or </p>
+<p>disables generation of an </p>
+<p>internal reset when the </p>
+<p>ecm delay timer overflow </p>
+<p>error occurs. </p>
+<p>McuEcmErrorOutput</p>
+<p>Mask </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter mask or </p>
+<p>unmask the individual error </p>
+<p>sources of the error pin </p>
+<p>output when the ecm delay </p>
+<p>timer overflow error occurs. </p>
+<p>McuEcmInitialNotific</p>
+<p>ation </p>
+<p>function </p>
+<p>NA </p>
+<p>This parameter is used for </p>
+<p>notify the upper layer,if any </p>
+<p>ECM error has been </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>35 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>already detected at system </p>
+<p>start-up. </p>
+<p>McuDem</p>
+<p>EventPa</p>
+<p>rameter</p>
+<p>Refs </p>
+<p>MCU_E_CLOCK_F</p>
+<p>AILURE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to configured </p>
+<p>DEM event to report &quot;Clock </p>
+<p>source failure&quot;. </p>
+<p>MCU_E_WRITE_TI</p>
+<p>MEOUT_FAILURE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to configured </p>
+<p>DEM event to report &quot;write </p>
+<p>failure&quot;. </p>
+<p>MCU_E_POWERD</p>
+<p>OWN_MODE_FAIL</p>
+<p>URE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to configured </p>
+<p>DEM event to report </p>
+<p>&quot;Power Down Mode </p>
+<p>failure&quot;. </p>
+<p>MCU_E_INT_INCO</p>
+<p>NSISTENT </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter which </p>
+<p>shall be issued when </p>
+<p>interrupt inconsistency is </p>
+<p>detected. </p>
+<p>MCU_E_REG_WRI</p>
+<p>TE_VERIFY </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter which </p>
+<p>shall be issued when a </p>
+<p>register write-verify failure </p>
+<p>was detected. If the </p>
+<p>reference is not configured </p>
+<p>the error shall not be </p>
+<p>reported. </p>
+<p>MCU_E_CLM_SELF</p>
+<p>DIAG_FAILURE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>configured DEM event to </p>
+<p>report “CLM self diagnostic </p>
+<p>failure” </p>
+<p>MCU_E_ECM_SEL</p>
+<p>FDIAG_FAILURE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>configured DEM event to </p>
+<p>report “ECM self diagnostic </p>
+<p>failure” </p>
+<p>MCU_E_CVM_SEL</p>
+<p>FDIAG_FAILURE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>configured DEM event to </p>
+<p>report “CVM self diagnostic </p>
+<p>failure” </p>
+<p>MCU_E_LOCKSTE</p>
+<p>P_SELFDIAG_FAIL</p>
+<p>URE </p>
+<p>Referenc</p>
+<p>e </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>configured DEM event to </p>
+<p>report “LockStep self </p>
+<p>diagnostic failure” </p>
+<p>McuMod</p>
+<p>eSetting</p>
+<p>Conf </p>
+<p>McuMode </p>
+<p>Integer </p>
+<p>1-255 </p>
+<p>The parameter represents </p>
+<p>the MCU Mode settings. </p>
+<p>This parameter is not used </p>
+<p>for implementation. </p>
+<p>McuModeType </p>
+<p>Enum </p>
+<p>MCU_HALT_MODE </p>
+<p>MCU_MODULE_STA</p>
+<p>NDBY_MODE </p>
+<p>This parameter contains </p>
+<p>the power save mode type </p>
+<p>McuMcanStopTrigge</p>
+<p>r </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of MCAN domain </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>36 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuFlexrayStopTrig</p>
+<p>ger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of FLEXRAY </p>
+<p>domain </p>
+<p>McuGtmStopTrigger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of GTM domain </p>
+<p>McuEthernetStopTri</p>
+<p>gger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of ETHERNET </p>
+<p>domain </p>
+<p>McuRsentStopTrigg</p>
+<p>er </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of RSENT </p>
+<p>domain </p>
+<p>McuHsUsrtStopTrigg</p>
+<p>er </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of HS_USRT  </p>
+<p>domain </p>
+<p>McuCsihStopTrigger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of CSIH domain </p>
+<p>McuRlin3StopTrigge</p>
+<p>r </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of RLIN3 domain </p>
+<p>McuAdcStopTrigger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the stop mode </p>
+<p>triggering of ADC domain </p>
+<p>McuMcanWakeUpTr</p>
+<p>igger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of MCAN domain </p>
+<p>McuFlexrayWakeup</p>
+<p>Trigger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of FLEXRAY </p>
+<p>domain </p>
+<p>McuGtmWakeupTrig</p>
+<p>ger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of GTM domain </p>
+<p>McuEthernetWakeu</p>
+<p>pTrigger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of ETHERNET </p>
+<p>domain </p>
+<p>McuRsentWakeupTr</p>
+<p>igger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of RSENT </p>
+<p>domain </p>
+<p>McuHsUsrtWakeupT</p>
+<p>rigger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of HS_USRT </p>
+<p>domain </p>
+<p>McuCsihWakeupTrig</p>
+<p>ger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of CSIH domain </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>37 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRlin3WakeupTri</p>
+<p>gger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of RLIN3 domain </p>
+<p>McuAdcWakeupTrig</p>
+<p>ger </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter will enables </p>
+<p>or disables the Wakeup </p>
+<p>triggering of ADC domain </p>
+<p>McuWak</p>
+<p>eUpFact</p>
+<p>orDetails </p>
+<p>McuWakeUpFactorN</p>
+<p>ame </p>
+<p>Enum </p>
+<p>INTECMMI </p>
+<p>INTIPIR0 </p>
+<p>INTIPIR1 </p>
+<p>INTICUP </p>
+<p>INTWDTA </p>
+<p>INTSW0 </p>
+<p>INTP0 </p>
+<p>INTP1 </p>
+<p>INTP2 </p>
+<p>INTP3 </p>
+<p>INTP4 </p>
+<p>INTOTS0OTI </p>
+<p>INTOTS0OTULI </p>
+<p>INTSTM00 </p>
+<p>INTSTM01 </p>
+<p>INTGTM0TIM00 </p>
+<p>INTGTM0TIM02 </p>
+<p>INTGTM0MCS00 </p>
+<p>INTGTM0MCS02 </p>
+<p>INTADCF012 </p>
+<p>INTCSIH0TIR </p>
+<p>INTCSIH1TIR </p>
+<p>INTRLIN33UR2 </p>
+<p>INTP5 </p>
+<p>INTP6 </p>
+<p>INTP7 </p>
+<p>INTP8 </p>
+<p>INTP9 </p>
+<p>INTGTM0TIM01 </p>
+<p>INTGTM0TIM03 </p>
+<p>INTMTTCANFE </p>
+<p>INTMCAN0FE </p>
+<p>INTETNA0 </p>
+<p>This parameter contains </p>
+<p>wake up factor name for </p>
+<p>PE/Peripherals </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>38 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>INTFLX0LINE0 </p>
+<p>INTFLX1LINE0 </p>
+<p>INTSENT0RI </p>
+<p>INTSENT1RI </p>
+<p>INTDNFA2WUF0 </p>
+<p>INTDNFA2WUF1 </p>
+<p>INTDNFA3WUF0 </p>
+<p>INTDNFA3WUF1 </p>
+<p>INTDNFA4WUF0 </p>
+<p>INTDNFA4WUF1 </p>
+<p>FEINT </p>
+<p>FENMISWDTA </p>
+<p>McuRam</p>
+<p>SectorS</p>
+<p>ettingCo</p>
+<p>nf </p>
+<p>McuRamDefaultValu</p>
+<p>e </p>
+<p>Integer </p>
+<p>0-255 </p>
+<p>This parameter shall </p>
+<p>represent the Data pre-</p>
+<p>setting to be initialized </p>
+<p>McuRamSectionBas</p>
+<p>eAddress </p>
+<p>Integer </p>
+<p>4275961856- </p>
+<p>4277829631 </p>
+<p>This parameter shall </p>
+<p>represent the MCU RAM </p>
+<p>section base address. For </p>
+<p>LOCAL RAM 128KB </p>
+<p>having range 1 to 131072. </p>
+<p>For VARIABLE RAM </p>
+<p>192KB having range 1 to </p>
+<p>196608. </p>
+<p>For GLOBAL RAM BANK A </p>
+<p>480KB having range 1 to </p>
+<p>491520. </p>
+<p>For GLOBAL RAM BANK B </p>
+<p>480KB having range 1 to </p>
+<p>491520. </p>
+<p>For VARIABLE RAM </p>
+<p>192KB having range 1 to </p>
+<p>196608 </p>
+<p>McuRamSectionSize </p>
+<p>Integer </p>
+<p>1-65536 </p>
+<p>This parameter shall </p>
+<p>represent the MCU RAM </p>
+<p>Section size in bytes. For </p>
+<p>LOCAL RAM 128KB </p>
+<p>having range 1 to 131072. </p>
+<p>For VARIABLE RAM </p>
+<p>192KB having range 1 to </p>
+<p>196608. </p>
+<p>For GLOBAL RAM BANK A </p>
+<p>480KB having range 1 to </p>
+<p>491520. </p>
+<p>For GLOBAL RAM BANK B </p>
+<p>480KB having range 1 to </p>
+<p>491520. </p>
+<p>For VARIABLE RAM </p>
+<p>192KB having range 1 to </p>
+<p>196608. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>39 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuPubl</p>
+<p>ishedInfo</p>
+<p>rmation </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>0 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module. This parameter is </p>
+<p>not used for </p>
+<p>implementation. </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>PowOnR</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>0 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_POWER_ON_RESE</p>
+<p>T </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Terminal</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>1 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_TERMINAL_RESET </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CvmRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>2 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CVM_RESET </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>SwSysR</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>3 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_SW_SYS_RESET </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>WdtRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>4 </p>
+<p>This container contains the </p>
+<p>configuration for the </p>
+<p>different type of reset </p>
+<p>reason that can be </p>
+<p>retrieved from </p>
+<p>Mcu_GetResetReason </p>
+<p>API. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>40 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>LockSte</p>
+<p>pCoreRs</p>
+<p>t </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>5 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_LOCK_STEP_CORE</p>
+<p>_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>PbusFss</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>6 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_PBUS_FSS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>BusBridg</p>
+<p>eErrorRs</p>
+<p>t </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>7 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_BUS_BRIDGE_ERR</p>
+<p>OR_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>SafetyM</p>
+<p>echCom</p>
+<p>pRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>8 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_SAFETY_MECH_C</p>
+<p>OMP_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>TempSe</p>
+<p>nsorRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>9 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_TEMPERATURE_S</p>
+<p>ENSOR_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Clma0R</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>10 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>41 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>module, </p>
+<p>MCU_CLMA0_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Clma2R</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>11 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CLMA2_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Clma3R</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>12 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CLMA3_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Clma1R</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>14 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CLMA1_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>LRamEc</p>
+<p>cDedRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>15 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_LRAM_ECC_DED_</p>
+<p>RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GRamEc</p>
+<p>cDedRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>16 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GRAM_ECC_DED_</p>
+<p>RST </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>42 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CacheR</p>
+<p>amEdcR</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>17 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CACHE_RAM_EDC</p>
+<p>_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CodeFls</p>
+<p>EccDed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>18 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CODE_FLS_ECC_D</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DataFls</p>
+<p>EccDed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>19 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DATA_FLS_ECC_D</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CsihRa</p>
+<p>mEccDe</p>
+<p>dRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>20 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CSIH_RAM_ECC_D</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CanRam</p>
+<p>EccDed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>21 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CAN_RAM_ECC_D</p>
+<p>ED_RST </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>43 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>EthRam</p>
+<p>DedRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>22 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_ETH_RAM_ECC_D</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>FrRamE</p>
+<p>ccDedRs</p>
+<p>t </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>23 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_FR_RAM_ECC_DE</p>
+<p>D_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GtmRam</p>
+<p>EccDed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>24 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GTM_RAM_ECC_D</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>BusEcc</p>
+<p>DedRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>25 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_BUS_ECC_DED_RS</p>
+<p>T </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>BusEccS</p>
+<p>edRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>26 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_BUS_ECC_SED_RS</p>
+<p>T </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>44 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>LRamAd</p>
+<p>drOvfRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>27 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_LRAM_ADDR_OVF_</p>
+<p>RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GRamA</p>
+<p>ddrOvfR</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>28 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GRAM_ADDR_OVF</p>
+<p>_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CodeFls</p>
+<p>AddrOvf</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>29 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CODE_FLS_ADDR_</p>
+<p>OVF_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DataFls</p>
+<p>AddrOvf</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>30 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DATA_FLS_ADDR_</p>
+<p>OVF_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>PeriRam</p>
+<p>EccAddr</p>
+<p>OvfRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>31 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_PERI_RAM_ECC_A</p>
+<p>DDR_OVF_RST </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>45 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DtsRam</p>
+<p>EccDed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>32 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DTS_RAM_ECC_D</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DtsRam</p>
+<p>EccSed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>33 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DTS_RAM_ECC_SE</p>
+<p>D_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>LRamEc</p>
+<p>cSedRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>34 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_LRAM_ECC_SED_R</p>
+<p>ST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GRamEc</p>
+<p>cSedRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>35 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GRAM_ECC_SED_</p>
+<p>RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CodeFls</p>
+<p>EccSed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>36 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CODE_FLS_ECC_S</p>
+<p>ED_RST </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>46 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DataFls</p>
+<p>EccSed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>37 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DATA_FLS_ECC_S</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CsihRa</p>
+<p>mEccSe</p>
+<p>dRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>38 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CSIH_RAM_ECC_S</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CanRam</p>
+<p>EccSed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>39 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_CAN_RAM_ECC_S</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>EthRam</p>
+<p>EccSed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>40 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_ETH_RAM_ECC_SE</p>
+<p>D_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>FrRamE</p>
+<p>ccSedRs</p>
+<p>t </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>41 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_FR_RAM_ECC_SE</p>
+<p>D_RST </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>47 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GtmRam</p>
+<p>EccSed</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>42 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GTM_RAM_ECC_S</p>
+<p>ED_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>PEGuar</p>
+<p>dRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>43 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_PE_GUARD_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GramGu</p>
+<p>ardRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>44 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GRAM_GUARD_RS</p>
+<p>T </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>MemcGu</p>
+<p>ardRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>45 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_MEMC_GUARD_RS</p>
+<p>T </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>SlaveGu</p>
+<p>ardRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>46 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_SLAVE_GUARD_RS</p>
+<p>T </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CodeFls</p>
+<p>PEUnma</p>
+<p>pAccess</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>47 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>48 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>module, </p>
+<p>MCU_CODE_FLS_PE_UN</p>
+<p>MAP_ACCESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GramPE</p>
+<p>UnmapA</p>
+<p>ccessRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>48 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GRAM_PE_UNMAP</p>
+<p>_ACCESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>LpbPEU</p>
+<p>nmapAc</p>
+<p>cessRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>49 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_LPB_PE_UNMAP_A</p>
+<p>CCESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>PBusUn</p>
+<p>mapAcc</p>
+<p>essRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>50 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_PBUS_UNMAP_AC</p>
+<p>CESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>HBusUn</p>
+<p>mapAcc</p>
+<p>essRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>51 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_HBUS_UNMAP_AC</p>
+<p>CESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>CodeFls</p>
+<p>GvciUn</p>
+<p>mapAcc</p>
+<p>essRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>52 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>49 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>MCU_CODE_FLS_GVCI_</p>
+<p>UNMAP_ACCESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>GramFls</p>
+<p>GvciUn</p>
+<p>mapAcc</p>
+<p>essRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>53 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_GRAM_FLS_GVCI_</p>
+<p>UNMAP_ACCESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>ResHbu</p>
+<p>sUnmap</p>
+<p>AccessR</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>54 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_RES_HBUS_UNMA</p>
+<p>P_ACCESS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DmaTra</p>
+<p>nsferRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>55 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DMA_TRANSFER_</p>
+<p>RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>DmaUn</p>
+<p>mapped</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>56 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DMA_UNMAPPED_</p>
+<p>RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>FlsSequ</p>
+<p>enceRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>57 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>50 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>MCU_FLS_SEQUENCE_R</p>
+<p>ST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>FlsFaciR</p>
+<p>st </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>58 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_FLS_FACI_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>AdcParit</p>
+<p>yRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>59 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_ADC_PARITY_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>PEUnint</p>
+<p>enEnabl</p>
+<p>eDisable</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>60 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_PE_UNINTEN_EN_</p>
+<p>DIS_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Uninten</p>
+<p>DeactUs</p>
+<p>erRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>61 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_UNINTEN_DEACT_</p>
+<p>USR_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Uninten</p>
+<p>ActCfpM</p>
+<p>odeRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>62 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_UNINTEN_ACT_CF</p>
+<p>P_MODE_RST </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>51 </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Uninten</p>
+<p>DebugE</p>
+<p>nableDet</p>
+<p>ectRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>63 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_UNINTEN_DEBUG_</p>
+<p>EN_DET_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Uninten</p>
+<p>ActTest</p>
+<p>ModeRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>64 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_UNINTEN_ACT_TE</p>
+<p>STMODE_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>EcmCo</p>
+<p>mpRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>65 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_ECM_COMP_RST </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>Debugge</p>
+<p>rRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>66 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_DEBUGGER_RESE</p>
+<p>T </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>SwAppl</p>
+<p>Rst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>67 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_SW_APPL_RESET </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>BistRst </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>68 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                       Configuration Overview </b></p>
+<p> </p>
+<p>52 </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>module, </p>
+<p>MCU_BIST_RESET </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>RstUnde</p>
+<p>fined </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>69 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Micro supports. This </p>
+<p>parameter is referenced by </p>
+<p>the parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_RESET_UNDEFINE</p>
+<p>D </p>
+<p>McuRst</p>
+<p>RsnConf</p>
+<p>RstUnkn</p>
+<p>own </p>
+<p>McuResetReason </p>
+<p>Integer </p>
+<p>70 </p>
+<p>The parameter represents </p>
+<p>the different type of reset </p>
+<p>that a Microcontroller </p>
+<p>supports. This parameter is </p>
+<p>referenced by the </p>
+<p>parameter </p>
+<p>EcuMResetReason in the </p>
+<p>ECU State manager </p>
+<p>module, </p>
+<p>MCU_RESET_UNKNOWN </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       </b></p>
+<p><b>Messages</b></p>
+<p><b> </b></p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p> </p>
+<p>53 </p>
+<p><b>Chapter 9  Messages </b></p>
+<p> </p>
+<p> </p>
+<p>The messages help to identify the syntax or semantic errors in the ECU </p>
+<p>Configuration Description File. Hence it ensures validity and correctness of the </p>
+<p>information available in the ECU Configuration Description File. </p>
+<p> </p>
+<p>The following section gives the list of error, warning and information messages </p>
+<p>displayed by the MCAL Code Generator Tool.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>9.1 </b></p>
+<p><b>Error Messages</b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>ERR_59_101_002:   </b>McuClockSettingConfig container short name between </p>
+<p>configsets should be same for each Clocksetting ID in path </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig. For ClocksettingId $Id, the </p>
+<p>container short name is different between configset $ConfigSetCount and </p>
+<p>$MaxConfigSets. </p>
+<p> </p>
+<p>This error will occur when McuClockSettingConfig container short name between </p>
+<p>configsets is not same for each Clocksetting ID in path </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig. </p>
+<p> </p>
+<p><b>ERR_59_101_003</b>:      McuClockSettingId value in the container path  </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig is out of range in configset </p>
+<p>$ConfigSetCount. It should be configured less than $McuInstance.&quot; </p>
+<p> </p>
+<p>This error will occur when McuClockSettingId in the container path </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig   is out of range in a </p>
+<p>configset   </p>
+<p> </p>
+<p><b>ERR_59_101_004</b>:  McuClockSettingId value = $Id in the container path  </p>
+<p>Mcu//McuModuleConfiguration/McuClockSettingConfig  is repeating in configset </p>
+<p>$ConfigSetCount<b>.   </b></p>
+<p> </p>
+<p>This error will occur when McuClockSettingId in the container path </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig   is repeating in a configset   </p>
+<p>    </p>
+<p><b>ERR_59_101_005:    </b>McuClockSettingId value =  $Id  in the container path </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig   is not configured in </p>
+<p>configset $ConfigSetCount    </p>
+<p> </p>
+<p>This error will occur when McuClockSettingId in the container path </p>
+<p>Mcu/McuModuleConfiguration/McuClockSettingConfig   is not configured in a </p>
+<p>configset   </p>
+<p> </p>
+<p> <b>ERR_59_101_006:    </b>Reference path configured for the parameter </p>
+<p>MCU_E_CLOCK_FAILURE is not correct in the path </p>
+<p>&lt;Mcu/McuModuleConfiguration/McuDemEventPrameterRefs </p>
+<p> </p>
+<p>This error will occur when reference path configured for the parameter </p>
+<p>MCU_E_CLOCK_FAILURE is not correct in the path </p>
+<p> </p>
+<p><b>ERR_59_101_007</b>:      Reference path configured for the parameter </p>
+<p>MCU_E_WRITE_TIMEOUT_FAILURE is not correct in the path </p>
+<p>&lt;Mcu/McuModuleConfiguration/McuDemEventPrameterRefs. </p>
+<p> </p>
+<p>This error will occur when reference path configured for the parameter </p>
+<p>MCU_E_WRITE_TIMEOUT_FAILURE is not correct in the path </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       Chapter 9  </b></p>
+<p><b>Messages</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>54 </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_101_008</b>:      Value configured for the parameter McuModeType  is </p>
+<p>repeating in the path Mcu/McuModuleConfiguration/McuModeSettingConf. It should </p>
+<p>be unique within configset. </p>
+<p> </p>
+<p>This error will occur when value configured for the parameter McuModeType  is </p>
+<p>repeating in the path Mcu/McuModuleConfiguration/McuModeSettingConf </p>
+<p> </p>
+<p><b>ERR_59_101_009:        </b>Value configured for the parameter </p>
+<p>McuWakeUpFactorName in the path Mcu/McuModuleConfiguration/</p>
+<p> </p>
+<p>McuModeSettingConf0/</p>
+<p> </p>
+<p>McuWakeUpFactorDetails should not be repeated within </p>
+<p>the McuWakeUpFactorDetails container </p>
+<p> </p>
+<p>This error will occur when value configured for the parameter </p>
+<p>McuWakeUpFactorName in the path Mcu/McuModuleConfiguration/</p>
+<p> </p>
+<p>McuModeSettingConf0/</p>
+<p> </p>
+<p>McuWakeUpFactorDetails is repeated within the </p>
+<p>McuWakeUpFactorDetails container </p>
+<p> </p>
+<p><b>ERR_59_101_010:      </b>Reference path configured for the parameter </p>
+<p>MCU_E_POWERDOWN_MODE_FAILURE is not correct in the path </p>
+<p>&lt;Mcu/McuModuleConfiguration/McuDemEventPrameterRefs </p>
+<p> </p>
+<p>This error will occur when reference path configured for the parameter </p>
+<p>MCU_E_POWERDOWN_MODE_FAILURE is not correct in the path </p>
+<p> </p>
+<p><b>ERR_59_101_012:   </b>WakeUpTrigger of a particular domain cannot be enabled </p>
+<p>when StopTrigger of the same domain is disabled in the path </p>
+<p>&lt;Mcu/McuModuleConfiguration/McuModeSettingConf&gt;. </p>
+<p> </p>
+<p>This error will occur when WakeUpTrigger is expected from a particular domain </p>
+<p>when StopTrigger of the same domain is disabled in the path </p>
+<p> </p>
+<p><b>ERR_59_101_013:   </b>McuGTMCMUClock = $McuCMUClk is repeating in </p>
+<p>McuGTMClockSettings container in configset $ConfigSetCount. </p>
+<p> </p>
+<p>This error will occur when the McuGTMCMUClock is repeating in </p>
+<p>McuGTMClockSettings container in configsets  </p>
+<p> </p>
+<p><b>ERR_59_101_014:   </b>This value of OPBT1.PLL0FREQ = $McuPLLFreq is not </p>
+<p>supported for P1H-C devices. </p>
+<p> </p>
+<p>This error will occur when the OPBT1.PLL0FREQ is not supported for P1H-C </p>
+<p>devices. </p>
+<p> </p>
+<p><b>ERR_59_101_015:   </b>The configured value of PLL clock should be equal to </p>
+<p>$McuReqPLLClock MHz. </p>
+<p> </p>
+<p>This error will occur when the configured value of PLL clock is not equal to </p>
+<p>$McuReqPLLClock MHz. </p>
+<p> </p>
+<p><b>ERR_59_101_016:   </b>The configured value of McuOPBT1Sel = $McuOPBT1Sel is </p>
+<p>not supported. </p>
+<p> </p>
+<p>This error will occur when the configured value of McuOPBT1Sel is not supported. </p>
+<p><b>ERR_59_101_017: </b>The value of the parameter McuEcmDelayTimerOverflowValue </p>
+<p>= $McuEcmDelTimOverVal Hz is out of range.    </p>
+<p>This error will occur when the value of McuEcmDelayTimerOverflowValue is not in </p>
+<p>range. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       </b></p>
+<p><b>Messages</b></p>
+<p><b> </b></p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p> </p>
+<p>55 </p>
+<p><b>ERR_59_101_018:  </b>The value of the parameter McuClm0MonitoringClockAccuracy </p>
+<p>= $McuClm0MonClockAcc Hz is out of range.  </p>
+<p>This error will occur when the value of the McuClm0MonitoringClockAccuracy is not </p>
+<p>in range.<b> </b></p>
+<p><b>ERR_59_101_019:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm0SamplingClockAccuracy = </p>
+<p>$McuClm0SamClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm0SamplingClockAccuracy is not </p>
+<p>in range. </p>
+<p><b>ERR_59_101_020:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm1MonitoringClockAccuracy </p>
+<p>= $McuClm1MonClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm1MonitoringClockAccuracy is not </p>
+<p>in range. </p>
+<p><b>ERR_59_101_021:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm1SamplingClockAccuracy = </p>
+<p>$McuClm1SamClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm1SamplingClockAccuracy is not </p>
+<p>in range. </p>
+<p><b>ERR_59_101_022:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm2MonitoringClockAccuracy </p>
+<p>= $McuClm2MonClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm2MonitoringClockAccuracy is not </p>
+<p>in range. </p>
+<p><b> ERR_59_101_023:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm2SamplingClockAccuracy </p>
+<p>= $McuClm2SamClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm2SamplingClockAccuracy is not </p>
+<p>in range. </p>
+<p><b>ERR_59_101_024:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm3MonitoringClockAccuracy </p>
+<p>= $McuClm3MonClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm3MonitoringClockAccuracy is not </p>
+<p>in range </p>
+<p><b>ERR_59_101_025:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm3SamplingClockAccuracy = </p>
+<p>$McuClm3SamClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm3SamplingClockAccuracy is not </p>
+<p>in range </p>
+<p><b>ERR_59_101_028:</b></p>
+<p> </p>
+<p>The value of the parameter McuLoopCount = $McuLoopCt Hz is </p>
+<p>out of range. </p>
+<p>This error will occur when the value of the McuLoopCount is not in range. </p>
+<p><b> ERR_59_101_029:   </b>The value of the parameter McuMainOsciFrequency is invalid </p>
+<p>in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuMainOsciFrequency is not in range. </p>
+<p><b> ERR_59_101_030: </b>The value of the parameter McuCpuMainSysClk = </p>
+<p>$McuCpuClk Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount.<b>  </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       Chapter 9  </b></p>
+<p><b>Messages</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>56 </p>
+<p> </p>
+<p>This error will occur when the value of the McuCpuMainSysClk is not in range. </p>
+<p><b>ERR_59_101_031:</b></p>
+<p> </p>
+<p>The value of the parameter McuPeripheralClock = </p>
+<p>$McuPeriClock Hz is out of range in the container </p>
+<p>McuClockSettingConfig$ClockCount in McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuPeripheralClock is not in range. </p>
+<p><b>ERR_59_101_032:</b></p>
+<p> </p>
+<p>The value of the parameter McuExternalClk0DividerSel = </p>
+<p>$McuExtClk0DivSel Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuExternalClk0DividerSel is not in </p>
+<p>range. </p>
+<p><b> ERR_59_101_033:</b></p>
+<p> </p>
+<p>The value of the parameter McuExternalClock0 = $McuExtClk0 </p>
+<p>Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount.</p>
+<p> </p>
+<p><b>  </b></p>
+<p>This error will occur when the value of the McuExternalClock0 is not in range. </p>
+<p><b>ERR_59_101_034: </b>The value of the parameter McuExternalClk1DividerSel = </p>
+<p>$McuExtClk1DivSel Hz is out of range McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount.            </p>
+<p>This error will occur when the value of the McuExternalClk1DividerSel is not in </p>
+<p>range.      </p>
+<p><b>ERR_59_101_035: </b>The value of the parameter McuExternalClock1 = $McuExtClk1 </p>
+<p>Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuExternalClock1 is not in range.     </p>
+<p><b>ERR_59_101_036:</b></p>
+<p> </p>
+<p>The value of the parameter McuPLLClk0DividerSel = </p>
+<p>$McuPLLClk0DivSel Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuPLLClk0DividerSel is not in range.     </p>
+<p><b>ERR_59_101_037:</b></p>
+<p> </p>
+<p>The value of the parameter McuPLLClock0 = $McuPLLClock0 </p>
+<p>Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuPLLClock0 is not in range.    </p>
+<p><b>ERR_59_101_038:</b></p>
+<p> </p>
+<p>The value of the parameter McuPLLClk1DividerSel = </p>
+<p>$McuPLLClk1DivSel Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuPLLClk1DividerSel is not in range.   </p>
+<p><b>ERR_59_101_039:</b></p>
+<p> </p>
+<p>The value of the parameter McuOPBT1Sel = $McuOPBT1Se </p>
+<p>Hz is out of range in McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuOPBT1Sel is not in range.  </p>
+<p><b>ERR_59_101_040:</b></p>
+<p> </p>
+<p>The value of the parameter McuPeripheralClock = </p>
+<p>$McuPeripClock Hz is out of range in the container McuSAWdtCounterClk in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuPeripheralClock is not in range. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       </b></p>
+<p><b>Messages</b></p>
+<p><b> </b></p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p> </p>
+<p>57 </p>
+<p><b>ERR_59_101_041:</b></p>
+<p> </p>
+<p>The value of the parameter McuGTMCMUGCLKNumerator = </p>
+<p>$McuGTMCMUGCLKNum Hz is out of range in </p>
+<p>McuGTMClockSettingsConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuGTMCMUGCLKNumerator is not in </p>
+<p>range. </p>
+<p><b>ERR_59_101_042:</b></p>
+<p> </p>
+<p>The value of the parameter McuGTMCMUGCLKDenominator = </p>
+<p>$McuGTMCMUGCLKDen Hz is out of range in </p>
+<p>McuGTMClockSettingsConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuGTMCMUGCLKDenominator is not </p>
+<p>in range.  </p>
+<p><b>ERR_59_101_043:</b></p>
+<p> </p>
+<p>The value of the parameter McuGTMChannelClkSrcDivider = </p>
+<p>$McuGTMChClkSrcDiv Hz is out of range in McuGTMClockSettings$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p><b>ERR_59_101_044:</b></p>
+<p> </p>
+<p>The value of the parameter McuRamDefaultValue = </p>
+<p>$McuRamDefVal Hz is out of range in McuRamSectorSettingConf$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuRamDefaultValue is not in range. </p>
+<p><b>ERR_59_101_045: </b>The value of the parameter McuRamSectionBaseAddress = </p>
+<p>$McuRamSecBaseAdd Hz is out of range in </p>
+<p>McuRamSectorSettingConf$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuRamSectionBaseAddress is not in </p>
+<p>range. </p>
+<p><b>ERR_59_101_046:</b></p>
+<p> </p>
+<p>The value of the parameter McuRamSectionSize = </p>
+<p>$McuRamSecSize   Hz is out of range in McuRamSectorSettingConf$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount. </p>
+<p>This error will occur when the value of the McuRamSectionSize is not in range. </p>
+<p><b>ERR_59_101_047:</b></p>
+<p> </p>
+<p>The calculated output frequency for the McuExternalClock0 </p>
+<p>exceeds 20000000 Hz in the container McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount </p>
+<p>This error will occur when the value of the McuExternalClock0 exceeds 20000000 </p>
+<p>Hz. </p>
+<p><b>ERR_59_101_048:</b></p>
+<p> </p>
+<p>The calculated output frequency for the McuExternalClock1 </p>
+<p>exceeds 20000000 Hz in the container McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount </p>
+<p>This error will occur when the value of the McuExternalClock1 exceeds 20000000 </p>
+<p>Hz. </p>
+<p><b>ERR_59_101_049:</b></p>
+<p> </p>
+<p>The configured value of McuExternalClock0 should be equal to </p>
+<p>$McuClkVal0 Hz in the container McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount </p>
+<p>This error will occur when the value of the McuExternalClock0 is not matching with </p>
+<p>McuClkVal0. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       Chapter 9  </b></p>
+<p><b>Messages</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>58 </p>
+<p> </p>
+<p><b>ERR_59_101_050:</b></p>
+<p> </p>
+<p>The configured value of McuExternalClock1 should be equal to </p>
+<p>$McuClkVal1 Hz in the container McuClockSettingConfig$ClockCount in </p>
+<p>McuModuleConfiguration$ConfigSetCount </p>
+<p>This error will occur when the value of the McuExternalClock1 is not matching with </p>
+<p>McuClkVal1.  </p>
+<p><b>ERR_59_101_051:</b></p>
+<p> </p>
+<p>The value of the parameter McuClm4MonitoringClockAccuracy </p>
+<p>= $McuClm4MonClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the McuClm4MonitoringClockAccuracy is not </p>
+<p>in range.  </p>
+<p><b>ERR_59_101_052:</b></p>
+<p> </p>
+<p>The value of the parameter</p>
+<p> McuClm4SamplingClockAccuracy = </p>
+<p>$McuClm4SamClockAcc Hz is out of range. </p>
+<p>This error will occur when the value of the </p>
+<p>McuClm4SamplingClockAccuracy </p>
+<p>is not in </p>
+<p>range. </p>
+<p><b>ERR_59_101_053:</b></p>
+<p> </p>
+<p>The parameter 'MCU_E_INT_INCONSISTENT' in the </p>
+<p>McuDemEventParameterRefs Container should be configured, because the </p>
+<p>'McuInterruptConsistencyCheck' in $McuGeneral container is true </p>
+<p>This error occur when ''McuInterruptConsistencyCheck ' in </p>
+<p>McuGeneralConfiguration container is configured as true and </p>
+<p>MCU_E_INT_INCONSISTENT in McuDemEventParameterRefs is not configured. </p>
+<p> </p>
+<p><b>ERR_59_101_054:</b></p>
+<p> </p>
+<p>Reference path configured for the parameter </p>
+<p>MCU_E_INT_INCONSISTENT in McuModuleConfiguration$ConfigSetCount is not </p>
+<p>correct in the container McuDemEventParameterRefs </p>
+<p>This error occur when ''McuInterruptConsistencyCheck ' in </p>
+<p>McuGeneralConfiguration container is configured as true and </p>
+<p>MCU_E_INT_INCONSISTENT in McuDemEventParameterRefs is not configured </p>
+<p>correctly. </p>
+<p> </p>
+<p><b>ERR_59_101_055:</b></p>
+<p> </p>
+<p>The value configured for the parameter </p>
+<p>McuWriteVerifyErrorInterface in the container $McuGeneral shall not be Empty or </p>
+<p>NULL,since McuUseWriteVerifyErrorInterface is configured as True. </p>
+<p>This error occur when '' McuUseWriteVerifyErrorInterface ' in </p>
+<p>McuGeneralConfiguration container is configured as true and </p>
+<p>McuWriteVerifyErrorInterface is not configured. </p>
+<p> </p>
+<p><b>ERR_59_101_056:</b></p>
+<p> </p>
+<p>The parameter 'MCU_E_REG_WRITE_VERIFY' in the </p>
+<p>McuDemEventParameterRefs Container should be configured, because the </p>
+<p>'McuWriteVerify' in $McuGeneral container is true. </p>
+<p>This error occur when '' McuWriteVerify' in McuGeneralConfiguration container is </p>
+<p>configured as true and 'MCU_E_REG_WRITE_VERIFY’ in </p>
+<p>McuDemEventParameterRefs is not configured. </p>
+<p> </p>
+<p><b>ERR_59_101_057:</b></p>
+<p>  </p>
+<p>Reference path configured for the parameter </p>
+<p>MCU_E_REG_WRITE_VERIFY in McuModuleConfiguration$ConfigSetCount is not </p>
+<p>correct in the container McuDemEventParameterRefs </p>
+<p>This error occur when '' McuWriteVerify' in McuGeneralConfiguration container is </p>
+<p>configured as true and 'MCU_E_REG_WRITE_VERIFY’ in </p>
+<p>McuDemEventParameterRefs is not configured correctly. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       </b></p>
+<p><b>Messages</b></p>
+<p><b> </b></p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p> </p>
+<p>59 </p>
+<p> </p>
+<p><b>ERR_59_101_058:</b></p>
+<p> </p>
+<p>The value of the parameter McuEcmErrorMaskableInterrupt or </p>
+<p>McuEcmErrorNonMaskableInterrupt should be true for McuEcmErrorSource&lt;16, 17, </p>
+<p>48 and 49&gt; since the parameter McuGetRamStateApi is configured as true in the </p>
+<p>McuGeneralConfiguration container. </p>
+<p>This error will occur when the parameters McuEcmErrorMaskableInterrupt or </p>
+<p>McuEcmErrorNonMaskableInterrupt are not configured as true when the the </p>
+<p>parameter McuGetRamStateApi is configured as true in the </p>
+<p>McuGeneralConfiguration container. </p>
+<p> </p>
+<p>                        <b>Remark</b>    As issue raised in Bugzilla: 54536 Autosar parameter McuClockSettingId in  </p>
+<p>McuClockSettingConfig container range is changed to 0 to 255 instead of 1 to 255. </p>
+<p> </p>
+<p><b>ERR_59_101_059: </b>The value of the parameter McuClmaXOperation should be </p>
+<p>configured as true since the parameter McuClmaxSelfDiagnostic Test is configured </p>
+<p>as true in the McuGeneralConfiguration container<b>. </b></p>
+<p> </p>
+<p>This error occur when McuClmaxSelfDiagnosticTest in McuGeneralConfiguration </p>
+<p>container is configured as true and McuClmaXOperation is configured as false. </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_101_060: </b>The value configured for the parameter </p>
+<p>MCU_E_CLM_SELFDIAG_FAILURE in the McuDemEventParameterRefs </p>
+<p>Container in McuModuleConfiguration$ConfigSetCount shall not be empty or NULL </p>
+<p>when any of the parameters 'McuClma0SelfDiagnosticTest' or </p>
+<p>'McuClma1SelfDiagnosticTest' or 'McuClma2SelfDiagnosticTest' or </p>
+<p>'McuClma3SelfDiagnosticTest' or 'McuClma4SelfDiagnosticTest' in </p>
+<p>'McuGeneralConfiguration' is configured as true. </p>
+<p><b> </b></p>
+<p>For device R7F701373 and R7F701374  </p>
+<p> </p>
+<p>The value configured for the parameter MCU_E_CLM_SELFDIAG_FAILURE in the </p>
+<p>McuDemEventParameterRefs Container in </p>
+<p>McuModuleConfiguration$ConfigSetCount shall not be empty or NULL when any of </p>
+<p>the parameters 'McuClma0SelfDiagnosticTest' or 'McuClma0SelfDiagnosticTest' or </p>
+<p>'McuClma2SelfDiagnosticTest' or 'McuClma3SelfDiagnosticTest'' in </p>
+<p>'McuGeneralConfiguration' is configured as true for P1M-C devices. </p>
+<p> </p>
+<p>This error occur when McuClma&lt;0,1,2,3,4&gt;SelfDiagnosticTest in </p>
+<p>McuGeneralConfiguration container is configured as true and </p>
+<p>MCU_E_CLM_SELFDIAG_FAILURE in McuDemEventParameterRefs is not </p>
+<p>configured. </p>
+<p><b> </b></p>
+<p><b>ERR_59_101_061: </b>Reference path configured for the parameter </p>
+<p>MCU_E_CLM_SELFDIAG_FAILURE in McuModuleConfiguration$ConfigSetCount </p>
+<p>is not correct in the container McuDemEventParameterRefs </p>
+<p> </p>
+<p>This error occur when McuClma&lt;0,1,2,3,4&gt;SelfDiagnosticTest in </p>
+<p>McuGeneralConfiguration container is configured as true and </p>
+<p>MCU_E_CLM_SELFDIAG_FAILURE in McuDemEventParameterRefs is not </p>
+<p>configured correctly. </p>
+<p> </p>
+<p><b>ERR_59_101_062: </b>The parameter MCU_E_CLM_SELFDIAG_FAILURE in the </p>
+<p>McuDemEventParameterRefs Container in </p>
+<p>McuModuleConfiguration$ConfigSetCount should be configured, because the </p>
+<p>parameter McuEcmSelfDiagnosticTest in McuGeneralConfiguration container is </p>
+<p>configured as true&quot;. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       Chapter 9  </b></p>
+<p><b>Messages</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>60 </p>
+<p> </p>
+<p>This error occur when 'McuEcmSelfDiagnosticTest' in McuGeneralConfiguration </p>
+<p>container is configured as true and MCU MCU_E_ECM_SELFDIAG_FAILURE in </p>
+<p>McuDemEventParameterRefs is not configured. </p>
+<p> </p>
+<p><b>ERR_59_101_063: </b>Reference path configured for the parameter </p>
+<p>MCU_E_ECM_SELFDIAG_FAILURE in McuModuleConfiguration$ConfigSetCount </p>
+<p>is not correct in the container McuDemEventParameterRefs </p>
+<p> </p>
+<p>This error occur when 'McuEcmSelfDiagnosticTes’' in McuGeneralConfiguration </p>
+<p>container is configured and MCU_E_ECM_SELFDIAG_FAILURE in </p>
+<p>McuDemEventParameterRefs is not configured correctly. </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_101_064: </b>The parameter MCU_E_CVM_SELFDIAG_FAILURE in the </p>
+<p>McuDemEventParameterRefs Container in </p>
+<p>McuModuleConfiguration$ConfigSetCount should be configured, because the </p>
+<p>parameter 'McuCvmSelfDiagnosticTest' in McuGeneralConfiguration container is </p>
+<p>configured as true&quot; </p>
+<p> </p>
+<p>This error occur when 'McuCvmSelfDiagnosticTest' in McuGeneralConfiguration </p>
+<p>container is configured as true and MCU_E_CLM_SELFDIAG_FAILURE in </p>
+<p>McuDemEventParameterRefs is not configured. </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_101_065: </b>Reference path configured for the parameter </p>
+<p>MCU_E_CVM_SELFDIAG_FAILURE in McuModuleConfiguration$ConfigSetCount </p>
+<p>is not correct in the container McuDemEventParameterRefs </p>
+<p> </p>
+<p>This error occur when 'McuCvmSelfDiagnosticTest' in McuGeneralConfiguration </p>
+<p>container is configured and MCU_E_CLM_SELFDIAG_FAILURE in </p>
+<p>McuDemEventParameterRefs is not configured correctly. </p>
+<p> </p>
+<p><b>ERR_59_101_066: </b>The parameter MCU_E_LOCKSTEP_SELFDIAG_FAILURE in </p>
+<p>the McuDemEventParameterRefs Container in </p>
+<p>McuModuleConfiguration$ConfigSetCount should be configured, because the </p>
+<p>parameter '</p>
+<p> </p>
+<p>McuLockStepSelfDiagnosticTest' in McuGeneralConfiguration container </p>
+<p>is configured as true&quot; </p>
+<p> </p>
+<p>This error occur when '</p>
+<p> </p>
+<p>McuLockStepSelfDiagnosticTest' in </p>
+<p>McuGeneralConfiguration container is configured as true and </p>
+<p>MCU_E_LOCKSTEP_SELFDIAG_FAILURE in McuDemEventParameterRefs is not </p>
+<p>configured. </p>
+<p> </p>
+<p><b>ERR_591_01_067:</b></p>
+<p> Reference</p>
+<p> path configured for the parameter </p>
+<p>MCU_E_LOCKSTEP_SELFDIAG_FAILURE in </p>
+<p>McuModuleConfiguration$ConfigSetCount is not correct in the container </p>
+<p>McuDemEventParameterRefs </p>
+<p> </p>
+<p>This error occur when ' McuLockStepSelfDiagnosticTest ' in </p>
+<p>McuGeneralConfiguration container is configured and </p>
+<p>MCU_E_LOCKSTEP_SELFDIAG_FAILURE in McuDemEventParameterRefs is not </p>
+<p>configured correctly. </p>
+<p> </p>
+<p><b>ERR_59_101_068:</b></p>
+<p> The parameters 'McuEcmErrorMaskableInterrupt' and </p>
+<p>'McuEcmErrorNonMaskableInterrupt' are configured as true for the error source </p>
+<p>McuEcmErrorContainer.</p>
+<p> </p>
+<p> </p>
+<p>This error occur when McuEcmErrorMaskableInterrupt and </p>
+<p>McuEcmErrorNonMaskableInterrupt is configured for same error source. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       </b></p>
+<p><b>Messages</b></p>
+<p><b> </b></p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p> </p>
+<p>61 </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_101_069:</b></p>
+<p> The parameter 'McuEcmErrorMIDelayTimer' cannot be true </p>
+<p>since the interrupt 'McuEcmErrorMaskableInterrupt' is configured as false for the </p>
+<p>same error source McuEcmErrorContainer. </p>
+<p> </p>
+<p>This error occur when McuEcmErrorNMIDelayTimer configured without configuring </p>
+<p>McuEcmErrorMaskableInterrupt of same error source</p>
+<p>. </p>
+<p><b> </b></p>
+<p><b>ERR_59_101_070: </b>The parameter 'McuEcmErrorNMIDelayTimer' cannot be true </p>
+<p>since the interrupt 'McuEcmErrorNonMaskableInterrupt' is configured as false for </p>
+<p>the same error source McuEcmErrorContainer. </p>
+<p> </p>
+<p>This error occur when McuEcmErrorNMIDelayTimer configured without configuring </p>
+<p>McuEcmErrorNonMaskableInterrupt of same error source. </p>
+<p> </p>
+<p> </p>
+<p><b>9.2 </b></p>
+<p><b>Warning Messages</b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>WARNING_59_101_001:   </b>Since the McuModeType parameter is configured as </p>
+<p>MCU_MODULE_STANBY_MODE, stop trigger of any of the Target domain in the </p>
+<p>path Mcu/McuModuleConfiguration / McuModeSettingConf need to be enabled. </p>
+<p> </p>
+<p> </p>
+<p><b>9.3 </b></p>
+<p><b>Information Messages </b></p>
+<p> </p>
+<p><b>INFO_59_101_001</b>:  The Time Period of the each GTM CMU clock TCMU_CLK[x] is </p>
+<p>calculated as,   </p>
+<p> </p>
+<p>TCMU_CLK[x] </p>
+<p>= </p>
+<p>((CMUGlobalClockNumerator/CMUGlobalClockDenominator) </p>
+<p>* </p>
+<p>TSYS_CLK) * (ChannelClkSrcDivider + 1). </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>       Chapter 9  </b></p>
+<p><b>Messages</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>62 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Revision History </b></p>
+<p> </p>
+<p> </p>
+<p><b>Sl.No</b></p>
+<p><b>.</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p><b>Date</b></p>
+<p> </p>
+<p>1</p>
+<p> </p>
+<p>Initial Version</p>
+<p> </p>
+<p>1.0.0</p>
+<p> </p>
+<p>14-Aug-2015</p>
+<p> </p>
+<p>2 </p>
+<p>The following changes are made: </p>
+<p>1. </p>
+<p>R number is added in the last page </p>
+<p>2. </p>
+<p>Added McuGTMConfigurationSupport in 8.1.1 </p>
+<p>3. </p>
+<p>Added McuGTMClockSettings and McuOPBT1Sel in 8.1.2 </p>
+<p>4. </p>
+<p>Updated McuExternalClkOutSetting and McuPLLClkSetting in 8.1.2 </p>
+<p>5. </p>
+<p>Added parameter for GTM support  in Figure 8-1  </p>
+<p>                  Configuration overview. </p>
+<p>6. </p>
+<p>Added error message ERR_59_101_013 , ERR_59_101_014 , </p>
+<p>ERR_59_101_015, ERR_59_101_016  in 10.1.1 Error Messages </p>
+<p>7. </p>
+<p>Added Information message in Section 10.3 </p>
+<p>8. </p>
+<p>Description added for error messages in 10.1.1 Error Messages </p>
+<p>9. </p>
+<p>Compiler version updated in 9.3 User Environment Settings </p>
+<p>10. </p>
+<p>Added Information message INFO_59_101_001 in Section 10.3. </p>
+<p> </p>
+<p> </p>
+<p>1.0.1 </p>
+<p>15-Apr-2016 </p>
+<p>3 </p>
+<p>Following changes are made </p>
+<p>1. </p>
+<p>The type of the parameters </p>
+<p>McuClm0MonitoringClockAccuracy,McuClm1MonitoringClockAccuracy, </p>
+<p>McuClm2MonitoringClockAccuracy, McuClm3MonitoringClockAccuracy, </p>
+<p>McuClm0SamplingClockAccuracy, McuClm1SamplingClockAccuracy, </p>
+<p>McuClm2SamplingClockAccuracy, McuClm3SamplingClockAccuracy, are </p>
+<p>changed from integer to float in section 8.1.1 </p>
+<p>2. </p>
+<p>In section 10.1, error messages ERR_59_101_017 to ERR_59_101_067 </p>
+<p>are added and ERR_59_101_029 is updated. </p>
+<p>3. </p>
+<p>In section 8.1.1, parameters McuClm4MonitoringClockAccuracy, </p>
+<p>McuClm4SamplingClockAccuracy, McuInterruptConsistencyCheck, </p>
+<p>McuUseWriteVerifyErrorInterface, McuWriteVerifyErrorInterface, </p>
+<p>McuWriteVerify, Clma Self Diagnosis, McuCvmSelfDiagnosticTest, </p>
+<p>McuEcmSelfDiagnosticTest, McuLockStepSelfDiagnosticTest are added. </p>
+<p>4. </p>
+<p>Updated section 8.1.2 post build configuration parameters. </p>
+<p>5. </p>
+<p>Removed Translation XML File from Definition. </p>
+<p>6. </p>
+<p>Updated Chapters 1,3,4,5,6,7 by rephrasing Tool and MCU Driver </p>
+<p>Generation Tool  with MCAL Code Generator Tool </p>
+<p>7. </p>
+<p>Removed Chapter 9 Generation Tool Options, Chapter-10 Notes. </p>
+<p>8. </p>
+<p>Updated Chapter 3 with a remark for common MCAL Code Generator Tool </p>
+<p>user manual </p>
+<p>9. </p>
+<p>Renamed the Chapter 3 heading as Code Generation Overview. </p>
+<p>10. </p>
+<p>Chapter-4 description rephrased and Flow chart in chapter 3 updated. </p>
+<p>11. </p>
+<p>Updated parameter McuMainOsciFrequency in table 8-2 as enumeration </p>
+<p>type. </p>
+<p>12. </p>
+<p>ERR_59_101_026 and  ERR_59_101_027 are removed. </p>
+<p>1.0.2 </p>
+<p>27-Jan-2017 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>AUTOSAR MCAL R4.0.3 User's Manual </b></p>
+<p><b>MCU Driver Component Ver.1.0.2 </b></p>
+<p><b>Generation Tool User's Manual </b></p>
+<p> </p>
+<p>Publication Date: Rev.1.00,  January 27, 2017 </p>
+<p> </p>
+<p> </p>
+<p>Published by: Renesas Electronics Corporation </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>SALES </b></p>
+<p><b>OFFICES</b></p>
+<p> </p>
+<p>http://www.renesas.com</p>
+<p> </p>
+<p>Refer  to </p>
+<p>&quot;http://www.renesas.com/&quot; </p>
+<p>for the latest  and detailed </p>
+<p>information.</p>
+<p> </p>
+<p><b>Renesas Electronics America Inc. </b></p>
+<p>2801 Scott Boulevard Santa Clara, CA 95050-2549, U.S.A. </p>
+<p>Tel: +1-408-588-6000, Fax: +1-408-588-6130 </p>
+<p><b>Renesas Electronics Canada Limited</b></p>
+<p><b> </b></p>
+<p>9251 Yonge Street, Suite 8309 Richmond Hill, Ontario Canada L4C 9T3 </p>
+<p>Tel: +1-905-237-2004 </p>
+<p><b>Renesas Electronics Europe Limited </b></p>
+<p>Dukes Meadow, Millboard Road, Bourne End, Buckinghamshire, SL8 5FH, U.K </p>
+<p>Tel: +44-1628-585-100, Fax: +44-1628-585-900 </p>
+<p><b>Renesas Electronics Europe GmbH </b></p>
+<p>Arcadiastrasse 10, 40472 Düsseldorf, Germany </p>
+<p>Tel: +49-211-6503-0, Fax: +49-211-6503-1327 </p>
+<p><b>Renesas Electronics (China) Co., Ltd. </b></p>
+<p>Room 1709, Quantum Plaza, No.27 ZhiChunLu Haidian District, Beijing 100191, P.R.China </p>
+<p>Tel: +86-10-8235-1155, Fax: +86-10-8235-7679 </p>
+<p><b>Renesas Electronics (Shanghai) Co., Ltd. </b></p>
+<p>Unit 301, Tower A, Central Towers, 555 Langao Road, Putuo District, Shanghai, P. R. China 200333 </p>
+<p>Tel: +86-21-2226-0888, Fax: +86-21-2226-0999 </p>
+<p><b>Renesas Electronics Hong Kong Limited</b></p>
+<p><b> </b></p>
+<p>Unit 1601-1611, 16/F., Tower 2, Grand Century Place, 193 Prince Edward Road West, Mongkok, Kowloon, Hong Kong </p>
+<p>Tel: +852-2265-6688, Fax: +852 2886-9022 </p>
+<p><b>Renesas Electronics Taiwan Co., Ltd. </b></p>
+<p>13F, No. 363, Fu Shing North Road, Taipei 10543, Taiwan </p>
+<p>Tel: +886-2-8175-9600, Fax: +886 2-8175-9670 </p>
+<p><b>Renesas Electronics Singapore Pte. Ltd. </b></p>
+<p>80 Bendemeer Road, Unit #06-02 Hyflux Innovation Centre, Singapore 339949 </p>
+<p>Tel: +65-6213-0200, Fax: +65-6213-0300 </p>
+<p><b>Renesas Electronics Malaysia Sdn.Bhd. </b></p>
+<p>Unit 1207, Block B, Menara Amcorp, Amcorp Trade Centre, No. 18, Jln Persiaran Barat, 46050 Petaling Jaya, Selangor Darul Ehsan, Malaysia </p>
+<p>Tel: +60-3-7955-9390, Fax: +60-3-7955-9510 </p>
+<p><b>Renesas Electronics India Pvt. Ltd. </b></p>
+<p>No.777C, 100 Feet Road, HAL II Stage, Indiranagar, Bangalore, India </p>
+<p>Tel: +91-80-67208700, Fax: +91-80-67208777 </p>
+<p><b>Renesas Electronics Korea Co., Ltd. </b></p>
+<p>12F., 234 Teheran-ro, Gangnam-Gu, Seoul, 135-080, Korea </p>
+<p>Tel: +82-2-558-3737, Fax: +82-2-558-5141 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>© 2006-2017 Renesas Electronics Corporation. All rights reserved. </p>
+<p>Colophon 4.1 </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3 </p>
+<p> </p>
+<p>User’s Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>R20UT3652EJ0100 </p>
+</body>
+</html>
+{% endraw %}

@@ -1,0 +1,5390 @@
+---
+layout: default
+title: TechnicalReference_CanIf
+nav_order: 2
+parent: CAN Interface
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>CAN Interface </b></p>
+<p>Technical Reference </p>
+<p> </p>
+<p> </p>
+<p>  </p>
+<p>Version 6.09.00 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Authors </b></p>
+<p><b>Rüdiger Naas, Eugen Stripling </b></p>
+<p><b>Versions: </b></p>
+<p>6.09.00 </p>
+<p><b>Status: </b></p>
+<p><b>Released </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>2 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>1 </b></p>
+<p><b>Document Information </b></p>
+<p><b>1.1 </b></p>
+<p><b>History </b></p>
+<p><b>Author </b></p>
+<p><b>Date </b></p>
+<p><b>Version </b></p>
+<p><b>Remarks </b></p>
+<p>Eugen Stripling </p>
+<p>Rüdiger Naas </p>
+<p>2012-07-17 </p>
+<p>5.00 </p>
+<p>ASR R4.0 Rev 3 </p>
+<p>Eugen Stripling </p>
+<p>2013-04-03 </p>
+<p>5.01.00 </p>
+<p>ESCAN00065368 </p>
+<p>ESCAN00066338 </p>
+<p>ESCAN00066340 </p>
+<p>Adapted according to </p>
+<p>ESCAN00066285 </p>
+<p>Adapted according to </p>
+<p>ESCAN00065289 </p>
+<p>ESCAN00066396 </p>
+<p>Adapted according to </p>
+<p>ESCAN00064304 </p>
+<p>Rüdiger Naas </p>
+<p>2013-07-24 </p>
+<p>5.01.01 </p>
+<p>ESCAN00066794 </p>
+<p>Eugen Stripling </p>
+<p>2013-09-27 </p>
+<p>6.00.00 </p>
+<p>Adapted due to: </p>
+<p>AR4-307: J1939 support </p>
+<p>AR4-438: Dynamic address lookup </p>
+<p>table </p>
+<p>AR4-397: CAN FD support </p>
+<p>Eugen Stripling </p>
+<p>2014-05-19 </p>
+<p>6.01.00 </p>
+<p>CAN FD support extended: Rx-FD </p>
+<p>and Rx- and Tx-PDUs with up to </p>
+<p>64 bytes payload </p>
+<p>Rüdiger Naas </p>
+<p>2014-07-10 </p>
+<p>6.02.00 </p>
+<p>Multiple CAN driver support </p>
+<p>Eugen Stripling </p>
+<p>2014-08-25 </p>
+<p>6.02.00 </p>
+<p>ESCAN00077304, Restriction </p>
+<p>concerning the handling of </p>
+<p>FD/Not-FD FullCAN-Rx-PDUs </p>
+<p>added </p>
+<p>Eugen Stripling </p>
+<p>2014-09-22 </p>
+<p>6.02.00 </p>
+<p>ESCAN00078524, CanTSyn added, </p>
+<p>Post-build selectable </p>
+<p>Eugen Stripling </p>
+<p>2014-11-25 </p>
+<p>6.03.00 </p>
+<p>Channel specific J1939 dynamic </p>
+<p>address  </p>
+<p>Eugen Stripling </p>
+<p>2015-01-26 </p>
+<p>6.04.00 </p>
+<p>Chapter 3.8 adapted to changed </p>
+<p>implementation </p>
+<p>Eugen Stripling </p>
+<p>2015-05-18 </p>
+<p>6.05.00 </p>
+<p>Adapted due to FEAT-366 </p>
+<p>Eugen Stripling </p>
+<p>2015-11-20 </p>
+<p>6.06.00 </p>
+<p>Adapted due to FEAT-1429 </p>
+<p>Eugen Stripling </p>
+<p>2016-01-09 </p>
+<p>6.06.00 </p>
+<p>ESCAN00087340 </p>
+<p>Eugen Stripling </p>
+<p>2016-02-22 </p>
+<p>6.07.00 </p>
+<p>Feature Extended RAM-check </p>
+<p>added, ESCAN00087587 </p>
+<p>Eugen Stripling </p>
+<p>2016-06-24 </p>
+<p>6.08.00 </p>
+<p>Feature: Data checksum added </p>
+<p>Eugen Stripling </p>
+<p>2016-09-14 </p>
+<p>6.09.00 </p>
+<p>Adapted due to FEAT-2076: </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>3 </p>
+<p>based on template version 2.10.0 </p>
+<p>Behavior of Tx-PDU filter extended </p>
+<p>Eugen Stripling </p>
+<p>2016-09-26 </p>
+<p>6.09.00 </p>
+<p>Adapted due to FEAT-2024: Set </p>
+<p>reception mode </p>
+<p>Table 1-1  </p>
+<p>History of the Document </p>
+<p><b>1.2 </b></p>
+<p><b>Reference Documents </b></p>
+<p><b>No. </b></p>
+<p><b>Title </b></p>
+<p><b>Version </b></p>
+<p>[1] </p>
+<p> AUTOSAR_SWS_CANInterface.pdf </p>
+<p>5.0.0 </p>
+<p>6.0.0 </p>
+<p>[2] </p>
+<p> AUTOSAR_SWS_DevelopmentErrorTracer.pdf </p>
+<p>3.2.0 </p>
+<p>[3] </p>
+<p> AUTOSAR_SRS_BSWGeneral.pdf </p>
+<p>3.2.0 </p>
+<p>Table 1-2  </p>
+<p>References Documents </p>
+<p> </p>
+<p> </p>
+<p><b>Please note </b></p>
+<p>We have configured the programs in accordance with your specifications in the </p>
+<p>questionnaire. Whereas the programs do support other configurations than the one </p>
+<p>specified in your questionnaire, Vector’s release of the programs delivered to your </p>
+<p>company is expressly restricted to the configuration you have specified in the </p>
+<p>questionnaire. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>4 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Contents </b></p>
+<p><b>1</b></p>
+<p> </p>
+<p><b>Document Information ......................................................................................................2</b></p>
+<p> </p>
+<p>1.1</p>
+<p> </p>
+<p>History ....................................................................................................................2</p>
+<p> </p>
+<p>1.2</p>
+<p> </p>
+<p>Reference Documents ...........................................................................................3</p>
+<p> </p>
+<p><b>2</b></p>
+<p> </p>
+<p><b>Introduction ......................................................................................................................10</b></p>
+<p> </p>
+<p>2.1</p>
+<p> </p>
+<p>Architecture Overview ..........................................................................................10</p>
+<p> </p>
+<p><b>3</b></p>
+<p> </p>
+<p><b>Functional Description ...................................................................................................12</b></p>
+<p> </p>
+<p>3.1</p>
+<p> </p>
+<p>Deviations regarding AUTOSAR standard ..........................................................12</p>
+<p> </p>
+<p>3.2</p>
+<p> </p>
+<p>Feature List...........................................................................................................12</p>
+<p> </p>
+<p>3.3</p>
+<p> </p>
+<p>Initialization ...........................................................................................................13</p>
+<p> </p>
+<p>3.4</p>
+<p> </p>
+<p>Transmission ........................................................................................................14</p>
+<p> </p>
+<p>3.4.1</p>
+<p> </p>
+<p>Dynamic transmission .........................................................................15</p>
+<p> </p>
+<p>3.4.2</p>
+<p> </p>
+<p>Transmit-buffer .....................................................................................15</p>
+<p> </p>
+<p>3.4.3</p>
+<p> </p>
+<p>Multiple Transmit-buffers .....................................................................16</p>
+<p> </p>
+<p>3.4.4</p>
+<p> </p>
+<p>Tx confirmation polling support ...........................................................17</p>
+<p> </p>
+<p>3.4.5</p>
+<p> </p>
+<p>Data checksum Tx ...............................................................................18</p>
+<p> </p>
+<p>3.5</p>
+<p> </p>
+<p>Reception .............................................................................................................18</p>
+<p> </p>
+<p>3.5.1</p>
+<p> </p>
+<p>Ranges .................................................................................................19</p>
+<p> </p>
+<p>3.5.2</p>
+<p> </p>
+<p>DLC check ...........................................................................................20</p>
+<p> </p>
+<p>3.5.3</p>
+<p> </p>
+<p>Data checksum Rx...............................................................................20</p>
+<p> </p>
+<p>3.5.4</p>
+<p> </p>
+<p>Control of reception mode of a Rx-PDU..............................................21</p>
+<p> </p>
+<p>3.6</p>
+<p> </p>
+<p>Communication Modes ........................................................................................22</p>
+<p> </p>
+<p>3.6.1</p>
+<p> </p>
+<p>Controller Mode ...................................................................................22</p>
+<p> </p>
+<p>3.6.2</p>
+<p> </p>
+<p>PDU Mode ...........................................................................................22</p>
+<p> </p>
+<p>3.7</p>
+<p> </p>
+<p>Polling ...................................................................................................................23</p>
+<p> </p>
+<p>3.8</p>
+<p> </p>
+<p>CAN FD ................................................................................................................24</p>
+<p> </p>
+<p>3.9</p>
+<p> </p>
+<p>Meta data Rx- / Tx-support ..................................................................................24</p>
+<p> </p>
+<p>3.10</p>
+<p> </p>
+<p>J1939 dynamic address support ..........................................................................24</p>
+<p> </p>
+<p>3.11</p>
+<p> </p>
+<p>Error Notification...................................................................................................25</p>
+<p> </p>
+<p>3.12</p>
+<p> </p>
+<p>Transceiver handling ............................................................................................30</p>
+<p> </p>
+<p>3.13</p>
+<p> </p>
+<p>Sleep / WakeUp....................................................................................................31</p>
+<p> </p>
+<p>3.14</p>
+<p> </p>
+<p>Bus Off ..................................................................................................................33</p>
+<p> </p>
+<p>3.15</p>
+<p> </p>
+<p>Version Info...........................................................................................................34</p>
+<p> </p>
+<p>3.16</p>
+<p> </p>
+<p>Partial Networking ................................................................................................34</p>
+<p> </p>
+<p>3.17</p>
+<p> </p>
+<p>Services used by the CAN Interface ....................................................................36</p>
+<p> </p>
+<p>3.18</p>
+<p> </p>
+<p>Multiple CAN drivers ............................................................................................36</p>
+<p> </p>
+<p>3.19</p>
+<p> </p>
+<p>Extended RAM-check ..........................................................................................37</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>5 </p>
+<p>based on template version 2.10.0 </p>
+<p>3.20</p>
+<p> </p>
+<p>Critical Sections ....................................................................................................38</p>
+<p> </p>
+<p><b>4</b></p>
+<p> </p>
+<p><b>Integration ........................................................................................................................40</b></p>
+<p> </p>
+<p>4.1</p>
+<p> </p>
+<p>Files and include structure ...................................................................................40</p>
+<p> </p>
+<p>4.1.1</p>
+<p> </p>
+<p>Static Files ...........................................................................................40</p>
+<p> </p>
+<p>4.1.2</p>
+<p> </p>
+<p>Dynamic Files ......................................................................................40</p>
+<p> </p>
+<p>4.2</p>
+<p> </p>
+<p>Include Structure ..................................................................................................41</p>
+<p> </p>
+<p>4.3</p>
+<p> </p>
+<p>Compiler Abstraction and Memory Mapping ........................................................42</p>
+<p> </p>
+<p><b>5</b></p>
+<p> </p>
+<p><b>Configuration ...................................................................................................................43</b></p>
+<p> </p>
+<p>5.1</p>
+<p> </p>
+<p>Configuration of Post-Build ..................................................................................43</p>
+<p> </p>
+<p><b>6</b></p>
+<p> </p>
+<p><b>API Description ................................................................................................................44</b></p>
+<p> </p>
+<p>6.1</p>
+<p> </p>
+<p>Services provided by the CAN Interface ..............................................................44</p>
+<p> </p>
+<p>6.1.1</p>
+<p> </p>
+<p>CanIf_GetVersionInfo ..........................................................................44</p>
+<p> </p>
+<p>6.1.2</p>
+<p> </p>
+<p>CanIf_Init ..............................................................................................44</p>
+<p> </p>
+<p>6.1.3</p>
+<p> </p>
+<p>CanIf_SetControllerMode ....................................................................45</p>
+<p> </p>
+<p>6.1.4</p>
+<p> </p>
+<p>CanIf_GetControllerMode....................................................................45</p>
+<p> </p>
+<p>6.1.5</p>
+<p> </p>
+<p>CanIf_Transmit ....................................................................................46</p>
+<p> </p>
+<p>6.1.6</p>
+<p> </p>
+<p>CanIf_TxConfirmation ..........................................................................46</p>
+<p> </p>
+<p>6.1.7</p>
+<p> </p>
+<p>CanIf_RxIndication ..............................................................................47</p>
+<p> </p>
+<p>6.1.8</p>
+<p> </p>
+<p>CanIf_ControllerBusOff .......................................................................47</p>
+<p> </p>
+<p>6.1.9</p>
+<p> </p>
+<p>CanIf_SetPduMode .............................................................................48</p>
+<p> </p>
+<p>6.1.10</p>
+<p> </p>
+<p>CanIf_GetPduMode .............................................................................48</p>
+<p> </p>
+<p>6.1.11</p>
+<p> </p>
+<p>CanIf_InitMemory ................................................................................49</p>
+<p> </p>
+<p>6.1.12</p>
+<p> </p>
+<p>CanIf_CancelTxConfirmation ..............................................................49</p>
+<p> </p>
+<p>6.1.13</p>
+<p> </p>
+<p>CanIf_SetTrcvMode .............................................................................50</p>
+<p> </p>
+<p>6.1.14</p>
+<p> </p>
+<p>CanIf_GetTrcvMode ............................................................................50</p>
+<p> </p>
+<p>6.1.15</p>
+<p> </p>
+<p>CanIf_GetTrcvWakeupReason ............................................................51</p>
+<p> </p>
+<p>6.1.16</p>
+<p> </p>
+<p>CanIf_SetTrcvWakeupMode................................................................51</p>
+<p> </p>
+<p>6.1.17</p>
+<p> </p>
+<p>CanIf_CheckWakeup ...........................................................................52</p>
+<p> </p>
+<p>6.1.18</p>
+<p> </p>
+<p>CanIf_CheckValidation ........................................................................52</p>
+<p> </p>
+<p>6.1.19</p>
+<p> </p>
+<p>CanIf_ResetBusOffStart ......................................................................53</p>
+<p> </p>
+<p>6.1.20</p>
+<p> </p>
+<p>CanIf_ResetBusOffEnd .......................................................................53</p>
+<p> </p>
+<p>6.1.21</p>
+<p> </p>
+<p>CanIf_CancelTransmit .........................................................................54</p>
+<p> </p>
+<p>6.1.22</p>
+<p> </p>
+<p>CanIf_CancelTxNotification .................................................................54</p>
+<p> </p>
+<p>6.1.23</p>
+<p> </p>
+<p>CanIf_SetDynamicTxId ........................................................................55</p>
+<p> </p>
+<p>6.1.24</p>
+<p> </p>
+<p>CanIf_ControllerModeIndication ..........................................................55</p>
+<p> </p>
+<p>6.1.25</p>
+<p> </p>
+<p>CanIf_TrcvModeIndication ...................................................................56</p>
+<p> </p>
+<p>6.1.26</p>
+<p> </p>
+<p>CanIf_ConfirmPnAvailability ................................................................56</p>
+<p> </p>
+<p>6.1.27</p>
+<p> </p>
+<p>CanIf_ClearTrcvWufFlagIndication .....................................................57</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>6 </p>
+<p>based on template version 2.10.0 </p>
+<p>6.1.28</p>
+<p> </p>
+<p>CanIf_CheckTrcvWakeFlagIndication .................................................57</p>
+<p> </p>
+<p>6.1.29</p>
+<p> </p>
+<p>CanIf_SetBaudrate ..............................................................................58</p>
+<p> </p>
+<p>6.1.30</p>
+<p> </p>
+<p>CanIf_ChangeBaudrate .......................................................................58</p>
+<p> </p>
+<p>6.1.31</p>
+<p> </p>
+<p>CanIf_ChangeBaudrate .......................................................................59</p>
+<p> </p>
+<p>6.1.32</p>
+<p> </p>
+<p>CanIf_GetTxConfirmationState ...........................................................59</p>
+<p> </p>
+<p>6.1.33</p>
+<p> </p>
+<p>CanIf_SetAddressTableEntry ..............................................................60</p>
+<p> </p>
+<p>6.1.34</p>
+<p> </p>
+<p>CanIf_ResetAddressTableEntry ..........................................................60</p>
+<p> </p>
+<p>6.1.35</p>
+<p> </p>
+<p>CanIf_RamCheckExecute ...................................................................61</p>
+<p> </p>
+<p>6.1.36</p>
+<p> </p>
+<p>CanIf_RamCheckEnableMailbox ........................................................61</p>
+<p> </p>
+<p>6.1.37</p>
+<p> </p>
+<p>CanIf_RamCheckEnableController .....................................................62</p>
+<p> </p>
+<p>6.1.38</p>
+<p> </p>
+<p>CanIf_RamCheckCorruptMailbox........................................................62</p>
+<p> </p>
+<p>6.1.39</p>
+<p> </p>
+<p>CanIf_RamCheckCorruptController ....................................................63</p>
+<p> </p>
+<p>6.1.40</p>
+<p> </p>
+<p>CanIf_SetPduReceptionMode .............................................................63</p>
+<p> </p>
+<p>6.2</p>
+<p> </p>
+<p>Callout Functions..................................................................................................64</p>
+<p> </p>
+<p>6.2.1</p>
+<p> </p>
+<p>EcuM_BswErrorHook ..........................................................................64</p>
+<p> </p>
+<p>6.2.2</p>
+<p> </p>
+<p>CanIf_RxIndicationSubDataChecksumRxVerify .................................64</p>
+<p> </p>
+<p>6.2.3</p>
+<p> </p>
+<p>CanIf_TransmitSubDataChecksumTxAppend ....................................65</p>
+<p> </p>
+<p><b>7</b></p>
+<p> </p>
+<p><b>AUTOSAR Standard Compliance ..................................................................................66</b></p>
+<p> </p>
+<p>7.1</p>
+<p> </p>
+<p>Not supported AUTOSAR features ......................................................................66</p>
+<p> </p>
+<p>7.1.1</p>
+<p> </p>
+<p>Tx notification status ............................................................................66</p>
+<p> </p>
+<p>7.1.2</p>
+<p> </p>
+<p>Rx notification status............................................................................66</p>
+<p> </p>
+<p>7.1.3</p>
+<p> </p>
+<p>Rx buffer...............................................................................................66</p>
+<p> </p>
+<p>7.2</p>
+<p> </p>
+<p>Deviations .............................................................................................................66</p>
+<p> </p>
+<p>7.2.1</p>
+<p> </p>
+<p>Tx buffer ...............................................................................................66</p>
+<p> </p>
+<p>7.2.2</p>
+<p> </p>
+<p>Partial networking ................................................................................66</p>
+<p> </p>
+<p>7.2.3</p>
+<p> </p>
+<p>AUTOSAR version check ....................................................................66</p>
+<p> </p>
+<p>7.3</p>
+<p> </p>
+<p>Limitations ............................................................................................................66</p>
+<p> </p>
+<p><b>8</b></p>
+<p> </p>
+<p><b>Glossary and Abbreviations ...........................................................................................67</b></p>
+<p> </p>
+<p>8.1</p>
+<p> </p>
+<p>Glossary ...............................................................................................................67</p>
+<p> </p>
+<p>8.2</p>
+<p> </p>
+<p>Abbreviations ........................................................................................................67</p>
+<p> </p>
+<p><b>9</b></p>
+<p> </p>
+<p><b>Contact .............................................................................................................................69</b></p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>7 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Illustrations </b></p>
+<p>Figure 2-1</p>
+<p> </p>
+<p>AUTOSAR layer model .................................................................................10</p>
+<p> </p>
+<p>Figure 2-2</p>
+<p> </p>
+<p>Interfaces to adjacent modules of the CAN Interface (* optional) ............... 11</p>
+<p> </p>
+<p>Figure 3</p>
+<p> </p>
+<p>Configuration of multiple Transmit-buffers ...................................................17</p>
+<p> </p>
+<p>Figure 3-4</p>
+<p> </p>
+<p>Wake up sequence (No validation) ..............................................................31</p>
+<p> </p>
+<p>Figure 3-5</p>
+<p> </p>
+<p>Wake up sequence (Wakeup validation) ......................................................33</p>
+<p> </p>
+<p>Figure 4-1</p>
+<p> </p>
+<p>Include structure ...........................................................................................41</p>
+<p> </p>
+<p> </p>
+<p><b>Tables </b></p>
+<p>Table 1-1 </p>
+<p> </p>
+<p>History of the Document .................................................................................3</p>
+<p> </p>
+<p>Table 1-2 </p>
+<p> </p>
+<p>References Documents ..................................................................................3</p>
+<p> </p>
+<p>Table 3-1 </p>
+<p> </p>
+<p>List of supported features .............................................................................13</p>
+<p> </p>
+<p>Table 3-2 </p>
+<p> </p>
+<p>Mapping of service IDs to services ..............................................................26</p>
+<p> </p>
+<p>Table 3-3 </p>
+<p> </p>
+<p>Errors reported to DET .................................................................................29</p>
+<p> </p>
+<p>Table 3-4</p>
+<p> </p>
+<p>Sub-features of feature Partial Networking ..................................................35</p>
+<p> </p>
+<p>Table 3-5 </p>
+<p> </p>
+<p>API functions used by the CAN Interface .....................................................36</p>
+<p> </p>
+<p>Table 3-6 </p>
+<p> </p>
+<p>Adapted CAN driver APIs (* optional) ..........................................................37</p>
+<p> </p>
+<p>Table 3-7 </p>
+<p> </p>
+<p>APIs of CAN Interface which have to be used in multiple CAN driver </p>
+<p>configurations................................................................................................37</p>
+<p> </p>
+<p>Table 3-8 </p>
+<p> </p>
+<p>Critical Section Codes ..................................................................................39</p>
+<p> </p>
+<p>Table 3-9 </p>
+<p> </p>
+<p>Restrictions for the different lock areas ........................................................39</p>
+<p> </p>
+<p>Table 4-1 </p>
+<p> </p>
+<p>Static files ......................................................................................................40</p>
+<p> </p>
+<p>Table 4-2 </p>
+<p> </p>
+<p>Generated files .............................................................................................40</p>
+<p> </p>
+<p>Table 4-3 </p>
+<p> </p>
+<p>Compiler abstraction and memory mapping ................................................42</p>
+<p> </p>
+<p>Table 6-1</p>
+<p> </p>
+<p>API CanIf_GetVersionInfo ............................................................................44</p>
+<p> </p>
+<p>Table 6-2 </p>
+<p> </p>
+<p>API CanIf_Init ................................................................................................44</p>
+<p> </p>
+<p>Table 6-3 </p>
+<p> </p>
+<p>API CanIf_SetControllerMode ......................................................................45</p>
+<p> </p>
+<p>Table 6-4 </p>
+<p> </p>
+<p>API CanIf_GetControllerMode ......................................................................45</p>
+<p> </p>
+<p>Table 6-5 </p>
+<p> </p>
+<p>API CanIf_Transmit ......................................................................................46</p>
+<p> </p>
+<p>Table 6-6 </p>
+<p> </p>
+<p>API CanIf_TxConfirmation ............................................................................46</p>
+<p> </p>
+<p>Table 6-7 </p>
+<p> </p>
+<p>API CanIf_RxIndication ................................................................................47</p>
+<p> </p>
+<p>Table 6-8 </p>
+<p> </p>
+<p>API CanIf_ControllerBusOff..........................................................................47</p>
+<p> </p>
+<p>Table 6-9 </p>
+<p> </p>
+<p>API CanIf_SetPduMode ...............................................................................48</p>
+<p> </p>
+<p>Table 6-10 </p>
+<p> </p>
+<p>API CanIf_GetPduMode ...............................................................................48</p>
+<p> </p>
+<p>Table 6-11 </p>
+<p> </p>
+<p>API CanIf_InitMemory ..................................................................................49</p>
+<p> </p>
+<p>Table 6-12 </p>
+<p> </p>
+<p>API CanIf_CancelTxConfirmation ................................................................49</p>
+<p> </p>
+<p>Table 6-13 </p>
+<p> </p>
+<p>API CanIf_SetTrcvMode ...............................................................................50</p>
+<p> </p>
+<p>Table 6-14 </p>
+<p> </p>
+<p>API CanIf_GetTrcvMode...............................................................................50</p>
+<p> </p>
+<p>Table 6-15 </p>
+<p> </p>
+<p>API CanIf_GetTrcvWakeupReason ..............................................................51</p>
+<p> </p>
+<p>Table 6-16 </p>
+<p> </p>
+<p>API CanIf_SetTrcvWakeupMode ..................................................................51</p>
+<p> </p>
+<p>Table 6-17 </p>
+<p> </p>
+<p>API CanIf_CheckWakeup .............................................................................52</p>
+<p> </p>
+<p>Table 6-18 </p>
+<p> </p>
+<p>API CanIf_CheckValidation ..........................................................................52</p>
+<p> </p>
+<p>Table 6-19 </p>
+<p> </p>
+<p>API CanIf_ResetBusOffStart ........................................................................53</p>
+<p> </p>
+<p>Table 6-20 </p>
+<p> </p>
+<p>API CanIf_ResetBusOffEnd .........................................................................53</p>
+<p> </p>
+<p>Table 6-21 </p>
+<p> </p>
+<p>API CanIf_CancelTransmit ...........................................................................54</p>
+<p> </p>
+<p>Table 6-22 </p>
+<p> </p>
+<p>API CanIf_CancelTxNotification ...................................................................54</p>
+<p> </p>
+<p>Table 6-23 </p>
+<p> </p>
+<p>API CanIf_SetDynamicTxId ..........................................................................55</p>
+<p> </p>
+<p>Table 6-24 </p>
+<p> </p>
+<p>API CanIf_ControllerModeIndication ............................................................55</p>
+<p> </p>
+<p>Table 6-25 </p>
+<p> </p>
+<p>API CanIf_TrcvModeIndication .....................................................................56</p>
+<p> </p>
+<p>Table 6-26 </p>
+<p> </p>
+<p>API CanIf_ConfirmPnAvailability ..................................................................56</p>
+<p> </p>
+<p>Table 6-27 </p>
+<p> </p>
+<p>API CanIf_ClearTrcvWufFlagIndication ........................................................57</p>
+<p> </p>
+<p>Table 6-28 </p>
+<p> </p>
+<p>API CanIf_CheckTrcvWakeFlagIndication ...................................................57</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>8 </p>
+<p>based on template version 2.10.0 </p>
+<p>Table 6-29 </p>
+<p> </p>
+<p>API CanIf_SetBaudrate ................................................................................58</p>
+<p> </p>
+<p>Table 6-30 </p>
+<p> </p>
+<p>API CanIf_ChangeBaudrate .........................................................................58</p>
+<p> </p>
+<p>Table 6-31 </p>
+<p> </p>
+<p>API CanIf_ChangeBaudrate .........................................................................59</p>
+<p> </p>
+<p>Table 6-32 </p>
+<p> </p>
+<p>API CanIf_GetTxConfirmationState .............................................................59</p>
+<p> </p>
+<p>Table 6-33 </p>
+<p> </p>
+<p>API CanIf_SetAddressTableEntry ................................................................60</p>
+<p> </p>
+<p>Table 6-34 </p>
+<p> </p>
+<p>API CanIf_ResetAddressTableEntry ............................................................60</p>
+<p> </p>
+<p>Table 6-35 </p>
+<p> </p>
+<p>API CanIf_RamCheckExecute .....................................................................61</p>
+<p> </p>
+<p>Table 6-36 </p>
+<p> </p>
+<p>API CanIf_RamCheckEnableMailbox ..........................................................61</p>
+<p> </p>
+<p>Table 6-37 </p>
+<p> </p>
+<p>API CanIf_RamCheckEnableController .......................................................62</p>
+<p> </p>
+<p>Table 6-38 </p>
+<p> </p>
+<p>API CanIf_RamCheckCorruptMailbox ..........................................................62</p>
+<p> </p>
+<p>Table 6-39 </p>
+<p> </p>
+<p>API CanIf_RamCheckCorruptController ......................................................63</p>
+<p> </p>
+<p>Table 6-40 </p>
+<p> </p>
+<p>API CanIf_SetPduReceptionMode ...............................................................63</p>
+<p> </p>
+<p>Table 6-41 </p>
+<p> </p>
+<p>EcuM_BswErrorHook ...................................................................................64</p>
+<p> </p>
+<p>Table 8-1 </p>
+<p> </p>
+<p>Glossary ........................................................................................................67</p>
+<p> </p>
+<p>Table 8-2 </p>
+<p> </p>
+<p>Abbreviations ................................................................................................68</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>9 </p>
+<p>based on template version 2.10.0 </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>10 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>2 </b></p>
+<p><b>Introduction </b></p>
+<p>This document describes the functionality, API and configuration of the AUTOSAR CAN </p>
+<p>Interface as specified in [1]. It is based on the AUTOSAR specification release 4.0.3. The </p>
+<p>CAN Interface is a hardware independent layer with a standardized interface to the CAN </p>
+<p>Driver and CAN Transceiver Driver layer and upper layers like PDU Router, </p>
+<p>Communication Manager and the Network Management. </p>
+<p> </p>
+<p><b>Supported AUTOSAR Release: </b></p>
+<p>4.0.3 </p>
+<p><b>Supported Configuration Variants: </b></p>
+<p>Pre-compile, Link-time, Post-build-loadable </p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Vendor ID: </b></p>
+<p>CANIF_VENDOR_ID </p>
+<p>30 decimal </p>
+<p>(= Vector-Informatik, </p>
+<p>according to HIS) </p>
+<p><b>Module ID: </b></p>
+<p>CANIF_MODULE_ID   </p>
+<p>60 </p>
+<p>(according to ref.[3]) </p>
+<p> </p>
+<p><b>2.1 </b></p>
+<p><b>Architecture Overview </b></p>
+<p>The following figure shows where the CAN Interface is located in the AUTOSAR </p>
+<p>architecture. </p>
+<p> </p>
+<p> </p>
+<p>Figure 2-1 </p>
+<p>AUTOSAR layer model </p>
+<p> </p>
+<p>The CAN Interface provides a standardized interface for all upper layers which require </p>
+<p>CAN communication. Therefore these upper layers have to communicate with the CAN </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>11 </p>
+<p>based on template version 2.10.0 </p>
+<p>Interface which is responsible for the CAN communication. This includes the transmission </p>
+<p>and the reception of messages and the state handling of the CAN controllers as well. </p>
+<p> </p>
+<p> </p>
+<p>The  next  figure  shows  the  interfaces  to  adjacent  modules  of  the  CAN  Interface.  These </p>
+<p>interfaces are described in chapter 6. </p>
+<p> </p>
+<p>FR </p>
+<p>COM</p>
+<p>DCM</p>
+<p>CAN Interface</p>
+<p>TRCV DRV 0</p>
+<p>PduR</p>
+<p>CanNM</p>
+<p>DCM</p>
+<p>CanSM</p>
+<p>DCM</p>
+<p>CanTP</p>
+<p>DCM</p>
+<p>EcuM</p>
+<p>CAN DRV 1*</p>
+<p>CAN DRV 0</p>
+<p>FR </p>
+<p>TRCV DRV 1*</p>
+<p> </p>
+<p>Figure 2-2 </p>
+<p>Interfaces to adjacent modules of the CAN Interface (* optional</p>
+<p>1</p>
+<p>)</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>                                            </p>
+<p>1</p>
+<p> NOTE: Multiple CAN driver and TRCV driver are supported optional </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>12 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>3 </b></p>
+<p><b>Functional Description </b></p>
+<p><b>3.1 </b></p>
+<p><b>Deviations regarding AUTOSAR standard </b></p>
+<p>Please note that the CAN Interface is tailored by Vector Informatik according to customer </p>
+<p>requirements before delivery. As a result not all features listed below might be supported </p>
+<p>by a delivered module.  </p>
+<p>For deviations and extensions regarding the AUTOSAR standard [1], please see chapter </p>
+<p>7. </p>
+<p><b>3.2 </b></p>
+<p><b>Feature List </b></p>
+<p><b>Available Features For This BSW Module: </b></p>
+<p><b>Feature Naming </b></p>
+<p><b>Supported </b></p>
+<p><b>Short Description </b></p>
+<p><b>Initialization </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>Generic Initialization </p>
+<p></p>
+<p> </p>
+<p>General initialization of the CAN Interface (CanIf_Init()) </p>
+<p><b>Communication </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>Transmission </p>
+<p></p>
+<p> </p>
+<p>Transmission of PDUs </p>
+<p>Dynamic transmission </p>
+<p></p>
+<p> </p>
+<p>Transmission of PDUs with changeable CAN IDs </p>
+<p>Transmit-buffer </p>
+<p></p>
+<p> </p>
+<p>Buffering (send request and data) of Tx-PDUs mapped to </p>
+<p>a Tx-buffer in the CAN Interface. Two handling types of </p>
+<p>Tx-buffer are supported: FIFO and prioritized by CAN </p>
+<p>identifier. </p>
+<p>Multiple Tx-BasicCAN hardware </p>
+<p>objects </p>
+<p></p>
+<p> </p>
+<p>Per CAN channel multiple Tx-BasicCAN hardware </p>
+<p>objects may be configured. This feature can only be used </p>
+<p>if the underlying CAN driver supports this feature as well. </p>
+<p>Multiple transmit-buffers per CAN </p>
+<p>channel </p>
+<p></p>
+<p> </p>
+<p>Per CAN channel multiple independent transmit-buffers </p>
+<p>may be configured with different handling types: FIFO or </p>
+<p>prioritization by CAN identifier. This feature can only be </p>
+<p>used in combination with above mentioned feature </p>
+<p>“Multiple Tx-BasicCAN hardware objects”. </p>
+<p>Cancellation of Tx-PDUs </p>
+<p></p>
+<p> </p>
+<p>Cancellation of PDUs and requeueing. (Feature to avoid </p>
+<p>inner priority inversion) </p>
+<p>Transmit confirmation </p>
+<p></p>
+<p> </p>
+<p>Call back for successful transmission </p>
+<p>Reception </p>
+<p></p>
+<p> </p>
+<p>Reception of  PDUs </p>
+<p>Receive indication </p>
+<p></p>
+<p> </p>
+<p>Call back for reception of PDUs  </p>
+<p>Control of reception mode of a </p>
+<p>Rx-PDU </p>
+<p></p>
+<p> </p>
+<p>This feature provides the ability to control the reception </p>
+<p>mode of a Rx-PDU individually at runtime. </p>
+<p>DLC check </p>
+<p></p>
+<p> </p>
+<p>Check DLC of received PDUs against predefined values </p>
+<p>CAN FD support </p>
+<p></p>
+<p> </p>
+<p>CAN with flexible data-rate </p>
+<p>Meta data Rx- / Tx-support </p>
+<p></p>
+<p> </p>
+<p>Support for dynamic CAN identifier handling by using of </p>
+<p>SDU meta data </p>
+<p>J1939 Dynamic Address Support </p>
+<p></p>
+<p> </p>
+<p>Translating of addresses according to J1939 by using of </p>
+<p>dynamic address lookup tables which are maintained by </p>
+<p>J1939Nm. </p>
+<p>Data checksum Rx  </p>
+<p></p>
+<p> </p>
+<p>Verification of checksum of Rx-PDUs </p>
+<p>Data checksum Tx  </p>
+<p></p>
+<p> </p>
+<p>Appending of checksum to Tx-PDUs </p>
+<p><b>Controller Modes </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>Sleep mode </p>
+<p></p>
+<p> </p>
+<p>Support sleep mode </p>
+<p>External wake up (CAN) </p>
+<p></p>
+<p> </p>
+<p>Support external wake up by CAN Driver </p>
+<p>External wake up (Transceiver) </p>
+<p></p>
+<p> </p>
+<p>Support external wake up by Transceiver Driver </p>
+<p>Wake up validation </p>
+<p></p>
+<p> </p>
+<p>Support wake up validation for external wake up events </p>
+<p>Internal wake up </p>
+<p></p>
+<p> </p>
+<p>Internal wake up by calling CanIf_SetControllerMode() </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>13 </p>
+<p>based on template version 2.10.0 </p>
+<p>Stop mode </p>
+<p></p>
+<p> </p>
+<p>Support stop mode </p>
+<p>BusOff detection </p>
+<p></p>
+<p> </p>
+<p>Handling of bus off notifications </p>
+<p><b>Error Reporting </b></p>
+<p> </p>
+<p> </p>
+<p>DET </p>
+<p></p>
+<p> </p>
+<p>Support Development Error Detection (error notification) </p>
+<p><b>Mailbox objects </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>Tx BasicCAN </p>
+<p></p>
+<p> </p>
+<p>Standard mailbox to send CAN frames (Used by CAN </p>
+<p>Interface data queue) </p>
+<p>Tx FullCAN </p>
+<p></p>
+<p> </p>
+<p>Separate mailbox for special Tx message used </p>
+<p>Rx BasicCAN </p>
+<p></p>
+<p> </p>
+<p>Standard mailbox to receive CAN frames (depending on </p>
+<p>hardware, FIFO or shadow buffer supported) </p>
+<p>Rx FullCAN </p>
+<p></p>
+<p> </p>
+<p>Separate mailbox for special Rx message used </p>
+<p><b>Miscellaneous </b></p>
+<p> </p>
+<p> </p>
+<p>Transceiver handling </p>
+<p></p>
+<p> </p>
+<p>API for upper layers to set and read transceiver states;  </p>
+<p>Interface to the Transceiver Driver </p>
+<p>Version API </p>
+<p></p>
+<p> </p>
+<p>API to read out component version </p>
+<p>Supported ID types </p>
+<p>- </p>
+<p>Standard Identifiers </p>
+<p>- </p>
+<p>Extended Identifiers </p>
+<p>- </p>
+<p>Mixed Identifiers </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p>Support of CAN Standard (11 bits) identifiers </p>
+<p>Support of CAN Extended (29 bits) identifiers </p>
+<p>Support standard as well as extended identifiers </p>
+<p>Multiple CAN networks </p>
+<p></p>
+<p> </p>
+<p>Each CAN network has to be connected to exactly one </p>
+<p>controller </p>
+<p>Multiple CAN driver </p>
+<p></p>
+<p> </p>
+<p>Supports multiple CAN driver </p>
+<p>Partial Networking </p>
+<p></p>
+<p> </p>
+<p>Handling of partial networking transceiver </p>
+<p>Tx-PDU filter during wake-up </p>
+<p>Tx Confirmation Polling Support </p>
+<p></p>
+<p> </p>
+<p>This service provides the information on whether any Tx </p>
+<p>confirmation has occurred for a CAN channel since the </p>
+<p>last start of that CAN channel at all. </p>
+<p>Post-build loadable </p>
+<p></p>
+<p> </p>
+<p>Post-build loadable allows the re-configuration of an ECU </p>
+<p>at Post-build time </p>
+<p>Post-build selectable </p>
+<p></p>
+<p> </p>
+<p>MICROSAR identity manager using Post-build selectable </p>
+<p>Extended RAM-check </p>
+<p></p>
+<p> </p>
+<p>This service provides the ability in order to request an </p>
+<p>underlying CAN-channel to execute a check of </p>
+<p>CAN-controller-HW-registers. The usage of this feature </p>
+<p>requires a corresponding license. </p>
+<p>Table 3-1  </p>
+<p>List of supported features </p>
+<p> </p>
+<p><b>3.3 </b></p>
+<p><b>Initialization </b></p>
+<p>Several functions are available to initialize the CAN Interface. The following code example </p>
+<p>shows  which  functions  have  to  be  called  to  initialize  the  CAN  Interface  and  to  allow </p>
+<p>transmission and reception. </p>
+<p> </p>
+<p>CanIf_InitMemory(); </p>
+<p> </p>
+<p> </p>
+<p>/* Mandatory call which reinitializes global variables to </p>
+<p>set the CAN Interface back to uninitialized </p>
+<p>state. */ </p>
+<p>CanTrcv_xxx_InitMemory() and CanTrcv_xxx_Init() </p>
+<p> </p>
+<p>/* have to be called to initialize the CAN Transceiver Driver </p>
+<p>and set the CAN Transceiver to the preconfigured </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>14 </p>
+<p>based on template version 2.10.0 </p>
+<p>state. For some CAN Controllers it is necessary </p>
+<p>to have a recessive signal on the Rx Pin to be </p>
+<p>able to initialize the CAN Controller. This </p>
+<p>means the transceiver has to be set to “normal </p>
+<p>mode” before CanIf_Init() is called. */ </p>
+<p>Can_InitMemory() and Can_Init();  </p>
+<p> </p>
+<p>/* have to be called before CanIf_Init is called. */ </p>
+<p>CanIf_Init(&lt;PtrToCanIfConfiguration&gt;);  </p>
+<p> </p>
+<p>/* Global initialization of the CAN Interface: all available CAN </p>
+<p>Interface channels are initialized within this </p>
+<p>call. If postbuild-selectable configuration is </p>
+<p>active a valid configuration has to be passed to </p>
+<p>CanIf_Init. In other cases the parameter is </p>
+<p>ignored and a NULL pointer can be used */ </p>
+<p>CanIf_SetControllerMode(0, CANIF_CS_STARTED); </p>
+<p> </p>
+<p>/* The controller mode of CAN-channel 0 is set to started mode. </p>
+<p>This means the CAN controller is initialized and </p>
+<p>ready to communicate (acknowledge of the CAN </p>
+<p>controller is activated). Communication is not </p>
+<p>yet possible because the CAN Interface will </p>
+<p>neither pass Tx PDUs from higher layers to the </p>
+<p>CAN Driver nor accept Rx PDUs from the CAN </p>
+<p>Driver. */ </p>
+<p>CanIf_SetPduMode(0, CANIF_SET_ONLINE); </p>
+<p> </p>
+<p>/* The PDU mode in the CAN Interface of the CAN-channel 0 is </p>
+<p>switched to online mode. After initialization </p>
+<p>this mode remains in the state CANIF_GET_OFFLINE </p>
+<p>until the CanIf_SetPduMode function is called. </p>
+<p>Now transmission requests will be passed from </p>
+<p>the upper layer to the CAN Driver and Rx PDUs </p>
+<p>are forwarded from the CAN Driver to the </p>
+<p>corresponding higher layer. */ </p>
+<p> </p>
+<p><b>3.4 </b></p>
+<p><b>Transmission </b></p>
+<p>The transmission  of PDUs is only  possible after the  CAN  Interface and CAN Driver are </p>
+<p>initialized </p>
+<p>and </p>
+<p>the </p>
+<p>CAN </p>
+<p>Interface </p>
+<p>resides </p>
+<p>in </p>
+<p>the </p>
+<p>CANIF_CS_STARTED </p>
+<p>/ </p>
+<p>CANIF_GET_ONLINE or CANIF_CS_STARTED / CANIF_GET_TX_ONLINE mode. In all </p>
+<p>other states the Tx requests are rejected by the CAN Interface. </p>
+<p>The Tx request has to be initiated by a call to the function: </p>
+<p>CanIf_Transmit(&lt;TxPduId&gt;, &lt;PduInfoPtr&gt;); </p>
+<p>The CAN Interface uses the PDU ID (</p>
+<p>&lt;TxPduId&gt;</p>
+<p>) to acquire more information from the </p>
+<p>generated data to be able to transmit the message. This data is used to call the function </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>15 </p>
+<p>based on template version 2.10.0 </p>
+<p>Can_Write</p>
+<p> </p>
+<p>of </p>
+<p>the </p>
+<p>CAN </p>
+<p>Driver </p>
+<p>which </p>
+<p>needs </p>
+<p>information </p>
+<p>about </p>
+<p>the </p>
+<p>PDU </p>
+<p>like </p>
+<p>the </p>
+<p>CAN identifier,  length  of  data,  data  by  itself  and  the  hardware  transmit  handle  which </p>
+<p>represents the mailbox used for transmission of the PDU. </p>
+<p> </p>
+<p>After a successful transmission of the message on the bus a confirmation function is called </p>
+<p>by the CAN Driver either from interrupt context or in case of Tx polling from task context. </p>
+<p>This  confirmation  is  dispatched  in  the  CAN  Interface  to  notify  the  corresponding  higher </p>
+<p>layer  about  the  transmission  of  the  PDU.  For  this  purpose  for  each  PDU  a  call  back </p>
+<p>function has to be specified at configuration time. </p>
+<p>The transmission request is rejected by returning E_NOT_OK in the following cases: </p>
+<p>- </p>
+<p>The CAN Interface is not in the controller state </p>
+<p>CANIF_CS_STARTED</p>
+<p> </p>
+<p>- </p>
+<p>The </p>
+<p>CAN </p>
+<p>Interface </p>
+<p>is </p>
+<p>not </p>
+<p>in </p>
+<p>the </p>
+<p>PDU </p>
+<p>mode </p>
+<p>CANIF_GET_ONLINE</p>
+<p> </p>
+<p>or </p>
+<p>CANIF_GET_TX_ONLINE</p>
+<p> </p>
+<p>- </p>
+<p>The </p>
+<p>transmit </p>
+<p>buffer </p>
+<p>is </p>
+<p>not </p>
+<p>active </p>
+<p>and </p>
+<p>the </p>
+<p>corresponding </p>
+<p>mailbox </p>
+<p>used </p>
+<p>for </p>
+<p>transmission is occupied (BasicCAN Tx messages only). </p>
+<p>- </p>
+<p>An error occurred during transmission (DET will be informed) </p>
+<p><b>3.4.1 </b></p>
+<p><b>Dynamic transmission </b></p>
+<p>The feature is activated by the parameter “Dynamic Tx Objects”. </p>
+<p>The adjustments for the dynamic objects are the same as for the static with the exception </p>
+<p>that the CAN ID and the attribute whether extended or standard CAN ID can be selected </p>
+<p>manually.  </p>
+<p>By  default  the  dynamic  object  has  the  CAN  ID  parameterized  during  configuration  time </p>
+<p>until it is changed by the call of the API </p>
+<p>CanIf_SetDynamicTxId()</p>
+<p>. In order to set an </p>
+<p>extended CAN ID the most significant bit of its value passed to the API shall be set.  </p>
+<p>The  PDU  IDs  of  the  dynamic  objects  are  represented  as  symbolic  handles  in  the  file </p>
+<p>CanIf_Cfg.h</p>
+<p>.  </p>
+<p><b>3.4.2 </b></p>
+<p><b>Transmit-buffer </b></p>
+<p>The CAN Interface provides a  mechanism to  buffer Tx-PDUs (including data) which are </p>
+<p>mapped to a Tx-buffer. This means if the Tx-hardware-object of such Tx-PDU is occupied </p>
+<p>the  Tx-PDU-instance  is  stored  within  the  CAN  Interface  until  the  Tx-hardware-object </p>
+<p>becomes free. Two handling types of a transmit-buffer are supported: </p>
+<p>1. </p>
+<p>FIFO </p>
+<p>2. </p>
+<p>Prioritization by CAN-identifier </p>
+<p>The handling type defines in which  manner the Tx-PDUs stored within the Tx-buffer  are </p>
+<p>transmitted in case of the underlying Tx-hardware-object becomes free.  </p>
+<p><b>FIFO: </b></p>
+<p>The </p>
+<p>stored </p>
+<p>Tx-PDUs </p>
+<p>are </p>
+<p>transmitted </p>
+<p>in </p>
+<p>manner </p>
+<p>First-In-First-Out. </p>
+<p>Each </p>
+<p>Tx-PDU-instance is stored. If the FIFO is full then NO Tx-PDUs are stored until the FIFO </p>
+<p>becomes free. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>16 </p>
+<p>based on template version 2.10.0 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>In case of transmit-buffer of handling type FIFO only one instance of a Tx-PDU (the last </p>
+<p>one stored within the FIFO) can be and is cancelled from the FIFO via usage of API </p>
+<p>CanIf_CancelTransmit</p>
+<p>! (Feature:</p>
+<p> “Cancellation of Tx-PDUs”, </p>
+<p>see chapter </p>
+<p>6.1.21). </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Prioritization by CAN-identifier: </b>The stored Tx-PDUs are transmitted in manner: Tx-PDU </p>
+<p>with high priority is sent before those one with lower priority. The priority is given by the </p>
+<p>CAN-identifier of the Tx-PDU. A Tx-PDU with a low CAN-identifier has higher priority than </p>
+<p>a one with greater CAN-identifier. The priority of a Tx-PDU is static and is determined from </p>
+<p>values of parameters </p>
+<p>CanIfTxPduCanId</p>
+<p> and </p>
+<p>CanIfTxPduCanIdType</p>
+<p>. Please consider </p>
+<p>this  aspect  in  case  of  configuration  of  Tx-PDUs  with  dynamic  CAN-identifier.  Only  one </p>
+<p>instance of each Tx-PDU is stored within such Tx-buffer: If a Tx-PDU is requested to be </p>
+<p>transmitted and the Tx-buffer of this Tx-PDU is already in use the already stored data of </p>
+<p>this Tx-PDU is overwritten in order to ensure the transmission of most newest data. </p>
+<p>This  handling  type  can  be  used  to  avoid  inner  priority  inversion.  This  means  if  the </p>
+<p>CAN Interface passes a transmit request to the CAN Driver while all Tx-hardware-objects </p>
+<p>are occupied and at least one hardware object is occupied by a CAN message with lower </p>
+<p>priority than the message used for the current transmit request the CAN Driver initiates the </p>
+<p>cancellation of the message with the lowest priority. The cancelled CAN-message is stored </p>
+<p>in the Tx-buffer of the CAN Interface if the corresponding Tx-buffer is free. Otherwise it is </p>
+<p>discarded  to  ensure  the  transmission  of  most  newest  data.  By  this  way  a  Tx-hardware </p>
+<p>message  object becomes free  and allows the  CAN Interface to pass the  CAN-message </p>
+<p>with the highest priority to the CAN Driver.  </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>The described: “inner priority inversion” is only supported if at most only one Tx-buffer </p>
+<p>of handling type: Prioritization by CAN-identifier is configured per CAN-channel! </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p>At  all  the  Tx-PDUs  stored  within  a  Tx-buffer  are  processed  either  in  context  of  the </p>
+<p>Tx-confirmation interrupt or in context of CAN Driver’s Tx-main-function in case of polling </p>
+<p>mode.  </p>
+<p>The configuration of multiple transmit-buffers is described in chapter 3.4.3. </p>
+<p> </p>
+<p> </p>
+<p><b>3.4.3 </b></p>
+<p><b>Multiple Transmit-buffers </b></p>
+<p>This feature can only be used if the underlying CAN driver supports the feature “Multiple </p>
+<p>Tx-BasicCAN hardware objects”. The Figure 3 shows the objects which are needed to be </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>17 </p>
+<p>based on template version 2.10.0 </p>
+<p>configured within the EcuC-configuration and the relationship among themselves. For each </p>
+<p>Transmit-buffer </p>
+<p>a </p>
+<p>triple </p>
+<p>of </p>
+<p>objects: </p>
+<p>CanHardwareObject</p>
+<p>, </p>
+<p>CanIfHthCfg</p>
+<p> </p>
+<p>and </p>
+<p>CanIfBufferCfg</p>
+<p> must be configured and linked with each other and to corresponding </p>
+<p>CAN-channel (objects: </p>
+<p>CanController</p>
+<p> and </p>
+<p>CanIfCtrlCfg</p>
+<p>). </p>
+<p> </p>
+<p>Figure 3 </p>
+<p>Configuration of multiple Transmit-buffers </p>
+<p>After </p>
+<p>this </p>
+<p>step </p>
+<p>you </p>
+<p>can </p>
+<p>map </p>
+<p>Tx-PDUs </p>
+<p>to </p>
+<p>configured </p>
+<p>Transmit-buffer </p>
+<p>(object: </p>
+<p>CanIfBufferCfg</p>
+<p>). </p>
+<p>The </p>
+<p>described </p>
+<p>handling </p>
+<p>type </p>
+<p>of </p>
+<p>a </p>
+<p>transmit-buffer </p>
+<p>(see </p>
+<p>chapter 3.4.2) can be configured via the parameter </p>
+<p>CanIfTxBufferHandlingType</p>
+<p>. For </p>
+<p>further information about configuration of a Transmit-buffer please refer to the help which </p>
+<p>can be found in the GUI of the DaVinci Configurator 5 and to the descriptions of attributes </p>
+<p>of container </p>
+<p>CanIfBufferCfg</p>
+<p>. </p>
+<p><b>3.4.4 </b></p>
+<p><b>Tx confirmation polling support </b></p>
+<p>The CAN Interface supports a service which provides the information on whether any Tx </p>
+<p>confirmation has occurred for a CAN  channel since the last start of that CAN channel at </p>
+<p>all. This feature can be enabled via the parameter </p>
+<p>CanIfPublicTxConfirmPollingSupport</p>
+<p>. If enabled the API </p>
+<p>CanIf_GetTxConfirmation()</p>
+<p> is provided and can be used for this service. </p>
+<p><b> class Tx buffer configuration (EcuC)</b></p>
+<p>Container</p>
+<p>CanHardwareObject</p>
+<p>Container</p>
+<p>CanIfBufferCfg</p>
+<p>Container</p>
+<p>CanIfTxPduCfg</p>
+<p>Container</p>
+<p>CanIfHthCfg</p>
+<p>Container</p>
+<p>CanIfCtrlCfg</p>
+<p>CanDrv</p>
+<p>CanIf</p>
+<p>Container</p>
+<p>CanController</p>
+<p>Triple required for multiple Tx-BasicCANs / Tx-buffers</p>
+<p>«point to»</p>
+<p>«point to»</p>
+<p>1:1</p>
+<p>«point to»</p>
+<p>1:1</p>
+<p>«point to»</p>
+<p>1:1</p>
+<p>«point to»</p>
+<p>1:n</p>
+<p>«point to»</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>18 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>3.4.5 </b></p>
+<p><b>Data checksum Tx  </b></p>
+<p>This feature can be used to append a checksum to data of a Tx-PDU. The configuration of </p>
+<p>such </p>
+<p>Tx-PDU </p>
+<p>can </p>
+<p>be </p>
+<p>done </p>
+<p>individually </p>
+<p>via </p>
+<p>the </p>
+<p>parameter </p>
+<p>CanIfTxPduDataChecksumPdu</p>
+<p>. The appending of checksum is application specific and </p>
+<p>must be implemented within the API </p>
+<p>CanIf_TransmitSubDataChecksumTxAppend()</p>
+<p>. </p>
+<p>For further information please see the description of the prototype of this API in chapter </p>
+<p>6.2.3</p>
+<p>.</p>
+<p> </p>
+<p>For  further  information  about  configuration  of  this  feature  at  all  please  refer  to  the  help </p>
+<p>which  can  be  found  in  the  GUI  of  the  DaVinci Configurator 5  and  to  the  description  of </p>
+<p>mentioned parameters. </p>
+<p> </p>
+<p><b>3.5 </b></p>
+<p><b>Reception </b></p>
+<p>Reception of PDUs is only possible in the states  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_CS_STARTED </p>
+<p>and </p>
+<p>CANIF_GET_ONLINE</p>
+<p>  </p>
+<p>or  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_CS_STARTED </p>
+<p>and</p>
+<p> CANIF_GET_RX_ONLINE</p>
+<p>.  </p>
+<p>In all other states the PDUs received by the CAN Driver are discarded by the CAN </p>
+<p>Interface without notification to the upper layers. </p>
+<p>The CAN Interface supports reception of FullCAN- as well as BasicCAN-messages. The </p>
+<p>upper layers do not notice any differences between these two reception types as in both </p>
+<p>cases  a  call  back  function  is  called  which  was  configured  for  the  specified  PDU  in  the </p>
+<p>generation tool. </p>
+<p>The upper layer  is notified about the PDU ID given by the corresponding upper layer at </p>
+<p>configuration time, the received data and depending on the used indication function about </p>
+<p>the length of the received data.  </p>
+<p>In case of BasicCAN reception the CAN Interface has to search through a list of all known </p>
+<p>Rx messages and compare the received CAN ID with the CAN ID in the Rx message list.  </p>
+<p>The CAN Interface offers three different search algorithms: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Linear search</b>: The list of all Rx PDUs is searched from high priority (Low CAN </p>
+<p>Identifier) to low priority (High CAN Identifier). This algorithm is efficient for a small </p>
+<p>amount of Rx messages. </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Double Hash search</b>: The Rx PDU is calculated via two special hash functions. The </p>
+<p>algorithm is very efficient for a high amount of Rx messages and always takes the </p>
+<p>same time.  </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>19 </p>
+<p>based on template version 2.10.0 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Note </b></p>
+<p>The Double Hash search algorithm uses the mathematical operation </p>
+<p>modulo. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Binary search</b>: The list of Rx PDUs is split in two equal sized parts and the search is </p>
+<p>continued recursively on a list of PDUs which contains half the messages. This search </p>
+<p>algorithm terminates faster for big amounts of Rx messages than the linear search. </p>
+<p> </p>
+<p><b>Caution </b></p>
+<p>The binary search algorithm cannot be used for mixed ID systems. </p>
+<p> </p>
+<p><b>3.5.1 </b></p>
+<p><b>Ranges </b></p>
+<p>The BasicCAN message object can be used to receive groups of CAN messages called </p>
+<p>ranges. A range can be defined either by an upper and a lower CAN identifier or by a mask </p>
+<p>and a code.  </p>
+<p>The  definition  of  a  range  by  an  upper  and  a  lower  CAN  identifier  is  performed  by  the </p>
+<p>following parameters: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIfRxPduCanIdRangeLowerCanId</p>
+<p> and  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIfRxPduCanIdRangeUpperCanId</p>
+<p>.  </p>
+<p>A mask-code-range is defined by parameters: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIfRxPduCanId </p>
+<p>(code) and  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIfRxPduCanIdMask </p>
+<p>(mask).  </p>
+<p>In case of a mask-code-range each CAN identifier which fulfills the following equation pass </p>
+<p>the range and the reception of the corresponding Rx PDU is reported to the upper layer. </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>&lt;CAN identifier&gt; &amp; &lt;mask&gt; == &lt;code&gt; &amp; &lt;mask&gt; </p>
+<p>One  PDU  ID  is  assigned  to  all  messages  which  pass  the  configured  range.  Hence  the </p>
+<p>upper layer is  not able to get additional  message properties like  the  CAN identifier.  For </p>
+<p>each range an indication function can be assigned in the generation tool in order to notify </p>
+<p>the higher layer about the reception of a message.  </p>
+<p>A  range  defined  by  an  upper  and  a  lower  CAN  identifier  can  be </p>
+<p>converted  into  a </p>
+<p>mask-code-range. Therefor please see the following example. </p>
+<p><b> </b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>20 </p>
+<p>based on template version 2.10.0 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Example: How to convert a lower CAN ID and an upper CAN ID into mask and </b></p>
+<p><b>code? </b> </p>
+<p>Lower CAN ID: 0x400 </p>
+<p>Upper CAN ID: 0x43F </p>
+<p>The code is same as the lower CAN ID: </p>
+<p>code = 0x400 </p>
+<p> </p>
+<p>You need the count which is upper CAN ID – lower CAN ID </p>
+<p></p>
+<p> 0x43F – 0x400 = 0x3F </p>
+<p>The count 0x3F is 000 0011 1111b in 11-bit binary format. For a range with extended </p>
+<p>CAN IDs the count needs to be 29-bit wide.  </p>
+<p>  </p>
+<p>The mask is calculated out of negated count and a 11-bit mask: </p>
+<p>mask = ~0x3F &amp; 0x7FF = 0x7C0 </p>
+<p>For extended IDs you need a 29-bit mask: </p>
+<p>mask = ~0x3F &amp; 0x1FFF FFFF = 0x1FFF FFC0 </p>
+<p> </p>
+<p><b>Note: </b></p>
+<p>If for count the first set bit is followed by unset bits on lower significant positions for the </p>
+<p>calculation of the mask these bits need to be set. For example a count of 0xA3 (1010 </p>
+<p>0011b) you need to calculate with the count 0xFF (1111 1111b). The consequence is </p>
+<p>that more CAN IDs are received as intended. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>3.5.2 </b></p>
+<p><b>DLC check </b></p>
+<p>The DLC check is executed for all received messages after they pass the search algorithm </p>
+<p>(PDU is in Rx list) or if they are defined to be received in FullCAN message objects. The </p>
+<p>feature DLC check can be activated only at Pre-compile time at all. If activated the DLC </p>
+<p>check  can  be  configured  for  each  Rx-PDU  individually  and  can  be  reconfigured  in  the </p>
+<p>Post-build-loadable configuration phase.  </p>
+<p>The DLC check verifies if the received DLC is greater or equal to the DLC specified during </p>
+<p>configuration time. If the DLC is less than the configured one a DET error is raised and the </p>
+<p>reception of the PDU is abandoned. </p>
+<p><b>3.5.3 </b></p>
+<p><b>Data checksum Rx </b></p>
+<p>This feature can be used to verify the validity of a Rx-PDU after reception. The Rx-PDU </p>
+<p>which </p>
+<p>shall </p>
+<p>be </p>
+<p>verified </p>
+<p>can </p>
+<p>be </p>
+<p>configured </p>
+<p>individually </p>
+<p>via </p>
+<p>the </p>
+<p>parameter </p>
+<p>CanIfRxPduDataChecksumPdu</p>
+<p>.  The  verification  is  application  specific  and  must  be </p>
+<p>implemented </p>
+<p>within </p>
+<p>the </p>
+<p>API </p>
+<p>CanIf_RxIndicationSubDataChecksumRxVerify()</p>
+<p>. </p>
+<p>For further information please see the description of the prototype of this API in chapter </p>
+<p>6.2.2.  </p>
+<p>In  addition  an  indication  function  may  be  configured  which  signals  about  invalidity  of  a </p>
+<p>Rx-PDU. </p>
+<p>This </p>
+<p>indication </p>
+<p>function </p>
+<p>can </p>
+<p>be </p>
+<p>configured </p>
+<p>via </p>
+<p>the </p>
+<p>parameter </p>
+<p>CanIfDispatchDataChecksumRxErrorIndicationName</p>
+<p>.  The  call  of  this  indication </p>
+<p>function </p>
+<p>is </p>
+<p>application </p>
+<p>specific </p>
+<p>too </p>
+<p>and </p>
+<p>if </p>
+<p>required </p>
+<p>must </p>
+<p>be </p>
+<p>invoked </p>
+<p>within </p>
+<p>the </p>
+<p>implementation of </p>
+<p>CanIf_RxIndicationSubDataChecksumRxVerify()</p>
+<p>. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>21 </p>
+<p>based on template version 2.10.0 </p>
+<p>The prototype of the indication function must match following signature: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>void My_DataChecksumRxErrFct (PduIdType CanIfRxPduId) </p>
+<p>and can be accessed via the macro: </p>
+<p>CanIf_GetDataChecksumRxErrFctPtr() </p>
+<p>(see </p>
+<p>file </p>
+<p>CanIf_Cfg.h</p>
+<p>) </p>
+<p>It  is  recommended  to  call  this  indication  function  with  the  identifier  of  affected  Rx-PDU. </p>
+<p>Therefor the value of parameter </p>
+<p>CanIfRxPduId</p>
+<p> should be used which is passed by call </p>
+<p>of </p>
+<p>CanIf_RxIndicationSubDataChecksumRxVerify()</p>
+<p>. The value of this parameter </p>
+<p>is a CAN interface internal identifier which corresponds to value of configuration parameter </p>
+<p>CanIfRxPduId</p>
+<p>. </p>
+<p>Corresponding </p>
+<p>macros </p>
+<p>are </p>
+<p>generated </p>
+<p>per </p>
+<p>Rx-PDU </p>
+<p>into </p>
+<p>file </p>
+<p>CanIf_Cfg.h.</p>
+<p> These ones can be used by application (s. example below). </p>
+<p> </p>
+<p> </p>
+<p>/******************************************************************************* </p>
+<p>  \def  AUTOSAR Rx PDU handles </p>
+<p>*******************************************************************************/ </p>
+<p> </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxRange2_0                                    0U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxRange1_0                                    1U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxMSG00000711_0                               2U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxMSG95555311_0                               3U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxMSG00000511_0                               4U </p>
+<p><b>#define </b>CanIfConf_CanIfRxPduCfg_RxMSG91111151_0                               5U </p>
+<p> </p>
+<p> </p>
+<p><b>Caution </b></p>
+<p>Please use these macros wisely. They can change in case of configuration variant </p>
+<p>Post-build-loadable. </p>
+<p> </p>
+<p>For  further  information  about  configuration  of  this  feature  at  all  please  refer  to  the  help </p>
+<p>which  can  be  found  in  the  GUI  of  the  DaVinci Configurator 5  and  to  the  description  of </p>
+<p>mentioned parameters. </p>
+<p> </p>
+<p><b>3.5.4 </b></p>
+<p><b>Control of reception mode of a Rx-PDU </b></p>
+<p>This feature provides the ability to control the reception mode of a Rx-PDU at runtime. The </p>
+<p>reception </p>
+<p>mode </p>
+<p>can </p>
+<p>be </p>
+<p>set </p>
+<p>per </p>
+<p>Rx-PDU </p>
+<p>individually </p>
+<p>at </p>
+<p>runtime </p>
+<p>via </p>
+<p>the </p>
+<p>API: </p>
+<p>CanIf_SetPduReceptionMode()</p>
+<p>.</p>
+<p> </p>
+<p>In  order  to  address  a  Rx-PDU  you  can  use  the </p>
+<p>corresponding symbolic name value which can be found in file </p>
+<p>CanIf_Cfg.h</p>
+<p> (s. example </p>
+<p>below).</p>
+<p> </p>
+<p>/******************************************************************************* </p>
+<p>  \def  AUTOSAR Rx PDU handles </p>
+<p>*******************************************************************************/ </p>
+<p> </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxRange2_0                                    0U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxRange1_0                                    1U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxMSG00000711_0                               2U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxMSG95555311_0                               3U </p>
+<p><b>#define</b> CanIfConf_CanIfRxPduCfg_RxMSG00000511_0                               4U </p>
+<p><b>#define </b>CanIfConf_CanIfRxPduCfg_RxMSG91111151_0                               5U </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>22 </p>
+<p>based on template version 2.10.0 </p>
+<p>For further information about this API please see chapter 6.1.40. This feature can be used </p>
+<p>for e.g. either to receive a CAN-message as a Rx-PDU with an explicit CAN-identifier or as </p>
+<p>a Rx-range-PDU. In case of the configured CAN-identifier of a Rx-PDU fits the range of </p>
+<p>CAN-identifiers  of  a  Rx-range-PDU  on  the  same  CAN-channel  as  well.  In  case  of  a </p>
+<p>FullCAN-Rx-PDU the reception can be controlled at runtime at all. </p>
+<p>This feature can be enabled via the parameter </p>
+<p>CanIfSetPduReceptionModeSupport</p>
+<p>. </p>
+<p>In addition Rx-PDUs whose reception mode is intended to be controlled at runtime must </p>
+<p>be configured accordingly via the parameter </p>
+<p>CanIfRxPduSetReceptionModePdu</p>
+<p>. </p>
+<p>For  further  information  about  configuration  of  this  feature  at  all  please  refer  to  the  help </p>
+<p>which  can  be  found  in  the  GUI  of  the  DaVinci Configurator 5  and  to  the  description  of </p>
+<p>mentioned parameters. </p>
+<p> </p>
+<p><b>3.6 </b></p>
+<p><b>Communication Modes </b></p>
+<p>The CAN Interface knows two main types of communication modes.  </p>
+<p><b>3.6.1 </b></p>
+<p><b>Controller Mode </b></p>
+<p>The  controller  mode  represents  the  physical  state  of  the  CAN  controller.  The  following </p>
+<p>modes are available: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_CS_STOPPED </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_CS_STARTED </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_CS_SLEEP </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_CS_UNINIT </p>
+<p>There  is  no  state  called  bus  off.  Bus  off  is  treated  as  a  transition  from  STARTED  to </p>
+<p>STOPPED </p>
+<p>mode. </p>
+<p>All </p>
+<p>transitions </p>
+<p>have </p>
+<p>to </p>
+<p>be </p>
+<p>initiated </p>
+<p>using </p>
+<p>the </p>
+<p>API </p>
+<p>function </p>
+<p>CanIf_SetControllerMode()</p>
+<p>. </p>
+<p>The </p>
+<p>controller </p>
+<p>mode </p>
+<p>can </p>
+<p>be </p>
+<p>switched </p>
+<p>for </p>
+<p>each </p>
+<p>controller independent of the state of other controllers in the system. </p>
+<p>The state </p>
+<p>CANIF_CS_UNINIT</p>
+<p> is left after </p>
+<p>CanIf_InitController()</p>
+<p> is called and can </p>
+<p>only be entered by a reset of the ECU. </p>
+<p>The </p>
+<p>modes </p>
+<p>CANIF_CS_SLEEP</p>
+<p> </p>
+<p>and </p>
+<p>CANIF_CS_STARTED</p>
+<p> </p>
+<p>can </p>
+<p>only </p>
+<p>be </p>
+<p>entered </p>
+<p>from </p>
+<p>CANIF_CS_STOPPED</p>
+<p>. This means a transition from STARTED to SLEEP and vice versa is </p>
+<p>not possible without requesting the STOPPED mode first. </p>
+<p>It  is  always  possible  to  request  the  current  active  controller  mode  by  calling  the  API </p>
+<p>CanIf_GetControllerMode()</p>
+<p>. </p>
+<p> </p>
+<p><b>3.6.2 </b></p>
+<p><b>PDU Mode </b></p>
+<p>The other type of communication mode is completely processed by software (it does not </p>
+<p>represent any state of the hardware). Transitions of the PDU mode are only possible if the </p>
+<p>controller mode is set to </p>
+<p>CANIF_CS_STARTED</p>
+<p>.  </p>
+<p>The following PDU modes are available: </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>23 </p>
+<p>based on template version 2.10.0 </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_GET_OFFLINE </p>
+<p> </p>
+<p> </p>
+<p>Rx and Tx path are switched offline </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_GET_RX_ONLINE </p>
+<p> </p>
+<p> </p>
+<p>Rx path online, Tx path offline </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_GET_TX_ONLINE </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>  Rx path offline, Tx path online</p>
+<p> </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_GET_ONLINE </p>
+<p> </p>
+<p>Rx and Tx path are switched online </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_GET_OFFLINE_ACTIVE </p>
+<p> </p>
+<p>Rx and Tx path offline, confirmation is emulated by the CAN Interface </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_GET_OFFLINE_ACTIVE_RX_ONLINE </p>
+<p> </p>
+<p>Rx path online, Tx path offline, confirmation is emulated by the CAN Interface </p>
+<p>If  parameter </p>
+<p>CanIfPnWakeupTxPduFilterSupport</p>
+<p>  (s.  chapter  3.16)  is  enabled  then </p>
+<p>the following two further modes are available: </p>
+<p>- </p>
+<p>CANIF_GET_TX_ONLINE_WAKF </p>
+<p> </p>
+<p>Rx path offline, tx path online </p>
+<p>- </p>
+<p>CANIF_GET_ONLINE_WAKF </p>
+<p> </p>
+<p>Rx and Tx path are switched online </p>
+<p>The  difference  to  the  modes </p>
+<p>CANIF_GET_ONLINE</p>
+<p>  and </p>
+<p>CANIF_GET_TX_ONLINE</p>
+<p>  is that </p>
+<p>the  Tx-PDU  filter  is  activated  if  the  PDU  mode  is  changed  to  one  of  these  two  modes. </p>
+<p>(s. chapter 3.16). </p>
+<p> </p>
+<p> </p>
+<p><b>Caution </b></p>
+<p>If one of the modes </p>
+<p>CANIF_GET_TX_ONLINE_WAKF</p>
+<p>  or </p>
+<p>CANIF_GET_ONLINE_WAKF </p>
+<p>is </p>
+<p>left by calling of </p>
+<p>CanIf_SetPduMode()</p>
+<p>with parameter </p>
+<p>PduModeRequest </p>
+<p>which </p>
+<p>equals</p>
+<p> CANIF_SET_OFFLINE </p>
+<p>or</p>
+<p> CANIF_SET_TX_OFFLINE </p>
+<p>or</p>
+<p> </p>
+<p>CANIF_SET_TX_OFFLINE_ACTIVE </p>
+<p>or</p>
+<p> CANIF_SET_ONLINE </p>
+<p>or</p>
+<p> </p>
+<p>CANIF_SET_TX_ONLINE </p>
+<p>then the </p>
+<p>Tx-PDU Filter is <b>deactivated<i></b>! </i></p>
+<p> </p>
+<p>The PDU modes can be set via the function </p>
+<p>CanIf_SetPduMode()</p>
+<p> and can be retrieved </p>
+<p>via the function </p>
+<p>CanIf_GetPduMode()</p>
+<p>. </p>
+<p><b>3.7 </b></p>
+<p><b>Polling </b></p>
+<p>The  CAN  Interface  can  process  events  in  polling  and  interrupt  mode. As  the  polling  of </p>
+<p>events is executed by other layers (e.g. CAN Driver, Transceiver Driver) the CAN Interface </p>
+<p>is notified by call back functions which are called in the corresponding context.  </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>24 </p>
+<p>based on template version 2.10.0 </p>
+<p> </p>
+<p> </p>
+<p><b>Info</b> </p>
+<p>There  is  no  need  for  changes  in  the  configuration  to  run  the  CAN  Interface  in </p>
+<p>polling mode. </p>
+<p> </p>
+<p><b>3.8 </b></p>
+<p><b>CAN FD </b></p>
+<p>The  CAN  Interface  supports  CAN  FD.  The  configuration  can  be  performed  both  for </p>
+<p>Rx- </p>
+<p>and </p>
+<p>Tx-PDUs. </p>
+<p>Therefor </p>
+<p>please </p>
+<p>configure </p>
+<p>the </p>
+<p>attribute </p>
+<p>CanIfRxPduCanIdType</p>
+<p> </p>
+<p>(Rx-PDU) </p>
+<p>and </p>
+<p>CanIfTxPduCanIdType </p>
+<p>(Tx-PDU) </p>
+<p>accordingly </p>
+<p>as </p>
+<p>required </p>
+<p>by </p>
+<p>your </p>
+<p>application. In case of Rx-PDUs the message type (e.g. FD or not-FD) is evaluated during </p>
+<p>the Rx-search algorithm. Hence it is possible to handle two messages with the same CAN </p>
+<p>identifier, at which one is configured as FD and one as not-FD and to map them to different </p>
+<p>Rx-PDUs. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Expert Knowledge </b></p>
+<p>If you intend to switch the baudrate of the CAN hardware at runtime it is suggested to </p>
+<p>use the API </p>
+<p>CanIf_SetBaudrate</p>
+<p> instead of </p>
+<p>CanIf_ChangeBaudrate</p>
+<p>.  </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>Rx- and Tx-FD-PDUs with up to 64 bytes payload are supported. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Basic Knowledge </b></p>
+<p>If you intend to configure BasicCAN-FD-Tx-PDUs  and the Tx-buffer is enabled in your </p>
+<p>configuration please ensure that attribute </p>
+<p>CanIfStaticFdTxBufferSupport</p>
+<p> is </p>
+<p>enabled. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>3.9 </b></p>
+<p><b>Meta data Rx- / Tx-support </b></p>
+<p>If </p>
+<p>this </p>
+<p>feature </p>
+<p>is </p>
+<p>enabled </p>
+<p>the </p>
+<p>CAN </p>
+<p>Interface </p>
+<p>supports </p>
+<p>the </p>
+<p>handling </p>
+<p>of </p>
+<p>dynamic </p>
+<p>CAN-identifiers  by  using  of  SDU  meta  data.  Such  dynamic  PDU  can  be  configured  by </p>
+<p>parameter </p>
+<p>MetaDataLength</p>
+<p>. </p>
+<p>This </p>
+<p>parameter </p>
+<p>can </p>
+<p>be </p>
+<p>found </p>
+<p>in </p>
+<p>the </p>
+<p>container </p>
+<p>of </p>
+<p>corresponding global PDU. </p>
+<p>In case of configuration variant Link-time or Post-build loadable please enable this feature </p>
+<p>by setting of parameter </p>
+<p>CanIfMetaDataSupport</p>
+<p> to true. In case of configuration variant </p>
+<p>Pre-compile the activation/deactivation of this feature is determined from the configuration </p>
+<p>of </p>
+<p>Rx- </p>
+<p>and </p>
+<p>Tx-PDUs. </p>
+<p>If </p>
+<p>there </p>
+<p>is </p>
+<p>any </p>
+<p>PDU </p>
+<p>which </p>
+<p>has </p>
+<p>configured </p>
+<p>the </p>
+<p>parameter </p>
+<p>MetaDataLength</p>
+<p> then this feature is enabled else disabled.  </p>
+<p><b>3.10 </b></p>
+<p><b>J1939 dynamic address support </b></p>
+<p>If this feature is enabled the CAN Interface translates the addresses (CAN identifiers) of </p>
+<p>Rx- and Tx-PDUs according to J1939 by using of dynamic address lookup tables. These </p>
+<p>tables are maintained by J1939Nm by using of following APIs: </p>
+<p><b>&gt; </b></p>
+<p>CanIf_SetAddressTableEntry</p>
+<p> and </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>25 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>&gt; </b></p>
+<p>CanIf_ResetAddressTableEntry</p>
+<p>.  </p>
+<p>This  feature  has  to  be  configured  for  each  CAN  channel  individually  by  the  parameter </p>
+<p>CanIfCtrlJ1939DynAddrSupport</p>
+<p>. </p>
+<p>Please </p>
+<p>consider </p>
+<p>that </p>
+<p>in </p>
+<p>case </p>
+<p>of </p>
+<p>configuration </p>
+<p>variant  Post-build loadable  and  configuration  phase  Post-build  the  value  which  you  can </p>
+<p>select </p>
+<p>by </p>
+<p>CanIfCtrlJ1939DynAddrSupport</p>
+<p> </p>
+<p>is </p>
+<p>limited </p>
+<p>by </p>
+<p>value </p>
+<p>of </p>
+<p>CanIfJ1939DynAddrSupport</p>
+<p> </p>
+<p>which </p>
+<p>was </p>
+<p>set </p>
+<p>at </p>
+<p>configuration </p>
+<p>phase </p>
+<p>Pre-compile. </p>
+<p>Therefore  in  case  of  configuration  variant  Post-build loadable  please  first  enable  this </p>
+<p>feature  as far as  you need  at all by  the  parameter </p>
+<p>CanIfJ1939DynAddrSupport</p>
+<p>  and </p>
+<p>then  configure  the  channel  specific  parameter  of  this  feature.  In  case  of  configuration </p>
+<p>variant Pre-compile it is only possible to configure the channel specific parameter. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Caution </b></p>
+<p>The feature </p>
+<p>J1939 dynamic address support</p>
+<p> works only if all Rx-PDUs of the </p>
+<p>CAN channel at which this feature is enabled are configured as BasicCANs and if all </p>
+<p>the corresponding hardware filters are opened completely! </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>3.11 </b></p>
+<p><b>Error Notification </b></p>
+<p>AUTOSAR </p>
+<p>specifies </p>
+<p>two </p>
+<p>mechanisms </p>
+<p>of </p>
+<p>error </p>
+<p>notification </p>
+<p>and </p>
+<p>reporting. </p>
+<p>Only </p>
+<p>DET </p>
+<p>reporting  is  supported  by  the  CAN  Interface  and  can  be  activated  at  configuration  time </p>
+<p>(Pre-compile configuration). </p>
+<p>Development  errors  are  reported  to  DET  using  the  service </p>
+<p>Det_ReportError()</p>
+<p>.This </p>
+<p>feature  is  normally  activated  during  the  development  phase  to  detect  fatal  errors  in </p>
+<p>configuration and integration of the CAN Interface with other layers. </p>
+<p>The reported CAN Interface ID is 60. </p>
+<p>The  reported  service  IDs  identify  the  services  which  are  described  in  chapter  6.  The </p>
+<p>following table presents the service IDs and the related services: </p>
+<p><b>Service ID </b></p>
+<p><b>Service </b></p>
+<p>1 </p>
+<p>CanIf_Init </p>
+<p>2 </p>
+<p>CanIf_InitController </p>
+<p>3 </p>
+<p>CanIf_SetControllerMode </p>
+<p>4 </p>
+<p>CanIf_GetControllerMode </p>
+<p>5 </p>
+<p>CanIf_Transmit </p>
+<p>6 </p>
+<p>CanIf_ReadRxPduData </p>
+<p>9 </p>
+<p>CanIf_SetPduMode </p>
+<p>10 </p>
+<p>CanIf_GetPduMode </p>
+<p>11 </p>
+<p>CanIf_GetVersionInfo </p>
+<p>12 </p>
+<p>CanIf_SetDynamicTxId </p>
+<p>13 </p>
+<p>CanIf_SetTrcvMode </p>
+<p>14 </p>
+<p>CanIf_GetTrcvMode </p>
+<p>15 </p>
+<p>CanIf_GetTrcvWakeupReason </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>26 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Service ID </b></p>
+<p><b>Service </b></p>
+<p>16 </p>
+<p>CanIf_SetTrcvWakeupMode </p>
+<p>17 </p>
+<p>CanIf_CheckWakeup </p>
+<p>18 </p>
+<p>CanIf_CheckValidation </p>
+<p>19 </p>
+<p>CanIf_TxConfirmation </p>
+<p>20 </p>
+<p>CanIf_RxIndication </p>
+<p>21 </p>
+<p>CanIf_CancelTxConfirmation </p>
+<p>22 </p>
+<p>CanIf_ControllerBusoff </p>
+<p>23 </p>
+<p>CanIf_ControllerModeIndication </p>
+<p>24 </p>
+<p>CanIf_TrcvModeIndication </p>
+<p>25 </p>
+<p>CanIf_GetTxConfirmationState </p>
+<p>26 </p>
+<p>CanIf_ConfirmPnAvailability </p>
+<p>27 </p>
+<p>CanIf_ChangeBaudrate </p>
+<p>28 </p>
+<p>CanIf_CheckBaudrate </p>
+<p>30 </p>
+<p>CanIf_ClearTrcvWufFlag </p>
+<p>31 </p>
+<p>CanIf_CheckTrcvWakeFlag </p>
+<p>32 </p>
+<p>CanIf_ClearTrcvWufFlagIndication </p>
+<p>33 </p>
+<p> </p>
+<p>CanIf_CheckTrcvWakeFlagIndication </p>
+<p>39 </p>
+<p>CanIf_SetBaudrate </p>
+<p>250 </p>
+<p>CanIf_CancelTransmit </p>
+<p>251 </p>
+<p>CanIf_CancelTxNotification </p>
+<p>Table 3-2  </p>
+<p>Mapping of service IDs to services </p>
+<p>The errors reported to DET are described in the following table: </p>
+<p><b>Error Code </b></p>
+<p><b>Description </b></p>
+<p>10 </p>
+<p>CANIF_E_PARAM_CANID</p>
+<p> </p>
+<p>The error code is used if an invalid CAN identifier is </p>
+<p>passed to the CAN Interface from the CAN driver </p>
+<p>during the reception of a Rx-PDU. </p>
+<p>The error can be raised from: </p>
+<p>- </p>
+<p>CanIf_RxIndication </p>
+<p>- </p>
+<p>CanIf_SetDynamicTxId</p>
+<p><b> </b></p>
+<p>11 </p>
+<p>CANIF_E_PARAM_DLC</p>
+<p> </p>
+<p>The error will be reported by </p>
+<p>- </p>
+<p>CanIf_RxIndication </p>
+<p>if a DLC greater than 8 is passed to the CAN </p>
+<p>Interface during reception. </p>
+<p>12 </p>
+<p>CANIF_E_PARAM_HRH </p>
+<p>The error code is used in the function </p>
+<p>- </p>
+<p>CanIf_RxIndication </p>
+<p>If an invalid hardware receive handle is passed to the </p>
+<p>CAN Interface. </p>
+<p>13 </p>
+<p>CANIF_E_PARAM_LPDU </p>
+<p>The error will be raised by the following functions if </p>
+<p>an unexpected PduId is passed to the function by </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>27 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Error Code </b></p>
+<p><b>Description </b></p>
+<p>either the CAN Driver or the higher layer. </p>
+<p>- </p>
+<p>CanIf_TxConfirmation </p>
+<p>- </p>
+<p>CanIf_CancelTxConfirmation </p>
+<p>- </p>
+<p>CanIf_CancelTransmit </p>
+<p>- </p>
+<p>CanIf_CancelTxNotification</p>
+<p><b> </b></p>
+<p>14 </p>
+<p>CANIF_E_PARAM_CONTROLLER </p>
+<p>Used by the following functions if an invalid controller </p>
+<p>index is passed: </p>
+<p>- </p>
+<p>CanIf_ControllerBusOff </p>
+<p>- </p>
+<p>CanIf_ResetBusOffStart </p>
+<p>- </p>
+<p>CanIf_ResetBusOffEnd </p>
+<p>- </p>
+<p>CanIf_ControllerModeIndication </p>
+<p>- </p>
+<p>CanIf_GetTxConfirmationState</p>
+<p><b> </b></p>
+<p>15 </p>
+<p>CANIF_E_PARAM_CONTROLLERID </p>
+<p>Used by the following functions if an invalid controller </p>
+<p>index is passed: </p>
+<p>- </p>
+<p>CanIf_SetControllerMode </p>
+<p>- </p>
+<p>CanIf_GetControllerMode </p>
+<p>- </p>
+<p>CanIf_SetPduMode </p>
+<p>- </p>
+<p>CanIf_GetPduMode </p>
+<p>- </p>
+<p>CanIf_CheckBaudrate </p>
+<p>- </p>
+<p>CanIf_ChangeBaudrate</p>
+<p><b> </b></p>
+<p>- </p>
+<p>CanIf_SetBaudrate</p>
+<p><b> </b></p>
+<p>16 </p>
+<p>CANIF_E_PARAM_WAKEUPSOURCE </p>
+<p>Used by the following functions if an invalid wakeup </p>
+<p>source is passed: </p>
+<p>- </p>
+<p>CanIf_CheckValidation </p>
+<p>- </p>
+<p>CanIf_CheckWakeup</p>
+<p><b> </b></p>
+<p>17 </p>
+<p>CANIF_E_PARAM_TRCV </p>
+<p>Used by the following functions if an invalid </p>
+<p>transceiver ID is passed: </p>
+<p>- </p>
+<p>CanIf_TrcvModeIndication </p>
+<p>- </p>
+<p>CanIf_GetTrcvWakeupReason </p>
+<p>- </p>
+<p>CanIf_GetTrcvMode </p>
+<p>- </p>
+<p>CanIf_SetTrcvMode </p>
+<p>- </p>
+<p>CanIf_SetTrcvWakeupMode </p>
+<p>- </p>
+<p>CanIf_ConfirmPnAvailability </p>
+<p>- </p>
+<p>CanIf_ClearTrcvWufFlagIndication </p>
+<p>- </p>
+<p>CanIf_CheckTrcvWakeFlagIndication </p>
+<p>- </p>
+<p>CanIf_ClearTrcvWufFlag </p>
+<p>- </p>
+<p>CanIf_CheckTrcvWakeFlag </p>
+<p>18 </p>
+<p>CANIF_E_PARAM_TRCVMODE </p>
+<p>Used by the following functions if an invalid </p>
+<p>transceiver mode is passed: </p>
+<p>- </p>
+<p>CanIf_SetTrcvMode </p>
+<p>19 </p>
+<p>CANIF_E_PARAM_TRCVWAKEUPMO</p>
+<p>DE </p>
+<p>Used by the following functions if an invalid </p>
+<p>transceiver wakeup mode is passed: </p>
+<p>- </p>
+<p>CanIf_SetTrcvWakeupMode </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>28 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Error Code </b></p>
+<p><b>Description </b></p>
+<p>20 </p>
+<p>CANIF_E_PARAM_POINTER </p>
+<p>The error is raised if a </p>
+<p>NULL</p>
+<p> pointer is passed to one </p>
+<p>of the following functions: </p>
+<p>- </p>
+<p>CanIf_Init </p>
+<p>- </p>
+<p>CanIf_GetControllerMode </p>
+<p>- </p>
+<p>CanIf_Transmit </p>
+<p>- </p>
+<p>CanIf_RxIndication </p>
+<p>- </p>
+<p>CanIf_GetPduMode </p>
+<p>- </p>
+<p>CanIf_GetVersionInfo </p>
+<p>- </p>
+<p>CanIf_GetTrcvWakeupReason </p>
+<p>- </p>
+<p>CanIf_GetTrcvMode </p>
+<p>- </p>
+<p>CanIf_CancelTxConfirmation</p>
+<p> </p>
+<p>21 </p>
+<p>CANIF_E_PARAM_CTRLMODE </p>
+<p>The error is raised if an invalid parameter </p>
+<p>ControllerMode is passed to the function: </p>
+<p>- </p>
+<p>CanIf_SetControllerMode </p>
+<p>30 </p>
+<p>CANIF_E_UNINIT </p>
+<p>The error is raised if one of the following API </p>
+<p>functions is called before the CAN Interface is </p>
+<p>initialized: </p>
+<p>- </p>
+<p>CanIf_InitController </p>
+<p>- </p>
+<p>CanIf_Transmit </p>
+<p>- </p>
+<p>CanIf_TxConfirmation </p>
+<p>- </p>
+<p>CanIf_RxIndication </p>
+<p>- </p>
+<p>CanIf_ControllerBusOff </p>
+<p>- </p>
+<p>CanIf_SetPduMode </p>
+<p>- </p>
+<p>CanIf_GetPduMode </p>
+<p>- </p>
+<p>CanIf_CancelTxConfirmation </p>
+<p>- </p>
+<p>CanIf_CheckWakeup </p>
+<p>- </p>
+<p>CanIf_CheckValidation </p>
+<p>- </p>
+<p>CanIf_GetTrcvWakeupReason </p>
+<p>- </p>
+<p>CanIf_SetTrcvWakeupMode </p>
+<p>- </p>
+<p>CanIf_ControllerModeIndication </p>
+<p>- </p>
+<p>CanIf_SetDynamicTxId </p>
+<p>- </p>
+<p>CanIf_TrcvModeIndication </p>
+<p>- </p>
+<p>CanIf_SetControllerMode </p>
+<p>- </p>
+<p>CanIf_GetControllerMode </p>
+<p>- </p>
+<p>CanIf_CancelTxNotification </p>
+<p>- </p>
+<p>CanIf_SetTrcvMode </p>
+<p>- </p>
+<p>CanIf_GetTrcvMode </p>
+<p>- </p>
+<p>CanIf_CancelTransmit </p>
+<p>- </p>
+<p>CanIf_ConfirmPnAvailability </p>
+<p>- </p>
+<p>CanIf_ClearTrcvWufFlagIndication </p>
+<p>- </p>
+<p>CanIf_CheckTrcvWakeFlagIndication </p>
+<p>- </p>
+<p>CanIf_ClearTrcvWufFlag </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>29 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Error Code </b></p>
+<p><b>Description </b></p>
+<p>- </p>
+<p>CanIf_CheckTrcvWakeFlag </p>
+<p>- </p>
+<p>CanIf_GetTxConfirmationState </p>
+<p>- </p>
+<p>CanIf_CheckBaudrate </p>
+<p>- </p>
+<p>CanIf_ChangeBaudrate</p>
+<p><b> </b></p>
+<p>- </p>
+<p>CanIf_SetBaudrate</p>
+<p><b> </b></p>
+<p>40 </p>
+<p>CANIF_E_NOK_NOSUPPORT </p>
+<p>Not used. </p>
+<p>50 </p>
+<p>CANIF_E_INVALID_TXPDUID </p>
+<p>Used by the following functions if an invalid Tx PDU </p>
+<p>ID is passed: </p>
+<p>- </p>
+<p>CanIf_CancelTransmit </p>
+<p>- </p>
+<p>CanIf_SetDynamicTxId </p>
+<p>- </p>
+<p>CanIf_Transmit</p>
+<p> </p>
+<p>61 </p>
+<p>CANIF_E_INVALID_DLC </p>
+<p>Used by the function </p>
+<p>CanIf_HlIndication</p>
+<p> if the </p>
+<p>received DLC is smaller than the configured one.  </p>
+<p>70 </p>
+<p>CANIF_E_STOPPED </p>
+<p>Used by the function </p>
+<p>CanIf_Transmit</p>
+<p> if the </p>
+<p>function is called while either the controller mode is </p>
+<p>STOPPED</p>
+<p> or the PDU mode is </p>
+<p>OFFLINE</p>
+<p>.  </p>
+<p>71 </p>
+<p>CANIF_E_NOT_SLEEP </p>
+<p>Used by the function </p>
+<p>CanIf_CheckWakeup</p>
+<p> if the </p>
+<p>function is called while the controller mode is not </p>
+<p>SLEEP</p>
+<p> or </p>
+<p>STOPPED</p>
+<p>.  </p>
+<p>Additionally defined error codes (not AUTOSAR compliant) </p>
+<p>45 </p>
+<p>CANIF_E_CONFIG                         </p>
+<p>The error code </p>
+<p>CANIF_E_CONFIG</p>
+<p> is used to detect </p>
+<p>inconsistent </p>
+<p>data </p>
+<p>in </p>
+<p>the </p>
+<p>generated </p>
+<p>files </p>
+<p>due </p>
+<p>to </p>
+<p>misconfiguration.  </p>
+<p>The  error  can  be  raised  in  context  of </p>
+<p>following </p>
+<p>functions: </p>
+<p>- </p>
+<p>CanIf_RxIndication</p>
+<p><b> </b></p>
+<p>51 </p>
+<p>CANIF_E_FULL_TX_BUFFER_FIFO </p>
+<p>The  error  code  informs  that  the  transmit-buffer  of </p>
+<p>handling </p>
+<p>type </p>
+<p>FIFO </p>
+<p>is </p>
+<p>full </p>
+<p>and </p>
+<p>that </p>
+<p>no </p>
+<p>further </p>
+<p>Tx-PDUs can be buffered within. </p>
+<p>The  error  can  be  raised  in  context  of  following </p>
+<p>functions: </p>
+<p>- </p>
+<p>CanIf_Transmit</p>
+<p> </p>
+<p> </p>
+<p>Table 3-3  </p>
+<p>Errors reported to DET </p>
+<p> </p>
+<p><b>Caution </b></p>
+<p>If the development error detection is disabled not only the reporting of the errors is </p>
+<p>suppressed but also the detection i.e. the verification of valid function parameters. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>30 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>3.12 </b></p>
+<p><b>Transceiver handling </b></p>
+<p>The CAN Interface provides APIs and call back functions to control as many transceivers </p>
+<p>as  CAN  controllers  are  available  in  the  system.  The  transceiver  handling  has  to  be </p>
+<p>activated at pre-compile time. </p>
+<p>The CAN Interface provides the following functions for higher layers to control the behavior </p>
+<p>of the transceiver.  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_SetTrcvMode() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_TrcvModeIndication() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_GetTrcvMode() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_GetTrcvWakeupReason() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_SetTrcvWakeupMode() </p>
+<p>Additionally the following APIs are provided in order to control a partial networking CAN </p>
+<p>transceiver. </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_CheckTrcvWakeFlag() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_CheckTrcvWakeFlagIndication() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_ClearTrcvWufFlag() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_ClearTrcvWufFlagIndication() </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_ConfirmPnAvailability() </p>
+<p> </p>
+<p>The initialization of the transceiver driver itself is not executed by the CAN Interface. This </p>
+<p>means the calling layer has to make sure the transceiver driver is initialized before using </p>
+<p>the listed API functions. </p>
+<p>If  more  than  one  different  transceiver  driver  is  used  in  the  system  the  CAN  Interface </p>
+<p>provides a mapping to address the correct transceiver driver with the correct parameters. </p>
+<p>The  parameter </p>
+<p>CanIfTransceiverMapping</p>
+<p>  has  to  be  activated  to  control  more  than </p>
+<p>one transceiver driver.  </p>
+<p>It  is  also  allowed  to  activate  the  parameter </p>
+<p>CanIfTransceiverMapping</p>
+<p>  if  only  one </p>
+<p>transceiver driver is used in the system. Because of additional runtime it is suggested to </p>
+<p>deactivate this feature in this use case. </p>
+<p>The CAN Interface supports the detection of wake up events raised by a transceiver. The </p>
+<p>feature “Wakeup Support” has to be activated and a wakeup source has to be configured </p>
+<p>for the corresponding transceiver channel. </p>
+<p>Within the API </p>
+<p>CanIf_CheckWakeup() </p>
+<p>the CAN Interface analyses the passed wakeup </p>
+<p>source parameter and decides whether a CAN Controller or a CAN Transceiver has to be </p>
+<p>requested for a pending wake up event. </p>
+<p>For more details refer to the chapter 3.13 Sleep / WakeUp. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>31 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>3.13 </b></p>
+<p><b>Sleep / WakeUp </b></p>
+<p>The CAN Interface controls the modes of the underlying CAN driver and transceiver driver.  </p>
+<p>The API </p>
+<p>CanIf_SetControllerMode()</p>
+<p> has to be used to change the mode of the CAN </p>
+<p>controller </p>
+<p>while </p>
+<p>the </p>
+<p>CAN </p>
+<p>transceiver </p>
+<p>can </p>
+<p>be </p>
+<p>controlled </p>
+<p>with </p>
+<p>the </p>
+<p>API </p>
+<p>CanIf_SetTrcvMode()</p>
+<p>. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Caution </b></p>
+<p>The CAN Interface itself does not perform any checks whether the CAN controller and </p>
+<p>the CAN transceiver are set to sleep consistently and in the correct sequence. It is up to </p>
+<p>the higher layer to call </p>
+<p>CanIf_SetControllerMode()</p>
+<p> and </p>
+<p>CanIf_SetTrcvMode()</p>
+<p> </p>
+<p>in the correct sequence.  </p>
+<p> </p>
+<p>Wake up events can be raised either by the CAN controller or by the CAN transceiver. In </p>
+<p>both cases the CAN Interface is not directly informed about state changes. This means the </p>
+<p>higher  layers  (normally  the  EcuM)  has  to  call  the  API </p>
+<p>CanIf_CheckWakeup()</p>
+<p>with  the </p>
+<p>wakeup sources configured for CAN transceiver or CAN controller (1). </p>
+<p>The  CAN  Interface  decides  by  analyzing  the  passed  wakeup  source  whether  the  CAN </p>
+<p>controller or the CAN transceiver driver has to be checked for a pending wakeup (2 or 2’).  </p>
+<p>The following figure illustrates the described wake up sequence: </p>
+<p> </p>
+<p>Figure 3-4 </p>
+<p>Wake up sequence (No validation) </p>
+<p>If  the  parameter  “CanIfPublicWakeupCheckValidSupport”  is  enabled  the  following  figure </p>
+<p>shows the sequence which has to be executed for a valid wake up. Steps 1 to 3 take place </p>
+<p>as described above. </p>
+<p>CanIf </p>
+<p>EcuM </p>
+<p>Can Driver </p>
+<p>Can </p>
+<p>Transceiver </p>
+<p> </p>
+<p>1. CanIf_CheckWakeup  </p>
+<p>      (wakeupsource) </p>
+<p>2. Can_CheckWakeup </p>
+<p>       (controller) </p>
+<p>2’. CanTrcv_CheckWakeup </p>
+<p>      (transceiver) </p>
+<p> </p>
+<p>3. Returns E_OK/E_NOT_OK  </p>
+<p>      </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>32 </p>
+<p>based on template version 2.10.0 </p>
+<p>After the call of </p>
+<p>EcuM_SetWakeupEvent()</p>
+<p> the CAN Interface has to be set to the state </p>
+<p>CANIF_CS_STARTED</p>
+<p> to be able to receive messages. These messages won’t be passed </p>
+<p>to upper layers by the CAN Interface because the PDU-mode is still set to </p>
+<p>OFFLINE</p>
+<p>. The </p>
+<p>state change which sets the CAN Interface to the mode </p>
+<p>STARTED</p>
+<p> has to be realized by the </p>
+<p>call of the API </p>
+<p>CanIf_SetControllerMode()</p>
+<p> with mode </p>
+<p>CANIF_CS_STARTED</p>
+<p> (5) from </p>
+<p>the  function </p>
+<p>EcuM_StartWakeupSources()</p>
+<p>  (4).  If  the  wake  up  was  detected  by  the </p>
+<p>transceiver  the  CAN  controller  has  to  be </p>
+<p>woken  up  internally.  This  means  the  call </p>
+<p>CanIf_SetControllerMode()</p>
+<p>  with  mode </p>
+<p>CANIF_CS_STOPPED</p>
+<p>  is  necessary  in  (5) </p>
+<p>before the transition to mode </p>
+<p>STARTED</p>
+<p> is executed. </p>
+<p>If the wake up is initiated by the CAN controller the corresponding transceiver channel has </p>
+<p>to be set to mode </p>
+<p>NORMAL</p>
+<p> and the CAN controller has to be set to mode </p>
+<p>STARTED</p>
+<p>. </p>
+<p>If the wake up is initiated by a transceiver channel the CAN controller has to be woken up </p>
+<p>internally.  This  means  an  additional  call  of </p>
+<p>CanIf_SetControllerMode()</p>
+<p>  with  mode </p>
+<p>CANIF_CS_STOPPED</p>
+<p>  has  to  be  executed  to  wake  up  the  CAN  controller  before  the </p>
+<p>transition to mode </p>
+<p>STARTED</p>
+<p> is initiated. (Depending on the behavior of the transceiver the </p>
+<p>CAN controller and the configuration itself it is possible to wake up both the CAN controller </p>
+<p>and the transceiver channel externally.) </p>
+<p>Next the EcuM starts a time out for the wake up validation. This means if a message is </p>
+<p>received within this timeout (6) the call of </p>
+<p>CanIf_CheckValidation()</p>
+<p> executed by the </p>
+<p>EcuM (7) will result in a successful validation. The CAN Interface checks for a recent Rx </p>
+<p>event </p>
+<p>(6) </p>
+<p>which </p>
+<p>occurred </p>
+<p>after </p>
+<p>the </p>
+<p>wake </p>
+<p>up </p>
+<p>and </p>
+<p>notifies </p>
+<p>the </p>
+<p>EcuM </p>
+<p>by </p>
+<p>calling </p>
+<p>of </p>
+<p>EcuM_ValidationWakeupEvent()</p>
+<p>. </p>
+<p>If there is no message reception after (5) the function </p>
+<p>CanIf_CheckValidation()</p>
+<p> has </p>
+<p>been called no successful wake up validation won’t be notified  and the EcuM will run into </p>
+<p>a timeout. In this case the EcuM calls </p>
+<p>EcuM_StopWakeupSources()</p>
+<p> (8’) and the CAN </p>
+<p>Driver and CAN transceiver have to be set to mode </p>
+<p>SLEEP</p>
+<p> again. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>33 </p>
+<p>based on template version 2.10.0 </p>
+<p> </p>
+<p>Figure 3-5 </p>
+<p>Wake up sequence (Wakeup validation) </p>
+<p>During the wake up sequence as well as during the transition to mode </p>
+<p>SLEEP</p>
+<p>, the higher </p>
+<p>layers  have  to  take  care  about  the  sequence  of  the  state  transitions  affecting  the  CAN </p>
+<p>controller (CAN driver) and the Transceiver driver. </p>
+<p>Since ASR4.0R3 it is configurable on whether only a received CanNm-message is able to </p>
+<p>do the validation. </p>
+<p> </p>
+<p><b>3.14 </b></p>
+<p><b>Bus Off </b></p>
+<p>The CAN Interface handles bus off events notified by the CAN Driver in interrupt driven or </p>
+<p>polling systems. If a bus off event is raised the CAN Driver forwards it to the CAN Interface </p>
+<p>by calling the function </p>
+<p>CanIf_ControllerBusOff()</p>
+<p>. </p>
+<p>The CAN Interface switches its internal controller state from </p>
+<p>STARTED</p>
+<p> to </p>
+<p>STOPPED</p>
+<p> and the </p>
+<p>PDU mode is set to </p>
+<p>OFFLINE</p>
+<p>. </p>
+<p>In  this  state  no  reception  and  no  transmission  is  possible  until  the  CAN  Interface’s </p>
+<p>controller state and as a result the CAN Controller’s bus off state is recovered by the call of </p>
+<p>the  function </p>
+<p>CanIf_SetControllerMode() </p>
+<p>for  the  affected  channel  by  the  higher </p>
+<p>layer. </p>
+<p>After  the  controller  state  is  switched  the  bus  off  state  is  recovered.  For  successful </p>
+<p>reception and transmission the PDU mode has to be switched to </p>
+<p>RX_ONLINE</p>
+<p>, </p>
+<p>TX_ONLINE</p>
+<p> </p>
+<p>or </p>
+<p>ONLINE</p>
+<p> by the higher layer. </p>
+<p> </p>
+<p>CanIf </p>
+<p>EcuM </p>
+<p>4.  </p>
+<p>EcuM_StartWakeupSources</p>
+<p>(wakeupsource) </p>
+<p>6. Rx message received </p>
+<p>(not passed to upper layers yet) </p>
+<p>CanIf_RxIndication(…) </p>
+<p>8.</p>
+<p> </p>
+<p>EcuM_ValidateWakeupEvent </p>
+<p>     (wakeupsource) </p>
+<p>5.   </p>
+<p></p>
+<p> CanIf_SetTrcvMode (transceiver, </p>
+<p>CANTRCV_TRCV_MODE_NORMAL) </p>
+<p>[  </p>
+<p></p>
+<p> CanIf_SetControllerMode (controller, </p>
+<p>CANIF_CS_STOPPED)    ] </p>
+<p></p>
+<p> CanIf_SetControllerMode (controller, </p>
+<p>CANIF_CS_STARTED) </p>
+<p> </p>
+<p>7. </p>
+<p>CanIf_CheckValidation       </p>
+<p>(wakeupsource) </p>
+<p>8’.</p>
+<p> </p>
+<p>EcuM_StopWakeupSources(wakeupsource) </p>
+<p></p>
+<p> CanIf_SetControllerMode(controller, </p>
+<p>CANIF_CS_STOPPED) </p>
+<p></p>
+<p>CanIf_SetControllerMode(controller, </p>
+<p>CANIF_CS_SLEEP) </p>
+<p></p>
+<p> CanIf_SetTrcvMode(transceiver, </p>
+<p>CANTRCV_TRCV_MODE_STANDBY) </p>
+<p>Can Driver </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>34 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>3.15 </b></p>
+<p><b>Version Info </b></p>
+<p>The version of the CAN Interface module can be acquired in three different ways. The first </p>
+<p>possibility is by calling of the function </p>
+<p>CanIf_GetVersionInfo()</p>
+<p>. This function returns </p>
+<p>the </p>
+<p>module’s </p>
+<p>version </p>
+<p>in </p>
+<p>the </p>
+<p>structure </p>
+<p>Std_VersionInfoType</p>
+<p> </p>
+<p>which </p>
+<p>includes </p>
+<p>the </p>
+<p>VendorID and the ModuleID additionally.  </p>
+<p>The second possibility is the access of version defines which are specified in the header </p>
+<p>file </p>
+<p>CanIf.h</p>
+<p>. </p>
+<p>The following defines can be evaluated to access different versions: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>AUTOSAR version: </b></p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_AR_RELEASE_MAJOR_VERSION </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_AR_RELEASE_MINOR_VERSION </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_AR_RELEASE_PATCH_VERSION </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Module version: </b></p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_SW_MAJOR_VERSION </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_SW_MINOR_VERSION </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_SW_PATCH_VERSION </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Module ID: </b></p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_MODULE_ID </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p><b>Vendor ID: </b></p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CANIF_VENDOR_ID </p>
+<p> </p>
+<p>There is a third possibility to at least acquire the SW version by accessing globally visible </p>
+<p>constants: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_MainVersion  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_SubVersion </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>CanIf_ReleaseVersion </p>
+<p> </p>
+<p> </p>
+<p><b>Info</b> </p>
+<p>The API </p>
+<p>CanIf_GetVersionInfo()</p>
+<p> is only available if enabled at Pre-compile </p>
+<p>time. The definitions can be accessed independent of the configuration. </p>
+<p> </p>
+<p><b>3.16 </b></p>
+<p><b>Partial Networking </b></p>
+<p>This feature consists of two sub-features: </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>35 </p>
+<p>based on template version 2.10.0 </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>Wakeup Tx-PDU filter (parameter: </p>
+<p>CanIfPnWakeupTxPduFilterSupport</p>
+<p>) </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>Handling of a partial networking transceiver (parameter: </p>
+<p>CanIfPnTrcvHandlingSupport</p>
+<p>) </p>
+<p>The mentioned sub-features can be used only if the attribute </p>
+<p>CanIfPublicPnSupport </p>
+<p>is enabled. See the following table for more information about mentioned sub-features. </p>
+<p><b>Feature </b></p>
+<p><b>Description </b></p>
+<p>CanIfPnWakeupTxPduFilterSupport </p>
+<p>Tx-PDU  filter  which  is  activated  if  the  PDU </p>
+<p>mode </p>
+<p>is </p>
+<p>changed </p>
+<p>either </p>
+<p>to </p>
+<p>CANIF_SET_ONLINE_WU_FILTER</p>
+<p> </p>
+<p>or </p>
+<p>to </p>
+<p>CANIF_SET_TX_ONLINE_WU_FILTER</p>
+<p>. </p>
+<p>This </p>
+<p>filter  is  active  until  the  first  Tx-confirmation  / </p>
+<p>Rx-indication </p>
+<p>of </p>
+<p>the </p>
+<p>corresponding </p>
+<p>CAN </p>
+<p>channel  arrives.  Only  certain  Tx-PDUs  which </p>
+<p>are </p>
+<p>labeled </p>
+<p>as </p>
+<p>Tx </p>
+<p>wakeup </p>
+<p>filter </p>
+<p>PDUs </p>
+<p>(s. </p>
+<p>parameter </p>
+<p>CanIfTxPduPnFilterPdu</p>
+<p>)  can </p>
+<p>pass the filter. All Tx-requests of other Tx-PDUs </p>
+<p>are refused  by  CAN  Interface until the  filter  is </p>
+<p>disabled. </p>
+<p>CanIfPnTrcvHandlingSupport </p>
+<p>Handling of a partial networking transceiver  </p>
+<p>Table 3-4 </p>
+<p>Sub-features of feature Partial Networking </p>
+<p>The parameter </p>
+<p>CanIfPnTrcvHandlingSupport</p>
+<p> is enabled automatically if at least one </p>
+<p>underlying  transceiver  driver  supports  partial  networking.  In  case  of  using  the  feature </p>
+<p>CanIfPnWakeupTxPduFilterSupport</p>
+<p> the Tx-PDUs which are allowed to pass the filter </p>
+<p>have to be configured accordingly. This kind of configuration can be performed individually </p>
+<p>for every Tx-PDU via the parameter </p>
+<p>CanIfTxPduPnFilterPdu</p>
+<p>.  </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Note </b></p>
+<p>Please consider that the filter of a certain CAN channel is only active if at least </p>
+<p>one </p>
+<p>Tx-PDU </p>
+<p>of </p>
+<p>this </p>
+<p>CAN </p>
+<p>channel </p>
+<p>has </p>
+<p>the </p>
+<p>parameter </p>
+<p>CanIfTxPduPnFilterPdu </p>
+<p>enabled.  </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>The </p>
+<p>feature </p>
+<p>CanIfPnWakeupTxPduFilterSupport</p>
+<p> </p>
+<p>is </p>
+<p>configurable </p>
+<p>in </p>
+<p>all </p>
+<p>three </p>
+<p>configuration variants: </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>Pre-compile </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>Link-time  </p>
+<p><b></b></p>
+<p><b> </b></p>
+<p>Post-build-loadable </p>
+<p>Except the restriction that this feature has to be enabled at Pre-compile time at all there </p>
+<p>are no any further restrictions concerning the reconfiguration of this feature in accordance </p>
+<p>with the Tx-PDUs which may pass the filter in case of a Link-time or a Post-build-loadable </p>
+<p>configuration variant. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>36 </p>
+<p>based on template version 2.10.0 </p>
+<p> </p>
+<p><b>3.17 </b></p>
+<p><b>Services used by the CAN Interface </b></p>
+<p>In the following table services provided by other components which are used by the CAN </p>
+<p>Interface are listed. For details about prototype and functionality refer to the documentation </p>
+<p>of the corresponding component. </p>
+<p><b>Component </b></p>
+<p><b>API </b></p>
+<p>DET </p>
+<p>Det_ReportError </p>
+<p>CanDrv </p>
+<p>Can_SetControllerMode </p>
+<p>Can_Write </p>
+<p> </p>
+<p>PduR, CanNm, CanTp, CDD </p>
+<p>User_TxConfirmation (*) </p>
+<p>User_RxIndication (*) </p>
+<p>CanNm, EcuM, CDD </p>
+<p>User_ControllerBusOff (*) </p>
+<p>User_ValidationWakeupEvent (*) </p>
+<p>SchM </p>
+<p>SchM_Enter_CanIf_##area </p>
+<p>SchM_Exit_CanIf_##area </p>
+<p>CanTrcv </p>
+<p>CanTrcv_SetOpMode </p>
+<p>CanTrcv_GetOpMode </p>
+<p>CanTrcv_GetBusWuReason </p>
+<p>CanTrcv_SetWakeupMode </p>
+<p>CanTrcv_CheckWakeup </p>
+<p>MICROSAR extension (optional) </p>
+<p>EcuM_BswErrorHook </p>
+<p>Table 3-5  </p>
+<p>API functions used by the CAN Interface </p>
+<p>* Names of the call back functions can be configured freely. </p>
+<p><b>3.18 </b></p>
+<p><b>Multiple CAN drivers </b></p>
+<p>The  CAN  Interface  supports  multiple  CAN  drivers  which  are  implemented  according  to </p>
+<p>AUTOSAR specification 4.1.1. </p>
+<p>Different  CAN  drivers  are  addressed  by  using  the  values  of  attributes  &quot;VendorId&quot;  and </p>
+<p>&quot;VendorApiInfix&quot; defined in BSWMD file of corresponding CAN driver. </p>
+<p>In order to ensure compatibility with this CAN Interface the following naming convention of </p>
+<p>APIs of CAN driver need to be provided.  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>&lt;Bsw&gt;_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_&lt;ApiName</p>
+<p>&gt; </p>
+<p> </p>
+<p>The APIs of used CAN driver has to be named as follows: </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>37 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>Basic CAN Driver APIs </b></p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_SetControllerMode </p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_Write </p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_CancelTx(*) </p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_CheckWakeup(*) </p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_CheckBaudrate(*) </p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_ChangeBaudrate(*) </p>
+<p>Can_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_SetBaudrate(*)</p>
+<p> </p>
+<p>Table 3-6  </p>
+<p>Adapted CAN driver APIs (* optional) </p>
+<p>The following table lists APIs of CAN Interface which have to be called by a CAN driver in </p>
+<p>case of multiple CAN drivers are configured. </p>
+<p> </p>
+<p><b>Basic CAN Driver APIs </b></p>
+<p>CanIf_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_RxIndication </p>
+<p>CanIf_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_TxConfirmation </p>
+<p>CanIf_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_ControllerBusOff </p>
+<p>CanIf_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_ControllerModeIndication </p>
+<p>CanIf_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_CancelTxNotification </p>
+<p>CanIf_&lt;VendorId&gt;_&lt;VendorApiInfix&gt;_CancelTxConfirmation</p>
+<p> </p>
+<p>Table 3-7  </p>
+<p>APIs of CAN Interface which have to be used in multiple CAN driver configurations </p>
+<p><b>3.19 </b></p>
+<p><b>Extended RAM-check </b></p>
+<p>This  feature  is  configured  via  the  parameter </p>
+<p>CanIfExtendedRamCheckSupport</p>
+<p>.  For </p>
+<p>further information about configuration of this feature please refer to the help which can be </p>
+<p>found  in  the  GUI  of  the  DaVinci Configurator 5  and  to  the  description  of  mentioned </p>
+<p>parameter.   </p>
+<p> </p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>38 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>3.20 </b></p>
+<p><b>Critical Sections </b></p>
+<p>The AUTOSAR standard provides with the BSW Scheduler a BSW module, which handles </p>
+<p>entering and leaving critical sections.  </p>
+<p>For  more  information  about  the  BSW  Scheduler  please  refer  to  [3].  When  the  BSW </p>
+<p>Scheduler  is  used  the  CAN  Interface  provides  critical  section  codes  that  have  to  be </p>
+<p>mapped by the BSW Scheduler to following mechanism: </p>
+<p><b>Critical Section Define </b></p>
+<p><b>Description </b></p>
+<p>CANIF_EXCLUSIVE_AREA_0 </p>
+<p>Usage inside </p>
+<p>CanIf_SetControllerMode() </p>
+<p><b>&gt; </b></p>
+<p>Duration is short (&lt; 10 instructions) </p>
+<p><b>&gt; </b></p>
+<p>Call to </p>
+<p>Can_SetControllerMode()</p>
+<p>  </p>
+<p>CANIF_EXCLUSIVE_AREA_1 </p>
+<p>Usage inside </p>
+<p>CanIf_CancelTxConfirmation(), </p>
+<p>CanIf_CancelTransmit(), CanIf_ClearQueue()</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>Duration is short (&lt; 10 instructions). </p>
+<p><b>&gt; </b></p>
+<p>No calls inside </p>
+<p>CANIF_EXCLUSIVE_AREA_2 </p>
+<p>Usage inside </p>
+<p>CanIf_TxConfirmation() </p>
+<p>and</p>
+<p> </p>
+<p>CanIf_CancelTxConfirmation()</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>Duration is medium (&lt; 50 instructions). </p>
+<p><b>&gt; </b></p>
+<p>Call to </p>
+<p>CanIf_TxQueueTreatment(), </p>
+<p>CanIf_TxQueueTransmit(), Can_Write(), </p>
+<p>. </p>
+<p>CANIF_EXCLUSIVE_AREA_3 </p>
+<p>Usage inside </p>
+<p>CanIf_SetPduMode()</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>Duration is short (&lt; 10 instructions). </p>
+<p><b>&gt; </b></p>
+<p>Call to </p>
+<p>CanIf_ClearQueue()</p>
+<p> </p>
+<p>CANIF_EXCLUSIVE_AREA_4 </p>
+<p>Usage inside </p>
+<p>CanIf_Transmit()</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>Duration is medium (&lt; 50 instructions). </p>
+<p><b>&gt; </b></p>
+<p>Call to </p>
+<p>Can_Write()</p>
+<p> </p>
+<p>CANIF_EXCLUSIVE_AREA_5 </p>
+<p>Usage inside </p>
+<p>CanIf_SetDynamicTxId()</p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>Duration is short (&lt; 10 instructions). </p>
+<p><b>&gt; </b></p>
+<p>Setting of dynamic CAN identifier </p>
+<p>CANIF_EXCLUSIVE_AREA_6 </p>
+<p>Usage inside </p>
+<p>CanIf_SetAddressTableEntry() </p>
+<p>and </p>
+<p>CanIf_ResetAddressTableEntry() </p>
+<p><b>&gt; </b></p>
+<p>Duration is short (&lt; 10 instructions). </p>
+<p><b>&gt; </b></p>
+<p>Setting of J1939 Rx- and Tx-address </p>
+<p><b>&gt; </b></p>
+<p>No calls inside </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>39 </p>
+<p>based on template version 2.10.0 </p>
+<p>CANIF_EXCLUSIVE_AREA_7 </p>
+<p>Usage inside </p>
+<p>CanIf_RxIndication()</p>
+<p> </p>
+<p> </p>
+<p><b>&gt; </b></p>
+<p>Duration is short (&lt; 10 instructions). </p>
+<p><b>&gt; </b></p>
+<p>Consistent reading from J1939 Rx-address table </p>
+<p><b>&gt; </b></p>
+<p>No calls inside </p>
+<p>Table 3-8  </p>
+<p>Critical Section Codes </p>
+<p> </p>
+<p>If  the  exclusive  areas  are  entered  the  upper  layer  needs  to  make  sure  that  the  CAN </p>
+<p>interrupts  are  disabled.  Additionally  the  following  table  describes  which API  of  the  CAN </p>
+<p>Interface must not be called during the corresponding area is entered. The CAN Interface </p>
+<p>API </p>
+<p>CanIf_CancelTxNotification()  /  CanIf_CancelTxConfirmation()</p>
+<p>is </p>
+<p>entered  mostly  via  the  CAN  interrupt.  In  case  of  a  platform  which  confirmation  for  a </p>
+<p>transmit </p>
+<p>cancellation </p>
+<p>needs </p>
+<p>to </p>
+<p>be </p>
+<p>polled </p>
+<p>the </p>
+<p>corresponding </p>
+<p>API </p>
+<p>(for </p>
+<p>example </p>
+<p>Can_MainFunction_Write()</p>
+<p>)</p>
+<p> </p>
+<p>must  not  be  called  if  the  corresponding  lock  area  is </p>
+<p>entered. </p>
+<p> </p>
+<p>CANIF_EXCLUSI</p>
+<p>VE_ AREA_0 </p>
+<p>CANIF_EXCLUSIV</p>
+<p>E_ AREA_1 </p>
+<p>CANIF_EXCLUSIV</p>
+<p>E_ AREA_2 </p>
+<p>CANIF_EXCLUSI</p>
+<p>VE_ AREA_3 </p>
+<p>CANIF_EXCLUSI</p>
+<p>VE_ AREA_4 </p>
+<p>CANIF_EXCLUSI</p>
+<p>VE_ AREA_5 </p>
+<p>CANIF_EXCLUSI</p>
+<p>VE_ AREA_6 </p>
+<p>CANIF_EXCLUSI</p>
+<p>VE_ AREA_7 </p>
+<p>CanIf_Init </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>CanIf_InitMemory </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_Transmit </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p>CanIf_CancelTransmit </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_SetControllerMode </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_CancelTxNotification/ </p>
+<p>CanIf_CancelTxConfirmation </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_SetPduMode </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_TxConfirmation </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_ControllerBusOff </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CanIf_RxIndication </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p>CanIf_SetAddressTableEntry </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>CanIf_ResetAddressTableEntry </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Table 3-9  </p>
+<p>Restrictions for the different lock areas </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>40 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>4 </b></p>
+<p><b>Integration </b></p>
+<p>This  chapter  gives  necessary  information  for  the  integration  of  the  MICROSAR  CAN </p>
+<p>Interface into an application environment of an ECU. </p>
+<p><b>4.1 </b></p>
+<p><b>Files and include structure </b></p>
+<p>The CAN Interface consists of the following files: </p>
+<p>The delivery of the CAN Interface contains the files which are described in the chapters </p>
+<p>4.1.1 and 4.1.2: </p>
+<p><b>4.1.1 </b></p>
+<p><b>Static Files </b></p>
+<p><b>File Name </b></p>
+<p><b>Description </b></p>
+<p>CanIf.c </p>
+<p>Implementation</p>
+<p> </p>
+<p>CanIf.h </p>
+<p>Header file, has to be included by higher layers to access the API </p>
+<p>CanIf_Cbk.h </p>
+<p>Header file, has to be included by underlying layers to access call </p>
+<p>back functions provided by the CAN Interface </p>
+<p>CanIf_Types.h </p>
+<p>Definition of types provided by the CAN Interface which have to be </p>
+<p>used by other layers. This file is included automatically if either </p>
+<p>CanIf.h</p>
+<p> or </p>
+<p>CanIf_Cbk.h</p>
+<p> is included. </p>
+<p>CanIf_Hooks.h </p>
+<p>This header file is included by </p>
+<p>CanIf.c</p>
+<p> and defines so called hook-</p>
+<p>macros. Every API of the CAN interface has an own pair of hook-</p>
+<p>macro. One of them is called at the beginning of each API and the </p>
+<p>other one at the end. The intention of these hook-macros is the </p>
+<p>ability to measure the execution time of an API. The hook-macros </p>
+<p>are defined to nothing by default. So they do not influence the </p>
+<p>execution of code by default.     </p>
+<p>CanIf_GeneralTypes.h </p>
+<p>This header file is included by </p>
+<p>Can_GeneralTypes.h</p>
+<p> and </p>
+<p>contains the public types of the CAN Interface. </p>
+<p>Table 4-1  </p>
+<p>Static files </p>
+<p><b>4.1.2 </b></p>
+<p><b>Dynamic Files </b></p>
+<p>The dynamic files are generated by the configuration tool. </p>
+<p><b>File Name </b></p>
+<p><b>Description </b></p>
+<p>CanIf_Cfg.h </p>
+<p>Generated header file (included automatically by </p>
+<p>CanIf.h</p>
+<p> and </p>
+<p>CanIf_Cbk.h</p>
+<p>) </p>
+<p> </p>
+<p>CanIf_Lcfg.c </p>
+<p>Contains link time configuration data. Contains data in case of </p>
+<p>Pre-compile, Link-time and Post-build configuration variant. </p>
+<p>CanIf_PBcfg.c </p>
+<p>Contains post build configuration data. In case of Link-time variant is </p>
+<p>used, this file is empty. </p>
+<p>CanIf_CanTrcv.h </p>
+<p>Generated header file which includes the necessary header files of the </p>
+<p>transceiver drivers used in the system. </p>
+<p>Table 4-2  </p>
+<p>Generated files </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>41 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>4.2 </b></p>
+<p><b>Include Structure </b></p>
+<p> </p>
+<p>Figure 4-1 </p>
+<p>Include structure </p>
+<p><b> composite structure Include structure</b></p>
+<p>Det.h</p>
+<p>CanIf.c</p>
+<p>Can_Cfg.h</p>
+<p>CanIf.h</p>
+<p>CanIf_Cfg.h</p>
+<p>CanIf_Types.h</p>
+<p>CanIf_Cbk.h</p>
+<p>EcuM_Cbk.h</p>
+<p>ComStack_Types.h</p>
+<p>Std_Types.h</p>
+<p>Platform_Types.h</p>
+<p>Compiler.h</p>
+<p>Compiler_Cfg.h</p>
+<p>Can.h</p>
+<p>MemMap.h</p>
+<p>CanSM_Cbk.h</p>
+<p>SchM_CanIf.h</p>
+<p>CanIf_CanTrcv.h</p>
+<p>Can_GeneralTypes.h</p>
+<p>CanIf_Lcfg.c</p>
+<p>CanNm_Cfg.h</p>
+<p>CanTp_Cfg.h</p>
+<p>PduR_Cfg.h</p>
+<p>CanXcp.h</p>
+<p>CanIf_PBcfg.c</p>
+<p>J1939Nm_Cfg.h</p>
+<p>J1939Nm_Cbk.h</p>
+<p>J1939Tp_Cbk.h</p>
+<p>J1939Tp_Cfg.h</p>
+<p>CanTSyn_Cbk.h</p>
+<p>CanIf_DataChecksum.c</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<p>«include»</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>42 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>4.3 </b></p>
+<p><b>Compiler Abstraction and Memory Mapping  </b></p>
+<p>The  objects  (e.g.  variables,  functions,  constants)  are  declared  by  compiler  independent </p>
+<p>definitions  –  the  compiler  abstraction  definitions.  Each  compiler  abstraction  definition  is </p>
+<p>assigned to a memory section. </p>
+<p>The  following  table  contains  the  memory  section  names  and  the  compiler  abstraction </p>
+<p>definitions  defined  for  the  CAN  Interface  and  illustrates  their  assignment  among  each </p>
+<p>other. </p>
+<p><b>Compiler Abstraction </b></p>
+<p><b>Definitions </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Memory Mapping </b></p>
+<p><b>Sections </b></p>
+<p>CANIF_VAR_ZEROINIT </p>
+<p>CANIF_VAR_INIT </p>
+<p>CANIF_VAR_NOINIT </p>
+<p>CANIF_CONST </p>
+<p>CANIF_PBCFG </p>
+<p>CANIF_CODE </p>
+<p>CANIF_APPL_CODE </p>
+<p>CANIF_APPL_VAR </p>
+<p>CANIF_APPL_PBCFG </p>
+<p>CANIF_VAR_PBCFG </p>
+<p>CANIF_START_SEC_CODE </p>
+<p>CANIF_STOP_SEC_CODE </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_PBCFG </p>
+<p>CANIF_STOP_SEC_PBCFG </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_CONST_8BIT </p>
+<p>CANIF_STOP_SEC_CONST_8BIT </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_CONST_32BIT </p>
+<p>CANIF_STOP_SEC_CONST_32BIT </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_CONST_UNSPECIFIED </p>
+<p>CANIF_STOP_SEC_CONST_UNSPECIFIED </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_VAR_NOINIT_UNSPECIFIED </p>
+<p>CANIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_VAR_ZERO_INIT_UNSPECIFIED </p>
+<p>CANIF_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_VAR_INIT_UNSPECIFIED </p>
+<p>CANIF_STOP_SEC_VAR_INIT_UNSPECIFIED </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>CANIF_START_SEC_VAR_PBCFG </p>
+<p>CANIF_STOP_SEC_VAR_PBCFG </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Table 4-3  </p>
+<p>Compiler abstraction and memory mapping </p>
+<p>The </p>
+<p>Compiler </p>
+<p>Abstraction </p>
+<p>Definitions </p>
+<p>CANIF_APPL_CODE</p>
+<p>, </p>
+<p>CANIF_APPL_VAR</p>
+<p> </p>
+<p>and </p>
+<p>CANIF_APPL_PBCFG</p>
+<p>  are  used  to  address  code,  variables  and  constants  which  are </p>
+<p>declared by other modules and used by the CAN Interface. </p>
+<p>These  definitions  are  not  mapped  by  the  CAN  Interface  but  by  the  memory  mapping </p>
+<p>realized in the CAN Driver, CAN Transceiver Driver, PDU Router, Network management, </p>
+<p>Transport Protocol Layer, ECU State Manager and the CAN State manager. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>43 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>5 </b></p>
+<p><b>Configuration </b></p>
+<p>The CAN Interface is configured with DaVinci Configurator 5. Please refer to the help </p>
+<p>which can be found in the GUI of the configurator and to the descriptions of attributes in </p>
+<p>BSWMD file of CAN Interface. </p>
+<p><b>5.1 </b></p>
+<p><b>Configuration of Post-Build </b></p>
+<p>The configuration of post-build loadable is described in </p>
+<p>TechnicalReference_PostBuildLoadable.pdf</p>
+<p>. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>44 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6 </b></p>
+<p><b>API Description </b></p>
+<p><b>6.1 </b></p>
+<p><b>Services provided by the CAN Interface </b></p>
+<p><b>6.1.1 </b></p>
+<p><b>CanIf_GetVersionInfo </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_GetVersionInfo( Std_VersionInfoType *VersionInfo ); </p>
+<p><b>Parameter </b></p>
+<p>VersionInfo  </p>
+<p>Pointer to the structure including the version information. </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>CanIf_GetVersionInfo() returns version information, vendor ID and AUTOSAR module ID of the component.  </p>
+<p>The versions are BCD-coded. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>The function is only available if enabled at Pre-compile time (</p>
+<p>CANIF_VERSION_INFO_API = STD_ON</p>
+<p>) </p>
+<p>Table 6-1 </p>
+<p>API CanIf_GetVersionInfo </p>
+<p> </p>
+<p><b>6.1.2 </b></p>
+<p><b>CanIf_Init  </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_Init( const CanIf_ConfigType *ConfigPtr ) </p>
+<p><b>Parameter </b></p>
+<p>ConfigPtr </p>
+<p>Pointer to the structure including configuration data. </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>This function initializes global CAN Interface variables during ECU start-up. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This API has to be called during start-up before any CAN communication. </p>
+<p>Can_Init()</p>
+<p> has to be executed </p>
+<p>successfully. </p>
+<p>Table 6-2  </p>
+<p>API CanIf_Init </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>45 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.3 </b></p>
+<p><b>CanIf_SetControllerMode </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_SetControllerMode(uint8 ControllerId, </p>
+<p>CanIf_ControllerModeType ControllerMode) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId  </p>
+<p>ControllerMode</p>
+<p> </p>
+<p>The Controller to change mode. </p>
+<p>Mode request. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the state transition was successful. </p>
+<p><b>Functional Description </b></p>
+<p>Request the mode of the specified channel. Supported modes: </p>
+<p>CANIF_CS_SLEEP</p>
+<p>, </p>
+<p>CANIF_CS_STOPPED</p>
+<p>, </p>
+<p>CANIF_CS_STARTED</p>
+<p>. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized.</p>
+<p> </p>
+<p>Table 6-3  </p>
+<p>API CanIf_SetControllerMode </p>
+<p> </p>
+<p><b>6.1.4 </b></p>
+<p><b>CanIf_GetControllerMode </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_GetControllerMode(uint8 ControllerId, </p>
+<p>CanIf_ControllerModeType  *ControllerModePtr) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId  </p>
+<p>ControllerModePtr </p>
+<p> </p>
+<p>Request mode of specified Controller. </p>
+<p>Pointer to data type the information is stored in. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the state request was successful or not. </p>
+<p><b>Functional Description </b></p>
+<p>Acquire the current controller mode of the specified channel </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-4  </p>
+<p>API CanIf_GetControllerMode </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>46 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.5 </b></p>
+<p><b>CanIf_Transmit </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_Transmit(PduIdType CanTxPduId, const PduInfoType </p>
+<p>*PduInfoPtr) </p>
+<p><b>Parameter </b></p>
+<p>CanTxPduId </p>
+<p>PduIndoPtr </p>
+<p>Handle of the Tx PDU which will be transmitted. </p>
+<p>Pointer to a struct containing the properties of the Tx PDU. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns if the transmit request was accepted. </p>
+<p><b>Functional Description </b></p>
+<p>Requests the transmission of the specified Tx PDU. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-5  </p>
+<p>API CanIf_Transmit </p>
+<p> </p>
+<p><b>6.1.6 </b></p>
+<p><b>CanIf_TxConfirmation </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_TxConfirmation(PduIdType CanTxPduId) </p>
+<p><b>Parameter </b></p>
+<p>CanTxPduId </p>
+<p>ID of the successfully transmitted PDU. </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Confirms the successful transmission of a Tx PDU  </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-6  </p>
+<p>API CanIf_TxConfirmation </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>47 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.7 </b></p>
+<p><b>CanIf_RxIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_RxIndication(CanIf_HwHandleType Hrh, Can_IdType CanId, uint8 CanDlc, </p>
+<p>const uint8 *CanSduPtr) </p>
+<p><b>Parameter </b></p>
+<p>Hrh </p>
+<p>CanId </p>
+<p>CanDlc </p>
+<p>CanSduPtr </p>
+<p>Hardware handle the PDU was received in. </p>
+<p>CAN identifier of the received PDU. </p>
+<p>Data length code of the received PDU. </p>
+<p>Pointer to hardware or temporary buffer containing the data of the received </p>
+<p>PDU. </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>The CAN Driver notifies the CAN Interface about a received Rx PDU. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-7  </p>
+<p>API CanIf_RxIndication </p>
+<p> </p>
+<p><b>6.1.8 </b></p>
+<p><b>CanIf_ControllerBusOff </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ControllerBusOff(uint8 Controller) </p>
+<p><b>Parameter </b></p>
+<p>Controller </p>
+<p>Affected controller. </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Indicates a BusOff for the specified controller to the CAN Interface.  </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-8  </p>
+<p>API CanIf_ControllerBusOff </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>48 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.9 </b></p>
+<p><b>CanIf_SetPduMode </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_SetPduMode(uint8 ControllerId, CanIf_PduSetModeType </p>
+<p>PduModeRequest) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId  </p>
+<p>PduModeRequest </p>
+<p>Controller which will be affected by the new Pdu mode. </p>
+<p>Requested Pdu mode </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the state request was successful.  </p>
+<p><b>Functional Description </b></p>
+<p>Change mode for specified controller. Possible states are:</p>
+<p>   </p>
+<p>  CANIF_SET_OFFLINE, </p>
+<p>  CANIF_SET_RX_OFFLINE, </p>
+<p>  CANIF_SET_RX_ONLINE, </p>
+<p>  CANIF_SET_TX_OFFLINE, </p>
+<p>  CANIF_SET_TX_ONLINE, </p>
+<p>  CANIF_SET_ONLINE, </p>
+<p>  CANIF_SET_TX_OFFLINE_ACTIVE </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. Controller has to be in state </p>
+<p>CANIF_CS_STARTED</p>
+<p>. </p>
+<p>Table 6-9  </p>
+<p>API CanIf_SetPduMode </p>
+<p> </p>
+<p><b>6.1.10 </b></p>
+<p><b>CanIf_GetPduMode </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_GetPduMode(uint8 ControllerId, CanIf_PduGetModeType  * </p>
+<p>PduModePtr) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId  </p>
+<p>PduModePtr </p>
+<p>Request mode of the specified Controller. </p>
+<p>Pointer to a data buffer the current mode will be stored in. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the request of the current state was successful.  </p>
+<p><b>Functional Description </b></p>
+<p>Request the current mode of the specified controller. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-10  </p>
+<p>API CanIf_GetPduMode </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>49 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.11 </b></p>
+<p><b>CanIf_InitMemory </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_InitMemory(void) </p>
+<p><b>Parameter </b></p>
+<p>- </p>
+<p>- </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Initializes global RAM variables, which have to be available before any call to the CanIf API. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>May only be called once before </p>
+<p>CanIf_Init()</p>
+<p>. </p>
+<p>Table 6-11  </p>
+<p>API CanIf_InitMemory </p>
+<p> </p>
+<p><b>6.1.12 </b></p>
+<p><b>CanIf_CancelTxConfirmation </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_CancelTxconfirmation(PduIdType CanTxPduId, const Can_PduType </p>
+<p>*PduInfoPtr) </p>
+<p><b>Parameter </b></p>
+<p>CanTxPduId </p>
+<p>PduInfoPtr </p>
+<p>Handle of the Tx PDU which was cancelled. </p>
+<p>Contains information about cancelled PDU </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Called by the CAN Driver to notify the CAN Interface about a cancelled PDU which has to be re-queued. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>Only available if </p>
+<p>CANIF_TRANSMIT_CANCELLATION = STD_ON</p>
+<p> is set. </p>
+<p>Table 6-12  </p>
+<p>API CanIf_CancelTxConfirmation </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>50 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.13 </b></p>
+<p><b>CanIf_SetTrcvMode </b></p>
+<p><b>Prototype </b></p>
+<p>StdReturnType CanIf_SetTrcvMode(uint8 TransceiverId, CanTrcv_TrcvModeType </p>
+<p>TransceiverMode) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId  </p>
+<p>TransceiverMode </p>
+<p>Address the transceiver by a transceiver index. </p>
+<p>Requested mode transition </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the state transition was successful. </p>
+<p><b>Functional Description </b></p>
+<p>Called by an upper layer to set the transceiver to another mode. </p>
+<p><b>Particularities and Limitations </b></p>
+<p><b> </b></p>
+<p>Only available if transceiver handling is activated at configuration time. </p>
+<p>(</p>
+<p>CANIF_TRCV_HANDLING = STD_ON</p>
+<p>) </p>
+<p>Table 6-13  </p>
+<p>API CanIf_SetTrcvMode </p>
+<p> </p>
+<p><b>6.1.14 </b></p>
+<p><b>CanIf_GetTrcvMode </b></p>
+<p><b>Prototype </b></p>
+<p>StdReturnType CanIf_GetTrcvMode(CanTrcv_TrcvModeType *TransceiverModePtr, uint8 </p>
+<p>TransceiverId) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId  </p>
+<p>TransceiverModePtr </p>
+<p>Address the transceiver by a transceiver index. </p>
+<p>Pointer to a buffer where current transceiver mode can be stored in. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the request of the current transceiver mode was </p>
+<p>successful. </p>
+<p><b>Functional Description </b></p>
+<p>Called by an upper layer to request the current mode of the transceiver. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>Only </p>
+<p>available </p>
+<p>if </p>
+<p>transceiver </p>
+<p>handling </p>
+<p>is </p>
+<p>activated </p>
+<p>at </p>
+<p>configuration </p>
+<p>time. </p>
+<p>(</p>
+<p>CANIF_TRCV_HANDLING = STD_ON</p>
+<p>) </p>
+<p>Table 6-14  </p>
+<p>API CanIf_GetTrcvMode </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>51 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.15 </b></p>
+<p><b>CanIf_GetTrcvWakeupReason </b></p>
+<p><b>Prototype </b></p>
+<p>StdReturnType CanIf_GetTrcvWakeupReason(uint8 TransceiverId, </p>
+<p>CanIf_TrcvWakeupReasonType *TrcvWuReasonPtr) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId  </p>
+<p>TrcvWuReasonPtr </p>
+<p>Address the transceiver by a transceiver index. </p>
+<p>Pointer to a buffer where the transceiver’s wake up reason can be stored </p>
+<p>in. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the request of the wake up reason was successful. </p>
+<p><b>Functional Description </b></p>
+<p>Called by an upper layer to request the wake up reason stored in the transceiver. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>Only available if transceiver handling is activated at configuration time. </p>
+<p>(</p>
+<p>CANIF_TRCV_HANDLING = STD_ON</p>
+<p>) </p>
+<p>Table 6-15  </p>
+<p>API CanIf_GetTrcvWakeupReason </p>
+<p> </p>
+<p><b>6.1.16 </b></p>
+<p><b>CanIf_SetTrcvWakeupMode </b></p>
+<p><b>Prototype </b></p>
+<p>StdReturnType CanIf_SetTrcvWakeupMode(uint8 TransceiverId, </p>
+<p>CanTrcv_TrcvWakeupModeType TrcvWakeupMode) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId  </p>
+<p>TrcvWakeupMode </p>
+<p>Address the transceiver by a transceiver index. </p>
+<p>Enable, disable or clear notification for wake up events. </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the requested mode was set successfully. </p>
+<p><b>Functional Description </b></p>
+<p>Called by an upper layer to enable, disable or clear the wake up event notification of the transceiver. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>Only available if transceiver handling is activated at configuration time. </p>
+<p>(</p>
+<p>CANIF_TRCV_HANDLING = STD_ON</p>
+<p>) </p>
+<p>Table 6-16  </p>
+<p>API CanIf_SetTrcvWakeupMode </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>52 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.17 </b></p>
+<p><b>CanIf_CheckWakeup </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_CheckWakeup(EcuM_WakeupSourceType WakeupSource) </p>
+<p><b>Parameter </b></p>
+<p>WakeupSource </p>
+<p>Wakeup source which identifies the possible wakeup source (Transceiver / </p>
+<p>CAN Controller) </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the request to the Transceiver/ CAN Controller was </p>
+<p>successful.  </p>
+<p><b>Functional Description </b></p>
+<p>Called by an upper layer to check if a transceiver or CAN controller recently raised a wakeup. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-17  </p>
+<p>API CanIf_CheckWakeup </p>
+<p> </p>
+<p><b>6.1.18 </b></p>
+<p><b>CanIf_CheckValidation </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_CheckValidation(EcuM_WakeupSourceType WakeupSource) </p>
+<p><b>Parameter </b></p>
+<p>WakeupSource </p>
+<p>Wakeup source which identifies the possible wakeup source (Transceiver / </p>
+<p>CAN Controller) </p>
+<p><b>Return code </b></p>
+<p>Std_ReturnType </p>
+<p>Returns whether the requested mode was set successfully.  </p>
+<p><b>Functional Description </b></p>
+<p>Called by an upper layer to check if a Rx message was received after a wake up occurred from one of the </p>
+<p>supported sources. </p>
+<p>If a message was received between the call of </p>
+<p>CanIf_CheckWakeup</p>
+<p> and </p>
+<p>CanIf_CheckValidation</p>
+<p> the </p>
+<p>configurable EcuM call back function </p>
+<p>EcuM_ValidationWakeupEvent</p>
+<p> is called from the context of </p>
+<p>this function. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>CanIf_CheckWakeup has to be called before and a wake up event has to be detected. </p>
+<p>CAN Interface has to be set to </p>
+<p>CANIF_CS_STARTED</p>
+<p> mode before a validation is possible. </p>
+<p>Table 6-18  </p>
+<p>API CanIf_CheckValidation </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>53 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.19 </b></p>
+<p><b>CanIf_ResetBusOffStart </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ResetBusOffStart(uint8 ControllerId) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>Recover bus off for the specified controller </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Initiates the bus off recovery for a specified channel. </p>
+<p>A call to </p>
+<p>CanIf_ResetBusOffEnd()</p>
+<p> has to follow on task level. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>Non-Autosar compliant API function which has to be enabled by defining </p>
+<p>CANIF_BUSOFF_RECOVERY_API </p>
+<p>= STD_ON</p>
+<p> </p>
+<p>Table 6-19  </p>
+<p>API CanIf_ResetBusOffStart </p>
+<p> </p>
+<p><b>6.1.20 </b></p>
+<p><b>CanIf_ResetBusOffEnd </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ResetBusOffEnd(uint8 ControllerId) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>Recover bus off for the specified controller </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Finishes the bus off recovery for a specified channel. </p>
+<p>A call to </p>
+<p>CanIf_ResetBusOffStart()</p>
+<p> has to be executed before. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>Non-Autosar compliant API function which has to be enabled by defining </p>
+<p>CANIF_BUSOFF_RECOVERY_API = STD_ON</p>
+<p> </p>
+<p>The function has to be called on task level. </p>
+<p>Table 6-20  </p>
+<p>API CanIf_ResetBusOffEnd </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>54 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.21 </b></p>
+<p><b>CanIf_CancelTransmit </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_CancelTransmit (PduIdType CanTxPduId) </p>
+<p><b>Parameter </b></p>
+<p>CanTxPduId  </p>
+<p>PduId of the message which has to be cancelled </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Initiates the cancellation / suppression of the confirmation of a Tx message. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>AUTOSAR only defines a dummy function. For MICROSAR this function has the functionality to cancel an </p>
+<p>ordered Tx PDU. This API is provided only in case of </p>
+<p>CANIF_CANCEL_SUPPORT_API = STD_ON</p>
+<p>. </p>
+<p>Table 6-21  </p>
+<p>API CanIf_CancelTransmit </p>
+<p> </p>
+<p><b>6.1.22 </b></p>
+<p><b>CanIf_CancelTxNotification </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_CancelTxNotification (PduIdType PduId, CanIf_CancelResultType </p>
+<p>IsCancelled) </p>
+<p><b>Parameter </b></p>
+<p>PduId  </p>
+<p>IsCancelled </p>
+<p>Id of the Tx message which was cancelled </p>
+<p>Parameter currently not evaluated. </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Called by the CAN Driver to notify about a cancelled message. No confirmation is raised for this message. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Non-AUTOSAR compliant API function which is enabled in case of </p>
+<p>CANIF_CANCEL_SUPPORT_API = STD_ON</p>
+<p>. </p>
+<p>Table 6-22  </p>
+<p>API CanIf_CancelTxNotification </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>55 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.23 </b></p>
+<p><b>CanIf_SetDynamicTxId </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_SetDynamicTxId(PduIdType CanTxPduId, Can_IdType CanId) </p>
+<p><b>Parameter </b></p>
+<p>CanTxPduId </p>
+<p>CanId </p>
+<p>PDU ID of the Tx message </p>
+<p>CAN ID of the messageParameter  </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Called by the application to set the CAN Id of the corresponding Tx PDU. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Shall not be interrupted by a call of </p>
+<p>CanIf_Transmit()</p>
+<p> for the same Tx PDU. </p>
+<p>Table 6-23  </p>
+<p>API CanIf_SetDynamicTxId </p>
+<p> </p>
+<p><b>6.1.24 </b></p>
+<p><b>CanIf_ControllerModeIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ControllerModeIndication(uint8 Controller, CanIf_ControllerModeType </p>
+<p>ControllerMode) </p>
+<p><b>Parameter </b></p>
+<p>Controller </p>
+<p>ControllerMode </p>
+<p>Channel where the mode transition happened </p>
+<p>Controller mode to which the CAN controller transitioned  </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Called by the CAN driver to notify about successful controller mode transition </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-24  </p>
+<p>API CanIf_ControllerModeIndication </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>56 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.25 </b></p>
+<p><b>CanIf_TrcvModeIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_TrcvModeIndication(uint8 TransceiverId, CanTrcv_TrcvModeType </p>
+<p>TransceiverMode) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId </p>
+<p>TransceiverMode </p>
+<p>Transceiver where the mode transition happened </p>
+<p>Transceiver mode to which the transceiver  transitioned  </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>Called by the transceiver driver to notify about successful transceiver mode transition </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. </p>
+<p>Table 6-25  </p>
+<p>API CanIf_TrcvModeIndication </p>
+<p><b>6.1.26 </b></p>
+<p><b>CanIf_ConfirmPnAvailability </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ConfirmPnAvailability(uint8 TransceiverId) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId </p>
+<p> </p>
+<p>CAN transceiver, which was checked for PN availability</p>
+<p> </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>This service indicates that the transceiver is running in PN communication mode </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This API is only available in case of </p>
+<p>CANIF_PN_TRCV_HANDLING = STD_ON</p>
+<p>. </p>
+<p>Table 6-26  </p>
+<p>API CanIf_ConfirmPnAvailability </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>57 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.27 </b></p>
+<p><b>CanIf_ClearTrcvWufFlagIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ClearTrcvWufFlagIndication(uint8 TransceiverId) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId </p>
+<p> </p>
+<p>CAN transceiver, for which the API was called </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>This service indicates that the transceiver has cleared the WufFlag. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CanIf_Init()</p>
+<p> has already been called and all transceiver driver have been initialized. </p>
+<p>This API is only available in case of </p>
+<p>CANIF_PN_TRCV_HANDLING = STD_ON</p>
+<p>. </p>
+<p>Table 6-27  </p>
+<p>API CanIf_ClearTrcvWufFlagIndication </p>
+<p> </p>
+<p><b>6.1.28 </b></p>
+<p><b>CanIf_CheckTrcvWakeFlagIndication </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_CheckTrcvWakeFlagIndication(uint8 TransceiverId) </p>
+<p><b>Parameter </b></p>
+<p>TransceiverId </p>
+<p> </p>
+<p>CAN transceiver, for which the API was called </p>
+<p><b>Return code </b></p>
+<p>- </p>
+<p>-  </p>
+<p><b>Functional Description </b></p>
+<p>This service indicates the reason for the wake up that the CAN transceiver has detected </p>
+<p><b> </b></p>
+<p>CanIf_Init()</p>
+<p> has already been called and all transceiver driver have been initialized. </p>
+<p>This API is only available in case of </p>
+<p>CANIF_PN_TRCV_HANDLING = STD_ON</p>
+<p>. </p>
+<p>Table 6-28  </p>
+<p>API CanIf_CheckTrcvWakeFlagIndication </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>58 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.29 </b></p>
+<p><b>CanIf_SetBaudrate </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_SetBaudrate(uint8 ControllerId, uint16 BaudRateConfigID) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>BaudRateConfigID </p>
+<p>Abstracted CanIf ControllerId which is assigned to a CAN </p>
+<p>References a baud rate configuration by ID </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK</p>
+<p> </p>
+<p>Service request accepted, baudrate change started. </p>
+<p>Service request not accepted. </p>
+<p><b>Functional Description </b></p>
+<p>This service shall set the baud rate configuration of the CAN controller. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of  </p>
+<p>CANIF_SET_BAUDRATE_API = STD_ON</p>
+<p>. </p>
+<p>Table 6-29  </p>
+<p>API CanIf_SetBaudrate </p>
+<p> </p>
+<p><b>6.1.30 </b></p>
+<p><b>CanIf_ChangeBaudrate </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_ChangeBaudrate(uint8 ControllerId, const uint16 Baudrate) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>Baudrate </p>
+<p>The Controller the Baudrate shall be changed for </p>
+<p>Baudrate to which shall be changed </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK</p>
+<p> </p>
+<p>Service request accepted, change started  </p>
+<p>Service request not accepted </p>
+<p><b>Functional Description </b></p>
+<p>This service changes the baudrate of the CAN controller </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of </p>
+<p>CANIF_CHANGE_BAUDRATE_SUPPORT = STD_ON</p>
+<p>. </p>
+<p>Table 6-30  </p>
+<p>API CanIf_ChangeBaudrate </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>59 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.31 </b></p>
+<p><b>CanIf_ChangeBaudrate </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_ChangeBaudrate(uint8 ControllerId, const uint16 Baudrate) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>Baudrate </p>
+<p>The Controller the Baudrate shall be changed for </p>
+<p>Baudrate to which shall be changed </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK</p>
+<p> </p>
+<p>Service request accepted, change started  </p>
+<p>Service request not accepted </p>
+<p><b>Functional Description </b></p>
+<p>This service changes the baudrate of the CAN controller </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of </p>
+<p>CANIF_CHANGE_BAUDRATE_SUPPORT = STD_ON</p>
+<p>. </p>
+<p>Table 6-31  </p>
+<p>API CanIf_ChangeBaudrate </p>
+<p> </p>
+<p><b>6.1.32 </b></p>
+<p><b>CanIf_GetTxConfirmationState </b></p>
+<p><b>Prototype </b></p>
+<p>CanIf_NotifStatusType CanIf_GetTxConfirmationState (uint8 ControllerId) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId  </p>
+<p>Controller to be checked </p>
+<p><b>Return code </b></p>
+<p>CANIF_NO_NOTIFICATION </p>
+<p>CANIF_TX_RX_NOTIFICATION</p>
+<p> </p>
+<p>No transmit event occurred for requested CAN Controller </p>
+<p>The CAN Controller has successfully transmitted any message </p>
+<p><b>Functional Description </b></p>
+<p>This service reports, if any TX confirmation has been done for the whole CAN controller since the last CAN </p>
+<p>controller start. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of </p>
+<p>CANIF_PUBLIC_TX_CONFIRM_POLLING_SUPPORT = STD_ON</p>
+<p>. </p>
+<p>Table 6-32  </p>
+<p>API CanIf_GetTxConfirmationState </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>60 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.33 </b></p>
+<p><b>CanIf_SetAddressTableEntry </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_SetAddressTableEntry (uint8 ControllerId, uint8 intAddr, uint8 </p>
+<p>busAddr) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>intAddr  </p>
+<p>busAddr </p>
+<p>The channel at which a J1939 address shall be set. </p>
+<p>J1939 internal address. </p>
+<p>J1939 bus address. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>The service will be called to describe the relation between internal and external ID. Only used in J1939 </p>
+<p>environment. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of  </p>
+<p>CANIF_J1939_DYN_ADDR_SUPPORT != CANIF_J1939_DYN_ADDR_DISABLED</p>
+<p>. </p>
+<p>Table 6-33  </p>
+<p>API CanIf_SetAddressTableEntry </p>
+<p> </p>
+<p><b>6.1.34 </b></p>
+<p><b>CanIf_ResetAddressTableEntry </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_ResetAddressTableEntry (uint8 ControllerId, uint8 intAddr) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>intAddr </p>
+<p>The channel at which a J1939 internal address shall be reset. </p>
+<p>J1939 internal address. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>The service will be called to reset the relation between internal and external ID. Only used in J1939 </p>
+<p>environment. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of  </p>
+<p>CANIF_J1939_DYN_ADDR_SUPPORT != CANIF_J1939_DYN_ADDR_DISABLED</p>
+<p>. </p>
+<p>Table 6-34  </p>
+<p>API CanIf_ResetAddressTableEntry </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>61 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.35 </b></p>
+<p><b>CanIf_RamCheckExecute </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_RamCheckExecute (uint8 ControllerId) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>The CAN-channel for which the RAM-check shall be executed. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>This service requests an underlying CAN-channel to execute the RAM-check of CAN-controller-</p>
+<p>HW-registers. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of  </p>
+<p>CANIF_EXTENDED_RAM_CHECK_SUPPORT == STD_ON</p>
+<p>. </p>
+<p>Table 6-35  </p>
+<p>API CanIf_RamCheckExecute </p>
+<p> </p>
+<p><b>6.1.36 </b></p>
+<p><b>CanIf_RamCheckEnableMailbox </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_RamCheckEnableMailbox (uint8 ControllerId, CanIf_HwHandleType </p>
+<p>HwHandle) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>HwHandle </p>
+<p>The CAN-channel to which the mailbox (</p>
+<p>&lt;HwHandle&gt;</p>
+<p>) belongs to. </p>
+<p>The mailbox which shall be enabled. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>This service requests an underlying CAN-channel to enable a mailbox. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of  </p>
+<p>CANIF_EXTENDED_RAM_CHECK_SUPPORT == STD_ON</p>
+<p>. </p>
+<p>Table 6-36  </p>
+<p>API CanIf_RamCheckEnableMailbox </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>62 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.37 </b></p>
+<p><b>CanIf_RamCheckEnableController </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_RamCheckEnableController (uint8 ControllerId) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>The CAN-channel which shall be enabled. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>This service requests to enable an underlying CAN-channel. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. This API is provided in case of  </p>
+<p>CANIF_EXTENDED_RAM_CHECK_SUPPORT == STD_ON</p>
+<p>. </p>
+<p>Table 6-37  </p>
+<p>API CanIf_RamCheckEnableController </p>
+<p> </p>
+<p><b>6.1.38 </b></p>
+<p><b>CanIf_RamCheckCorruptMailbox </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_RamCheckCorruptMailbox (uint8 ControllerId, CanIf_HwHandleType </p>
+<p>HwHandle) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>HwHandle </p>
+<p>The CAN-channel to which the corrupt mailbox (</p>
+<p>&lt;HwHandle&gt;</p>
+<p>) belongs to. </p>
+<p>The corrupt mailbox. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>This service indicates about a corrupt mailbox. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This service may be used also if CAN Interface is NOT initialized. This API is provided in case of  </p>
+<p>CANIF_EXTENDED_RAM_CHECK_SUPPORT == STD_ON</p>
+<p>. </p>
+<p>Table 6-38  </p>
+<p>API CanIf_RamCheckCorruptMailbox </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>63 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.1.39 </b></p>
+<p><b>CanIf_RamCheckCorruptController </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_RamCheckCorruptController (uint8 ControllerId) </p>
+<p><b>Parameter </b></p>
+<p>ControllerId </p>
+<p>The corrupt CAN-channel. </p>
+<p><b>Return code </b></p>
+<p>-</p>
+<p> </p>
+<p>- </p>
+<p><b>Functional Description </b></p>
+<p>This service indicates about a corrupt CAN-channel. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This service may be used also if CAN Interface is NOT initialized. This API is provided in case of  </p>
+<p>CANIF_EXTENDED_RAM_CHECK_SUPPORT == STD_ON</p>
+<p>. </p>
+<p>Table 6-39  </p>
+<p>API CanIf_RamCheckCorruptController </p>
+<p> </p>
+<p><b>6.1.40 </b></p>
+<p><b>CanIf_SetPduReceptionMode </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_SetPduReceptionMode (PduIdType id, CanIf_ReceptionModeType </p>
+<p>mode) </p>
+<p><b>Parameter </b></p>
+<p>id </p>
+<p>The identifier of Rx-PDU whose reception mode shall be changed. </p>
+<p>mode </p>
+<p>The reception mode which shall be set. Following reception modes are </p>
+<p>possible: </p>
+<p>1) CANIF_RMT_IGNORE_CONTINUE: </p>
+<p>In case of a match the received </p>
+<p>Rx-PDU is not forwarded to configured upper layer and the search for a </p>
+<p>potential match continues.</p>
+<p> </p>
+<p>2) CANIF_RMT_RECEIVE_STOP: </p>
+<p>In case of a match the received </p>
+<p>Rx-PDU is forwarded to configured upper layer.</p>
+<p> </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>E_NOT_OK</p>
+<p> </p>
+<p>Service request accepted, reception mode was changed  </p>
+<p>Service request not accepted, reception mode was not changed </p>
+<p><b>Functional Description </b></p>
+<p>Via this API the reception mode of a Rx-PDU can be set. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>CAN Interface has to be initialized. During the initialization the reception mode of all affected Rx-PDUs is set </p>
+<p>to </p>
+<p>CANIF_RMT_RECEIVE_STOP</p>
+<p>. This API is provided in case of  </p>
+<p>CANIF_SET_PDU_RECEPTION_MODE_SUPPORT == STD_ON. </p>
+<p>Table 6-40  </p>
+<p>API CanIf_SetPduReceptionMode </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>64 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>6.2 </b></p>
+<p><b>Callout Functions </b></p>
+<p><b>6.2.1 </b></p>
+<p><b>EcuM_BswErrorHook </b></p>
+<p><b>Prototype </b></p>
+<p>void EcuM_BswErrorHook(uint16 CanIfModuleId, uint8 CanIfInstanceId) </p>
+<p><b>Parameter </b></p>
+<p>CanIfModuleId </p>
+<p>Contains the </p>
+<p>CANIF_MODULE_ID</p>
+<p> (60) as defined by AUTOSAR. </p>
+<p>CanIfInstanceId </p>
+<p>For the CanIf only one instance is available, so this value is always zero. </p>
+<p><b>Return code </b></p>
+<p>None </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>Called once by the CanIf during the initialization phase to indicate one of the following possible errors: </p>
+<p>- </p>
+<p>Abort initialization as generator is not compatible </p>
+<p><b>Particularities and Limitations </b></p>
+<p>None </p>
+<p>Call Context </p>
+<p>This function is called in context of </p>
+<p>CanIf_Init()</p>
+<p>. </p>
+<p>Table 6-41  </p>
+<p>EcuM_BswErrorHook </p>
+<p><b>6.2.2 </b></p>
+<p><b>CanIf_RxIndicationSubDataChecksumRxVerify </b></p>
+<p><b>Prototype </b></p>
+<p>Std_ReturnType CanIf_RxIndicationSubDataChecksumRxVerify (PduIdType </p>
+<p>CanIfRxPduId, Can_IdType CanId, uint8 CanDlc, const uint8 *CanSduPtr) </p>
+<p><b>Parameter </b></p>
+<p>CanIfRxPduId </p>
+<p>CanIf-internal unique handle ID of Rx-PDU </p>
+<p>CanId </p>
+<p>CAN identifier of received Rx-PDU </p>
+<p>CanDlc </p>
+<p>Data length of received Rx-PDU </p>
+<p>CanSduPtr </p>
+<p>Pointer to data of received Rx-PDU </p>
+<p><b>Return code </b></p>
+<p>E_OK </p>
+<p>Verification of checksum passed. In this case the Rx-PDU is forwarded to upper layer. </p>
+<p>E_NOT_OK </p>
+<p>Verification of checksum failed. In this case the Rx-PDU is discarded and NOT </p>
+<p>forwarded to upper layer. </p>
+<p><b>Functional Description </b></p>
+<p>API called by CanIf in case of a data checksum PDU was received in order to verify its correctness. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This API is called only if </p>
+<p>CANIF_DATA_CHECKSUM_RX_SUPPORT</p>
+<p> == STD_ON</p>
+<p>. </p>
+<p>Call Context </p>
+<p>This function is called in context of </p>
+<p>CanIf_RxIndication()</p>
+<p>.  </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>65 </p>
+<p>based on template version 2.10.0 </p>
+<p> </p>
+<p><b>6.2.3 </b></p>
+<p><b>CanIf_TransmitSubDataChecksumTxAppend </b></p>
+<p><b>Prototype </b></p>
+<p>void CanIf_TransmitSubDataChecksumTxAppend (const Can_PduType </p>
+<p>*txPduInfoPtr, uint8 *txPduDataWithChecksumPtr) </p>
+<p><b>Parameter </b></p>
+<p>txPduInfoPtr </p>
+<p>Pointer to Tx-PDU-parameters: CAN identifier, data length, data. </p>
+<p>txPduDataWithChecksu</p>
+<p>mPtr </p>
+<p>Pointer to data buffer where the data of Tx-PDU incl. the checksum shall be </p>
+<p>stored in. The data checksum PDU is transmitted with data stored in this </p>
+<p>buffer. </p>
+<p>Note: Parameter &quot;txPduDataWithChecksumPtr&quot; may only be written with index </p>
+<p>&gt;= 0 and &lt; CANIF_CFG_MAXTXDLC_PLUS_DATACHECKSUM (see file </p>
+<p>CanIf_Cfg.h). The length of data can not be changed hence the checksum </p>
+<p>must only be added within valid data-length of the Tx-PDU which is given by </p>
+<p>range: 0 - (txPduInfoPtr-&gt;length - 1). </p>
+<p><b>Return code </b></p>
+<p>None </p>
+<p> </p>
+<p><b>Functional Description </b></p>
+<p>API called by CanIf before transmission of a data checksum Tx-PDU in order to add a checksum to its </p>
+<p>data. </p>
+<p><b>Particularities and Limitations </b></p>
+<p>This API is called only if </p>
+<p>CANIF_DATA_CHECKSUM_TX_SUPPORT</p>
+<p> == STD_ON</p>
+<p>. </p>
+<p>Call Context </p>
+<p>This function is called in context of </p>
+<p>CanIf_Transmit()</p>
+<p>. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>66 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>7 </b></p>
+<p><b>AUTOSAR Standard Compliance </b></p>
+<p>Following restrictions apply to the current CAN Interface implementation. </p>
+<p><b>7.1 </b></p>
+<p><b>Not supported AUTOSAR features </b></p>
+<p>The following features which are specified by the AUTOSAR CAN Interface SWS ([1]) are </p>
+<p>not supported. </p>
+<p><b>7.1.1 </b></p>
+<p><b>Tx notification status </b></p>
+<p>This </p>
+<p>feature </p>
+<p>is </p>
+<p>specified </p>
+<p>by </p>
+<p>the </p>
+<p>requirements: </p>
+<p>CANIF202, </p>
+<p>CANIF393, </p>
+<p>CANIF472, </p>
+<p>CANIF331, CANIF391, CANIF334, CANIF335, CANIF609_Conf and CANIF589_Conf. </p>
+<p><b>7.1.2 </b></p>
+<p><b>Rx notification status </b></p>
+<p>This </p>
+<p>feature </p>
+<p>is </p>
+<p>specified </p>
+<p>by </p>
+<p>the </p>
+<p>requirements: </p>
+<p>CANIF230, </p>
+<p>CANIF336, </p>
+<p>CANIF339, </p>
+<p>CANIF340, CANIF392, CANIF394, CANIF473, CANIF595_Conf and CANIF608_Conf. </p>
+<p><b>7.1.3 </b></p>
+<p><b>Rx buffer </b></p>
+<p>This </p>
+<p>feature </p>
+<p>is </p>
+<p>specified </p>
+<p>by </p>
+<p>the </p>
+<p>requirements: </p>
+<p>CANIF194, </p>
+<p>CANIF198, </p>
+<p>CANIF199, </p>
+<p>CANIF324, </p>
+<p>CANIF325, </p>
+<p>CANIF326, </p>
+<p>CANIF330, </p>
+<p>CANIF329, </p>
+<p>CANIF600_Conf </p>
+<p>and </p>
+<p>CANIF607_Conf. </p>
+<p> </p>
+<p><b>7.2 </b></p>
+<p><b>Deviations </b></p>
+<p><b>7.2.1 </b></p>
+<p><b>Tx buffer </b></p>
+<p>At least and at most one Tx buffer is supported per each BasicCAN-Tx-PDU. Hence no </p>
+<p>configuration </p>
+<p>can </p>
+<p>be </p>
+<p>performed </p>
+<p>by </p>
+<p>the </p>
+<p>user </p>
+<p>as </p>
+<p>intended </p>
+<p>by </p>
+<p>the </p>
+<p>attribute </p>
+<p>CanIfBufferSize</p>
+<p>. </p>
+<p><b>7.2.2 </b></p>
+<p><b>Partial networking </b></p>
+<p>Against  the  requirement  CANIF749  the  Partial  Networking  Wakeup  Tx  Pdu  Filter  is </p>
+<p>enabled </p>
+<p>only </p>
+<p>if </p>
+<p>the </p>
+<p>PDU </p>
+<p>mode </p>
+<p>of </p>
+<p>CAN </p>
+<p>Interface </p>
+<p>is </p>
+<p>set </p>
+<p>either </p>
+<p>to </p>
+<p>mode </p>
+<p>CANIF_GET_TX_ONLINE_WU_FILTER</p>
+<p> or to mode </p>
+<p>CANIF_GET_ONLINE_WU_FILTER</p>
+<p>. </p>
+<p><b>7.2.3 </b></p>
+<p><b>AUTOSAR version check </b></p>
+<p>The CAN Interface does not perform AUTOSAR release version check in accordance with </p>
+<p>other modules because the version check is not specified by AUTOSAR clearly. </p>
+<p><b>7.3 </b></p>
+<p><b>Limitations </b></p>
+<p>The priority of a dynamic Tx-PDU is determined from the initial configured CAN identifier </p>
+<p>and not from the CAN identifier set by using the API </p>
+<p>CanIf_SetDynamicTxId()</p>
+<p>. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>67 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>8 </b></p>
+<p><b>Glossary and Abbreviations </b></p>
+<p><b>8.1 </b></p>
+<p><b>Glossary </b></p>
+<p><b>Term </b></p>
+<p><b>Description </b></p>
+<p>DaVinci Configurator 5 </p>
+<p>Configuration and generation tool for MICROSAR software components </p>
+<p>Table 8-1  </p>
+<p>Glossary </p>
+<p><b>8.2 </b></p>
+<p><b>Abbreviations </b></p>
+<p><b>Abbreviation </b></p>
+<p><b>Description </b></p>
+<p>API </p>
+<p>Application Programming Interface </p>
+<p> </p>
+<p>AUTOSAR </p>
+<p>Automotive Open System Architecture </p>
+<p>BSW </p>
+<p>Basis Software </p>
+<p>CanNm </p>
+<p>CAN Network Manager </p>
+<p>CanSM </p>
+<p>CAN State Manager </p>
+<p>CanTp </p>
+<p>CAN Transport Protocol </p>
+<p>CanTrcv </p>
+<p>CAN Transceiver </p>
+<p>CCMSM </p>
+<p>CAN Interface Controller Mode State Machine (for one controller) </p>
+<p>CDD </p>
+<p>Complex Device Driver </p>
+<p>ComM </p>
+<p>Communication Manager </p>
+<p>DEM </p>
+<p>Diagnostic Event Manager </p>
+<p>DET </p>
+<p>Development Error Tracer </p>
+<p>DLC </p>
+<p>Data Length Code </p>
+<p>ECU </p>
+<p>Electronic Control Unit </p>
+<p>EcuM </p>
+<p>ECU State Manager </p>
+<p>FD </p>
+<p>Flexible Data-rate </p>
+<p>FIFO </p>
+<p>First In First Out </p>
+<p>HRH </p>
+<p>Hardware Receive Handle </p>
+<p>HTH </p>
+<p>Hardware Transmit Handle </p>
+<p>HW </p>
+<p>Hardware </p>
+<p>ISR </p>
+<p>Interrupt Service Routine </p>
+<p>MICROSAR </p>
+<p>Microcontroller Open System Architecture (the Vector AUTOSAR </p>
+<p>solution) </p>
+<p>PDU </p>
+<p>Protocol Data Unit </p>
+<p>PduR </p>
+<p>PDU Router </p>
+<p>SchM </p>
+<p>Schedule Manager </p>
+<p>SDU </p>
+<p>Service Data Unit </p>
+<p>SRS </p>
+<p>Software Requirement Specification </p>
+<p>SWC </p>
+<p>Software Component </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>68 </p>
+<p>based on template version 2.10.0 </p>
+<p>SWS </p>
+<p>Software Specification </p>
+<p>Table 8-2  </p>
+<p>Abbreviations </p>
+<h1 style="page-break-before:always; "></h1>
+<p>Technical Reference CAN Interface  </p>
+<p>© 2016 Vector Informatik GmbH </p>
+<p>Version 6.09.00 </p>
+<p>69 </p>
+<p>based on template version 2.10.0 </p>
+<p><b>9 </b></p>
+<p><b>Contact </b></p>
+<p>Visit our website for more information on </p>
+<p> </p>
+<p>&gt;   News </p>
+<p>&gt;   Products </p>
+<p>&gt;   Demo software </p>
+<p>&gt;   Support </p>
+<p>&gt;   Training data </p>
+<p>&gt;   Addresses </p>
+<p> </p>
+<p><b>www.vector-informatik.com </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+</body>
+</html>
+{% endraw %}

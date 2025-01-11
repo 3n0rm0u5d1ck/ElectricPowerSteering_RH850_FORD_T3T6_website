@@ -1,0 +1,224 @@
+---
+layout: default
+title: CM012A_FordT3McuCfg_PowerDownModeRegisterConfiguration
+nav_order: 6
+parent: Component Design
+---
+{% raw %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+	<meta name="author" content="nz3zln"/>
+	<meta name="created" content="2010-11-16T21:08:58"/>
+	<meta name="changedby" content="Mohan, Raghavendran"/>
+	<meta name="changed" content="2017-12-01T18:59:26"/>
+	<meta name="AppVersion" content="16.0300"/>
+	<meta name="Company" content="Delphi"/>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+<table cellspacing="0" border="0">
+	<colgroup width="149"></colgroup>
+	<colgroup width="267"></colgroup>
+	<colgroup span="2" width="172"></colgroup>
+	<colgroup width="201"></colgroup>
+	<colgroup width="93"></colgroup>
+	<colgroup width="284"></colgroup>
+	<colgroup width="92"></colgroup>
+	<colgroup width="43"></colgroup>
+	<colgroup width="47"></colgroup>
+	<colgroup width="26"></colgroup>
+	<colgroup width="61"></colgroup>
+	<colgroup width="66"></colgroup>
+	<colgroup width="121"></colgroup>
+	<tr>
+		<td height="48" align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Register&quot;}">Register</td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Description&quot;}">Description</td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Field Names[bit position]&quot;}">Field Names[bit position]</td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Access Width&quot;}">Access Width</td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Address\u000a(Hex)&quot;}">Address<br>(Hex)</td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting&quot;}">Setting</td>
+		<td align="left" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting Description&quot;}">Setting Description</td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle bgcolor="#FAC090" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="88" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM2&quot;}"><font color="#FF0000">MSR_LM2</font></td>
+		<td colspan=6 align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Deleted write to this register since it causes guard errors. RM_12\/1\/2017&quot;}"><font color="#FF0000">Deleted write to this register since it causes guard errors. RM_12/1/2017</font></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="62" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM3&quot;}">MSR_LM3</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for MCAN&quot;}">Module Standby Register for MCAN</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1710&quot;}">FFF8 1710</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to MCAN\u000a0: MCAN is operating.\u000a1: Clock supply to MCAN is stopped&quot;}">Setting this bit to 1 stops clock supply to MCAN<br>0: MCAN is operating.<br>1: Clock supply to MCAN is stopped</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="62" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM4&quot;}">MSR_LM4</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for FlexRay&quot;}">Module Standby Register for FlexRay</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1810&quot;}">FFF8 1810</td>
+		<td align="center" valign=middle sdval="1" sdnum="1033;">1</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to FrexRay\u000a0: FrexRay is operating.\u000a1: Clock supply to FrexRay is stopped.&quot;}">Setting this bit to 1 stops clock supply to FrexRay<br>0: FrexRay is operating.<br>1: Clock supply to FrexRay is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="66" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM5&quot;}">MSR_LM5</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for GTM&quot;}">Module Standby Register for GTM</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1910&quot;}">FFF8 1910</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to GTM\u000a0: GTM is operating.\u000a1: Clock supply to GTM is stopped.&quot;}">Setting this bit to 1 stops clock supply to GTM<br>0: GTM is operating.<br>1: Clock supply to GTM is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="62" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM6&quot;}">MSR_LM6</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for Ethernet&quot;}">Module Standby Register for Ethernet</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1A10&quot;}">FFF8 1A10</td>
+		<td align="center" valign=middle sdval="1" sdnum="1033;">1</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to Ethernet\u000a0: Ethernet is operating.\u000a1: Clock supply to Ethernet is stopped.&quot;}">Setting this bit to 1 stops clock supply to Ethernet<br>0: Ethernet is operating.<br>1: Clock supply to Ethernet is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM7&quot;}">MSR_LM7</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for SENT&quot;}">Module Standby Register for SENT</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1B10&quot;}">FFF8 1B10</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to SENT\u000a0: SENT is operating.\u000a1: Clock supply to SENT is stopped.&quot;}">Setting this bit to 1 stops clock supply to SENT<br>0: SENT is operating.<br>1: Clock supply to SENT is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="62" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM8&quot;}">MSR_LM8</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for HS-USRT&quot;}">Module Standby Register for HS-USRT</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1C10&quot;}">FFF8 1C10</td>
+		<td align="center" valign=middle sdval="1" sdnum="1033;">1</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to HS-USRT\u000a0: HS-USRT is operating.\u000a1: Clock supply to HS-USRT is stopped.&quot;}">Setting this bit to 1 stops clock supply to HS-USRT<br>0: HS-USRT is operating.<br>1: Clock supply to HS-USRT is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM10&quot;}">MSR_LM10</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for CSI-H&quot;}">Module Standby Register for CSI-H</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1E10&quot;}">FFF8 1E10</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to CSI-H\u000a0: CSI-H is operating.\u000a1: Clock supply to CSI-H is stopped.&quot;}">Setting this bit to 1 stops clock supply to CSI-H<br>0: CSI-H is operating.<br>1: Clock supply to CSI-H is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM11&quot;}">MSR_LM11</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for RLIN3&quot;}">Module Standby Register for RLIN3</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 1F10&quot;}">FFF8 1F10</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to RLIN3\u000a0: RLIN3 is operating.\u000a1: Clock supply to RLIN3 is stopped.&quot;}">Setting this bit to 1 stops clock supply to RLIN3<br>0: RLIN3 is operating.<br>1: Clock supply to RLIN3 is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+	<tr>
+		<td height="47" align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;MSR_LM12&quot;}">MSR_LM12</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Module Standby Register for AD&quot;}">Module Standby Register for AD</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="center" valign=middle sdval="32" sdnum="1033;">32</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FFF8 2010&quot;}">FFF8 2010</td>
+		<td align="center" valign=middle sdval="0" sdnum="1033;">0</td>
+		<td align="left" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Setting this bit to 1 stops clock supply to AD\u000a0: AD is operating.\u000a1: Clock supply to AD is stopped.&quot;}">Setting this bit to 1 stops clock supply to AD<br>0: AD is operating.<br>1: Clock supply to AD is stopped.</td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+		<td align="center" valign=middle data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
+
+{% endraw %}

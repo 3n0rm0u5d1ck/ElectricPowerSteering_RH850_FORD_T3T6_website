@@ -1,0 +1,1496 @@
+---
+layout: default
+title: multi_release_notes
+nav_order: 14
+parent: Ide (TL121A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>MULTI: IDE Version 6.1.6 Release Notes</b></p>
+<p><b>Green Hills Software</b></p>
+<p><b>30 West Sola Street</b></p>
+<p><b>Santa Barbara, California 93101</b></p>
+<p><b>USA</b></p>
+<p><b>Tel: 805-965-6044</b></p>
+<p><b>Fax: 805-965-6343</b></p>
+<p><b>www.ghs.com</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>DISCLAIMER</b></p>
+<p>GREEN HILLS SOFTWARE MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY</p>
+<p>OR FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software reserves the right to revise this</p>
+<p>publication and to make changes from time to time in the content hereof without obligation of Green Hills Software to</p>
+<p>notify any person of such revision or changes.</p>
+<p>Copyright © 1983-2014 by Green Hills Software. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or</p>
+<p>otherwise, without prior written permission from Green Hills Software.</p>
+<p>Green Hills, the Green Hills logo, CodeBalance, GMART, GSTART, INTEGRITY, MULTI, and Slingshot are registered</p>
+<p>trademarks of Green Hills Software. AdaMULTI, Built with INTEGRITY, EventAnalyzer, G-Cover, GHnet, GHnetLite,</p>
+<p>Green Hills Probe, Integrate, ISIM, u-velOSity, PathAnalyzer, Quick Start, ResourceAnalyzer, Safety Critical Products,</p>
+<p>SuperTrace Probe, TimeMachine, TotalDeveloper, DoubleCheck, and velOSity are trademarks of Green Hills Software.</p>
+<p>All other company, product, or service names mentioned in this book may be trademarks or service marks of their respective</p>
+<p>owners.</p>
+<p>PubID: multi_release_notes-525957</p>
+<p>Branch: http://toolsvc/branches/release-branch-61</p>
+<p>Date: February 19, 2015</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Contents</b></p>
+<p><b>1. Changes in MULTI 6.1.6</b></p>
+<p><b>1</b></p>
+<p>System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Windows . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Linux . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Solaris . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Support for Large Virtual Function Tables . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Support for Freeze-Mode Debugging of INTEGRITY . . . . . . . . . . . . .</p>
+<p>4</p>
+<p><b>2. Changes in MULTI 6</b></p>
+<p><b>5</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Faster Builds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Ability to Retrieve More Trace Data from New SuperTrace</p>
+<p>Probes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Faster Trace Processing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Separate Releases Allow Greater Flexibility When Upgrading . . . . . .</p>
+<p>7</p>
+<p>64-Bit Support in the Debugger . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>128-Bit Hardware Registers Supported . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Security and Relationship Views Added to Integrate . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>$locals$ Window Updates as You Navigate the Call Stack . . . . . . . . .</p>
+<p>7</p>
+<p>Ability to Restore Breakpoints . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Greater Window Availability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>New System Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Target List Remembers Node Expansion/Collapse . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Sortable Columns in the Target List . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Improved Support for Preprocessor Macros in the Debugger . . . . . . .</p>
+<p>8</p>
+<p>Browsing References Improvement . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>if Command Supports else if . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>Licensing Improvements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>Faster Scanning of Subversion Checkouts . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p><i>iii</i></p>
+<p><i>Green Hills Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>IDE and Compiler Installed into Separate Linking Directories . . . . .</p>
+<p>10</p>
+<p>Upgrading to MULTI 6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>License Clients No Longer Broadcast for a License Manager . . . . . .</p>
+<p>10</p>
+<p>Changes to Computer- and Dongle-Locked Licensing . . . . . . . . . . . .</p>
+<p>10</p>
+<p>Changes to Trace Retrieval . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>Trace Decoding No Longer Defaults to Reading Unknown</p>
+<p>Opcodes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Changes to TS_Packet May Require TimeMachine API Application</p>
+<p>Updates . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Behavior of Primary and Secondary Debugger Windows . . . . . . . . .</p>
+<p>11</p>
+<p>Large Numbers No Longer Broken Up by Default . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Default Number of Scroll Back Lines Reduced . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Storage of PID and TID Debugger Aliases . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p><b>3. Changes in MULTI 5.0.6</b></p>
+<p><b>15</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>MULTI Project Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Flexible Target Connections . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Improved Target Management from the Debugger . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Target Traffic Pane . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>TimeMachine Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>17</p>
+<p>Improved Kernel Object Awareness . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Global Profiling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Integrated Python Engine . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Extended Version Control Support . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Windows Taskbar Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Improved Help Navigation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Use of Dongle-Locked Licenses over Remote Desktop . . . . . . . . . . .</p>
+<p>19</p>
+<p>Halt Issued Before Setup Script in Pre-5.0.6 Versions of</p>
+<p>MULTI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Unbundled Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>iv</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p><b>4. Known Issues</b></p>
+<p><b>23</b></p>
+<p>MULTI Installation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Name of Install Directory Cannot Contain Spaces . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Host Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Use of TimeMachine API on Solaris Requires Python</p>
+<p>Installation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>MULTI-Python Integration on Linux May Require Compatibility</p>
+<p>Library . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Project Manager Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Project Manager Performance on Very Large Project Files . . . . . . . .</p>
+<p>25</p>
+<p>Undefined __OS_DIR__ Macro When Opening Some ThreadX</p>
+<p>Projects . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Editor Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Limitation of Brace Matching with Preprocessor Directives . . . . . . .</p>
+<p>25</p>
+<p>File Permissions Under Cygwin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Version Control Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Subversion Authentication on Windows . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Problems Observed with Subversion 1.4.x . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Missing Version Information for libxml2.so.2 . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Target Connection Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Serial Ports Supported for Use with rtserv . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Debugging Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Source Pane Displays Unexpected File . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Maximum Number of Attached Tasks . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Up to 65534 Macros Supported . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Limitation of Browsing Traced Memory Accesses . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p>Limitation of Browsing Traced Function Calls . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Cannot Retrieve Trace During a Blocking Run or Step . . . . . . . . . . .</p>
+<p>29</p>
+<p>Incompatibility Between MULTI 4.x and MULTI 6+ Trace</p>
+<p>Configuration Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Limitations of UNC Paths on Windows . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>Limitations for Debugging Large Enumeration Types . . . . . . . . . . . .</p>
+<p>30</p>
+<p>Limitation of Mixing PIC or PID Code with ABS Sections . . . . . . .</p>
+<p>30</p>
+<p>Debugging AltiVec-Specific Data Types . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p><i>v</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Viewing Long Doubles on x86 Systems . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>31</p>
+<p>Some Tasks Do Not Have Associated AddressSpaces in the</p>
+<p>EventAnalyzer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>31</p>
+<p>Compatibility with INTEGRITY . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>31</p>
+<p>INTEGRITY 10 Installer Screen Ignored by MULTI 6 . . . . . . . . . . .</p>
+<p>31</p>
+<p>Limitations for Loading and Unloading Applications on INTEGRITY</p>
+<p>5.x . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>Collecting Memory Leak Information on INTEGRITY 5.x . . . . . . .</p>
+<p>32</p>
+<p>RunTask May Not Have an Effect on Dynamically Downloaded</p>
+<p>Tasks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>32</p>
+<p>MULTI RTSERV Auto-Connect and High Priority Tasks . . . . . . . . .</p>
+<p>33</p>
+<p>Run-Mode Partnering Not Supported with -checksum . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Halting or Attaching to Task Cancels a System Call with rtserv . . . .</p>
+<p>33</p>
+<p>System Halt with Host I/O May Make Target Unresponsive . . . . . . .</p>
+<p>33</p>
+<p>MULTI-Python Integration Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>mpythonrun Unable to Output to stdout/stderr in Cygwin . . . . . . . . .</p>
+<p>34</p>
+<p>File System Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Tilde Expansion in Cygwin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Two Dots (..) Not Supported After Symbolic Links in Paths . . . . . . .</p>
+<p>34</p>
+<p>NFS May Cause Poor Performance . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Desktop Environment Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Numerous Instances of MULTI Can Exhaust the Windows Desktop</p>
+<p>Heap . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Locking Assertion Failure May Occur within libxcb . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Taskbar Organizer and Windows 7 with Aero Peek . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>Taskbar Organizer and nVidia Desktop Manager . . . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>nVidia X Server With Compiz Window Manager May Crash . . . . . .</p>
+<p>36</p>
+<p>Drawing problems with Exceed 2008 (13.0) . . . . . . . . . . . . . . . . . . . .</p>
+<p>37</p>
+<p>SELinux Restricts Dynamically Loaded Code . . . . . . . . . . . . . . . . . . .</p>
+<p>37</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>vi</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1</b></p>
+<p><b>Changes in MULTI 6.1.6</b></p>
+<p><b>Contents</b></p>
+<p>System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Product Compatibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>System Requirements</b></p>
+<p><b>Note</b></p>
+<p>If your Compiler is newer than the IDE, see the Compiler release notes</p>
+<p>for up-to-date system requirements.</p>
+<p><b>Windows</b></p>
+<p>Running a full MULTI 6 installation on Windows requires:</p>
+<p>•</p>
+<p>A 1.4 GHz Pentium 4 processor, or greater (a 2.0 GHz Core 2 Duo processor</p>
+<p>is recommended).</p>
+<p>•</p>
+<p>Windows XP (IA-32, 32-bit mode only), Windows Vista (32- or 64-bit mode),</p>
+<p>or Windows 7 (32- or 64-bit mode).</p>
+<p>•</p>
+<p>256 MB of RAM (1 GB is recommended).</p>
+<p>•</p>
+<p>2 GB of free disk space per installation. If you are installing to a drive other</p>
+<p>than your primary Windows drive, you must also have at least 50 MB available</p>
+<p>on the primary drive for temporary files and DLLs.</p>
+<p>•</p>
+<p>A 256-color display at a resolution of 1024x768 (1920x1200 is recommended).</p>
+<p>•</p>
+<p>A CD-ROM drive.</p>
+<p>•</p>
+<p>An Ethernet connection.</p>
+<p>•</p>
+<p>The ability to write to the Windows System directories. On most Windows</p>
+<p>systems, you must also be a member of the Administrators group. End users</p>
+<p>must have full access to installed files.</p>
+<p><b>Linux</b></p>
+<p>Running a full MULTI 6 installation on Linux requires:</p>
+<p>•</p>
+<p>A 1.4 GHz Pentium 4 processor, or greater (a 2.0 GHz Core 2 Duo processor</p>
+<p>is recommended).</p>
+<p>•</p>
+<p>Red Hat Enterprise Linux 5 or Ubuntu 8.04 or 10.04 (32-bit or 64-bit mode;</p>
+<p>native development of 64-bit applications is not supported). 32-bit compatibility</p>
+<p>libraries are required in 64-bit mode.</p>
+<p>•</p>
+<p>256 MB of RAM (1 GB is recommended).</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>2</i></p>
+<p><i>Chapter 1. Changes in MULTI 6.1.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>2 GB of free disk space per installation.</p>
+<p>•</p>
+<p>A 256-color display at a resolution of 1024x768 (1920x1200 is recommended).</p>
+<p>•</p>
+<p>A mounted CD-ROM drive.</p>
+<p>•</p>
+<p>An Ethernet connection.</p>
+<p>•</p>
+<p>Write permissions to the installation directory.</p>
+<p><b>Solaris</b></p>
+<p>Running a full MULTI 6 installation on Solaris requires:</p>
+<p>•</p>
+<p>A sun4u SPARC-based workstation.</p>
+<p>•</p>
+<p>Solaris 8, 9, or 10 (32-bit or 64-bit mode; native development of 64-bit</p>
+<p>applications is not supported).</p>
+<p>•</p>
+<p>256 MB of physical memory (1 GB is recommended).</p>
+<p>•</p>
+<p>2 GB of free disk space per installation.</p>
+<p>•</p>
+<p>A graphical display running the X Windowing System.</p>
+<p>•</p>
+<p>A mounted CD-ROM drive.</p>
+<p>•</p>
+<p>An Ethernet connection.</p>
+<p>•</p>
+<p>Write permissions to the installation directory.</p>
+<p><b>Product Compatibility</b></p>
+<p>The MULTI 6.1.6 IDE is officially supported with:</p>
+<p>•</p>
+<p>INTEGRITY versions 5.x, 10.0.2, 11.0.2, 11.0.4, and 11.2.2. For information</p>
+<p>about compatibility with newer versions of INTEGRITY, see the INTEGRITY</p>
+<p>release notes.</p>
+<p>•</p>
+<p>Green Hills Compiler versions 2012.1 through 2014.1. If your Compiler is</p>
+<p>newer than the IDE, see the Compiler release notes for up-to-date compatibility</p>
+<p>information.</p>
+<p><b>Warning</b></p>
+<p>Do not install Green Hills Debug Probe software version 4.2 or earlier</p>
+<p>over your MULTI 6 installation.</p>
+<p><i>3</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Solaris</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Support for Large Virtual Function Tables</b></p>
+<p>MULTI 6.1.6 adds support for large virtual function tables (<b>--large_vtbl_offsets</b>)—a</p>
+<p>feature that was enabled by default in Compiler 2014.1.</p>
+<p><b>Support for Freeze-Mode Debugging of INTEGRITY</b></p>
+<p>MULTI 6.1.6 adds support for freeze-mode debugging of INTEGRITY 11.2.2.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>4</i></p>
+<p><i>Chapter 1. Changes in MULTI 6.1.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2</b></p>
+<p><b>Changes in MULTI 6</b></p>
+<p><b>Contents</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Features and Enhancements</b></p>
+<p><b>Faster Builds</b></p>
+<p>Parallel builds (<b>Parallel Build</b>) are now enabled by default in the Project Manager,</p>
+<p>and there have been substantial improvements to the parallel build algorithm.</p>
+<p>Customers who were not making use of parallel builds before have observed build</p>
+<p>speedups of 4.5 times on 4-core, hyper-threaded machines. Actual speedups will</p>
+<p>vary depending on your build machine and the structure of your code base.</p>
+<p><b>Ability to Retrieve More Trace Data from New SuperTrace Probes</b></p>
+<p>MULTI 6 makes it easy to take advantage of the large amount of trace RAM on the</p>
+<p>SuperTrace Probe v3. As in previous versions of MULTI, you can use the<b> Target</b></p>
+<p><b>buffer size</b> option to configure the amount of trace data that the Debugger retrieves</p>
+<p>from the end of the trace buffer. However, if you later find that you need more data</p>
+<p>than was originally configured, MULTI 6 allows you to go back and retrieve it from</p>
+<p>the SuperTrace Probe v3, which always uses all available trace RAM regardless of</p>
+<p>the configured<b> Target buffer size</b>. For more information, see “Retrieving Trace</p>
+<p>Data” in Chapter 19, “Analyzing Trace Data with the TimeMachine Tool Suite” in</p>
+<p>the<i> MULTI: Debugging</i> book.</p>
+<p><b>Faster Trace Processing</b></p>
+<p>Trace processing performance is greatly improved in MULTI 6. In addition to</p>
+<p>general optimizations, the Debugger is now capable of making use of multiple cores</p>
+<p>to decode trace data in parallel. Parallel trace decoding is currently supported with</p>
+<p>ETMv1 targets; support for other targets will be added by future Green Hills Debug</p>
+<p>Probe releases.</p>
+<p>Trace processing is about 4 to 6 times faster than before on targets where parallel</p>
+<p>decoding is supported (with a 4-core PC), and 1.5 to 3 times faster on other targets.</p>
+<p>SuperTrace Probe v3 is required for maximum trace processing performance.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>6</i></p>
+<p><i>Chapter 2. Changes in MULTI 6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Separate Releases Allow Greater Flexibility When Upgrading</b></p>
+<p>The Compiler and IDE products now release independently of each other, allowing</p>
+<p>you to upgrade them separately. This makes it possible to freeze on one version of</p>
+<p>the Compiler while upgrading the version of the IDE, or vice versa.</p>
+<p><b>64-Bit Support in the Debugger</b></p>
+<p>The standard MULTI Debugger (but not the TimeMachine Debugger) has been</p>
+<p>improved to support 64-bit targets. Specific processor support is dependent on</p>
+<p>INTEGRITY and Green Hills Probe releases.</p>
+<p><b>128-Bit Hardware Registers Supported</b></p>
+<p>MULTI 6 adds support for 128-bit hardware registers.</p>
+<p><b>Security and Relationship Views Added to Integrate</b></p>
+<p>The Integrate GUI now displays high-level relationships between AddressSpaces,</p>
+<p>allowing you to easily make sense of large, complicated INTEGRITY systems.</p>
+<p>Additionally, it helps you find security risks by showing avenues of communication</p>
+<p>between AddressSpaces. For more information, see Appendix G, “Integrate Views”</p>
+<p>in the<i> MULTI: Debugging</i> book.</p>
+<p><b>$locals$ Window Updates as You Navigate the Call Stack</b></p>
+<p>Local variable views (<b>$locals$</b> in the Data Explorer) now update to show local</p>
+<p>variables in the new stack frame as you navigate up or down the call stack (for</p>
+<p>example by using the<b> E+</b> or<b> E-</b> command). Local variable views that you open by</p>
+<p>specifying a stack frame (for example, with<b> view number:$locals$</b>) are tied to that</p>
+<p>stack frame and still do not update when you move up or down the stack.</p>
+<p><b>Ability to Restore Breakpoints</b></p>
+<p>MULTI 6 gives you the ability to view and restore breakpoints that have been</p>
+<p>removed during the current MULTI debugging session. This is especially useful if</p>
+<p><i>7</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Separate Releases Allow Greater Flexibility When Upgrading</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>you accidentally delete a breakpoint that took some time to set up (for example, if</p>
+<p>you created a breakpoint that is associated with a series of commands). For more</p>
+<p>information, see “Restoring Deleted Breakpoints” in Chapter 8, “Executing and</p>
+<p>Controlling Your Program from the Debugger” in the<i> MULTI: Debugging</i> book.</p>
+<p><b>Greater Window Availability</b></p>
+<p>The<b> Call Stack</b>,<b> Register View</b>,<b> Memory View</b>, and<b> Local Variables</b> windows</p>
+<p>can now be opened before your program is loaded to the target or while it is running.</p>
+<p><b>New System Variables</b></p>
+<p>MULTI 6 includes the new</p>
+<p>_OS_DIR</p>
+<p>,</p>
+<p>_SETUP_SCRIPT</p>
+<p>,</p>
+<p>_SETUP_SCRIPT_DIR</p>
+<p>,</p>
+<p>_TOP_PROJECT</p>
+<p>, and</p>
+<p>_TOP_PROJECT_DIR</p>
+<p>system variables, which can be used to</p>
+<p>allow for more complex functionality in setup scripts. For more information about</p>
+<p>these variables, see “System Variables” in Chapter 14, “Using Expressions,</p>
+<p>Variables, and Procedure Calls” in the<i> MULTI: Debugging</i> book.</p>
+<p><b>Target List Remembers Node Expansion/Collapse</b></p>
+<p>The target list now remembers node expansion/collapse for INTEGRITY applications</p>
+<p>and AddressSpaces across sessions.</p>
+<p><b>Sortable Columns in the Target List</b></p>
+<p>The target list can now be sorted by column. Simply click the header for the column</p>
+<p>that you want to sort by. This setting is not saved when the Debugger is closed or</p>
+<p>when new Debuggers are opened.</p>
+<p><b>Improved Support for Preprocessor Macros in the Debugger</b></p>
+<p>Support for evaluation of preprocessor macros in the Debugger has been rewritten</p>
+<p>to conform more closely to the C/C++ standards. The new implementation better</p>
+<p>handles expansion of nested macros and arguments containing commas, and it</p>
+<p>supports the ANSI C macro argument concatenation and stringification operators.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>8</i></p>
+<p><i>Chapter 2. Changes in MULTI 6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Browsing References Improvement</b></p>
+<p>When browsing references of a C++ class's member function, you are now shown</p>
+<p>all possible call sites for the corresponding virtual functions of the class's super</p>
+<p>classes, not just the explicit references of the member function itself.</p>
+<p><b>if Command Supports else if</b></p>
+<p>The MULTI Debugger command<b> if</b> now supports</p>
+<p>else if</p>
+<p>clauses, which make</p>
+<p>it easier for you to specify a complex series of conditionally executed commands</p>
+<p>in MULTI scripts.</p>
+<p><b>Licensing Improvements</b></p>
+<p>A number of improvements have made to licensing in MULTI 6. Improvements</p>
+<p>include:</p>
+<p>•</p>
+<p>A streamlined<b> MULTI Licensing Wizard</b>, which differentiates between end</p>
+<p>user and system administrator tasks</p>
+<p>•</p>
+<p>A new<b> License Information</b> window, which gives users and system</p>
+<p>administrators an easy way to look at usage patterns and to determine who is</p>
+<p>using licenses</p>
+<p>•</p>
+<p>Whitelisting and blacklisting capabilities, which are useful if you want to</p>
+<p>reserve licenses for certain users, or if you want to bar particular users from</p>
+<p>obtaining licenses</p>
+<p>•</p>
+<p>Clearer and more concise documentation</p>
+<p><b>Faster Scanning of Subversion Checkouts</b></p>
+<p>The MULTI 6 Checkout Browser completes scans of Subversion checkouts up to</p>
+<p>10 times faster than before.</p>
+<p><i>9</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Browsing References Improvement</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Changes in Behavior</b></p>
+<p><b>IDE and Compiler Installed into Separate Linking Directories</b></p>
+<p>The MULTI IDE and Green Hills Compiler products are now installed into separate</p>
+<p>directories that are linked as part of the installation process. If the link between the</p>
+<p>products breaks (for example, because the Compiler directory is moved), you are</p>
+<p>prompted to relink them.</p>
+<p><b>Upgrading to MULTI 6</b></p>
+<p>If you are upgrading from an earlier version of MULTI, you must contact Green</p>
+<p>Hills Software to obtain MULTI 6 licenses.</p>
+<p><b>License Clients No Longer Broadcast for a License Manager</b></p>
+<p>In MULTI 5, license clients that could not obtain licenses would broadcast over the</p>
+<p>network for a License Manager from which they could obtain licenses. In MULTI</p>
+<p>6, clients do not broadcast over the network. If a GUI program is unable to obtain</p>
+<p>a license, the<b> MULTI Licensing Wizard</b> opens so that you can request or install</p>
+<p>licenses or specify a License Manager. If a non-GUI program is unable to obtain a</p>
+<p>license, the program exits.</p>
+<p><b>Changes to Computer- and Dongle-Locked Licensing</b></p>
+<p>In MULTI 6, computer- and dongle-locked licenses are only available to one user</p>
+<p>at a time. If more than one user is connected at once, the license is only available</p>
+<p>from the console.</p>
+<p><b>Changes to Trace Retrieval</b></p>
+<p>MULTI 6 retrieves trace if you step or run backwards in the live Debugger or if</p>
+<p>you otherwise launch TimeMachine. Additionally,<b> Retrieve trace when target</b></p>
+<p><b>halts</b> is now disabled by default. These changes help prevent gaps in trace data</p>
+<p>when you halt and run with a large trace buffer.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>10</i></p>
+<p><i>Chapter 2. Changes in MULTI 6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Trace Decoding No Longer Defaults to Reading Unknown Opcodes</b></p>
+<p>If a previous version of the MULTI Debugger encountered an instruction address</p>
+<p>during trace decoding that did not map to any loaded ELF files, it attempted to read</p>
+<p>the opcode from target memory by default. In MULTI 6, the Debugger aborts trace</p>
+<p>decoding by default. To revert to the old behavior, select<b> Read unknown opcodes</b></p>
+<p><b>from target (may halt target)</b> on the<b> Analysis</b> tab of the<b> Trace Options</b> window,</p>
+<p>and click<b> Apply</b>.</p>
+<p><b>Changes to TS_Packet May Require TimeMachine API Application Updates</b></p>
+<p>The</p>
+<p>aid</p>
+<p>and</p>
+<p>tid</p>
+<p>fields in</p>
+<p>TS_Packet</p>
+<p>structs of type</p>
+<p>TSP_PID</p>
+<p>have been changed</p>
+<p>from</p>
+<p>uint32</p>
+<p>to</p>
+<p>uint64</p>
+<p>, and the</p>
+<p>supervisor</p>
+<p>field has been removed. As a result,</p>
+<p>any TimeMachine API applications that inspect</p>
+<p>TS_Packet</p>
+<p>structs of type</p>
+<p>TSP_PID</p>
+<p>must be updated as follows:</p>
+<p>•</p>
+<p>C and C++ TimeMachine API applications — Rebuild these with the updated</p>
+<p>version of<i><b> ide_install_dir</i>\timemachine_api\ts_packet.h</b>.</p>
+<p>•</p>
+<p>Python TimeMachine API applications — Update these to import the updated</p>
+<p>version of</p>
+<p><i><b>ide_install_dir</i>\timemachine_api\example_python\timemachine_api.py</b>.</p>
+<p><b>Behavior of Primary and Secondary Debugger Windows</b></p>
+<p>The target list is no longer available in Debugger windows that have been launched</p>
+<p>from another Debugger window. Additionally, the original Debugger window</p>
+<p>functions as a control window; when it is closed, any secondary Debugger windows</p>
+<p>that were launched from it are also closed.</p>
+<p><i>11</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Trace Decoding No Longer Defaults to Reading Unknown Opcodes</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Large Numbers No Longer Broken Up by Default</b></p>
+<p>In MULTI 5.x and earlier, large numbers were displayed with underscores or dots</p>
+<p>to break up the numbers and ease reading. MULTI no longer breaks up large numbers</p>
+<p>by default; however, you can revert to the old behavior by using the</p>
+<p><b>numberSeparator</b> configuration option. To use an underscore to break up large</p>
+<p>numbers in MULTI 6, enter the following command in the Debugger command</p>
+<p>pane:</p>
+<p>&gt; configure numberSeparator _</p>
+<p><b>Default Number of Scroll Back Lines Reduced</b></p>
+<p>The default number of scroll back lines available in the<b> Cmd</b>,<b> Trg</b>,<b> I/O</b>,<b> Srl</b>,<b> Py</b>,</p>
+<p>and<b> Tfc</b> panes has been decreased from</p>
+<p>524288</p>
+<p>to</p>
+<p>10240</p>
+<p>to reduce memory usage.</p>
+<p>Additionally, the minimum number of scroll back lines that can be set has changed</p>
+<p>from</p>
+<p>1024</p>
+<p>to</p>
+<p>10</p>
+<p>. For more information, see the description of<b> cTextSize</b> in “Other</p>
+<p>Debugger Configuration Options” in Chapter 8, “Configuration Options” in the</p>
+<p><i>MULTI: Managing Projects and Configuring the IDE</i> book.</p>
+<p><b>Storage of PID and TID Debugger Aliases</b></p>
+<p>The Debugger component previously stored 32-bit process ID (PID) and task ID</p>
+<p>(TID) aliases as signed integers and hex numbers, but now stores 64-bit PID and</p>
+<p>TID aliases as unsigned integers and hex numbers. As a consequence, previously</p>
+<p>valid PID aliases such as</p>
+<p>debugger.pid.-1</p>
+<p>are no longer used. Aliases are</p>
+<p>commonly specified as arguments to the<b> route</b> command. For information about</p>
+<p>the<b> route</b> command, see “Command Manipulation and Macro Commands” in</p>
+<p>Chapter 15, “Scripting Command Reference” in the<i> MULTI: Debugging Command</i></p>
+<p><i>Reference</i> book.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>12</i></p>
+<p><i>Chapter 2. Changes in MULTI 6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Deprecated Features</b></p>
+<p>The following features are deprecated in MULTI 6:</p>
+<p>•</p>
+<p><b>grun</b> utility</p>
+<p>•</p>
+<p><b>versCtrl_RcsAutoCheckout</b> configuration option</p>
+<p>•</p>
+<p>The<b> -filter</b> option to<b> lic_lm</b> and the equivalent<b> IP Addr Filter</b> field of the</p>
+<p><b>License Manager Settings</b> dialog box (superseded by new whitelisting and</p>
+<p>blacklisting capabilities)</p>
+<p>•</p>
+<p>Certain MULTI 5 licensing programs have been deprecated in favor of improved</p>
+<p>MULTI 6 programs. To prevent accidental use, the executables have been</p>
+<p>renamed as stated.</p>
+<p><b>Superseded</b></p>
+<p><b>by</b></p>
+<p><b>Renamed Executable</b></p>
+<p><b>Discontinued</b></p>
+<p><b>Executable</b></p>
+<p><b>Deprecated</b></p>
+<p><b>Program</b></p>
+<p><b>lic_lm</b></p>
+<p><b>lm_compat</b></p>
+<p><b>lm</b></p>
+<p>Green Hills License</p>
+<p>Manager (GHSlm)</p>
+<p><b>lic_userlist</b></p>
+<p><b>glicusers_compat</b></p>
+<p><b>glicusers</b></p>
+<p><b>glicusers</b> utility</p>
+<p><b>lic_find_licenses</b></p>
+<p><b>find_ghs_licenses_compat</b></p>
+<p><b>find_ghs_licenses</b></p>
+<p><b>find_ghs_licenses</b></p>
+<p>utility</p>
+<p><b>Removed Features</b></p>
+<p>The following features are not available in MULTI 6:</p>
+<p>•</p>
+<p>Legacy licensing technology (aka Elan)</p>
+<p>•</p>
+<p>License Manager Web interface (superseded by a more complete license</p>
+<p>information display)</p>
+<p>•</p>
+<p>LMSHOW</p>
+<p>and</p>
+<p>LMHIDE</p>
+<p>licensing configuration variables</p>
+<p>•</p>
+<p>Legacy<b> .bld</b> project files</p>
+<p>•</p>
+<p>The Project Manager menu entry<b> Connect</b> →<b> Task Manager</b></p>
+<p>•</p>
+<p><b>ctags</b>-style tags files</p>
+<p><i>13</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Deprecated Features</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>The following MULTI Editor commands and equivalent MULTI Editor menu</p>
+<p>entries:</p>
+<p>○</p>
+<p><b>Column</b> command/<b>View</b> →<b> Column</b></p>
+<p>○</p>
+<p><b>Make</b> command/<b>Tools</b> →<b> Make</b></p>
+<p>○</p>
+<p><b>Notepad</b> command/<b>Tools</b> →<b> Notepad</b></p>
+<p>○</p>
+<p><b>WGUtils</b> command/<b>Tools</b> →<b> Launch Utility Programs</b></p>
+<p>•</p>
+<p>Hex Editor</p>
+<p>•</p>
+<p>The<b> Checkout Browser</b> menu entry<b> File</b> →<b> Local Rescan</b></p>
+<p>•</p>
+<p>PVCS and RCS integration</p>
+<p>•</p>
+<p>MULTI Version Control (MVC)</p>
+<p>•</p>
+<p>Custom version control integration</p>
+<p>•</p>
+<p><b>-dotciscxx</b> command line option (removed from the Debugger only)</p>
+<p>•</p>
+<p>The following MULTI Debugger commands and menu entries:</p>
+<p>○</p>
+<p><b>C</b>,<b> Cb</b>,<b> Cu</b>, and<b> CU</b> commands</p>
+<p>○</p>
+<p><b>note</b> command/<b>Tools</b> →<b> Notepad</b></p>
+<p>○</p>
+<p><b>Debug</b> →<b> Load Symbols</b> (Use the<b> loadsym</b> command instead. See Chapter</p>
+<p>2, “General Debugger Command Reference” in the<i> MULTI: Debugging</i></p>
+<p><i>Command Reference</i> book.)</p>
+<p>○</p>
+<p><b>Debug</b> →<b> Unload Symbols</b> (Use the<b> unloadsym</b> command instead.)</p>
+<p>•</p>
+<p><b>Find Function</b> window</p>
+<p>•</p>
+<p>$ent</p>
+<p>and</p>
+<p>$ret</p>
+<p>special operators</p>
+<p>•</p>
+<p>FORTRAN debugger</p>
+<p>•</p>
+<p>Hardware Registry</p>
+<p>•</p>
+<p>Memory filters</p>
+<p>•</p>
+<p>RoseRT integration</p>
+<p>•</p>
+<p>HP-UX host support</p>
+<p>•</p>
+<p>Windows 2000 host support</p>
+<p>If you depend on any of the preceding features, please contact your Green Hills</p>
+<p>sales representative.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>14</i></p>
+<p><i>Chapter 2. Changes in MULTI 6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 3</b></p>
+<p><b>Changes in MULTI 5.0.6</b></p>
+<p><b>Contents</b></p>
+<p>New Features and Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>16</p>
+<p>Changes in Behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Unbundled Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Deprecated Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p>Removed Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>New Features and Enhancements</b></p>
+<p><b>MULTI Project Manager</b></p>
+<p>MULTI 5 introduces the MULTI Project Manager, a tool providing both the power</p>
+<p>of the traditional project builder along with new features designed to get the user</p>
+<p>up and running faster and make changes to existing projects safely and quickly.</p>
+<p>MULTI's Project Manager gets you up and running with its new Project Wizard.</p>
+<p>Using this tool, you can create a stand-alone or INTEGRITY-based system quickly</p>
+<p>by answering straightforward questions.</p>
+<p>Once your project has been created, the Project Manager continues to help you</p>
+<p>maintain your project as it grows and changes, allowing you to add and reconfigure</p>
+<p>components as varied as source files and INTEGRITY file systems.</p>
+<p>To help you visually understand different aspects of your system, the Project</p>
+<p>Manager provides several different views of the project including a high level</p>
+<p>whiteboard view which can help you understand the structure of very large or</p>
+<p>complicated projects quickly.</p>
+<p><b>Flexible Target Connections</b></p>
+<p>Flexible target connections allow you to connect to a target once to perform a wider</p>
+<p>variety of debugging tasks. The power of a flexible connection saves you time as</p>
+<p>you explore hardware-software interaction. Using a flexible target connection, you</p>
+<p>can inspect or modify your bare target, download code or flash code to ROM, or</p>
+<p>debug code already present on the target. Using MULTI's Prepare Target Dialog,</p>
+<p>you specify what kind of access to the board you will need or how you need to</p>
+<p>modify your target's connection to the MULTI Debugger.</p>
+<p><b>Improved Target Management from the Debugger</b></p>
+<p>The new target list greatly improves visibility of items connected to the Debugger</p>
+<p>including bare hardware targets, multi-core systems, stand-alone programs,</p>
+<p>INTEGRITY systems, and many combinations thereof.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>16</i></p>
+<p><i>Chapter 3. Changes in MULTI 5.0.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>This list, which appears in the top pane of the Debugger window, allows you to see</p>
+<p>groupings between different tasks, address spaces, and applications for more</p>
+<p>powerful debugging of INTEGRITY systems. Each entry in the list can be selected,</p>
+<p>allowing you to debug or view that item in the source pane. This greatly reduces</p>
+<p>window clutter by allowing you to reuse a single Debugger window. Debugging</p>
+<p>multiple items side by side is as simple as double-clicking an entry in the list.</p>
+<p>For stand-alone or bare board systems, you can now more easily connect to a board</p>
+<p>that is not yet running an application to perform board exploration or setup tasks.</p>
+<p><b>Target Traffic Pane</b></p>
+<p>For developers who need a behind-the-scenes look at how MULTI is interacting</p>
+<p>with their hardware, MULTI 5 introduces the Target Traffic Pane. This console,</p>
+<p>which is integrated into the tabbed pane at the bottom of the debugger window,</p>
+<p>shows all messages sent between MULTI and your hardware. This can help diagnose</p>
+<p>and/or rule out problems caused by a sensitive target's response to being probed by</p>
+<p>a debugger.</p>
+<p><b>TimeMachine Enhancements</b></p>
+<p>TimeMachine is more integrated into the debug environment than ever before. If</p>
+<p>your target supports TimeMachine, trace data is collected automatically in the</p>
+<p>background, allowing you to step back through code or use any other TimeMachine</p>
+<p>feature at any point in your debugging session. TimeMachine can handle many</p>
+<p>gigabytes of trace data with improved performance.</p>
+<p>TimeMachine provides many tools which allow you to see what your system is</p>
+<p>doing. PathAnalyzer now features an array of visual aids to make understanding</p>
+<p>the path analysis information more intuitive.</p>
+<p>You can also create your own custom TimeMachine tools using the TimeMachine</p>
+<p>API. The TimeMachine API can be accessed by your C code or Python script,</p>
+<p>allowing you to build your own analysis tools.</p>
+<p><i>17</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Target Traffic Pane</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Improved Kernel Object Awareness</b></p>
+<p>With the release of INTEGRITY 10, MULTI users will experience new levels of</p>
+<p>operating system debugging excellence. Paired with INTEGRITY 10, MULTI 5</p>
+<p>will allow users to view INTEGRITY objects, explore relationships between</p>
+<p>INTEGRITY objects, and communicate directly with the kernel.</p>
+<p><b>Global Profiling</b></p>
+<p>Global Profiling provides continuously updated profiling information including</p>
+<p>CPU usage for individual address spaces and tasks. It also provides</p>
+<p>up-to-the-millisecond profiling information via MULTI's standard profiling tools.</p>
+<p>Global Profiling is available only when debugging INTEGRITY 10 systems.</p>
+<p><b>Integrated Python Engine</b></p>
+<p>MULTI 5 comes equipped with a fully functional integrated python engine. Using</p>
+<p>this powerful new tool users can use MULTI in new and exciting ways.</p>
+<p>Using a GUI building tool (TCL/TK, for example) you can build your own</p>
+<p>customized debugging windows. These windows can be viewers for special data</p>
+<p>structures, system emulators, or specialized program controllers.</p>
+<p>Using the integrated Python engine you can control and customize the behavior of</p>
+<p>the MULTI IDE. You can specify how the MULTI IDE is launched down to window</p>
+<p>size and location.</p>
+<p>Using the MULTI Launcher, users can execute any series of actions in the MULTI</p>
+<p>IDE. The integrated python engine expands this capability to allow the user to create</p>
+<p>programmed actions which can be executed based on dynamically available</p>
+<p>information.</p>
+<p>Python is a complete scripting language. This flexibility and power provides all of</p>
+<p>the capabilities you might need for complete scripting including string manipulation,</p>
+<p>complete math libraries, and the power of a fully functional programming language.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>18</i></p>
+<p><i>Chapter 3. Changes in MULTI 5.0.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Extended Version Control Support</b></p>
+<p>MULTI 5 expands its version control integration to include support for the popular</p>
+<p>Subversion version control system (versions 1.3.x through 1.5.x). Additionally,</p>
+<p>support for ClearCase has been tuned to support dynamic view checkouts.</p>
+<p><b>Windows Taskbar Organization</b></p>
+<p>The MULTI Taskbar Organizer groups all windows from the MULTI IDE into a</p>
+<p>single entry in the Windows taskbar or tray, providing quick access to all windows.</p>
+<p>This feature is only available on Windows.</p>
+<p><b>Improved Help Navigation</b></p>
+<p>MULTI's new Help Viewer allows users to navigate and search the Green Hills</p>
+<p>library of documentation with greater ease, speed, and accuracy. This provides a</p>
+<p>more pleasant and powerful documentation browsing experience.</p>
+<p><b>Changes in Behavior</b></p>
+<p><b>Use of Dongle-Locked Licenses over Remote Desktop</b></p>
+<p>In earlier versions of MULTI, dongle-locked licenses were unintentionally available</p>
+<p>to machines connecting via Remote Desktop to a dongle-licensed PC. In MULTI</p>
+<p>5, dongle-locked licenses are no longer available over Remote Desktop sessions if</p>
+<p>the dongle-licensed machine allows more than one remote user connection.</p>
+<p>Dongle-locked licenses are available over Remote Desktop sessions if the remote</p>
+<p>machine allows only a single user connection.</p>
+<p><b>Halt Issued Before Setup Script in Pre-5.0.6 Versions of MULTI</b></p>
+<p>In versions of MULTI 5.x prior to 5.0.6, the MULTI Debugger issues a<b> halt</b></p>
+<p>command to the target prior to running the setup script (if any). This adversely</p>
+<p>affects some hardware targets, where run control via the Debugger is not reliable</p>
+<p>after the target has been powered on, but before it has been reset. Unless you</p>
+<p><i>19</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Extended Version Control Support</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>manually reset the target, the Debugger typically reports errors when trying to</p>
+<p>download a program to such a target, and the download fails.</p>
+<p>MULTI 5.0.6 does not issue the preliminary<b> halt</b> command. If your target has a</p>
+<p>setup script, it should use the MULTI<b> halt</b> command to halt the target before reading</p>
+<p>or writing any registers or memory. This is especially important if your setup script</p>
+<p>uses the MULTI expression evaluator to write registers (for example,</p>
+<p>$r1 =</p>
+<p>0x12345</p>
+<p>) instead of using debug server scripting commands (for example,</p>
+<p>target</p>
+<p>rw r1 0x12345</p>
+<p>).</p>
+<p><b>Unbundled Features</b></p>
+<p>Unbundled features are no longer included in MULTI, but are still available for</p>
+<p>separate purchase.</p>
+<p>The following features have been unbundled from MULTI 5:</p>
+<p>•</p>
+<p>FORTRAN debugger</p>
+<p>•</p>
+<p>Hex Editor</p>
+<p>•</p>
+<p>MULTI Version Control (MVC)</p>
+<p>•</p>
+<p>Custom version control integration</p>
+<p>•</p>
+<p>Hardware Registry Server</p>
+<p>•</p>
+<p>Script Debugger</p>
+<p>•</p>
+<p>PCI Devices window</p>
+<p>•</p>
+<p>Memory filters</p>
+<p>•</p>
+<p>OSE integration</p>
+<p>•</p>
+<p>RoseRT integration</p>
+<p>•</p>
+<p>Deprecated MATLAB integration interfaces. MATLAB integration is still</p>
+<p>supported through MULTI's Python interface</p>
+<p>•</p>
+<p>Embedded Linux debugging</p>
+<p>•</p>
+<p>HP-UX host support</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>20</i></p>
+<p><i>Chapter 3. Changes in MULTI 5.0.6</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Deprecated Features</b></p>
+<p>The following features are deprecated in MULTI 5:</p>
+<p>•</p>
+<p>Legacy licensing technology (aka Elan)</p>
+<p>•</p>
+<p>PVCS, VSS, CVS, and RCS integration</p>
+<p>•</p>
+<p><b>-dotciscxx</b> command line option (deprecated in the Debugger only)</p>
+<p><b>Removed Features</b></p>
+<p>The following features are not available in MULTI 5:</p>
+<p>•</p>
+<p>Support for using Elan dongle-locked licenses over Remote Desktop</p>
+<p>•</p>
+<p>Function Flow tool</p>
+<p>•</p>
+<p>The Profile window's Block Detailed report is not available with TimeMachine</p>
+<p>profiling</p>
+<p>•</p>
+<p><b>rtnserv</b> debug server (use multiple<b> rtserv</b> or<b> rtserv2</b> connections instead)</p>
+<p><i>21</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Deprecated Features</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4</b></p>
+<p><b>Known Issues</b></p>
+<p><b>Contents</b></p>
+<p>MULTI Installation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Host Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Project Manager Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Editor Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Version Control Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Target Connection Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Debugging Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Compatibility with INTEGRITY . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>31</p>
+<p>MULTI-Python Integration Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>File System Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Desktop Environment Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>MULTI Installation</b></p>
+<p>For known issues regarding INTEGRITY installation, see “Compatibility with</p>
+<p>INTEGRITY” on page 31.</p>
+<p><b>Name of Install Directory Cannot Contain Spaces</b></p>
+<p>The MULTI IDE cannot be run from a directory whose name contains spaces.</p>
+<p><b>Host Support</b></p>
+<p><b>Use of TimeMachine API on Solaris Requires Python Installation</b></p>
+<p>On Solaris, use of the TimeMachine API requires an installation of Python 2.5 or</p>
+<p>Python 2.3 with the ctypes package installed. On all other supported hosts, Python</p>
+<p>2.3 with the ctypes package is installed as part of the MULTI IDE installation.</p>
+<p><b>MULTI-Python Integration on Linux May Require Compatibility Library</b></p>
+<p>To use the MULTI-Python integration with some newer Linux distributions, you</p>
+<p>will need to install a C++ compatibility library. On Debian/Ubuntu, this can be</p>
+<p>installed with the command:</p>
+<p>sudo apt-get install libstdc++5</p>
+<p>On Fedora Core/Red Hat Enterprise Linux, this can be installed with:</p>
+<p>yum install compat-libstdc++33</p>
+<p>There might be some variance in the name of the package depending on the specific</p>
+<p>version you are using. When using a version of Linux beyond those mentioned here,</p>
+<p>you will need to install a version of the GNU libstdc++v3 that is used with gcc-3.3.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>24</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Project Manager Issues</b></p>
+<p><b>Project Manager Performance on Very Large Project Files</b></p>
+<p>Individual project files containing more than 50,000 files may be slow to load and</p>
+<p>require significant memory resources when opened in the MULTI Project Manager</p>
+<p>on Windows hosts. If insufficient resources are available, the Project Manager may</p>
+<p>exit unexpectedly. This issue is most likely to occur on Windows XP hosts.</p>
+<p><b>Workaround:</b> To improve performance, try breaking your project file into several</p>
+<p>Subproject files. These files will only be loaded as needed, reducing the resources</p>
+<p>needed by the Project Manager.</p>
+<p><b>Undefined __OS_DIR__ Macro When Opening Some ThreadX Projects</b></p>
+<p>If you open a ThreadX project that does not include a<b> -os_dir</b> setting in the Project</p>
+<p>Manager, you may see a dialog containing the error message: “macro not defined</p>
+<p>(__OS_DIR__)”. If you see this message, adding new examples and executables</p>
+<p>to your project via the Project Manager may produce unexpected results.</p>
+<p><b>Workaround:</b> To resolve this problem, open your project, click<b> OK</b> in the error</p>
+<p>message dialog, select<b> Edit</b> →<b> Set Build Target</b>, and enter the path to your ThreadX</p>
+<p>installation in the<b> Target Selector</b> dialog that appears.</p>
+<p><b>Editor Issues</b></p>
+<p><b>Limitation of Brace Matching with Preprocessor Directives</b></p>
+<p>In the MULTI Editor, placing an opening brace inside a conditional preprocessor</p>
+<p>block may cause the closing brace to match the incorrect opening brace. This is</p>
+<p>most common when there are multiple conditional blocks and only one is expected</p>
+<p>to be compiled, for instance with</p>
+<p>#if</p>
+<p>/</p>
+<p>#else</p>
+<p>/</p>
+<p>#endif</p>
+<p>.</p>
+<p><i>25</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Project Manager Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>File Permissions Under Cygwin</b></p>
+<p>If you use Cygwin's<b> chmod</b> to change a file's permissions to read only, you will not</p>
+<p>be able to overwrite the file using the MULTI Editor. Cygwin does not update its</p>
+<p>version of the file system when a change is made to the Windows file system</p>
+<p>permissions.</p>
+<p><b>Version Control Issues</b></p>
+<p><b>Subversion Authentication on Windows</b></p>
+<p>The MULTI Subversion integration will not properly handle password prompts on</p>
+<p>Windows when using some versions of the Subversion client if you do not already</p>
+<p>have cached authentication information. If your repository uses authentication for</p>
+<p>read or write access, and you have not yet entered a password for any Subversion</p>
+<p>operation, you are likely to encounter this problem, during which you will notice</p>
+<p>that MULTI or the Checkout Browser appears to hang.</p>
+<p><b>Workaround:</b> Perform your first password-requiring Subversion operation from</p>
+<p>the command line to ensure authentication is set up properly.</p>
+<p>If you encounter this problem, you can recover your session by taking the following</p>
+<p>steps:</p>
+<p>1.</p>
+<p>Kill the running<b> svn.exe</b> process. This should recover MULTI.</p>
+<p>2.</p>
+<p>Run<b> svn cleanup</b> from the command line inside your checkout.</p>
+<p>3.</p>
+<p>Perform the operation (probably a checkout, update, or commit) from the</p>
+<p>command line. Please consult the documentation for your specific version of</p>
+<p>the Subversion client for exact syntax.</p>
+<p>4.</p>
+<p>Once you have successfully entered your password through Subversion's</p>
+<p>password prompt, the MULTI version control integration should work correctly.</p>
+<p><b>Problems Observed with Subversion 1.4.x</b></p>
+<p>Using Subversion 1.4.x is not recommended. Subversion 1.4.2 on Linux has been</p>
+<p>observed to occasionally crash while attempting to access a remote repository.</p>
+<p>Additionally, a bug in Subversion 1.4.x sometimes makes it impossible to determine</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>26</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>whether files in a deleted directory have been committed, potentially resulting in</p>
+<p>incorrect status listings in the Checkout Browser.</p>
+<p><b>Missing Version Information for libxml2.so.2</b></p>
+<p>You may encounter the following error message when trying to use version control</p>
+<p>on a Linux host:</p>
+<p>[path]/libxml2.so.2: no version information available</p>
+<p>(required by ...)</p>
+<p><b>Workaround:</b> Remove the<b> libxml2.so</b> files that ship with MULTI and replace them</p>
+<p>with a symbolic link to the system-installed<b> libxml2.so.2</b>.</p>
+<p><b>Target Connection Issues</b></p>
+<p><b>Serial Ports Supported for Use with rtserv</b></p>
+<p>On Windows,<b> rtserv</b> can only connect to serial ports with single-digit COM numbers</p>
+<p>(that is, serial ports<b> COM1</b> through<b> COM9</b>). Serial ports with two or more digits</p>
+<p>(<b>COM10</b>, for example) are not supported.</p>
+<p><b>Debugging Issues</b></p>
+<p><b>Source Pane Displays Unexpected File</b></p>
+<p>If your project nests identical source trees and you attempt to navigate to or launch</p>
+<p>a particular file from the inner source tree (for example,</p>
+<p>(1)</p>
+<p>in the following</p>
+<p>project), the Debugger's source pane may erroneously display a file from the outer</p>
+<p>source tree (for example,</p>
+<p>(2)</p>
+<p>in the following project).</p>
+<p>\_ nested/</p>
+<p>| \_ src/</p>
+<p>| | \_ file.c (1)</p>
+<p>\_ src/</p>
+<p>| \_ file.c (2)</p>
+<p><i>27</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Missing Version Information for libxml2.so.2</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Workaround:</b></p>
+<p>1.</p>
+<p>Navigate to:</p>
+<p>•</p>
+<p>Windows 7/Vista —<i><b> user_dir</i>\AppData\Roaming\GHS\Workspaces\</b></p>
+<p>•</p>
+<p>Windows XP —<i><b> user_dir</i>\Application Data\GHS\Workspaces\</b></p>
+<p>•</p>
+<p>Linux/Solaris —<i><b> user_dir</i>/.ghs/Workspaces/</b></p>
+<p>2.</p>
+<p>Delete the file that corresponds to the program you are debugging when this</p>
+<p>problem occurs. Alternatively, delete all the files in the<b> Workspaces</b> directory.</p>
+<p>(Note that this does not delete any project workspaces, only saved history</p>
+<p>information that the Debugger uses when executing history commands, jumping</p>
+<p>to previous or subsequent source pane views, etc.)</p>
+<p>Only users of a previous version of MULTI may encounter this problem.</p>
+<p><b>Maximum Number of Attached Tasks</b></p>
+<p>The number of tasks that the Debugger can attach to at one time is limited by the</p>
+<p>number of file descriptors that can be opened by a process in the operating system.</p>
+<p>On most Linux systems, the limit is approximately 1000. On Windows, the limit is</p>
+<p>approximately 500.</p>
+<p><b>Up to 65534 Macros Supported</b></p>
+<p>If a program defines more than 65534 distinct macros, MULTI may fail to evaluate</p>
+<p>expressions containing those macros.</p>
+<p><b>Limitation of Browsing Traced Memory Accesses</b></p>
+<p>You can use the<b> tracebrowse</b> command in MULTI to view all reads and writes to</p>
+<p>a particular variable. However the<b> tracebrowse</b> command only displays the memory</p>
+<p>accesses of the first four bytes of the data type. Therefore any structure, array, or</p>
+<p>class that is bigger than four bytes will only have the reads and writes to the first</p>
+<p>four bytes displayed.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>28</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Limitation of Browsing Traced Function Calls</b></p>
+<p>The Trace Call Browser allows you to view all calls of a particular function and</p>
+<p>view the minimum, maximum, mean, and total duration of calls to that function.</p>
+<p>When trace data is discarded to free disk space for new data, the function calls</p>
+<p>contained in the discarded trace data are removed from the list of calls in the Trace</p>
+<p>Call Browser. The Min, Max, Mean, and Total statistical values listed in the Trace</p>
+<p>Call Browser, however, are cumulative and take account of the discarded calls until</p>
+<p>you clear the trace data. You can clear the trace data by entering the</p>
+<p>trace clear</p>
+<p>command in the Debugger command pane or by selecting<b> TimeMachine</b> →<b> Clear</b></p>
+<p><b>Data</b> from the Debugger.</p>
+<p><b>Cannot Retrieve Trace During a Blocking Run or Step</b></p>
+<p>If trace retrieval is initiated while a blocking run or step operation is in progress in</p>
+<p>the Debugger, the retrieval is delayed until the blocking run or step completes. If</p>
+<p>trace retrieval is initiated while a blocking run or step operation is in progress in</p>
+<p>the TimeMachine Debugger, the retrieval is aborted. For information about blocking,</p>
+<p>see the description of the<b> b</b> parameter in “Single-Stepping Commands” in Chapter</p>
+<p>13, “Program Execution Command Reference” in the<i> MULTI: Debugging Command</i></p>
+<p><i>Reference</i> book.</p>
+<p><b>Incompatibility Between MULTI 4.x and MULTI 6+ Trace Configuration Files</b></p>
+<p>The trace configuration file<b> trace.cfg</b> created by MULTI 6.0 and later is not</p>
+<p>compatible with MULTI 4.x.</p>
+<p><b>Workaround:</b> To use both MULTI 4.x and MULTI 6.0 or later on the same system:</p>
+<p>1.</p>
+<p>Delete the<b> trace.cfg</b> file (if it exists) from:</p>
+<p>•</p>
+<p>Windows 7/Vista —<i><b> user_dir</i>\AppData\Roaming\GHS</b></p>
+<p>•</p>
+<p>Windows XP —<i><b> user_dir</i>\Application Data\GHS</b></p>
+<p>•</p>
+<p>Linux/Solaris —<i><b> user_dir</i>/.ghs</b></p>
+<p>2.</p>
+<p>In the MULTI 4.x Debugger, select<b> Tools</b> →<b> Trace</b> →<b> Trace Options</b>.</p>
+<p>3.</p>
+<p>In the<b> Trace Options</b> window that appears, click the<b> Save as Default</b> button.</p>
+<p>You will only need to do this once.</p>
+<p><i>29</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Limitation of Browsing Traced Function Calls</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Limitations of UNC Paths on Windows</b></p>
+<p>Debugging projects from an INTEGRITY distribution loaded via a UNC path is</p>
+<p>not supported. Mapping the UNC path to a network drive will allow you to debug</p>
+<p>the project.</p>
+<p><b>Limitations for Debugging Large Enumeration Types</b></p>
+<p>The Debugger incorrectly truncates the value of an enumeration constant or of a</p>
+<p>variable of an enumeration type if the value requires more than 32 bits for</p>
+<p>representation.</p>
+<p><b>Limitation of Mixing PIC or PID Code with ABS Sections</b></p>
+<p>When evaluating addresses of code compiled with<b> -pic</b> or<b> -pid</b>, the Debugger first</p>
+<p>subtracts the</p>
+<p>_TEXT</p>
+<p>or</p>
+<p>_DATA</p>
+<p>offset and then determines the text or data symbol</p>
+<p>at the resulting address. If an</p>
+<p>ABS</p>
+<p>section happens to exist at the same address, the</p>
+<p>Debugger may incorrectly choose the symbol from the</p>
+<p>ABS</p>
+<p>section rather than from</p>
+<p>the PIC or PID section. This address-to-symbol mapping most frequently occurs</p>
+<p>when the Data Explorer displays addresses that point to global data such as constant</p>
+<p>strings. In this case, the Data Explorer may incorrectly name the wrong symbol as</p>
+<p>pointing to the data.</p>
+<p><b>Debugging AltiVec-Specific Data Types</b></p>
+<p>Power Architecture only</p>
+<p>From the MULTI Debugger, you cannot modify the values of AltiVec-specific data</p>
+<p>types (such as vector) or cast variables to or from these types to another type. You</p>
+<p>can, however, display the values of AltiVec data types in expressions and in the</p>
+<p>Data Explorer.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>30</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Viewing Long Doubles on x86 Systems</b></p>
+<p>x86 only</p>
+<p>When viewing long doubles on native or embedded x86 systems, be advised that</p>
+<p>the Debugger rounds the value to double size before displaying it, so some precision</p>
+<p>is lost.</p>
+<p><b>Some Tasks Do Not Have Associated AddressSpaces in the EventAnalyzer</b></p>
+<p>Versions of<b> rtserv2</b> prior to v2.0.32 may not provide the MULTI EventAnalyzer</p>
+<p>with an AddressSpace name for certain tasks when the combined task name length</p>
+<p>and AddressSpace name length exceed 32 bytes. As a result, the MULTI</p>
+<p>EventAnalyzer may display these tasks without an associated AddressSpace.</p>
+<p><b>Workaround:</b></p>
+<p>•</p>
+<p>Shorten the name of your task or AddressSpace.</p>
+<p>•</p>
+<p>Give your tasks unique names so that the AddressSpace association is</p>
+<p>unnecessary.</p>
+<p>•</p>
+<p>Upgrade<b> rtserv2</b>.</p>
+<p><b>Compatibility with INTEGRITY</b></p>
+<p><b>INTEGRITY 10 Installer Screen Ignored by MULTI 6</b></p>
+<p>The INTEGRITY installer's<b> Identify Tools Distribution</b> screen is used to provide</p>
+<p>the MULTI IDE with the location of the installed INTEGRITY distribution. If you</p>
+<p>are using INTEGRITY 10 and MULTI 6, the setting on this screen has no effect.</p>
+<p><b>Workaround:</b> Ignore the INTEGRITY installer's<b> Identify Tools Distribution</b></p>
+<p>screen and the corresponding INTEGRITY documentation, and instead follow the</p>
+<p>instructions at “Configuring MULTI for Use with INTEGRITY or u-velOSity” in</p>
+<p>Chapter 2, “MULTI Tutorial” in the<i> MULTI: Getting Started</i> book.</p>
+<p><i>31</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Viewing Long Doubles on x86 Systems</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Limitations for Loading and Unloading Applications on INTEGRITY 5.x</b></p>
+<p>INTEGRITY 5.x does not support loading or unloading multiple applications at the</p>
+<p>same time, even though this can be performed through the MULTI Debugger's</p>
+<p>target list. If you attempt to load or unload multiple applications, the operation will</p>
+<p>only succeed on one of the applications.</p>
+<p>You must wait for the previous load or unload to finish before another can be</p>
+<p>performed successfully. A load or unload has been completed successfully when</p>
+<p>the application's status changes in the target list to<b> Loaded</b> (for a load) or<b> Not</b></p>
+<p><b>Loaded</b> (for an unload).</p>
+<p>Note that operations such as preparing your target, running, stepping, or restarting</p>
+<p>may also cause a module to become loaded. When this occurs, these operations are</p>
+<p>subject to the same restrictions.</p>
+<p><b>Collecting Memory Leak Information on INTEGRITY 5.x</b></p>
+<p>Collecting memory leak information when halted in the INTEGRITY kernel's</p>
+<p>IdleTask()</p>
+<p>is not supported and may appear to run without finishing. Pressing</p>
+<p>the<b> Esc</b> key will abort collection.</p>
+<p><b>Workaround:</b> To collect memory leak information for the kernel space</p>
+<p>malloc</p>
+<p>heap, you must halt your target in a C-library-enabled kernel task.</p>
+<p><b>RunTask May Not Have an Effect on Dynamically Downloaded Tasks</b></p>
+<p>When MULTI does a dynamic download, MULTI may automatically attach to all</p>
+<p>statically defined tasks within the downloaded application as soon as they have</p>
+<p>been loaded. INTEGRITY version 5.2.1 and INTEGRITY version 5.0.7 and earlier</p>
+<p>did not allow a task to do a</p>
+<p>RunTask</p>
+<p>on a halted task that MULTI was attached to.</p>
+<p>This means that downloading an INTEGRITY application may result in that</p>
+<p>application being unable to start some of its own tasks.</p>
+<p><b>Workaround:</b> Run halted tasks from the Debugger.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>32</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>MULTI RTSERV Auto-Connect and High Priority Tasks</b></p>
+<p>If you are debugging an INTEGRITY 5.0 application with high priority tasks such</p>
+<p>that the</p>
+<p>Idle</p>
+<p>function will never run, MULTI will not be able to automatically start</p>
+<p>an<b> rtserv</b> connection, even if one has been requested with the Run-Mode Partner</p>
+<p>dialog or with the<b> set_runmode_partner</b> command.</p>
+<p><b>Workaround:</b> Manually establish an<b> rtserv</b> connection. It will automatically be</p>
+<p>partnered with the corresponding stop-mode connection.</p>
+<p><b>Run-Mode Partnering Not Supported with -checksum</b></p>
+<p>Making an automatic run-mode partner connection involves setting a breakpoint in</p>
+<p>the target kernel, which can disrupt the proper functioning of the<b> -checksum</b> build</p>
+<p>option.</p>
+<p><b>Halting or Attaching to Task Cancels a System Call with rtserv</b></p>
+<p>If a task is in the middle of a host I/O system call with<b> rtserv</b> (for example, printing</p>
+<p>to the MULTI Debugger's<b> I/O</b> pane via</p>
+<p>printf()</p>
+<p>) and the task is halted either</p>
+<p>directly or by virtue of attaching the Debugger to the task, the system call will not</p>
+<p>complete successfully. This is most likely to occur when the task is blocked in a</p>
+<p>host I/O call, reading from standard input or from a file on the host. If you are using</p>
+<p><b>rtserv2</b> (INTEGRITY 10 or later), halting a task does not interfere with host I/O.</p>
+<p><b>System Halt with Host I/O May Make Target Unresponsive</b></p>
+<p>When connected with<b> rtserv</b> to a target running INTEGRITY version 5.2.1 or</p>
+<p>INTEGRITY version 5.0.8 or earlier, and opening the OSA Explorer or otherwise</p>
+<p>invoking a System Halt, and a Host I/O operation completes after the system is</p>
+<p>halted, the target can become unresponsive to<b> rtserv</b>. This can most commonly be</p>
+<p>triggered by a target program printing to standard output immediately before the</p>
+<p>system is halted. This problem is resolved in INTEGRITY versions after 5.0.8.</p>
+<p><i>33</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>MULTI RTSERV Auto-Connect and High Priority Tasks</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>MULTI-Python Integration Issues</b></p>
+<p><b>mpythonrun Unable to Output to stdout/stderr in Cygwin</b></p>
+<p>In a Cygwin environment,<b> mpythonrun</b> is unable to output data to</p>
+<p>stdout</p>
+<p>or</p>
+<p>stderr</p>
+<p>. If it attempts to do so, a dialog box appears with an error message similar</p>
+<p>to the following:</p>
+<p>WriteConsole(handle=0x17 for STD_OUT_HANDLE) failed: ...</p>
+<p>Clicking<b> OK</b> in the dialog box continues the execution of<b> mpythonrun</b>.</p>
+<p><b>Workaround:</b> To work around this problem, which is caused by a bug in Cygwin,</p>
+<p>redirect output to another file, or use the Windows command console or KornShell.</p>
+<p><b>File System Issues</b></p>
+<p><b>Tilde Expansion in Cygwin</b></p>
+<p>Cygwin expands the tilde symbol (~) to the value of the</p>
+<p>HOME</p>
+<p>environment variable</p>
+<p>as set in Cygwin. If</p>
+<p>HOME</p>
+<p>is set to a Cygwin path, attempts to launch non-Cygwin</p>
+<p>programs (including MULTI applications) on files whose path includes a tilde will</p>
+<p>fail.</p>
+<p><b>Workaround:</b> To work around this limitation, set the</p>
+<p>HOME</p>
+<p>environment variable</p>
+<p>in Cygwin to a Windows path.</p>
+<p><b>Two Dots (..) Not Supported After Symbolic Links in Paths</b></p>
+<p>MULTI and other Green Hills tools do not support paths that use two dots (</p>
+<p>..</p>
+<p>) to</p>
+<p>indicate the parent directory of a symbolic link. For example, if</p>
+<p>symlink</p>
+<p>is a</p>
+<p>symbolic link, the following paths are not supported:</p>
+<p>/projects/symlink/..</p>
+<p>/projects/symlink/foo/../../bar</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>34</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>NFS May Cause Poor Performance</b></p>
+<p>This release note applies to Linux/Solaris hosts only.</p>
+<p>MULTI tools may hang if they are accessing files over an NFS server that is slow</p>
+<p>or is not responding. In certain cases, it may not be possible to terminate them, even</p>
+<p>when using</p>
+<p>kill -9</p>
+<p>. These problems are caused by a fundamental limitation in</p>
+<p>the design and implementation of NFS.</p>
+<p><b>Workaround:</b> To help prevent these problems, eliminate references to broken file</p>
+<p>system mount points in your user configuration directory (<b>~/.ghs/*</b>) — in particular</p>
+<p>in the<b> integrity.dist</b> and/or<b> uvelosity.dist</b> files located there.</p>
+<p><b>Desktop Environment Issues</b></p>
+<p><b>Numerous Instances of MULTI Can Exhaust the Windows Desktop Heap</b></p>
+<p>If you are using Windows and if many graphical processes are open simultaneously,</p>
+<p>the desktop heap can be exhausted, preventing additional graphical applications</p>
+<p>from being launched. This problem is more likely to occur on Windows XP than</p>
+<p>on Windows Vista, which defaults to a larger desktop heap size.</p>
+<p><b>Workaround:</b> If you encounter this problem, try reusing existing MULTI IDE</p>
+<p>graphical processes instead of launching new ones. For example, to reuse existing</p>
+<p>MULTI Editor processes, open new Editors by issuing the MULTI Debugger<b> edit</b></p>
+<p>command or by selecting<b> File</b> →<b> New Editor</b> from the MULTI Editor menu bar.</p>
+<p>If you continue to encounter problems, see the Microsoft Knowledge Base for</p>
+<p>information about increasing the desktop heap size.</p>
+<p><b>Locking Assertion Failure May Occur within libxcb</b></p>
+<p>When running the MULTI IDE, you may encounter the following message at the</p>
+<p>console, possibly accompanied by part of the IDE exiting abnormally:</p>
+<p>Locking assertion failure. Backtrace:</p>
+<p>#0 /usr/lib/libxcb-xlib.so.0 [0xb7cfc767]</p>
+<p>#1 /usr/lib/libxcb-xlib.so.0(xcb_xlib_lock+0x2e) [0xb7cfc81e]</p>
+<p>...</p>
+<p><i>35</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>NFS May Cause Poor Performance</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>This problem is caused by a known bug within the libxcb X transport binding used</p>
+<p>in some newer Linux distributions. GHS encountered this problem very infrequently</p>
+<p>during testing. If you observe it often, please contact Green Hills Support.</p>
+<p><b>Taskbar Organizer and Windows 7 with Aero Peek</b></p>
+<p>The Taskbar Organizer in taskbar mode is not compatible with Windows 7's Aero</p>
+<p>Peek feature: moving the mouse over the MULTI entry in the taskbar displays a</p>
+<p>white bar instead of showing window thumbnails. For information about how to</p>
+<p>disable the Taskbar Organizer, see “Configuring Taskbar Organization” in Chapter</p>
+<p>7, “Configuring and Customizing MULTI” in the<i> MULTI: Managing Projects and</i></p>
+<p><i>Configuring the IDE</i> book.</p>
+<p><b>Taskbar Organizer and nVidia Desktop Manager</b></p>
+<p>The Taskbar Organizer setting to display only the Taskbar Organizer in the<b> Alt</b>+<b>Tab</b></p>
+<p>list may not work correctly when using nVidia Desktop Management software.</p>
+<p><b>Workaround:</b> If all windows are displayed, including the Taskbar Organizer,</p>
+<p>perform the following steps:</p>
+<p>1.</p>
+<p>Right-click the desktop and select nView Properties.</p>
+<p>2.</p>
+<p>Click the<b> User Interface</b> tab.</p>
+<p>3.</p>
+<p>Clear<b> Enable nView task switcher</b>.</p>
+<p>4.</p>
+<p>Click<b> OK</b> to save your changes.</p>
+<p><b>nVidia X Server With Compiz Window Manager May Crash</b></p>
+<p>When using MULTI with the Compiz window manager on Linux, opening windows</p>
+<p>may cause the X server to crash. This appears to be caused by a bug which is present</p>
+<p>in version 169.12 of the nVidia driver.</p>
+<p>To see the current version of the nVidia drivers being used, run</p>
+<p>cat</p>
+<p>/proc/driver/nvidia/version</p>
+<p>from the command line.</p>
+<p><i>MULTI: IDE Version 6.1.6 Release Notes</i></p>
+<p><i>36</i></p>
+<p><i>Chapter 4. Known Issues</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Workaround:</b> Upgrade to version 173.14.12 or newer of the nVidia driver. For</p>
+<p>information about obtaining and installing new drivers, consult your distribution</p>
+<p>documentation or visit nVidia's Web site.</p>
+<p>Alternatively, you can use a different window manager, such as Metacity.</p>
+<p><b>Drawing problems with Exceed 2008 (13.0)</b></p>
+<p>You may experience problems in the MULTI Editor and Debugger command pane</p>
+<p>where text may not draw correctly when used within Exceed 2008 (version 13.0).</p>
+<p><b>Workaround:</b> Disable Exceed's<b> Batch Requests</b> option. This can be found in</p>
+<p>Exceed's configuration window under<b> Other Server Settings</b>.</p>
+<p><b>SELinux Restricts Dynamically Loaded Code</b></p>
+<p>If SELinux is set to</p>
+<p>enforcing</p>
+<p>, it restricts dynamically loaded code to trusted</p>
+<p>modules. In enforcement mode, you may see a dialog box with contents similar to</p>
+<p>the following:</p>
+<p>MULTI failed to load cpudetect.so:</p>
+<p>cannot restore segment prot after reloc: Permission denied</p>
+<p><b>Workaround:</b> Temporarily disable enforcement with the following command:</p>
+<p>/usr/sbin/setenforce 0</p>
+<p>Alternatively, try registering the library:</p>
+<p>chcon -t</p>
+<p>texrel_shlib_t svc_cpu_ppc_so.so</p>
+<p>chcon -t</p>
+<p>texrel_shlib_t cpudetect.so</p>
+<p>...</p>
+<p><i>37</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Drawing problems with Exceed 2008 (13.0)</i></p>
+<h1 style="page-break-before:always; "></h1>
+</body>
+</html>
+{% endraw %}

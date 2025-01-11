@@ -1,0 +1,2866 @@
+---
+layout: default
+title: license
+nav_order: 13
+parent: Ide (TL121A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>MULTI: Licensing</b></p>
+<p><b>Green Hills Software</b></p>
+<p><b>30 West Sola Street</b></p>
+<p><b>Santa Barbara, California 93101</b></p>
+<p><b>USA</b></p>
+<p><b>Tel: 805-965-6044</b></p>
+<p><b>Fax: 805-965-6343</b></p>
+<p><b>www.ghs.com</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>DISCLAIMER</b></p>
+<p>GREEN HILLS SOFTWARE MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY</p>
+<p>OR FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software reserves the right to revise this</p>
+<p>publication and to make changes from time to time in the content hereof without obligation of Green Hills Software to</p>
+<p>notify any person of such revision or changes.</p>
+<p>Copyright © 1983-2014 by Green Hills Software. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or</p>
+<p>otherwise, without prior written permission from Green Hills Software.</p>
+<p>Green Hills, the Green Hills logo, CodeBalance, GMART, GSTART, INTEGRITY, MULTI, and Slingshot are registered</p>
+<p>trademarks of Green Hills Software. AdaMULTI, Built with INTEGRITY, EventAnalyzer, G-Cover, GHnet, GHnetLite,</p>
+<p>Green Hills Probe, Integrate, ISIM, u-velOSity, PathAnalyzer, Quick Start, ResourceAnalyzer, Safety Critical Products,</p>
+<p>SuperTrace Probe, TimeMachine, TotalDeveloper, DoubleCheck, and velOSity are trademarks of Green Hills Software.</p>
+<p>All other company, product, or service names mentioned in this book may be trademarks or service marks of their respective</p>
+<p>owners.</p>
+<p>PubID: license-506382</p>
+<p>Branch: http://toolsvc/branches/release-branch-60</p>
+<p>Date: April 24, 2014</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Contents</b></p>
+<p><b>Preface</b></p>
+<p><b>vii</b></p>
+<p>About</p>
+<p>This Book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>viii</p>
+<p>The MULTI 6 Document Set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>ix</p>
+<p>Conventions Used in the MULTI Document Set . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>x</p>
+<p>Licensing Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>xii</p>
+<p>More About Named-User Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>xiii</p>
+<p><b>Part I. Information for End Users</b></p>
+<p><b>1</b></p>
+<p><b>1. Licensing for End Users</b></p>
+<p><b>3</b></p>
+<p>Requesting Computer- or Dongle-Locked Licenses . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Installing Computer- or Dongle-Locked Licenses . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Obtaining Floating or Named-User Licenses . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<p><b>Part II. Information for System</b></p>
+<p><b>Administrators</b></p>
+<p><b>7</b></p>
+<p><b>2. Managing Floating and Named-User</b></p>
+<p><b>Licenses</b></p>
+<p><b>9</b></p>
+<p>Configuring a License Manager and Installing Licenses . . . . . . . . . .</p>
+<p>10</p>
+<p>Replacing or Adding Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Installing Licensing Utilities on the License Host . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Requesting Floating or Named-User Licenses . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>Managing User Lists with lic_userlist . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>Controlling Access to Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>License Access File Format . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>19</p>
+<p>Ignored License Access Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p><i>iii</i></p>
+<p><i>Green Hills Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Configuring and Starting the License Manager . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p>Before Starting the License Manager . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p>Configuring and Starting the License Manager from the</p>
+<p>GUI</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Configuring and Starting the License Manager from the</p>
+<p>Command Line . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Configuring the License Manager via Its Configuration</p>
+<p>File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Other Ways to Start the License Manager . . . . . . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Stopping the License Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Restarting the License Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>Controlling the License Manager with wrap_svc . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>License Manager Automatic Startup and Shutdown . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p><b>3. Configuring End User Machines</b></p>
+<p><b>35</b></p>
+<p>Setting Configuration Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>Configuration Variables for End User Machines . . . . . . . . . . . . .</p>
+<p>37</p>
+<p>Configuration Variables for Client Machines . . . . . . . . . . . . . . . .</p>
+<p>37</p>
+<p>Configuration Variables for Machines with Local Licenses . . . .</p>
+<p>39</p>
+<p>Specifying a Floating or Named-User License Pool . . . . . . . . . . . . . .</p>
+<p>39</p>
+<p>Using Multiple License Hosts . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p><b>4. Viewing License Information</b></p>
+<p><b>43</b></p>
+<p>Viewing License Information with the MULTI License</p>
+<p>Administrator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Viewing License Managers on the Network . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Viewing Floating and Named-User Licenses . . . . . . . . . . . . . . . .</p>
+<p>45</p>
+<p>Viewing Computer- and Dongle-Locked Licenses . . . . . . . . . . .</p>
+<p>45</p>
+<p>Listing Floating and Named-User Licenses with</p>
+<p>lic_find_licenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Output Format with -w . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>47</p>
+<p>Summarizing License Manager Logs with lic_log_summary.py . . . .</p>
+<p>48</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>iv</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Part III. Appendices</b></p>
+<p><b>51</b></p>
+<p><b>A. GUI Reference</b></p>
+<p><b>53</b></p>
+<p>The MULTI License Administrator Window . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>MULTI License Administrator Menus . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>The File Menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>The License Menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>The Help Menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p>Shortcut</p>
+<p>Menu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>The License Information Window . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>The License Information Window's File Menu . . . . . . . . . . . . . . . . . .</p>
+<p>60</p>
+<p><b>B. Administration Utilities</b></p>
+<p><b>61</b></p>
+<p>Determining Server Codes with servecode . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<p><b>C. Troubleshooting</b></p>
+<p><b>65</b></p>
+<p>Floating and Named-User Licensing Problems . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Dongle Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Common Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<p><b>Index</b></p>
+<p><b>69</b></p>
+<p><i>v</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Preface</b></p>
+<p><b>Contents</b></p>
+<p>About</p>
+<p>This Book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>viii</p>
+<p>The MULTI 6 Document Set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>ix</p>
+<p>Conventions Used in the MULTI Document Set . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>x</p>
+<p>Licensing Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>xii</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This preface discusses the purpose of the manual, the MULTI documentation set,</p>
+<p>and typographical conventions used.</p>
+<p><b>About This Book</b></p>
+<p>The<i> MULTI: Licensing</i> book contains information about installing and administering</p>
+<p>Green Hills licenses for the MULTI IDE and Green Hills Compiler. The license</p>
+<p>keys used to access INTEGRITY and velOSity are discussed in the<i> INTEGRITY</i></p>
+<p><i>Installation Guide</i>.</p>
+<p>This book is divided into the following parts:</p>
+<p>•</p>
+<p><i>Part I: Information for End Users</i> provides licensing instructions for end users</p>
+<p>of MULTI. See Part I. Information for End Users on page 1.</p>
+<p>•</p>
+<p><i>Part II: Information for System Administrators</i> provides more extensive</p>
+<p>information for system administrators who need to set up a License Manager,</p>
+<p>administer licenses, and configure license administration settings. See</p>
+<p>Part II. Information for System Administrators on page 7.</p>
+<p>•</p>
+<p><i>Part III: Appendices</i> contains reference and troubleshooting material. See</p>
+<p>Part III. Appendices on page 51.</p>
+<p><b>Note</b></p>
+<p>New or updated information may have become available while this book</p>
+<p>was in production. For additional material that was not available at press</p>
+<p>time, or for revisions that may have become necessary since this book</p>
+<p>was printed, please check your installation directory for release notes,</p>
+<p><b>README</b> files, and other supplementary documentation.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>viii</i></p>
+<p><i>Preface</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The MULTI 6 Document Set</b></p>
+<p>The primary documentation for using MULTI is provided in the following books:</p>
+<p>•</p>
+<p><i>MULTI: Getting Started</i> — Provides an introduction to the MULTI Integrated</p>
+<p>Development Environment and leads you through a simple tutorial.</p>
+<p>•</p>
+<p><i>MULTI: Licensing</i> — Describes how to obtain, install, and administer MULTI</p>
+<p>licenses.</p>
+<p>•</p>
+<p><i>MULTI: Managing Projects and Configuring the IDE</i> — Describes how to</p>
+<p>create and manage projects and how to configure the MULTI IDE.</p>
+<p>•</p>
+<p><i>MULTI: Building Applications</i> — Describes how to use the compiler driver</p>
+<p>and the tools that compile, assemble, and link your code. Also describes the</p>
+<p>Green Hills implementation of supported high-level languages.</p>
+<p>•</p>
+<p><i>MULTI: Configuring Connections</i> — Describes how to configure connections</p>
+<p>to your target.</p>
+<p>•</p>
+<p><i>MULTI: Debugging</i> — Describes how to set up your target debugging interface</p>
+<p>for use with MULTI and how to use the MULTI Debugger and associated tools.</p>
+<p>•</p>
+<p><i>MULTI: Debugging Command Reference</i> — Explains how to use Debugger</p>
+<p>commands and provides a comprehensive reference of Debugger commands.</p>
+<p>•</p>
+<p><i>MULTI: Scripting</i> — Describes how to create MULTI scripts. Also contains</p>
+<p>information about the MULTI-Python integration.</p>
+<p>For a comprehensive list of the books provided with your MULTI installation, see</p>
+<p>the<b> Help</b> →<b> Manuals</b> menu accessible from most MULTI windows.</p>
+<p>Most books are available in the following formats:</p>
+<p>•</p>
+<p>A printed book (select books are not available in print).</p>
+<p>•</p>
+<p>Online help, accessible from most MULTI windows via the<b> Help</b> →<b> Manuals</b></p>
+<p>menu.</p>
+<p>•</p>
+<p>An electronic PDF, available in the<b> manuals</b> subdirectory of your IDE or</p>
+<p>Compiler installation.</p>
+<p><i>ix</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The MULTI 6 Document Set</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Conventions Used in the MULTI Document Set</b></p>
+<p>All Green Hills documentation assumes that you have a working knowledge of your</p>
+<p>host operating system and its conventions, including its command line and graphical</p>
+<p>user interface (GUI) modes.</p>
+<p>Green Hills documentation uses a variety of notational conventions to present</p>
+<p>information and describe procedures. These conventions are described below.</p>
+<p><b>Example</b></p>
+<p><b>Indication</b></p>
+<p><b>Convention</b></p>
+<p><b>C:\MyProjects</b></p>
+<p>Filename or pathname</p>
+<p><b>bold</b> type</p>
+<p><b>setup</b> command</p>
+<p>Command</p>
+<p><b>-G</b> option</p>
+<p>Option</p>
+<p>The<b> Breakpoints</b> window</p>
+<p>Window title</p>
+<p>The<b> File</b> menu</p>
+<p>Menu name or menu choice</p>
+<p><b>Working Directory:</b></p>
+<p>Field name</p>
+<p>The<b> Browse</b> button</p>
+<p>Button name</p>
+<p><b>-o<i> filename</b></i></p>
+<p>Replaceable text</p>
+<p><i>italic</i> type</p>
+<p>A task may be called a<i> process</i></p>
+<p>or a<i> thread</i></p>
+<p>A new term</p>
+<p><i>MULTI: Debugging</i></p>
+<p>A book title</p>
+<p>Type</p>
+<p>help<i> command_name</i></p>
+<p>Text you should enter as presented</p>
+<p>monospace</p>
+<p>type</p>
+<p>The<b> wait</b> [-global] command</p>
+<p>blocks command processing,</p>
+<p>where</p>
+<p>-global</p>
+<p>blocks</p>
+<p>command processing for all</p>
+<p>MULTI processes.</p>
+<p>A word or words used in a</p>
+<p>command or example</p>
+<p>int a = 3;</p>
+<p>Source code</p>
+<p>&gt; print Test</p>
+<p>Test</p>
+<p>Input/output</p>
+<p>GHS_System()</p>
+<p>A function</p>
+<p><b>debugbutton</b> [<i>name</i>]...</p>
+<p>The preceding argument or option</p>
+<p>can be repeated zero or more times.</p>
+<p>ellipsis (...)</p>
+<p>(in command line</p>
+<p>instructions)</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>x</i></p>
+<p><i>Preface</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Example</b></p>
+<p><b>Indication</b></p>
+<p><b>Convention</b></p>
+<p>&gt; print Test</p>
+<p>Test</p>
+<p>Represents a prompt. Your actual</p>
+<p>prompt may be a different symbol</p>
+<p>or string. The &gt; prompt helps to</p>
+<p>distinguish input from output in</p>
+<p>examples of screen displays.</p>
+<p>greater than sign ( &gt; )</p>
+<p><b>call<i></b> proc</i> |<i> expr</i></p>
+<p>One (and only one) of the</p>
+<p>parameters or options separated by</p>
+<p>the pipe or pipes should be</p>
+<p>specified.</p>
+<p>pipe ( | )</p>
+<p>(in command line</p>
+<p>instructions)</p>
+<p>.macro<i> name</i> [<i>list</i>]</p>
+<p>Optional argument, command,</p>
+<p>option, and so on. You can either</p>
+<p>include or omit the enclosed</p>
+<p>elements. The square brackets</p>
+<p>should not appear in your actual</p>
+<p>command.</p>
+<p>square brackets ( [ ] )</p>
+<p>(in command line</p>
+<p>instructions)</p>
+<p>The following command description demonstrates the use of some of these</p>
+<p>typographical conventions.</p>
+<p><b>gxyz</b> [<i>-option</i>]...<i> filename</i></p>
+<p>The formatting of this command indicates that:</p>
+<p>•</p>
+<p>The command<b> gxyz</b> should be entered as shown.</p>
+<p>•</p>
+<p>The option</p>
+<p><i>-option</i></p>
+<p>should either be replaced with one or more appropriate</p>
+<p>options or be omitted.</p>
+<p>•</p>
+<p>The word</p>
+<p><i>filename</i></p>
+<p>should be replaced with the actual filename of an</p>
+<p>appropriate file.</p>
+<p>The square brackets and the ellipsis should not appear in the actual command you</p>
+<p>enter.</p>
+<p><i>xi</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Conventions Used in the MULTI Document Set</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Licensing Models</b></p>
+<p>To maximize flexibility, the MULTI products support four different licensing</p>
+<p>models:</p>
+<p>•</p>
+<p><i>Computer- and dongle-locked licenses</i> — These licenses are only supported</p>
+<p>on Windows and are not available over a network. They allow an unlimited</p>
+<p>number of instances of the licensed MULTI component to run on the licensed</p>
+<p>PC. For example, a single compiler license allows you to run an unlimited</p>
+<p>number of compilers.</p>
+<p>You can only move a computer-locked license to a new machine after contacting</p>
+<p>Green Hills Software, but a dongle-locked license becomes available on any</p>
+<p>PC to which the dongle (a hardware security device) is attached, and on which</p>
+<p>the license is installed.</p>
+<p>Computer- and dongle-locked licenses are only available to one user at a time.</p>
+<p>If more than one user is connected at once, the license is only available from</p>
+<p>the console.</p>
+<p>•</p>
+<p><i>Floating and named-user licenses</i> — These licenses are available over a network</p>
+<p>and are managed by a License Manager.</p>
+<p>Floating licenses are distributed on a first-come, first-served basis. Any end</p>
+<p>user may obtain as many floating licenses as are available in the license pool.</p>
+<p>For example, if a user obtains a floating license on one machine and wants to</p>
+<p>move to another, they can leave the licensed product running on the first</p>
+<p>machine and obtain another floating license—assuming one is available—for</p>
+<p>the same product on the second machine.</p>
+<p>Named-user licenses are accessible only to a defined set of end users, and each</p>
+<p>user may access only one license at a time.</p>
+<p>The License Manager reserves floating and named-user licenses for up to five</p>
+<p>minutes in case the client that last used the license needs it again within that</p>
+<p>time frame. Consequently, if a user obtains a named-user license on one</p>
+<p>machine, but wants to move to another, they must exit the licensed product on</p>
+<p>the first machine and then wait for the license reservation to expire (up to five</p>
+<p>minutes) before they are able to obtain a named-user license for the same</p>
+<p>product on the second machine.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>xii</i></p>
+<p><i>Preface</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Regardless of whether you are using the floating or named-user license model,</p>
+<p>a single end user working at a single machine consumes only one license, even</p>
+<p>if they are running multiple instances of the licensed component. For example,</p>
+<p>a single compiler license allows the user to run an unlimited number of</p>
+<p>compilers. However, if a user is running the component on multiple displays</p>
+<p>of a single Linux/Solaris machine, a new license is required for each display.</p>
+<p>Floating and named-user licenses are locked to a particular license host. To</p>
+<p>rehost licenses from one license host to another, you must contact Green Hills</p>
+<p>Software.</p>
+<p><b>More About Named-User Licenses</b></p>
+<p>The main difference between floating and named-user licenses is that a named-user</p>
+<p>license can only be used by a single, unique user, whereas a floating license can</p>
+<p>“float” among users. Traditionally, customers tend to think of MULTI products as</p>
+<p>being offered in “seats”, where the number of seats for a product matches the number</p>
+<p>of end users of the product. Named-user licenses implement this concept: if a group</p>
+<p>has ten users of a product, then that group must have ten “seats,” or ten named-user</p>
+<p>licenses for that product.</p>
+<p>A named-user license provides a unique user with the right to use a product, but</p>
+<p>the choice of which user this license is assigned to is the decision of the user's</p>
+<p>organization (system administrator, manager, etc.). The list of valid users for a</p>
+<p>particular product is managed through the<b> lic_userlist</b> command line utility (see</p>
+<p>“Managing User Lists with lic_userlist” on page 14).</p>
+<p><i>xiii</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>More About Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Part I</b></p>
+<p><b>Information for End Users</b></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1</b></p>
+<p><b>Licensing for End Users</b></p>
+<p><b>Contents</b></p>
+<p>Requesting Computer- or Dongle-Locked Licenses . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Installing Computer- or Dongle-Locked Licenses . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Obtaining Floating or Named-User Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>6</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Before you can use the MULTI IDE and Green Hills Compiler, appropriate software</p>
+<p>licenses must be installed or accessible. When you first start the IDE, it checks for</p>
+<p>a valid MULTI license. If it cannot obtain a license, the<b> MULTI Licensing Wizard</b></p>
+<p>automatically opens. You can use this wizard to request and install computer- or</p>
+<p>dongle-locked licenses (Windows only), or to obtain floating or named-user licenses,</p>
+<p>as documented in the following sections.</p>
+<p><b>Note</b></p>
+<p>This chapter assumes that you have installed MULTI 6 on your machine.</p>
+<p>If you have not, see the installation document located in the root directory</p>
+<p>of the installation CD for information.</p>
+<p><b>Requesting Computer- or Dongle-Locked Licenses</b></p>
+<p>Computer- and dongle-locked licenses are supported on Windows machines only.</p>
+<p>To request computer- or dongle-locked licenses, follow these steps:</p>
+<p>1.</p>
+<p>For dongle-locked licenses — Insert the dongle into a USB port on your</p>
+<p>machine.</p>
+<p>2.</p>
+<p>If the<b> MULTI Licensing Wizard</b> is not already open, select<b> Utilities</b> →</p>
+<p><b>License Administrator</b> from the MULTI Launcher.</p>
+<p>3.</p>
+<p>In the<b> MULTI Licensing Wizard</b>, select<b> License my MULTI products</b></p>
+<p><b>(recommended for end users)</b>, and click<b> Next</b>.</p>
+<p>4.</p>
+<p>Choose the on-screen options for requesting licenses.</p>
+<p>Customers submitting license requests via email or fax should use the appropriate</p>
+<p>email address or fax number, as listed below.</p>
+<p>•</p>
+<p>MULTI customers in the Americas, Australia, and New Zealand should send</p>
+<p>completed license requests to:</p>
+<p>○</p>
+<p>Email:<i> license@ghs.com</i></p>
+<p>○</p>
+<p>Fax: (805) 965-6343 (Attn: Licensing)</p>
+<p>•</p>
+<p>MULTI customers from other parts of the world should send the completed</p>
+<p>license request to:</p>
+<p>○</p>
+<p>Email:<i> license@ghs.nl</i></p>
+<p>○</p>
+<p>Fax: +31 (0)33 4613640</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>4</i></p>
+<p><i>Chapter 1. Licensing for End Users</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>Ada/Safety-critical customers should send the completed license request to:</p>
+<p>○</p>
+<p>Email:<i> adalicense@ghs.com</i></p>
+<p>○</p>
+<p>Fax: (727) 781-3915</p>
+<p>License requests are processed as quickly as possible within business hours.</p>
+<p>If you have questions, please call Green Hills' toll free licensing line (877-962-2950</p>
+<p>in the U.S.), or call Green Hills Technical Support (+1 805-965-0124 worldwide).</p>
+<p><b>Installing Computer- or Dongle-Locked Licenses</b></p>
+<p>Computer- and dongle-locked licenses are supported on Windows machines only.</p>
+<p>To use the<b> MULTI Licensing Wizard</b> to install computer- or dongle-locked licenses,</p>
+<p>follow these steps:</p>
+<p>1.</p>
+<p>If the<b> MULTI Licensing Wizard</b> is not already open, select<b> Utilities</b> →</p>
+<p><b>License Administrator</b> from the MULTI Launcher.</p>
+<p>2.</p>
+<p>In the<b> MULTI Licensing Wizard</b>, select<b> License my MULTI products</b></p>
+<p><b>(recommended for end users)</b>, and click<b> Next</b>.</p>
+<p>3.</p>
+<p>Select<b> Install a computer- or dongle-locked license file</b>, and click<b> Next</b>.</p>
+<p>4.</p>
+<p>In the file chooser that appears, select the<b> .ghslic</b> license file that you received</p>
+<p>from Green Hills Software, and click<b> Install</b>.</p>
+<p>To manually install computer- or dongle-locked licenses, follow these steps:</p>
+<p>1.</p>
+<p>Copy the Green-Hills-supplied<b> .ghslic</b> license file to the license file directory.</p>
+<p>The default license file directory on Windows is<b> C:\GHS\licenses</b>. To use a</p>
+<p>different directory, set the</p>
+<p>LICENSE_FILE_DIR</p>
+<p>configuration variable</p>
+<p>accordingly. For more information, see “Configuration Variables for Machines</p>
+<p>with Local Licenses” on page 39.</p>
+<p>2.</p>
+<p>For dongle-locked licenses — Install the appropriate drivers for your dongle.</p>
+<p>The installers for the SafeNet Sentinel dongle driver are included in the<b> safenet</b></p>
+<p>directory of your MULTI IDE installation.</p>
+<p><i>5</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Installing Computer- or Dongle-Locked Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Obtaining Floating or Named-User Licenses</b></p>
+<p>To configure your machine to contact one or more License Managers from which</p>
+<p>you may obtain floating or named-user licenses, follow these steps:</p>
+<p>1.</p>
+<p>Make sure that your system administrator has set up a License Manager on</p>
+<p>the network. For more information, see “Configuring a License Manager and</p>
+<p>Installing Licenses” on page 10.</p>
+<p>2.</p>
+<p>If the<b> MULTI Licensing Wizard</b> is not already open, select<b> Utilities</b> →</p>
+<p><b>License Administrator</b> from the MULTI Launcher.</p>
+<p>3.</p>
+<p>In the<b> MULTI Licensing Wizard</b>, select<b> License my MULTI products</b></p>
+<p><b>(recommended for end users)</b>, and click<b> Next</b>.</p>
+<p>4.</p>
+<p>On Windows, select<b> Specify the network location of License Managers</b>,</p>
+<p>and click<b> Next</b>.</p>
+<p>5.</p>
+<p>Specify one or more license hosts running a License Manager on the network</p>
+<p>by doing one of the following:</p>
+<p>•</p>
+<p>Click<b> Search</b> to browse a list of License Managers found on the local</p>
+<p>network. Select one more more entries in the list, and click<b> OK</b>. (Note</p>
+<p>that search results depend on your network configuration. If you do not</p>
+<p>find a License Manager appropriate for your use, contact your system</p>
+<p>administrator for the name or IP address of a License Manager that you</p>
+<p>can access.)</p>
+<p>•</p>
+<p>Manually enter the name or IP address of one or more license hosts. If</p>
+<p>specifying multiple license hosts, separate each with a comma.</p>
+<p>When specifying multiple license hosts, you may choose whether the license</p>
+<p>hosts are contacted in order (precede the list with</p>
+<p>@</p>
+<p>) or at random (precede the</p>
+<p>list with</p>
+<p>#</p>
+<p>).</p>
+<p><b>Note</b></p>
+<p>This step sets the</p>
+<p>GHS_LMHOST</p>
+<p>configuration variable in your license</p>
+<p>configuration file. For more information, see “Setting Configuration</p>
+<p>Variables” on page 36.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>6</i></p>
+<p><i>Chapter 1. Licensing for End Users</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Part II</b></p>
+<p><b>Information for System</b></p>
+<p><b>Administrators</b></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2</b></p>
+<p><b>Managing Floating and</b></p>
+<p><b>Named-User Licenses</b></p>
+<p><b>Contents</b></p>
+<p>Configuring a License Manager and Installing Licenses . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>Replacing or Adding Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>11</p>
+<p>Installing Licensing Utilities on the License Host . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>12</p>
+<p>Requesting Floating or Named-User Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>13</p>
+<p>Managing User Lists with lic_userlist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>14</p>
+<p>Controlling Access to Licenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Configuring and Starting the License Manager . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>21</p>
+<p>Stopping the License Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>29</p>
+<p>Restarting the License Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>Controlling the License Manager with wrap_svc . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>License Manager Automatic Startup and Shutdown . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This chapter describes the installation and administration of license management</p>
+<p>tools on the license host and of floating and named-user licenses.</p>
+<p><b>Note</b></p>
+<p>Elan licensing, aka legacy licensing, is no longer supported.</p>
+<p><b>Configuring a License Manager and Installing Licenses</b></p>
+<p>The following steps outline how to set up a License Manager on a license host and</p>
+<p>install floating or named-user licenses:</p>
+<p>1.</p>
+<p>Install the licensing utilities on the machine that is to be used as the license</p>
+<p>host. The license host may be a Windows, Linux, or Solaris machine. See</p>
+<p>“Installing Licensing Utilities on the License Host” on page 12.</p>
+<p>2.</p>
+<p>Request licenses via the<b> MULTI Licensing Wizard</b>. See “Requesting Floating</p>
+<p>or Named-User Licenses” on page 13.</p>
+<p>3.</p>
+<p>Save the Green-Hills-supplied<b> .ghslic</b> license file to a local directory that the</p>
+<p>License Manager has read and write permissions to. The license file may have</p>
+<p>any name.</p>
+<p>4.</p>
+<p>For named-user licenses — Optionally assign user lists via the<b> lic_userlist</b></p>
+<p>utility. See “Managing User Lists with lic_userlist” on page 14.</p>
+<p>5.</p>
+<p>Use the<b> MULTI Licensing Wizard</b> to specify the location of the license file</p>
+<p>and to configure and then start the License Manager. See “Configuring and</p>
+<p>Starting the License Manager from the GUI” on page 22.</p>
+<p>In order for client machines to obtain floating or named-user licenses, end users</p>
+<p>must complete the steps listed in “Obtaining Floating or Named-User Licenses”</p>
+<p>on page 6.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>10</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Replacing or Adding Licenses</b></p>
+<p>If you have already set up a License Manager and would like to install a new floating</p>
+<p>or named-user license file, follow these steps:</p>
+<p>1.</p>
+<p>Stop the License Manager if it is running. See “Stopping the License Manager”</p>
+<p>on page 29.</p>
+<p>2.</p>
+<p>Save the Green-Hills-supplied<b> .ghslic</b> license file to a local directory that the</p>
+<p>License Manager has read and write permissions to. The license file may have</p>
+<p>any name.</p>
+<p>3.</p>
+<p>For named-user licenses — Optionally assign user lists via the<b> lic_userlist</b></p>
+<p>utility:</p>
+<p>•</p>
+<p>If the new license file replaces your old license file — Use the<b> -f</b> option</p>
+<p>to replace the old user list.</p>
+<p>•</p>
+<p>If the new license file supplements the old license file — Create a new</p>
+<p>user list for the new license file.</p>
+<p>See “Managing User Lists with lic_userlist” on page 14.</p>
+<p>4.</p>
+<p>Specify the location of the license file and restart the License Manager:</p>
+<p>•</p>
+<p>If the new license file replaces your old license file — Use the<b> MULTI</b></p>
+<p><b>Licensing Wizard</b> to specify the location of the new license file and to</p>
+<p>restart the License Manager. See “Configuring and Starting the License</p>
+<p>Manager from the GUI” on page 22.</p>
+<p>•</p>
+<p>If the new license file supplements the old license file — Run<b> lic_lm</b> with</p>
+<p>the<b> -license</b> option. See “Configuring and Starting the License Manager</p>
+<p>from the Command Line” on page 24.</p>
+<p><i>11</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Replacing or Adding Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Installing Licensing Utilities on the License Host</b></p>
+<p>The following should be taken into consideration when selecting a machine to serve</p>
+<p>as a license host:</p>
+<p>•</p>
+<p>The license host must be an easily accessible network machine that is up and</p>
+<p>running when users need licenses.</p>
+<p>•</p>
+<p>Avoid using DHCP or dial-up networking on the license host. Doing so may</p>
+<p>cause the license host to change its default IP address. The License Manager</p>
+<p>will detect this address change and may stop granting license requests for</p>
+<p>security reasons.</p>
+<p>Before installing licensing utilities on Windows, ensure that the following</p>
+<p>prerequisites have been met:</p>
+<p>•</p>
+<p>The installing user has administrator privileges.</p>
+<p>•</p>
+<p>The<b> Services</b> applet in the Windows<b> Control Panel</b> is not active.</p>
+<p>•</p>
+<p>All running programs have been exited (recommended, not required).</p>
+<p>For information about prerequisites that must be met before starting the License</p>
+<p>Manager, see “Before Starting the License Manager” on page 21.</p>
+<p>Install the licensing utilities from a MULTI 6 installation CD. Instructions are</p>
+<p>provided in the installation document located in the root directory of the installation</p>
+<p>CD.</p>
+<p><b>Note</b></p>
+<p>The MULTI 6 License Manager will continue to serve licenses to MULTI</p>
+<p>4 and MULTI 5 clients, but earlier versions of the License Manager will</p>
+<p>not serve licenses to MULTI 6 clients.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>12</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Requesting Floating or Named-User Licenses</b></p>
+<p>To request floating or named-user licenses, follow these steps:</p>
+<p>1.</p>
+<p>On the license host, run<b> mlmadmin.exe</b> (<b>mlmadmin</b> on Linux/Solaris) from</p>
+<p>the licensing utilities installation directory.</p>
+<p>2.</p>
+<p>In the<b> MULTI Licensing Wizard</b> that appears, select<b> Set up a network</b></p>
+<p><b>License Manager (recommended for administrators)</b>, and click<b> Next</b>.</p>
+<p>3.</p>
+<p>Choose the on-screen options for requesting licenses.</p>
+<p>Customers submitting license requests via email or fax should use the appropriate</p>
+<p>email address or fax number, as listed below.</p>
+<p>•</p>
+<p>MULTI customers in the Americas, Australia, and New Zealand should send</p>
+<p>completed license requests to:</p>
+<p>○</p>
+<p>Email:<i> license@ghs.com</i></p>
+<p>○</p>
+<p>Fax: (805) 965-6343 (Attn: Licensing)</p>
+<p>•</p>
+<p>MULTI customers from other parts of the world should send the completed</p>
+<p>license request to:</p>
+<p>○</p>
+<p>Email:<i> license@ghs.nl</i></p>
+<p>○</p>
+<p>Fax: +31 (0)33 4613640</p>
+<p>•</p>
+<p>Ada/Safety-critical customers should send the completed license request to:</p>
+<p>○</p>
+<p>Email:<i> adalicense@ghs.com</i></p>
+<p>○</p>
+<p>Fax: (727) 781-3915</p>
+<p>License requests are processed as quickly as possible within business hours.</p>
+<p>If you have questions, please call Green Hills' toll free licensing line (877-962-2950</p>
+<p>in the U.S.), or call Green Hills Technical Support (+1 805-965-0124 worldwide).</p>
+<p><i>13</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Requesting Floating or Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Managing User Lists with lic_userlist</b></p>
+<p><b>Note</b></p>
+<p>This section only applies to named-user licenses.</p>
+<p>A user list defines a set of end users who may obtain a named-user license for a</p>
+<p>particular product. You can manage user lists by running the<b> lic_userlist</b> utility on</p>
+<p>the license host.</p>
+<p>When named-user licenses are first installed (see step 3 in “Configuring a License</p>
+<p>Manager and Installing Licenses” on page 10), no user lists are assigned. You can</p>
+<p>assign user lists by running<b> lic_userlist</b> with arguments. See the fourth format of</p>
+<p>the<b> lic_userlist</b> command below. The resulting user lists are stored in a file named</p>
+<p><i><b>license_file</i>.gul</b>, which is located in the same directory as the license file.</p>
+<p>If you do not assign a user list for a particular licensed product, or if the number of</p>
+<p>licenses available for that product exceeds the number of end users named in the</p>
+<p>product's user list, the user list auto-populates. That is, users who obtain a product</p>
+<p>license are automatically added to the user list for that product if they are not already</p>
+<p>on the list.</p>
+<p>Once a user is added to a user list, whether by auto-population or by manual setting,</p>
+<p>the only way to remove them is to use the<b> lic_userlist</b> utility. See</p>
+<p>Example 2.1. Modifying Existing User Lists on page 16. Modifying a user list via</p>
+<p>means other than<b> lic_userlist</b> renders your licenses unusable.</p>
+<p>Three runs of<b> lic_userlist</b> are allowed to the user lists during a 24-hour period. A</p>
+<p>maximum number of changes is imposed for security purposes. If a fourth change</p>
+<p>to the user lists is attempted, a message indicates that the maximum number of daily</p>
+<p>changes has been exceeded, and the user list changes are not saved. (If this policy</p>
+<p>hampers your development efforts, please contact Green Hills Technical Support.)</p>
+<p><b>Note</b></p>
+<p>If the License Manager is running, stop it before running<b> lic_userlist</b> (see</p>
+<p>“Stopping the License Manager” on page 29). Restart the License</p>
+<p>Manager to cause your user list changes to take effect (see “Restarting</p>
+<p>the License Manager” on page 30).</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>14</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>The<b> lic_userlist</b> executable is available from the MULTI IDE and licensing utilities</p>
+<p>installation directories. You can run it from the command line in any of the following</p>
+<p>ways:</p>
+<p>•</p>
+<p><b>lic_userlist</b> [-h]</p>
+<p>•</p>
+<p><b>lic_userlist</b> [-q] -license<i> license_file</i> -f<i> user_list_file</i></p>
+<p>•</p>
+<p><b>lic_userlist</b> [-q] -license<i> license_file</i> -r<i> reset_code</i></p>
+<p>•</p>
+<p><b>lic_userlist</b> [-q] -license<i> license_file product user_list_options</i></p>
+<p>Options are described in the following table:</p>
+<p><b>-h</b></p>
+<p>Displays help information.</p>
+<p><b>-q</b></p>
+<p>Enables quiet mode, in which no questions are asked.</p>
+<p><b>-license<i> license_file</b></i></p>
+<p>Specifies the license file (<b>.ghslic</b>) containing named-user licenses for which you want to assign</p>
+<p>user lists.</p>
+<p><b>-f<i> user_list_file</b></i></p>
+<p>Replaces the license file's current user list (stored in<i><b> license_file</i>.gul</b>) with the user list from</p>
+<p><i>user_list_file</i></p>
+<p>. For more information, see Example 2.2. Replacing a User List File</p>
+<p>on page 17.</p>
+<p><b>-r<i> reset_code</b></i></p>
+<p>Applies</p>
+<p><i>reset_code</i></p>
+<p>, which allows you to change the license file's user lists more than 3 times</p>
+<p>in a 24-hour period. This may be useful if the user lists are damaged.</p>
+<p>If you need a reset code, contact Green Hills Technical Support.</p>
+<p><i><b>product user_list_options</b></i></p>
+<p>Modifies the user list for the licensed product</p>
+<p><i>product</i></p>
+<p>. Licensed products are listed in the</p>
+<p>license file.</p>
+<p>Valid</p>
+<p><i>user_list_options</i></p>
+<p>are:</p>
+<p>•</p>
+<p>-a<i> user</i>...</p>
+<p>— Adds</p>
+<p><i>user</i></p>
+<p>to the list of licensed end users for</p>
+<p><i>product</i></p>
+<p>.</p>
+<p>•</p>
+<p>-d<i> user</i>...</p>
+<p>— Deletes</p>
+<p><i>user</i></p>
+<p>from the list of licensed end users for</p>
+<p><i>product</i></p>
+<p>.</p>
+<p>You may specify multiple</p>
+<p>-a</p>
+<p>and</p>
+<p>-d</p>
+<p>options to effect multiple changes at once. See the following</p>
+<p>example.</p>
+<p><i>15</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Managing User Lists with lic_userlist</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Running<b> lic_userlist</b> with no options creates an empty user list file (<b>.gul</b>).</p>
+<p><b>Example 2.1. Modifying Existing User Lists</b></p>
+<p>Given the following<b> .ghslic</b> file named<b> mylicenses.ghslic</b>, see the example</p>
+<p>commands below.</p>
+<p>[...]</p>
+<p>version: 20</p>
+<p>serial: 2345</p>
+<p>port: 2009</p>
+<p>ethernet: 1.1.1.1</p>
+<p>lm key: 45ac040</p>
+<p>lm code: 10000</p>
+<p>lm hostid: 102bce95</p>
+<p>multi key: 46d0866b</p>
+<p>multi code: 100</p>
+<p>multi licenses: 5</p>
+<p>simppc key: 350acd10</p>
+<p>simppc code: 470</p>
+<p>simppc licenses: 5</p>
+<p>isimppc key: 330b0f39</p>
+<p>isimppc code: 610</p>
+<p>isimppc licenses: 5</p>
+<p>ecomppc key: 58df0eba</p>
+<p>ecomppc code: 2901</p>
+<p>ecomppc licenses: 5</p>
+<p>enable_MULTI_v6 key: 2533f55f</p>
+<p>enable_MULTI_v6 code: 11101</p>
+<p>enable_MULTI_v6 licenses: 5</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>16</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Examples:</p>
+<p>To remove the users “sam” and “bob” from the</p>
+<p>ecomppc</p>
+<p>user list and to add “jon”</p>
+<p>to the</p>
+<p>ecomppc</p>
+<p>and</p>
+<p>multi</p>
+<p>user lists:</p>
+<p>lic_userlist -license mylicenses.ghslic ecomppc -d sam -d bob -a jon multi -a jon</p>
+<p>To add the user “susanna” to the</p>
+<p>ecomppc</p>
+<p>and</p>
+<p>multi</p>
+<p>user lists:</p>
+<p>lic_userlist -license mylicenses.ghslic ecomppc -a susanna multi -a susanna</p>
+<p><b>Note</b></p>
+<p>The above commands are only examples. Your installation may require</p>
+<p>you to specify product licenses other than the ones shown here.</p>
+<p><b>Example 2.2. Replacing a User List File</b></p>
+<p>The<b> -f</b> option to<b> lic_userlist</b> replaces the license file's current user list (if any) with</p>
+<p>the user list from the file you specify. This allows you to effect multiple user list</p>
+<p>changes with only one run of<b> lic_userlist</b> (three runs are permitted during a 24-hour</p>
+<p>period).</p>
+<p>To create a new user list file:</p>
+<p>1.</p>
+<p>Copy:</p>
+<p>•</p>
+<p>The MULTI 6 file<i><b> license_file</i>.gul</b>, located in the same directory as the</p>
+<p>license file, or</p>
+<p>•</p>
+<p>The MULTI 5 file<b> userlist.txt</b>. By default,<b> userlist.txt</b> is located in</p>
+<p><b>C:\GHS\licenses</b> (Windows) or in<b> green_hills_install_dir/licenses</b></p>
+<p>(Linux/Solaris).</p>
+<p>2.</p>
+<p>Open the copy in a text editor, and assign a user list for each product. In the</p>
+<p>following sample file, each of the first three lines specifies a user list for the</p>
+<p>product indicated.</p>
+<p>100</p>
+<p>,</p>
+<p>310</p>
+<p>, and</p>
+<p>2901</p>
+<p>are product codes. Available product</p>
+<p>codes are listed in your license file.</p>
+<p>100 seth&lt;END&gt;</p>
+<p>310 kevin,joe&lt;END&gt;</p>
+<p>2901 kevin,joe,dan&lt;END&gt;</p>
+<p>&lt;UPDATED 1316465457 0 0&gt;</p>
+<p>&lt;DIGEST a54296e91660acd30c5ea3b395f0786c&gt;</p>
+<p>WARNING: DO NOT TOUCH OR EDIT THIS FILE. It will break your licenses.</p>
+<p>If you want to edit the user lists, please use lic_userlist.</p>
+<p><i>17</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Managing User Lists with lic_userlist</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Controlling Access to Licenses</b></p>
+<p>License access files allow you to control who can obtain floating and named-user</p>
+<p>licenses. There are two types of license access files: those containing whitelists and</p>
+<p>those containing blacklists. A whitelist specifies who may obtain licenses from a</p>
+<p>particular license file. A blacklist specifies who may<i> not</i> obtain licenses from a</p>
+<p>particular license file. For example, if you want to reserve the licenses in a license</p>
+<p>file for the exclusive use of one particular user group, you can create a whitelist</p>
+<p>containing the names of the users in that group. Only requests from the specified</p>
+<p>users will be granted. If, on the other hand, you want to allow all end users except</p>
+<p>a few to obtain licenses from a license file, you can create a blacklist containing</p>
+<p>the names of the users you want to bar from obtaining licenses. In this case, requests</p>
+<p>will only be granted if they do not come from the specified users.</p>
+<p>In each whitelist and blacklist, you may specify user names and IP addresses. When</p>
+<p>a whitelist is used, only requests from the specified users on hosts with the specified</p>
+<p>IP addresses are granted. When a blacklist is used, any requests from the specified</p>
+<p>users or from hosts with the specified IP addresses are denied. If no user names are</p>
+<p>specified, all users are qualified to obtain licenses. If no IP addresses are specified,</p>
+<p>requests from all hosts are qualified to obtain licenses.</p>
+<p>You may optionally define one license access file per license file. The license access</p>
+<p>file should be located in the same directory as the license file, and it should have</p>
+<p>the same base name. The extension must be<b> .ghslac</b>.</p>
+<p>The License Manager must have read permissions to the license access file, which</p>
+<p>it checks for approximately once every 15 seconds. If a new license access file has</p>
+<p>been created or if an existing file has been changed, the License Manager loads it.</p>
+<p><b>Note</b></p>
+<p>If you are using named-user licenses, the user lists created via<b> lic_userlist</b></p>
+<p>also specify who may obtain licenses. These lists are not automatically</p>
+<p>updated when you create or modify a license access file; you must update</p>
+<p>them manually by running<b> lic_userlist</b> with the appropriate options (see</p>
+<p>“Managing User Lists with lic_userlist” on page 14). If a license access</p>
+<p>file conflicts with an existing user list, you will see a warning similar to</p>
+<p>the following:</p>
+<p>User &quot;jerry&quot; is blacklisted from accessing product &quot;ecomppc&quot;.</p>
+<p>Use &quot;lic_userlist&quot; to remove the user from the user list.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>18</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>License Access File Format</b></p>
+<p>Format your license access file as follows:</p>
+<p>version = 1;</p>
+<p>whitelist|blacklist {</p>
+<p>user = {&quot;<i>user_name</i>&quot;, &quot;<i>user_name</i>&quot;, ...}</p>
+<p>user += {&quot;<i>user_name</i>&quot;, &quot;<i>user_name</i>&quot;, ...}</p>
+<p>ip = {&quot;<i>IPv4_address</i>&quot;, &quot;<i>IPv4_address</i>&quot;, ...}</p>
+<p>ip += {&quot;<i>IPv4_address</i>&quot;, &quot;<i>IPv4_address</i>&quot;, ...}</p>
+<p>}</p>
+<p>where:</p>
+<p>•</p>
+<p>version</p>
+<p>is the version number of the license access file. At present, the version</p>
+<p>is</p>
+<p>1</p>
+<p>.</p>
+<p>•</p>
+<p>whitelist</p>
+<p>or</p>
+<p>blacklist</p>
+<p>may be specified, but not both.</p>
+<p>•</p>
+<p>user</p>
+<p>and</p>
+<p>ip</p>
+<p>are lists. Note that you must enclose list values in curly braces</p>
+<p>{}</p>
+<p>.</p>
+<p>•</p>
+<p>The operator</p>
+<p>=</p>
+<p>overwrites existing list values (if any) with new list values,</p>
+<p>while</p>
+<p>+=</p>
+<p>appends new list values to existing list values.</p>
+<p>•</p>
+<p><i>IPv4_address</i></p>
+<p>may indicate a range of IP addresses. For example:</p>
+<p>192.168.22-38.0-255</p>
+<p>matches all IP addresses whose first fields are</p>
+<p>192</p>
+<p>and</p>
+<p>168</p>
+<p>, whose third field</p>
+<p>is between</p>
+<p>22</p>
+<p>and</p>
+<p>38</p>
+<p>(inclusive), and whose last field is any number (</p>
+<p>0-255</p>
+<p>matches any value).</p>
+<p><b>Example 2.3. Whitelist</b></p>
+<p>version = 1;</p>
+<p>whitelist {</p>
+<p>user = {&quot;joe&quot;}</p>
+<p>user += {&quot;kahlil&quot;}</p>
+<p>user += {&quot;jasmine&quot;, &quot;toby&quot;}</p>
+<p>ip = {&quot;192.168.102.195&quot;}</p>
+<p><i>19</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>License Access File Format</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>ip += {&quot;192.168.11.195&quot;, &quot;192.168.22-38.0-255&quot;}</p>
+<p>}</p>
+<p>This whitelist only allows the users</p>
+<p>joe</p>
+<p>,</p>
+<p>kahlil</p>
+<p>,</p>
+<p>jasmine</p>
+<p>, and</p>
+<p>toby</p>
+<p>to obtain</p>
+<p>licenses from hosts whose IP address meets one of the following criteria:</p>
+<p>•</p>
+<p>The IP address is</p>
+<p>192.168.102.195</p>
+<p>.</p>
+<p>•</p>
+<p>The IP address is</p>
+<p>192.168.11.195</p>
+<p>.</p>
+<p>•</p>
+<p>The first two fields of the IP address are</p>
+<p>192</p>
+<p>and</p>
+<p>168</p>
+<p>, the third field is between</p>
+<p>22</p>
+<p>and</p>
+<p>38</p>
+<p>(inclusive), and the fourth field is any number.</p>
+<p><b>Example 2.4. Blacklist</b></p>
+<p>version = 1;</p>
+<p>blacklist {</p>
+<p>user = {&quot;joe&quot;}</p>
+<p>user += {&quot;kahlil&quot;}</p>
+<p>user += {&quot;jasmine&quot;, &quot;toby&quot;}</p>
+<p>ip = {&quot;192.168.102.195&quot;}</p>
+<p>ip += {&quot;192.168.11.195&quot;, &quot;192.168.22-38.0-255&quot;}</p>
+<p>}</p>
+<p>This blacklist blocks any license requests from the users</p>
+<p>joe</p>
+<p>,</p>
+<p>kahlil</p>
+<p>,</p>
+<p>jasmine</p>
+<p>,</p>
+<p>and</p>
+<p>toby</p>
+<p>, or from any host whose IP address meets one of the following criteria:</p>
+<p>•</p>
+<p>The IP address is</p>
+<p>192.168.102.195</p>
+<p>.</p>
+<p>•</p>
+<p>The IP address is</p>
+<p>192.168.11.195</p>
+<p>.</p>
+<p>•</p>
+<p>The first two fields of the IP address are</p>
+<p>192</p>
+<p>and</p>
+<p>168</p>
+<p>, the third field is between</p>
+<p>22</p>
+<p>and</p>
+<p>38</p>
+<p>(inclusive), and the fourth field is any number.</p>
+<p><b>Ignored License Access Files</b></p>
+<p>A license access file will be ignored in any of the following cases:</p>
+<p>•</p>
+<p>It contains both a whitelist and a blacklist.</p>
+<p>•</p>
+<p>It contains a syntax error.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>20</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>You started the License Manager with the<b> -filter</b> option or the equivalent<b> IP</b></p>
+<p><b>Addr Filter</b> option.</p>
+<p>•</p>
+<p>The corresponding license file is dedicated to serving requests from the local</p>
+<p>host.</p>
+<p><b>Configuring and Starting the License Manager</b></p>
+<p><b>Before Starting the License Manager</b></p>
+<p>Before starting the License Manager, consider the following caveats:</p>
+<p>•</p>
+<p>You must configure and start the License Manager from the license host.</p>
+<p>•</p>
+<p>UDP port 2009—used by the<b> MULTI License Administrator</b> to locate the</p>
+<p>License Manager on the network—must not be blocked by firewall and must</p>
+<p>be otherwise available for listening.</p>
+<p>•</p>
+<p>The TCP port(s) specified by your license file(s) must be available. TCP ports</p>
+<p>are used to accept license requests from client machines. The default TCP port</p>
+<p>is 2009.</p>
+<p>•</p>
+<p>Windows — Users with limited permissions are not able to modify the state</p>
+<p>of Windows services. To start the License Manager, you must be logged in</p>
+<p>with administrator privileges. Additionally, if you want to start the License</p>
+<p>Manager from the command line and you are using Windows 7 or Windows</p>
+<p>Vista with User Account Control (UAC) enabled (the default), the command</p>
+<p>prompt must be started using the<b> Run as administrator</b> option:</p>
+<p>1.</p>
+<p>From the Start menu, select<b> All Programs</b> →<b> Accessories</b>.</p>
+<p>2.</p>
+<p>Right-click<b> Command Prompt</b> and select<b> Run as administrator</b>.</p>
+<p>•</p>
+<p>Linux/Solaris — Many Linux/Solaris systems set a hard limit on the number</p>
+<p>of open sockets per process (1024 by default). If you expect many client</p>
+<p>applications to try to connect with the License Manager simultaneously, you</p>
+<p>may need to increase this limit before starting the License Manager. For</p>
+<p>example, on bash, the command<b> ulimit -n 5555</b> sets the limit to 5555.</p>
+<p><i>21</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring and Starting the License Manager</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring and Starting the License Manager from the GUI</b></p>
+<p>The<b> License Manager Settings</b> dialog box allows you to configure and start the</p>
+<p>License Manager. To open the dialog box, perform the following steps:</p>
+<p>1.</p>
+<p>Run<b> mlmadmin.exe</b> (<b>mlmadmin</b> on Linux/Solaris) from the licensing utilities</p>
+<p>installation directory.</p>
+<p>2.</p>
+<p>In the<b> MULTI Licensing Wizard</b> that appears, select<b> Set up a network</b></p>
+<p><b>License Manager (recommended for administrators)</b>, and click<b> Next</b>.</p>
+<p>3.</p>
+<p>Select<b> Configure the License Manager on this machine</b>, and click<b> Next</b>.</p>
+<p>To configure the License Manager, fill in the fields of the dialog box. The following</p>
+<p>table gives a description of each field. Command line equivalents are documented</p>
+<p>in “Configuring and Starting the License Manager from the Command Line”</p>
+<p>on page 24.</p>
+<p>After filling in the fields of the dialog box, you can click<b> Start License Manager</b></p>
+<p>if the License Manager is not running. On Windows, a Windows service with the</p>
+<p>display name</p>
+<p>Green Hills License Manager</p>
+<p>and the service name</p>
+<p>ghs_lm</p>
+<p>is created for the License Manager if a service does not already exist. If the License</p>
+<p>Manager is running, you must click<b> Restart License Manager</b> for your changes</p>
+<p>to take effect.</p>
+<p><b>License File</b></p>
+<p>Specifies the license file (<b>.ghslic</b>) containing licenses to be served by the License Manager. This</p>
+<p>field is equivalent to the<b> -license</b> command line option to the License Manager.</p>
+<p><b>Note</b></p>
+<p>Only one license file is supported from the GUI.</p>
+<p><b>Description</b></p>
+<p>Specifies a description for the License Manager. The description has no purpose other than</p>
+<p>identification. It appears in the<b> MULTI License Administrator</b>, which lists available License</p>
+<p>Managers on the network. A description may be useful when a network has multiple License</p>
+<p>Managers in use, with each one serving a particular group of end users. For example, you could</p>
+<p>set the description to</p>
+<p>The Tools Group</p>
+<p>, or</p>
+<p>Firmware Development</p>
+<p>.</p>
+<p>This field is equivalent to the<b> -desc</b> command line option to the License Manager.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>22</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Log File</b></p>
+<p>Specifies the absolute path to a file that stores logging information for every significant licensing</p>
+<p>event, such as the acquisition and release of a license. An absolute path is recommended to</p>
+<p>avoid confusion over the location of the log file when the License Manager is started in different</p>
+<p>ways (for example, automatically at boot, from a command line script, etc.). If you do not specify</p>
+<p>a log file, debugging information is sent to</p>
+<p>stdout</p>
+<p>, which is not displayed by Windows GUI</p>
+<p>applications.</p>
+<p>If the first character of this field is a pipe character (</p>
+<p>|</p>
+<p>), the License Manager will use the rest</p>
+<p>of the field as a command line to be spawned and the log file will be sent as</p>
+<p>stdin</p>
+<p>to that</p>
+<p>process. This<i> log piping</i> is useful for implementing log rotation, filtering, or other custom log</p>
+<p>processing.</p>
+<p><b>Note</b></p>
+<p>Because log piping can be used to execute programs on the license host, take care</p>
+<p>to properly set permissions to the License Manager's configuration file. A malicious</p>
+<p>or ignorant user could configure the License Manager to run a program with</p>
+<p>undesirable side effects.</p>
+<p>Example<b> Log File</b> entries follow:</p>
+<p>/usr/green/lm.log</p>
+<p>Sends log output to the file</p>
+<p>/usr/green/lm.log</p>
+<p>on the license host.</p>
+<p>|/usr/local/bin/rotate.py /usr/green/lm.log 5m</p>
+<p>Sends log output to a Python script written by the user, located at</p>
+<p>/usr/local/bin/rotate.py</p>
+<p>.</p>
+<p>The script takes two command line arguments:</p>
+<p>/usr/green/lm.log</p>
+<p>and</p>
+<p>5m</p>
+<p>.</p>
+<p>This field is equivalent to the<b> -log</b> command line option to the License Manager.</p>
+<p><b>User Tracking File</b></p>
+<p>Specifies the absolute path to a file that stores distinct user names. This field is equivalent to</p>
+<p>the<b> -track_users</b> command line option to the License Manager.</p>
+<p><i>23</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring and Starting the License Manager from the GUI</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>IP Addr Filter</b></p>
+<p>Specifies a dotted-decimal or 32-bit hex value IP address as a filter whose zero fields match all</p>
+<p>values and whose non-zero fields match only the non-zero value given. The License Manager</p>
+<p>uses this value to filter requests from external machines and to deny those that come from</p>
+<p>unauthorized IP addresses. For example, if the IP address filter is</p>
+<p>192.168.100.0</p>
+<p>, any client</p>
+<p>on the</p>
+<p>192.168.100</p>
+<p>subnet, such as</p>
+<p>192.168.100.10</p>
+<p>, can access the License Manager.</p>
+<p>Requests from other subnets, such as</p>
+<p>192.168.101.10</p>
+<p>will be denied.</p>
+<p>Requests coming from the local host address</p>
+<p>127.0.0.1</p>
+<p>are not filtered and always reach the</p>
+<p>License Manager.</p>
+<p>This field is equivalent to the<b> -filter</b> command line option to the License Manager.</p>
+<p><b>Note</b></p>
+<p>This field is deprecated in MULTI 6. Use a license access file instead (see</p>
+<p>“Controlling Access to Licenses” on page 18).</p>
+<p><b>Verbose Logging</b></p>
+<p>Indicates whether the License Manager logs more or fewer events. Logging additional events</p>
+<p>may be useful for visualizing the activity of the License Manager.</p>
+<p>This field is equivalent to the<b> -verbose</b> command line option to the License Manager.</p>
+<p><b>Start License Manager</b> or<b> Restart License Manager</b></p>
+<p>Starts or restarts the License Manager on the license host. If the operation fails, a dialog box</p>
+<p>displaying diagnostic information appears.</p>
+<p>On Windows, this button does not function correctly if the<b> Services</b> applet in the Windows</p>
+<p><b>Control Panel</b> is open.</p>
+<p><b>Configuring and Starting the License Manager from the Command Line</b></p>
+<p><b>Note</b></p>
+<p>Windows users running the License Manager as a Windows service</p>
+<p>should configure the License Manager via the GUI or via the<b> lmconfig.txt</b></p>
+<p>configuration file. See “Configuring and Starting the License Manager</p>
+<p>from the GUI” on page 22 or “Configuring the License Manager via Its</p>
+<p>Configuration File” on page 27.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>24</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>The License Manager executable,<b> lic_lm</b>, is available from the MULTI IDE and</p>
+<p>licensing utilities installation directories. To start the License Manager as a</p>
+<p>stand-alone program, run<b> lic_lm</b> from the command line as follows:</p>
+<p><b>lic_lm</b> [options]</p>
+<p>The following table gives a description of each option. For options with a GUI</p>
+<p>equivalent in the<b> License Manager Settings</b> dialog box, more information is</p>
+<p>available in the description of the GUI equivalent. See “Configuring and Starting</p>
+<p>the License Manager from the GUI” on page 22.</p>
+<p><b>-debug</b></p>
+<p><b>-d</b></p>
+<p>On UNIX, enables debug mode, in which the License Manager will not start up as a daemon.</p>
+<p>On Windows, causes the log file to be output to<b> stdout</b>. See also the<b> -log<i> log_file_path</b></i> option</p>
+<p>below.</p>
+<p><b>-debug_level<i> num</b></i></p>
+<p>Specifies how much debugging information should be logged. Valid values for</p>
+<p><i>num</i></p>
+<p>are from</p>
+<p>0</p>
+<p>to</p>
+<p>11</p>
+<p>. See also the<b> -verbose</b> option below.</p>
+<p><b>-desc<i> description</b></i></p>
+<p>Specifies a description for the License Manager. If</p>
+<p><i>description</i></p>
+<p>contains a space, enclose it</p>
+<p>in quotation marks.</p>
+<p>This command line option is equivalent to the<b> Description</b> field in the<b> License Manager</b></p>
+<p><b>Settings</b> dialog box.</p>
+<p><b>-filter<i> IP_filter</b></i></p>
+<p>Specifies a dotted-decimal or 32-bit hex value IP address as a filter whose zero fields match all</p>
+<p>values and whose non-zero fields match only the non-zero value given.</p>
+<p>This command line option is equivalent to the<b> IP Addr Filter</b> field in the<b> License Manager</b></p>
+<p><b>Settings</b> dialog box.</p>
+<p><b>Note</b></p>
+<p>This command line option is deprecated in MULTI 6. Use a license access file</p>
+<p>instead (see “Controlling Access to Licenses” on page 18).</p>
+<p><b>-help</b></p>
+<p><b>-h</b></p>
+<p>Displays help information.</p>
+<p><i>25</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring and Starting the License Manager from the Command Line</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>-license<i> license_filename</i> ...</b></p>
+<p>Specifies the license file (<b>.ghslic</b>) containing licenses to be served by the License Manager. If</p>
+<p><i>license_filename</i></p>
+<p>contains a space, enclose it in quotation marks.</p>
+<p>To specify multiple license files, repeat</p>
+<p>-license</p>
+<p>before each new filename. See</p>
+<p>Example 2.5. Specifying Multiple License Files on page 27.</p>
+<p>When multiple license files are specified, each of them must be locked to a different TCP port.</p>
+<p>(TCP ports can only be assigned by Green Hills Software.) Duplicate license files (identified</p>
+<p>by serial number) are ignored.</p>
+<p>This command line option is equivalent to the<b> License File</b> field in the<b> License Manager</b></p>
+<p><b>Settings</b> dialog box.</p>
+<p><b>-log<i> log_file_path</b></i></p>
+<p><b>-l<i> log_file_path</b></i></p>
+<p>Specifies the absolute path to a file that stores logging information for every significant licensing</p>
+<p>event, such as the acquisition and release of a license. If</p>
+<p><i>log_file_path</i></p>
+<p>contains a space,</p>
+<p>enclose it in quotation marks. See also the<b> -debug</b> option above.</p>
+<p>This command line option is equivalent to the<b> Log File</b> field in the<b> License Manager Settings</b></p>
+<p>dialog box.</p>
+<p><b>-noudp</b></p>
+<p>Disables the UDP broadcasting service that locates the License Manager. As a result, UDP port</p>
+<p>2009 is not used.</p>
+<p><b>-track_users<i> user_file_path</b></i></p>
+<p>Specifies the absolute path to a file that stores distinct user names. If</p>
+<p><i>user_file_path</i></p>
+<p>contains</p>
+<p>a space, enclose it in quotation marks.</p>
+<p>This command line option is equivalent to the<b> User Tracking File</b> field in the<b> License Manager</b></p>
+<p><b>Settings</b> dialog box.</p>
+<p><b>-verbose</b></p>
+<p><b>-v</b></p>
+<p>Causes the License Manager to log additional events. To set verbosity more precisely, use the</p>
+<p><b>-debug_level<i> num</b></i> option above.</p>
+<p>This command line option is equivalent to the<b> Verbose Logging</b> field in the<b> License Manager</b></p>
+<p><b>Settings</b> dialog box.</p>
+<p>An example use of the<b> lic_lm</b> command follows.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>26</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Example 2.5. Specifying Multiple License Files</b></p>
+<p>&gt; lic_lm -desc Development -log /tmp/lm.log -license ppclicenses.ghslic \</p>
+<p>-license armlicenses.ghslic</p>
+<p>This command specifies multiple license files for use with a single License Manager.</p>
+<p>Note that each license file must be unique. Duplicate files will be rejected by the</p>
+<p>License Manager.</p>
+<p><b>Configuring the License Manager via Its Configuration File</b></p>
+<p>The License Manager's configuration is normally managed via the<b> License Manager</b></p>
+<p><b>Settings</b> dialog box. (For more information, see “Configuring and Starting the</p>
+<p>License Manager from the GUI” on page 22.) The configuration is stored in a file</p>
+<p>called<b> lmconfig.txt</b>, which is located in the MULTI IDE or licensing utilities</p>
+<p>installation directory. You may configure the License Manager by modifying this</p>
+<p>file directly or by creating it, if it does not exist.</p>
+<p><b>lmconfig.txt</b> should be in ASCII format, with one option per line. The same syntax</p>
+<p>is used for options specified in<b> lmconfig.txt</b> and for command line options to the</p>
+<p>License Manager. Options specified on the command line override those specified</p>
+<p>in<b> lmconfig.txt</b> even if multiple occurrences of an option (such as<b> -license</b>) are</p>
+<p>permitted. For options, see “Configuring and Starting the License Manager from</p>
+<p>the Command Line” on page 24. Lines beginning with</p>
+<p>#</p>
+<p>are treated as comments,</p>
+<p>and blank lines are ignored.</p>
+<p>You must restart the License Manager before changes to<b> lmconfig.txt</b> take effect.</p>
+<p>See “Restarting the License Manager” on page 30.</p>
+<p><b>Other Ways to Start the License Manager</b></p>
+<p>•</p>
+<p>Windows — To register the License Manager as a Windows service that runs</p>
+<p>automatically upon Windows startup, enter the following on the command line:</p>
+<p>&gt; wrap_svc -m auto register</p>
+<p>To start the License Manager service after it has been registered, enter:</p>
+<p>&gt; wrap_svc start</p>
+<p><i>27</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring the License Manager via Its Configuration File</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>For more information, see “Controlling the License Manager with wrap_svc”</p>
+<p>on page 30.</p>
+<p>•</p>
+<p>Windows — If a Windows service exists for the License Manager, ensure that</p>
+<p>the<b> MULTI License Administrator</b> is not open, and then use the<b> Services</b></p>
+<p>applet to start the License Manager. You can access the<b> Services</b> applet from</p>
+<p>the Windows<b> Control Panel</b> or by running</p>
+<p>services.msc</p>
+<p>.</p>
+<p>•</p>
+<p>Linux/Solaris — Modify the startup scripts on the license host to launch<b> lic_lm</b></p>
+<p>at boot time. As an example, a bare-bones script for Solaris might exist in a</p>
+<p>file named<b> /etc/rc2.d/S99ghs_lm</b> with the following contents.</p>
+<p>#!/bin/sh</p>
+<p>LM_DIR=&quot;/usr/ghs/licensing&quot;</p>
+<p># This file will be loaded by the host, with default</p>
+<p># values for log file, verbosity, etc. In MULTI 6, the</p>
+<p># mlmadmin utility can be used to change these settings,</p>
+<p># or you may modify the config file with any text editor.</p>
+<p># The new settings will take effect after the host is</p>
+<p># restarted. The location of this file is defined here</p>
+<p># only for the operator's reference; changing this value</p>
+<p># will not enable lic_lm to use a different config file.</p>
+<p>LM_CONFIG_FILE=&quot;$LM_DIR/lmconfig.txt&quot;</p>
+<p>case &quot;$1&quot; in</p>
+<p>'start')</p>
+<p>cd $LM_DIR</p>
+<p>./lic_lm</p>
+<p>;;</p>
+<p>'stop')</p>
+<p>/usr/bin/pkill -x -u 0 lic_lm</p>
+<p>;;</p>
+<p>*)</p>
+<p>echo &quot;Usage: $0 { start | stop }&quot;</p>
+<p>exit 1</p>
+<p>;;</p>
+<p>esac</p>
+<p>exit 0</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>28</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>For information about how to modify startup scripts, consult your operating</p>
+<p>system documentation. If you have any problems, please contact Green Hills</p>
+<p>Technical Support.</p>
+<p><b>Stopping the License Manager</b></p>
+<p><b>Note</b></p>
+<p>Windows users with limited permissions are not able to modify the state</p>
+<p>of Windows services. To stop the License Manager, you must be logged</p>
+<p>in with administrator privileges.</p>
+<p>To manually stop the License Manager:</p>
+<p>•</p>
+<p>In the<b> MULTI License Administrator</b>, select<b> License</b> →<b> Stop License</b></p>
+<p><b>Manager on This Machine</b>. For information about how to access the<b> MULTI</b></p>
+<p><b>License Administrator</b>, see “Viewing License Information with the MULTI</p>
+<p>License Administrator” on page 44.</p>
+<p>•</p>
+<p>Windows — If a Windows service exists for the License Manager, ensure that</p>
+<p>the<b> MULTI License Administrator</b> is not open, and then use the<b> Services</b></p>
+<p>applet to stop the License Manager. You can access the<b> Services</b> applet from</p>
+<p>the Windows<b> Control Panel</b> or by running</p>
+<p>services.msc</p>
+<p>.</p>
+<p>•</p>
+<p>Windows — If you have started the License Manager via the<b> wrap_svc</b> utility,</p>
+<p>enter the following on the command line:</p>
+<p>wrap_svc stop</p>
+<p>For more information, see “Controlling the License Manager with wrap_svc”</p>
+<p>on page 30.</p>
+<p><i>29</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Stopping the License Manager</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Restarting the License Manager</b></p>
+<p>If you make changes to the License Manager's configuration via the<b> License</b></p>
+<p><b>Manager Settings</b> dialog box or the file<b> lmconfig.txt</b>, you must restart the License</p>
+<p>Manager before your changes take effect. To restart the License Manager manually,</p>
+<p>perform one of the following operations:</p>
+<p>•</p>
+<p>In the<b> License Manager Settings</b> dialog box, click<b> Restart License Manager</b>.</p>
+<p>For information about how to access this dialog box, see “Configuring and</p>
+<p>Starting the License Manager from the GUI” on page 22.</p>
+<p>•</p>
+<p>Windows — If you have started the License Manager via the<b> wrap_svc</b> utility,</p>
+<p>enter the following on the command line:</p>
+<p>&gt; wrap_svc restart</p>
+<p>For more information, see “Controlling the License Manager with wrap_svc”</p>
+<p>on page 30.</p>
+<p>•</p>
+<p>Windows — If a Windows service exists for the License Manager, ensure that</p>
+<p>the<b> MULTI License Administrator</b> is not open, and then use the<b> Services</b></p>
+<p>applet to restart the License Manager. You can access the<b> Services</b> applet from</p>
+<p>the Windows<b> Control Panel</b> or by running</p>
+<p>services.msc</p>
+<p>.</p>
+<p><b>Controlling the License Manager with wrap_svc</b></p>
+<p>On Windows, the<b> wrap_svc</b> utility allows you to register the License Manager as</p>
+<p>a Windows service, and control the service once it is registered.</p>
+<p>Before running<b> wrap_svc</b> on Windows, ensure that the following prerequisites have</p>
+<p>been met:</p>
+<p>•</p>
+<p>You are logged in with administrator privileges. Additionally, if you are using</p>
+<p>Windows 7 or Windows Vista and User Account Control (UAC) is enabled</p>
+<p>(the default), the command prompt must be started using the<b> Run as</b></p>
+<p><b>administrator</b> option:</p>
+<p>1.</p>
+<p>From the Start menu, select<b> All Programs</b> →<b> Accessories</b>.</p>
+<p>2.</p>
+<p>Right-click<b> Command Prompt</b> and select<b> Run as administrator</b>.</p>
+<p>•</p>
+<p>The<b> Services</b> applet in the Windows<b> Control Panel</b> is not active.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>30</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>The<b> MULTI License Administrator</b> is not open.</p>
+<p>•</p>
+<p>All other running programs have been exited (recommended, not required).</p>
+<p>The<b> wrap_svc</b> executable is available from the MULTI IDE and licensing utilities</p>
+<p>installation directories. You can launch it from the command line as follows:</p>
+<p><b>wrap_svc</b> [<i><b>options</b></i>] [<i><b>action</b></i>]</p>
+<p>The following</p>
+<p><i>options</i></p>
+<p>can be used with<b> wrap_svc</b>.</p>
+<p><b>-b 0|1</b></p>
+<p>Determines whether or not<b> wrap_svc</b> creates Windows firewall exceptions for the License</p>
+<p>Manager. Passing</p>
+<p>0</p>
+<p>does not create firewall exceptions; passing</p>
+<p>1</p>
+<p>does. The default is</p>
+<p>1</p>
+<p>.</p>
+<p><b>-compat</b></p>
+<p>Causes<b> wrap_svc</b> to act on the MULTI 5 License Manager instead of the MULTI 6 License</p>
+<p>Manager. See also the<b> -new</b> option below.</p>
+<p><b>-e<i> executable</b></i></p>
+<p>Registers</p>
+<p><i>executable</i></p>
+<p>as the License Manager. The default is<b> lic_lm.exe</b>.</p>
+<p><b>-m<i> mode</b></i></p>
+<p>Sets the startup mode to</p>
+<p><i>mode</i></p>
+<p>. The default is</p>
+<p>manual</p>
+<p>.</p>
+<p>Supported modes are:</p>
+<p>•</p>
+<p>auto</p>
+<p>— The service starts automatically at boot.</p>
+<p>•</p>
+<p>manual</p>
+<p>— The service must be started manually.</p>
+<p>•</p>
+<p>disabled</p>
+<p>— The service is marked as disabled.</p>
+<p><b>-n<i> service_name</b></i></p>
+<p>Causes<b> wrap_svc</b> to act on the service registered with</p>
+<p><i>service_name</i></p>
+<p>. The default service</p>
+<p>name is</p>
+<p>ghs_lm</p>
+<p>.</p>
+<p><b>-new</b></p>
+<p>Causes<b> wrap_svc</b> to act on the MULTI 6 License Manager (the default). See also the<b> -compat</b></p>
+<p>option above.</p>
+<p>The following</p>
+<p><i>actions</i></p>
+<p>can be used with<b> wrap_svc</b>.</p>
+<p><b>print</b></p>
+<p>Print the current service registration information. This is the default</p>
+<p><i>action</i></p>
+<p>if none is specified.</p>
+<p><i>31</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Controlling the License Manager with wrap_svc</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>register</b></p>
+<p>Register the service with the operating system.</p>
+<p><b>restart</b></p>
+<p>Restart the service.</p>
+<p><b>start</b></p>
+<p>Start the service.</p>
+<p><b>stop</b></p>
+<p>Stop the service.</p>
+<p><b>unregister</b></p>
+<p>Unregister the service. Running services are unregistered when they are stopped.</p>
+<p><b>Example 2.6. Registering the License Manager for Automatic Startup</b></p>
+<p>To register the License Manager as a Windows service and schedule it to start</p>
+<p>automatically when Windows starts, enter the command:</p>
+<p>wrap_svc -m auto register</p>
+<p><b>Example 2.7. Starting the License Manager</b></p>
+<p>To start the License Manager after it is registered, enter the command:</p>
+<p>wrap_svc start</p>
+<p><b>Example 2.8. Stopping the License Manager</b></p>
+<p>To stop the License Manager, enter the command:</p>
+<p>wrap_svc stop</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>32</i></p>
+<p><i>Chapter 2. Managing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>License Manager Automatic Startup and Shutdown</b></p>
+<p>If you are using Windows and you start the License Manager via the<b> License</b></p>
+<p><b>Manager Settings</b> dialog box, or if you create a service via the<b> wrap_svc</b> utility</p>
+<p>that is set to start up automatically, the License Manager automatically runs when</p>
+<p>the operating system is booted and shuts down when the operating system is shut</p>
+<p>down.</p>
+<p>Likewise, if you are using Linux/Solaris and you modified the startup scripts on</p>
+<p>the license host to launch<b> lic_lm</b> at boot time, the License Manager automatically</p>
+<p>runs when the operating system is booted and shuts down when the operating system</p>
+<p>is shut down.</p>
+<p><i>33</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>License Manager Automatic Startup and Shutdown</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 3</b></p>
+<p><b>Configuring End User</b></p>
+<p><b>Machines</b></p>
+<p><b>Contents</b></p>
+<p>Setting Configuration Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>36</p>
+<p>Specifying a Floating or Named-User License Pool . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>39</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Certain license administration settings can be controlled by way of configuration</p>
+<p>variables set in the end user's installation or in the end user's environment. This</p>
+<p>chapter contains information about these variables and how to set them.</p>
+<p><b>Setting Configuration Variables</b></p>
+<p>Configuration variables should normally be set in the end user's license configuration</p>
+<p>file,<b> license.cfg</b>, making settings available for easy reference and allowing settings</p>
+<p>to be shared with colleagues. To maintain a single<b> license.cfg</b> file that affects the</p>
+<p>IDE and Compiler installations on the client machine, set the environment variable</p>
+<p>GHS_LICENSE_CFG_FILE</p>
+<p>to an absolute path. For more information about this</p>
+<p>variable, see the next section.</p>
+<p>If you do not set</p>
+<p>GHS_LICENSE_CFG_FILE</p>
+<p>, MULTI searches for<b> license.cfg</b> in</p>
+<p><i><b>install_dir</i>\config</b>, where</p>
+<p><i>install_dir</i></p>
+<p>is the IDE installation directory if the</p>
+<p>MULTI IDE is in use, and the Compiler installation directory if the Green Hills</p>
+<p>Compiler is in use. This means that by default,<b> license.cfg</b> only affects the product</p>
+<p>in whose installation directory it is found, necessitating its maintenance in both the</p>
+<p>IDE and Compiler installation directories.</p>
+<p>If<b> license.cfg</b> does not exist, you can create it. Each line of<b> license.cfg</b> should specify</p>
+<p>a single setting. A setting is of the form</p>
+<p><i>VARIABLE</i>=<i>VALUE</i></p>
+<p>. Valid variables are</p>
+<p>listed below.</p>
+<p>While setting configuration variables in<b> license.cfg</b> is preferred, configuration</p>
+<p>variables may also be set in the user's environment. However, settings in the</p>
+<p>configuration file override environment settings. For information about setting</p>
+<p>environment variables, refer to your operating system documentation.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>36</i></p>
+<p><i>Chapter 3. Configuring End User Machines</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Variables for End User Machines</b></p>
+<p>The following configuration variables are valid for use on client machines connecting</p>
+<p>to the License Manager, and on machines with computer- or dongle-locked licenses.</p>
+<p>GHS_LICENSE_CFG_FILE</p>
+<p>Specifies the location of the license configuration file. Unlike other configuration variables,</p>
+<p>which should optimally be set in the license configuration file, but which may be set in the user</p>
+<p>environment,</p>
+<p>GHS_LICENSE_CFG_FILE</p>
+<p>can only be set in the environment. Valid values are:</p>
+<p>•</p>
+<p>unset — [default] Uses the default location for the license configuration file:</p>
+<p><i><b>install_dir</i>\config</b>, where</p>
+<p><i>install_dir</i></p>
+<p>is the IDE installation directory if the MULTI</p>
+<p>IDE is in use, and the Compiler installation directory if the Green Hills Compiler is in use.</p>
+<p>For more information, see “Setting Configuration Variables” on page 36.</p>
+<p>•</p>
+<p><i>absolute_path</i> — Uses a specific configuration. Do not begin the path with a tilde (</p>
+<p>~</p>
+<p>).</p>
+<p>GHS_LMDEBUG</p>
+<p>Specifies the level of debugging information to be generated. Valid values are from</p>
+<p>0</p>
+<p>to</p>
+<p>11</p>
+<p>.</p>
+<p>By default, debugging information is sent to</p>
+<p>stdout</p>
+<p>. Windows GUI applications, however, do</p>
+<p>not display</p>
+<p>stdout</p>
+<p>. To redirect debugging output to an accessible file, use the</p>
+<p>GHS_LMINFO_DIR</p>
+<p>variable (see below).</p>
+<p>GHS_LMINFO_DIR</p>
+<p>Specifies an existing directory in which to create an<b> .lmi</b> file that contains debugging output.</p>
+<p>This variable implies the</p>
+<p>GHS_LMDEBUG</p>
+<p>variable.</p>
+<p><b>Configuration Variables for Client Machines</b></p>
+<p>The following configuration variables are valid for use on client machines connecting</p>
+<p>to the License Manager.</p>
+<p>GHS_LMDELAY</p>
+<p>Specifies the maximum acceptable time to elapse (in seconds) before receiving a response from</p>
+<p>a License Manager once a connection has been successfully established. This number should</p>
+<p>account for the overall transit speed of Ethernet communication on your network.</p>
+<p>The default is</p>
+<p>15</p>
+<p>.</p>
+<p><i>37</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuration Variables for End User Machines</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>GHS_LMHOST</p>
+<p>Specifies the name(s) or IPv4 address(es) of the license host(s) running a License Manager on</p>
+<p>the network, and, if there are multiple license hosts, the way in which MULTI products attempt</p>
+<p>to contact License Managers when trying to obtain a license. This variable can be set in one of</p>
+<p>the following ways:</p>
+<p>•</p>
+<p>Single license host:</p>
+<p><i>license_host_name_or_ip</i></p>
+<p>•</p>
+<p>Multiple license hosts, attempt contact in order:</p>
+<p>@<i>license_host_name_or_ip</i>,<i>license_host_name_or_ip</i>,...</p>
+<p>For example:</p>
+<p>GHS_LMHOST=@192.168.100.10,192.168.100.11,host3</p>
+<p>•</p>
+<p>Multiple license hosts, attempt contact at random:</p>
+<p>#<i>license_host_name_or_ip</i>,<i>license_host_name_or_ip</i>,...</p>
+<p>For example:</p>
+<p>GHS_LMHOST=#fee,fie,192.168.100.12,fum</p>
+<p><b>Note</b></p>
+<p>Multiple license hosts should be specified in a comma-separated list.</p>
+<p>For more information, see “Specifying a Floating or Named-User License Pool” on page 39.</p>
+<p>GHS_LMNOCACHE</p>
+<p>Suppress the default behavior of using cached licenses when available. Due to its negative</p>
+<p>impact on performance, this variable should only be set for diagnostic purposes. Valid values</p>
+<p>are:</p>
+<p>•</p>
+<p>unset [default]</p>
+<p>•</p>
+<p>1</p>
+<p>GHS_LMPORT</p>
+<p>Specifies the Green-Hills-assigned TCP port that the License Manager(s) listen(s) on. If the</p>
+<p>default port (2009) is not the port in use, this variable must be set to the correct port to ensure</p>
+<p>that the client programs connect to it. Every License Manager running on a license host specified</p>
+<p>by</p>
+<p>GHS_LMHOST</p>
+<p>is assumed to be listening on this port.</p>
+<p>For more information, see “Specifying a Floating or Named-User License Pool” on page 39.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>38</i></p>
+<p><i>Chapter 3. Configuring End User Machines</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Variables for Machines with Local Licenses</b></p>
+<p>The following configuration variables are valid for use on machines with computer-</p>
+<p>or dongle-locked licenses.</p>
+<p>GHS_LM_EXPECTED_MAC</p>
+<p>Specifies the MAC address (for example,</p>
+<p>B8-AC-6F-97-5A-5F</p>
+<p>or</p>
+<p>B8:AC:6F:97:5A:5F</p>
+<p>) to</p>
+<p>use when validating licenses against the Ethernet hardware. This can be used to tell MULTI</p>
+<p>products not to use an Ethernet adapter that is commonly removed from the system. The specified</p>
+<p>value must match the Ethernet address of an installed adapter.</p>
+<p>You can display MAC addresses by:</p>
+<p>•</p>
+<p>Windows — Running<b> ipconfig /all</b> from a command prompt. MAC addresses are listed</p>
+<p>under</p>
+<p>Physical Address</p>
+<p>.</p>
+<p>•</p>
+<p>Linux/Solaris — Running<b> ifconfig -a</b>.</p>
+<p>By default, the first adapter in the system is used.</p>
+<p>LICENSE_FILE_DIR</p>
+<p>Specifies the directory where the license files reside. By default, the MULTI products look for</p>
+<p>the license files in<b> C:\GHS\licenses</b> on Windows. To instruct the products to look in a different</p>
+<p>directory for the license files, specify an absolute path.</p>
+<p><b>Specifying a Floating or Named-User License Pool</b></p>
+<p>When a licensed MULTI product runs on a client machine, the product attempts to</p>
+<p>obtain a floating or named-user license from a<i> license pool</i>. A license pool is a set</p>
+<p>of licenses specified in a license file (<b>.ghslic</b>). The licenses in a given license pool</p>
+<p>are served by a particular License Manager running on a license host on the network</p>
+<p>and listening on a particular TCP port. The preferred license pool can be identified</p>
+<p>by:</p>
+<p>•</p>
+<p>the license host that the License Manager is running on</p>
+<p>•</p>
+<p>the TCP port that the License Manager is listening on</p>
+<p>End users are instructed to specify the license host by setting the</p>
+<p>GHS_LMHOST</p>
+<p>configuration variable in the GUI (see “Obtaining Floating or Named-User Licenses”</p>
+<p>on page 6), but the license host may also be specified by setting</p>
+<p>GHS_LMHOST</p>
+<p>in</p>
+<p>the client's license configuration file (<b>license.cfg</b>) or in the client's environment.</p>
+<p><i>39</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuration Variables for Machines with Local Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>For more information, see “Setting Configuration Variables” on page 36. If there</p>
+<p>are multiple license hosts, see “Using Multiple License Hosts” on page 41.</p>
+<p>The TCP port that the License Manager listens on is assigned by Green Hills</p>
+<p>Software. If a TCP port other than the default (2009) is assigned, the</p>
+<p>GHS_LMPORT</p>
+<p>configuration variable on the client machine should be set to the corresponding port</p>
+<p>number. Only one TCP port can be specified via</p>
+<p>GHS_LMPORT</p>
+<p>, and this port number</p>
+<p>is assumed to be in use by every License Manager running on a license host specified</p>
+<p>via</p>
+<p>GHS_LMHOST</p>
+<p>. If</p>
+<p>GHS_LMPORT</p>
+<p>is not set, the default port number (2009) is used.</p>
+<p><b>Example 3.1. Using a Single License Host and TCP Port</b></p>
+<p>Suppose there is one license host, which is named<i> host1</i> and which is running a</p>
+<p>License Manager that is listening for license requests on TCP port 2009. On client</p>
+<p>machines,</p>
+<p>GHS_LMHOST</p>
+<p>should be set as follows:</p>
+<p>GHS_LMHOST=host1</p>
+<p>Since the default TCP port is in use,</p>
+<p>GHS_LMPORT</p>
+<p>does not need to be set.</p>
+<p><b>Example 3.2. Using a Single License Host and Multiple TCP Ports</b></p>
+<p>Suppose now that there is still one license host named<i> host1</i>, but that it is running</p>
+<p>a License Manager that is listening for license requests on TCP ports 2009, 3000,</p>
+<p>and 4000. A license pool of MULTI for Power Architecture licenses is bound to</p>
+<p>port 2009, a pool of MULTI for ARM licenses is bound to port 3000, and a pool</p>
+<p>of MULTI for MIPS licenses is bound to port 4000. On client machines requiring</p>
+<p>access to Power Architecture licenses,</p>
+<p>GHS_LMHOST</p>
+<p>should be set as follows:</p>
+<p>GHS_LMHOST=host1</p>
+<p>Since the Power Architecture license pool is bound to the default TCP port,</p>
+<p>GHS_LMPORT</p>
+<p>can remain unset.</p>
+<p>On clients requiring access to ARM licenses,</p>
+<p>GHS_LMHOST</p>
+<p>and</p>
+<p>GHS_LMPORT</p>
+<p>should</p>
+<p>be set as follows:</p>
+<p>GHS_LMHOST=host1</p>
+<p>GHS_LMPORT=3000</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>40</i></p>
+<p><i>Chapter 3. Configuring End User Machines</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Finally, on clients requiring access to MIPS licenses:</p>
+<p>GHS_LMHOST=host1</p>
+<p>GHS_LMPORT=4000</p>
+<p><b>Using Multiple License Hosts</b></p>
+<p>If there are multiple license hosts,</p>
+<p>GHS_LMHOST</p>
+<p>should be set to a comma-separated</p>
+<p>list of license host names or IP addresses. Clients attempt contact in a designated</p>
+<p>order if the comma-separated list is prepended with an</p>
+<p>@</p>
+<p>character, or at random if</p>
+<p>the comma-separated list is prepended with a</p>
+<p>#</p>
+<p>character.</p>
+<p>For example, suppose there are three license hosts whose IP addresses are</p>
+<p>192.168.100.10, 192.168.100.11, and 192.168.100.12. Suppose further that you</p>
+<p>want clients to attempt to contact the License Manager running on 192.168.100.10</p>
+<p>first, then on 192.168.100.11, and finally on 192.168.100.12. On client machines,</p>
+<p>GHS_LMHOST</p>
+<p>should be set as follows:</p>
+<p>GHS_LMHOST=@192.168.100.10,192.168.100.11,192.168.100.12</p>
+<p>Randomly selecting license hosts implements a rudimentary form of load balancing.</p>
+<p>To indicate that the License Managers should be tried at random,</p>
+<p>GHS_LMHOST</p>
+<p>should be:</p>
+<p>GHS_LMHOST=#192.168.100.10,192.168.100.11,192.168.100.12</p>
+<p><b>Note</b></p>
+<p>The</p>
+<p>#</p>
+<p>character is a comment character for many shells. If set in an</p>
+<p>environment variable, it should be escaped.</p>
+<p><b>Example 3.3. Using Multiple License Hosts and Multiple TCP Ports</b></p>
+<p>Suppose that the following are true:</p>
+<p>•</p>
+<p>There are two license hosts named<i> host1</i> and<i> host2</i>.</p>
+<p>•</p>
+<p>A license pool of MULTI for Power Architecture licenses is bound to host1,</p>
+<p>port 2009. A second pool of Power Architecture licenses is bound to host2,</p>
+<p>port 2009.</p>
+<p>•</p>
+<p>A license pool of MULTI for MIPS licenses is bound to host1, port 3000. A</p>
+<p>second pool of MIPS licenses is bound to host2, port 3000.</p>
+<p><i>41</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Using Multiple License Hosts</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>A license pool of MULTI for ARM licenses is bound to host2, port 4000.</p>
+<p>•</p>
+<p>You prefer the License Manager running on host1 to be contacted first, if</p>
+<p>applicable.</p>
+<p>On client machines requiring access to Power Architecture licenses,</p>
+<p>GHS_LMHOST</p>
+<p>should be set as follows:</p>
+<p>GHS_LMHOST=@host1,host2</p>
+<p>GHS_LMPORT</p>
+<p>would remain unset.</p>
+<p>On clients requiring access to MIPS licenses,</p>
+<p>GHS_LMHOST</p>
+<p>and</p>
+<p>GHS_LMPORT</p>
+<p>should</p>
+<p>be set as follows:</p>
+<p>GHS_LMHOST=@host1,host2</p>
+<p>GHS_LMPORT=3000</p>
+<p>Finally, on clients requiring access to ARM licenses:</p>
+<p>GHS_LMHOST=host2</p>
+<p>GHS_LMPORT=4000</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>42</i></p>
+<p><i>Chapter 3. Configuring End User Machines</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4</b></p>
+<p><b>Viewing License Information</b></p>
+<p><b>Contents</b></p>
+<p>Viewing License Information with the MULTI License Administrator . . . . . .</p>
+<p>44</p>
+<p>Listing Floating and Named-User Licenses with lic_find_licenses . . . . . . . . .</p>
+<p>46</p>
+<p>Summarizing License Manager Logs with lic_log_summary.py . . . . . . . . . . . .</p>
+<p>48</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Licensing information is accessible from the<b> MULTI License Administrator</b> and</p>
+<p>via certain license administration utilities. This chapter contains information about</p>
+<p>using the<b> MULTI License Administrator</b> and about running the<b> lic_find_licenses</b></p>
+<p>and<b> lic_log_summary.py</b> utilities.</p>
+<p><b>Viewing License Information with the MULTI License Administrator</b></p>
+<p>The<b> MULTI License Administrator</b> is a graphical interface to the License</p>
+<p>Managers on the network and to licenses available locally (computer- and</p>
+<p>dongle-locked) or over the network (floating and named-user). To open the<b> MULTI</b></p>
+<p><b>License Administrator</b>, follow these steps:</p>
+<p>1.</p>
+<p>Start the<b> MULTI Licensing Wizard</b> by:</p>
+<p>•</p>
+<p>Selecting<b> Utilities</b> →<b> License Administrator</b> from the MULTI Launcher,</p>
+<p>or by</p>
+<p>•</p>
+<p>Running<b> mlmadmin.exe</b> (<b>mlmadmin</b> on Linux/Solaris) from the MULTI</p>
+<p>IDE or licensing utilities installation directory.</p>
+<p>2.</p>
+<p>In the<b> MULTI Licensing Wizard</b>, select<b> View license information</b>, and click</p>
+<p><b>Next</b>.</p>
+<p><b>Viewing License Managers on the Network</b></p>
+<p>By default, the<b> MULTI License Administrator</b> displays License Managers on the</p>
+<p>network. Whether all License Managers are displayed depends upon your network</p>
+<p>configuration. To specify additional License Managers for display:</p>
+<p>1.</p>
+<p>Click<b> Specify License Managers</b>.</p>
+<p>2.</p>
+<p>Enter a comma-separated list of the license hosts on which a License Manager</p>
+<p>is running.</p>
+<p>By default, the<b> MULTI License Administrator</b> displays only those License</p>
+<p>Managers on the network that are serving licenses to enable MULTI 6. To display</p>
+<p>License Managers that are serving licenses to enable another version of MULTI:</p>
+<p>•</p>
+<p>Clear<b> Only show License Managers for MULTI v6</b>.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>44</i></p>
+<p><i>Chapter 4. Viewing License Information</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>For information about the items available in the<b> MULTI License Administrator</b>,</p>
+<p>see “The MULTI License Administrator Window” on page 54.</p>
+<p><b>Viewing Floating and Named-User Licenses</b></p>
+<p>To view the floating or named-user licenses served by a particular License Manager:</p>
+<p>1.</p>
+<p>Display available License Managers (the default) in the<b> MULTI License</b></p>
+<p><b>Administrator</b> by selecting<b> License</b> →<b> View Network Licenses</b>. (If this menu</p>
+<p>item is not available, you are already viewing available License Managers.)</p>
+<p>2.</p>
+<p>Do one of the following:</p>
+<p>•</p>
+<p>Double-click an entry in the<b> MULTI License Administrator</b>.</p>
+<p>•</p>
+<p>Right-click an entry in the<b> MULTI License Administrator</b>, and select</p>
+<p><b>View License Information</b>.</p>
+<p>To view the floating or named-user licenses served by all License Managers listed</p>
+<p>in the<b> MULTI License Administrator</b>, do one of the following:</p>
+<p>•</p>
+<p>In the<b> MULTI License Administrator</b>, click<b> Show License Info</b>.</p>
+<p>•</p>
+<p>In the<b> MULTI License Administrator</b>, select<b> License</b> →<b> View Network</b></p>
+<p><b>License Details</b>.</p>
+<p>For information about the resulting<b> License Information</b> window, see “The License</p>
+<p>Information Window” on page 58.</p>
+<p><b>Viewing Computer- and Dongle-Locked Licenses</b></p>
+<p>To view the computer- or dongle-locked licenses that are installed locally:</p>
+<p>•</p>
+<p>Select<b> License</b> →<b> View Local Licenses</b> in the<b> MULTI License Administrator</b>.</p>
+<p>(If this menu item is not available, you are already viewing local licenses.)</p>
+<p>For information about the items available in the<b> MULTI License Administrator</b>,</p>
+<p>see “The MULTI License Administrator Window” on page 54.</p>
+<p><i>45</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Viewing Floating and Named-User Licenses</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Listing Floating and Named-User Licenses with lic_find_licenses</b></p>
+<p>The<b> lic_find_licenses</b> utility lists floating and named-user licenses served by License</p>
+<p>Managers on the network. The<b> lic_find_licenses</b> executable is available from the</p>
+<p>MULTI IDE and licensing utilities installation directories. You can launch it from</p>
+<p>the command line as follows:</p>
+<p><b>lic_find_licenses</b> [<i><b>options</b></i>]</p>
+<p>By default, the utility will contact the License Managers running on license hosts</p>
+<p>specified by</p>
+<p>GHS_LMHOST</p>
+<p>and list information about them. See “Configuration</p>
+<p>Variables for Client Machines” on page 37.</p>
+<p>The following options can be used with the<b> lic_find_licenses</b> command.</p>
+<p><b>-a</b></p>
+<p>Displays an alternative format (suitable for<b> grep</b> and other line-oriented text processors).</p>
+<p><b>-b</b></p>
+<p>Broadcasts to find license hosts running a License Manager on the network.</p>
+<p><b>-l<i> list</b></i></p>
+<p>(This option begins with a lowercase</p>
+<p>L</p>
+<p>.)</p>
+<p>Uses</p>
+<p><i>list</i></p>
+<p>as the comma-separated list of license hosts. Ports may be specified by appending</p>
+<p>:<i>port</i></p>
+<p>to the license host name.</p>
+<p><b>-o</b></p>
+<p>Only shows licenses currently in use. The default is to show all installed licenses.</p>
+<p><b>-product<i> product_name</i> |<i> product_code</b></i></p>
+<p>Specifies the product that a License Manager must serve in order to be found by a broadcast.</p>
+<p><b>-s</b></p>
+<p>Displays license sources, but not the licenses found on those sources. A license source can be</p>
+<p>a local directory or a License Manager that is checked for licenses by the MULTI products.</p>
+<p>This option implies the<b> -x</b> option.</p>
+<p><b>-w</b></p>
+<p>Includes information about who is using licenses. See “Output Format with -w” on page 47.</p>
+<p><b>-x</b></p>
+<p>Does not start with the default License Managers, which are those running on license hosts</p>
+<p>specified by</p>
+<p>GHS_LMHOST</p>
+<p>. This option implies the<b> -b</b> option.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>46</i></p>
+<p><i>Chapter 4. Viewing License Information</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Example 4.1. Using lic_find_licenses</b></p>
+<p>Assuming</p>
+<p>GHS_LMHOST</p>
+<p>has been set to</p>
+<p>TARPON</p>
+<p>, and you want to list information</p>
+<p>about licenses served by the License Manager running on TARPON, enter the</p>
+<p>command:</p>
+<p><b>lic_find_licenses</b></p>
+<p>This generates output similar to:</p>
+<p>Server TARPON: 2009 (169.254.139.247):</p>
+<p>ecomppc (2901): 10 installed, 2 in use, 7 hwm</p>
+<p>This indicates that the License Manager running on TARPON is listening on port</p>
+<p>2009 and has 10 licenses for</p>
+<p>ecomppc</p>
+<p>(the Power Architecture C/C++ compiler).</p>
+<p>Of those 10, 2 are currently in use. Since the License Manager was started, the most</p>
+<p>licenses that have been in use at any time (</p>
+<p>hwm</p>
+<p>—the<i> high water mark</i>) is 7.</p>
+<p><b>Output Format with -w</b></p>
+<p>When the<b> -w</b> option is specified with<b> lic_find_licenses</b>, user information is formatted</p>
+<p>in one of two ways:</p>
+<p>•</p>
+<p>The following format indicates that the license is not actively in use, but the</p>
+<p>License Manager is temporarily reserving the license for the specified previous</p>
+<p>user:</p>
+<p>!<i> user</i>@<i>host</i> {<i>client_id</i>}</p>
+<p>where:</p>
+<p>○</p>
+<p><i>user</i></p>
+<p>is the login of the end user that requested the license.</p>
+<p>○</p>
+<p><i>host</i></p>
+<p>is the IP address of the computer from which the license was</p>
+<p>requested.</p>
+<p>@<i>host</i></p>
+<p>may be omitted if the specified user has a named-user</p>
+<p>license reserved to their use, but has not yet requested a license.</p>
+<p>○</p>
+<p><i>client_id</i></p>
+<p>is an internal, hexadecimal number used by the License</p>
+<p>Manager to keep track of the license.</p>
+<p>•</p>
+<p>The second format indicates that the specified user is actively using the license:</p>
+<p><i>user</i>@<i>host time_in_use</i> {<i>client_id</i>}</p>
+<p><i>47</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Output Format with -w</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>where:</p>
+<p>○</p>
+<p><i>user</i></p>
+<p>,</p>
+<p><i>host</i></p>
+<p>, and</p>
+<p><i>client_id</i></p>
+<p>are the same as above.</p>
+<p>○</p>
+<p><i>time_in_use</i></p>
+<p>indicates how long the license has been checked out. For</p>
+<p>example,</p>
+<p>35m26s</p>
+<p>indicates that the license has been checked out for 35</p>
+<p>minutes and 26 seconds.</p>
+<p><b>Summarizing License Manager Logs with lic_log_summary.py</b></p>
+<p>The<b> lic_log_summary.py</b> utility is a Python script that serves as a reference</p>
+<p>implementation of a log summarizing tool. This utility processes a License Manager</p>
+<p>log file and produces a summary of the license usage by product and date. The</p>
+<p>output is in a<i> comma-separated values</i> (CSV) format, which can easily be imported</p>
+<p>into spreadsheet and database applications for advanced reporting and graphing</p>
+<p>capabilities. With this data, it should be easy to produce reports in different formats</p>
+<p>to suit your needs.</p>
+<p>The<b> lic_log_summary.py</b> script is available from the MULTI IDE and licensing</p>
+<p>utilities installation directories. You can launch it from the command line as follows:</p>
+<p><b>lic_log_summary.py</b> [<i><b>options</b></i>] [<i><b>products</b></i>]</p>
+<p>The following arguments can be used with<b> lic_log_summary.py</b>:</p>
+<p><b>--help</b></p>
+<p>Print usage information.</p>
+<p><b>-m</b></p>
+<p>Total usage by month, rather than by day</p>
+<p><b>-f<i> file</b></i></p>
+<p>Read the log file from</p>
+<p><i>file</i></p>
+<p>, rather than</p>
+<p>stdin</p>
+<p>.</p>
+<p><i><b>products</b></i></p>
+<p>Only display information about the specified products. If no products are specified, all products</p>
+<p>will be included.</p>
+<p><b>Example 4.2. Using lic_log_summary.py</b></p>
+<p>The command:</p>
+<p>lic_log_summary.py -m -f ghs_elmd.log</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>48</i></p>
+<p><i>Chapter 4. Viewing License Information</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>will display a summary of license usage from the log file named<b> ghs_elmd.log</b>,</p>
+<p>with usage totaled by month and product.</p>
+<p><b>Note</b></p>
+<p>The<b> lic_log_summary.py</b> utility is written in the Python language, and</p>
+<p>requires a Python v2.x interpreter to run. It is not compatible with Python</p>
+<p>v3. The MULTI IDE installation (but not the licensing utilities installation)</p>
+<p>includes a complete Python 2.3.3 installation for your platform. For more</p>
+<p>information, see “Python Installation” in Chapter 2, “Introduction to the</p>
+<p>MULTI-Python Integration” in the<i> MULTI: Scripting</i> book. The utility</p>
+<p>is provided as a script so that its source code can be examined and</p>
+<p>modified to suit the needs of the end user. It should be simple to study</p>
+<p>the script and implement the same concepts in another language if desired.</p>
+<p><i>49</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Summarizing License Manager Logs with lic_log_summary.py</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Part III</b></p>
+<p><b>Appendices</b></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Appendix A</b></p>
+<p><b>GUI Reference</b></p>
+<p><b>Contents</b></p>
+<p>The MULTI License Administrator Window . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>MULTI License Administrator Menus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>The License Information Window . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>58</p>
+<p>The License Information Window's File Menu . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>60</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The MULTI License Administrator Window</b></p>
+<p>By default, the<b> MULTI License Administrator</b> displays available License</p>
+<p>Managers, as shown next.</p>
+<p>Each field in the window is described in the following table.</p>
+<p><b>Available License Managers</b></p>
+<p>Lists information about each License Manager running on the network, where:</p>
+<p>•</p>
+<p><b>Host Name</b> — Specifies the name of the machine on which the License Manager is running.</p>
+<p>•</p>
+<p><b>Serial Number</b> — Uniquely identifies the license file that the License Manager is reading</p>
+<p>from.</p>
+<p>•</p>
+<p><b>Port</b> — Specifies the TCP port that the License Manager is listening on.</p>
+<p>•</p>
+<p><b>Description</b> — Provides a description of the License Manager.</p>
+<p>•</p>
+<p><b>Model</b> — Specifies the type of network license—floating or named-user—that the License</p>
+<p>Manager is serving.</p>
+<p>•</p>
+<p><b>License Manager Information</b> — Lists version information for the License Manager.</p>
+<p>•</p>
+<p><b>Start Time</b> — Lists the date and time that the License Manager was started.</p>
+<p><b>N/A</b> indicates that information is not available from the License Manager because it predates</p>
+<p>MULTI 6.</p>
+<p><b>Refresh</b></p>
+<p>Populates or refreshes the list of License Managers running on the network. The<b> MULTI License</b></p>
+<p><b>Administrator</b> performs a broadcast to find available License Managers on the network.</p>
+<p><b>Only show License Managers for MULTI v6</b></p>
+<p>Toggles the display of all License Managers on the network or only those License Managers</p>
+<p>serving licenses to enable MULTI 6 (the default).</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>54</i></p>
+<p><i>Appendix A. GUI Reference</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Specify License Managers</b></p>
+<p>Allows you to provide a comma-separated list of license hosts. The<b> MULTI License</b></p>
+<p><b>Administrator</b> will attempt to contact License Managers running on these license hosts.</p>
+<p>This setting is necessary if the license hosts cannot be reached by broadcast.</p>
+<p><b>Show License Info</b></p>
+<p>Displays information about all product licenses served by License Managers shown in the</p>
+<p><b>MULTI License Administrator</b>, and provides access to lists of license users. For more</p>
+<p>information, see “The License Information Window” on page 58.</p>
+<p>Selecting<b> License</b> →<b> View Local Licenses</b> in the<b> MULTI License Administrator</b></p>
+<p>displays locally available computer- or dongle-locked licenses. A sample window</p>
+<p>is shown next.</p>
+<p>Each field in the window is described in the following table.</p>
+<p><b>Local License Files</b></p>
+<p>Displays information about the computer- or dongle-locked licenses in the specified license</p>
+<p>file(s).</p>
+<p><b>Refresh</b></p>
+<p>Refreshes local license information.</p>
+<p><i>55</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The MULTI License Administrator Window</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Licenses from the above license file</b></p>
+<p>Lists information about the licenses, where each row specifies:</p>
+<p>•</p>
+<p><b>Product Name</b> — The type of product license.</p>
+<p>•</p>
+<p><b>Product Code</b> — The internal ID used by Green Hills Technical Support to identify the</p>
+<p>licensed product.</p>
+<p>•</p>
+<p><b>Expiration</b> — The expiration date for the license.</p>
+<p>•</p>
+<p><b>File</b> — The license file (<b>.ghslic</b>) containing the license.</p>
+<p><b>MULTI License Administrator Menus</b></p>
+<p><b>The File Menu</b></p>
+<p>The<b> File</b> menu of the<b> MULTI License Administrator</b> contains the following</p>
+<p>options:</p>
+<p><b>Licensing Wizard</b></p>
+<p>Launches the<b> MULTI Licensing Wizard</b>.</p>
+<p><b>Save Local License Information to File</b></p>
+<p>Allows you to save license information displayed in the<b> MULTI License Administrator</b> to a</p>
+<p>file. This option is only available if you are viewing local licenses.</p>
+<p><b>Close</b></p>
+<p>Closes the<b> MULTI License Administrator</b>.</p>
+<p><b>The License Menu</b></p>
+<p>The<b> License</b> menu of the<b> MULTI License Administrator</b> contains the following</p>
+<p>options. The appearance of certain options is dependent upon whether you are</p>
+<p>viewing local or network licenses.</p>
+<p><b>View Local Licenses</b></p>
+<p>Displays information about local computer- and dongle-locked licenses.</p>
+<p><b>View Network Licenses</b></p>
+<p>Displays information about License Managers found on the network.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>56</i></p>
+<p><i>Appendix A. GUI Reference</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>View Network License Details</b></p>
+<p>Displays all floating and named-user product licenses served by License Managers shown in</p>
+<p>the<b> MULTI License Administrator</b>, and provides access to lists of license users. For more</p>
+<p>information, see “The License Information Window” on page 58.</p>
+<p><b>Stop License Manager on This Machine</b></p>
+<p>Stops the local License Manager.</p>
+<p><b>Diagnose License Problems</b></p>
+<p>Allows you to test whether you can obtain a license for a particular MULTI product. You should</p>
+<p>only need to use this feature if prompted by Green Hills Technical Support.</p>
+<p><b>The Help Menu</b></p>
+<p>The<b> Help</b> menu of the<b> MULTI License Administrator</b> contains the following</p>
+<p>options:</p>
+<p><b>Help</b></p>
+<p>Opens online help for the<b> MULTI License Administrator</b>. You may also press<b> F1</b> to access</p>
+<p>online help.</p>
+<p><b>Manuals</b></p>
+<p>Opens the<b> Manuals</b> submenu, which displays a list of all manuals included in your MULTI</p>
+<p>installation. Choose a manual to open its online help.</p>
+<p><b>About</b></p>
+<p>Opens a dialog box that contains basic information about the<b> MULTI License Administrator</b>,</p>
+<p>such as its version and copyright information.</p>
+<p><b>Troubleshooting Info</b></p>
+<p>Launches the<b> gbugrpt</b> utility, which collects information about your MULTI installation and</p>
+<p>allows you to save it or email it. In the event of problems, it can be useful to email the information</p>
+<p>to Green Hills Technical Support or to your product support contact.</p>
+<p><i>57</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The Help Menu</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Shortcut Menu</b></p>
+<p>When you are viewing network licenses, and you right-click an<b> Available License</b></p>
+<p><b>Manager</b> entry, a shortcut menu opens. The shortcut menu contains the following</p>
+<p>item:</p>
+<p><b>View License Information</b></p>
+<p>Displays all floating and named-user product licenses served by the License Manager, and</p>
+<p>provides access to lists of license users. For more information, see “The License Information</p>
+<p>Window” on page 58.</p>
+<p><b>The License Information Window</b></p>
+<p>The<b> License Information</b> window contains the following items:</p>
+<p><b>License Manager</b></p>
+<p>Displays information about the floating or named-user licenses served by the License Manager(s)</p>
+<p>running on the specified machine.</p>
+<p><b>Refresh</b></p>
+<p>Updates the license usage snapshot.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>58</i></p>
+<p><i>Appendix A. GUI Reference</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Close</b></p>
+<p>Closes the window.</p>
+<p><b>Product List</b></p>
+<p>Lists information about product licenses, where each row identifies:</p>
+<p>•</p>
+<p><b>LM Host</b> — The machine from which the License Manager is running and serving licenses.</p>
+<p>•</p>
+<p><b>Product Name</b> — The type of product license being served.</p>
+<p>•</p>
+<p><b>Product Code</b> — The internal ID used by Green Hills Technical Support to identify the</p>
+<p>licensed product.</p>
+<p>•</p>
+<p><b>Installed</b> — How many product licenses are installed.</p>
+<p>•</p>
+<p><b>Current Usage</b> — How many product licenses are currently in use.*</p>
+<p>•</p>
+<p><b>Peak Usage</b> — The greatest number of product licenses that have been in use at any one</p>
+<p>time since the License Manager was started.*</p>
+<p>•</p>
+<p><b>Expiration</b> — The product licenses' expiration date. If the product licenses do not expire,</p>
+<p>nothing is displayed in this column. If the expiration is not available because the License</p>
+<p>Manager predates MULTI 6 and does not provide this information,<b> N/A</b> is displayed in</p>
+<p>this column.</p>
+<p>*A named-user product license is not considered to be in use until it is actually granted to the</p>
+<p>named user for whom it is reserved.</p>
+<p><b>Selected Product's User List</b></p>
+<p>Lists information about the entry selected in the<b> Product List</b>, where each row specifies:</p>
+<p>•</p>
+<p><b>User</b> — An end user to whom a floating product license has actually been granted, or an</p>
+<p>end user for whom a named-user product license is reserved. Named user licensees are</p>
+<p>displayed whether or not the named-user license has been granted.</p>
+<p>•</p>
+<p><b>Host</b> — The end user's machine (the client machine) if the end user has been granted a</p>
+<p>license. If a license has not been granted, this column is empty.</p>
+<p>•</p>
+<p><b>Length</b> — The length of time that the license has been in use, if granted. If a license has</p>
+<p>not been granted, this column is empty.</p>
+<p><i>59</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The License Information Window</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The License Information Window's File Menu</b></p>
+<p>The<b> File</b> menu of the<b> License Information</b> window contains the following options:</p>
+<p><b>Save Viewed License Information to File</b></p>
+<p>Allows you to save the license usage snapshot in the<b> License Information</b> window to a file.</p>
+<p><b>Close</b></p>
+<p>Closes the<b> License Information</b> window.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>60</i></p>
+<p><i>Appendix A. GUI Reference</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Appendix B</b></p>
+<p><b>Administration Utilities</b></p>
+<p><b>Contents</b></p>
+<p>Determining Server Codes with servecode . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>63</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This appendix provides information about administration utilities. Unless otherwise</p>
+<p>noted, these utilities are supported on Windows and on Linux/Solaris.</p>
+<p>Utilities are further documented in relevant sections of this book or, if no applicable</p>
+<p>context exists elsewhere, in this appendix.</p>
+<p><b>lic_find_licenses</b></p>
+<p>Lists licenses served by License Managers on the network. For more information, see “Listing</p>
+<p>Floating and Named-User Licenses with lic_find_licenses” on page 46.</p>
+<p><b>lic_log_summary.py</b></p>
+<p>A Python script that serves as a reference implementation of a log summarizing tool. This utility</p>
+<p>processes a License Manager log file and prints a comma-delimited summary of license usage</p>
+<p>by product and date, suitable for importing into a spreadsheet for graphing and further analysis.</p>
+<p>For more information, see “Summarizing License Manager Logs with lic_log_summary.py”</p>
+<p>on page 48.</p>
+<p><b>lic_userlist</b></p>
+<p>Utility for named-user licenses, which manages user lists on the license host. For more</p>
+<p>information, see “Managing User Lists with lic_userlist” on page 14.</p>
+<p><b>mlmadmin</b></p>
+<p>Program used for displaying license information. For more information, see “Viewing License</p>
+<p>Information with the MULTI License Administrator” on page 44.</p>
+<p><b>servecode</b></p>
+<p>Prints valid server codes for the machine upon which it is run. For more information, see</p>
+<p>“Determining Server Codes with servecode” on page 63.</p>
+<p><b>wrap_svc</b></p>
+<p>Windows only</p>
+<p>Wrapper executable that allows the License Manager to act as a Windows service. Windows</p>
+<p>services can be launched automatically at system startup, and can be controlled through the</p>
+<p><b>Services</b> applet. For more information, see “Controlling the License Manager with wrap_svc”</p>
+<p>on page 30.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>62</i></p>
+<p><i>Appendix B. Administration Utilities</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Determining Server Codes with servecode</b></p>
+<p>Licenses are locked to a<i> server code</i>, which defines where the licenses can be</p>
+<p>installed (computer- and dongle-locked) or where the License Manager serving the</p>
+<p>licenses can run (floating and named-user). When Green Hills Software grants</p>
+<p>license requests, it is important for it to have the correct server code from the correct</p>
+<p>machine.</p>
+<p>The<b> servecode</b> utility determines valid server codes for the machine upon which it</p>
+<p>is run. While a valid server code is automatically determined when you request</p>
+<p>licenses via the<b> MULTI Licensing Wizard</b>, there are a few cases when you may</p>
+<p>want to run<b> servecode</b> directly.</p>
+<p>The<b> servecode</b> executable is available from the MULTI IDE, Compiler, and licensing</p>
+<p>utilities installation directories. You can launch it from the command line as follows:</p>
+<p><b>servecode</b> [<i>options</i>]</p>
+<p>The following table provides descriptions of the<b> servecode</b> options.</p>
+<p><b>--help</b></p>
+<p><b>-h</b></p>
+<p>Displays usage information.</p>
+<p><b>--verbose</b></p>
+<p><b>-v</b></p>
+<p>Displays all available server codes. If this option is not specified, only the first available server</p>
+<p>code is printed.</p>
+<p><i>63</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Determining Server Codes with servecode</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Appendix C</b></p>
+<p><b>Troubleshooting</b></p>
+<p><b>Contents</b></p>
+<p>Floating and Named-User Licensing Problems . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Dongle Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>66</p>
+<p>Common Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>68</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Floating and Named-User Licensing Problems</b></p>
+<p>•</p>
+<p>If you see a dialog box with the following message:</p>
+<p>No MULTI licenses available.</p>
+<p>[There are no local licenses and there are no License Managers to contact]</p>
+<p>MULTI Licensing Wizard will be launched.</p>
+<p>You have not specified a License Manager from which to obtain licenses, or</p>
+<p>the specified License Manager cannot be contacted. If the former, follow the</p>
+<p>instructions in “Obtaining Floating or Named-User Licenses” on page 6. If</p>
+<p>you have already specified a License Manager, ask your system administrator</p>
+<p>to investigate the problem.</p>
+<p>•</p>
+<p>If you are unable to obtain floating or named-user licenses and you have</p>
+<p>determined that the information above is not applicable, you can set the variable</p>
+<p>GHS_LMDEBUG</p>
+<p>to</p>
+<p>11</p>
+<p>, and the variable</p>
+<p>GHS_LMINFO_DIR</p>
+<p>to an existing</p>
+<p>directory. This causes MULTI to output diagnostic information to<b> .lmi</b> files</p>
+<p>created in the specified directory. For more information, see “Setting</p>
+<p>Configuration Variables” on page 36.</p>
+<p>See also “Common Problems” on page 68.</p>
+<p><b>Dongle Problems</b></p>
+<p>Most dongle problems are due to the following issues:</p>
+<p>•</p>
+<p><i>The installed license was not issued for use with your dongle.</i></p>
+<p>To determine whether this is the cause of the problem, locate the</p>
+<p>SERVER</p>
+<p>CODE</p>
+<p>comment in your installed license file (<b>.ghslic</b>), and compare it to the</p>
+<p>output of the<b> servecode</b> utility (see “Determining Server Codes with servecode”</p>
+<p>on page 63). While<b> servecode</b>'s output begins with</p>
+<p><i>num</i>#0x</p>
+<p>and the license</p>
+<p>file's code begins with</p>
+<p><i>num</i>/</p>
+<p>, the codes should otherwise match.</p>
+<p><i>num</i></p>
+<p>at the</p>
+<p>beginning of the<b> servecode</b> output and</p>
+<p><i>num</i></p>
+<p>at the beginning of the license file</p>
+<p>code should also match. The most common cause of mismatch is use of the</p>
+<p>wrong license file.</p>
+<p>•</p>
+<p><i>There are incompatibilities with other devices or certain hardware.</i></p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>66</i></p>
+<p><i>Appendix C. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>GHS uses the SafeNet Sentinel SuperPro as our hardware security device</p>
+<p>(dongle). Dongle drivers are installed by default if you use the<b> MULTI</b></p>
+<p><b>Licensing Wizard</b> to request or install licenses. If you experience conflicts or</p>
+<p>incompatibilities after the drivers are installed, Green Hills recommends that</p>
+<p>you:</p>
+<p>1.</p>
+<p>Run the<b> SetupSysDriver.exe</b> utility (typically located in<b> C:\Program</b></p>
+<p><b>Files\Common Files\SafeNet Sentinel\Sentinel System Driver\</b>).</p>
+<p>2.</p>
+<p>Configure the drivers to use only the device to which the dongle is</p>
+<p>attached.</p>
+<p>For example, you might:</p>
+<p>1.</p>
+<p>Run the utility.</p>
+<p>2.</p>
+<p>Click the<b> Configure Driver</b> button to get to the configuration screen.</p>
+<p>3.</p>
+<p>Select any lines not corresponding to the USB port where the dongle is</p>
+<p>attached.</p>
+<p>4.</p>
+<p>Click<b> Edit</b> so that the drivers do not use the selected port(s).</p>
+<p>SafeNet maintains a list of known incompatibilities, accessible from their main</p>
+<p>corporate Web site [http://www.safenet-inc.com].</p>
+<p>•</p>
+<p><i>Dongle drivers are outdated or are not installed correctly.</i></p>
+<p>Insert the dongle into a USB port on your machine. If you run the<b> servecode</b></p>
+<p>utility (see “Determining Server Codes with servecode” on page 63) and the</p>
+<p>output does<i> not</i> begin with a</p>
+<p>2#</p>
+<p>, dongle drivers are outdated or are not installed</p>
+<p>correctly. You can use the Sentinel Medic program from SafeNet to further</p>
+<p>diagnose the problem. SafeNet is the manufacturer of the dongles and dongle</p>
+<p>drivers used by MULTI products. We recommend downloading the latest</p>
+<p>version of the drivers and the Sentinel Medic application from the SafeNet</p>
+<p>Web site [http://www.safenet-inc.com].</p>
+<p>•</p>
+<p><i>There is more than one dongle installed.</i></p>
+<p>MULTI products only recognize one dongle at a time. Dongles from other</p>
+<p>vendors are not visible to our products, so they should not pose a problem.</p>
+<p><i>67</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Dongle Problems</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>SafeNet maintains additional dongle troubleshooting information on their Web site</p>
+<p>[http://www.safenet-inc.com/]. If you have further questions, please contact Green</p>
+<p>Hills Technical Support.</p>
+<p>See also “Common Problems” on page 68.</p>
+<p><b>Common Problems</b></p>
+<p>•</p>
+<p>If you fail to get a license on Security-Enhanced Linux (SELinux), and you</p>
+<p>see the following error message:</p>
+<p>ghs_lclient.so: cannot restore segment prot after reloc: Permission denied</p>
+<p>Contact your system administrator, or do one of the following (you must have</p>
+<p>“root” permission):</p>
+<p>○</p>
+<p>Temporarily disable security enforcing via the command</p>
+<p><b>/usr/sbin/setenforce 0</b>, or</p>
+<p>○</p>
+<p>Permanently disable security enforcing:</p>
+<p>1.</p>
+<p>Set</p>
+<p>SELINUX</p>
+<p>to</p>
+<p>disabled</p>
+<p>in<b> /etc/selinux/config</b>.</p>
+<p>2.</p>
+<p>Reboot the system.</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>68</i></p>
+<p><i>Appendix C. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Index</b></p>
+<p><b>Symbols</b></p>
+<p># character, 41</p>
+<p>@ character, 41</p>
+<p><b>A</b></p>
+<p>administration utilities (see utilities)</p>
+<p>administrators, information for (see system administrators,</p>
+<p>information for)</p>
+<p><b>B</b></p>
+<p>blacklists, 18</p>
+<p><b>C</b></p>
+<p>cached licenses, 38</p>
+<p>caveats for starting the License Manager, 21</p>
+<p>client machines, configuring, 37, 39</p>
+<p>compatibility, license, 12</p>
+<p>computer-locked licenses</p>
+<p>description of, xii</p>
+<p>installing, 5</p>
+<p>requesting, 4</p>
+<p>viewing, 45</p>
+<p>computer-locked machines</p>
+<p>configuring, 37, 39</p>
+<p>configuration variables</p>
+<p>all end user machines, 37</p>
+<p>client machines, 37</p>
+<p>computer- and dongle-locked machines, 37, 39</p>
+<p>GHS_LICENSE_CFG_FILE, 37</p>
+<p>GHS_LM_EXPECTED_MAC, 39</p>
+<p>GHS_LMDEBUG, 37, 66</p>
+<p>GHS_LMDELAY, 37</p>
+<p>GHS_LMHOST, 6, 38, 39, 40, 41</p>
+<p>GHS_LMINFO_DIR, 37</p>
+<p>GHS_LMNOCACHE, 38</p>
+<p>GHS_LMPORT, 38, 40, 41</p>
+<p>LICENSE_FILE_DIR, 39</p>
+<p>setting, 36</p>
+<p>configuring</p>
+<p>client machines, 37, 39</p>
+<p>computer- and dongle-locked machines, 37, 39</p>
+<p>end user machines, 36, 37</p>
+<p>the License Manager, 22, 24, 27</p>
+<p>contacting License Managers, 41, 42</p>
+<p>Control Panel</p>
+<p>starting the License Manager from, 28, 30</p>
+<p>stopping the License Manager from, 29</p>
+<p>conventions</p>
+<p>typographical, x</p>
+<p><b>D</b></p>
+<p>diagnostic information, 37, 66</p>
+<p>document set, viii, ix</p>
+<p>dongle problems, troubleshooting, 66</p>
+<p>dongle-locked licenses</p>
+<p>description of, xii</p>
+<p>installing, 5</p>
+<p>requesting, 4</p>
+<p>viewing, 45</p>
+<p>dongle-locked machines</p>
+<p>configuring, 37, 39</p>
+<p><b>E</b></p>
+<p>Elan licensing, 10</p>
+<p>end user machines, configuring, 36, 37</p>
+<p>end users, information for, 4</p>
+<p><b>F</b></p>
+<p>file format, license access, 19</p>
+<p>File menu</p>
+<p>License Information window, 60</p>
+<p>MULTI License Administrator, 56</p>
+<p>floating licenses</p>
+<p>configuring License Manager to serve, 10</p>
+<p>controlling access to, 18</p>
+<p>description of, xii, xiii</p>
+<p>installing, 10, 11</p>
+<p>license pool, 39, 40, 41</p>
+<p>managing, 10</p>
+<p>obtaining, 6</p>
+<p>rehosting, xiii</p>
+<p>requesting, 13</p>
+<p>viewing, 45, 46</p>
+<p><b>G</b></p>
+<p>GHS_LICENSE_CFG_FILE configuration variable, 37</p>
+<p>GHS_LM_EXPECTED_MAC configuration variable, 39</p>
+<p>GHS_LMDEBUG configuration variable, 37, 66</p>
+<h1 style="page-break-before:always; "></h1>
+<p>GHS_LMDELAY configuration variable, 37</p>
+<p>GHS_LMHOST configuration variable, 6, 38, 39, 40, 41</p>
+<p>GHS_LMINFO_DIR configuration variable, 37</p>
+<p>GHS_LMNOCACHE configuration variable, 38</p>
+<p>GHS_LMPORT configuration variable, 38, 40, 41</p>
+<p>.ghslac license access files, 18, 19</p>
+<p>.ghslic license files (see license files (.ghslic))</p>
+<p><b>H</b></p>
+<p>Help menu, MULTI License Administrator, 57</p>
+<p><b>I</b></p>
+<p>information, license (see license information, viewing)</p>
+<p>installing</p>
+<p>computer- or dongle-locked licenses, 5</p>
+<p>floating licenses, 10, 11</p>
+<p>licensing utilities, 12</p>
+<p>named-user licenses, 10, 11</p>
+<p><b>L</b></p>
+<p>legacy licensing, 10</p>
+<p>lic_find_licenses utility, 46</p>
+<p>lic_lm, 24</p>
+<p>lic_log_summary.py utility, 48</p>
+<p>lic_userlist utility, xiii, 10, 11, 14</p>
+<p>license access files (.ghslac), 18, 19</p>
+<p>license configuration file, end user, 36, 37, 39</p>
+<p>license files (.ghslic), 39</p>
+<p>computer or dongle-locked</p>
+<p>installing, 5</p>
+<p>floating or named-user</p>
+<p>installing, 10, 11</p>
+<p>using multiple, 27</p>
+<p>location of, 39</p>
+<p>license hosts</p>
+<p>considerations for choosing, 12</p>
+<p>floating and named-user licenses locked to, xiii</p>
+<p>installing licensing utilities on, 12</p>
+<p>server code, 63</p>
+<p>using multiple, 41</p>
+<p>variable for specifying, 38, 39, 40, 41</p>
+<p>License Information window</p>
+<p>File menu, 60</p>
+<p>reference, 58</p>
+<p>license information, viewing, 44, 45, 46</p>
+<p>License Manager</p>
+<p>before starting, 21</p>
+<p>compatibility with clients, 12</p>
+<p>configuring</p>
+<p>from the command line, 24</p>
+<p>from the configuration file, 27</p>
+<p>from the GUI, 22</p>
+<p>to serve licenses, 10</p>
+<p>contact in order/at random, 41</p>
+<p>license host running, 38, 39, 40, 41</p>
+<p>overview, xii</p>
+<p>registering as a Windows service, 22, 27, 30, 32</p>
+<p>restarting, 30</p>
+<p>specifying network location of, 6</p>
+<p>starting</p>
+<p>from Linux/Solaris startup script, 28, 33</p>
+<p>from the command line, 24</p>
+<p>from the Control Panel, 28, 30</p>
+<p>from the GUI, 22</p>
+<p>with wrap_svc, 27, 30, 32</p>
+<p>stopping</p>
+<p>from the Control Panel, 29</p>
+<p>methods of, 29</p>
+<p>with wrap_svc, 32</p>
+<p>TCP port, 38, 39, 40, 41</p>
+<p>using multiple license files, 27</p>
+<p>viewing available, 44</p>
+<p>License Manager Settings dialog box, 22, 33</p>
+<p>License menu, MULTI License Administrator, 56</p>
+<p>license pool, 39, 40, 41</p>
+<p>license seats, xiii</p>
+<p>license.cfg configuration file, 36, 37, 39</p>
+<p>LICENSE_FILE_DIR configuration variable, 39</p>
+<p>licenses</p>
+<p>cached, 38</p>
+<p>compatibility with License Manager, 12</p>
+<p>computer- and dongle-locked</p>
+<p>installing, 5</p>
+<p>requesting, 4</p>
+<p>floating and named-user</p>
+<p>configuring License Manager to serve, 10</p>
+<p>installing, 10, 11</p>
+<p>managing, 10</p>
+<p>obtaining, 6</p>
+<p>requesting, 13</p>
+<p>types, xii, xiii</p>
+<p>licensing</p>
+<p>legacy, 10</p>
+<p>models, xii, xiii</p>
+<p>overview for end users, 4</p>
+<p>overview for system administrators, 10</p>
+<p>problems, 66</p>
+<p>licensing utilities, installing on license host, 12</p>
+<p>Linux/Solaris startup script, 28, 33</p>
+<p>lists, user, 14</p>
+<p>lmconfig.txt, 27</p>
+<p><i>MULTI: Licensing</i></p>
+<p><i>70</i></p>
+<p><i>GHS_LMDELAY configuration variable</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>.lmi files, 37</p>
+<p>load balancing, 41</p>
+<p>log summarizing, 48</p>
+<p><b>M</b></p>
+<p>MAC address, variable for specifying, 39</p>
+<p>managing floating and named-user licenses, 10</p>
+<p>mlmadmin utility, 44</p>
+<p>models, licensing, xii, xiii</p>
+<p>MULTI Integrated Development Environment (IDE)</p>
+<p>document set, ix</p>
+<p>MULTI License Administrator</p>
+<p>File menu, 56</p>
+<p>Help menu, 57</p>
+<p>License menu, 56</p>
+<p>opening, 44</p>
+<p>shortcut menu, 58</p>
+<p>window reference, 54</p>
+<p><b>N</b></p>
+<p>named-user licenses</p>
+<p>configuring License Manager to serve, 10</p>
+<p>controlling access to, 18</p>
+<p>description of, xii, xiii</p>
+<p>installing, 10, 11</p>
+<p>license pool, 39, 40, 41</p>
+<p>managing, 10</p>
+<p>obtaining, 6</p>
+<p>rehosting, xiii</p>
+<p>requesting, 13</p>
+<p>viewing, 45, 46</p>
+<p>network location of License Manager, 6</p>
+<p>network, viewing License Managers on, 44</p>
+<p><b>O</b></p>
+<p>obtaining floating or named-user licenses, 6</p>
+<p>overview</p>
+<p>licensing for end users, 4</p>
+<p>licensing for system administrators, 10</p>
+<p><b>P</b></p>
+<p>pool, license, 39, 40, 41</p>
+<p>problems</p>
+<p>dongle, 66</p>
+<p>obtaining floating or named-user licenses, 66</p>
+<p><b>R</b></p>
+<p>rehosting floating and named-user licenses, xiii</p>
+<p>Remote Desktop, caveats for license availability, xii</p>
+<p>requesting</p>
+<p>computer- or dongle-locked licenses, 4</p>
+<p>floating or named-user licenses, 13</p>
+<p>restarting the License Manager, 30</p>
+<p><b>S</b></p>
+<p>script, starting License Manager from, 28, 33</p>
+<p>seats, license, xiii</p>
+<p>servecode utility, 63</p>
+<p>server codes, accessing with servecode utility, 63</p>
+<p>service, Windows (see Windows service)</p>
+<p>setting configuration variables, 36</p>
+<p>shortcut menu, MULTI License Administrator, 58</p>
+<p>starting the License Manager, 22, 24, 27</p>
+<p>startup script, starting License Manager from, 28, 33</p>
+<p>stopping the License Manager, 29, 32</p>
+<p>summarizing logs, 48</p>
+<p>system administrators, information for, 10</p>
+<p><b>T</b></p>
+<p>TCP port, variable for specifying, 38, 40, 41</p>
+<p>troubleshooting dongle problems, 66</p>
+<p>typographical conventions, x</p>
+<p><b>U</b></p>
+<p>user lists, 14</p>
+<p>users, information for, 4</p>
+<p>utilities</p>
+<p>lic_find_licenses, 46</p>
+<p>lic_log_summary.py, 48</p>
+<p>lic_userlist, xiii, 10, 11, 14</p>
+<p>list of, 62</p>
+<p>mlmadmin, 44</p>
+<p>servecode, 63</p>
+<p>wrap_svc, 27, 29, 30, 33</p>
+<p><b>V</b></p>
+<p>variables, configuration (see configuration variables)</p>
+<p>viewing license information, 44, 45, 46</p>
+<p><b>W</b></p>
+<p>whitelists, 18</p>
+<p>Windows service, 22, 27, 30, 32, 33</p>
+<p>wrap_svc utility, 27, 29, 30, 33</p>
+<p><i>71</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>.lmi files</i></p>
+<h1 style="page-break-before:always; "></h1>
+</body>
+</html>
+{% endraw %}

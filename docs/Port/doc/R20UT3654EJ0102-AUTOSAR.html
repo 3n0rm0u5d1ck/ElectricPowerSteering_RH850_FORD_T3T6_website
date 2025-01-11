@@ -1,0 +1,3730 @@
+---
+layout: default
+title: R20UT3654EJ0102-AUTOSAR
+nav_order: 4
+parent: Port Driver
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3</p>
+<p> </p>
+<p>User's Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>PORT Driver Component Ver.1.0.4 </p>
+<p> </p>
+<p>Generation Tool User's Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Target Device:  </p>
+<p>RH850/P1x-C </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>All information contained in these materials, including products and product specifications, </p>
+<p>represents information on the product at the time of publication and is subject to change by </p>
+<p>Renesas Electronics Corp. without notice. Please review the latest information published by </p>
+<p>Renesas Electronics Corp. through various means, including the Renesas Electronics Corp. </p>
+<p>website (http://www.renesas.com). </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>www.renesas.com </p>
+<p>Rev.1.02 Jun 2017</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>2 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>3 </b></p>
+<p> </p>
+<p> </p>
+<p>N</p>
+<p>oti</p>
+<p>ce </p>
+<p>1.</p>
+<p> </p>
+<p>Descriptions of circuits, software and other related information in this document are provided only to illustrate the operation of semiconductor </p>
+<p>products and application examples. You are fully responsible for the incorporation or any other use of the circuits, software, and information in </p>
+<p>the design of your product or system. Renesas Electronics disclaims any and all liability for any losses and damages incurred by you or third </p>
+<p>parties arising from the use of these circuits, software, or information. </p>
+<p>2.</p>
+<p> </p>
+<p>Renesas Electronics hereby expressly disclaims any warranties against and liability for infringement or any other disputes involving patents, </p>
+<p>copyrights, or other intellectual property rights of third parties, by or arising from the use of Renesas Electronics products or technical information </p>
+<p>described in this document, including but not limited to, the product data, drawing, chart, program, algorithm, application examples. </p>
+<p>3.</p>
+<p> </p>
+<p>No license, express, implied or otherwise, is granted hereby under any patents, copyrights or other intellectual property rights of Renesas </p>
+<p>Electronics or others. </p>
+<p>4.</p>
+<p> </p>
+<p>You shall not alter, modify, copy, or otherwise misappropriate any Renesas Electronics product, whether in whole or in part. Renesas Electronics </p>
+<p>disclaims any and all liability for any losses or damages incurred by you or third parties arising from such alteration, modification, copy or </p>
+<p>otherwise misappropriation of Renesas Electronics products. </p>
+<p>5.</p>
+<p> </p>
+<p>Renesas Electronics products are classified according to the following two quality grades: &quot;Standard&quot; and &quot;High Quality&quot;. The intended </p>
+<p>applications for each Renesas Electronics product depends on the product’s quality grade, as indicated below.  </p>
+<p>&quot;Standard&quot;:          Computers; office equipment; communications equipment; test and measurement equipment; audio and visual equipment; </p>
+<p>home electronic appliances; machine tools; personal electronic equipment; and industrial robots etc. </p>
+<p>&quot;High Quality&quot;:   Transportation equipment (automobiles, trains, ships, etc.); traffic control (traffic lights); large-scale communication </p>
+<p>equipment; key financial terminal systems; safety control equipment; etc. </p>
+<p>Renesas Electronics products are neither intended nor authorized for use in products or systems that may pose a direct threat to human life or </p>
+<p>bodily injury (artificial life support devices or systems, surgical implantations etc.), or may cause serious property damages (space and undersea </p>
+<p>repeaters; nuclear power control systems; aircraft control systems; key plant systems; military equipment; etc.). Renesas Electronics disclaims any </p>
+<p>and all liability for any damages or losses incurred by you or third parties arising from the use of any Renesas Electronics product for which the </p>
+<p>product is not intended by Renesas Electronics. </p>
+<p>6.</p>
+<p> </p>
+<p>When using the Renesas Electronics products, refer to the latest product information (data sheets, user’s manuals, application notes, &quot;General </p>
+<p>Notes for Handling and Using Semiconductor Devices&quot; in the reliability handbook, etc.), and ensure that usage conditions are within the ranges </p>
+<p>specified by Renesas Electronics with respect to maximum ratings, operating power supply voltage range, heat radiation characteristics, </p>
+<p>installation, etc. Renesas Electronics disclaims any and all liability for any malfunctions or failure or accident arising out of the use of Renesas </p>
+<p>Electronics products beyond such specified ranges. </p>
+<p>7.</p>
+<p> </p>
+<p>Although Renesas Electronics endeavors to improve the quality and reliability of Renesas Electronics products, semiconductor products have </p>
+<p>specific characteristics such as the occurrence of failure at a certain rate and malfunctions under certain use conditions. Further, Renesas </p>
+<p>Electronics products are not subject to radiation resistance design. Please ensure to implement safety measures to guard them against the </p>
+<p>possibility of bodily injury, injury or damage caused by fire, and social damage in the event of failure or malfunction of Renesas Electronics </p>
+<p>products, such as safety design for hardware and software including but not limited to redundancy, fire control and malfunction prevention, </p>
+<p>appropriate treatment for aging degradation or any other appropriate measures by your own responsibility as warranty for your products/system. </p>
+<p>Because the evaluation of microcomputer software alone is very difficult and not practical, please evaluate the safety of the final products or </p>
+<p>systems manufactured by you. </p>
+<p>8.</p>
+<p> </p>
+<p>Please contact a Renesas Electronics sales office for details as to environmental matters such as the environmental compatibility of each Renesas </p>
+<p>Electronics product. Please investigate applicable laws and regulations that regulate the inclusion or use of controlled substances, including </p>
+<p>without limitation, the EU RoHS Directive carefully and sufficiently and use Renesas Electronics products in compliance with all these applicable </p>
+<p>laws and regulations. Renesas Electronics disclaims any and all liability for damages or losses occurring as a result of your noncompliance with </p>
+<p>applicable laws and regulations. </p>
+<p>9.</p>
+<p> </p>
+<p>Renesas Electronics products and technologies shall not be used for or incorporated into any products or systems whose manufacture, use, or sale </p>
+<p>is prohibited under any applicable domestic or foreign laws or regulations. You shall not use Renesas Electronics products or technologies for (1) </p>
+<p>any purpose relating to the development, design, manufacture, use, stockpiling, etc., of weapons of mass destruction, such as nuclear weapons, </p>
+<p>chemical weapons, or biological weapons, or missiles (including unmanned aerial vehicles (UAVs)) for delivering such weapons, (2) any purpose </p>
+<p>relating to the development, design, manufacture, or use of conventional weapons, or (3) any other purpose of disturbing international peace and </p>
+<p>security, and you shall not sell, export, lease, transfer, or release Renesas Electronics products or technologies to any third party whether directly </p>
+<p>or indirectly with knowledge or reason to know that the third party or any other party will engage in the activities described above. When </p>
+<p>exporting, selling, transferring, etc., Renesas Electronics products or technologies, you shall comply with any applicable export control laws and </p>
+<p>regulations promulgated and administered by the governments of the countries asserting jurisdiction over the parties or transactions. </p>
+<p>10.</p>
+<p> </p>
+<p>Please acknowledge and agree that you shall bear all the losses and damages which are incurred from the misuse or violation of the terms and </p>
+<p>conditions described in this document, including this notice, and hold Renesas Electronics harmless, if such misuse or violation results from your </p>
+<p>resale or making Renesas Electronics products available any third party. </p>
+<p>11.</p>
+<p> </p>
+<p>This document shall not be reprinted, reproduced or duplicated in any form, in whole or in part, without prior written consent of Renesas </p>
+<p>Electronics. </p>
+<p>12.</p>
+<p> </p>
+<p>Please contact a Renesas Electronics sales office if you have any questions regarding the information contained in this document or Renesas </p>
+<p>Electronics products. </p>
+<p> </p>
+<p>(Note 1)   &quot;Renesas Electronics&quot; as used in this document means Renesas Electronics Corporation and also includes its majority-owned </p>
+<p>subsidiaries. </p>
+<p>(Note 2)   &quot;Renesas Electronics product(s)&quot; means any product developed or manufactured by or for Renesas Electronics. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>4 </b></p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>5 </b></p>
+<p> </p>
+<p><b>Abbreviations and Acronyms </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Abbreviation / Acronym</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>AUTOSAR</p>
+<p> </p>
+<p>AUTomotive Open System ARchitecture</p>
+<p> </p>
+<p>BSWMDT</p>
+<p> </p>
+<p>Basic Software Module Description Template</p>
+<p> </p>
+<p>ECU</p>
+<p> </p>
+<p>Electronic Control Unit</p>
+<p> </p>
+<p>ICU</p>
+<p> </p>
+<p>Input Capture Unit</p>
+<p> </p>
+<p>Id/ID</p>
+<p> </p>
+<p>Identifier</p>
+<p> </p>
+<p>INTP</p>
+<p> </p>
+<p>Interrupt</p>
+<p> </p>
+<p>MCAL</p>
+<p> </p>
+<p>Micro Controller Abstraction Layer</p>
+<p> </p>
+<p>NMI</p>
+<p> </p>
+<p>Non Maskable Interrupt</p>
+<p> </p>
+<p>XML</p>
+<p> </p>
+<p>eXtensible Mark-up Language</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Definitions </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Terminology</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>BSWMDT File</p>
+<p> </p>
+<p>This file is the template for the Basic Software Module Description.</p>
+<p> </p>
+<p>Configuration XML File</p>
+<p> </p>
+<p>This file contains the setting of command line options.</p>
+<p> </p>
+<p>ECU Configuration Description </p>
+<p>File</p>
+<p> </p>
+<p>Input file to MCAL Code Generator Tool. It is generated by ECU </p>
+<p>Configuration Editor.</p>
+<p> </p>
+<p>Sl.No</p>
+<p> </p>
+<p>Serial Number.</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>6 </b></p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>7 </b></p>
+<p> </p>
+<p><b>Table of Contents </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 1</b></p>
+<p> </p>
+<p><b>Introduction ........................................................................................ 9</b></p>
+<p> </p>
+<p><b>1.1</b></p>
+<p> </p>
+<p><b>Document Overview ............................................................................................................. 9</b></p>
+<p> </p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p><b>Reference ......................................................................................... 11</b></p>
+<p> </p>
+<p><b>2.1</b></p>
+<p> </p>
+<p><b>Reference Documents ........................................................................................................ 11</b></p>
+<p> </p>
+<p><b>2.2</b></p>
+<p> </p>
+<p><b>Trademark Notice................................................................................................................ 11</b></p>
+<p> </p>
+<p><b>Chapter 3</b></p>
+<p> </p>
+<p><b>Code Generation Overview ............................................................. 13</b></p>
+<p> </p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p><b>Input Files ......................................................................................... 17</b></p>
+<p> </p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p><b>Output Files ...................................................................................... 17</b></p>
+<p> </p>
+<p><b>Chapter 6</b></p>
+<p> </p>
+<p><b>Precautions ...................................................................................... 19</b></p>
+<p> </p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p><b>User Configuration Validation ........................................................ 21</b></p>
+<p> </p>
+<p><b>Chapter 8</b></p>
+<p> </p>
+<p><b>Configuration Overview .................................................................. 23</b></p>
+<p> </p>
+<p><b>8.1</b></p>
+<p> </p>
+<p><b>Container Overview ............................................................................................................ 23</b></p>
+<p> </p>
+<p>8.1.1</p>
+<p> </p>
+<p>Pre-Compile Configurable Parameters ................................................................... 24</p>
+<p> </p>
+<p>8.1.2</p>
+<p> </p>
+<p>Post Build Time Configurable Parameters .............................................................. 26</p>
+<p> </p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p><b>Messages.......................................................................................... 39</b></p>
+<p> </p>
+<p><b>9.1          Error Messages .................................................................................................................. 39</b></p>
+<p> </p>
+<p><b>9.2          Warning Messages ............................................................................................................ 42</b></p>
+<p> </p>
+<p><b>9.3          Information Messages ....................................................................................................... 43</b></p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>8 </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b>List of Figures </b></p>
+<p><b> </b></p>
+<p>Figure 3-1</p>
+<p> </p>
+<p>Overview of Code Generation ....................................................................................... 13</p>
+<p> </p>
+<p>Figure 3-2</p>
+<p> </p>
+<p>Flow-Diagram of Code Generation ............................................................................... 14</p>
+<p> </p>
+<p>Figure 8-1</p>
+<p> </p>
+<p>Configuration Overview................................................................................................. 23</p>
+<p> </p>
+<p><b> </b></p>
+<p><b>      List of Tables </b></p>
+<p><b> </b></p>
+<p>Table 2-1</p>
+<p> </p>
+<p>Reference Documents ...................................................................................................... 11</p>
+<p> </p>
+<p>Table 5-1</p>
+<p> </p>
+<p>Output Files Description.................................................................................................... 17</p>
+<p> </p>
+<p>Table 8-1</p>
+<p> </p>
+<p>Pre-Compile Configurable Parameters ............................................................................. 24</p>
+<p> </p>
+<p>Table 8-2</p>
+<p> </p>
+<p>Post Build Time Configurable Parameters........................................................................ 26</p>
+<p> </p>
+<p>Table 8-3</p>
+<p> </p>
+<p>Port Modes Description..................................................................................................... 31</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Introduction </b></p>
+<p><b>Chapter 1 </b></p>
+<p> </p>
+<p><b>9 </b></p>
+<p> </p>
+<p><b>Chapter 1  Introduction </b></p>
+<p> </p>
+<p> </p>
+<p>The PORT Driver component provides the service for initializing the whole </p>
+<p>PORT structure of the microcontroller. </p>
+<p> </p>
+<p> </p>
+<p>The PORT Driver Component comprises of two sections as Embedded </p>
+<p>Software and the MCAL Code Generator Tool to achieve scalability and </p>
+<p>configurability. </p>
+<p> </p>
+<p> </p>
+<p>The document describes the PORT module specific inputs and outputs of the </p>
+<p>MCAL Code Generator Tool that is the common code generator engine used </p>
+<p>for the generation of the configuration code for all MCAL modules. MCAL </p>
+<p>Code Generator Tool is a command line tool that extracts information from </p>
+<p>ECU Configuration Description File, BSWMDT File and generates PORT </p>
+<p>Driver C Source and C Header files (Port_PBcfg.c and Port_Cfg.h, </p>
+<p>Port_Cbk.h, Port_Hardware.c and Port_Hardware.h). </p>
+<p> </p>
+<p> </p>
+<p>This document contains information on the options, input and output files of the </p>
+<p>MCAL Code Generator Tool. In addition, this manual covers a step-by-step </p>
+<p>procedure for the usage of MCAL Code Generator Tool. </p>
+<p> </p>
+<p> </p>
+<p>ECU Configuration Description File contains information about PORT General </p>
+<p>Configuration, Port Pin Configurations. </p>
+<p> </p>
+<p> </p>
+<p><b>1.1 </b></p>
+<p><b>Document Overview </b></p>
+<p> </p>
+<p> </p>
+<p>This user manual is organized as given in the table below: </p>
+<p> </p>
+<p><b>Table 1-1 </b></p>
+<p><b>Document Overview </b></p>
+<p><b>Section</b></p>
+<p> </p>
+<p><b>Contents</b></p>
+<p> </p>
+<p>Section 1 (Introduction)</p>
+<p> </p>
+<p>Provides an introduction to the document and explains how information </p>
+<p>is organized in this manual.</p>
+<p> </p>
+<p>Section 2 (Reference)</p>
+<p> </p>
+<p>Provides a list of documents referred while developing this document.</p>
+<p> </p>
+<p>Section 3 (Code Generation </p>
+<p>Overview)</p>
+<p> </p>
+<p>Provides the Code Generation Overview.</p>
+<p> </p>
+<p>Section 4 (Input Files)</p>
+<p> </p>
+<p>Provides information about ECU Configuration Description File.</p>
+<p> </p>
+<p>Section 5 (Output Files)</p>
+<p> </p>
+<p>Explains the output files that are generated by MCAL Code Generator </p>
+<p>Tool.</p>
+<p> </p>
+<p>Section 6 (Precautions)</p>
+<p> </p>
+<p>Contains precautions to be taken during configuration of ECU </p>
+<p>Configuration Description File.</p>
+<p> </p>
+<p>Section 7 (User Configuration </p>
+<p>Validation)</p>
+<p> </p>
+<p>Describes about user configuration validation done by the MCAL Code </p>
+<p>Generator Tool.</p>
+<p> </p>
+<p>Section 8 (Configuration </p>
+<p>Overview)</p>
+<p> </p>
+<p>Provides Container Overview.</p>
+<p> </p>
+<p>Section 9 (Messages) </p>
+<p>Describes all the Error/Warning/Information messages of R4.0.3 which </p>
+<p>helps the user to understand the probable reason for the same. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1                                                                                                                              Introduction </b></p>
+<p> </p>
+<p><b>10 </b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Reference </b></p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p> </p>
+<p><b>11 </b></p>
+<p> </p>
+<p><b>Chapter 2 </b></p>
+<p><b>Reference </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>2.1 </b></p>
+<p><b>Reference Documents </b></p>
+<p> </p>
+<p> </p>
+<p>The following table lists the documents referred to develop this document: </p>
+<p> </p>
+<p><b>Table 2-1 </b></p>
+<p><b>Reference Documents </b></p>
+<p> </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Title</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>AUTOSAR_SWS_PortDriver.pdf</p>
+<p> </p>
+<p>3.2.0</p>
+<p> </p>
+<p>2. </p>
+<p>MCAL_CodeGenerator_Tool_UserManual.pdf </p>
+<p>1.7 </p>
+<p>3. </p>
+<p>R20UT3828EJ0101-AUTOSAR.pdf </p>
+<p>1.0.3 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>2.2 </b></p>
+<p><b>Trademark Notice </b></p>
+<p> </p>
+<p> </p>
+<p>Microsoft and Windows are trademarks/registered trademarks of Microsoft </p>
+<p>Corporation. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2 </b></p>
+<p><b>Reference </b></p>
+<p> </p>
+<p><b>12 </b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Code Generation Overview  </b></p>
+<p><b>Chapter 3                                                                           </b></p>
+<p> </p>
+<p> </p>
+<p><b>13 </b></p>
+<p><b>Chapter 3 </b></p>
+<p><b>Code Generation Overview </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Code Generation overview is shown below. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>                 Figure 3-1 </b></p>
+<p><b>Overview of Code Generation </b></p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>ECU Configuration Description File (.arxml): </p>
+<p>This file will contain PORT Driver specific configuration information. </p>
+<p>This file should be generated by AUTOSAR specified Configuration </p>
+<p>Editor. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>BSWMDT File (.arxml): </p>
+<p>MCAL Code Generator Tool uses “Common Published Information” </p>
+<p>from PORT module specific BSWMDT File. PORT module specific </p>
+<p>BSWMDT File should not be updated manually since it is “Static </p>
+<p>Configuration” file. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Velocity template files: </p>
+<p>Port_PBcfg_c.vm, Port_Cbk_h.vm, Port_Cfg_h.vm, </p>
+<p>Port_Hardware_h.vm, Port_Hardware_c.vm, Port_Validate.vm </p>
+<p>They are interpreted by the MCAL Code Generator Tool in order to </p>
+<p>provide user input validation and generate the final output file </p>
+<p>needed by the AUTOSAR configuration chain .They are the &quot;logic&quot; </p>
+<p>of the Code Generator. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Configuration XML File (.xml): </p>
+<p>This file is used to specify which velocity template to use and their </p>
+<p>location and the name of the output file generated </p>
+<p> </p>
+<p>For the error free input file, the MCAL Code Generator Tool generates the </p>
+<p>following output files: Port_Cfg.h, Port_Cbk.h, Port_Hardware.h, Port_PBcfg.c </p>
+<p>and Port_Hardware.c and displays appropriate context sensitive error </p>
+<p>messages for wrong input and exits. </p>
+<p> </p>
+<p><b>Port_Cfg.h, </b></p>
+<p><b>Port_Cbk.h, </b></p>
+<p><b>Port_Hardware.h, </b></p>
+<p><b>Port_PBcfg.c, </b></p>
+<p><b>Port_Hardware.c </b></p>
+<p><b>ECU Configuration </b></p>
+<p><b>Description File and </b></p>
+<p><b>BSWMDT File </b></p>
+<p>                                                                                          </p>
+<p> </p>
+<p><b>MCAL    </b></p>
+<p><b>Generator </b></p>
+<p><b>Velocity template files </b></p>
+<p><b>for PORT </b></p>
+<p><b>Configuration XML File </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Chapter 3                                                                                                Code Generation Overview </b></p>
+<p> </p>
+<p> </p>
+<p><b>14 </b></p>
+<p>ECU Configuration Description File can be created or edited using ECU </p>
+<p>Configuration Editor. </p>
+<p> </p>
+<p>Concept of execution MCAL Code Generator Tool is </p>
+<p>as follows: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>                                         Figure 3-2 </b></p>
+<p><b>Flow-Diagram of Code Generation </b></p>
+<p><b> </b></p>
+<p>The module “Validate” will validate the configuration (contents of ECU </p>
+<p>Configuration Description File(s) as input). If there are incorrect values or </p>
+<p>incorrect dependencies, the MCAL Code Generator Tool l will display error, </p>
+<p>warning and information messages. In case of errors, the MCAL Code </p>
+<p>Generator Tool will abort the execution.  </p>
+<p>Port_Cfg_h.vm / Port_PBcfg_c.vm will generate compiler switch / structures </p>
+<p>necessary to the AUTOSAR Configuration chain and vendor specific </p>
+<p>parameters. </p>
+<p>Port_Cbk_h.vm will generate Prototype Declarations for Port Callback </p>
+<p>Notification Functions. </p>
+<p>Port_Hardware_h.vm / Port_Hardware_c.vm will generate hardware related </p>
+<p>info (defines number of actual instances / channels used / structure to access </p>
+<p>to the I/O mapped peripheral).</p>
+<p> </p>
+<p><b>         Remark </b></p>
+<p><b> </b>Please refer the general MCAL Code Generator Tool User Manual     </p>
+<p><b>                           </b>(MCAL_CodeGenerator_Tool_UserManual.pdf) and    </p>
+<p>Yes </p>
+<p>No </p>
+<p>Validation </p>
+<p>successful </p>
+<p>ECU Configuration </p>
+<p>Description Files </p>
+<p>And BSWMDT file </p>
+<p>(.arxml) </p>
+<p> </p>
+<p>Generation start </p>
+<p>Template files(.vm) </p>
+<p> </p>
+<p>config.xml </p>
+<p>Generate Output Files </p>
+<p>Validate.vm </p>
+<p>Common </p>
+<p>Helper.vm </p>
+<p>Display Error </p>
+<p> </p>
+<p>    Generation stop </p>
+<p>MCAL Code </p>
+<p>Generator Tool </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Code Generation Overview  </b></p>
+<p><b>Chapter 3                                                                           </b></p>
+<p> </p>
+<p> </p>
+<p><b>15 </b></p>
+<p><b>                      </b>     GettingStarted_MCAL_Drivers_X1x.pdf </p>
+<p>                           (R20UT3828EJ0101-AUTOSAR.pdf)   </p>
+<p>                           for details about the tool command line options. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Chapter 3                                                                                                 Code Generation Overview </b></p>
+<p> </p>
+<p> </p>
+<p><b>16 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Input Files </b></p>
+<p><b>Chapter 4 </b></p>
+<p> </p>
+<p> </p>
+<p><b>17 </b></p>
+<p><b>Chapter 4 </b></p>
+<p><b>Input Files </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool will accept the config.xml file which has paths to </p>
+<p>the code generator template files for generating PORT Driver files. MCAL </p>
+<p>Code Generator Tool accepts ECU Configuration Description File(s), PORT </p>
+<p>Configuration XML file and BSWMDT File as input. MCAL Code Generator </p>
+<p>Tool needs information about PORT Driver component. Hence ECU </p>
+<p>Configuration Description File should contain configuration of PORT Driver </p>
+<p>component. MCAL Code Generator Tool ignores any other AUTOSAR </p>
+<p>component configured in the ECU Configuration Description File. ECU </p>
+<p>Configuration Description File can be generated using configuration editor. </p>
+<p> </p>
+<p>ECU Configuration Description File must comply with AUTOSAR standard </p>
+<p>ECU Configuration Description File format. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>The detailed explanation about the parameters and containers are found in </p>
+<p>Parameter Definition File. </p>
+<h1 style="page-break-before:always; "></h1>
+<p>  </p>
+<p><b>Chapter 4 </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>     Input Files</b></p>
+<p>  </p>
+<p> </p>
+<p><b>18 </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Output Files </b></p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p> </p>
+<p><b>19 </b></p>
+<p> </p>
+<p><b>Chapter 5 </b></p>
+<p><b>Output Files </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool generates configuration details in C Header and </p>
+<p>C Source files (Port_Cfg.h, Port_Cbk.h, Port_PBcfg.c, Port_Hardware.c and </p>
+<p>Port_Hardware.h). </p>
+<p> </p>
+<p> </p>
+<p>The content of each output file is given in the table below: </p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Table 5-1 </b></p>
+<p><b>Output Files Description </b></p>
+<p> </p>
+<p><b>Output File</b></p>
+<p> </p>
+<p><b>Details</b></p>
+<p> </p>
+<p>Port_Cfg.h</p>
+<p> </p>
+<p>This file contains the macro definitions for general configuration, total number of Port </p>
+<p>Pins configured and configuration set handles. This file also includes the Port Pin </p>
+<p>handles for each configuration set.</p>
+<p> </p>
+<p>Port_Cbk.h </p>
+<p>This file contains Prototype Declarations for Port callback Notification Functions. </p>
+<p>Port_PBcfg.c</p>
+<p> </p>
+<p>This file contains structure for Port Pin Initialization, Port Pin Direction Switch and Port </p>
+<p>Pin Direction Refresh during runtime.</p>
+<p> </p>
+<p>Port_Hardware.c</p>
+<p> </p>
+<p>This file contains the definitions for addresses of the hardware registers used </p>
+<p>in the PORT Driver Module.</p>
+<p> </p>
+<p>Port_Hardware.h</p>
+<p> </p>
+<p>This file contains the declarations for addresses of the hardware registers </p>
+<p>used in the PORT Driver Module.</p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>Output files generated by MCAL Code Generator Tool shall not be modified or </p>
+<p>edited manually. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 5                                                                                                                             Output Files</b></p>
+<p> </p>
+<p> </p>
+<p><b>20 </b></p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Precautions </b></p>
+<p><b>Chapter 6 </b></p>
+<p> </p>
+<p> </p>
+<p><b>21 </b></p>
+<p><b>Chapter 6 </b></p>
+<p><b>Precautions </b></p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>ECU Configuration Description File and BSWMDT File must comply with </p>
+<p>AUTOSAR standard for R4.0.3 ECU Configuration Description File and </p>
+<p>BSWMDT File respectively. </p>
+<p> </p>
+<p>• </p>
+<p>ECU Configuration Description File must contain PORT module description </p>
+<p>files. </p>
+<p> </p>
+<p>• </p>
+<p>Configuration XML File should contain the file extension ‘.xml’. </p>
+<p> </p>
+<p>• </p>
+<p>Configuration XML File (config.xml file) should convey the Velocity template </p>
+<p>files location and output file location. </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>All the function names and the string values configured should follow C </p>
+<p>syntax for variables. It can only contain alphanumeric characters and “_”. It </p>
+<p>should start with an alphabet. </p>
+<p> </p>
+<p>• </p>
+<p>If the output files generated by MCAL Code Generator Tool are modified </p>
+<p>externally, then they may not produce the expected results or may lead to </p>
+<p>error/warning/Information messages. </p>
+<p> </p>
+<p>• </p>
+<p>Short Name for a container should be unique within a name space. </p>
+<p> </p>
+<p>• </p>
+<p>An error free ECU Configuration Description File generated from </p>
+<p>configuration editor has to be provided as input to the MCAL Code Generator </p>
+<p>Tool. Otherwise MCAL Code Generator Tool may not produce the expected </p>
+<p>results or may lead to “errors/warnings/information messages”. </p>
+<p> </p>
+<p>• </p>
+<p>If no configuration of certain port filter is done within this Port Module, the </p>
+<p>device specific default settings will take effect on this filter. </p>
+<p> </p>
+<p>• </p>
+<p>If user selects the alternate signal in the port group container, then the </p>
+<p>respective port filter container should be configured. For example: If signal </p>
+<p>NMI is selected in the port group container respective filter group container </p>
+<p>has to be configured. </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>In case of multiple configuration sets, if any filter is configured in one </p>
+<p>configuration set, then the same filter should be configured across all </p>
+<p>configured multiple configuration sets. </p>
+<p> </p>
+<p>• </p>
+<p>In post-build time, sub containers of PortFilterGroupConfig containers </p>
+<p>should not be added or deleted. </p>
+<p> </p>
+<p>• </p>
+<p>Edge/Level settings for External Interrupt (INTP) signals can be overwritten </p>
+<p>by ICU component to change the default activation type and the type of </p>
+<p>activation at run-time. </p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b>      </p>
+<p> </p>
+<p>Please refer the PORT Component User Manual (R20UT3653EJ0102-          </p>
+<p><b>        </b>AUTOSAR.pdf) for deviations from AUTOSAR. </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>  </p>
+<p><b>Chapter 6 </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>   Precautions </b></p>
+<p><b>22 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>User Configuration Validation </b></p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p> </p>
+<p><b>23 </b></p>
+<p><b> </b></p>
+<p><b>  </b></p>
+<p> </p>
+<p><b>Chapter 7 </b></p>
+<p><b>User Configuration Validation </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>This section provides help to analyze the error, warning and information </p>
+<p>messages displayed during the execution of MCAL Code Generator Tool. It </p>
+<p>ensures conformance of input file with syntax and semantics. It also performs </p>
+<p>validation on the input file for correctness of the data. </p>
+<p> </p>
+<p> </p>
+<p>For more details on list of Error/Warning/Information messages that are </p>
+<p>displayed as a result of input file(s) validation, refer Chapter 9 “<i>Messages</i>”. </p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool displays error or warning or information </p>
+<p>messages when the user has configured incorrect inputs. The format of </p>
+<p>Error/Warning/ Information message is as shown below. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>&lt;message_type&gt;_&lt;vendor_id&gt;_&lt;module_id&gt;_&lt;message_id&gt;:&lt;message_cont</p>
+<p>ent&gt;.  </p>
+<p>where, </p>
+<p></p>
+<p> </p>
+<p>&lt;message_type&gt;     : ERR/WARNING/INFO </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt; vendor_id &gt;           : vendor Id = 59 </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt; module_id &gt;          : 124 - PORT Driver Module id (124) for user   </p>
+<p>                                   configuration checks. </p>
+<p>    </p>
+<p></p>
+<p> </p>
+<p>&lt; Message_id.&gt;       :  001-999  </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt;message_content&gt;:   Message content provides information   </p>
+<p>                                    about error or warning or information displayed          </p>
+<p>                                    when the user has configured incorrect inputs. </p>
+<p> </p>
+<p>                                                               </p>
+<p>File Name’ and ‘Path’ need not be present for all      </p>
+<p>                                                                                        Error/Warning/Information messages </p>
+<p>                   </p>
+<p>                                    File Name: Name of the file in which the error has </p>
+<p>                                    occurred </p>
+<p> </p>
+<p>                                    Path: Absolute path of the container in which the  </p>
+<p>                                    parameter is present </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter7 </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>         User Configuration Validation </b></p>
+<p> </p>
+<p><b>24 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>25 </b></p>
+<p><b>Chapter 8  Configuration Overview </b></p>
+<p> </p>
+<p><b>8.1 </b></p>
+<p><b>Container Overview </b></p>
+<p>The following figure represents container overview.</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Figure 8-1 </b></p>
+<p><b>Configuration Overview </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b>PortFilterGroupConfig </b></p>
+<p><b>P</b></p>
+<p><b>ortGroup0 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 14 </b></p>
+<p> </p>
+<p><b>PortGroup1 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 7 </b></p>
+<p> </p>
+<p><b>PortGroup2 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 15 </b></p>
+<p> </p>
+<p><b>PortGroup8 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 15 </b></p>
+<p> </p>
+<p><b>PortGroup7 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 9 </b></p>
+<p> </p>
+<p><b>PortGroup6 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 15 </b></p>
+<p> </p>
+<p><b>PortGroup5 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 14 </b></p>
+<p> </p>
+<p><b>PortGroup4 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 14 </b></p>
+<p> </p>
+<p><b>PortGroup3 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 14 </b></p>
+<p> </p>
+<p><b>PortGroup9 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 8 </b></p>
+<p> </p>
+<p><b>PortGroupJtag0 </b></p>
+<p> </p>
+<p><b>PortPinx </b></p>
+<p><b>x= 0 to 5 </b></p>
+<p> </p>
+<p><b>PortContainer </b></p>
+<p><b>PortPin </b></p>
+<p> </p>
+<p><b>PortAnalogFilterGroupx </b></p>
+<p><b>x= 0 to 12 </b></p>
+<p><b>X= </b></p>
+<p> </p>
+<p><b>PortDigitalFilterGroupx  </b></p>
+<p><b>x=0 to 5 </b></p>
+<p> </p>
+<p><b>PortConfigSet </b></p>
+<p><b>PortGeneral </b></p>
+<p><b>PortDemEventParameterRef</b></p>
+<p><b>s </b></p>
+<p> </p>
+<p>                                                                </p>
+<p>      </p>
+<p><b>Port </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>26 </b></p>
+<p><b>8.1.1 </b></p>
+<p><b>Pre-Compile Configurable Parameters </b></p>
+<p><b>Table 8-1 </b></p>
+<p><b>Pre-Compile Configurable Parameters </b></p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p>PortGeneral </p>
+<p> </p>
+<p>PortDevErrorDetect </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Switches the Development </p>
+<p>Error Detection and </p>
+<p>Notification on or off. </p>
+<p>True: Development Error </p>
+<p>Detection and Notification is </p>
+<p>enabled. </p>
+<p>False: Development Error </p>
+<p>Detection and Notification is </p>
+<p>disabled. </p>
+<p>PortSetPinDirectionApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Pre-processor switch to enable </p>
+<p>/ disable the use of the </p>
+<p>function </p>
+<p>Port_SetPinDirection(). </p>
+<p>True: Enabled - Function </p>
+<p>Port_SetPinDirection () is </p>
+<p>available. </p>
+<p>False: Disabled - Function </p>
+<p>Port_SetPinDirection () is not </p>
+<p>available. </p>
+<p>PortSetPinDefaultDire</p>
+<p>ctionApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Pre-processor switch to enable </p>
+<p>/ disable the use of the </p>
+<p>function </p>
+<p>Port_SetPinDefaultDirection </p>
+<p>(). </p>
+<p>True: Enabled - Function </p>
+<p>Port_SetPinDefaultDirection () </p>
+<p>is available. </p>
+<p>False: Disabled - Function </p>
+<p>Port_SetPinDefaultDirection () </p>
+<p>is not available. </p>
+<p> </p>
+<p>PortSetPinModeApi </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Pre-processor switch to enable </p>
+<p>/ disable the use of the </p>
+<p>function Port_SetPinMode (). </p>
+<p>True: Enabled - Function </p>
+<p>Port_SetPinMode () is </p>
+<p>available. </p>
+<p>False: Disabled - Function </p>
+<p>Port_SetPinMode() is not </p>
+<p>available. </p>
+<p> </p>
+<p>PortSetPinDefaultMod</p>
+<p>eApi </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Pre-processor switch to   </p>
+<p>enable / disable the use of the </p>
+<p>function </p>
+<p>PortSetPinDefaultModeApi (). </p>
+<p>True: Enabled–Function </p>
+<p>PortSetPinDefaultModeApi ()   </p>
+<p>is available. </p>
+<p>False: Disabled - Function </p>
+<p>PortSetPinDefaultModeApi () </p>
+<p>is not available. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>27 </b></p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p>PortVersionInfoApi </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Pre-processor switch to enable </p>
+<p>/ disable the API to read out </p>
+<p>the modules version </p>
+<p>information. </p>
+<p>PortVersionInfoApTrue: </p>
+<p>Version info API enabled </p>
+<p>False: Version info API </p>
+<p>disabled. </p>
+<p>PortDevErrorDetect </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Switches the Development </p>
+<p>Error Detection and </p>
+<p>Notification on or off. </p>
+<p>True: Development Error </p>
+<p>Detection and Notification is </p>
+<p>enabled. </p>
+<p>False: Development Error </p>
+<p>Detection and Notification is </p>
+<p>disabled. </p>
+<p>PortCriticalSectionProt</p>
+<p>ection </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>This parameter specifies if the </p>
+<p>PORT driver CPU load can be </p>
+<p>reduced by disabling the </p>
+<p>enter/exit critical section </p>
+<p>functionality by adding a </p>
+<p>precompiled configuration </p>
+<p>parameter to the PORT driver </p>
+<p>configuration. </p>
+<p>True: Enables the critical </p>
+<p>section functionality for the </p>
+<p>restricted area. </p>
+<p>False: Disables the critical </p>
+<p>section functionality for the </p>
+<p>restricted area. </p>
+<p>PortMaxMode </p>
+<p>Integer </p>
+<p>6 </p>
+<p> </p>
+<p>This parameter indicates </p>
+<p>maximum Alternative modes </p>
+<p>present in a Port Module. </p>
+<p> </p>
+<p>PortSetToDioAltMode</p>
+<p>Api </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Pre-processor switch to enable </p>
+<p>/ disable the use of the </p>
+<p>function Port_SetToDioMode </p>
+<p>() and </p>
+<p>Port_SetToAlternateMode (). </p>
+<p>True: Enabled - Function </p>
+<p>Port_SetToDioMode () and </p>
+<p>Port_SetToAlternateMode () is </p>
+<p>available. </p>
+<p>False: Disabled - Function </p>
+<p>Port_SetToDioMode () and </p>
+<p>Port_SetToAlternateMode () is </p>
+<p>not available. </p>
+<p> </p>
+<p>PortVersionCheckExte</p>
+<p>rnalModules </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / FALSE </p>
+<p> </p>
+<p>Enable / disable AUTOSAR </p>
+<p>Version check for inter-module </p>
+<p>dependencies. </p>
+<p>True: AUTOSAR Version </p>
+<p>check for inter-module </p>
+<p>dependencies is enabled. </p>
+<p>false: AUTOSAR Version </p>
+<p>check for inter-module </p>
+<p>dependencies is disabled </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>28 </b></p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p>PortDeviceName </p>
+<p> </p>
+<p>Integer </p>
+<p> </p>
+<p>RF701370A, </p>
+<p>RF701371, </p>
+<p>RF701372, </p>
+<p>RF701373, </p>
+<p>RF701374. </p>
+<p> </p>
+<p>This parameter contains the </p>
+<p>supported device name to </p>
+<p>identify the device specific C </p>
+<p>header file through ARXML </p>
+<p>File. </p>
+<p><b>8.1.2 </b></p>
+<p><b>Post Build Time Configurable Parameters </b></p>
+<p><b>Table 8-2 </b></p>
+<p><b>Post Build Time Configurable Parameters</b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>PortConfigS</p>
+<p>et/PortGrou</p>
+<p>p </p>
+<p> </p>
+<p>PortPinDirectionChang</p>
+<p>eable </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>Parameter to indicate if the </p>
+<p>direction is changeable on a port </p>
+<p>pin during runtime. </p>
+<p>True: Port Pin direction </p>
+<p>changeable enabled. </p>
+<p>False: Port Pin direction </p>
+<p>changeable disabled. </p>
+<p> </p>
+<p>PortPinDioAltModeCha</p>
+<p>ngeable </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>Parameter to indicate if the mode </p>
+<p>of a port pin is changeable </p>
+<p>between DIO and Alternate during </p>
+<p>runtime by API functions </p>
+<p>Port_SetToDioMode and </p>
+<p>Port_SetToAlternateMode. </p>
+<p>Including these APIs is controlled </p>
+<p>by PortSetToDioAltModeApi. </p>
+<p>True: Dio Alternate mode is </p>
+<p>changeable. </p>
+<p>False: Dio Alternate mode is not </p>
+<p>changeable. </p>
+<p> </p>
+<p> </p>
+<p>PortPinModeChangeab</p>
+<p>le </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>Parameter to indicate if the mode </p>
+<p>of a port pin is changeable during </p>
+<p>runtime by API function </p>
+<p>Port_SetPinMode. Including this </p>
+<p>API is controlled by </p>
+<p>PortSetPinModeApi. </p>
+<p>True: Port Pin mode is </p>
+<p>changeable. </p>
+<p>False: Port Pin mode is not </p>
+<p>changeable. </p>
+<p> </p>
+<p>PortPinLevelValue </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>PORT_PIN_L</p>
+<p>EVEL_LOW / </p>
+<p>PORT_PIN_L</p>
+<p>EVEL_HIGH </p>
+<p> </p>
+<p>Parameter to indicate port pin </p>
+<p>level value for a port pin. </p>
+<p>PORT_PIN_LEVEL_LOW: Port </p>
+<p>pin Level is low. </p>
+<p>PORT_PIN_LEVEL_HIGH: Port </p>
+<p>pin Level is high. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>29 </b></p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p>PortPinInitialMode </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>DIO </p>
+<p>ALT1_IN </p>
+<p>ALT1_OUT </p>
+<p>ALT2_IN </p>
+<p>ALT2_OUT </p>
+<p>ALT3_IN </p>
+<p>ALT3_OUT </p>
+<p>ALT4_IN </p>
+<p>ALT4_OUT </p>
+<p> </p>
+<p>Mode of the port pin for use with </p>
+<p>Port_Init() function. </p>
+<p>&lt;Input name&gt;_ALT&lt;Alternative </p>
+<p>instance&gt;_IN: Provides alternative </p>
+<p>instance for selected input. </p>
+<p>&lt;Output name&gt;_ALT&lt;Alternative </p>
+<p>instance&gt;_OUT: Provides </p>
+<p>alternative instance for selected </p>
+<p>output. </p>
+<p> </p>
+<p>PortPinDirection </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>PORT_PIN_O</p>
+<p>UT / </p>
+<p>PORT_PIN_I</p>
+<p>N </p>
+<p> </p>
+<p>The initial direction of the pin (IN </p>
+<p>or OUT). If the direction is not </p>
+<p>changeable, the value configured </p>
+<p>here is fixed. The direction must </p>
+<p>match the pin mode. </p>
+<p>PORT_PIN_IN: Port pin direction </p>
+<p>set as input. </p>
+<p>PORT_PIN_OUT: Port pin </p>
+<p>direction set as output. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>PortConfigS</p>
+<p>et/PortGrou</p>
+<p>p </p>
+<p> </p>
+<p>PortInputBufferControl </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter is used as one of </p>
+<p>the factors to enable/disable port </p>
+<p>pins input buffer in DIO Mode </p>
+<p>(PMC=0). </p>
+<p>True: Port pin's input buffer is </p>
+<p>ready to be enabled in DIO Mode. </p>
+<p>False: Port pin's input buffer is </p>
+<p>disabled in DIO Mode. </p>
+<p> </p>
+<p>PortBiDirectionControl </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter forces port pins </p>
+<p>input buffer and output buffer at </p>
+<p>the same time. If activated, the </p>
+<p>effect is valid independently from </p>
+<p>any other port settings. </p>
+<p>True: Activate forced Bi-</p>
+<p>directional IO buffer of the port </p>
+<p>pin. </p>
+<p>False: Deactivate forced Bi-</p>
+<p>directional IO buffer of the port </p>
+<p>pin. </p>
+<p> </p>
+<p>PortIpControl </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter is used to </p>
+<p>enable/disable the direct IO </p>
+<p>control of port pins input buffer </p>
+<p>and output buffer. </p>
+<p>true: Enables the direct IO control </p>
+<p>of port pins input buffer and output </p>
+<p>buffer by the corresponding </p>
+<p>control signals of IP_ENI3(0) and </p>
+<p>IP_ENO3(0) from internal </p>
+<p>peripheral IPs. This register is </p>
+<p>valid only in Control Mode </p>
+<p>(PMC=1). </p>
+<p>False: Disables the direct IO </p>
+<p>control of port pins input buffer </p>
+<p>and output buffer. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>30 </b></p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p>PortPullUpOption </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This register switches on or off the </p>
+<p>port pins pull-up resistor. </p>
+<p>True: Port pin's pull-up resistor is </p>
+<p>enabled. </p>
+<p>False: Port pin's pull-up resistor is </p>
+<p>disabled. </p>
+<p> </p>
+<p>PortPullDownOption </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter switches on or off </p>
+<p>the port pins pull-down resistor. </p>
+<p>True: Port pin's pull-down resistor </p>
+<p>is enabled. </p>
+<p>False: Port pin's pull-down </p>
+<p>resistor is disabled. </p>
+<p> </p>
+<p>PortOpenDrainControl </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter selects port pins </p>
+<p>output buffer function as push-pull </p>
+<p>type or open drain type. </p>
+<p>True: Port pin's output buffer </p>
+<p>operates as open drain driver. </p>
+<p>false: Port pin's output buffer </p>
+<p>operates as push-pull driver </p>
+<p> </p>
+<p>PortOpenDrainControlE</p>
+<p>xpansion </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter selects port pins </p>
+<p>output buffer function as emulated </p>
+<p>P-ch open drain type or emulated </p>
+<p>N-ch open drain type. </p>
+<p>True: Port pin's output buffer </p>
+<p>operates as emulated P-Channel </p>
+<p>open drain driver. </p>
+<p>false: Port pin's output buffer </p>
+<p>operates as emulated N-Channel </p>
+<p>open drain drive </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>PortConfigS</p>
+<p>et/PortGrou</p>
+<p>p </p>
+<p> </p>
+<p>PortOutputLevelInversi</p>
+<p>on </p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>Parameter to indicate if the mode </p>
+<p>of a port pin is changeable </p>
+<p>between DIO and Alternate during </p>
+<p>runtime by API functions </p>
+<p>Port_SetToDioMode and </p>
+<p>Port_SetToAlternateMode. </p>
+<p>Including these APIs is controlled </p>
+<p>by PortSetToDioAltModeApi. </p>
+<p>True: Dio Alternate mode is </p>
+<p>changeable. </p>
+<p>False: Dio Alternate mode is not </p>
+<p>changeable. </p>
+<p> </p>
+<p>PortDriveStrengthContr</p>
+<p>ol </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>SLOW / FAST </p>
+<p> </p>
+<p>Parameter to indicate if the mode </p>
+<p>of a port pin is changeable during </p>
+<p>runtime by API function </p>
+<p>Port_SetPinMode. Including this </p>
+<p>API is controlled by </p>
+<p>PortSetPinModeApi. </p>
+<p>True: Port Pin mode is </p>
+<p>changeable. </p>
+<p>False: Port Pin mode is not </p>
+<p>changeable. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>31 </b></p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p>PortUniversalCharacter</p>
+<p>isticCntrl </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter selects the port </p>
+<p>pins output drive strength as high </p>
+<p>or low type. </p>
+<p>The PortDriveStrengthControl </p>
+<p>must be enabled for this feature. </p>
+<p>False: PortDriveStrengthControl </p>
+<p>parameter specifies the output </p>
+<p>driver strength of the port pin. </p>
+<p>true : Number of output buffer </p>
+<p>characteristics selection capability </p>
+<p>is expanded, </p>
+<p>the maximum of 4 characteristics </p>
+<p>selection is possible </p>
+<p>PUCCn     PDSCn </p>
+<p>0         0       Output characteristic </p>
+<p>selection 1 (400 Ohm buffer) </p>
+<p>0         1       Output characteristic </p>
+<p>selection 2 (200 Ohm buffer) </p>
+<p>1         0       Output characteristic </p>
+<p>selection 3 (100 Ohm buffer) </p>
+<p>1         1       Output characteristic </p>
+<p>selection 4 (50 Ohm buffer) </p>
+<p> </p>
+<p>PortInputBufferSelectio</p>
+<p>n </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>TYPE1_SHM</p>
+<p>T1 </p>
+<p>TYPE2_SHM</p>
+<p>T4 </p>
+<p>TYPE3_TTL </p>
+<p> </p>
+<p>This setting specifies the input </p>
+<p>buffer characteristics. </p>
+<p>TYPE1_SHMT1: TYPE 1 buffer is </p>
+<p>selected. </p>
+<p>TYPE2_SHMT4: TYPE 2 buffer is </p>
+<p>selected. </p>
+<p>TYPE3_TTL: TYPE 3 buffer is </p>
+<p>selected. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>PortFilterGr</p>
+<p>oupConfig/</p>
+<p>PortAnalog</p>
+<p>FilterGroup </p>
+<p> </p>
+<p>PortAnalogFilterBypass </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter enables/disables </p>
+<p>bypass control. </p>
+<p> </p>
+<p>PortEdgeOrLevelContr</p>
+<p>ol </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>FALLING_ED</p>
+<p>GE_FCLA&lt;In</p>
+<p>stance&gt;_CTL</p>
+<p>&lt;Instance&gt; </p>
+<p>RISING_EDG</p>
+<p>E_FCLA&lt;Inst</p>
+<p>ance&gt;_CTL&lt;I</p>
+<p>nstance&gt; </p>
+<p>HIGH_LEVEL</p>
+<p>_FCLA&lt;Instan</p>
+<p>ce&gt;_CTL&lt;Inst</p>
+<p>ance&gt; </p>
+<p>LOW_LEVEL</p>
+<p>_FCLA&lt;Instan</p>
+<p>ce&gt;_CTL&lt;Inst</p>
+<p>ance&gt; </p>
+<p>BOTH_EDGE</p>
+<p>S_FCLA&lt;Inst</p>
+<p>ance&gt;_CTL&lt;I</p>
+<p>nstance&gt; </p>
+<p>BOTH_EDGE</p>
+<p>S_DISABLED </p>
+<p> </p>
+<p>This parameter specifies the </p>
+<p>mode selection. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>32 </b></p>
+<p><b>Container </b></p>
+<p><b>Name </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter  </b></p>
+<p><b>Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>PortFilterGr</p>
+<p>oupConfig/</p>
+<p>PortDigitalFi</p>
+<p>lterGroup </p>
+<p> </p>
+<p>PortSameLevelSample</p>
+<p>s </p>
+<p> </p>
+<p>Boolean </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter specifies the </p>
+<p>number of same level samples, </p>
+<p>i.e. the number of samples with </p>
+<p>the same level to judge an </p>
+<p>external signal pulse as valid. </p>
+<p> </p>
+<p>PortSamplingClockFreq</p>
+<p>uency </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>TRUE / </p>
+<p>FALSE </p>
+<p> </p>
+<p>This parameter specifies the </p>
+<p>Digital filter sampling clock </p>
+<p>frequency. </p>
+<p> </p>
+<p>PortDigitalFilterEnableI</p>
+<p>nput0 to n </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>FIXED_LOW_</p>
+<p>LEVEL </p>
+<p>BYPASSED_</p>
+<p>CTL&lt;Instance</p>
+<p>&gt; </p>
+<p>Instance </p>
+<p>varies as </p>
+<p>FCLAmCTLn </p>
+<p> </p>
+<p>This parameter enables/disables </p>
+<p>PortDigitalFilterEnableInput for </p>
+<p>the signal. </p>
+<p> </p>
+<p>PortDigitalFilterEdgeCo</p>
+<p>ntrol0 to n </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>DISABLED </p>
+<p>RISING_FCL</p>
+<p>A&lt;Instance&gt;_</p>
+<p>CTL&lt;Instance</p>
+<p>&gt; </p>
+<p>FALLING_FC</p>
+<p>LA&lt;Instance&gt;</p>
+<p>_CTL&lt;Instanc</p>
+<p>e&gt; </p>
+<p>BOTH_EDGE</p>
+<p>S_FCLA&lt;Inst</p>
+<p>ance&gt;_CTL&lt;I</p>
+<p>nstance&gt; </p>
+<p> </p>
+<p>Instance </p>
+<p>varies as </p>
+<p>FCLAmCTLn </p>
+<p> </p>
+<p> </p>
+<p>This parameter enables/disables </p>
+<p>PortDigitalFilterEdgeControl for </p>
+<p>the signal. </p>
+<p> </p>
+<p>PortDigitalFilterBypass</p>
+<p>0 to n </p>
+<p> </p>
+<p>Enumeration </p>
+<p> </p>
+<p>BYPASS_EN</p>
+<p>ABLED: </p>
+<p>Bypass </p>
+<p>functionality </p>
+<p>enabled. </p>
+<p>DISABLED: </p>
+<p>Bypass </p>
+<p>functionality </p>
+<p>disabled </p>
+<p> </p>
+<p>This parameter enables/disables </p>
+<p>bypass control. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>33 </b></p>
+<p><b>Table 8-3 </b></p>
+<p><b>Port Modes Description </b></p>
+<p><b> </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p><b> </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>1 </p>
+<p>GTM0I6_ALT1_IN </p>
+<p>201 </p>
+<p>GTMAT1O0_ALT1_OUT </p>
+<p>2 </p>
+<p>GTMAT0O2_ALT1_OUT </p>
+<p>202 </p>
+<p>CSIH1RYI_ALT2_IN </p>
+<p>3 </p>
+<p>SENT0RX_ALT3_IN </p>
+<p>203 </p>
+<p>CSIH1RYO_ALT2_OUT </p>
+<p>4 </p>
+<p>CSIH0CSS1_ALT3_OUT </p>
+<p>204 </p>
+<p>SENT4RX_ALT3_IN </p>
+<p>5 </p>
+<p>CSIH0CSS5_ALT4_OUT </p>
+<p>205 </p>
+<p>MCAN0RX_ALT4_IN </p>
+<p>6 </p>
+<p>GTM0I3_ALT1_IN </p>
+<p>206 </p>
+<p>GTMAT0O4_ALT1_OUT </p>
+<p>7 </p>
+<p>GTMAT0O3N_ALT1_OUT </p>
+<p>207 </p>
+<p>MCAN0TX_ALT4_OUT </p>
+<p>8 </p>
+<p>SENT1RX_ALT3_IN </p>
+<p>208 </p>
+<p>GTMAT0O5_ALT1_OUT </p>
+<p>9 </p>
+<p>CSIH1CSS6_ALT3_OUT </p>
+<p>209 </p>
+<p>INTP4_ALT2_IN </p>
+<p>10 </p>
+<p>CSIH0CSS6_ALT4_OUT </p>
+<p>210 </p>
+<p>CSIH3CSS0_ALT2_OUT </p>
+<p>11 </p>
+<p>GTM0I2_ALT1_IN </p>
+<p>211 </p>
+<p>CSIH1SI_ALT3_IN </p>
+<p>12 </p>
+<p>GTMAT1O1_ALT1_OUT </p>
+<p>212 </p>
+<p>HSURT0SDIO0I_ALT4_IN </p>
+<p>13 </p>
+<p>CSIH0CSS4_ALT3_OUT </p>
+<p>213 </p>
+<p>HSURT0SDIO0O_ALT4_OUT </p>
+<p>14 </p>
+<p>CSIH2CSS2_ALT2_OUT </p>
+<p>214 </p>
+<p>GTM0I5_ALT1_IN </p>
+<p>15 </p>
+<p>GTMAT0O0_ALT1_OUT </p>
+<p>215 </p>
+<p>CSIH3SCI_ALT2_IN </p>
+<p>16 </p>
+<p>CSIH0CSS3_ALT3_OUT </p>
+<p>216 </p>
+<p>CSIH3SCO_ALT2_OUT </p>
+<p>17 </p>
+<p>CSIH2CSS4_ALT2_OUT </p>
+<p>217 </p>
+<p>CSIH1DCS_ALT3_IN </p>
+<p>18 </p>
+<p>GTM1I0_ALT1_IN </p>
+<p>218 </p>
+<p>CSIH1SO_ALT3_OUT </p>
+<p>19 </p>
+<p>GTM1I0_ALT1_IN </p>
+<p>219 </p>
+<p>HSURT0SDIO1I_ALT4_IN </p>
+<p>20 </p>
+<p>GTM1I0_ALT1_IN </p>
+<p>220 </p>
+<p>HSURT0SDIO1O_ALT4_OUT </p>
+<p>21 </p>
+<p>CSIH1CSS2_ALT3_OUT </p>
+<p>221 </p>
+<p>GTM0I4_ALT1_IN </p>
+<p>22 </p>
+<p>CSIH2CSS5_ALT2_OUT </p>
+<p>222 </p>
+<p>GTMAT0O3_ALT1_OUT </p>
+<p>23 </p>
+<p>GTM1I0_ALT1_IN </p>
+<p>223 </p>
+<p>CSIH3SI_ALT2_IN </p>
+<p>24 </p>
+<p>GTMAT1O0_ALT1_OUT </p>
+<p>224 </p>
+<p>HSURT0SDIO2I_ALT4_IN </p>
+<p>25 </p>
+<p>INTP3_ALT2_IN </p>
+<p>225 </p>
+<p>HSURT0SDIO2O_ALT4_OUT </p>
+<p>26 </p>
+<p>CSIH1CSS1_ALT4_OUT </p>
+<p>226 </p>
+<p>GTM0I0_ALT1_IN </p>
+<p>27 </p>
+<p>CSIH2CSS6_ALT2_OUT </p>
+<p>227 </p>
+<p>GTMAT1O3_ALT1_OUT </p>
+<p>28 </p>
+<p>CSIH2CSS7_ALT2_OUT </p>
+<p>228 </p>
+<p>CSIH3DCS_ALT2_IN </p>
+<p>29 </p>
+<p>CSIH1CSS0_ALT4_OUT </p>
+<p>229 </p>
+<p>CSIH3SO_ALT2_OUT </p>
+<p>30 </p>
+<p>MCAN1RX_ALT2_IN </p>
+<p>230 </p>
+<p>HSURT0SDIO3I_ALT4_IN </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>34 </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p> </p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>31 </p>
+<p>CSIH0SI_ALT3_IN </p>
+<p> </p>
+<p>231 </p>
+<p>HSURT0SDIO3O_ALT4_OUT </p>
+<p>32 </p>
+<p>CSIH1DCS_ALT4_IN </p>
+<p>232 </p>
+<p>GTM1I6_ALT1_IN </p>
+<p>33 </p>
+<p>CSIH1SCO_ALT4_OUT </p>
+<p>233 </p>
+<p>GTMAT2O4_ALT1_OUT </p>
+<p>34 </p>
+<p>MCAN1TX_ALT2_OUT </p>
+<p>234 </p>
+<p>CSIH3CSS1_ALT2_OUT </p>
+<p>35 </p>
+<p>CSIH0SCI_ALT3_IN </p>
+<p>235 </p>
+<p>GTMAT1O4_ALT1_OUT </p>
+<p>36 </p>
+<p>CSIH1SC1_ALT4_IN </p>
+<p>236 </p>
+<p>CSIH3CSS2_ALT2_OUT </p>
+<p>37 </p>
+<p>CSIH0DCS_ALT3_IN </p>
+<p>237 </p>
+<p>ESO2_BAR_ALT3_IN </p>
+<p>38 </p>
+<p>CSIH0SO_ALT3_OUT </p>
+<p>238 </p>
+<p>CSIH1CSS7_ALT3_OUT </p>
+<p>39 </p>
+<p>EXTCLK1O_ALT2_OUT </p>
+<p>239 </p>
+<p>GTM1I4_ALT1_IN </p>
+<p>40 </p>
+<p>CSIH1SI_ALT4_IN </p>
+<p>240 </p>
+<p>GTMAT1O5_ALT1_OUT </p>
+<p>41 </p>
+<p>CSIH3CSS3_ALT2_OUT </p>
+<p>241 </p>
+<p>RLIN30TX_ALT1_OUT </p>
+<p>42 </p>
+<p>GTMAT0O1N_ALT1_OUT </p>
+<p>242 </p>
+<p>INTP5_ALT2_IN </p>
+<p>43 </p>
+<p>CSIH1CSS0_ALT2_OUT </p>
+<p>243 </p>
+<p>CSIH0CSS2_ALT2_OUT </p>
+<p>44 </p>
+<p>CSIH2SCI_ALT3_OUT </p>
+<p>244 </p>
+<p>MTTCAN0TX_ALT3_OUT </p>
+<p>45 </p>
+<p>CSIH2SCO_ALT3_IN </p>
+<p>245 </p>
+<p>HSURT1SCKI_ALT4_IN </p>
+<p>46 </p>
+<p>HSURT0SCKI_ALT4_IN </p>
+<p>246 </p>
+<p>HSURT1SCKO_ALT4_OUT </p>
+<p>47 </p>
+<p>HSURT0SCKO_ALT4_OUT </p>
+<p>247 </p>
+<p>CSIH0CSS3_ALT2_OUT </p>
+<p>48 </p>
+<p>CSIH1CSS2_ALT2_OUT </p>
+<p>248 </p>
+<p>EXTCLK0O_ALT3_OUT </p>
+<p>49 </p>
+<p>CSIH2DCS_ALT3_IN </p>
+<p>249 </p>
+<p>HSURT1CSO_ALT4_OUT </p>
+<p>50 </p>
+<p>CSIH2SO_ALT3_OUT </p>
+<p>250 </p>
+<p>CSIH0CSS4_ALT2_OUT </p>
+<p>51 </p>
+<p>HSURT0CSI_ALT4_IN </p>
+<p>251 </p>
+<p>RLIN30RX_ALT3_IN </p>
+<p>52 </p>
+<p>HSURT0CSO_ALT4_OUT </p>
+<p>252 </p>
+<p>HSURT1SDIR_ALT4_OUT </p>
+<p>53 </p>
+<p>GTMAT0O2N_ALT1_OUT </p>
+<p>253 </p>
+<p>GTM1I7_ALT1_IN </p>
+<p>54 </p>
+<p>GTM0I4_ALT2_IN </p>
+<p>254 </p>
+<p>CSIH2RYI_ALT2_IN </p>
+<p>55 </p>
+<p>CSIH2CSS1_ALT2_OUT </p>
+<p>255 </p>
+<p>CSIH2RYO_ALT2_OUT </p>
+<p>56 </p>
+<p>CSIH1SCI_ALT3_IN </p>
+<p>256 </p>
+<p>RLIN30TX_ALT3_OUT </p>
+<p>57 </p>
+<p>CSIH1SCO_ALT3_OUT </p>
+<p>257 </p>
+<p>CSIH3CSS3_ALT4_OUT </p>
+<p>58 </p>
+<p>CSIH2SCO_ALT3_OUT </p>
+<p>258 </p>
+<p>GTMAT1O3N_ALT1_OUT </p>
+<p>59 </p>
+<p>HSURT0SDIR_ALT4_OUT </p>
+<p>259 </p>
+<p>CSIH0CSS0_ALT3_OUT </p>
+<p>60 </p>
+<p>GTM0I5_ALT2_IN </p>
+<p>260 </p>
+<p>CSIH0CSS7_ALT4_OUT </p>
+<p>61 </p>
+<p>GTMAT0O5_ALT2_OUT </p>
+<p>261 </p>
+<p>EXTCLK0O_ALT2_OUT </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>35 </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p> </p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>62 </p>
+<p>CSIH2SI_ALT3_IN </p>
+<p> </p>
+<p>262 </p>
+<p>GTMAT0O6_ALT1_OUT </p>
+<p>63 </p>
+<p>CSIH0SS0_ALT3_OUT </p>
+<p>263 </p>
+<p>SENT3SPCO_ALT3_OUT </p>
+<p>64 </p>
+<p>HSURT1SDIO0I_ALT4_IN </p>
+<p>264 </p>
+<p>GTM0I7_ALT1_IN </p>
+<p>65 </p>
+<p>HSURT1SDIO0O_ALT4_OUT </p>
+<p>265 </p>
+<p>GTMAT0O7_ALT1_OUT </p>
+<p>66 </p>
+<p>ESO0Z_ALT2_IN </p>
+<p>266 </p>
+<p>ETH0LINKSTA_ALT2_IN </p>
+<p>67 </p>
+<p>RLIN31RX_ALT3_IN </p>
+<p>267 </p>
+<p>SENT4SPCO_ALT3_OUT </p>
+<p>68 </p>
+<p>SENT0SPCO_ALT3_OUT </p>
+<p>268 </p>
+<p>CSIH3CSS1_ALT3_OUT </p>
+<p>69 </p>
+<p>HSURT1SDIO1I_ALT4_IN </p>
+<p>269 </p>
+<p>FLX0RXDA_ALT4_IN </p>
+<p>70 </p>
+<p>HSURT1SDIO1O_ALT4_OUT </p>
+<p>270 </p>
+<p>ETH0MDI_ALT2_IN </p>
+<p>71 </p>
+<p>RLIN31TX_ALT3_OUT </p>
+<p>271 </p>
+<p>ETH0MDO_ALT2_OUT </p>
+<p>72 </p>
+<p>HSURT1SDIO2I_ALT4_IN </p>
+<p>272 </p>
+<p>CSIH3CSS2_ALT3_OUT </p>
+<p>73 </p>
+<p>HSURT1SDIO2O_ALT4_OUT </p>
+<p>273 </p>
+<p>FLX0RXDB_ALT4_IN </p>
+<p>74 </p>
+<p>RLIN30RX_ALT2_IN </p>
+<p>274 </p>
+<p>GTM1I5_ALT1_IN </p>
+<p>75 </p>
+<p>CSIH2CSS3_ALT2_OUT </p>
+<p>275 </p>
+<p>FLX0STPWT_ALT4_IN </p>
+<p>76 </p>
+<p>MTTCAN0RX_ALT3_IN </p>
+<p>276 </p>
+<p>CSIH1CSS3_ALT3_OUT </p>
+<p>77 </p>
+<p>CSIH1SS1_ALT3_OUT </p>
+<p>277 </p>
+<p>SENT2SPCO_ALT4_OUT </p>
+<p>78 </p>
+<p>HSURT1SDIO3I_ALT4_IN </p>
+<p>278 </p>
+<p>ETH0COL_ALT2_IN </p>
+<p>79 </p>
+<p>HSURT1SDIO3O_ALT4_OUT </p>
+<p>279 </p>
+<p>INTP6_ALT3_IN </p>
+<p>80 </p>
+<p>GTM1I2_ALT1_IN </p>
+<p>280 </p>
+<p>FLX0TXENA_ALT4_OUT </p>
+<p>81 </p>
+<p>ETH0MDC_ALT2_OUT </p>
+<p>281 </p>
+<p>GTM01I0_ALT1_IN </p>
+<p>82 </p>
+<p>FLX0TXDB_ALT4_OUT </p>
+<p>282 </p>
+<p>ETH0WOL_ALT2_OUT </p>
+<p>83 </p>
+<p>ETH0CRS_ALT2_IN </p>
+<p>283 </p>
+<p>SENT1RX_ALT4_IN </p>
+<p>84 </p>
+<p>RLIN30TX_ALT2_OUT </p>
+<p>284 </p>
+<p>BHPDGRCLK1_ALT4_OUT </p>
+<p>85 </p>
+<p>CSIH0CSS2_ALT3_OUT </p>
+<p>285 </p>
+<p>ETH0CLK1O_ALT2_OUT </p>
+<p>86 </p>
+<p>FLX0TXDA_ALT4_OUT </p>
+<p>286 </p>
+<p>CSIH2SSI_BAR_ALT3_IN </p>
+<p>87 </p>
+<p>ETH0TXER_ALT2_OUT </p>
+<p>287 </p>
+<p>CSIH2CSS0_ALT3_OUT </p>
+<p>88 </p>
+<p>INTP7_ALT3_IN </p>
+<p>288 </p>
+<p>CSIH0CSS3_ALT4_OUT </p>
+<p>54 </p>
+<p>GTM0I4_ALT2_IN </p>
+<p>254 </p>
+<p>CSIH2RYI_ALT2_IN </p>
+<p>55 </p>
+<p>CSIH2CSS1_ALT2_OUT </p>
+<p>255 </p>
+<p>CSIH2RYO_ALT2_OUT </p>
+<p>56 </p>
+<p>CSIH1SCI_ALT3_IN </p>
+<p>256 </p>
+<p>RLIN30TX_ALT3_OUT </p>
+<p>92 </p>
+<p>CSIH1CSS4_ALT3_OUT </p>
+<p>292 </p>
+<p>INTP1_ALT2_IN </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>36 </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p> </p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>93 </p>
+<p>SENT1SPCO_ALT4_OUT </p>
+<p> </p>
+<p>293 </p>
+<p>ADTRG1_ALT4_IN </p>
+<p>94 </p>
+<p>GTMAT0O1_ALT1_OUT </p>
+<p>294 </p>
+<p>CSIH1CSS5_ALT4_OUT </p>
+<p>95 </p>
+<p>ETH0TXD1_ALT2_OUT </p>
+<p>295 </p>
+<p>CSIH0CSS5_ALT2_OUT </p>
+<p>96 </p>
+<p>CSIH1CSS5_ALT3_OUT </p>
+<p>296 </p>
+<p>SENT2RX_ALT3_IN </p>
+<p>97 </p>
+<p>ETH0TXD2_ALT2_OUT </p>
+<p>297 </p>
+<p>ESO1Z_ALT4_IN </p>
+<p>98 </p>
+<p>SENT2RX_ALT4_IN </p>
+<p>298 </p>
+<p>CSIH2CSS7_ALT4_OUT </p>
+<p>99 </p>
+<p>ETH0TXD3_ALT2_OUT </p>
+<p>299 </p>
+<p>GTMAT1O0N_ALT1_OUT </p>
+<p>100 </p>
+<p>ETH0REF50CK_ALT2_IN </p>
+<p>300 </p>
+<p>CSIH0CSS6_ALT2_OUT </p>
+<p>101 </p>
+<p>SENT3RX_ALT4_IN </p>
+<p>301 </p>
+<p>SENT3RX_ALT3_IN </p>
+<p>102 </p>
+<p>ETH0TXEN_ALT1_OUT </p>
+<p>302 </p>
+<p>EXTCLK1O_ALT4_OUT </p>
+<p>103 </p>
+<p>MCAN0RX_ALT3_IN </p>
+<p>303 </p>
+<p>CSIH2CSS2_ALT4_OUT </p>
+<p>104 </p>
+<p>FLX0RXDA_INTP10_ALT4_IN </p>
+<p>304 </p>
+<p>CSIH0CSS1_ALT2_IN </p>
+<p>105 </p>
+<p>ETH0RXER_ALT2_IN </p>
+<p>305 </p>
+<p>CSIH2CSS3_ALT4_OUT </p>
+<p>106 </p>
+<p>MCAN0TX_ALT3_OUT </p>
+<p>306 </p>
+<p>CSIH0SSI_BAR_ALT2_IN </p>
+<p>107 </p>
+<p>RLIN30TX_ALT4_OUT </p>
+<p>307 </p>
+<p>CSIH0CSSO0_ALT2_OUT </p>
+<p>108 </p>
+<p>ETH0TXCLK_ALT2_IN </p>
+<p>308 </p>
+<p>ADTRG0_ALT3_IN </p>
+<p>109 </p>
+<p>CSIH1SSI_BAR_ALT3_IN </p>
+<p>309 </p>
+<p>ADCA1CNV_ALT3_OUT </p>
+<p>110 </p>
+<p>CSIH1SS0_ALT3_OUT </p>
+<p>310 </p>
+<p>RLIN31RX_ALT4_IN </p>
+<p>111 </p>
+<p>ETH0RXCLK_ALT2_IN </p>
+<p>311 </p>
+<p>CSIH0DCS_ALT2_IN </p>
+<p>112 </p>
+<p>GTMAT0O0N_ALT1_OUT </p>
+<p>312 </p>
+<p>CSIH0SO_ALT2_OUT </p>
+<p>113 </p>
+<p>ETH0RXD0_ALT2_IN </p>
+<p>313 </p>
+<p>ADCA0CNV_ALT3_OUT </p>
+<p>114 </p>
+<p>ETH0RXD1_ALT2_IN </p>
+<p>314 </p>
+<p>RLIN31TX_ALT4_OUT </p>
+<p>115 </p>
+<p>ETH0RXD2_ALT2_IN </p>
+<p> </p>
+<p>315 </p>
+<p>CSIH0SCI_ALT2_IN </p>
+<p>116 </p>
+<p>RLIN30RX_ALT4_IN </p>
+<p>316 </p>
+<p>CSIH0CSO_ALT2_OUT </p>
+<p>117 </p>
+<p>ETH0RXD3_ALT2_IN </p>
+<p>317 </p>
+<p>CSIH2DCS_ALT4_IN </p>
+<p>118 </p>
+<p>ETH0RXDV_ALT2_IN </p>
+<p> </p>
+<p>318 </p>
+<p>CSIH2SO_ALT4_OUT </p>
+<p>119 </p>
+<p>INTP0_ALT3_IN </p>
+<p> </p>
+<p>319 </p>
+<p>CSIH0SI_ALT2_IN </p>
+<p>120 </p>
+<p>BHPDGRCLK0_ALT4_OUT </p>
+<p> </p>
+<p>320 </p>
+<p>NMI_ALT3_IN </p>
+<p>121 </p>
+<p>SENT5SPCO_ALT3_OUT </p>
+<p> </p>
+<p>321 </p>
+<p>GTMAT2O0N_ALT1_OUT </p>
+<p>122 </p>
+<p>CSIH2SCI_ALT4_IN </p>
+<p>322 </p>
+<p>CSIH3SCO_ALT3_OUT </p>
+<p>123 </p>
+<p>CSIH2SCO_ALT4_OUT </p>
+<p>323 </p>
+<p>HSURT3CSI_ALT4_IN </p>
+<p>124 </p>
+<p>EXTCLK1O_ALT3_OUT </p>
+<p>324 </p>
+<p>HSURT3CSO_ALT4_OUT </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>37 </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p> </p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>125 </p>
+<p>CSIH0RYI_ALT4_IN </p>
+<p> </p>
+<p>325 </p>
+<p>GTMAT2O0_ALT1_OUT </p>
+<p>126 </p>
+<p>CSIH0RYO_ALT4_OUT </p>
+<p>326 </p>
+<p>CSIH3CSS0_ALT3_OUT </p>
+<p>127 </p>
+<p>MCAN1TX_ALT3_OUT </p>
+<p>327 </p>
+<p>HSURT3SCKI_ALT4_IN </p>
+<p>128 </p>
+<p>CSIH1CSS3_ALT4_OUT </p>
+<p>328 </p>
+<p>HSURT3SCKO_ALT4_OUT </p>
+<p>129 </p>
+<p>MCAN1RX_ALT3_IN </p>
+<p>329 </p>
+<p>GTMAT1O7_ALT1_OUT </p>
+<p>130 </p>
+<p>CSIH2SI_ALT4_IN </p>
+<p>330 </p>
+<p>HSURT3SDIO3I_ALT4_IN </p>
+<p>131 </p>
+<p>CSIH2CSS3_ALT3_OUT </p>
+<p>331 </p>
+<p>HSURT3SDIO3O_ALT4_OUT </p>
+<p>132 </p>
+<p>SENT2RX_ALT2_IN </p>
+<p>332 </p>
+<p>GTMAT1O6_ALT1_OUT </p>
+<p>133 </p>
+<p>INTP2_ALT3_IN </p>
+<p>333 </p>
+<p>HSURT3SDIO2I_ALT4_IN </p>
+<p>134 </p>
+<p>MTTCAN0TX_ALT2_OUT </p>
+<p>334 </p>
+<p>HSURT3SDIO2O_ALT4_OUT </p>
+<p>135 </p>
+<p>CSIH2CSS0_ALT4_OUT </p>
+<p>335 </p>
+<p>HSURT3SDIO1I_ALT4_IN </p>
+<p>136 </p>
+<p>MTTCAN0RX_ALT2_IN </p>
+<p>336 </p>
+<p>HSURT3SDIO1O_ALT4_OUT </p>
+<p>137 </p>
+<p>CSIH0CSS4_ALT4_OUT </p>
+<p>337 </p>
+<p>HSURT3SDIO0I_ALT4_IN </p>
+<p>138 </p>
+<p>CSIH1CSS6_ALT4_OUT </p>
+<p>338 </p>
+<p>HSURT3SDIO0O_ALT4_OUT </p>
+<p>139 </p>
+<p>HSURT2DIR_ALT2_OUT </p>
+<p>339 </p>
+<p>SENT7RX_ALT3_IN </p>
+<p>140 </p>
+<p>CSIH1CSS7_ALT4_OUT </p>
+<p>340 </p>
+<p>MEMC0A0_ALT3_OUT </p>
+<p>141 </p>
+<p>HSURT2CSI_ALT2_IN </p>
+<p>341 </p>
+<p>CSIH3RYI_ALT4_IN </p>
+<p>142 </p>
+<p>HSURT2CSO_ALT2_OUT </p>
+<p>342 </p>
+<p>CSIH3RYO_ALT4_OUT </p>
+<p>143 </p>
+<p>SENT5RX_ALT3_IN </p>
+<p>343 </p>
+<p>FLX1TXENB_ALT2_OUT </p>
+<p>144 </p>
+<p>HSURT2SCKI_ALT2_IN </p>
+<p>344 </p>
+<p>SENT6RX_ALT3_IN </p>
+<p>145 </p>
+<p>HSURT2SCKO_ALT2_OUT </p>
+<p>345 </p>
+<p>ETH1MDC_ALT3_OUT </p>
+<p>146 </p>
+<p>INTP9_ALT3_IN </p>
+<p>346 </p>
+<p>FLX1RXDB_ALT2_IN </p>
+<p>147 </p>
+<p>GTMAT2O3_ALT1_OUT </p>
+<p>347 </p>
+<p>ETHCOL_ALT3_IN </p>
+<p>148 </p>
+<p>HSURT2SDIO3I_ALT2_IN </p>
+<p>348 </p>
+<p>MEMC0RD_BAR_ALT4_OUT </p>
+<p>149 </p>
+<p>HSURT2SDIO3O_ALT2_OUT </p>
+<p>349 </p>
+<p>FLX1TXDB_ALT3_OUT </p>
+<p>150 </p>
+<p>HSURT2SDIO2I_ALT2_IN </p>
+<p>350 </p>
+<p>ETHLINKSTA_ALT3_IN </p>
+<p>151 </p>
+<p>HSURT2SDIO2O_ALT2_OUT </p>
+<p>351 </p>
+<p>MEMC0WR_BAR_ALT4_OUT </p>
+<p>152 </p>
+<p>SENT6SPCO_ALT3_OUT </p>
+<p>352 </p>
+<p>ETH1RXDV_ALT3_IN </p>
+<p>153 </p>
+<p>HSURT2SDIO1I_ALT2_IN </p>
+<p>353 </p>
+<p>CSIH3CSS7_ALT3_OUT </p>
+<p>154 </p>
+<p>HSURT2SDIO1O_ALT2_OUT </p>
+<p>354 </p>
+<p>RLIN32RX_ALT4_IN </p>
+<p>155 </p>
+<p>SENT7SPCO_ALT3_OUT </p>
+<p>355 </p>
+<p>FLX1TXDA_ALT2_OUT </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                      Configuration Overview</b></p>
+<p> </p>
+<p><b>38 </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p> </p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>156 </p>
+<p>GTMAT2O1N_ALT1_OUT </p>
+<p> </p>
+<p>356 </p>
+<p>CSIH3CSS6_ALT3_OUT </p>
+<p>157 </p>
+<p>HSURT2SDIO0I_ALT2_IN </p>
+<p> </p>
+<p>357 </p>
+<p>RLIN32TX_ALT4_OUT </p>
+<p>158 </p>
+<p>HSURT2SDIO0O_ALT2_OUT </p>
+<p>358 </p>
+<p>FLX1TXENA_ALT2_OUT </p>
+<p>159 </p>
+<p>GTMAT2O1_ALT1_OUT </p>
+<p>359 </p>
+<p>CSIH3CSS5_ALT3_OUT </p>
+<p>160 </p>
+<p>HSURT3SDIR_ALT4_OUT </p>
+<p>360 </p>
+<p>MEMC0CS0_BAR_ALT4_OUT </p>
+<p>161 </p>
+<p>FLX1RXDA_ALT2_IN </p>
+<p> </p>
+<p>361 </p>
+<p>SENT0RX_ALT4_IN </p>
+<p>162 </p>
+<p>INTP11_ALT3_IN </p>
+<p> </p>
+<p>362 </p>
+<p>MEMC0D1I_ALT3_IN </p>
+<p>163 </p>
+<p>CSIH3CSS4_ALT3_OUT </p>
+<p> </p>
+<p>363 </p>
+<p>MEMC0D1O_ALT3_OUT </p>
+<p>164 </p>
+<p>MEMC0CS1_BAR_ALT4_OUT </p>
+<p> </p>
+<p>364 </p>
+<p>MTTCAN0EVT_ALT4_IN </p>
+<p>165 </p>
+<p>ETH1WOL_ALT3_OUT </p>
+<p> </p>
+<p>365 </p>
+<p>ETH1TXEN_ALT2_OUT </p>
+<p>166 </p>
+<p>MEMC0CS2_BAR_ALT4_OUT </p>
+<p> </p>
+<p>366 </p>
+<p>MEMC0D2I_ALT3_IN </p>
+<p>167 </p>
+<p>FLX1STPWT_ALT3_IN </p>
+<p> </p>
+<p>367 </p>
+<p>MEMC0D2O_ALT3_OUT </p>
+<p>168 </p>
+<p>MEMC0CS3_BAR_ALT4_OUT </p>
+<p> </p>
+<p>368 </p>
+<p>MTTCAN0SOC_ALT4_OUT </p>
+<p>169 </p>
+<p>ETH1RXD3_ALT2_IN </p>
+<p> </p>
+<p>369 </p>
+<p>ETH1TXD1_ALT2_OUT </p>
+<p>170 </p>
+<p>MEMC0A1_ALT3_OUT </p>
+<p> </p>
+<p>370 </p>
+<p>MEMC0D3I_ALT3_IN </p>
+<p>171 </p>
+<p>CSIH3DCS_ALT4_IN </p>
+<p> </p>
+<p>371 </p>
+<p>MEMC0D3O_ALT3_OUT </p>
+<p>172 </p>
+<p>CSIH3SO_ALT4_OUT </p>
+<p> </p>
+<p>372 </p>
+<p>MTTCAN0TMP_ALT4_OUT </p>
+<p>173 </p>
+<p>ETH1RXD2_ALT2_IN </p>
+<p> </p>
+<p>373 </p>
+<p>ETH1TXD2_ALT2_OUT </p>
+<p>174 </p>
+<p>MEMC0A2_ALT3_OUT </p>
+<p> </p>
+<p>374 </p>
+<p>MEMC0D4I_ALT3_IN </p>
+<p>175 </p>
+<p>CSIH3SI_ALT4_IN </p>
+<p> </p>
+<p>375 </p>
+<p>MEMC0D4O_ALT3_OUT </p>
+<p>176 </p>
+<p>ETH1CRS_ALT2_IN </p>
+<p> </p>
+<p>376 </p>
+<p>MTTCAN0RTP_ALT4_OUT </p>
+<p>177 </p>
+<p>MEMC0A3_ALT3_OUT </p>
+<p> </p>
+<p>377 </p>
+<p>GTMAT2O2_ALT1_OUT </p>
+<p>178 </p>
+<p>CSIH3SSI_BAR_ALT4_IN </p>
+<p> </p>
+<p>378 </p>
+<p>ETH1TXD3_ALT2_OUT </p>
+<p>179 </p>
+<p>CSIH3CSS0_ALT4_OUT </p>
+<p> </p>
+<p>379 </p>
+<p>MEMC0D5I_ALT3_IN </p>
+<p>180 </p>
+<p>GTMAT2O3N_ALT1_OUT </p>
+<p> </p>
+<p>380 </p>
+<p>MEMC0D5O_ALT3_OUT </p>
+<p>181 </p>
+<p>ETH1RXER_ALT2_IN </p>
+<p> </p>
+<p>381 </p>
+<p>GTMAT2O2N_ALT1_OUT </p>
+<p>182 </p>
+<p>MEMC0A4_ALT3_OUT </p>
+<p> </p>
+<p>382 </p>
+<p>ETH1TXER_ALT2_OUT </p>
+<p>183 </p>
+<p>CSIH3SCI_ALT4_IN </p>
+<p> </p>
+<p>383 </p>
+<p>MEMC0D6I_ALT3_IN </p>
+<p>184 </p>
+<p>CSIH3SCO_ALT4_OUT </p>
+<p> </p>
+<p>384 </p>
+<p>MEMC0D6O_ALT3_OUT </p>
+<p>185 </p>
+<p>ETH1RXD1_ALT2_IN </p>
+<p> </p>
+<p>385 </p>
+<p>ETH1MD1_ALT2_IN </p>
+<p>186 </p>
+<p>MEMC0A5_ALT3_OUT </p>
+<p> </p>
+<p>386 </p>
+<p>ETH1MDO_ALT2_OUT </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>       Configuration Overview                                                                                                     Chapter 8</b></p>
+<p> </p>
+<p> </p>
+<p><b>39 </b></p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p> </p>
+<p><b>Sl.No </b></p>
+<p><b>Modes </b></p>
+<p>187 </p>
+<p>GTMT1I4_ALT1_IN </p>
+<p> </p>
+<p>387 </p>
+<p>MEMC0D7I_ALT3_IN </p>
+<p>188 </p>
+<p>ETH1RXD0_ALT2_IN </p>
+<p> </p>
+<p>388 </p>
+<p>MEMC0D7O_ALT3_OUT </p>
+<p>189 </p>
+<p>MEMC0A6_ALT3_OUT </p>
+<p> </p>
+<p>389 </p>
+<p>SENT8SPCO_ALT4_OUT </p>
+<p>190 </p>
+<p>ETH1RXCLK_ALT2_IN </p>
+<p> </p>
+<p>390 </p>
+<p>SENT8RX_ALT4_IN </p>
+<p>191 </p>
+<p>MEMC0A7_ALT3_OUT </p>
+<p> </p>
+<p>391 </p>
+<p>RLIN33TX_ALT4_OUT </p>
+<p>192 </p>
+<p>MCAN0TXFD_ALT4_OUT </p>
+<p> </p>
+<p>392 </p>
+<p>RLIN33RX_ALT4_IN </p>
+<p>193 </p>
+<p>ETH1TXCLK_ALT2_IN </p>
+<p> </p>
+<p>393 </p>
+<p>SENT9SPCO_ALT4_OUT </p>
+<p>194 </p>
+<p>MEMC0A8_ALT3_OUT </p>
+<p> </p>
+<p>394 </p>
+<p>SENT9RX_ALT4_IN </p>
+<p>195 </p>
+<p>MCAN0RXFD_ALT4_OUT </p>
+<p> </p>
+<p>395 </p>
+<p>MCAN2TX_ALT2_OUT </p>
+<p>196 </p>
+<p>ETH1REF50CK_ALT2_IN </p>
+<p> </p>
+<p>396 </p>
+<p>MCAN2RX_ALT3_IN </p>
+<p>197 </p>
+<p>MEMC0D0I_ALT3_IN </p>
+<p> </p>
+<p>397 </p>
+<p>FLSCI3RXD_ALT3_IN_SUPP_PFC_P</p>
+<p>MCSR </p>
+<p>198 </p>
+<p>MEMC0D0O_ALT3_OUT </p>
+<p> </p>
+<p>398 </p>
+<p>FLSCI3TXD_ALT3_OUT_SUPP_PFC_</p>
+<p>PMCSR </p>
+<p>199 </p>
+<p>MTTCAN0SWT_ALT4_IN </p>
+<p> </p>
+<p>399 </p>
+<p>DIO_SUPP_PFC_PMCSR </p>
+<p>200 </p>
+<p>ETH1TXD0_ALT2_OUT </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>  Chapter 8                                                                                                      Configuration Overview </b></p>
+<p><b> </b></p>
+<p><b>40 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>   Messages                                                                                                                              Chapter 9 </b></p>
+<p> </p>
+<p> </p>
+<p><b>41 </b></p>
+<p> </p>
+<p><b>Chapter 9 </b></p>
+<p><b>Messages </b></p>
+<p><b> </b></p>
+<p>The messages help to identify the syntax or semantic errors in the ECU </p>
+<p>Configuration Description File. Hence it ensures validity and correctness of the </p>
+<p>information available in the ECU Configuration Description File. </p>
+<p> </p>
+<p>The following section gives the list of error, warning and information messages </p>
+<p>displayed by the mcal code generator tool. </p>
+<p> </p>
+<p><b>9.1</b></p>
+<p><b> </b></p>
+<p><b>Error Messages</b></p>
+<p><b>   </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>ERR_59_124_001: Parameter PortPinModeChangeable should not be </b></p>
+<p><b>configured as true in the path /Renesas/EcucDefs_Port/Port0/ </b></p>
+<p><b>PortConfigSet0/PortGroup10/PortPin10 as the parameter </b></p>
+<p><b>PortSetPinModeApi is set false. </b></p>
+<p>This error occurs when ‘PortPinModeChangeable’ is set as true and </p>
+<p>’PortSetPinModeApi’ is set as false </p>
+<p><b>ERR_59_124_002: Number of fields is not same for the entity Structure </b></p>
+<p><b>Port_GstConfiguration. At least one DNFA instance shall be configured in </b></p>
+<p><b>in PortConfigSet0 across MultiConfigSet. </b></p>
+<p>This error occurs when Number of fields is not same for the entity Structure </p>
+<p>Port_GstConfiguration </p>
+<p><b>ERR_59_124_003: PortGroup${GrpInst}0 is not configured in </b></p>
+<p><b>PortConfigSet${ConfigSet}, PortGroups configured shall not be different </b></p>
+<p><b>across MultiConfigSet. </b></p>
+<p>This error occurs when any of the PortGroup is not configured and if </p>
+<p>PortGroups configured different across MultiConfigSet </p>
+<p><b>ERR_59_124_004: Configured PortPins of the PortGroup00 does not </b></p>
+<p><b>match, PortPins of a PortGroup shall remain alike across MultiConfigSet. </b></p>
+<p>This error occurs when PortPin not Present in a PortGroup, and if the PortPins </p>
+<p>of a PortGroup different across MultiConfigSet </p>
+<p><b>ERR_59_124_005: Number of fields is not same for the entity Structure </b></p>
+<p><b>Port_GstConfiguration. At least one FCLA instance shall be configured in </b></p>
+<p><b>PortConfigSet0 across MultiConfigSet. </b></p>
+<p>This error occurs when Number of fields is not same for the entity Structure </p>
+<p>‘’Port_GstConfiguration </p>
+<p><b>ERR_59_124_006: Parameter PortPinDirectionChangeable should not be </b></p>
+<p><b>configured as true in the Path Renesas/EcucDefs_Port/Port0/ </b></p>
+<p><b>PortConfigSet/PortGroup/PortPin, as parameter PortSetPinDirectionApi is </b></p>
+<p><b>set false. </b></p>
+<p>This error occurs when ‘PortPinDirectionChangeable’ is set as true and </p>
+<p>’PortSetPinDirectionApi’ is set as false </p>
+<p><b>ERR_59_124_007: Parameter PortPinDioAltModeChangeable should not </b></p>
+<p><b>be configured as true in the path /Renesas/EcucDefs_Port/Port/ </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>  Chapter 9                                                                                                                              Messages </b></p>
+<p><b> </b></p>
+<p><b>42 </b></p>
+<p><b>PortConfigSet/PortGroup/PortPin, as parameter PortSetToDioAltModeApi </b></p>
+<p><b>is set false. </b></p>
+<p>This error occurs when ‘PortPinDioAltModeChangeable’ is set as true and’ </p>
+<p>PortSetToDioAltModeApi’ is set as false </p>
+<p><b>ERR_59_124_009 : The value for parameter PortInputBufferControl of the </b></p>
+<p><b>Port Group Container  should not be configured as &lt;true&gt; in the path </b></p>
+<p><b>/Renesas/EcucDefs_Port/Port/PortConfigSet/PortGroup/PortPin as the </b></p>
+<p><b>value configured for parameter PortPinInitialMode of the same container </b></p>
+<p><b>is configured as &lt;PORT_PIN_OUT&gt;. </b></p>
+<p>This error occurs when ‘PortInputBufferControl’ is set as false and </p>
+<p>’PortPinInitialMode’ is set as output mode. </p>
+<p><b>ERR_59_124_010 : Value of the parameter PortPinInitialMode of Port </b></p>
+<p><b>Group container Port Pin container support only </b></p>
+<p><b>DIO_SUPP_PFCE_PMCSR mode in $PortPinPath, Hence the parameter </b></p>
+<p><b>PortPinDioAltModeChangeable of same container shall not be configured </b></p>
+<p><b>as &lt;true&gt;. </b></p>
+<p>This error occurs when ‘PortPinInitialMode’ is set as </p>
+<p>DIO_SUPP_PFCE_PMCSR and ’PortPinDioAltModeChangeable’ is set as true </p>
+<p><b>ERR_59_124_011: $PortGrpShortNameCmp is repeated in </b></p>
+<p><b>PortGroup${GrpInst} and PortGroup$ContInst. </b></p>
+<p>This error occurs when ‘$PortGrpShortNameCmp is repeated in </p>
+<p>PortGroup${GrpInst} and PortGroup$ContInst. </p>
+<p><b>ERR_59_124_012: $PortShortNameCmp is repeated in </b></p>
+<p><b>PortGroup${GrpInst} PortPin$PinInst and PortGroup$ContInst </b></p>
+<p><b>PortPin$PinInstance. </b></p>
+<p>This error occurs when $PortShortNameCmp is repeated in </p>
+<p>PortGroup${GrpInst} PortPin$PinInst and PortGroup$ContInst </p>
+<p>PortPin$PinInstance<b>. </b></p>
+<p><b>ERR_59_124_013: Parameter PortPinInitialMode of the container </b></p>
+<p><b>PortGroup9 PortPin7 should not be configured as 'MCAN2TX_ALT2_OUT' </b></p>
+<p><b>since the device $DeviceVariant does not support 'MCAN2TX_ALT2_OUT' </b></p>
+<p><b>alternative mode. </b></p>
+<p>This error occurs when PortDeviceName is R7F701372, and </p>
+<p>PortPinInitialMode of the container PortGroup9 PortPin7 configured as </p>
+<p>'MCAN2TX_ALT2_OUT' </p>
+<p><b>ERR_59_124_014: The configured value of the parameter </b></p>
+<p><b>'PortPinInitialMode' of the container </b></p>
+<p><b>'PortGroup${GrpInst}0_PortPin${PinInst}' is incorrect, since the </b></p>
+<p><b>parameter 'PortIpControl' is configured as &lt;true&gt; and 'PortPinInitialMode' </b></p>
+<p><b>is configured as &lt;$FullPortPinInitialMode&gt; </b></p>
+<p>This error occurs when parameter 'PortIpControl' is true and PortPinInitialMode </p>
+<p>is not an alternative function of the Port IP Control Register </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>   Messages                                                                                                                              Chapter 9 </b></p>
+<p> </p>
+<p> </p>
+<p><b>43 </b></p>
+<p><b> </b></p>
+<p><b>ERR_59_124_016: The value configured for the parameter </b></p>
+<p><b>'PortWriteVerifyErrorInterface' should follow C Syntax &lt;[a-zA-Z][a-zA-Z0-</b></p>
+<p><b>9_]&gt;. </b></p>
+<p>This error occurs when the Port callback Notification function name for the </p>
+<p>parameter 'PortWriteVerifyErrorInterface' is not followed the C Syntax &lt;[a-zA-</p>
+<p>Z][a-zA-Z0-9_]&gt;. </p>
+<p><b>ERR_59_124_017: The parameter '$paramlist' in the container </b></p>
+<p><b>'PortConfigSet$ConfigSetCnt PortGroup${GrpInst}0 PortPin${PinInst}' </b></p>
+<p><b>should be configured. </b></p>
+<p>This error occurs when a particular parameter is not configured. </p>
+<p><b>ERR_59_124_019: As write-verify check is enabled through the parameter </b></p>
+<p><b>PortWriteVerify in PortGeneral container, PORT_E_REG_WRITE_VERIFY </b></p>
+<p><b>in PortDemEventParameterRefs container should be configured. </b></p>
+<p>This error occurs when the parameter PortWriteVerify is enabled in </p>
+<p>PortGeneral and PORT_E_REG_WRITE_VERIFY in </p>
+<p>PortDemEventParameterRefs container is not configured. </p>
+<p><b>ERR_59_124_020: As write-verify check is enabled through the parameter </b></p>
+<p><b>PortWriteVerify in PortGeneral container and </b></p>
+<p><b>PortUseWriteVerifyErrorInterface is configured as true, </b></p>
+<p><b>PortWriteVerifyErrorInterface should have valid error notification. </b></p>
+<p>This error occurs when the parameter PortWriteVerify in PortGeneral container </p>
+<p>and PortUseWriteVerifyErrorInterface is configured as true, but </p>
+<p>PortWriteVerifyErrorInterface not have any valid error notification. </p>
+<p><b>ERR_59_124_021</b></p>
+<p> </p>
+<p><b>References path of Parameter </b></p>
+<p><b>PORT_E_REG_WRITE_VERIFY  $CbkPort_E_Reg_Verify is not correct in </b></p>
+<p><b>PortDemEventParameterRefs container. </b></p>
+<p>This error occurs when the incorrect Dem reference path is configured for </p>
+<p>PORT_E_REG_WRITE_VERIFY parameter. </p>
+<p><b>ERR_59_124_022: As write-verify check is disabled via the parameter </b></p>
+<p><b>PortWriteVerify, PortUseWriteVerifyErrorInterface parameter should not </b></p>
+<p><b>be configured as true in PortGeneral Container. </b></p>
+<p>This error occurs when the write-verify check is disabled via the parameter </p>
+<p>PortWriteVerify, and PortUseWriteVerifyErrorInterface parameter is not </p>
+<p>configured as true in PortGeneral Container. </p>
+<p><b>ERR_59_124_024: The Short name of 'PortGroup${GrpInst}0' container </b></p>
+<p><b>should be same across all configuration sets. </b></p>
+<p>This error occurs when the short name of the Port Group container is different </p>
+<p>across the all configuration sets. </p>
+<p><b>ERR_59_124_025: The Short name of 'PortGroup${GrpInst}0 -&gt; </b></p>
+<p><b>PortPin${PinInst}0' container should be same across all configuration </b></p>
+<p><b>sets. </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>  Chapter 9                                                                                                                              Messages </b></p>
+<p><b> </b></p>
+<p><b>44 </b></p>
+<p>This error occurs when the short name of the Port Pin is different across the all </p>
+<p>configuration sets. </p>
+<p><b>ERR_59_124_026: None of the Port Group is configured. At least any one </b></p>
+<p><b>of the PORT GROUP should be configured. </b></p>
+<p>This error occurs when none of the Port group is configured. </p>
+<p><b>ERR_59_124_027: The parameters 'PortPullUpOption' and </b></p>
+<p><b>'PortPullDownOption' from $PortPinPath container should not be </b></p>
+<p><b>configured as &lt;true&gt; at the same time </b></p>
+<p>This error occurs when both the parameters ‘PortPullUpOption’ and </p>
+<p>'PortPullDownOption' configured as true. </p>
+<p><b>ERR_59_124_028: The configured Device Name for parameter </b></p>
+<p><b>PortDeviceName: '$DeviceVariant' in the container </b></p>
+<p><b>$PortInstName/PortGeneral0 is invalid. </b></p>
+<p>This error occurs when configured device variant name is incorrect. </p>
+<p><b>ERR_59_124_029: The value for parameter </b></p>
+<p><b>'PortSetPinDefaultDirectionApi' from PortGeneral0 container should not </b></p>
+<p><b>be configured as &lt;true&gt; as the value for parameter </b></p>
+<p><b>'PortSetPinDirectionApi' in the container PortGeneral0 is configured as </b></p>
+<p><b>&lt;false&gt;.</b></p>
+<p>  </p>
+<p><b>Path:/Renesas/EcucDefs_Port/Port/PortGeneral0 </b></p>
+<p>This error occurs when configured 'PortSetPinDefaultDirectionApi' parameter is </p>
+<p>true but ‘PortSetPinDirectionApi’ parameter is false in general container. </p>
+<p><b>ERR_59_124_030: The value for parameter 'PortSetPinDefaultModeApi' </b></p>
+<p><b>from PortGeneral0 container should not be configured as &lt;true&gt; as the </b></p>
+<p><b>value for parameter 'PortSetPinModeApi' in the container PortGeneral0 is </b></p>
+<p><b>configured as &lt;false&gt;. </b></p>
+<p><b>Path:/Renesas/EcucDefs_Port/Port/PortGeneral0 </b></p>
+<p>This error occurs when configured 'PortSetPinDefaultModeApi' parameter is </p>
+<p>configured as true but ‘'PortSetPinModeApi' parameter is false in general </p>
+<p>container. </p>
+<p><b> </b></p>
+<p><b>9.2</b></p>
+<p><b> </b></p>
+<p><b>Warning Messages</b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>WARNING_59_124_001:  The parameter PortPinDirection of container </b></p>
+<p><b>Port Group container should not be configured as &lt;PORT_PIN_OUT&gt; in </b></p>
+<p><b>the path /Renesas/EcucDefs_Port/Port0/PortConfigSet/PortGroup/PortPin </b></p>
+<p><b>, since the parameter PortPinInitialMode of the same Port Group </b></p>
+<p><b>container is configured as an Input type mode. The value for parameter </b></p>
+<p><b>PortPinDirection is considered as &lt;PORT_PIN_IN&gt;. </b></p>
+<p>This warning occurs when PortPinDirection parameter is set as output and </p>
+<p>PortPinInitialMode parameter is an input. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>   Messages                                                                                                                              Chapter 9 </b></p>
+<p> </p>
+<p> </p>
+<p><b>45 </b></p>
+<p> </p>
+<p><b> WARNING_59_124_002:  The parameter PortPinDirection of container </b></p>
+<p><b>Port Group container should not be configured as &lt;PORT_PIN_IN&gt; in the </b></p>
+<p><b>path  /Renesas/EcucDefs_Port/Port0/PortConfigSet/PortGroup/PortPin, </b></p>
+<p><b>since the parameter PortPinInitialMode of the same Port Group container </b></p>
+<p><b>is configured as an Output type mode. The value for parameter </b></p>
+<p><b>PortPinDirection is considered as &lt;PORT_PIN_OUT&gt;. </b></p>
+<p>This warning occurs when PortPinDirection parameter is set as an input and </p>
+<p>PortPinInitialMode parameter is set as an output. </p>
+<p><b>WARNING - Checksum incorrect message should be generated. </b></p>
+<p>This Warning occurs when any vm file is corrupted. </p>
+<p> </p>
+<p><b>9.3</b></p>
+<p><b> </b></p>
+<p><b>Information Messages</b></p>
+<p><b> </b></p>
+<p> </p>
+<p>None.</p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>  Chapter 9                                                                                                                  Messages </b></p>
+<p><b> </b></p>
+<p><b>46 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>47 </b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Revision History </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p><b>Date</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>Draft Version</p>
+<p> </p>
+<p>1.0.0</p>
+<p> </p>
+<p>17-Aug-2015</p>
+<p> </p>
+<p>2 </p>
+<p>The following changes are made: </p>
+<p>1. </p>
+<p>Compiler path modified in Section 9.3 </p>
+<p>2. </p>
+<p>R number is added in the last page. </p>
+<p>3. </p>
+<p>Error and warning descriptions are added in section 10.1.1 </p>
+<p>1.0.1 </p>
+<p>05-Apr-2016 </p>
+<p>3 </p>
+<p>The following changes are made: </p>
+<p>1. </p>
+<p>10.1 Error Messages updated. </p>
+<p>2. </p>
+<p>Chapter 3 Code Generation Overview updated for Port_Cbk.h file </p>
+<p>3. </p>
+<p>Chapter 5 Output Files updated for Port_Cbk.h file </p>
+<p>4. </p>
+<p>R number is updated in the last page </p>
+<p>5. </p>
+<p>Updated Chapters 1,3,4,5,6,7 by rephrasing Tool and PORT </p>
+<p>Driver Generation Tool with MCAL Code Generation Tool. </p>
+<p>6. </p>
+<p>Updated description of Chapter1 introduction and table 1-1. </p>
+<p>7. </p>
+<p>Updated table 2-1 Reference Documents. </p>
+<p>8. </p>
+<p>Renamed the Chapter 3 heading as Code Generation Overview. </p>
+<p>9. </p>
+<p>Updated the chapter 3 by adding a remark on MCAL Code </p>
+<p>Generator Tool User manual and updated figure 3-2. </p>
+<p>10.  Added Remark in Chapter4. </p>
+<p>11.  Updated the Figure 8-1, Table 8-1 and 8-2. </p>
+<p>12.  Updated the format of Error/Warning/Information message in the </p>
+<p>chapter Messages. </p>
+<p>13.  Removed Chapter 9 Generator Tool and chapter 11 Notes. </p>
+<p>14.  In Chapter 8, table 8-1 TRXML changed to ARXML abbreviation. </p>
+<p>1.0.2 </p>
+<p>09-Feb-2017 </p>
+<p>4 </p>
+<p>The following changes are made: </p>
+<p>1. </p>
+<p>ERR_59_124_029 and ERR_59_124_030 are updated in section </p>
+<p>9.1 </p>
+<p>2. </p>
+<p>Notice and Copyright are updated. </p>
+<p>3. </p>
+<p>R- Number is updated. </p>
+<p>1.0.3 </p>
+<p>27-Apr-2017 </p>
+<p>5. </p>
+<p>Following change  made: </p>
+<p>1. </p>
+<p>R-Number updated. </p>
+<p>1.0.4 </p>
+<p>16-Jun-2017 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>AUTOSAR MCAL R4.0.3 User's Manual </b></p>
+<p><b>PORT Driver Component Ver.1.0.4 </b></p>
+<p><b>Generation Tool User's Manual </b></p>
+<p> </p>
+<p>Publication Date: Rev.1.02, 16 June, 2017 </p>
+<p> </p>
+<p>Published by: Renesas Electronics Corporation </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>SALES </b></p>
+<p><b>OFFICES</b></p>
+<p> </p>
+<p>http://www.renesas.com</p>
+<p> </p>
+<p>Refer  to </p>
+<p>&quot;http://www.renesas.com/&quot; </p>
+<p>for the latest  and detailed </p>
+<p>information.</p>
+<p> </p>
+<p><b>Renesas Electronics America Inc. </b></p>
+<p>2801 Scott Boulevard Santa Clara, CA 95050-2549, U.S.A. </p>
+<p>Tel: +1-408-588-6000, Fax: +1-408-588-6130 </p>
+<p><b>Renesas Electronics Canada Limited</b></p>
+<p><b> </b></p>
+<p>9251 Yonge Street, Suite 8309 Richmond Hill, Ontario Canada L4C 9T3 </p>
+<p>Tel: +1-905-237-2004 </p>
+<p><b>Renesas Electronics Europe Limited </b></p>
+<p>Dukes Meadow, Millboard Road, Bourne End, Buckinghamshire, SL8 5FH, U.K </p>
+<p>Tel: +44-1628-585-100, Fax: +44-1628-585-900 </p>
+<p><b>Renesas Electronics Europe GmbH </b></p>
+<p>Arcadiastrasse 10, 40472 Düsseldorf, Germany </p>
+<p>Tel: +49-211-6503-0, Fax: +49-211-6503-1327 </p>
+<p><b>Renesas Electronics (China) Co., Ltd. </b></p>
+<p>Room 1709, Quantum Plaza, No.27 ZhiChunLu Haidian District, Beijing 100191, P.R.China </p>
+<p>Tel: +86-10-8235-1155, Fax: +86-10-8235-7679 </p>
+<p><b>Renesas Electronics (Shanghai) Co., Ltd. </b></p>
+<p>Unit 301, Tower A, Central Towers, 555 Langao Road, Putuo District, Shanghai, P. R. China 200333 </p>
+<p>Tel: +86-21-2226-0888, Fax: +86-21-2226-0999 </p>
+<p><b>Renesas Electronics Hong Kong Limited</b></p>
+<p><b> </b></p>
+<p>Unit 1601-1611, 16/F., Tower 2, Grand Century Place, 193 Prince Edward Road West, Mongkok, Kowloon, Hong Kong </p>
+<p>Tel: +852-2265-6688, Fax: +852 2886-9022 </p>
+<p><b>Renesas Electronics Taiwan Co., Ltd. </b></p>
+<p>13F, No. 363, Fu Shing North Road, Taipei 10543, Taiwan </p>
+<p>Tel: +886-2-8175-9600, Fax: +886 2-8175-9670 </p>
+<p><b>Renesas Electronics Singapore Pte. Ltd. </b></p>
+<p>80 Bendemeer Road, Unit #06-02 Hyflux Innovation Centre, Singapore 339949 </p>
+<p>Tel: +65-6213-0200, Fax: +65-6213-0300 </p>
+<p><b>Renesas Electronics Malaysia Sdn.Bhd. </b></p>
+<p>Unit 1207, Block B, Menara Amcorp, Amcorp Trade Centre, No. 18, Jln Persiaran Barat, 46050 Petaling Jaya, Selangor Darul Ehsan, Malaysia </p>
+<p>Tel: +60-3-7955-9390, Fax: +60-3-7955-9510 </p>
+<p><b>Renesas Electronics India Pvt. Ltd. </b></p>
+<p>No.777C, 100 Feet Road, HAL II Stage, Indiranagar, Bangalore, India </p>
+<p>Tel: +91-80-67208700, Fax: +91-80-67208777 </p>
+<p><b>Renesas Electronics Korea Co., Ltd. </b></p>
+<p>12F., 234 Teheran-ro, Gangnam-Gu, Seoul, 135-080, Korea </p>
+<p>Tel: +82-2-558-3737, Fax: +82-2-558-5141 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>© 2006-2017 Renesas Electronics Corporation. All rights reserved. </p>
+<p>Colophon 4.1 </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3 </p>
+<p> </p>
+<p>User’s Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>                                                                                                                                                                                             R20UT3654EJ0102 </p>
+<p> </p>
+</body>
+</html>
+{% endraw %}

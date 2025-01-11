@@ -1,0 +1,55 @@
+---
+layout: default
+title: Readme_CBD16010056
+nav_order: 51
+parent: Component Implementation
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p><b>Readme CBD1601056 </b></p>
+<p> <b>Note / Integration hints </b></p>
+<p><b> </b></p>
+<p>Value of PLL_CLOCK0 is directly getting assigned to CPU frequency in code. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>The value of “FLS_CPU_FREQUENCY_MHZ” in <b>Fls_Cfg.h </b>should be corrected </p>
+<p>manually by the correct value of CPU frequency. </p>
+<p>Current SIP is tested with “FLS_CPU_FREQUENCY_MHZ” 240U. Every time you </p>
+<p>generate the project need to replace the value of “FLS_CPU_FREQUENCY_MHZ” in </p>
+<p>code ‘Fls_Cfg.h’. This is the known issue; developers are currently working on it. </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> <b>Limitation / Restriction </b></p>
+<p><b> </b></p>
+<p>1) This SIP currently supports only scalability class SC3 OS. In the next delivery we </p>
+<p>will provide scalability class SC4 OS. This limitation is because of the availability of </p>
+<p>system timer channels in OS for use. SC4 requires at least 2. </p>
+<p> </p>
+<p>2) Following compiler options are not getting identified: </p>
+<p> </p>
+<p>ccrh850: Warning: file '?shorten_loads' ignored with these options </p>
+<p>ccrh850: Warning: file '?shorten_moves' ignored with these options </p>
+<p>ccrh850: Warning: file '?delete' ignored with these options </p>
+<p>ccrh850: Warning: file '?nofloatio' ignored with these options </p>
+<p>ccrh850: Warning: file '?reserve_r2' ignored with these options </p>
+</body>
+</html>
+{% endraw %}

@@ -1,0 +1,361 @@
+---
+layout: default
+title: AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT
+nav_order: 1
+parent: OS
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b> </b></p>
+<p><b>Avoid ErrorHook E_OS_DISABLED_INT </b></p>
+<p><b>Version 1.0 </b></p>
+<p><b>2015-03-13 </b></p>
+<p><b>Application Note  AN-ISC-8-1149 </b></p>
+<p> </p>
+<p> </p>
+<p><i> </i></p>
+<p>Author(s) </p>
+<p>Birke, Holger </p>
+<p>Restrictions </p>
+<p>Customer confidential - MSR4 only </p>
+<p>Abstract </p>
+<p>This application note describes how to avoid ErrorHook E_OS_DISABLED_INT</p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><i><b>Table of Contents </b></i></p>
+<p><i><b> </b></i></p>
+<p><b> 1  </b></p>
+<p><i>Copyright © 2015 - Vector Informatik GmbH </i></p>
+<p><b>Contact Information:   www.vector.com   or +49-711-80 670-0 </b></p>
+<p>1.0</p>
+<p> </p>
+<p>Overview .......................................................................................................................................................... 1</p>
+<p> </p>
+<p>1.1</p>
+<p> </p>
+<p>Problem Description ...................................................................................................................................... 1</p>
+<p> </p>
+<p>2.0</p>
+<p> </p>
+<p>Solution ............................................................................................................................................................ 1</p>
+<p> </p>
+<p>2.1</p>
+<p> </p>
+<p>Do Not Use OS Timer ................................................................................................................................... 1</p>
+<p> </p>
+<p>2.2</p>
+<p> </p>
+<p>Do Not Lock Global Interrupts ....................................................................................................................... 3</p>
+<p> </p>
+<p>3.0</p>
+<p> </p>
+<p>Contacts ........................................................................................................................................................... 4</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>1.0 </b></p>
+<p><b>Overview </b></p>
+<p>This note describes how to avoid the issue E_OS_DISABLEDINT notified by the OS ErrorHook() callout. </p>
+<p> </p>
+<p><b>1.1 </b></p>
+<p><b>Problem Description </b></p>
+<p>The CAN Driver uses the OS APIs </p>
+<p>GetCounterValue()</p>
+<p> and</p>
+<p> GetElapsedValue()</p>
+<p> to handle asynchronous </p>
+<p>state transitions. These calls will be done out of the context of </p>
+<p>Can_SetControllerMode()</p>
+<p> within some </p>
+<p>EXCLUSIVE_AREA from: </p>
+<p></p>
+<p> </p>
+<p>CAN Driver </p>
+<p>(CAN_EXCLUSIVE_AREA_6) </p>
+<p></p>
+<p> </p>
+<p>CAN Interface </p>
+<p>(CANIF_EXCLUSIVE_AREA_0) </p>
+<p></p>
+<p> </p>
+<p>CANSM </p>
+<p>(CANSM_ EXCLUSIVE_AREA_1, CANSM_ EXCLUSIVE_AREA_4) </p>
+<p></p>
+<p> </p>
+<p>COMM   </p>
+<p>(COMM_ EXCLUSIVE_AREA_1) </p>
+<p> </p>
+<p>If the integrator choose </p>
+<p>Global Interrupt Lock</p>
+<p> for these </p>
+<p>EXCLUSIVE_AREA</p>
+<p>s the OS will issue </p>
+<p>E_OS_DISABLEDINT</p>
+<p> by the </p>
+<p>ErrorHook()</p>
+<p> callout. </p>
+<p>Note: </p>
+<p>The issue only appears when you use <b>Global Interrupt Lock </b>for particular </p>
+<p>EXCLUSIVE_AREA</p>
+<p>. </p>
+<p> </p>
+<p><b>2.0 </b></p>
+<p><b>Solution </b></p>
+<p>There are different solutions for this problem. The integrator has to decide which one fits best to the project-specific </p>
+<p>needs. The descriptions of the </p>
+<p>EXCLUSIVE AREA</p>
+<p> have to be checked for limitations.  </p>
+<p><b>2.1 </b></p>
+<p><b>Do Not Use OS Timer </b></p>
+<p>When the above described </p>
+<p>AREA</p>
+<p>s have to use </p>
+<p>Global Interrupt Lock</p>
+<p>, no OS timer can be used. Use the </p>
+<p>CAN Driver feature instead. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p>Avoid ErrorHook E_OS_DISABLED_INT</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><b>2 </b></p>
+<p><i>Application Note  AN-ISC-8-1149 </i></p>
+<p> </p>
+<p> </p>
+<p>Figure 1 – GENy: Hardware Loop Check by Application </p>
+<p> </p>
+<p> </p>
+<p>Figure 2 –DaVinci Configurator: Hardware Cancel By Appl. </p>
+<p> </p>
+<p>This feature provides an additional API called instead of the OS timer and has to be implemented by the integrator. </p>
+<p>Refer to the CAN Driver Technical Reference for detailed description of the API. </p>
+<p>This API can either </p>
+<p></p>
+<p> </p>
+<p>Use free running timer or</p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Use counter loop (wait dedicated amount of loop calls to secure timing) </p>
+<p> </p>
+<p>Attention: </p>
+<p>This additional API is called for every <b>Hardware Loop</b>, not only for state transitions. So the worst </p>
+<p>case scenario has to be taken into account for timeout (see CAN Driver Technical Reference) </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p>Avoid ErrorHook E_OS_DISABLED_INT</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><b>3 </b></p>
+<p><i>Application Note  AN-ISC-8-1149 </i></p>
+<p> </p>
+<p><b>2.2 </b></p>
+<p><b>Do Not Lock Global Interrupts </b></p>
+<p>It is possible to use a user defined callback function to handle the </p>
+<p>EXCLUSIVE AREA</p>
+<p>s.  </p>
+<p> </p>
+<p>Figure 3 – DaVinci Configurator Exclusive Areas </p>
+<p> </p>
+<p>Dependent on the conditions described in the technical references for these </p>
+<p>AREA</p>
+<p>s, it is possible to use: </p>
+<p></p>
+<p> </p>
+<p>No interrupt locks when the CAN Driver is used in polling mode, and all <b>MainFunctions </b>are called in same </p>
+<p>context.  </p>
+<p></p>
+<p> </p>
+<p>CAN interrupt locks (from CAN Driver BSWM: </p>
+<p>Can_DisableControllerInterrupts()</p>
+<p>, </p>
+<p>Can_EnableControllerInterrupts()</p>
+<p>), and all <b>MainFunctions </b>are called in same context.  </p>
+<p></p>
+<p> </p>
+<p>OS resources to lock <b>MainFunctions </b>and use additional CAN interrupt locks or CAN polling configuration. </p>
+<p> </p>
+<p>Attention: </p>
+<p>Make sure that all conditions described in the technical references for the upper described </p>
+<p>AREA</p>
+<p>s </p>
+<p>are fulfilled. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p>Avoid ErrorHook E_OS_DISABLED_INT</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><b>4 </b></p>
+<p><i>Application Note  AN-ISC-8-1149 </i></p>
+<p> </p>
+<p><b>3.0 </b></p>
+<p><b>Contacts </b></p>
+<p> </p>
+<p> </p>
+<p><b>Germany  </b></p>
+<p><b>and all countries not named below: </b></p>
+<p><b> </b></p>
+<p><b>Vector Informatik GmbH </b></p>
+<p>Ingersheimer Str. 24 </p>
+<p>70499 Stuttgart </p>
+<p>GERMANY </p>
+<p>Phone: +49 711-80670-0 </p>
+<p>Fax: </p>
+<p>+49 711-80670-111 </p>
+<p>E-mail:  info@de.vector.com </p>
+<p> </p>
+<p> </p>
+<p><b>France, Belgium, Luxemburg: </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Vector France S.A.S. </b></p>
+<p>168, Boulevard Camélinat </p>
+<p>92240 Malakoff  </p>
+<p>FRANCE </p>
+<p>Phone: +33 1 42 31 40 00 </p>
+<p>Fax: </p>
+<p>+33 1 42 31 40 09 </p>
+<p>E-mail:  information@fr.vector.com </p>
+<p> </p>
+<p> </p>
+<p><b>Sweden, Denmark, Norway,  </b></p>
+<p><b>Finland, Iceland: </b></p>
+<p><b> </b></p>
+<p><b>VecScan AB </b></p>
+<p>Theres Svenssons Gata 9 </p>
+<p>41755 Göteborg  </p>
+<p>SWEDEN </p>
+<p>Phone: +46 31 764 76 00 </p>
+<p>Fax: </p>
+<p>+46 31 764 76 19  </p>
+<p>E-mail:  info@se.vector.com </p>
+<p> </p>
+<p> </p>
+<p><b>United Kingdom, Ireland: </b></p>
+<p><b> </b></p>
+<p><b>Vector GB Ltd. </b></p>
+<p>Rhodium, Central Boulevard </p>
+<p>Blythe Valley Park </p>
+<p>Solihull, Birmingham </p>
+<p>West Midlands B90 8AS </p>
+<p>UNITED KINGDOM </p>
+<p>Phone: +44 121 50681-50 </p>
+<p>Fax: </p>
+<p>+44 121 50681-69 </p>
+<p> </p>
+<p>E-mail:  info@uk.vector.com </p>
+<p> </p>
+<p>  </p>
+<p><b>China: </b></p>
+<p><b> </b></p>
+<p><b>Vector Automotive Technology </b></p>
+<p><b>(Shanghai) Co., Ltd.  </b></p>
+<p>Sunyoung Center </p>
+<p>Room 1701, No.398 Jiangsu Road </p>
+<p>Changning District </p>
+<p>Shanghai 200050 </p>
+<p>P.R. CHINA </p>
+<p>Phone: +86 21 6432 53530 </p>
+<p>Fax:  </p>
+<p>+86 21 6432 5308 </p>
+<p>E-mail: info@cn.vector.com </p>
+<p> </p>
+<p><b> </b></p>
+<p><b>India: </b></p>
+<p><b> </b></p>
+<p><b>Vector Informatik India Pvt. Ltd. </b></p>
+<p>4/1/1/1, Sutar Icon, Sus Road, </p>
+<p>Pashan, Pune - 411 021 </p>
+<p>INDIA </p>
+<p> </p>
+<p> </p>
+<p>Phone: +91 20 2587 2023 </p>
+<p>Fax:  </p>
+<p>+91 20 2587 2025 </p>
+<p> </p>
+<p>E-mail: info@in.vector.com </p>
+<p> </p>
+<p><b>USA, Canada, Mexico: </b></p>
+<p><b> </b></p>
+<p><b>Vector CANtech, Inc. </b></p>
+<p>39500 Orchard Hill Place, Suite 550 </p>
+<p>Novi, MI  48375 </p>
+<p>USA </p>
+<p> </p>
+<p> </p>
+<p>Phone: +1 248 449 9290 </p>
+<p>Fax: </p>
+<p>+1 248 449 9704 </p>
+<p>E-mail:  info@us.vector.com </p>
+<p> </p>
+<p> </p>
+<p><b>Japan: </b></p>
+<p><b> </b></p>
+<p><b>Vector Japan Co. Ltd. </b></p>
+<p>Tennozu Yusen Bldg. 16F </p>
+<p>2-2-20 Higashi-shinagawa, </p>
+<p>Shinagawa-ku, </p>
+<p>Tokyo 140-0002 </p>
+<p>JAPAN </p>
+<p>Phone: +81 3 5769 7800 </p>
+<p>Fax: </p>
+<p>+81 3 5769 6975 </p>
+<p>E-mail:  info@jp.vector.com </p>
+<p> </p>
+<p> </p>
+<p><b>Korea: </b></p>
+<p><b> </b></p>
+<p><b>Vector Korea IT Inc.</b></p>
+<p><b> </b></p>
+<p>5F, Gomoas bldg. </p>
+<p>12 Hannam-daero 11-gil, Yongsan-gu </p>
+<p>Seoul, 140-889 </p>
+<p>REPUBLIC OF KOREA </p>
+<p> </p>
+<p>Phone: +82 2 807 0600 </p>
+<p>Fax: </p>
+<p>+82 2 807 0601 </p>
+<p>E-mail:  info@kr.vector.com </p>
+<p> </p>
+<p> </p>
+<p> </p>
+</body>
+</html>
+{% endraw %}

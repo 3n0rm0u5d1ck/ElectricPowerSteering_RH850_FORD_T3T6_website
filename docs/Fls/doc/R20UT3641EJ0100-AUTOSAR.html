@@ -1,0 +1,6028 @@
+---
+layout: default
+title: R20UT3641EJ0100-AUTOSAR
+nav_order: 3
+parent: Flash Driver
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3</p>
+<p> </p>
+<p>User's Manual</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FLS Driver Component Ver.1.0.2 </p>
+<p> </p>
+<p>Embedded User’s Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>    Target Device: </p>
+<p>RH850/P1x-C </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>All information contained in these materials, including products and product specifications, </p>
+<p>represents information on the product at the time of publication and is subject to change by </p>
+<p>Renesas Electronics Corp. without notice. Please review the latest information published by </p>
+<p>Renesas Electronics Corp. through various means, including the Renesas Electronics Corp. </p>
+<p>website (http://www.renesas.com). </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>www.renesas.com </p>
+<p>Rev.1.00 Feb 2017</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>2 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>3 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Notice </p>
+<p>1. </p>
+<p>Descriptions of circuits, software and other related information in this document are provided only to illustrate the operation </p>
+<p>of semiconductor products and application examples. You are fully responsible for the incorporation or any other use of the </p>
+<p>circuits, software, and information in the design of your product or system. Renesas Electronics disclaims any and all </p>
+<p>liability for any losses and damages incurred by you or third parties arising from the use of these circuits, software, or </p>
+<p>information. </p>
+<p>2. </p>
+<p>Renesas Electronics hereby expressly disclaims any warranties against and liability for infringement or any other disputes </p>
+<p>involving patents, copyrights, or other intellectual property rights of third parties, by or arising from the use of Renesas </p>
+<p>Electronics products or technical information described in this document, including but not limited to, the product data, </p>
+<p>drawing, chart, program, algorithm, application examples. </p>
+<p>3. </p>
+<p>No license, express, implied or otherwise, is granted hereby under any patents, copyrights or other intellectual property </p>
+<p>rights of Renesas Electronics or others. </p>
+<p>4. </p>
+<p>You shall not alter, modify, copy, or otherwise misappropriate any Renesas Electronics product, whether in whole or in </p>
+<p>part. Renesas Electronics disclaims any and all liability for any losses or damages incurred by you or third parties arising </p>
+<p>from such alteration, modification, copy or otherwise misappropriation of Renesas Electronics products. </p>
+<p>5. </p>
+<p>Renesas Electronics products are classified according to the following two quality grades: &quot;Standard&quot; and &quot;High Quality&quot;. </p>
+<p>The intended applications for each Renesas Electronics product depends on the product’s quality grade, as indicated </p>
+<p>below.  </p>
+<p>&quot;Standard&quot;:          Computers; office equipment; communications equipment; test and measurement equipment; audio </p>
+<p>and visual equipment; home electronic appliances; machine tools; personal electronic equipment; and </p>
+<p>industrial robots etc. </p>
+<p>&quot;High Quality&quot;:   Transportation equipment (automobiles, trains, ships, etc.); traffic control (traffic lights); large-scale </p>
+<p>communication equipment; key financial terminal systems; safety control equipment; etc. </p>
+<p>Renesas Electronics products are neither intended nor authorized for use in products or systems that may pose a direct </p>
+<p>threat to human life or bodily injury (artificial life support devices or systems, surgical implantations etc.), or may cause </p>
+<p>serious property damages (space and undersea repeaters; nuclear power control systems; aircraft control systems; key </p>
+<p>plant systems; military equipment; etc.). Renesas Electronics disclaims any and all liability for any damages or losses </p>
+<p>incurred by you or third parties arising from the use of any Renesas Electronics product for which the product is not </p>
+<p>intended by Renesas Electronics. </p>
+<p>6. </p>
+<p>When using the Renesas Electronics products, refer to the latest product information (data sheets, user’s manuals, </p>
+<p>application notes, &quot;General Notes for Handling and Using Semiconductor Devices&quot; in the reliability handbook, etc.), and </p>
+<p>ensure that usage conditions are within the ranges specified by Renesas Electronics with respect to maximum ratings, </p>
+<p>operating power supply voltage range, heat radiation characteristics, installation, etc. Renesas Electronics disclaims any </p>
+<p>and all liability for any malfunctions or failure or accident arising out of the use of Renesas Electronics products beyond </p>
+<p>such specified ranges. </p>
+<p>7. </p>
+<p>Although Renesas Electronics endeavors to improve the quality and reliability of Renesas Electronics products, </p>
+<p>semiconductor products have specific characteristics such as the occurrence of failure at a certain rate and malfunctions </p>
+<p>under certain use conditions. Further, Renesas Electronics products are not subject to radiation resistance design. Please </p>
+<p>ensure to implement safety measures to guard them against the possibility of bodily injury, injury or damage caused by fire, </p>
+<p>and social damage in the event of failure or malfunction of Renesas Electronics products, such as safety design for </p>
+<p>hardware and software including but not limited to redundancy, fire control and malfunction prevention, appropriate </p>
+<p>treatment for aging degradation or any other appropriate measures by your own responsibility as warranty for your </p>
+<p>products/system. Because the evaluation of microcomputer software alone is very difficult and not practical, please </p>
+<p>evaluate the safety of the final products or systems manufactured by you. </p>
+<p>8. </p>
+<p>Please contact a Renesas Electronics sales office for details as to environmental matters such as the environmental </p>
+<p>compatibility of each Renesas Electronics product. Please investigate applicable laws and regulations that regulate the </p>
+<p>inclusion or use of controlled substances, including without limitation, the EU RoHS Directive carefully and sufficiently and </p>
+<p>use Renesas Electronics products in compliance with all these applicable laws and regulations. Renesas Electronics </p>
+<p>disclaims any and all liability for damages or losses occurring as a result of your noncompliance with applicable laws and </p>
+<p>regulations. </p>
+<p>9. </p>
+<p>Renesas Electronics products and technologies shall not be used for or incorporated into any products or systems whose </p>
+<p>manufacture, use, or sale is prohibited under any applicable domestic or foreign laws or regulations. You shall not use </p>
+<p>Renesas Electronics products or technologies for (1) any purpose relating to the development, design, manufacture, use, </p>
+<p>stockpiling, etc., of weapons of mass destruction, such as nuclear weapons, chemical weapons, or biological weapons, or </p>
+<p>missiles (including unmanned aerial vehicles (UAVs)) for delivering such weapons, (2) any purpose relating to the </p>
+<p>development, design, manufacture, or use of conventional weapons, or (3) any other purpose of disturbing international </p>
+<p>peace and security, and you shall not sell, export, lease, transfer, or release Renesas Electronics products or technologies </p>
+<p>to any third party whether directly or indirectly with knowledge or reason to know that the third party or any other party will </p>
+<p>engage in the activities described above. When exporting, selling, transferring, etc., Renesas Electronics products or </p>
+<p>technologies, you shall comply with any applicable export control laws and regulations promulgated and administered by </p>
+<p>the governments of the countries asserting jurisdiction over the parties or transactions. </p>
+<p>10. </p>
+<p>Please acknowledge and agree that you shall bear all the losses and damages which are incurred from the misuse or </p>
+<p>violation of the terms and conditions described in this document, including this notice, and hold Renesas Electronics </p>
+<p>harmless, if such misuse or violation results from your resale or making Renesas Electronics products available any third </p>
+<p>party. </p>
+<p>11. </p>
+<p>This document shall not be reprinted, reproduced or duplicated in any form, in whole or in part, without prior written </p>
+<p>consent of Renesas Electronics. </p>
+<p>12. </p>
+<p>Please contact a Renesas Electronics sales office if you have any questions regarding the information contained in this </p>
+<p>document or Renesas Electronics products. </p>
+<p>(Note 1)   &quot;Renesas Electronics&quot; as used in this document means Renesas Electronics Corporation and also includes its </p>
+<p>majority-owned subsidiaries. </p>
+<p>(Note 2)   &quot;Renesas Electronics product(s)&quot; means any product developed or manufactured by or for Renesas Electronics</p>
+<h1 style="page-break-before:always; "></h1>
+<p>4 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>5 </p>
+<p> </p>
+<p> </p>
+<p><b>Abbreviations and Acronyms </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Abbreviation / Acronym</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>ANSI</p>
+<p> </p>
+<p>American National Standards Institute</p>
+<p> </p>
+<p>API</p>
+<p> </p>
+<p>Application Programming Interface</p>
+<p> </p>
+<p>AUTOSAR</p>
+<p> </p>
+<p>AUTomotive Open System ARchitecture</p>
+<p> </p>
+<p>BSW</p>
+<p> </p>
+<p>Basic SoftWare</p>
+<p> </p>
+<p>DEM</p>
+<p> </p>
+<p>Diagnostic Event Manager</p>
+<p> </p>
+<p>DET/Det</p>
+<p> </p>
+<p>Development Error Tracer</p>
+<p> </p>
+<p>ECU</p>
+<p> </p>
+<p>Electronic Control Unit</p>
+<p> </p>
+<p>EEPROM</p>
+<p> </p>
+<p>Electrically Erasable Programmable Read Only Memory</p>
+<p> </p>
+<p>FDL</p>
+<p> </p>
+<p>Data Flash Library</p>
+<p> </p>
+<p>FLS</p>
+<p> </p>
+<p>FLaSh Driver</p>
+<p> </p>
+<p>GNU</p>
+<p> </p>
+<p>GNU’s Not Unix</p>
+<p> </p>
+<p>HW</p>
+<p> </p>
+<p>HardWare</p>
+<p> </p>
+<p>ID/Id</p>
+<p> </p>
+<p>Identifier</p>
+<p> </p>
+<p>MCAL</p>
+<p> </p>
+<p>Microcontroller Abstraction Layer</p>
+<p> </p>
+<p>NA</p>
+<p> </p>
+<p>Not Applicable</p>
+<p> </p>
+<p>RAM</p>
+<p> </p>
+<p>Random Access Memory</p>
+<p> </p>
+<p>ROM</p>
+<p> </p>
+<p>Read Only Memory</p>
+<p> </p>
+<p>RTE</p>
+<p> </p>
+<p>Run Time Environment</p>
+<p> </p>
+<p>SCHM/SchM</p>
+<p> </p>
+<p>Scheduler Manager</p>
+<p> </p>
+<p>SW</p>
+<p> </p>
+<p>SoftWare</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Definitions </b></p>
+<p> </p>
+<p><b>Term</b></p>
+<p> </p>
+<p><b>Represented by</b></p>
+<p> </p>
+<p>Sl. No.</p>
+<p> </p>
+<p>Serial Number</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>6 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>7 </p>
+<p> </p>
+<p> </p>
+<p><b>Table Of Contents </b></p>
+<p><b> </b></p>
+<p><b>Chapter 1</b></p>
+<p> </p>
+<p><b>Introduction....................................................................... 11</b></p>
+<p> </p>
+<p><b>1.1</b></p>
+<p> </p>
+<p><b>Document Overview ........................................................................................................... 12</b></p>
+<p> </p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p><b>Reference Documents ...................................................... 15</b></p>
+<p> </p>
+<p><b>Chapter 3</b></p>
+<p> </p>
+<p><b>Integration And Build Process ........................................ 17</b></p>
+<p> </p>
+<p><b>3.1.</b></p>
+<p> </p>
+<p><b>FLS Driver Component Make file ...................................................................................... 17</b></p>
+<p> </p>
+<p><b>3.1.1.</b></p>
+<p> </p>
+<p><b>Folder Structure ................................................................................................. 17</b></p>
+<p> </p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p><b>Forethoughts .................................................................... 19</b></p>
+<p> </p>
+<p><b>4.1.</b></p>
+<p> </p>
+<p><b>General ................................................................................................................................. 19</b></p>
+<p> </p>
+<p><b>4.2.</b></p>
+<p> </p>
+<p><b>Preconditions ...................................................................................................................... 21</b></p>
+<p> </p>
+<p><b>4.3.</b></p>
+<p> </p>
+<p><b>Data Consistency ................................................................................................................ 23</b></p>
+<p> </p>
+<p><b>4.4.</b></p>
+<p> </p>
+<p><b>Deviation List ...................................................................................................................... 25</b></p>
+<p> </p>
+<p><b>4.5.</b></p>
+<p> </p>
+<p><b>User mode and supervisor mode ...................................................................................... 26</b></p>
+<p> </p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p><b>Architecture Details .......................................................... 29</b></p>
+<p> </p>
+<p><b>Chapter 6</b></p>
+<p> </p>
+<p><b>Registers Details ............................................................... 35</b></p>
+<p> </p>
+<p><b>Chapter 7 Interaction Between The User And FLS Driver </b></p>
+<p><b>Component .......................................................................................... 39</b></p>
+<p> </p>
+<p><b>7.1.</b></p>
+<p> </p>
+<p><b>Services Provided By FLS Driver Component To The User ........................................... 39</b></p>
+<p> </p>
+<p><b>Chapter 8   FLS Component Header And Source File Description  41</b></p>
+<p> </p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p><b>Generation Tool Guide ..................................................... 45</b></p>
+<p> </p>
+<p><b>Chapter 10</b></p>
+<p> </p>
+<p><b>Application Programming Interface ............................... 47</b></p>
+<p> </p>
+<p><b>10.1.</b></p>
+<p> </p>
+<p><b>Imported Types ................................................................................................................... 47</b></p>
+<p> </p>
+<p><b>10.1.1.</b></p>
+<p> </p>
+<p><b>Standard Types .................................................................................................. 47</b></p>
+<p> </p>
+<p><b>10.1.2.</b></p>
+<p> </p>
+<p><b>Other Module Types ........................................................................................... 47</b></p>
+<p> </p>
+<p><b>10.2.</b></p>
+<p> </p>
+<p><b>Type Definitions .................................................................................................................. 47</b></p>
+<p> </p>
+<p><b>10.3.</b></p>
+<p> </p>
+<p><b>Function Definitions ........................................................................................................... 49</b></p>
+<p> </p>
+<p><b>Chapter 11</b></p>
+<p> </p>
+<p><b>Development And Production Errors ............................. 51</b></p>
+<p> </p>
+<p><b>11.1.</b></p>
+<p> </p>
+<p><b>FLS Driver Component Development Errors ................................................................... 51</b></p>
+<p> </p>
+<p><b>11.2.</b></p>
+<p> </p>
+<p><b>FLS Driver Component Production Errors ....................................................................... 52</b></p>
+<p> </p>
+<p><b>Chapter 12</b></p>
+<p> </p>
+<p><b>Memory Organization ...................................................... 55</b></p>
+<p> </p>
+<p><b>Chapter 13</b></p>
+<p> </p>
+<p><b>P1x-C Specific Information ............................................. 57</b></p>
+<p> </p>
+<p><b>13.1.</b></p>
+<p> </p>
+<p><b>Sample Application............................................................................................................. 57</b></p>
+<p> </p>
+<p><b>13.1.1.</b></p>
+<p> </p>
+<p><b>Sample Application Structure ........................................................................... 57</b></p>
+<p> </p>
+<p><b>13.1.2.</b></p>
+<p> </p>
+<p><b>Building Sample Application ............................................................................ 59</b></p>
+<p> </p>
+<p>13.1.2.1.</p>
+<p> </p>
+<p>Configuration Example......................................................................... 59</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>8 </p>
+<p> </p>
+<p> </p>
+<p>13.1.2.2.</p>
+<p> </p>
+<p>Debugging The Sample Application .................................................... 59</p>
+<p> </p>
+<p><b>13.2.</b></p>
+<p> </p>
+<p><b>Memory And Throughput ................................................................................................... 60</b></p>
+<p> </p>
+<p><b>13.2.1.</b></p>
+<p> </p>
+<p><b>ROM/RAM Usage ................................................................................................ 60</b></p>
+<p> </p>
+<p><b>13.2.2.</b></p>
+<p> </p>
+<p><b>Stack Depth......................................................................................................... 61</b></p>
+<p> </p>
+<p><b>13.2.3.</b></p>
+<p> </p>
+<p><b>Throughput Details ............................................................................................ 61</b></p>
+<p> </p>
+<p><b>Chapter 14</b></p>
+<p> </p>
+<p><b>Release Details ................................................................ 63</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>9 </p>
+<p> </p>
+<p><b>List Of Figures </b></p>
+<p><b> </b></p>
+<p>Figure 1-1</p>
+<p> </p>
+<p>System Overview of FLS Driver Component in AUTOSAR MCAL Layer ............ 11</p>
+<p> </p>
+<p>Figure 1-2</p>
+<p> </p>
+<p>System Overview of AUTOSAR Architecture ...................................................... 12</p>
+<p> </p>
+<p>Figure 5-1</p>
+<p> </p>
+<p>FLS Driver Component Architecture .................................................................... 29</p>
+<p> </p>
+<p>Figure 5-2</p>
+<p> </p>
+<p>Component Overview of FLS Driver Component ................................................. 30</p>
+<p> </p>
+<p>Figure 12-1</p>
+<p> </p>
+<p>FLS Driver Component Memory Organization ..................................................... 55</p>
+<p> </p>
+<p>Figure 13-1</p>
+<p> </p>
+<p>Overview Of FLS Driver Sample Application ....................................................... 57</p>
+<p> </p>
+<p><b> </b></p>
+<p> </p>
+<p><b>List Of Tables </b></p>
+<p><b> </b></p>
+<p>Table 4-1</p>
+<p> </p>
+<p>FLS Driver Protected Resources List ................................................................... 24</p>
+<p> </p>
+<p>Table 4-2</p>
+<p> </p>
+<p>FLS Driver Component Deviation List .................................................................. 25</p>
+<p> </p>
+<p>Table 4-3</p>
+<p> </p>
+<p>User mode and Supervisor mode details when Data Flash enabled ................... 26</p>
+<p> </p>
+<p>Table 6-1</p>
+<p> </p>
+<p>Register Details .................................................................................................... 35</p>
+<p> </p>
+<p>Table 8-1</p>
+<p> </p>
+<p>Description Of The FLS Driver Component Files ................................................. 42</p>
+<p> </p>
+<p>Table 10-1</p>
+<p> </p>
+<p>Fls_ConfigType .................................................................................................... 47</p>
+<p> </p>
+<p>Table 10-2</p>
+<p> </p>
+<p>Fls_AddressType ................................................................................................. 48</p>
+<p> </p>
+<p>Table 10-3</p>
+<p> </p>
+<p>Fls_LengthType ................................................................................................... 48</p>
+<p> </p>
+<p>Table 10-4</p>
+<p> </p>
+<p>Function Definitions .............................................................................................. 49</p>
+<p> </p>
+<p>Table 11-1</p>
+<p> </p>
+<p>DET Errors Of FLS Driver Component ................................................................ 51</p>
+<p> </p>
+<p>Table 11-2</p>
+<p> </p>
+<p>DEM Errors of FLS Driver Component ................................................................ 52</p>
+<p> </p>
+<p>Table 13-1</p>
+<p> </p>
+<p>ROM/RAM Details with DET ................................................................................ 60</p>
+<p> </p>
+<p>Table 13-2</p>
+<p> </p>
+<p>ROM/RAM Details without DET ........................................................................... 61</p>
+<p> </p>
+<p>Table 13-3</p>
+<p> </p>
+<p>Throughput Details Of The APIs .......................................................................... 61</p>
+<p> </p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p>10 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Introduction                                                                                                                            Chapter 1 </b></p>
+<p><b> </b></p>
+<p>11 </p>
+<p>FLS Driver </p>
+<p>DIO </p>
+<p>DIO Driver </p>
+<p>ADC </p>
+<p>ADC Driver </p>
+<p>PWM </p>
+<p>P WM Driver </p>
+<p>ICU </p>
+<p>ICU Driver </p>
+<p>FlexRay Driver </p>
+<p>CAN </p>
+<p>CAN Driver </p>
+<p>LIN o r </p>
+<p>SCI </p>
+<p>LIN Driver </p>
+<p>SPI HandlerDriver </p>
+<p>r </p>
+<p>SPI </p>
+<p>EEPRO </p>
+<p>M </p>
+<p>Internal EEPROM Driver </p>
+<p><b>FLASH </b></p>
+<p><b>Internal Flash </b></p>
+<p><b>Driver </b></p>
+<p>Ext. BUS </p>
+<p>External Flash Driver </p>
+<p>RA M Test </p>
+<p>Core Test </p>
+<p>MCU </p>
+<p>Power </p>
+<p>&amp; Clock </p>
+<p>Unit </p>
+<p>MCU Driver </p>
+<p>Watchdog Driver </p>
+<p>GPT Driver </p>
+<p>GPT </p>
+<p>WDT </p>
+<p> </p>
+<p><b>   Chapter 1 </b></p>
+<p><b>Introduction </b></p>
+<p> </p>
+<p> </p>
+<p>The purpose of this document is to describe the information related to FLS </p>
+<p>Driver Component for Renesas P1x-C microcontrollers. </p>
+<p> </p>
+<p>This document shall be used as reference by the users of FLS Driver </p>
+<p>Component. The system overview of complete AUTOSAR architecture is </p>
+<p>shown in the below Figure: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Microcontroller Drivers </p>
+<p>Memory Drivers </p>
+<p>Communication Drivers </p>
+<p>I/O Drivers </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Micro- </b></p>
+<p><b>controller</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 1-1 </b></p>
+<p><b>System Overview of FLS Driver Component in AUTOSAR MCAL Layer </b></p>
+<p> </p>
+<p>The  FLS  Driver  Component  is  part  of  BSW  which  is  accessible  by  RTE. </p>
+<p>This RTE is a middle ware layer providing communication services for the </p>
+<p>application  software  and  thereby  it  is  possible  to  map  the  application </p>
+<p>software components between different ECUs. </p>
+<p> </p>
+<p>The  RTE  provides  the  encapsulation  of  Hardware  channels  and  basic </p>
+<p>services to the Application Software Components. So it is possible to map </p>
+<p>the Application Software-Components between different ECUs. </p>
+<p> </p>
+<p>The </p>
+<p>Basic </p>
+<p>Software </p>
+<p>Modules </p>
+<p>are </p>
+<p>located </p>
+<p>below </p>
+<p>the </p>
+<p>RTE. </p>
+<p>The </p>
+<p>Basic </p>
+<p>Software  itself  is  divided  into  the  subgroups:  System  Services,  Memory, </p>
+<p>Communication  and  IO  Hardware-Abstraction.  The  Complex  Drivers  are </p>
+<p>also located below the RTE. Among others, the Operating System (OS), the </p>
+<p>Watchdog manager and the Diagnostic services are located in the System </p>
+<p>Services  subgroup.  The  Memory  subgroup  contains  modules  to  provide </p>
+<p>access to the non-volatile memories, namely Flash and EEPROM. Here the </p>
+<p>flash operation will be handled by flash driver. </p>
+<p> </p>
+<p>On  board  Device  Abstraction  provides  an  interface  to  physical  values  for </p>
+<p>AUTOSAR software components. It abstracts the physical origin of signals </p>
+<p>(their paths to the hardware FLSs) and normalizes the signals with respect </p>
+<p>to  their  physical  appearance.  The  microcontroller  driver  provides  services </p>
+<p>for  basic  microcontroller  initialization,  power  down  functionality,  reset  and </p>
+<p>microcontroller specific functions required from the upper layers. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1                                                                                                                            Introduction </b></p>
+<p> </p>
+<p>12 </p>
+<p>Application Layer</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR RTE</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>System  Services</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>On board Device Abstraction</p>
+<p> </p>
+<p>  </p>
+<p> </p>
+<p><b>FLS Dr</b></p>
+<p><b>i</b></p>
+<p><b>ver</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Microcontroller</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Figure 1-2 </b></p>
+<p><b>System Overview of AUTOSAR Architecture </b></p>
+<p> </p>
+<p>The FLS application software components are located at the top  and can </p>
+<p>gain access to the rest of the ECU and also to other ECUs only through the </p>
+<p>RTE. This RTE is a middleware layer providing communication services for </p>
+<p>the  application  software  and  thereby  it  is  possible  to  map  the  application </p>
+<p>software components between different ECUs. </p>
+<p> </p>
+<p>This FLS Software Module is located below the RTE. The FLS Component </p>
+<p>APIs are directly invoked by the application or RTE. The FLS Component is </p>
+<p>responsible for erase/write/read/compare data on the data flash memory. </p>
+<p> </p>
+<p>The FLS component perform the activities like accessing and programming </p>
+<p>the on-chip data flash hardware. </p>
+<p> </p>
+<p>The FLS Component layer comprises of API for erase/write data to on-chip </p>
+<p>data  flash  memory  of  the  device.  The  FLS  Component  conforms  to  the </p>
+<p>AUTOSAR  standard  and  is  implemented  mapping  to  the  AUTOSAR  FLS </p>
+<p>Software Specification. </p>
+<p> </p>
+<p>The </p>
+<p>functional </p>
+<p>parameters </p>
+<p>of </p>
+<p>FLS </p>
+<p>software </p>
+<p>components </p>
+<p>are </p>
+<p>statically </p>
+<p>configurable to fit as far as possible to the real needs of each ECU. </p>
+<p> </p>
+<p><b>1.1 </b></p>
+<p><b>Document Overview </b></p>
+<p> </p>
+<p> </p>
+<p>The document has been segmented for easy reference. The table below </p>
+<p>provides user with an overview of the contents of each section: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Section</b></p>
+<p> </p>
+<p><b>Contents</b></p>
+<p> </p>
+<p>Section1 (Introduction)</p>
+<p> </p>
+<p>This section provides an introduction and overview of FLS Driver </p>
+<p>Component.</p>
+<p> </p>
+<p>Section 2 (Reference Documents)</p>
+<p> </p>
+<p>This section lists the documents referred for developing this document.</p>
+<p> </p>
+<p>Section 3 (Integration And Build </p>
+<p>Process)</p>
+<p> </p>
+<p>This section explains the folder structure, Make file structure for FLS </p>
+<p>Driver Component. This section also explains about the Make file </p>
+<p>descriptions, Integration of FLS Driver Component with other </p>
+<p>components, building the FLS Driver Component along with a sample </p>
+<p>application.</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Introduction                                                                                                                            Chapter 1 </b></p>
+<p><b> </b></p>
+<p>13 </p>
+<p><b>Section</b></p>
+<p> </p>
+<p><b>Contents</b></p>
+<p> </p>
+<p>Section 4 (Forethoughts)</p>
+<p> </p>
+<p>This section provides brief information about the FLS Driver Component, </p>
+<p>the preconditions that should be known to the user before it is used, </p>
+<p>diagnostic channel, limit check feature, sample and hold feature, </p>
+<p>conversion time and stabilization time, DMA and ISR operations, data </p>
+<p>consistency details, deviation list and user mode and supervisor mode.</p>
+<p> </p>
+<p>Section 5 (Architecture Details)</p>
+<p> </p>
+<p>This section describes the layered architectural details of the FLS Driver </p>
+<p>Component.</p>
+<p> </p>
+<p>Section 6 (Registers Details)</p>
+<p> </p>
+<p>This section describes the register details of FLS Driver Component.</p>
+<p> </p>
+<p>Section 7 (Interaction between </p>
+<p>The User And FLS Driver </p>
+<p>Component)</p>
+<p> </p>
+<p>This section describes interaction of the FLS Driver Component with the </p>
+<p>upper layers.</p>
+<p> </p>
+<p>Section 8 (FLS Driver Component </p>
+<p>Header And Source File </p>
+<p>Description)</p>
+<p> </p>
+<p>This section provides information about the FLS Driver Component </p>
+<p>source files is mentioned. This section also contains the brief note on the </p>
+<p>tool generated output file.</p>
+<p> </p>
+<p>Section 9 (Generation Tool Guide)</p>
+<p> </p>
+<p>This section provides information on the FLS Driver Component Code </p>
+<p>Generation Tool.</p>
+<p> </p>
+<p>Section 10 (Application </p>
+<p>Programming Interface)</p>
+<p> </p>
+<p>This section explains all the APIs provided by the FLS Driver </p>
+<p>Component.</p>
+<p> </p>
+<p>Section 11 (Development And </p>
+<p>Production Errors)</p>
+<p> </p>
+<p>This section lists the DET and DEM errors.</p>
+<p> </p>
+<p>Section 12 (Memory </p>
+<p>Organization)</p>
+<p> </p>
+<p>This section provides the typical memory organization, which must be </p>
+<p>met for proper functioning of component.</p>
+<p> </p>
+<p>Section 13 (P1x-C Specific </p>
+<p>Information)</p>
+<p> </p>
+<p>This section provides the P1x-C Specific Information.</p>
+<p> </p>
+<p>Section 14 (Release Details)</p>
+<p> </p>
+<p>This section provides release details with version name and base </p>
+<p>version.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1                                                                                                                            Introduction </b></p>
+<p> </p>
+<p>14 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Reference Documents </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>     Chapter 2 </b></p>
+<p> </p>
+<p>15 </p>
+<p> </p>
+<p><b>Chapter 2 </b></p>
+<p><b>Reference Documents </b></p>
+<p> </p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>Title</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>  RH850/P1H-C Document User’s Manual: Hardware </p>
+<p> (r01uh0517ej0100_rh850p1x-c_Open.pdf)</p>
+<p> </p>
+<p>    1.0</p>
+<p> </p>
+<p>2.</p>
+<p> </p>
+<p>Autosar R4.0 </p>
+<p>Specification of FLS Driver (AUTOSAR_SWS_FlashDriver.pdf)</p>
+<p> </p>
+<p>    3.2.0</p>
+<p> </p>
+<p>3.</p>
+<p> </p>
+<p>AUTOSAR BUGZILLA (http://www.autosar.org/bugzilla) </p>
+<p>Note: AUTOSAR BUGZILLA is a database, which contains concerns raised </p>
+<p>against information present in AUTOSAR Specifications.</p>
+<p> </p>
+<p>       -</p>
+<p> </p>
+<p>4.</p>
+<p> </p>
+<p>Specification of Compiler Abstraction </p>
+<p>  (AUTOSAR_SWS_CompilerAbstraction.pdf) </p>
+<p>   3.2.0 </p>
+<p>5. </p>
+<p>Specification of Memory Mapping  </p>
+<p> (AUTOSAR_SWS_MemoryMapping.pdf) </p>
+<p>   1.4.0 </p>
+<p>6. </p>
+<p>Specification of Platform Types  </p>
+<p> (AUTOSAR_SWS_PlatformTypes.pdf) </p>
+<p>    2.5.0 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2                                                                                                           Reference Documents </b></p>
+<p>16 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>   Integration and Build Process </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>                              Chapter 3</b></p>
+<p> </p>
+<p>17 </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 3 </b></p>
+<p><b>Integration and Build Process </b></p>
+<p> </p>
+<p> </p>
+<p>In this section the folder structure of the FLS Driver Component is explained. </p>
+<p>Description of the Make files along with samples is provided in this section. </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>The details about the C Source and Header files that are generated by the </p>
+<p>FLS Driver Generation Tool are mentioned in the “R20UT3642EJ0100 -</p>
+<p>AUTOSAR.pdf”. </p>
+<p> </p>
+<p><b>3.1. </b></p>
+<p><b>FLS Driver Component Make file </b></p>
+<p> </p>
+<p>The Make file provided with the FLS Driver Component consists of the GNU </p>
+<p>Make  compatible  script  to  build  the  FLS  Driver  Component  in  case  of  any </p>
+<p>change in the configuration. This can be used in the upper level Make file (of </p>
+<p>the application) to link and build the final application executable. </p>
+<p> </p>
+<p> </p>
+<p><b>3.1.1. Folder Structure </b></p>
+<p> </p>
+<p>The files are organized in the following folders: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>Trailing slash ‘\’ at the end indicates a folder </p>
+<p> </p>
+<p>X1X\common_platform\modules\fls\src\Fls.c </p>
+<p> </p>
+<p>\Fls_Internal.c </p>
+<p> </p>
+<p>\Fls_Ram.c </p>
+<p> </p>
+<p>\Fls_Version.c </p>
+<p> </p>
+<p>\Fls_Private_Fcu.c </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>X1X\common_platform\modules\fls\include\Fls.h </p>
+<p> </p>
+<p>\Fls_Debug.h </p>
+<p> </p>
+<p>\Fls_Internal.h </p>
+<p> </p>
+<p>\Fls_PBTypes.h </p>
+<p> </p>
+<p>\Fls_Ram.h </p>
+<p>                                                                                                                                                                                                                         </p>
+<p>\Fls_Types.h </p>
+<p> </p>
+<p>\Fls_Version.h </p>
+<p> </p>
+<p>\Fls_Private_Fcu.h  </p>
+<p>                                                                                                                                                                                                                                               </p>
+<p>\Fls_RegWrite.h </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> X1X\ P1x-C </p>
+<p> </p>
+<p> </p>
+<p>\modules\fls\sample_application\&lt;SubVariant&gt;\make\&lt;Complier&gt; </p>
+<p>\App_FLS_P1X-C_Sample.mak </p>
+<p> </p>
+<p>                                      X1X\P1x-C\modules\fls\sample_application\make\ </p>
+<p>                                                                                    &lt;Complier&gt;\App_FLS_P1x-C_Sample.ld </p>
+<p> </p>
+<p>                                      X1X\P1x-C\modules\fls\Sample_application\&lt;SubVariant&gt;\obj </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Chapter 3                                                                                          Integration and Build Process</b></p>
+<p> </p>
+<p> </p>
+<p>18 </p>
+<p> </p>
+<p>                                      X1X\P1x-C\modules\fls\generator\R403_FLS_P1x-C_BSWMDT.arxml. </p>
+<p> </p>
+<p>                                      X1X\P1x-C\modules\fls\user_manual </p>
+<p> </p>
+<p>(User manuals will be available in this folder) </p>
+<p> </p>
+<p>                     Note:    1. &lt;Complier&gt; can be ghs. </p>
+<p>                     2. &lt;AUTOSAR_version&gt; should be 4.0.3. </p>
+<p>                     3. &lt;SubVariant&gt; can be P1H-C, P1H-CE, P1M-C. </p>
+<p>                       </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Forethoughts </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p>19 </p>
+<p> </p>
+<p><b>Chapter 4 </b></p>
+<p><b>Forethoughts </b></p>
+<p> </p>
+<p> </p>
+<p><b>4.1. </b></p>
+<p><b>General </b></p>
+<p> </p>
+<p>Following information will aid the user to use the FLS Driver Component </p>
+<p>software efficiently: </p>
+<p>• </p>
+<p>AUTOSAR  FLS  driver  supports  Data  Flash  access  only.  Code  Flash </p>
+<p>access is out of scope. </p>
+<p>• </p>
+<p>The  start-up  code  is  ECU  specific.  FLS  Driver  Component  does  not </p>
+<p>implement the start-up code. </p>
+<p>• </p>
+<p>Example  code  mentioned  in  this  document  shall  be  taken  only  as  </p>
+<p>a reference for implementation. </p>
+<p>• </p>
+<p>All </p>
+<p>development </p>
+<p>errors </p>
+<p>will </p>
+<p>be </p>
+<p>reported </p>
+<p>to </p>
+<p>DET </p>
+<p>by </p>
+<p>using </p>
+<p>the </p>
+<p>API </p>
+<p>Det_ReportError provided by DET. </p>
+<p>• </p>
+<p>All </p>
+<p>production </p>
+<p>errors </p>
+<p>will </p>
+<p>be </p>
+<p>reported </p>
+<p>to </p>
+<p>DEM </p>
+<p>by </p>
+<p>using </p>
+<p>the </p>
+<p>API </p>
+<p>Dem_ReportErrorStatus provided by DEM. </p>
+<p>• </p>
+<p>The FLS Driver Component developed supports only on-chip ROM and </p>
+<p>no  external  devices  are  considered.  Hence  the  parameters  related  to </p>
+<p>external devices are ignored by the Generation Tool. </p>
+<p>• </p>
+<p>The FLS Driver Component does not provide functionalities for setting of </p>
+<p>protection flags, boot cluster size, swapping of boot block and flashing of </p>
+<p>boot </p>
+<p>block </p>
+<p>and </p>
+<p>they </p>
+<p>are </p>
+<p>out </p>
+<p>of </p>
+<p>scope </p>
+<p>for </p>
+<p>FLS </p>
+<p>Driver </p>
+<p>Component </p>
+<p>implementations. </p>
+<p>• </p>
+<p>The FLS Driver Component’s job processing function (Fls_MainFunction) </p>
+<p>is a polled function. </p>
+<p>• </p>
+<p>The configurations provided for fast mode write operation is ignored by </p>
+<p>the Generation Tool and only configurations for normal mode operations </p>
+<p>and fast mode read operation are accepted. </p>
+<p>• </p>
+<p>F</p>
+<p>ls_Init </p>
+<p>API </p>
+<p>shall </p>
+<p>enable </p>
+<p>the </p>
+<p>flash </p>
+<p>memory </p>
+<p>erase/write </p>
+<p>protection </p>
+<p>settings </p>
+<p>if </p>
+<p>it </p>
+<p>is </p>
+<p>supported </p>
+<p>by </p>
+<p>hardware. </p>
+<p>Before </p>
+<p>the </p>
+<p>flash </p>
+<p>operation </p>
+<p>protection  shall  be  disabled  and  after  the  completion  of  job,  protection </p>
+<p>shall be again enabled. </p>
+<p>• </p>
+<p>The Fls_Erase API computes the sectors that need to be erased based </p>
+<p>on  the  provided  target  address  and  length.  When  DET  is  enabled  the </p>
+<p>error  will  be  reported  if  the  length  of  the  bytes  to  be  erased  is  not  in </p>
+<p>multiples of flash sector size. </p>
+<p>• </p>
+<p>Fls_SetMode API sets the flash driver operation mode (FAST Mode/SLOW </p>
+<p>Mode) for read operation. This API allows the user to read more number of </p>
+<p>bytes during run time if in case the default mode is configured as </p>
+<p>‘MEMIF_MODE_FAST’.</p>
+<p> </p>
+<p>Fls_SetMode API is not applicable for </p>
+<p>Erase/Write/Blank Check operations, because underlying hardware does </p>
+<p>not support it.</p>
+<p> </p>
+<p>• </p>
+<p>In a single cycle of Fls_MainFunction API, the maximum number of bytes </p>
+<p>processed for the fast read command and normal read depends on the </p>
+<p>configuration of parameters ‘FlsMaxReadNormalMode’( if default mode is </p>
+<p>MEMIF_MODE_SLOW) and ‘FlsMaxReadFastMode’( if default mode is </p>
+<p>MEMIF_MODE_FAST). </p>
+<p>• </p>
+<p>Maximum value of ‘FlsMaxReadNormalMode’ parameter specifies the </p>
+<p>size of a temporary buffer in RAM which is used when </p>
+<p>Fls_ReadImmediate and Fls_Compare APIs are called.  The resulting </p>
+<p>RAM consumption has to be considered. </p>
+<p>• </p>
+<p>In a single cycle of Fls_MainFunction call, FLS driver performs write </p>
+<p>operation for 4 bytes, or blank check operation for 4 bytes, or erase </p>
+<p>operation for 64 bytes. </p>
+<p>• </p>
+<p>The length of the data that has to be programmed on to the flash should </p>
+<p>be in multiples of flash page. The FLS Driver Component does not pad </p>
+<p>bytes if the length is not in multiples of flash page. It is the responsibility </p>
+<p>of  the  application  to  pad  bytes  such  that  the  length  of  the  data  is  in </p>
+<p>multiples of flash page. </p>
+<p>• </p>
+<p>Erase, </p>
+<p>Write, </p>
+<p>Read </p>
+<p>and </p>
+<p>Blank </p>
+<p>check </p>
+<p>jobs </p>
+<p>are </p>
+<p>initiated </p>
+<p>within </p>
+<p>the </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4                                                                                                                        Forethoughts</b></p>
+<p> </p>
+<p>20 </p>
+<p> </p>
+<p>corresponding APIs itself. Fls_MainFunction API shall act as a checker </p>
+<p>function and it shall check whether the job is completed and initiate the </p>
+<p>next round of job cycle if the job is not completed. </p>
+<p>• </p>
+<p>The  normal  write  verification  using  the  direct  memory  read  access  is </p>
+<p>performed when DET is enabled. </p>
+<p>• </p>
+<p>The  processing  of  blank  check  operation  is  applicable  for  Data  flash </p>
+<p>only. </p>
+<p>• </p>
+<p>During activation of flash environment (in Fls_Init), the access to Code </p>
+<p>flash </p>
+<p>is </p>
+<p>not </p>
+<p>possible. </p>
+<p>Hence </p>
+<p>the </p>
+<p>user </p>
+<p>should </p>
+<p>ensure </p>
+<p>that </p>
+<p>all </p>
+<p>the </p>
+<p>application and supporting components code that needs to be executed </p>
+<p>during flash operation need to locate in RAM. </p>
+<p>• </p>
+<p>The  device  supports  servicing  of  interrupts  during  self-programming. </p>
+<p>During  activation  of  flash  environment  (in  Fls_Init),  the  interrupt  vector </p>
+<p>address  in  the  flash  will  not  be  available.  The  interrupt  vectors  can  be </p>
+<p>relocated  to  RAM  during  flash  programming.  For  details  please  refer </p>
+<p><i>Exception Handling Address Switching Function </i>in the according device </p>
+<p>CPU user manual. </p>
+<p>• </p>
+<p>The  FLS  Driver </p>
+<p>Component  can  invoke  user </p>
+<p>configurable  call-back </p>
+<p>notification  functions.  However,  the  implementation  of  the  call  back </p>
+<p>functions is the responsibility of the upper layer. </p>
+<p>• </p>
+<p>The parameter ‘FlsCallCycle’ shall be used for timeout implementation. </p>
+<p>The </p>
+<p>Erase, </p>
+<p>Write </p>
+<p>and </p>
+<p>BlankCheck </p>
+<p>timeout </p>
+<p>count </p>
+<p>values </p>
+<p>shall </p>
+<p>be </p>
+<p>generated </p>
+<p>based </p>
+<p>on </p>
+<p>FlsCallCycle </p>
+<p>and </p>
+<p>hardware </p>
+<p>specific </p>
+<p>atomic </p>
+<p>operations’ </p>
+<p>time </p>
+<p>(‘FlsEraseTime’, </p>
+<p>‘FlsWriteTime’ </p>
+<p>and </p>
+<p>‘FlsBlankCheckTime’).To </p>
+<p>report </p>
+<p>timeout, </p>
+<p>‘FlsTimeOutMonitoring’ </p>
+<p>parameter  needs  to  be  configured  as  TRUE’.  In  case  if  the  parameter </p>
+<p>‘FlsDevErrorDetect’ is also enabled, time out DET shall be reported.The </p>
+<p>‘FlsCallCycle’ </p>
+<p>parameter </p>
+<p>shall </p>
+<p>be </p>
+<p>configured </p>
+<p>by </p>
+<p>the </p>
+<p>user </p>
+<p>correctly. </p>
+<p>Incorrect </p>
+<p>value </p>
+<p>may </p>
+<p>lead </p>
+<p>to </p>
+<p>reporting </p>
+<p>of </p>
+<p>timeout </p>
+<p>DET </p>
+<p>by </p>
+<p>Fls_MainFunction. </p>
+<p>• </p>
+<p>User application shall not program Code Flash in the application mode. </p>
+<p>Code Flash shall only be programmed in safe environment in the boot </p>
+<p>mode. User application shall not write safety related data into Code Flash </p>
+<p>or Data Flash during driving cycle for safety critical applications. </p>
+<p>• </p>
+<p>There are two possible errors that can be detected by ECC are Single-bit </p>
+<p>errors  (SED)  and  Double-bit  errors  (DED).  The  ECC  error  notification </p>
+<p>feature is incorporated in Read functionality only. So whenever the read </p>
+<p>is initiated this feature  will be enabled always and only notifying to the </p>
+<p>upper </p>
+<p>layer </p>
+<p>happens </p>
+<p>via </p>
+<p>configurable </p>
+<p>notification </p>
+<p>functions. </p>
+<p>The </p>
+<p>configuration </p>
+<p>of </p>
+<p>single </p>
+<p>bit </p>
+<p>and </p>
+<p>double </p>
+<p>bit </p>
+<p>error </p>
+<p>notification </p>
+<p>function </p>
+<p>parameters are user selectable. The error notification functions for both </p>
+<p>single </p>
+<p>bit </p>
+<p>and </p>
+<p>double </p>
+<p>bit </p>
+<p>ECC </p>
+<p>error </p>
+<p>report </p>
+<p>are </p>
+<p>configurable </p>
+<p>with </p>
+<p>parameters from configuration. </p>
+<p>The parameters are: </p>
+<p>FlsEccSedNotification: This parameter mapped to Single-bit error (SED) </p>
+<p>notification routine provided by some upper layer module. </p>
+<p>FlsEccDedNotification: </p>
+<p>This </p>
+<p>parameter </p>
+<p>mapped </p>
+<p>to </p>
+<p>Double-bit </p>
+<p>error </p>
+<p>(DED)  notification  routine  provided  by  some  upper  layer  module.  The </p>
+<p>Double bit error is reported to DEM in addition to notification functions. </p>
+<p>• </p>
+<p>Data Flash Memory Read Cycle Setting Register (EEPRDCYCL) is used to </p>
+<p>specify the number of wait cycles to be inserted when reading the data in </p>
+<p>the data flash. The initial value of the register is taken by default. If required </p>
+<p>user application shall set this register as per P1x-C device user manual. </p>
+<p>• </p>
+<p>The </p>
+<p>file </p>
+<p>Interrupt_VectorTable.c </p>
+<p>provided </p>
+<p>is </p>
+<p>just </p>
+<p>a </p>
+<p>Demo </p>
+<p>and </p>
+<p>not </p>
+<p>all </p>
+<p>interrupts  will  be  mapped  in  this  file.  So  the  user  has  to  update  the </p>
+<p>Interrupt_VectorTable.c as per his configuration. </p>
+<p>• </p>
+<p>The accesses to HW registers is possible only in the low level driver layer. </p>
+<p>The user shall never write or read directly from any register, but shall use </p>
+<p>the AUTOSAR standard API provided by the MCAL.  </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Forethoughts </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p>21 </p>
+<p>• </p>
+<p>Fls_Read API performs the reading of the flash memory with a blank check </p>
+<p>operation before read but Fls_ReadImmediate performs the reading of the </p>
+<p>flash memory without a blank check operation before read. </p>
+<p>• </p>
+<p>Fls_BlankCheck  API  used  to  perform  the  blank  check  of  flash  memory </p>
+<p>before reading the flash memory, Fls_Suspend API performs the suspend </p>
+<p>of  the  ongoing  write,  read  or  erase  job,  Fls_Resume  API  resumes  the </p>
+<p>suspended job. </p>
+<p>• </p>
+<p>The  time-out  implementation  for  erase/write  operations  will  not  done  by </p>
+<p>FLS module and it needs to be carried out by the upper layer. </p>
+<p><b>FLS Timeout Monitoring </b></p>
+<p>• </p>
+<p>The </p>
+<p>configuration </p>
+<p>parameter </p>
+<p>FlsTimeoutMonitoring </p>
+<p>in </p>
+<p>the </p>
+<p>FlsGeneral </p>
+<p>container can be used to enable/disable the timeout supervision for FLS </p>
+<p>driver independent of DET settings. </p>
+<p>• </p>
+<p>Only  when  FlsTimeoutMonitoring  is  set  to  TRUE  and  DET  is  switched </p>
+<p>ON, a DET error FLS_E_TIMEOUT will be reported in case of detection of </p>
+<p>a timeout error. </p>
+<p>• </p>
+<p>In  order  to  perform  timeout  monitoring/supervision  on  flash  operations, </p>
+<p>the following configuration parameters should be used properly according </p>
+<p>to use-cases. </p>
+<p></p>
+<p> </p>
+<p>In  the  polling  mode  of  FLS,  the  parameter  FlsCallCycle  shall  be </p>
+<p>configured to specify the cycle time of calls of the FLS main function </p>
+<p>(in seconds). The timeout count values are calculated internally based </p>
+<p>on the CPU frequency for the respective flash operations, i.e., erase, </p>
+<p>write, blank check, etc.  </p>
+<p></p>
+<p> </p>
+<p>In  the  interrupt  mode  of  FLS,  the  parameter  FlsTimeOutCountValue </p>
+<p>shall be configured to directly specify the timeout count value required </p>
+<p>for erase, write and blank check operations. </p>
+<p></p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p>is </p>
+<p>crucial </p>
+<p>for </p>
+<p>timeout </p>
+<p>supervision. </p>
+<p>The </p>
+<p>call </p>
+<p>frequency of Fls_MainFunction shall be handled properly in the upper </p>
+<p>layer software to be in line with the FLS module configuration. </p>
+<p>Note: since read, read immediate, compare operations are not supported </p>
+<p>in </p>
+<p>FLS </p>
+<p>interrupt </p>
+<p>mode, </p>
+<p>only </p>
+<p>the </p>
+<p>parameter </p>
+<p>FlsCallCycle </p>
+<p>is </p>
+<p>used </p>
+<p>to </p>
+<p>calculate timeout count values for them irrespective of interrupt or polling </p>
+<p>mode. For  write, erase, blank check operations, FlsCallCycle  is used in </p>
+<p>the  polling  mode  of  FLS,  while  FlsTimeOutCountValue  is  used  in  the </p>
+<p>interrupt mode of FLS.  </p>
+<p>In  FlsGeneral  container  the  configuration  parameter  FlsLoopCount  is </p>
+<p>used to avoid the risk of endless loops in the FLS driver. FlsLoopCount is </p>
+<p>always  used  in  the  implementation,  hence  it  is  not  dependent  on  the </p>
+<p>parameter FlsTimeoutMonitoring </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>4.2. </b></p>
+<p><b>Preconditions </b></p>
+<p>Following preconditions have to be adhered by the user, for proper </p>
+<p>functioning of the FLS Driver Component:  </p>
+<p>• </p>
+<p>The  user  should  ensure  that  FLS  Driver  Component  API  requests  are </p>
+<p>invoked  in  the  correct  and  expected  sequence  and  with  correct  input </p>
+<p>arguments.  </p>
+<p>• </p>
+<p>Correct frequency configuration is essential for Flash programming quality </p>
+<p>and  stability.  Wrong  configuration  could  lead  to  loss  of  data  retention  or </p>
+<p>Flash  operation  fail.  The  limits  for  CPU  frequency  are  device  dependent. </p>
+<p>Please refer to the respective device user manuals for correct range. If the </p>
+<p>CPU  frequency  is  a  fractional  value,  round  up  the  value  to  the  nearest </p>
+<p>integer. Do not change power mode (voltage or CPU clock) while FLS is </p>
+<p>performing a Data Flash operation. If power mode must change the user </p>
+<p>can:  </p>
+<p> </p>
+<p>• </p>
+<p>Wait until operations are no longer busy or Cancel the ongoing operation </p>
+<p>and reinitialize the FLS module with proper CPU frequency value.  </p>
+<p>• </p>
+<p>A blank check pass does not confirm that it is possible to write to this word </p>
+<p>(4 Bytes). Also partly written/erased words may have a blank check pass </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4                                                                                                                        Forethoughts</b></p>
+<p> </p>
+<p>22 </p>
+<p> </p>
+<p>but  write  is  not  allowed  under  this  condition.  A  blank  check  fail  does  not </p>
+<p>confirm a stable read value. Even though parts of a word are at least partly </p>
+<p>written, random read data  are still possible, so are ECC error indications </p>
+<p>for single error corrections and double error detection.  </p>
+<p>• </p>
+<p>Due  to  RV40  Flash  technology,  hardware  will  implicitly  reject  the  write </p>
+<p>operation  if  the  target  Flash  cells  are  not  blank  (a  kind  of  &quot;overwriting </p>
+<p>guard&quot;). Writing to non-blank Flash cells will result in write error.  </p>
+<p>• </p>
+<p>Due to the above shown limitations the information which can be given by </p>
+<p>Fls_BlankCheck, either passing or failing,  is limited.  It cannot  be used to </p>
+<p>determine  the  current  state  of  a  flash  cell  in  a  meaning  full  way  without </p>
+<p>additional  information  obtained  by  other  means.  The  blank  check  should </p>
+<p>only be used to confirm or check some flow status but should not be used </p>
+<p>to determine if a flash cell can be read or written. FLS055 from AUTOSAR </p>
+<p>Specification  of  Flash  Driver  are  not  fulfilled  here  because  blank  check </p>
+<p>itself is not able to identify erasure state of flash cell which is ready for write </p>
+<p>operation.  Please  refer  to  application  note  document  &quot;RV40F  DataFlash </p>
+<p>Usage&quot; for more details about blank check and usage hints.  </p>
+<p>• </p>
+<p>In  case  of  Flash  modification  operation  (Erase/Write)  interruption  due  to </p>
+<p>e.g. power failure, reset etc., the electrical conditions of the affected Flash </p>
+<p>range (Flash block on erase, Flash write unit on Write) get undefined. It is </p>
+<p>impossible  to  give  a  statement  on  the  read  value  after  the  interruption. </p>
+<p>Thus, the resulting read value is not reliable; the electrical margin for the </p>
+<p>specified data retention may not be given. In such case, erase and re-write </p>
+<p>the affected Flash block(s) to ensure data integrity and retention.  </p>
+<p>• </p>
+<p>Fls_Cancel will stop the Flash programming hardware synchronously, thus, </p>
+<p>the ongoing Flash modification operation (Erase/Write) will be interrupted. </p>
+<p>This  can  result  in  undefined  state  of  Flash  block(s)  the  same  way  as </p>
+<p>general interruptions mentioned above.  </p>
+<p>• </p>
+<p>Data  Flash  on  RH850  devices  is  made  with  differential  cells  for  storage. </p>
+<p>This  means  that  reading  erased  but  non-programmed  Data  Flash  areas </p>
+<p>directly (bypassing FLS) will produce undefined data with a tendency to the </p>
+<p>previously </p>
+<p>written </p>
+<p>data, </p>
+<p>and </p>
+<p>it </p>
+<p>will </p>
+<p>most </p>
+<p>probably </p>
+<p>cause </p>
+<p>ECC </p>
+<p>error </p>
+<p>exceptions. To avoid this exceptions, use FLS read APIs.  </p>
+<p>• </p>
+<p>It is not possible to modify the Code Flash in parallel to a modification of </p>
+<p>the Data Flash or vice versa due to shared hardware resources.  </p>
+<p>• </p>
+<p>Fls_Init  function  temporarily  disables  Code  Flash.  During  this  time,  since </p>
+<p>the  Code  Flash  is  not  available,  the  FLS  code  is  executed  from  internal </p>
+<p>RAM (allocated space on stack). Please ensure that: (1) User application </p>
+<p>code execution is done from other locations than Code Flash (e.g. internal  </p>
+<p>• </p>
+<p>RAM). </p>
+<p>(2) </p>
+<p>No </p>
+<p>access </p>
+<p>to </p>
+<p>Code </p>
+<p>Flash </p>
+<p>is </p>
+<p>allowed, </p>
+<p>e.g. </p>
+<p>by </p>
+<p>jump </p>
+<p>to </p>
+<p>interrupt/exception  functions,  direct  Code  Flash  read/execution  from  the </p>
+<p>CPU, DMA accesses to Code Flash.  </p>
+<p>• </p>
+<p>Data  Flash  blocks  are  aligned  to  64  bytes  and  Data  Flash  words  are </p>
+<p>aligned to 4 bytes. RH850 devices also add alignment restrictions for types </p>
+<p>larger than 8 bits. Please refer to device hardware manual for details.  </p>
+<p>• </p>
+<p>Validation  of  input  parameters  is  done  only  when  the  static  configuration </p>
+<p>parameter </p>
+<p>FLS_DEV_ERROR_DETECT </p>
+<p>is </p>
+<p>enabled. </p>
+<p>Application </p>
+<p>should </p>
+<p>ensure that the right parameters are passed while invoking the APIs when </p>
+<p>FLS_DEV_ERROR_DETECT is disabled.  </p>
+<p>• </p>
+<p>A mismatch in the version numbers will result in compilation error. Ensure </p>
+<p>that the correct versions of the header and the source files are used.  </p>
+<p>• </p>
+<p>The  files  Fls_Cfg.h,  Fls_Cbk.h  and  Fls_PBcfg.c  generated  using  FLS </p>
+<p>Generation  Tool  have  to  be  linked  along  with  FLS  Driver  Component </p>
+<p>source files.  </p>
+<p>• </p>
+<p>The FLS Driver Component needs to be initialized by calling Fls_Init before </p>
+<p>calling any other Fls functions.  </p>
+<p>• </p>
+<p>Values for production code Event Ids should be assigned externally by the </p>
+<p>configuration of the DEM.  </p>
+<p>• </p>
+<p>Fls_Init shall do verification of ECC control registers, so as to ensure ECC </p>
+<p>1-bit error detection and correction, ECC 2-bit error detection are enabled </p>
+<p>for  data  flash  before  initialization  of  FCU.  If  the  user  configurable  ECC </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Forethoughts </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p>23 </p>
+<p>check for FACI is enabled and if the verification of FACI ECC register fails, </p>
+<p>DEM error FLS_E_ECC_FAILED shall be reported.  </p>
+<p>• </p>
+<p>The Fls_MainFunction should be invoked regularly by the Basic Scheduler. </p>
+<p>Though  not  specified  by  AUTOSAR,  calling  Fls_MainFunction  by  polling </p>
+<p>mechanism  is  also  possible.  Ensure  that  the  FLS  Driver  Component  is </p>
+<p>initialized before enabling the invocation of this scheduled function to avoid </p>
+<p>reporting of a DET error when enabled.  </p>
+<p>• </p>
+<p>Fls_ReadImmediate  API  should  not  be  used  to  read  blank  cells.  User </p>
+<p>application  shall  handle  the  errors  associated  with  blank  cell  read  using </p>
+<p>Fls_ReadImmediate API.  </p>
+<p>• </p>
+<p>Calling  FLS  functions,  especially  Cancel/Suspend/Resume/MainFunction </p>
+<p>APIs  by  a  higher  priority  ISR  must  be  prevented  by  upper  layer  to  avoid </p>
+<p>possible re-entrancy issue.  </p>
+<p>• </p>
+<p>Interrupt mode supports Erase, Write, and Blank Check operations only.  </p>
+<p>• </p>
+<p>Writing  the  same  area  more  than  once  is  prohibited.  To  write  again  the </p>
+<p>flash  memory  area  where  data  has  already  been  written  to,  user  shall </p>
+<p>erase the corresponding area in advance.  </p>
+<p>• </p>
+<p>If a cancel request is accepted, during an ongoing write or erase operation </p>
+<p>and a previous operation is already suspended, then both operations  will </p>
+<p>be cancelled.  </p>
+<p>• </p>
+<p>Cancel  and  suspend/resume  operations  are  not  allowed  in  case  of  two </p>
+<p>instances of FLS Driver Component as the effect is not evaluated.  </p>
+<p>• </p>
+<p>All  functions  are  not  re-entrant.  So,  re-entrant  calls  of  any  not  re-entrant </p>
+<p>function must be avoided.  </p>
+<p>• </p>
+<p>Suspend operation shall not be performed in between atomic operations of </p>
+<p>the job. i.e, in between 64 bytes of erase and 4 bytes of write, suspension </p>
+<p>is  not  possible.  The  job  can  be  suspended  only  after  completion  of  one </p>
+<p>atomic operation.  </p>
+<p>• </p>
+<p>It is not always possible to nest suspend and/or stand-by.  </p>
+<p>• </p>
+<p>E.g: Any operation ► suspend ► suspend – is not possible.  </p>
+<p>• </p>
+<p>Any operation ► stand-by ► stand-by – is not possible.  </p>
+<p>• </p>
+<p>Any operation ► stand-by ► suspend – is not possible.  </p>
+<p>• </p>
+<p>Write or Erase ► suspend ► Erase operation – is not possible  </p>
+<p>• </p>
+<p>Write operation ► suspend ► other Write operation – is not possible  </p>
+<p>• </p>
+<p>Any operation ► suspend ► other operation ► suspend–isn’t possible  </p>
+<p>• </p>
+<p>When an erase job is suspended, calling a write job at the same address of </p>
+<p>that  of  erase  job  and  then  resuming  the  previously  suspended  erase  job </p>
+<p>shall report DET indicating failure of erase verification.  </p>
+<p>• </p>
+<p>Any internal error occurred due to hardware failure during mode switching </p>
+<p>or issuing forced stop command shall set the driver status to UNINIT and </p>
+<p>job status to JOB_FAILED. </p>
+<p> </p>
+<p>• </p>
+<p>The </p>
+<p>user </p>
+<p>shall </p>
+<p>configure </p>
+<p>the </p>
+<p>exact </p>
+<p>Module </p>
+<p>Short </p>
+<p>Name </p>
+<p>Fls </p>
+<p>in </p>
+<p>configurations as specified in config.xml file and the same shall be given in </p>
+<p>command line. </p>
+<p>• </p>
+<p>The user should configure FACIn Unit properly to avoid hardware resource </p>
+<p>conflict. </p>
+<p>• </p>
+<p>FLS initialization failure may happen in the system runtime due to transient </p>
+<p>hardware faults. The User shall enable DET in order to get FLS_E_UNINIT </p>
+<p>in case of initialization failure. If Fls_GetStatus API is used, upper layer can </p>
+<p>use this API to get MEMIF_UNINIT in case of initialization failure. </p>
+<p> </p>
+<p><b>4.3. </b></p>
+<p><b>Data Consistency </b></p>
+<p> </p>
+<p>To support the reentrancy and interrupt services, the FLS Software </p>
+<p>component will ensure the data consistency while accessing their own RAM </p>
+<p>storage or hardware registers.  </p>
+<p> </p>
+<p> </p>
+<p>#define FLS_ENTER_CRITICAL_SECTION (Exclusive_Area) </p>
+<p>SchM_Enter_Fls_##Exclusive_Area() </p>
+<p> </p>
+<p>#define FLS_EXIT_CRITICAL_SECTION (Exclusive_Area)  </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4                                                                                                                        Forethoughts</b></p>
+<p> </p>
+<p>24 </p>
+<p> </p>
+<p>SchM_Exit_Fls_##Exclusive_Area() </p>
+<p> </p>
+<p> </p>
+<p>The following exclusive areas along with scheduler services are used to </p>
+<p>provide data integrity for shared resources: </p>
+<p> </p>
+<p>• </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>• </p>
+<p>FLS_REGISTER_PROTECTION </p>
+<p>• </p>
+<p>FLS_CODE_FLASH_DISABLED  </p>
+<p> </p>
+<p>These functions can be disabled by disabling the configuration parameter </p>
+<p>‘FlsCriticalSectionProtection’. </p>
+<p><b> </b></p>
+<p><b>Table 4-1  FLS Driver Protected Resources List </b></p>
+<p> </p>
+<p><b>API Name </b></p>
+<p><b>Exclusive Area Type </b></p>
+<p><b>Protected </b></p>
+<p><b>Resources </b></p>
+<p>Fls_Init </p>
+<p>FLS_REGISTER_PROTECTION </p>
+<p>HW Registers: </p>
+<p>FRAMMCR </p>
+<p>FCURAME </p>
+<p>FPCKAR </p>
+<p>FLS_CODE_FLASH_DISABLED </p>
+<p>Firmware storage </p>
+<p>area switching is </p>
+<p>protected </p>
+<p>Fls_Erase </p>
+<p>FLS_REGISTER_PROTECTION </p>
+<p>HW Registers: </p>
+<p>FSADDR </p>
+<p>FEADDR </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected : </p>
+<p>Fls_GstVar.GulJob</p>
+<p>StartAddress </p>
+<p>Fls_GstVar.GulJob</p>
+<p>EndAddress </p>
+<p>Fls_Write </p>
+<p>FLS_REGISTER_PROTECTION </p>
+<p>HW Registers: </p>
+<p>FSADDR </p>
+<p>FEADDR </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected : </p>
+<p>Fls_GstVar.GulJob</p>
+<p>StartAddress </p>
+<p>Fls_GstVar.GulJob</p>
+<p>EndAddress </p>
+<p>Fls_MainFunction </p>
+<p>FLS_REGISTER_PROTECTION </p>
+<p>HW Registers: </p>
+<p>DFERSTC </p>
+<p>DFERSTR </p>
+<p>DFERRINT </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected : </p>
+<p>Fls_GstVar.GulJob</p>
+<p>StartAddress </p>
+<p>Fls_GstVar.pBuffer</p>
+<p>Address </p>
+<p>Fls_Resume </p>
+<p>FLS_REGISTER_PROTECTION </p>
+<p>HW Registers: </p>
+<p>DFERSTC </p>
+<p>DFERSTR </p>
+<p>DFERRINT </p>
+<p>Fls_Read </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected : </p>
+<p>Fls_GstVar.GulRea</p>
+<p>dAddress </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Forethoughts </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p>25 </p>
+<p><b>API Name </b></p>
+<p><b>Exclusive Area Type </b></p>
+<p><b>Protected </b></p>
+<p><b>Resources </b></p>
+<p>Fls_Compare </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected during </p>
+<p>compare operation : </p>
+<p>Fls_GstVar.GulReq</p>
+<p>uestedLength </p>
+<p>Fls_GstVar.GucOffs</p>
+<p>et </p>
+<p>Fls_GstVar.GulRea</p>
+<p>dAddress </p>
+<p>Fls_GstVar.pTemp</p>
+<p>BufferAddress </p>
+<p>Fls_GstVar.pBuffer</p>
+<p>Address </p>
+<p>Fls_GstVar.GulCurr</p>
+<p>entLength </p>
+<p>Fls_GstVar.GucGe</p>
+<p>nCommand </p>
+<p>Fls_GenState </p>
+<p>Fls_GenJobResult </p>
+<p> </p>
+<p>Fls_Cancel </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected during </p>
+<p>cancel operation : </p>
+<p>Fls_GenState </p>
+<p>Fls_GenJobResult </p>
+<p>Fls_GstVar.GucGe</p>
+<p>nCommand </p>
+<p> </p>
+<p>Fls_BlankCheck </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected during </p>
+<p>blank check </p>
+<p>operation : </p>
+<p>Fls_GstVar.GucGe</p>
+<p>nCommand </p>
+<p>Fls_GenJobResult </p>
+<p>Fls_GenState </p>
+<p>Fls_ReadImmediate </p>
+<p>FLS_DRIVERSTATE_DATA_PROTECTION </p>
+<p>Driver state data is </p>
+<p>protected during </p>
+<p>read immediate </p>
+<p>operation : </p>
+<p>Fls_GstVar.GulRea</p>
+<p>dAddress </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Note</b>:  </p>
+<p>The highest measured duration of a critical section was 140.725 micro seconds </p>
+<p>measured for Fls_Init API.  </p>
+<p> </p>
+<p><b>4.4. </b></p>
+<p><b>Deviation List </b></p>
+<p> </p>
+<p><b>Table 4-2 </b></p>
+<p><b>FLS Driver Component Deviation List </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p><b>AUTOSAR </b></p>
+<p><b>Bugzilla</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>The fast mode parameters ‘FlsMaxReadFastMode’ and </p>
+<p>‘FlsMaxWriteFastMode’  of  the  container  ‘FlsConfigSet are unused.</p>
+<p> </p>
+<p>-</p>
+<p> </p>
+<p>2.</p>
+<p> </p>
+<p>The parameters ‘FlsAcLoadOnJobStart’ and ‘FlsUseInterrupts’ of the </p>
+<p>container ‘FlsGeneral’ is unused. </p>
+<p>-</p>
+<p> </p>
+<p>3.</p>
+<p> </p>
+<p>The parameters ‘FlsDefaultMode’ and ‘FlsProtection’, FlsAcWrite’ and </p>
+<p>‘FlsAcErase’ of the container ‘FlsConfigSet’ are unused.</p>
+<p> </p>
+<p>-</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4                                                                                                                        Forethoughts</b></p>
+<p> </p>
+<p>26 </p>
+<p> </p>
+<p>4. </p>
+<p>The parameters ‘FlsAcLocationErase’, ‘FlsAcLocationWrite’, </p>
+<p>‘FlsAcSizeErase’ and ‘FlsAcSizeWrite’ of the container </p>
+<p>‘FlsPublishedInformation’ are unused. </p>
+<p>- </p>
+<p>5. </p>
+<p>The component will support only the on-chip flash memory. External </p>
+<p>flash is not in the scope of this implementation. </p>
+<p>- </p>
+<p>6.</p>
+<p> </p>
+<p>FLS_E_READ_FAILED_DED  error  code  will  be  reported  to  DEM  if </p>
+<p>read job is failed when double bit ECC error is generated.</p>
+<p> </p>
+<p>-</p>
+<p> </p>
+<p>7. </p>
+<p><b>FLS201_Conf</b></p>
+<p> </p>
+<p>from  AUTOSAR  Specification  of  Flash  Driver  is  not </p>
+<p>fulfilled here because FlsSectorList is limited to one sector with fixed </p>
+<p>sector size. User shall not configure multiple sectors. Since data flash </p>
+<p>is a monolithic on-chip NV memory with homogeneous block size, it is </p>
+<p>not  required  to  have  multiple  sectors  with  the  same  sector  sizes. </p>
+<p>Important is that FLS driver shall support possible usage of &quot;user pool&quot; </p>
+<p>(private data flash area that cannot be accessed by FLS driver). This </p>
+<p>can  be  done  by  proper  configuration  of  FlsSectorStartaddress  and </p>
+<p>FlsNumberOfSectors. </p>
+<p> </p>
+<p>- </p>
+<p>8. </p>
+<p><b>FLS272, FLS359, FLS360 and FLS361 </b>from AUTOSAR Specification </p>
+<p>of  Flash  Driver  are  not  fulfilled  here  because timeout monitoring  can </p>
+<p>be  configured  independent  of  DET  setting.  However  only  when  both </p>
+<p>timeout  monitoring  and  DET  are  enabled,  FLS_E_TIMEOUT  will  be </p>
+<p>reported in case of detected timeout error. </p>
+<p> </p>
+<p>9. </p>
+<p>The timeout monitoring can be configured independent of DET setting </p>
+<p>in FLS. <b>FLS272</b>, <b>FLS359</b>, <b>FLS360</b>, <b>FLS361 </b>can only be fulfilled, when </p>
+<p>both timeout monitoring and DET are enabled, i.e., FLS_E_TIMEOUT </p>
+<p>will be reported for the respective flash operations in case of detected </p>
+<p>timeout error. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>4.5. </b></p>
+<p><b>User mode and supervisor mode  </b></p>
+<p> </p>
+<p>The below table specifies the APIs which can run in user mode, supervisor </p>
+<p>mode or both modes </p>
+<p><b> </b></p>
+<p><b>Table 4-3  User mode and Supervisor mode details when Data Flash enabled </b></p>
+<p><b> </b></p>
+<p><b>Sl. No</b></p>
+<p> </p>
+<p><b>API Name</b></p>
+<p> </p>
+<p><b>User Mode</b></p>
+<p> </p>
+<p><b>Supervisor </b></p>
+<p><b>Mode</b></p>
+<p> </p>
+<p><b>Known limitation in User </b></p>
+<p><b>mode </b></p>
+<p>1 </p>
+<p>Fls_Init </p>
+<p> </p>
+<p>- </p>
+<p>x </p>
+<p>The Fls_Init is failing in User </p>
+<p>mode. This is because inside </p>
+<p>Fls_Init function STSR </p>
+<p>instruction (to store contents </p>
+<p>of system register) is called </p>
+<p>for storing contents of </p>
+<p>ICCTRL (instruction cache </p>
+<p>control) to system register. </p>
+<p>Since the ICCTRL have the </p>
+<p>access permission in only </p>
+<p>supervisor mode, Fls_Init </p>
+<p>fails in user mode. </p>
+<p>2 </p>
+<p>Fls_Read </p>
+<p>x </p>
+<p>x </p>
+<p>- </p>
+<p>3 </p>
+<p>Fls_SetMode </p>
+<p>x </p>
+<p>x </p>
+<p>- </p>
+<p>4 </p>
+<p>Fls_Write </p>
+<p>x </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>5 </p>
+<p>Fls_Cancel </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>6 </p>
+<p>Fls_GetStatus </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>7 </p>
+<p>Fls_GetJobResult </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>8 </p>
+<p>Fls_Erase </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Forethoughts </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p>27 </p>
+<p><b>Sl. No</b></p>
+<p> </p>
+<p><b>API Name</b></p>
+<p> </p>
+<p><b>User Mode</b></p>
+<p> </p>
+<p><b>Supervisor </b></p>
+<p><b>Mode</b></p>
+<p> </p>
+<p><b>Known limitation in User </b></p>
+<p><b>mode </b></p>
+<p>9 </p>
+<p>Fls_Compare </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>10 </p>
+<p>Fls_GetVersionInfo </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>11 </p>
+<p>Fls_MainFunction </p>
+<p>x</p>
+<p> </p>
+<p>x</p>
+<p> </p>
+<p>- </p>
+<p>12 </p>
+<p>Fls_BlankCheck </p>
+<p>x </p>
+<p>x </p>
+<p>- </p>
+<p>13 </p>
+<p>Fls_ReadImmediate </p>
+<p>x </p>
+<p>x </p>
+<p>- </p>
+<p>14 </p>
+<p>Fls_Suspend </p>
+<p>x </p>
+<p>x </p>
+<p>- </p>
+<p>15 </p>
+<p>Fls_Resume </p>
+<p>x </p>
+<p>x </p>
+<p> </p>
+<p> </p>
+<p><b>Note: </b>Implementation of critical section is not dependent on MCAL. Hence critical </p>
+<p>section is not considered to the entries for user mode in the above table. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4                                                                                                                        Forethoughts</b></p>
+<p> </p>
+<p>28 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Architecture Details </b></p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p> </p>
+<p>29 </p>
+<p> </p>
+<p><b>Chapter 5 </b></p>
+<p><b>Architecture Details </b></p>
+<p> </p>
+<p>The FLS Software architecture is shown in the following figure. The FLS user </p>
+<p>shall directly use the APIs to configure and execute the FLS conversions: </p>
+<p> </p>
+<p> </p>
+<p>Application Layer</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR RTE</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>System  Services</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>  On board Device Abstraction</p>
+<p> </p>
+<p>  </p>
+<p> </p>
+<p><b>FLS Dr</b></p>
+<p><b>i</b></p>
+<p><b>ver</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Microcontroller</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 5-1 </b></p>
+<p><b>FLS Driver Component Architecture </b></p>
+<p> </p>
+<p>The basic architecture of the FLS Driver Component is illustrated in the </p>
+<p>following Figure: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>  Chapter 5                                                                                                              Architecture Details                                                                                                                             </b></p>
+<p> </p>
+<p>30 </p>
+<p> </p>
+<p> </p>
+<p>Application Layer </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 5-2 </b></p>
+<p><b>Component Overview of FLS Driver Component </b></p>
+<p> </p>
+<p> </p>
+<p>The internal architecture of FLS Driver Component is shown in the above </p>
+<p>figure. The FLS Driver Component Software Component provides services for </p>
+<p>the following processes: </p>
+<p> </p>
+<p>The FLS Driver Component is divided into the following sub modules based on </p>
+<p>the functionality required: </p>
+<p> </p>
+<p>• </p>
+<p>Initialization </p>
+<p>• </p>
+<p>Erasing the flash memory </p>
+<p>• </p>
+<p>Writing to the flash memory </p>
+<p>• </p>
+<p>Reading the flash memory </p>
+<p>• </p>
+<p>Fast Read to the application memory without performing blank check </p>
+<p>• </p>
+<p>Validating contents of flash memory </p>
+<p>• </p>
+<p>Cancellation of Request </p>
+<p>• </p>
+<p>Reading result and status information </p>
+<p>• </p>
+<p>Module version information </p>
+<p>• </p>
+<p>Blank check of flash memory </p>
+<p>• </p>
+<p>Job Processing </p>
+<p>• </p>
+<p>Fls_Suspend suspends the ongoing job. </p>
+<p>• </p>
+<p>Fls_Resume performs the resume of previous suspended job. </p>
+<p> </p>
+<p>Fls_SetMode</p>
+<p> </p>
+<p>Fls_Rea</p>
+<p>dImmed</p>
+<p>iate </p>
+<p>Fls_MainFun</p>
+<p>ction</p>
+<p> </p>
+<p>Fls_Bla</p>
+<p>nkChec</p>
+<p>k </p>
+<p>Fls_Erase</p>
+<p> </p>
+<p>Fls_Init</p>
+<p> </p>
+<p>Fls_GetVersion</p>
+<p>Info</p>
+<p> </p>
+<p>Fls_Res</p>
+<p>ume </p>
+<p>Fls_Sus</p>
+<p>pend </p>
+<p>Fls_Read</p>
+<p> </p>
+<p>Fls_Compare</p>
+<p> </p>
+<p>Fls_GetJobResult </p>
+<p>Fls_GetStatus</p>
+<p> </p>
+<p>Fls_Cancel </p>
+<p> </p>
+<p>Fls_Write</p>
+<p> </p>
+<p>Suspend</p>
+<p>on-</p>
+<p>going </p>
+<p>flash job </p>
+<p>Returns </p>
+<p>version </p>
+<p>informat</p>
+<p>ion </p>
+<p>Resumes </p>
+<p>previously </p>
+<p>suspended</p>
+<p> </p>
+<p>job</p>
+<p> </p>
+<p>Fls_Process</p>
+<p>Read()</p>
+<p> </p>
+<p>Fls_Fcu</p>
+<p>Init() </p>
+<p>Compare </p>
+<p>bytes in </p>
+<p>buffer with </p>
+<p>flash </p>
+<p>memory </p>
+<p> </p>
+<p>Fls_Initi</p>
+<p>ateBlan</p>
+<p>kCheckJ</p>
+<p>ob() </p>
+<p>Returns </p>
+<p>the status/r </p>
+<p>esult</p>
+<p> </p>
+<p>performs the </p>
+<p>job processing </p>
+<p>of erase,                </p>
+<p>write, read and </p>
+<p>compare jobs. </p>
+<p>Fls_Proces</p>
+<p>sCancel() </p>
+<p>Perfor</p>
+<p>ms fast </p>
+<p>read </p>
+<p>operati</p>
+<p>on. </p>
+<p>Fls_Initiate</p>
+<p>WriteJob() </p>
+<p>Fls_Ini</p>
+<p>tiateEr</p>
+<p>aseJob(</p>
+<p>) </p>
+<p>Sets </p>
+<p>Flash </p>
+<p>Driver’s </p>
+<p>Operatio</p>
+<p>n Mode </p>
+<p>FLS Driver Layer </p>
+<p>Microcontroller </p>
+<p>Application Layer </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Architecture Details </b></p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p> </p>
+<p>31 </p>
+<p><b>Initialization </b></p>
+<p> </p>
+<p>The initialization sub-module provides the service for initialization of the flash   </p>
+<p>driver  and  initializes  the  global  variables  used  by  the  FLS  Component.  FCU </p>
+<p>initialization  API  initializes  FCU  Global  Variable  Structure  and  prepares  the </p>
+<p>environment. </p>
+<p>After </p>
+<p>that </p>
+<p>firmware </p>
+<p>code </p>
+<p>is </p>
+<p>copied </p>
+<p>to </p>
+<p>the </p>
+<p>RAM </p>
+<p>and </p>
+<p>FACI </p>
+<p>frequency is set. The function also resets the FCU and initialize the hardware </p>
+<p>registers to default values</p>
+<p>. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_Init. </p>
+<p> </p>
+<p><b>Flash Memory Erasing Module </b></p>
+<p> </p>
+<p>This  sub-module  provides  the  service  for  erasing  the  blocks  of  the  flash </p>
+<p>memory.  </p>
+<p>The </p>
+<p>request </p>
+<p>will </p>
+<p>be </p>
+<p>processed </p>
+<p>by </p>
+<p>the </p>
+<p>job </p>
+<p>processing </p>
+<p>function </p>
+<p>Fls_MainFunction. The First round of erase operation is initiated from within the </p>
+<p>API  itself.  Fls_MainFunction is then called to erase  the remaining requested </p>
+<p>data flash memory blocks. The job is processed till the requested numbers of </p>
+<p>blocks are erased in the flash memory. Blank Check shall be done to ensure </p>
+<p>that the blocks are completely erased. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_Erase. </p>
+<p> </p>
+<p><b>Flash Memory Reading Module </b></p>
+<p> </p>
+<p>This  sub-module  provides  the  service  for  reading  the  contents  of  the  flash </p>
+<p>memory. </p>
+<p>The </p>
+<p>request </p>
+<p>will </p>
+<p>be </p>
+<p>processed </p>
+<p>by </p>
+<p>the </p>
+<p>job </p>
+<p>processing </p>
+<p>function </p>
+<p>Fls_MainFunction. </p>
+<p>In  this  job  processing  function,  blank  check  for  the  specified  words  shall  be </p>
+<p>performed first. If the cell is blank then the application buffer shall be filled with </p>
+<p>the value specified by the parameter ‘FlsErasedValue’. If the cell is not blank </p>
+<p>then reading of the specified words from the Flash memory shall be performed. </p>
+<p>This sub-module reads the specified number of words from consecutive Flash </p>
+<p>addresses  starting  at  the  specified  address  and  writes  it  into  a  buffer.  Read </p>
+<p>operation </p>
+<p>shall </p>
+<p>be </p>
+<p>initiated </p>
+<p>within </p>
+<p>the </p>
+<p>sub-module </p>
+<p>itself. </p>
+<p>Single </p>
+<p>cycle </p>
+<p>of </p>
+<p>Fls_MainFunction </p>
+<p>shall </p>
+<p>read </p>
+<p>the </p>
+<p>maximum </p>
+<p>number </p>
+<p>of </p>
+<p>bytes </p>
+<p>configured </p>
+<p>depending  on  the  parameters  ‘FlsMaxReadNormalMode’(  if  default  mode  is </p>
+<p>MEMIF_MODE_SLOW) </p>
+<p>and </p>
+<p>‘FlsMaxReadFastMode’( </p>
+<p>if </p>
+<p>default </p>
+<p>mode </p>
+<p>is </p>
+<p>MEMIF_MODE_FAST). The job is processed till the requested bytes of length </p>
+<p>are copied into the application buffer. </p>
+<p>  </p>
+<p>The API related to this sub-module is Fls_Read. </p>
+<p> </p>
+<p><b>Flash Memory Writing Module </b></p>
+<p> </p>
+<p>This sub-module provides the service for writing to the flash memory. </p>
+<p> </p>
+<p>The </p>
+<p>request </p>
+<p>shall </p>
+<p>be </p>
+<p>processed </p>
+<p>by </p>
+<p>the </p>
+<p>job </p>
+<p>processing </p>
+<p>function </p>
+<p>Fls_MainFunction.  In  this  job  processing  function,  the  writing  of  specified </p>
+<p>number  of  data  bytes  from  buffer  to  flash  memory  shall  be  performed.  The </p>
+<p>function writes the specified number of words from buffer to consecutive Flash </p>
+<p>addresses starting at the specified address. Single cycle of Fls_MainFunction </p>
+<p>shall  write  4  bytes  of  data  from  target  buffer  to  flash  addresses.  The  job  is </p>
+<p>processed till the requested number of bytes is written to the flash memory </p>
+<p>The API related to this sub-module is Fls_Write. </p>
+<p> </p>
+<p><b>Flash Memory Contents Validating Module </b></p>
+<p> </p>
+<p> </p>
+<p>This sub-module provides the service for comparing the contents of the flash </p>
+<p>memory with the application buffer.  </p>
+<p>The </p>
+<p>request </p>
+<p>shall </p>
+<p>be </p>
+<p>processed </p>
+<p>by </p>
+<p>the </p>
+<p>job </p>
+<p>processing </p>
+<p>function </p>
+<p>Fls_MainFunction. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 5                                                                                                                Architecture Details </b></p>
+<p> </p>
+<p>32 </p>
+<p> </p>
+<p>This sub-module shall read the defined number of words in flash and store it in </p>
+<p>the temporary buffer. Then actual data in application buffer shall be compared </p>
+<p>with data in temporary buffer. Here data shall be compared in terms of bytes. </p>
+<p>Single  cycle  of  Fls_MainFunction  shall  read  the  data  from  the  flash  memory </p>
+<p>depending  on  configuration  of  parameter  ‘FlsMaxReadNormalMode’  for  data </p>
+<p>flash.  The  job  is  processed  till  the  requested  number  of  bytes  are  read  and </p>
+<p>compared with the application buffer. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_Compare. </p>
+<p> </p>
+<p><b>Request Set Mode Module </b></p>
+<p> </p>
+<p>This sub-module sets the flash driver operation mode. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_SetMode. </p>
+<p> </p>
+<p><b>Request Cancellation Module </b></p>
+<p> </p>
+<p>This </p>
+<p>sub-module </p>
+<p>provides </p>
+<p>the </p>
+<p>service </p>
+<p>for </p>
+<p>canceling </p>
+<p>an </p>
+<p>ongoing </p>
+<p>memory </p>
+<p>request.  </p>
+<p> </p>
+<p>After </p>
+<p>aborting </p>
+<p>the </p>
+<p>current </p>
+<p>ongoing </p>
+<p>memory </p>
+<p>operations </p>
+<p>this </p>
+<p>sub- </p>
+<p>module </p>
+<p>prepares  internal  variables  to  accept  the  next  Read/Write/Erase/  Compare </p>
+<p>command.  The  cancel  request  will  be  synchronous  and  a  new  job  can  be </p>
+<p>requested immediately after the return from this function. A suspended job is </p>
+<p>also cancelled. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_Cancel. </p>
+<p> </p>
+<p><b>Result Reading and Status Information Providing Module </b></p>
+<p> </p>
+<p>This  sub-module  provides  the  services  for  getting  the  current  status  of  the </p>
+<p>module  or  results  of  the  initiated  job  request  or  the  response  to  previously </p>
+<p>issued command and return the current status of the current job execution. </p>
+<p> </p>
+<p>The APIs related to this sub-module are Fls_GetStatus, Fls_GetJobResult. </p>
+<p> </p>
+<p><b>Software Component Version Info Module </b></p>
+<p> </p>
+<p>This  module  provides  API  for  reading  Module  Id,  Vendor  Id  and  vendor </p>
+<p>specific version numbers. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_GetVersionInfo. </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Job Processing Module </b></p>
+<p> </p>
+<p>The command requests are always processed  by  the main function that is </p>
+<p>invoked  cyclically  by  the  scheduler.  This  function  will  perform  the  status </p>
+<p>check while processing the flash operations requests. This API derives the </p>
+<p>internal driver status. Completion of the flash operation needs to be checked </p>
+<p>in order to continue the reprogramming flow. A Time-out feature is available </p>
+<p>with the help of time-out counter operation in this API. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_MainFunction. </p>
+<p> </p>
+<p><b>Flash Memory Blank Check Module </b></p>
+<p><b> </b></p>
+<p>This sub-module provides the service for performing blank check of the flash </p>
+<p>memory words. The request shall be processed by the job processing function </p>
+<p>Fls_MainFunction. This function  is invoked to perform the  blank check of the </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Architecture Details </b></p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p> </p>
+<p>33 </p>
+<p>single  word.  The  job  is  processed  till  the  requested  numbers  of  words  are </p>
+<p>performed with the blank check in the flash memory. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_BlankCheck. </p>
+<p> </p>
+<p><b>Flash Memory Fast Read Module </b></p>
+<p><b> </b></p>
+<p>This  sub-module  provides  the  service  for  reading  the  contents  of  the  flash </p>
+<p>memory.  The  request  shall  be  processed  by  the  job  processing  function </p>
+<p>Fls_MainFunction.  This  function  reads  the  specified  number  of  words  from </p>
+<p>consecutive Flash addresses starting at the specified address and writes it into </p>
+<p>a buffer. Single cycle of Fls_MainFunction, shall read the data from the data </p>
+<p>flash memory. The data from flash memory (source address) is read to the data </p>
+<p>buffer  (Target  address)  of  application  without  performing  blank  check  before </p>
+<p>read. The job is processed till the requested bytes of length are copied into the </p>
+<p>application buffer.  </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_ReadImmediate. </p>
+<p> </p>
+<p><b>Job Suspend Module </b></p>
+<p><b> </b></p>
+<p>This  sub-module  provides  the  service  of  suspending  the  ongoing  job.  The </p>
+<p>driver </p>
+<p>goes </p>
+<p>into </p>
+<p>idle </p>
+<p>state </p>
+<p>after </p>
+<p>the </p>
+<p>job </p>
+<p>is </p>
+<p>suspended. </p>
+<p>Fls_Suspend </p>
+<p>is </p>
+<p>asynchronous  API.  Fls_Suspend  shall  reject  any  unacceptable  request  of </p>
+<p>suspension such as issuing suspend request for operations other than erase </p>
+<p>and write and if no ongoing job is present.  </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_Suspend. </p>
+<p> </p>
+<p><b>Job Resume Module </b></p>
+<p><b> </b></p>
+<p>This </p>
+<p>sub-module </p>
+<p>provides </p>
+<p>the </p>
+<p>service </p>
+<p>for </p>
+<p>performing </p>
+<p>the </p>
+<p>resume </p>
+<p>of </p>
+<p>the </p>
+<p>previous </p>
+<p>suspended </p>
+<p>job. </p>
+<p>Fls_Resume </p>
+<p>is </p>
+<p>synchronous </p>
+<p>API. </p>
+<p>Fls_Resume </p>
+<p>acknowledges the resume request and it returns immediately. </p>
+<p> </p>
+<p>The API related to this sub-module is Fls_Resume. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 5                                                                                                                Architecture Details </b></p>
+<p> </p>
+<p>34 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Register Details </b></p>
+<p><b>Chapter 6</b></p>
+<p> </p>
+<p> </p>
+<p>35 </p>
+<p> </p>
+<p><b>Chapter 6 </b></p>
+<p><b>Registers Details </b></p>
+<p> </p>
+<p> </p>
+<p>This section describes the register details of FLS Driver Component. </p>
+<p> </p>
+<p><b>Table 6-1 </b></p>
+<p><b>Register Details </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>API Name </b></p>
+<p><b>Registers </b></p>
+<p><b>Used </b></p>
+<p><b>Register </b></p>
+<p><b>Access </b></p>
+<p><b>8/16/32 </b></p>
+<p><b>bits </b></p>
+<p><b>Register </b></p>
+<p><b>Access </b></p>
+<p><b>R/W/RW </b></p>
+<p><b> </b></p>
+<p><b>Config </b></p>
+<p><b>Paramet</b></p>
+<p><b>er </b></p>
+<p><b> </b></p>
+<p><b>Macro/Variable </b></p>
+<p>Fls_Init </p>
+<p>FSADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulStartAddr </p>
+<p>FLS_FCU_ADDR_REG_RES</p>
+<p>ET </p>
+<p>FEADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulEndAddr </p>
+<p>FLS_FCU_ADDR_REG_RES</p>
+<p>ET </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue </p>
+<p>LulReturnValue </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY</p>
+<p>_KEY </p>
+<p>LusModeRegVal </p>
+<p>FASTAT </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_REGBIT_FASTAT_</p>
+<p>CMDLK </p>
+<p>FCURAME </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_REGBIT_FCURAM</p>
+<p>E_FCRME </p>
+<p>FLS_FCU_REGBIT_FCURAM</p>
+<p>E_KEY </p>
+<p>FLS_FCU_REGBIT_FCURAM</p>
+<p>E_RESET </p>
+<p>FLS_FCU_REGBIT_FCURAM</p>
+<p>E_FRAMTRAN </p>
+<p>FRAMMCR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_REGBIT_FRAMMC</p>
+<p>R_DUAL </p>
+<p>FPCKAR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_REGBIT_FPCKAR</p>
+<p>_KEY </p>
+<p>LusFaciFreq </p>
+<p>FRTEINT </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FACI_FRTEINT_RESET</p>
+<p>_VAL </p>
+<p>FCUFAREA </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>LucModeVal </p>
+<p>ICCTRL </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_SYSTEM_REGIST</p>
+<p>ER_ICCTRL </p>
+<p>CDBCR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_SYSTEM_REGIST</p>
+<p>ER_CDBCR </p>
+<p>DFECCCTL </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_DFECCCTL_RESET_VA</p>
+<p>L </p>
+<p>DFERRINT </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_ DFERRINT </p>
+<p>_RESET_VAL </p>
+<p>DFTSTCTL </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_  DFTSTCTL </p>
+<p>_RESET_VAL </p>
+<p>FHVE3 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_</p>
+<p>OFF </p>
+<p>FLS_FLASH_PROTECTION_</p>
+<p>ON </p>
+<p>FHVE15 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_</p>
+<p>OFF </p>
+<p>FLS_FLASH_PROTECTION_</p>
+<p>ON </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 6                                                                                                                     Registers Details </b></p>
+<p> </p>
+<p>36 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>API Name </b></p>
+<p><b>Registers </b></p>
+<p><b>Used </b></p>
+<p><b>Register </b></p>
+<p><b>Access </b></p>
+<p><b>8/16/32 </b></p>
+<p><b>bits </b></p>
+<p><b>Register </b></p>
+<p><b>Access </b></p>
+<p><b>R/W/RW </b></p>
+<p><b> </b></p>
+<p><b>Config </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b> </b></p>
+<p><b>Macro/Variable </b></p>
+<p>Fls_MainFunction</p>
+<p> </p>
+<p>FSADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>FEADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr +                                           </p>
+<p>FLS_FCU_WRITE_SIZE) - </p>
+<p>FLS_FCU_ONE </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue </p>
+<p>LulReturnValue </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY_KEY </p>
+<p>LusModeRegVal </p>
+<p>FBCSTAT </p>
+<p>8 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue </p>
+<p>FHVE3 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>FHVE15 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p> </p>
+<p> Fls_Resume </p>
+<p>FSADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>FEADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr +                                           </p>
+<p>FLS_FCU_WRITE_SIZE) - </p>
+<p>FLS_FCU_ONE </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue </p>
+<p>LulReturnValue </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY_KEY </p>
+<p>LusModeRegVal </p>
+<p>FHVE3 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>FHVE15 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>Fls_Cancel </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY_KEY </p>
+<p>LusModeRegVal </p>
+<p>FASTAT </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FCU_REGBIT_FASTAT_CMDLK </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulReturnValue </p>
+<p>Fls_Read </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>Fls_Compare </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>Fls_ReadImmediat</p>
+<p>e </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Register Details </b></p>
+<p><b>Chapter 6</b></p>
+<p> </p>
+<p> </p>
+<p>37 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>API Name </b></p>
+<p><b>Registers </b></p>
+<p><b>Used </b></p>
+<p><b>Register </b></p>
+<p><b>Access </b></p>
+<p><b>8/16/32 </b></p>
+<p><b>bits </b></p>
+<p><b>Register </b></p>
+<p><b>Access </b></p>
+<p><b>R/W/RW </b></p>
+<p><b> </b></p>
+<p><b>Config </b></p>
+<p><b>Param</b></p>
+<p><b>eter </b></p>
+<p><b> </b></p>
+<p><b>Macro/Variable </b></p>
+<p>Fls_Erase </p>
+<p>FSADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>LulStartAddr </p>
+<p>FEADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentEndAddr </p>
+<p>FLS_FCU_ADDR_REG_RESET  </p>
+<p>LulEndAddr </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue LulReturnValue </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY_KEY </p>
+<p>LusModeRegVal </p>
+<p>FHVE3 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>FHVE15 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>Fls_Write </p>
+<p>FSADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>FEADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulCurrentStartAddr +                                           </p>
+<p>FLS_FCU_WRITE_SIZE) - </p>
+<p>FLS_FCU_ONE </p>
+<p>FLS_FCU_ADDR_REG_RESET </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue </p>
+<p>LulReturnValue </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY_KEY </p>
+<p>LusModeRegVal </p>
+<p>FHVE3 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>FHVE15 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>Fls_BlankCheck </p>
+<p>FSADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulStartAddr </p>
+<p>FEADDR </p>
+<p>32 </p>
+<p>RW </p>
+<p>- </p>
+<p>LulEndAddr </p>
+<p>FSTATR </p>
+<p>32 </p>
+<p>R </p>
+<p>- </p>
+<p>LulReturnValue </p>
+<p>LulRegValue </p>
+<p>FBCSTAT </p>
+<p>8 </p>
+<p>R </p>
+<p>- </p>
+<p>LulRegValue </p>
+<p>FENTRYR </p>
+<p>16 </p>
+<p>RW </p>
+<p>- </p>
+<p>LddMode </p>
+<p>FLS_FCU_REGBIT_FENTRY_KEY </p>
+<p>LusModeRegVal </p>
+<p>FHVE3 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>FHVE15 </p>
+<p>8 </p>
+<p>RW </p>
+<p>- </p>
+<p>FLS_FLASH_PROTECTION_OFF </p>
+<p>FLS_FLASH_PROTECTION_ON </p>
+<p>Fls_GetStatus </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>Fls_GetJobResult </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>Fls_Suspend </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>Fls_GetVersionInf</p>
+<p>o </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<p>- </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 6                                                                                                                     Registers Details </b></p>
+<p> </p>
+<p>38 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Interaction Between The User and FLS Driver Component </b></p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p> </p>
+<p>39 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 7 Interaction Between The User and FLS </b></p>
+<p><b>Driver Component </b></p>
+<p> </p>
+<p> </p>
+<p>The details of the services supported by the FLS Driver Component to the </p>
+<p>upper layers users and the mapping of the channels to the hardware units is </p>
+<p>provided in the following sections: </p>
+<p> </p>
+<p><b>7.1. </b></p>
+<p><b>Services Provided By FLS Driver Component To The </b></p>
+<p><b>User </b></p>
+<p> </p>
+<p>The FLS Driver Component provides the following functions to upper layers: </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>Writing contents to data flash memory </p>
+<p> </p>
+<p>• </p>
+<p>Erase flash memory sectors </p>
+<p> </p>
+<p>• </p>
+<p>Read flash contents to the application memory </p>
+<p> </p>
+<p>• </p>
+<p>Validate flash contents comparing with the application memory </p>
+<p> </p>
+<p>• </p>
+<p>Cancel the ongoing erase, write, read or compare requests. </p>
+<p> </p>
+<p>• </p>
+<p>Read the result of the last job </p>
+<p> </p>
+<p>• </p>
+<p>Read the status of the FLS Driver Component. </p>
+<p> </p>
+<p>• </p>
+<p>Flash Memory Blank Checking Module </p>
+<p> </p>
+<p>• </p>
+<p>Flash Memory Immediate Reading Module </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Suspend suspends the on-going job. </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Resume performs the resume of previous suspended job. </p>
+<p> </p>
+<p>Caution: </p>
+<p> </p>
+<p>• </p>
+<p>If other software components in BSW are accessing data flash or FACI </p>
+<p>registers, then the synchronization between FLS and other software </p>
+<p>components shall be handled by user application to ensure data </p>
+<p>consistency. </p>
+<p> </p>
+<p>• </p>
+<p>Please pay attention that many FLS APIs are non-reentrant. This means it </p>
+<p>is not allowed to call a non-reentrant API function from a different program </p>
+<p>context (e.g. interrupt service routines, other threads) while another or the </p>
+<p>same non-reentrant API function is already running. </p>
+<p>In particular, when calling Fls_MainFunction, user application shall avoid </p>
+<p>collision with other non-reentrant FLS APIs. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 7                                                Interaction Between The User and FLS Driver Component </b></p>
+<p> </p>
+<p>40 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>FLS Component Header and Source File Description </b></p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p>41 </p>
+<p> </p>
+<p><b>Chapter 8   FLS Component Header and Source File</b></p>
+<p><b> </b></p>
+<p><b> Description </b></p>
+<p> </p>
+<p> </p>
+<p>This  section  explains  the  FLS  Driver  Component’s  C  Source  and  C  Header </p>
+<p>files. These files have to be included in the project application while integrating </p>
+<p>with other modules. </p>
+<p> </p>
+<p>The C header file generated by FLS Software Generation Tool: </p>
+<p> </p>
+<p> </p>
+<p>For only Data Flash access </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Cbk.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Cfg.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Hardware.h </p>
+<p> </p>
+<p>The C source file generated by FLS Driver Generation Tool: </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>Fls_PBcfg.c </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Hardware.c </p>
+<p> </p>
+<p>The FLS Driver Component C header files: </p>
+<p> </p>
+<p>• </p>
+<p>Fls.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Debug.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Internal.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Types.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_PBTypes.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Version.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Ram.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Private_Fcu.h </p>
+<p> </p>
+<p>• </p>
+<p>Fls_RegWrite.h </p>
+<p> </p>
+<p> </p>
+<p>The FLS Driver Component source files: </p>
+<p> </p>
+<p>• </p>
+<p>Fls.c </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Internal.c </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Ram.c </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Version.c </p>
+<p> </p>
+<p>• </p>
+<p>Fls_Private_Fcu.c </p>
+<p> </p>
+<p> </p>
+<p>The Stub C header files: </p>
+<p> </p>
+<p>• </p>
+<p>Compiler.h </p>
+<p> </p>
+<p>• </p>
+<p>Compiler_Cfg.h </p>
+<p> </p>
+<p>• </p>
+<p>MemMap.h </p>
+<p> </p>
+<p>• </p>
+<p>Platform_Types.h </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                        FLS Component Header and Source File Description </b></p>
+<p> </p>
+<p>42 </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>SchM_Fls.h </p>
+<p>   </p>
+<p>• </p>
+<p>Dem.h </p>
+<p>   </p>
+<p>• </p>
+<p>Dem_Cfg.h </p>
+<p>   </p>
+<p>• </p>
+<p>Dem_IntErrId.h </p>
+<p>   </p>
+<p>• </p>
+<p>Det.h </p>
+<p>   </p>
+<p>• </p>
+<p>rh850_Types.h </p>
+<p>   </p>
+<p>• </p>
+<p>Std_Types.h </p>
+<p>   </p>
+<p>• </p>
+<p>MemIf.h </p>
+<p> </p>
+<p>• </p>
+<p>Os.h </p>
+<p>   </p>
+<p>• </p>
+<p>MemIf_Types.h </p>
+<p>   </p>
+<p>• </p>
+<p>Rte.h </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>The description of the FLS Driver Component files is provided in the table below: </p>
+<p> </p>
+<p><b>Table 8-1 </b></p>
+<p><b>Description Of The FLS Driver Component Files </b></p>
+<p> </p>
+<p><b>File</b></p>
+<p> </p>
+<p><b>Details</b></p>
+<p> </p>
+<p>Fls</p>
+<p>_Cfg.h</p>
+<p> </p>
+<p>This file is generated by the FLS Software Generation Tool for various FLS </p>
+<p>Driver Component pre-compile time  parameters.   The macros and  the </p>
+<p>parameters generated will vary with respect to the configuration in the input ECU </p>
+<p>Configuration description file. This file also contains the handles for </p>
+<p>Fls </p>
+<p>Pin </p>
+<p>configuration set.</p>
+<p> </p>
+<p>Fls</p>
+<p>_Cbk.h</p>
+<p> </p>
+<p>This file contains declarations of notification functions to be used by the </p>
+<p>application. The notification function name can be configured.</p>
+<p> </p>
+<p>Fls_Hardware.h  </p>
+<p> </p>
+<p>This file contains the #define macros for the hardware registers to be used by the </p>
+<p>driver.  </p>
+<p> </p>
+<p>Fls_PBcfg.c</p>
+<p> </p>
+<p>This file contains post-build configuration data. The structures related to </p>
+<p>FLS Initialization are provided in this file. Data structures will vary with </p>
+<p>respect to parameters configured. </p>
+<p>Fls_Hardware.c  </p>
+<p> </p>
+<p>This file contains the reference objects for the structures of hardware </p>
+<p>register which is defined in device header file.  </p>
+<p> </p>
+<p>Fls</p>
+<p>.h</p>
+<p> </p>
+<p>This file provides extern declarations for all the FLS Driver Component APIs. This </p>
+<p>file provides service Ids of APIs, DET Error codes  and type  definitions for FLS </p>
+<p>Software </p>
+<p>initialization </p>
+<p>structure. </p>
+<p>This </p>
+<p>header </p>
+<p>file </p>
+<p>shall </p>
+<p>be </p>
+<p>included </p>
+<p>in </p>
+<p>other </p>
+<p>modules to use the features of FLS Driver Component.</p>
+<p> </p>
+<p>Fls_Debug.h</p>
+<p> </p>
+<p>This file provides Provision of global variables for debugging purpose.</p>
+<p> </p>
+<p>Fls_Internal.h</p>
+<p> </p>
+<p>This file contains the prototypes for internal functions of Flash Wrapper </p>
+<p>Component.</p>
+<p> </p>
+<p>Fls_Types.h</p>
+<p> </p>
+<p>This file contains the common macro definitions and the data types </p>
+<p>required internally by the FLS software component.</p>
+<p> </p>
+<p>Fls</p>
+<p>_Ram.h</p>
+<p> </p>
+<p>This file contains the extern declarations for the global variables that are defined </p>
+<p>in </p>
+<p>Fls</p>
+<p>_Ram.c file and the version information of the file. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>FLS Component Header and Source File Description </b></p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p>43 </p>
+<p><b>File</b></p>
+<p> </p>
+<p><b>Details</b></p>
+<p> </p>
+<p>Fls</p>
+<p>_Version.h</p>
+<p> </p>
+<p>This file contains the macros of AUTOSAR version numbers of all modules that </p>
+<p>are interfaced to FLS.</p>
+<p> </p>
+<p>Fls_Private_Fcu.h  </p>
+<p> </p>
+<p>This file contains API Declarations of Flash Control Unit specific functions.  </p>
+<p> </p>
+<p>Fls_RegWrite.h </p>
+<p>This file is to have macro definitions for the registers write and verification.     </p>
+<p>Fls.c</p>
+<p> </p>
+<p>This file contains the implementation of all APIs.</p>
+<p> </p>
+<p>Fls_Ram.c</p>
+<p> </p>
+<p>This file contains the global variables used by FLS Driver Component.</p>
+<p> </p>
+<p>Fls_Internal.c</p>
+<p> </p>
+<p>This file contains the  Internal functions  implementations of flash wrapper </p>
+<p>component.</p>
+<p> </p>
+<p>Fls_Private_Fcu.c  </p>
+<p> </p>
+<p>This file contains FCU related API implementations.  </p>
+<p> </p>
+<p>Fls_Version.c</p>
+<p> </p>
+<p>This file contains the code for checking version of all modules that are interfaced </p>
+<p>to FLS. </p>
+<p>Compiler.h</p>
+<p> </p>
+<p>Provides  compiler  specific  (non-ANSI)  keywords.  All  mappings  of  keywords, </p>
+<p>which are not standardized, and/or compiler specific are placed and organized in </p>
+<p>this compiler specific header.</p>
+<p> </p>
+<p>Compiler_Cfg.h</p>
+<p> </p>
+<p>This file contains the memory and pointer classes.</p>
+<p> </p>
+<p>MemMap.h</p>
+<p> </p>
+<p>This  file  allows  to  map  variables,  constants  and  code  of  modules  to </p>
+<p>individual memory sections. Memory mapping can be modified as per ECU </p>
+<p>specific needs.</p>
+<p> </p>
+<p>Platform_Types.h</p>
+<p> </p>
+<p>This file provides provision for defining platform and compiler dependent types.</p>
+<p> </p>
+<p>Fls_PBTypes.h</p>
+<p> </p>
+<p>This file contains the type definitions of post build parameters. It also contains </p>
+<p>the macros used by the FLS Driver Component.</p>
+<p> </p>
+<p>SchM_Fls.h </p>
+<p>This file is a stub for Fls SchM Component </p>
+<p>Dem.h </p>
+<p>This file is a stub for DEM Component </p>
+<p>Dem_Cfg.h </p>
+<p>This file contains the stub values for Dem_Cfg.h </p>
+<p>Dem_IntErrId.h </p>
+<p>This file is a stub for DEM Component </p>
+<p>Det.h </p>
+<p>This file is a stub for DET Component </p>
+<p>rh850_Types.h </p>
+<p>This file provides macros to perform supervisor mode (SV) write enabled Register </p>
+<p>ICxxx and IMR register writing using OR/AND/Direct operation. </p>
+<p>Std_Types.h </p>
+<p>This file is a stub file which contains the standard type definitions. </p>
+<p>MemIf.h </p>
+<p>This file is a stub for MEMIF Module </p>
+<p>MemIf_Types.h </p>
+<p>This file is a stub for MemIf component. </p>
+<p>Os.h </p>
+<p>This file is a stub for Os Component </p>
+<p>Rte.h </p>
+<p>This file is a stub for Rte Component </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                        FLS Component Header and Source File Description </b></p>
+<p> </p>
+<p>44 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Generation Tool Guide </b></p>
+<p><b>Chapter 9</b></p>
+<p> </p>
+<p> </p>
+<p>45 </p>
+<p> </p>
+<p><b>Chapter 9 </b></p>
+<p><b>Generation Tool Guide </b></p>
+<p> </p>
+<p>For information on the FLS Driver Code Generation Tool, please refer </p>
+<p>R20UT3642EJ0100-AUTOSAR.pdf” document. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 9                                                                                                          Generation Tool Guide </b></p>
+<p> </p>
+<p>46 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Application Programming Interface </b></p>
+<p><b>Chapter 10</b></p>
+<p> </p>
+<p> </p>
+<p>47 </p>
+<p> </p>
+<p><b>Chapter 10 </b></p>
+<p><b>Application Programming Interface </b></p>
+<p> </p>
+<p> </p>
+<p>This section explains the Data types and APIs provided by the </p>
+<p>FLS Driver </p>
+<p>Component </p>
+<p>to the Upper layers. </p>
+<p> </p>
+<p><b>10.1. Imported Types </b></p>
+<p> </p>
+<p> </p>
+<p>This section explains the Data types imported by the FLS Driver Component </p>
+<p>and lists its dependency on other modules. </p>
+<p> </p>
+<p> </p>
+<p><b>10.1.1. Standard Types </b></p>
+<p> </p>
+<p>In this section all types included from the Std_Types.h are </p>
+<p>listed: </p>
+<p> </p>
+<p>• Std_VersionInfoType </p>
+<p> </p>
+<p> </p>
+<p><b>10.1.2. Other Module Types </b></p>
+<p> </p>
+<p> </p>
+<p>In this section all types included from the Dem.h are listed. </p>
+<p>• Dem_EventIdType </p>
+<p>• Dem_EventStatusType </p>
+<p>• Memif_JobResultType </p>
+<p>• Memif_StatusType </p>
+<p> </p>
+<p> </p>
+<p><b>10.2. Type Definitions </b></p>
+<p> </p>
+<p> </p>
+<p>This section explains the type definitions of FLS Driver Component according </p>
+<p>to AUTOSAR Specification. </p>
+<p><b>Table 10-1  Fls_ConfigType </b></p>
+<p> </p>
+<p> </p>
+<p><b>Name:</b></p>
+<p> </p>
+<p>Fls_ConfigType</p>
+<p> </p>
+<p><b>Type:</b></p>
+<p> </p>
+<p>Structure</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Type</b></p>
+<p> </p>
+<p><b>Name</b></p>
+<p> </p>
+<p><b>Explanation</b></p>
+<p> </p>
+<p>unit32</p>
+<p> </p>
+<p>ulStartOfDbToc</p>
+<p> </p>
+<p>Database start value</p>
+<p> </p>
+<p>void*</p>
+<p> </p>
+<p>pJobEndNotificationPointer</p>
+<p> </p>
+<p>Pointer to job end </p>
+<p>callback notification</p>
+<p> </p>
+<p>void* </p>
+<p>pJobErrorNotificationPointer </p>
+<p>Pointer to job error </p>
+<p>callback notification </p>
+<p>void*</p>
+<p> </p>
+<p>pEccSEDNotificationPointer</p>
+<p> </p>
+<p>Pointer to ECC SED </p>
+<p>callback notification</p>
+<p> </p>
+<p>void*</p>
+<p> </p>
+<p>pEccDEDNotificationPointer</p>
+<p> </p>
+<p>Pointer to ECC DED </p>
+<p>callback notification</p>
+<p> </p>
+<p>uint32</p>
+<p> </p>
+<p>ulFlsSlowModeMaxReadByt</p>
+<p>es</p>
+<p> </p>
+<p>Maximum number of </p>
+<p>Read bytes in Normal </p>
+<p>Mode</p>
+<p> </p>
+<p>uint32</p>
+<p> </p>
+<p>ulFlsFastModeMaxReadByt</p>
+<p>es</p>
+<p> </p>
+<p>Maximum number of </p>
+<p>Read bytes in fast </p>
+<p>Mode</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 10                                                                                   Application Programming Interface</b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p>48 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>uint16*</p>
+<p> </p>
+<p>pFlEndImrAddress</p>
+<p> </p>
+<p>Address for error </p>
+<p>IMR registers</p>
+<p> </p>
+<p>uint16</p>
+<p> </p>
+<p>usFlEndImrMask</p>
+<p> </p>
+<p>Mask for IMR </p>
+<p>register</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Element:</b></p>
+<p> </p>
+<p>volatile Fls_FACIRegType </p>
+<p>pFACIRegPtr </p>
+<p>Base Address for </p>
+<p>FACI Registers </p>
+<p>volatile Fls_ECCRegType </p>
+<p>pECCRegPtr </p>
+<p>Base Address for </p>
+<p>ECC Registers </p>
+<p>MemIfModeType </p>
+<p>ddDefaultMode </p>
+<p>Default Mode value </p>
+<p> </p>
+<p><b>Description:</b></p>
+<p> </p>
+<p>Structure to hold the flash driver configuration set. The contents of the initialisation data </p>
+<p>structure are specific to the flash memory hardware  </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Table 10-2 </b></p>
+<p><b>Fls_AddressType </b></p>
+<p><b> </b></p>
+<p><b>Name:</b></p>
+<p> </p>
+<p>Fls_AddressType</p>
+<p> </p>
+<p><b>Type:</b></p>
+<p> </p>
+<p>uint</p>
+<p> </p>
+<p><b> Range:</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Range:</b></p>
+<p> </p>
+<p>8/16/32 bits</p>
+<p> </p>
+<p>Size depends on target platform and flash </p>
+<p>device.  </p>
+<p> </p>
+<p><b> Description: </b></p>
+<p>Used as address offset from the configured flash base address to access a certain </p>
+<p>flash memory area.  </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Table 10-3 </b></p>
+<p><b>Fls_LengthType </b></p>
+<p><b> </b></p>
+<p><b>Name:</b></p>
+<p> </p>
+<p>Fls_LengthType</p>
+<p> </p>
+<p><b>Type:</b></p>
+<p> </p>
+<p>uint</p>
+<p> </p>
+<p><b> Range:</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Same as Fls_AddressType</p>
+<p> </p>
+<p>Shall be the same type as </p>
+<p>Fls_AddressType because of arithmetic </p>
+<p>operations. Size depends on target </p>
+<p>platform and flash device.  </p>
+<p> </p>
+<p><b> Description: </b></p>
+<p>Specifies the number of bytes to read/write/erase/compare.  </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Application Programming Interface </b></p>
+<p><b>Chapter 10</b></p>
+<p> </p>
+<p> </p>
+<p>49 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>10.3. </b></p>
+<p><b>Function Definitions </b></p>
+<p><b> </b></p>
+<p><b>Table 10-4 </b></p>
+<p><b>Function Definitions </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Sl. No</b></p>
+<p> </p>
+<p><b>API’s</b></p>
+<p> </p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>Fls_Init</p>
+<p> </p>
+<p>2.</p>
+<p> </p>
+<p>Fls_Erase</p>
+<p> </p>
+<p>3.</p>
+<p> </p>
+<p>Fls_Write</p>
+<p> </p>
+<p>4.</p>
+<p> </p>
+<p>Fls_Cancel</p>
+<p> </p>
+<p>5.</p>
+<p> </p>
+<p>Fls_GetStatus</p>
+<p> </p>
+<p>6.</p>
+<p> </p>
+<p>Fls_GetJobResult</p>
+<p> </p>
+<p>7.</p>
+<p> </p>
+<p>Fls_Read</p>
+<p> </p>
+<p>8.</p>
+<p> </p>
+<p>Fls_Compare</p>
+<p> </p>
+<p>9.</p>
+<p> </p>
+<p>Fls_SetMode</p>
+<p> </p>
+<p>10.</p>
+<p> </p>
+<p>Fls_GetVersionInfo</p>
+<p> </p>
+<p>11.</p>
+<p> </p>
+<p>Fls_MainFunction</p>
+<p> </p>
+<p>12. </p>
+<p>Fls_BlankCheck </p>
+<p>13. </p>
+<p>Fls_ReadImmediate </p>
+<p>14. </p>
+<p>Fls_Suspend </p>
+<p>15. </p>
+<p>Fls_Resume </p>
+<p><b> </b></p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 10                                                                                    Application Programming Interface </b></p>
+<p>50 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Development and Production Errors </b></p>
+<p><b>Chapter 11 </b></p>
+<p> </p>
+<p>51 </p>
+<p><b>Chapter 11 </b></p>
+<p><b>Development and Production Errors </b></p>
+<p> </p>
+<p> </p>
+<p>In this section the development errors that are reported by the FLS Driver </p>
+<p>Component are tabulated. The development errors will be reported only when </p>
+<p>the pre compiler option FlsDevErrorDetect is enabled in the configuration. </p>
+<p>The production code errors are not supported by FLS Driver Component. </p>
+<p> </p>
+<p><b>11.1. FLS Driver Component Development Errors </b></p>
+<p> </p>
+<p> </p>
+<p>The following table contains the DET errors that are reported by FLS Driver </p>
+<p>Component. These errors are reported to Development Error Tracer Module </p>
+<p>when the FLS Driver Component APIs are invoked with wrong input </p>
+<p>parameters or without initialization of the driver. </p>
+<p> </p>
+<p> </p>
+<p><b>Table 11-1  DET Errors Of FLS Driver Component </b></p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>1</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_UNINIT</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Erase, Fls_Write, Fls_Read, Fls_Compare, Fls_Cancel, </p>
+<p>Fls_GetStatus, Fls_GetJobResult, Fls_MainFunction, Fls_Init, </p>
+<p>Fls_ReadImmediate, Fls_BlankCheck, Fls_Suspend, </p>
+<p>Fls_Resume</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the API service is invoked before initialization.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>2</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_PARAM_ADDRESS</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Erase, Fls_Write, Fls_Read, Fls_Compare, Fls_ReadImmediate, </p>
+<p>Fls_BlankCheck</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the API service is invoked with a wrong address.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>3</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_PARAM_LENGTH</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Erase, Fls_Write, Fls_Read, Fls_Compare, Fls_ReadImmediate, </p>
+<p>Fls_BlankCheck</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the API service is invoked with a wrong length.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>4</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_PARAM_DATA</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Write, Fls_Read, Fls_Compare, Fls_ReadImmediate</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the API service is invoked with a NULL buffer address.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>5</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_BUSY</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Init, Fls_Erase, Fls_Write, Fls_Read, Fls_Compare, </p>
+<p>Fls_SetMode , Fls_ReadImmediate, Fls_BlankCheck </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the API service is invoked when the driver is still busy. </p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>6</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_VERIFY_ERASE_FAILED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the erase verification fails. </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 11                                                                                Development and Production Errors </b></p>
+<p> </p>
+<p>52 </p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>7</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_VERIFY_WRITE_FAILED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction</p>
+<p>  </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the write verification fails.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>8</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_PARAM_CONFIG</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Init</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>API initialization service invoked with wrong parameter.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>9</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_TIMEOUT</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>API service invoked when time out supervision of a write, erase or blank </p>
+<p>check job failed</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>10</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_INVALID_DATABASE</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Init</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>API service Fls_Init called without/with a wrong database is reported </p>
+<p>using following error code</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>11</b></p>
+<p> </p>
+<p>Error Code </p>
+<p>FLS_E_PARAM_POINTER </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_GetVersionInfo</p>
+<p> </p>
+<p>Source of Error </p>
+<p>API service Fls_GetVersionInfo invoked with a null pointer </p>
+<p> </p>
+<p> </p>
+<p><b>11.2. FLS Driver Component Production Errors </b></p>
+<p> </p>
+<p> </p>
+<p>The following table contains the DEM errors that are reported by FLS Driver </p>
+<p>Component. These are the hardware errors reported during runtime. </p>
+<p> </p>
+<p><b>Table 11-2 </b></p>
+<p><b>DEM Errors of FLS Driver Component </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>1</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_ERASE_FAILED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the Erase API service is invoked and the erase job fails, error will be </p>
+<p>reported by the job processing function.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>2</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_WRITE_FAILED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the Write API service is invoked and the erase job fails, error will be </p>
+<p>reported by the job processing function.</p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>3</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_READ_FAILED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the Read API service is invoked and the internal reading of the data </p>
+<p>flash memory fails, error will be reported by the job processing function.</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Development and Production Errors </b></p>
+<p><b>Chapter 11 </b></p>
+<p> </p>
+<p>53 </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>4</b></p>
+<p> </p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_COMPARE_FAILED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>When the Compare API service is invoked and when the comparison </p>
+<p>between the data in the application buffer and the data flash memory fails, </p>
+<p>error will be reported by the job processing function.</p>
+<p> </p>
+<p><b>Sl. No. </b></p>
+<p><b>5 </b></p>
+<p><b> </b></p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_READ_FAILED_DED</p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_MainFunction </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p> During any read operation in the data flash memory, if any double bit error   </p>
+<p>is detected, error will be reported by the job processing function.</p>
+<p> </p>
+<p><b>Sl. No. </b></p>
+<p><b>6 </b></p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_REG_WRITE_VERIFY </p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Init,Fls_Erase, Fls_Write, Fls_Read, Fls_Compare, Fls_Cancel, </p>
+<p>Fls_MainFunction, Fls_ReadImmediate, Fls_BlankCheck, Fls_Suspend, </p>
+<p>Fls_Resume</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>If any write operation on the protection register fails, error shall be reported.</p>
+<p> </p>
+<p><b>Sl. No. </b></p>
+<p><b>7 </b></p>
+<p>Error Code</p>
+<p> </p>
+<p>FLS_E_ECC_FAILED </p>
+<p> </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Init </p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>During initialization, FLS module shall read FRTEINT register and check if any </p>
+<p>ECC error has occurred. If any errors are there, DEM shall be reported </p>
+<p><b>Sl. No. </b></p>
+<p><b>8 </b></p>
+<p>Error Code </p>
+<p>FLS_E_HW_FAILURE </p>
+<p>Related API(s)</p>
+<p> </p>
+<p>Fls_Init, Fls_Erase, Fls_Write, Fls_Read, Fls_Cancel, Fls_MainFunction, </p>
+<p>Fls_BlankCheck, Fls_Suspend,Fls_Resume</p>
+<p> </p>
+<p>Source of Error</p>
+<p> </p>
+<p>If any failure has occurred due to mode switch or forced stop or clear status </p>
+<p>command processing failure, DEM shall be reported </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 11                                                                                Development and Production Errors </b></p>
+<p> </p>
+<p>54 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Memory Organization </b></p>
+<p><b>Chapter 12 </b></p>
+<p> </p>
+<p>55 </p>
+<p><b>Chapter 12 </b></p>
+<p><b>Memory Organization </b></p>
+<p> </p>
+<p>Following picture depicts a typical memory organization, which must be met for </p>
+<p>proper functioning of FLS Driver Component software. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>       </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Figure 12-1  FLS Driver Component Memory Organization </b></p>
+<p>FLS Driver code related </p>
+<p>to  APIs </p>
+<p>are  placed </p>
+<p>in </p>
+<p>this memory.  </p>
+<p>Segment Name: </p>
+<p><b>FLS_PUBLIC_CODE_ROM </b></p>
+<p> </p>
+<p>Segment Name: </p>
+<p><b>FLS_PRIVATE_CODE_ROM </b></p>
+<p> </p>
+<p> </p>
+<p>Segment Name: </p>
+<p><b>FLS_SAMPLE_CODE_ROM </b></p>
+<p> </p>
+<p> </p>
+<p>Segment Name: </p>
+<p><b>FLS_PRIVATE_CODE_RAM</b></p>
+<p> </p>
+<p> </p>
+<p>   Segment Name: </p>
+<p><b>   NOINIT_RAM_UNSPECIFIED </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Segment Name: </p>
+<p><b>NOINIT_RAM_32BIT </b></p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>E</b></p>
+<p><b>K</b></p>
+<p><b>L</b></p>
+<p><b>F</b></p>
+<p><b>E</b></p>
+<p><b>L</b></p>
+<p><b>K</b></p>
+<p><b>F</b></p>
+<p><b>L</b></p>
+<p><b>E</b></p>
+<p><b>K</b></p>
+<p><b>A</b></p>
+<p><b>F</b></p>
+<p><b>L</b></p>
+<p><b>K</b></p>
+<p><b>S</b></p>
+<p><b>E</b></p>
+<p><b>L</b></p>
+<p><b>F</b></p>
+<p><b>K</b></p>
+<p><b>E</b></p>
+<p><b>L</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>_</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>_</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p> </p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>_</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p><b> </b></p>
+<p><b> X1</b></p>
+<p><b> </b></p>
+<p><b> X2</b></p>
+<p><b> </b></p>
+<p><b>  X3</b></p>
+<p><b> </b></p>
+<p><b>X4</b></p>
+<p><b> </b></p>
+<p><b>ROM Section </b></p>
+<p> </p>
+<p><b>FLS Driver Component </b></p>
+<p><b>Object Files </b></p>
+<p> </p>
+<p><b>RAM Section                                            </b></p>
+<p> </p>
+<p><b>Y1</b></p>
+<p><b> </b></p>
+<p><b>Y2</b></p>
+<p><b> </b></p>
+<p><b> Y3</b></p>
+<p><b> </b></p>
+<p><b> Y5</b></p>
+<p><b> </b></p>
+<p>Segment Name: </p>
+<p><b>FLS_CFG_DATA_UNSPECIFIED</b></p>
+<p> </p>
+<p>Segment Name: </p>
+<p><b>NOINIT_RAM_1BIT </b></p>
+<p> </p>
+<p>Segment Name: </p>
+<p><b>RAM_1BIT </b></p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>E</b></p>
+<p><b>K</b></p>
+<p><b>L</b></p>
+<p><b>F</b></p>
+<p><b>E</b></p>
+<p><b>L</b></p>
+<p><b>K</b></p>
+<p><b>F</b></p>
+<p><b>L</b></p>
+<p><b>E</b></p>
+<p><b>K</b></p>
+<p><b>A</b></p>
+<p><b>F</b></p>
+<p><b>L</b></p>
+<p><b>K</b></p>
+<p><b>S</b></p>
+<p><b>E</b></p>
+<p><b>L</b></p>
+<p><b>F</b></p>
+<p><b>K</b></p>
+<p><b>E</b></p>
+<p><b>L</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>_</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>_</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p> </p>
+<p><b>R</b></p>
+<p><b>A</b></p>
+<p><b>M</b></p>
+<p><b>_</b></p>
+<p><b>1</b></p>
+<p><b>B</b></p>
+<p><b>I</b></p>
+<p><b>T </b></p>
+<p><b> </b></p>
+<p><b> Y4</b></p>
+<p><b> </b></p>
+<p>   Segment Name: </p>
+<p><b>   RAM_UNSPECIFIED </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> Y6</b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 12                                                                                                                              Memory Organization </b></p>
+<p> </p>
+<p>56 </p>
+<p> </p>
+<p><b>ROM Sections: </b></p>
+<p> </p>
+<p><b>FLS_PUBLIC_CODE_ROM </b></p>
+<p><b>(X1): </b></p>
+<p>This </p>
+<p>section </p>
+<p>consists </p>
+<p>of </p>
+<p>FLS </p>
+<p>Driver </p>
+<p>Component APIs and FCL functions that can be located in code memory. </p>
+<p> </p>
+<p><b>FLS_PRIVATE_CODE_ROM </b></p>
+<p><b>(X2): </b></p>
+<p>This </p>
+<p>section </p>
+<p>consists </p>
+<p>of </p>
+<p>FLS </p>
+<p>Driver </p>
+<p>Component internal  functions and  scheduler function  that  can  be  located  in </p>
+<p>code memory. This section is copied to RAM by the GHS start-up routines. </p>
+<p> </p>
+<p><b>FLS_SAMPLE_CODE_ROM  (X3): </b> This  section  needs  to  be  aligned  at  the </p>
+<p>end of FLS code sections in RAM, for exception protection. </p>
+<p> </p>
+<p><b>FLS_CFG_DATA_UNSPECIFIED  (X4): </b> This  section  consists  of  FLS  Driver </p>
+<p>Component </p>
+<p>database </p>
+<p>table </p>
+<p>of </p>
+<p>contents </p>
+<p>generated </p>
+<p>by </p>
+<p>the </p>
+<p>FLS </p>
+<p>Driver </p>
+<p>Component Generation Tool. </p>
+<p> </p>
+<p><b>RAM Sections: Following are the Ram sections mapped.  </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>FLS_PRIVATE_CODE_RAM (Y1): </b> This section in RAM is copied from ROM </p>
+<p>section (X1) by the GHS start-up routines. </p>
+<p> </p>
+<p><b>RAM_1BIT (Y2): </b>This section consists of the global RAM variables of 1-bit size </p>
+<p>that  are  initialized </p>
+<p>by  start-up </p>
+<p>code </p>
+<p>and </p>
+<p>used </p>
+<p>internally </p>
+<p>by  FLS  software </p>
+<p>component </p>
+<p>and </p>
+<p>other </p>
+<p>software </p>
+<p>components. </p>
+<p>The </p>
+<p>specific </p>
+<p>sections </p>
+<p>of </p>
+<p>respective </p>
+<p>software </p>
+<p>components </p>
+<p>will </p>
+<p>be </p>
+<p>merged </p>
+<p>into </p>
+<p>this </p>
+<p>RAM </p>
+<p>section </p>
+<p>accordingly. </p>
+<p> </p>
+<p><b>NOINIT_RAM_32BIT (Y3): </b>This section consists of the global RAM variables </p>
+<p>of 32-bit size  that are used internally by FLS software component and other </p>
+<p>software </p>
+<p>components. </p>
+<p>The </p>
+<p>specific </p>
+<p>sections </p>
+<p>of </p>
+<p>respective </p>
+<p>software </p>
+<p>components will be merged into this RAM section accordingly. </p>
+<p> </p>
+<p><b>NOINIT_RAM_1BIT (Y4): </b>This section consists of the global RAM variables of </p>
+<p>1-bit size that are used internally by FLS software component and other </p>
+<p>software components. The specific sections of respective software </p>
+<p>components will be merged into this RAM section accordingly. </p>
+<p> </p>
+<p><b>NOINIT_RAM_UNSPECIFIED (Y5): </b>This section consists of the global RAM </p>
+<p>variables that are used internally by FLS software component and other </p>
+<p>software components. The specific sections of respective software </p>
+<p>components will be merged into this RAM section accordingly. </p>
+<p> </p>
+<p><b>RAM_UNSPECIFIED (Y6): </b>This section consists of the global RAM variables </p>
+<p>that are initialized  by start-up  code  and used internally by FLS software </p>
+<p>component and other software components. The specific sections of </p>
+<p>respective software components will be merged into this RAM section </p>
+<p>accordingly. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>P1x-C Specific Information</b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Chapter 13 </b></p>
+<p> </p>
+<p>57 </p>
+<p> </p>
+<p> </p>
+<p><b>Chapter 13 </b></p>
+<p><b>P1x-C Specific Information </b></p>
+<p> </p>
+<p> </p>
+<p>P1x-C supports following devices: </p>
+<p></p>
+<p> </p>
+<p>R7F701370A(CPU1(PE1)),</p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>R7F701371(CPU1(PE1)), </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>R7F701372(CPU1(PE1)), </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>R7F701373, </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>R701374</p>
+<p> </p>
+<p> </p>
+<p><b>13.1. Sample Application </b></p>
+<p> </p>
+<p> </p>
+<p><b>13.1.1. Sample Application Structure </b></p>
+<p> </p>
+<p>The Sample Application is provided as reference to the user to understand the </p>
+<p>method in which the FLS APIs can be invoked from the application. The </p>
+<p>Sample Application is provided for three use-cases of only data flash or only </p>
+<p>code flash or for both code flash and data flash supported.  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>G eneric</b></p>
+<p> </p>
+<p> </p>
+<p>AU T O SA R T Y P E S </p>
+<p>CO M P IL E R </p>
+<p>rh 850  </p>
+<p>T Y PE S </p>
+<p> </p>
+<p> </p>
+<p><b>De v ic e s</b></p>
+<p> </p>
+<p> </p>
+<p><b>Common</b></p>
+<p> </p>
+<p> </p>
+<p><b>P1x-C</b></p>
+<p> </p>
+<p> </p>
+<p>ST U B</p>
+<p> </p>
+<p>STUB </p>
+<p> </p>
+<p> </p>
+<p>ST U B</p>
+<p> </p>
+<p> </p>
+<p>ST U B</p>
+<p> </p>
+<p>FLS </p>
+<p>Sample </p>
+<p>Application</p>
+<p> </p>
+<p> </p>
+<p>FLS </p>
+<p>Sample </p>
+<p>Application</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>De t</p>
+<p> </p>
+<p> </p>
+<p>De m</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Sc h M</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>M e m If</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 13-1  Overview Of FLS Driver Sample Application </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>The Sample Application of the P1X-C is available in the path </p>
+<p> </p>
+<p>X1X\P1x-C\modules\fls\sample_application </p>
+<p>The Sample Application consists of the following folder structure </p>
+<p> </p>
+<p>X1X\P1x-C\modules\fls\definition\&lt;AUTOSAR_version&gt;\&lt;SubVariant&gt; </p>
+<p> </p>
+<p>         \</p>
+<p> </p>
+<p>R403_FLS_P1X-C.arxml </p>
+<p> </p>
+<p>X1X\P1x-</p>
+<p>C\modules\fls\sample_application\&lt;SubVariant&gt;\&lt;AUTOSAR_version&gt; </p>
+<p>\src\Fls_PBcfg.c </p>
+<p>      \src\Fls_Hardware.c </p>
+<p> \include\Fls_Hardware.h </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 13                                                                                                                  P1x-C Specific Information </b></p>
+<p> </p>
+<p>58 </p>
+<p> </p>
+<p>\include\Fls_Cfg.h </p>
+<p>      </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>\include\Fls_Cbk.h </p>
+<p> </p>
+<p>\config\App_FLS_ P1x-C_701372_Sample.arxml. </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> \config\App_FLS_ P1x-C_701372_Sample.one </p>
+<p> \config\App_FLS_ P1x-C_701372_Sample.html </p>
+<p> </p>
+<p>\config\App_FLS_ P1x-C_701371_Sample.arxml. </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> \config\App_FLS_ P1x-C_701371_Sample.one </p>
+<p> \config\App_FLS_ P1x-C_701371_Sample.html </p>
+<p> </p>
+<p>\config\App_FLS_ P1x-C_701373_Sample.arxml. </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> \config\App_FLS_ P1x-C_701373_Sample.one </p>
+<p> \config\App_FLS_ P1x-C_701373_Sample.html </p>
+<p> </p>
+<p>\config\App_FLS_ P1x-C_701374_Sample.arxml. </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> \config\App_FLS_ P1x-C_701374_Sample.one </p>
+<p> \config\App_FLS_ P1x-C_701374_Sample.html </p>
+<p> </p>
+<p>\config\App_FLS_ P1x-C_701370A_Sample.arxml. </p>
+<p>  </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> \config\App_FLS_ P1x-C_701370A_Sample.one </p>
+<p> \config\App_FLS_ P1x-C_701370A_Sample.html </p>
+<p><b> </b></p>
+<p> </p>
+<p>In the Sample Application all the FLS APIs are invoked in the following </p>
+<p>sequence: </p>
+<p> </p>
+<p>•  The API Fls_GetVersionInfo is invoked to get the version Information of FLS </p>
+<p>component with a variable of Std_VersionInfoType type, after the call of this </p>
+<p>API the passed parameter will get updated with the FLS Driver Component </p>
+<p>version details. </p>
+<p> </p>
+<p>•  The API Fls_Init is invoked with config pointer. This API performs the </p>
+<p>initialization of the FLS Driver Component. This API initializes all the elements </p>
+<p>(Global Variables) of Global structure. </p>
+<p> </p>
+<p>•  The API Fls_Erase is invoked to erase one or more complete Flash </p>
+<p>Sectors. </p>
+<p> </p>
+<p>•  The API Fls_Write is invoked to write the one or more complete flash pages </p>
+<p>to the flash device from the application data buffer </p>
+<p> </p>
+<p>•  The API Fls_Read is invoked to read the requested length of flash memory </p>
+<p>and stores it in the application data buffer. </p>
+<p> </p>
+<p>•  The API Fls_Compare is invoked to compare the contents of an area of flash </p>
+<p>memory with that of an application data buffer. </p>
+<p> </p>
+<p>•  The API Fls_Cancel is invoked to cancel an ongoing flash operations like </p>
+<p>read, write, erase or compare job. </p>
+<p> </p>
+<p>•  The API Fls_Getstatus returns the FLS module state synchronously. </p>
+<p> </p>
+<p>•  The API Fls_GetJobResult returns the result of the last job synchronously. </p>
+<p> </p>
+<p>•  The API Fls_Setmode, this API sets the flash driver operation mode. </p>
+<p> </p>
+<p>•  The API Fls_Mainfunction is invoked performs processing of the flash </p>
+<p>Read, Erase, write or compare jobs. It’s a scheduled function. The </p>
+<p>Fls_Mainfunction accepts only read, write, erase or compare job at a time. </p>
+<p> </p>
+<p>•  The API Fls_ReadImmediate is invoked for reading of the flash memory. The </p>
+<p>data from flash memory (source address) is read to the data buffer (Target </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>P1x-C Specific Information</b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Chapter 13 </b></p>
+<p> </p>
+<p>59 </p>
+<p>address) of application without performing blank check before read. </p>
+<p> </p>
+<p>•  The API Fls_BlankCheck is invoked to verify whether the memory is properly </p>
+<p>erased before doing a write operation. </p>
+<p> </p>
+<p>•  The API Fls_Suspend, suspends the on-going job. </p>
+<p> </p>
+<p>•  The API Fls_Resume, resumes the previous suspended job. </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>The API Fls_MainFunction needs to be called in a certain time interval </p>
+<p>configured using the parameter &quot;FlsCallCycle&quot;. Hence, the sample application </p>
+<p>invokes the API ‘Fls_MainFunction’ periodically in a loop with sufficient </p>
+<p>software delay. Since neither the interrupt vector table nor the interrupt handler </p>
+<p>routines, which are normally located in the flash memory, are accessible while </p>
+<p>self-programming is active, the timer interrupt is not used for this purpose. In </p>
+<p>order to do so, interrupt acknowledges have to be re-routed to non-flash </p>
+<p>memory. This can be achieved by suitably modifying the start-up code to </p>
+<p>access the system registers (SW_CFG/SW_BASE respectively EH_CFG/ </p>
+<p>EH_BASE) to reroute the interrupt vector of the timer interrupt to the RAM </p>
+<p>area. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>13.1.2. Building Sample Application </b></p>
+<p> </p>
+<p><b>13.1.2.1. Configuration Example </b></p>
+<p> </p>
+<p> </p>
+<p>This section contains the typical configuration which is used for measuring </p>
+<p>RAM/ROM consumption, stack depth and throughput details. </p>
+<p> </p>
+<p><b>Configuration Details</b>: App_FLS_ P1x-C_</p>
+<p>&lt;Device_name&gt;_</p>
+<p>Sample.html </p>
+<p> </p>
+<p>For P1x-C &lt;Device_name&gt; can be 701370A, 701372, 701373, 701374, </p>
+<p>701371. </p>
+<p> </p>
+<p> </p>
+<p><b>13.1.2.2. Debugging The Sample Application </b></p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>GNU Make utility version 3.81 or above must be installed and available in the </p>
+<p>path as defined by the environment user variable “GNUMAKE” to complete the </p>
+<p>build process using the delivered sample files. </p>
+<p> </p>
+<p>Open a Command window and change the current working directory to “make” </p>
+<p>directory present as mentioned in below path:  </p>
+<p>“X1X/P1x-C/common_family/make/&lt;compiler&gt;” </p>
+<p> </p>
+<p>Now execute batch file SampleApp.bat with following parameters: </p>
+<p> </p>
+<p>SampleApp.bat Fls &lt;Device_name&gt; </p>
+<p> </p>
+<p>After this, the tool output files will be generated with the configuration as </p>
+<p>mentioned in App_FLS_ P1x-C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.html file is </p>
+<p>available in the path: </p>
+<p>“X1X\P1x-</p>
+<p>C\modules\fls\sample_application\&lt;SubVariant&gt;\&lt;AUTOSAR_version&gt;\config\</p>
+<p>App_FLS_ P1x-C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.html” </p>
+<p> </p>
+<p>• </p>
+<p>After this, all the object files, map file and the executable file App_FLS_ </p>
+<p>P1x-C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.out will be available in the output folder </p>
+<p>(“X1X\P1x-C\modules\fls\sample_application\&lt;SubVariant&gt;\obj\ </p>
+<p>&lt;Complier&gt;”). </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 13                                                                                                                  P1x-C Specific Information </b></p>
+<p> </p>
+<p>60 </p>
+<p> </p>
+<p>• </p>
+<p>The executable can be loaded into the debugger and the sample application </p>
+<p>can be executed. </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>Executable files with ‘*.out’ extension can be downloaded into the target </p>
+<p>hardware with the help of Green Hills debugger. </p>
+<p> </p>
+<p>If any configuration changes (only post-build) are made to the ECU </p>
+<p>Configuration Description file </p>
+<p>“X1X\P1x-C\modules\fls\sample_application\&lt;SubVariant&gt; </p>
+<p>\&lt;AUTOSAR_version&gt;\config\App_FLS_ P1x-C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.arxml” </p>
+<p> </p>
+<p>App_FLS_ P1x-C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.arxml” the database alone can be </p>
+<p>generated by using the following commands. </p>
+<p>      make –f App_FLS_ P1x-C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.mak </p>
+<p>generate_fls_config </p>
+<p>        make –f App_FLS_ P1x-C_&lt;Device_Number&gt;_Sample.mak </p>
+<p>App_FLS_ P1x-C_&lt;Device_name&gt;_Sample.run </p>
+<p> </p>
+<p>• </p>
+<p>After this, a flash able Motorola S-Record file App_FLS_ P1x-</p>
+<p>C_</p>
+<p>&lt;Device_name&gt; </p>
+<p>_Sample.run is available in the output folder. </p>
+<p> </p>
+<p> </p>
+<p>                              <b>Note </b>1.For P1x-C &lt;Device_name&gt; can be 701370A, 701371, 701372, 701373,  </p>
+<p>                                          701374.  </p>
+<p>                                       2. &lt;compiler&gt; for example can be “ghs”.  </p>
+<p>                                       3. &lt;SubVariant&gt; can be P1H-C, P1H-CE, P1M-C.  </p>
+<p>                          4. &lt;AUTOSAR_version&gt; can be 4.0.3. </p>
+<p> </p>
+<p> </p>
+<p><b>13.2. Memory and Throughput  </b></p>
+<p> </p>
+<p><b>13.2.1. ROM/RAM Usage </b></p>
+<p> </p>
+<p>The details of memory usage for the typical configuration, with DET enabled is </p>
+<p>provided in this section. </p>
+<p> </p>
+<p><b>Typical FLS configuration </b></p>
+<p> </p>
+<p>DET OFF </p>
+<p>All other Pre-Compile Settings ON </p>
+<p>Number of bytes read in Fls_MainFunction shall be 256 bytes </p>
+<p>The Flash erasure for 4 KB(Data Flash). </p>
+<p> </p>
+<p><b>Table 13-1  ROM/RAM Details with DET </b></p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>ROM/RAM</b></p>
+<p> </p>
+<p><b>Segment Name</b></p>
+<p> </p>
+<p><b> Size in bytes </b></p>
+<p><b>for 701372</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>ROM</p>
+<p> </p>
+<p>  FLS_PUBLIC_CODE_ROM </p>
+<p>FLS_PRIVATE_CODE_ROM </p>
+<p>FLS_CFG_DATA_UNSPECIFIED </p>
+<p>ROM.FLS_PRIVATE_CODE_RAM </p>
+<p> </p>
+<p>1780 </p>
+<p> </p>
+<p>3820 </p>
+<p> </p>
+<p>630 </p>
+<p> </p>
+<p>178 </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>P1x-C Specific Information</b></p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Chapter 13 </b></p>
+<p> </p>
+<p>61 </p>
+<p>2.</p>
+<p> </p>
+<p>RAM</p>
+<p> </p>
+<p>FLS_PRIVATE_CODE_RAM </p>
+<p>NOINIT_RAM_UNSPECIFIED </p>
+<p>NOINIT_RAM_32_BIT </p>
+<p>RAM_1_BIT </p>
+<p>NOINIT_RAM_1_BIT </p>
+<p>RAM_UNSPECIFIED</p>
+<p> </p>
+<p>  178 </p>
+<p> </p>
+<p>100 </p>
+<p> </p>
+<p>404 </p>
+<p> </p>
+<p>2 </p>
+<p> </p>
+<p>4 </p>
+<p> </p>
+<p>3</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>The details of memory usage for the typical configuration, with DET disabled is </p>
+<p>provided in this section. </p>
+<p> </p>
+<p><b>Table 13-2  ROM/RAM Details without DET </b></p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p><b>ROM/RAM</b></p>
+<p> </p>
+<p><b>Segment Name</b></p>
+<p> </p>
+<p><b> Size in bytes </b></p>
+<p><b>for 701372</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>ROM</p>
+<p> </p>
+<p>FLS_PUBLIC_CODE_ROM </p>
+<p>FLS_PRIVATE_CODE_ROM </p>
+<p>FLS_CFG_DATA_UNSPECIFIED </p>
+<p>ROM.FLS_PRIVATE_CODE_RAM  </p>
+<p> </p>
+<p>1364 </p>
+<p> </p>
+<p>3590 </p>
+<p> </p>
+<p> 1634 </p>
+<p> </p>
+<p>178 </p>
+<p>2.</p>
+<p> </p>
+<p>RAM</p>
+<p> </p>
+<p>FLS_PRIVATE_CODE_RAM </p>
+<p>NOINIT_RAM_UNSPECIFIED </p>
+<p>NOINIT_RAM_32_BIT </p>
+<p>RAM_1_BIT </p>
+<p>NOINIT_RAM_1_BIT </p>
+<p>RAM_UNSPECIFIED </p>
+<p> </p>
+<p>178 </p>
+<p> </p>
+<p>100 </p>
+<p> </p>
+<p>404 </p>
+<p> </p>
+<p>2 </p>
+<p> </p>
+<p>3 </p>
+<p> </p>
+<p>3</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>13.2.2. Stack Depth </b></p>
+<p> </p>
+<p>The worst-case stack depth for FLS Driver Component is 48 bytes. </p>
+<p> </p>
+<p><b>13.2.3. Throughput Details </b></p>
+<p> </p>
+<p>The throughput details of the APIs is mentioned below. </p>
+<p> The clock frequency used to measure the throughput is 160 MHz for all </p>
+<p>APIs. </p>
+<p> </p>
+<p><b>Table 13-3  Throughput Details Of The APIs </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Sl. No.</b></p>
+<p> </p>
+<p> </p>
+<p><b>API Name</b></p>
+<p> </p>
+<p><b>Throughput in </b></p>
+<p><b>microseconds for </b></p>
+<p><b>device 701372</b></p>
+<p> </p>
+<p> </p>
+<p><b>Remarks</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>Fls_Init</p>
+<p> </p>
+<p>334.687 </p>
+<p>-</p>
+<p> </p>
+<p>2.</p>
+<p> </p>
+<p>Fls_Erase</p>
+<p> </p>
+<p>2.312 </p>
+<p>-</p>
+<p> </p>
+<p>3.</p>
+<p> </p>
+<p>Fls_Write</p>
+<p> </p>
+<p>2.337 </p>
+<p>-</p>
+<p> </p>
+<p>4.</p>
+<p> </p>
+<p>Fls_Read</p>
+<p> </p>
+<p>0.6 </p>
+<p>- </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 13                                                                                                                  P1x-C Specific Information </b></p>
+<p> </p>
+<p>62 </p>
+<p> </p>
+<p>5.</p>
+<p> </p>
+<p>Fls_GetStatus</p>
+<p> </p>
+<p>0.125 </p>
+<p>-</p>
+<p> </p>
+<p>6.</p>
+<p> </p>
+<p>Fls_GetJobResult</p>
+<p> </p>
+<p>0.125 </p>
+<p>-</p>
+<p> </p>
+<p>7.</p>
+<p> </p>
+<p>Fls_Compare</p>
+<p> </p>
+<p>0.575 </p>
+<p>-</p>
+<p> </p>
+<p>8. </p>
+<p>Fls_GetVersionInfo</p>
+<p> </p>
+<p>0.125 </p>
+<p>- </p>
+<p>9.</p>
+<p> </p>
+<p>Fls_SetMode </p>
+<p>0.275 </p>
+<p>This API does not provide </p>
+<p>any functionality</p>
+<p> </p>
+<p>10.</p>
+<p> </p>
+<p>Fls_Cancel</p>
+<p> </p>
+<p>0.25 </p>
+<p> -</p>
+<p> </p>
+<p>11</p>
+<p> </p>
+<p>Fls_ReadImmediate</p>
+<p> </p>
+<p>0.725 </p>
+<p> -</p>
+<p> </p>
+<p>12. </p>
+<p>Fls_BlankCheck</p>
+<p> </p>
+<p>2.125 </p>
+<p>-</p>
+<p> </p>
+<p>13. </p>
+<p>Fls_Erase Operation </p>
+<p>3704.812 </p>
+<p>- </p>
+<p>14. </p>
+<p>Fls_BlankCheck </p>
+<p>Operation </p>
+<p> </p>
+<p> </p>
+<p>175.37 </p>
+<p>-</p>
+<p> </p>
+<p>15. </p>
+<p>Fls_Write Operation </p>
+<p> </p>
+<p>6516.862 </p>
+<p>-</p>
+<p> </p>
+<p>16. </p>
+<p>Fls_Read Operation </p>
+<p>1328.862 </p>
+<p>-</p>
+<p> </p>
+<p>17. </p>
+<p>Fls_ReadImmediate </p>
+<p>Operation </p>
+<p> </p>
+<p>43.162 </p>
+<p>-</p>
+<p> </p>
+<p>18. </p>
+<p>Fls_Compare </p>
+<p>Operation </p>
+<p>74.225 </p>
+<p>-</p>
+<p> </p>
+<p>19. </p>
+<p>Fls_Suspend </p>
+<p>0.237 </p>
+<p>-</p>
+<p> </p>
+<p>20. </p>
+<p>Fls_Resume </p>
+<p>2.25 </p>
+<p>-</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>Release Details                                                                                                                      Chapter 14</b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>        </b></p>
+<p> </p>
+<p>63 </p>
+<p><b>Chapter 14 </b></p>
+<p><b>Release Details </b></p>
+<p> </p>
+<p> </p>
+<p><b>FLS Driver Software </b></p>
+<p>Version: 1.0.2 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 14                                                                                                                      Release Details </b></p>
+<p> </p>
+<p>64 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>65 </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>Revision History </b></p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p><b>Date</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>Initial Version</p>
+<p> </p>
+<p>1.0.0 </p>
+<p>12-Aug-2015 </p>
+<p>2. </p>
+<p>1. Introduction Updated </p>
+<p>2. Chapter 3, Section 3.1.1 updated </p>
+<p>3. Chapter 4, Forethoughts updated </p>
+<p>4. Chapter 5, Architecture Details updated </p>
+<p>5. Chapter 8, FLS Component Header And Source File </p>
+<p> </p>
+<p>Description updated </p>
+<p>6. Chapter 11, Table 11.1 and Table 11.2 updated </p>
+<p>7. Chapter 12, memory Organization updated </p>
+<p>8. Chapter 13, Section 13.2 Sample Application updated </p>
+<p>9. Release details updated </p>
+<p>10. R number added to User manual </p>
+<p> </p>
+<p>1.0.1 </p>
+<p> 11-May-2016 </p>
+<p>3. </p>
+<p>The following changes are made: </p>
+<p> 1. In chapter 4, section 4.2 Preconditions points are revised. </p>
+<p> 2. Table 4-2 is updated with Known Limitation in User Mode. </p>
+<p> 3. Table 4-1 is added to list protected resources in FLS driver. </p>
+<p> 4. Chapter 8 is updated with Stub files and Table 8-1 is updated. </p>
+<p>  5. In Chapter 6, Table 6-1 is updated with Register Files. </p>
+<p>  6. In chapter 13, added references for device 701371. </p>
+<p>  7. Chapter 12 and chapter 13.2 are updated with memory sections </p>
+<p>  8. In Chapter 4, section 4.3 Data Consistency is updated. </p>
+<p>  9. In Chapter 4.4 Deviation list updated. </p>
+<p>10. Updated Chapter 13.2.3 added Throughput for main function and   </p>
+<p>      updated with Fls_BlankCheck, Fls_Suspend, Fls_Resume API  </p>
+<p>      details in chapter 4.1. </p>
+<p>11. Updated Chapter 12 Memory Organization </p>
+<p>12. Updated Chapter 6 with details of the register as per individual     </p>
+<p>      API </p>
+<p> 13.Chapter 13, Added Processor name along with Device variants </p>
+<p> 14. In section 4.5, Note added. </p>
+<p> 15. In Chapter 12 memory organization updated and In chapter </p>
+<p>13.2.1   memory usage updated. </p>
+<p>16. In chapter 4.1 General section updated with time timeout </p>
+<p>monitoring details and chapter 4.4 with timeout monitoring </p>
+<p>deviation details. </p>
+<p>1.0.2 </p>
+<p>28-Feb-2017 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>AUTOSAR MCAL R4.0.3 User's Manual </b></p>
+<p><b>FLS Driver Component Ver.1.0.2 </b></p>
+<p><b>Embedded User’s Manual </b></p>
+<p> </p>
+<p>Publication Date: Rev.1.00, February 28, 2017 </p>
+<p> </p>
+<p>Published by: Renesas Electronics Corporation </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>SALES </b></p>
+<p><b>OFFICES</b></p>
+<p> </p>
+<p>http://www.renesas.com</p>
+<p> </p>
+<p>Refer  to </p>
+<p>&quot;http://www.renesas.com/&quot; </p>
+<p>for the latest  and detailed </p>
+<p>information.</p>
+<p> </p>
+<p><b>Renesas Electronics America Inc. </b></p>
+<p>2801 Scott Boulevard Santa Clara, CA 95050-2549, U.S.A. </p>
+<p>Tel: +1-408-588-6000, Fax: +1-408-588-6130 </p>
+<p><b>Renesas Electronics Canada Limited</b></p>
+<p><b> </b></p>
+<p>9251 Yonge Street, Suite 8309 Richmond Hill, Ontario Canada L4C 9T3 </p>
+<p>Tel: +1-905-237-2004 </p>
+<p><b>Renesas Electronics Europe Limited </b></p>
+<p>Dukes Meadow, Millboard Road, Bourne End, Buckinghamshire, SL8 5FH, U.K </p>
+<p>Tel: +44-1628-585-100, Fax: +44-1628-585-900 </p>
+<p><b>Renesas Electronics Europe GmbH </b></p>
+<p>Arcadiastrasse 10, 40472 Düsseldorf, Germany </p>
+<p>Tel: +49-211-6503-0, Fax: +49-211-6503-1327 </p>
+<p><b>Renesas Electronics (China) Co., Ltd. </b></p>
+<p>Room 1709, Quantum Plaza, No.27 ZhiChunLu Haidian District, Beijing 100191, P.R.China </p>
+<p>Tel: +86-10-8235-1155, Fax: +86-10-8235-7679 </p>
+<p><b>Renesas Electronics (Shanghai) Co., Ltd. </b></p>
+<p>Unit 301, Tower A, Central Towers, 555 Langao Road, Putuo District, Shanghai, P. R. China 200333 </p>
+<p>Tel: +86-21-2226-0888, Fax: +86-21-2226-0999 </p>
+<p><b>Renesas Electronics Hong Kong Limited</b></p>
+<p><b> </b></p>
+<p>Unit 1601-1611, 16/F., Tower 2, Grand Century Place, 193 Prince Edward Road West, Mongkok, Kowloon, Hong Kong </p>
+<p>Tel: +852-2265-6688, Fax: +852 2886-9022 </p>
+<p><b>Renesas Electronics Taiwan Co., Ltd. </b></p>
+<p>13F, No. 363, Fu Shing North Road, Taipei 10543, Taiwan </p>
+<p>Tel: +886-2-8175-9600, Fax: +886 2-8175-9670 </p>
+<p><b>Renesas Electronics Singapore Pte. Ltd. </b></p>
+<p>80 Bendemeer Road, Unit #06-02 Hyflux Innovation Centre, Singapore 339949 </p>
+<p>Tel: +65-6213-0200, Fax: +65-6213-0300 </p>
+<p><b>Renesas Electronics Malaysia Sdn.Bhd. </b></p>
+<p>Unit 1207, Block B, Menara Amcorp, Amcorp Trade Centre, No. 18, Jln Persiaran Barat, 46050 Petaling Jaya, Selangor Darul Ehsan, Malaysia </p>
+<p>Tel: +60-3-7955-9390, Fax: +60-3-7955-9510 </p>
+<p><b>Renesas Electronics India Pvt. Ltd. </b></p>
+<p>No.777C, 100 Feet Road, HAL II Stage, Indiranagar, Bangalore, India </p>
+<p>Tel: +91-80-67208700, Fax: +91-80-67208777 </p>
+<p><b>Renesas Electronics Korea Co., Ltd. </b></p>
+<p>12F., 234 Teheran-ro, Gangnam-Gu, Seoul, 135-080, Korea </p>
+<p>Tel: +82-2-558-3737, Fax: +82-2-558-5141 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>© 2006-2017 Renesas Electronics Corporation. All rights reserved. </p>
+<p>Colophon 4.1 </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3 </p>
+<p>User's Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>   </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>R20UT3641EJ0100 </p>
+</body>
+</html>
+{% endraw %}

@@ -1,0 +1,255 @@
+---
+layout: default
+title: AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro
+nav_order: 1
+parent: Universal Measurement and Calibration Protocol (XCP)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b> </b></p>
+<p><b>How to add CAN XCP messages in DaVinciConfiguratorPro </b></p>
+<p><b>Version 1.0 </b></p>
+<p><b>2014-12-10 </b></p>
+<p><b>Application Note  AN-ISC-8-1169 </b></p>
+<p> </p>
+<p> </p>
+<p><i> </i></p>
+<p>Author(s) </p>
+<p>Hannes Haas </p>
+<p>Restrictions </p>
+<p>Customer confidential - Vector decides </p>
+<p>Abstract </p>
+<p>XCP PDUs are not always part of the databases provided by the vehicle manufacturer. </p>
+<p>This document describes how XCP PDUs can be added directly in DaVinci Configurator </p>
+<p>Pro.</p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><i><b>Table of Contents </b></i></p>
+<p><i><b> </b></i></p>
+<p><b> 1  </b></p>
+<p><i>Copyright © 2014 - Vector Informatik GmbH </i></p>
+<p><b>Contact Information:   www.vector.com   or +49-711-80 670-0 </b></p>
+<p>1.0</p>
+<p> </p>
+<p>Overview .......................................................................................................................................................... 2</p>
+<p> </p>
+<p>1.1</p>
+<p> </p>
+<p>BSW Module Configuration ........................................................................................................................... 2</p>
+<p> </p>
+<p>1.2</p>
+<p> </p>
+<p>ECUC Configuration ...................................................................................................................................... 2</p>
+<p> </p>
+<p>1.3</p>
+<p> </p>
+<p>CANIF Configuration ..................................................................................................................................... 3</p>
+<p> </p>
+<p>1.4</p>
+<p> </p>
+<p>XCP Configuration ......................................................................................................................................... 4</p>
+<p> </p>
+<p>2.0</p>
+<p> </p>
+<p>Additional Resources ....................................................................................................................................... 4</p>
+<p> </p>
+<p>3.0</p>
+<p> </p>
+<p>Contacts ........................................................................................................................................................... 4</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><i><b> </b></i></p>
+<p><b> 2  </b></p>
+<p><i>Copyright © 2014 - Vector Informatik GmbH </i></p>
+<p><b>Contact Information:   www.vector.com   or +49-711-80 670-0 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>1.0 </b></p>
+<p><b>Overview </b></p>
+<p>The DaVinci Configurator Pro workflow allows adding XCP PDUs in two ways: </p>
+<p>•</p>
+<p> </p>
+<p>XCP PDUs are defined in the SystemDescription or DBC/FIBEX file that has been provided by the vehicle </p>
+<p>manufacturer. Such files can be created or modified with Vector tools such as the AUTOSAR Network </p>
+<p>Explorer or CANdb++. The ECUC configuration (including the XCP PDUs) can be derived from such input </p>
+<p>formats. The XCP PDUs will have to be added each time a new version is received from the vehicle </p>
+<p>manufacturer. </p>
+<p>•</p>
+<p> </p>
+<p>XCP PDUs can be created within DaVinci Configurator Pro by configuring the affected modules directly. </p>
+<p>These messages are independent of PDUs defined by the input formats provided by the vehicle </p>
+<p>manufacturer. During a database update the added PDUs will not be removed. </p>
+<p> </p>
+<p>This document describes the second approach: Adding XCP PDUs directly to the ECUC configuration. </p>
+<p> </p>
+<p><b>1.1 </b></p>
+<p><b>BSW Module Configuration </b></p>
+<p>This document assumes that CAN based communication (except XCP) is configured and operational.  </p>
+<p>The names and the detailed properties are meant to be examples and can be modified as required. A general </p>
+<p>description how XCP is configured can be found in the technical reference of that module. </p>
+<p> </p>
+<p><b>1.2 </b></p>
+<p><b>ECUC Configuration </b></p>
+<p>Navigate to <b>/MICROSAR/EcuC/EcucPduCollection </b></p>
+<p>•</p>
+<p> </p>
+<p>Add a new (global) PDU for XCP message transmission (Tx) and message reception (Rx) </p>
+<p>•</p>
+<p> </p>
+<p>Configure the PDU length to 8 bytes for <b>both </b>PDUs </p>
+<p> </p>
+<p> </p>
+<p>Figure 1 – Enter PDU Information for Rx. </p>
+<p> </p>
+<p> </p>
+<p>Figure 2 – Enter PDU Information for Tx </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p>How to add CAN XCP messages in DaVinciConfiguratorPro</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><b>3 </b></p>
+<p><i>Application Note  AN-ISC-8-1169 </i></p>
+<p> </p>
+<p><b>1.3 </b></p>
+<p><b>CANIF Configuration </b></p>
+<p>Navigate to <b>/MICROSAR/CanIf/CanIfInitCfg/CanIfRxPduCfg </b></p>
+<p>•</p>
+<p> </p>
+<p>Add a new CANIF Rx PDU (CanIfRxPduCfg) </p>
+<p>•</p>
+<p> </p>
+<p>Configure the CAN message: </p>
+<p> </p>
+<p><b> </b></p>
+<p>Figure 3 – Configure CAN Rx Message </p>
+<p><b>CanIfRxPduCanId </b></p>
+<p>The CAN ID that shall be use as Xcp Request ID </p>
+<p><b>CanIfRxPduCanIdType </b></p>
+<p>Type of CAN message (e.g. standard or extended addressing) </p>
+<p><b>CanIfRxPduHrhIdRef </b></p>
+<p>Hardware receive handle used to receive this message. This reference </p>
+<p>defines indirectly the channel the XCP message is received on. </p>
+<p><b>CanIfRxPduRef </b></p>
+<p>Reference to the global Rx PDU defined in the ECUC module (s. 1.2) </p>
+<p><b>CanIfRxPduUserRxIndicationUL </b></p>
+<p>Set this parameter to XCP </p>
+<p><b>CanIfRxPduUserRxIndicationName </b></p>
+<p>Will be set to Xcp_CanIfRxIndication by the configuration tool </p>
+<p> </p>
+<p> </p>
+<p>Navigate to <b>/MICROSAR/CanIf/CanIfInitCfg/CanIfTxPduCfg </b></p>
+<p>•</p>
+<p> </p>
+<p>Add a new CANIF Tx PDU (CanIfTxPduCfg) </p>
+<p>•</p>
+<p> </p>
+<p>Configure the CAN message </p>
+<p> </p>
+<p><b> </b></p>
+<p>Figure 4 – Configure CAN Tx Message </p>
+<p><b>CanIfTxPduBufferRef </b></p>
+<p>Buffering strategy. For XCP the existing default buffer (0 byte in size) </p>
+<p>can typically be reused.</p>
+<p> </p>
+<p><b>CanIfTxPduCanId</b></p>
+<p><b> </b></p>
+<p>The CAN ID that shall be use as Xcp Response ID</p>
+<p> </p>
+<p><b>CanIfTxPduCanIdType</b></p>
+<p><b> </b></p>
+<p>Type of CAN message (e.g. standard or extended addressing) </p>
+<p><b>CanIfTxPduDlc</b></p>
+<p><b> </b></p>
+<p>Set this parameter to 8 bytes (non CAN-FD)</p>
+<p> </p>
+<p><b>CanIfTxPduRef</b></p>
+<p><b> </b></p>
+<p>Reference to the global Tx PDU defined in the ECUC module (s. 1.2)</p>
+<p> </p>
+<p><b>CanIfTxPduType</b></p>
+<p><b> </b></p>
+<p>Set this parameter to STATIC</p>
+<p> </p>
+<p><b>CanIfTxPduUserTxConfirmationUL </b></p>
+<p>Set this parameter to XCP</p>
+<p> </p>
+<p><b>CanIfTxPduUserTxConfirmationName </b></p>
+<p>This parameter will be set to Xcp_CanIfTxConfirmation by the </p>
+<p>configuration tool </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p>How to add CAN XCP messages in DaVinciConfiguratorPro</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><i><b> </b></i></p>
+<p><b>4 </b></p>
+<p><i>Application Note  AN-ISC-8-1169 </i></p>
+<p> </p>
+<p><b>1.4 </b></p>
+<p><b>XCP Configuration </b></p>
+<p>Navigate to the XCP settings in the basic editor </p>
+<p>•</p>
+<p> </p>
+<p>Create one Rx and one Tx XCP PDU by adding choice containers (right click on the blue/yellow container, </p>
+<p>select <b>Choose</b>) below the XcpPdus node. </p>
+<p> </p>
+<p>Figure 5 – XCP Module in Basic Editor </p>
+<p> </p>
+<p>•</p>
+<p> </p>
+<p>Configure the parameter <b>Rx Pdu Ref </b>and Tx Pdu Ref (screenshot looks the same for Tx) by selecting the </p>
+<p>global PDU that has been configured in the ECUC module (done in 1.2). </p>
+<p> </p>
+<p> </p>
+<p>Figure 6 – Configuration of Rx Pdu Ref </p>
+<p> </p>
+<p>Figure 7 – Configuration of Tx Pdu Ref </p>
+<p>•</p>
+<p> </p>
+<p>Within the XcpGeneral container, enable the flag XcpOnCanEnabled </p>
+<p> </p>
+<p> </p>
+<p><b>2.0 </b></p>
+<p><b>Additional Resources </b></p>
+<p>MICROSAR Technical References </p>
+<p>- </p>
+<p>TechnicalReference_Asr_CanIf.pdf </p>
+<p>- </p>
+<p>TechnicalReference_Asr_CanXcp.pdf </p>
+<p>- </p>
+<p>TechnicalReference_Asr_Xcp.pdf </p>
+<p>- </p>
+<p>XCP_ReferenceBook_&lt;Version/Language&gt;.pdf </p>
+<p><b>3.0 </b></p>
+<p><b>Contacts </b></p>
+<p>For a full list with all Vector locations and addresses worldwide, please visit http://vector.com/contact/. </p>
+<p> </p>
+</body>
+</html>
+{% endraw %}

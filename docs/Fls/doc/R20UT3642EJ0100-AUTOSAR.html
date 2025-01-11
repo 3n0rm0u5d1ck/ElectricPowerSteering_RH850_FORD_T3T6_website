@@ -1,0 +1,2994 @@
+---
+layout: default
+title: R20UT3642EJ0100-AUTOSAR
+nav_order: 4
+parent: Flash Driver
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3</p>
+<p> </p>
+<p>User's Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FLS Driver Component Ver.1.0.2 </p>
+<p> </p>
+<p>Generation Tool User's Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Target Device: </p>
+<p>RH850/P1x-C </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>All information contained in these materials, including products and product specifications, </p>
+<p>represents information on the product at the time of publication and is subject to change by </p>
+<p>Renesas Electronics Corp. without notice. Please review the latest information published by </p>
+<p>Renesas Electronics Corp. through various means, including the Renesas Electronics Corp. </p>
+<p>website (http://www.renesas.com). </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>www.renesas.com </p>
+<p>Rev.1.00 Feb 2017</p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>2 </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>3 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Notice </p>
+<p>1.</p>
+<p> </p>
+<p>Descriptions of circuits, software and other related information in this document are provided only to illustrate the operation of </p>
+<p>semiconductor products and application examples. You are fully responsible for the incorporation or any other use of the circuits, </p>
+<p>software, and information in the design of your product or system. Renesas Electronics disclaims any and all liability for any losses and </p>
+<p>damages incurred by you or third parties arising from the use of these circuits, software, or information. </p>
+<p>2.</p>
+<p> </p>
+<p>Renesas Electronics hereby expressly disclaims any warranties against and liability for infringement or any other disputes involving patents, </p>
+<p>copyrights, or other intellectual property rights of third parties, by or arising from the use of Renesas Electronics products or technical information </p>
+<p>described in this document, including but not limited to, the product data, drawing, chart, program, algorithm, application examples. </p>
+<p>3.</p>
+<p> </p>
+<p>No license, express, implied or otherwise, is granted hereby under any patents, copyrights or other intellectual property rights of Renesas </p>
+<p>Electronics or others. </p>
+<p>4.</p>
+<p> </p>
+<p>You shall not alter, modify, copy, or otherwise misappropriate any Renesas Electronics product, whether in whole or in part. Renesas Electronics </p>
+<p>disclaims any and all liability for any losses or damages incurred by you or third parties arising from such alteration, modification, copy or </p>
+<p>otherwise misappropriation of Renesas Electronics products. </p>
+<p>5.</p>
+<p> </p>
+<p>Renesas Electronics products are classified according to the following two quality grades: &quot;Standard&quot; and &quot;High Quality&quot;. The intended </p>
+<p>applications for each Renesas Electronics product depends on the product’s quality grade, as indicated below.  </p>
+<p>&quot;Standard&quot;:          Computers; office equipment; communications equipment; test and measurement equipment; audio and visual equipment; </p>
+<p>home electronic appliances; machine tools; personal electronic equipment; and industrial robots etc. </p>
+<p>&quot;High Quality&quot;:   Transportation equipment (automobiles, trains, ships, etc.); traffic control (traffic lights); large-scale communication </p>
+<p>equipment; key financial terminal systems; safety control equipment; etc. </p>
+<p>Renesas Electronics products are neither intended nor authorized for use in products or systems that may pose a direct threat to human life or </p>
+<p>bodily injury (artificial life support devices or systems, surgical implantations etc.), or may cause serious property damages (space and undersea </p>
+<p>repeaters; nuclear power control systems; aircraft control systems; key plant systems; military equipment; etc.). Renesas Electronics disclaims any </p>
+<p>and all liability for any damages or losses incurred by you or third parties arising from the use of any Renesas Electronics product for which the </p>
+<p>product is not intended by Renesas Electronics. </p>
+<p>6.</p>
+<p> </p>
+<p>When using the Renesas Electronics products, refer to the latest product information (data sheets, user’s manuals, application notes, &quot;General </p>
+<p>Notes for Handling and Using Semiconductor Devices&quot; in the reliability handbook, etc.), and ensure that usage conditions are within the ranges </p>
+<p>specified by Renesas Electronics with respect to maximum ratings, operating power supply voltage range, heat radiation characteristics, </p>
+<p>installation, etc. Renesas Electronics disclaims any and all liability for any malfunctions or failure or accident arising out of the use of Renesas </p>
+<p>Electronics products beyond such specified ranges. </p>
+<p>7.</p>
+<p> </p>
+<p>Although Renesas Electronics endeavors to improve the quality and reliability of Renesas Electronics products, semiconductor products have </p>
+<p>specific characteristics such as the occurrence of failure at a certain rate and malfunctions under certain use conditions. Further, Renesas </p>
+<p>Electronics products are not subject to radiation resistance design. Please ensure to implement safety measures to guard them against the </p>
+<p>possibility of bodily injury, injury or damage caused by fire, and social damage in the event of failure or malfunction of Renesas Electronics </p>
+<p>products, such as safety design for hardware and software including but not limited to redundancy, fire control and malfunction prevention, </p>
+<p>appropriate treatment for aging degradation or any other appropriate measures by your own responsibility as warranty for your products/system. </p>
+<p>Because the evaluation of microcomputer software alone is very difficult and not practical, please evaluate the safety of the final products or </p>
+<p>systems manufactured by you. </p>
+<p>8.</p>
+<p> </p>
+<p>Please contact a Renesas Electronics sales office for details as to environmental matters such as the environmental compatibility of each Renesas </p>
+<p>Electronics product. Please investigate applicable laws and regulations that regulate the inclusion or use of controlled substances, including </p>
+<p>without limitation, the EU RoHS Directive carefully and sufficiently and use Renesas Electronics products in compliance with all these applicable </p>
+<p>laws and regulations. Renesas Electronics disclaims any and all liability for damages or losses occurring as a result of your noncompliance with </p>
+<p>applicable laws and regulations. </p>
+<p>9.</p>
+<p> </p>
+<p>Renesas Electronics products and technologies shall not be used for or incorporated into any products or systems whose manufacture, use, or sale </p>
+<p>is prohibited under any applicable domestic or foreign laws or regulations. You shall not use Renesas Electronics products or technologies for (1) </p>
+<p>any purpose relating to the development, design, manufacture, use, stockpiling, etc., of weapons of mass destruction, such as nuclear weapons, </p>
+<p>chemical weapons, or biological weapons, or missiles (including unmanned aerial vehicles (UAVs)) for delivering such weapons, (2) any purpose </p>
+<p>relating to the development, design, manufacture, or use of conventional weapons, or (3) any other purpose of disturbing international peace and </p>
+<p>security, and you shall not sell, export, lease, transfer, or release Renesas Electronics products or technologies to any third party whether directly </p>
+<p>or indirectly with knowledge or reason to know that the third party or any other party will engage in the activities described above. When </p>
+<p>exporting, selling, transferring, etc., Renesas Electronics products or technologies, you shall comply with any applicable export control laws and </p>
+<p>regulations promulgated and administered by the governments of the countries asserting jurisdiction over the parties or transactions. </p>
+<p>10.</p>
+<p> </p>
+<p>Please acknowledge and agree that you shall bear all the losses and damages which are incurred from the misuse or violation of the terms and </p>
+<p>conditions described in this document, including this notice, and hold Renesas Electronics harmless, if such misuse or violation results from your </p>
+<p>resale or making Renesas Electronics products available any third party. </p>
+<p>11.</p>
+<p> </p>
+<p>This document shall not be reprinted, reproduced or duplicated in any form, in whole or in part, without prior written consent of Renesas </p>
+<p>Electronics. </p>
+<p>12.</p>
+<p> </p>
+<p>Please contact a Renesas Electronics sales office if you have any questions regarding the information contained in this document or Renesas </p>
+<p>Electronics products. </p>
+<p> </p>
+<p>(Note 1)   &quot;Renesas Electronics&quot; as used in this document means Renesas Electronics Corporation and also includes its majority-owned </p>
+<p>subsidiaries. </p>
+<p>(Note 2)   &quot;Renesas Electronics product(s)&quot; means any product developed or manufactured by or for Renesas Electronics. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>4 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>5 </p>
+<p><b>Abbreviations and Acronyms </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Abbreviation / Acronym</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>AUTOSAR</p>
+<p> </p>
+<p>AUTomotive Open System ARchitecture</p>
+<p> </p>
+<p>BSWMDT</p>
+<p> </p>
+<p>Basic Software Module Description Template</p>
+<p> </p>
+<p>DEM</p>
+<p> </p>
+<p>Diagnostic Event Manager</p>
+<p> </p>
+<p>ECU</p>
+<p> </p>
+<p>Electronic Control Unit</p>
+<p> </p>
+<p>FLS</p>
+<p> </p>
+<p>Flash Driver</p>
+<p> </p>
+<p>Id</p>
+<p> </p>
+<p>Identifier</p>
+<p> </p>
+<p>MCAL</p>
+<p> </p>
+<p>Microcontroller Abstraction Layer</p>
+<p> </p>
+<p>MCU</p>
+<p> </p>
+<p>MicroController Unit</p>
+<p> </p>
+<p>XML</p>
+<p> </p>
+<p>eXtensible Mark-up Language</p>
+<p> </p>
+<p>ARXML</p>
+<p> </p>
+<p>AUTOSAR XML</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Definitions </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Terminology</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p>BSWMDT File</p>
+<p> </p>
+<p>This file is the template for the Basic Software Module Description.</p>
+<p> </p>
+<p>Configuration XML File</p>
+<p> </p>
+<p>This file contains the setting of command line options.</p>
+<p> </p>
+<p>ECU Configuration Description </p>
+<p>File</p>
+<p> </p>
+<p>Input file to FLS Driver Generation Tool. It is generated by ECU </p>
+<p>Configuration Editor.</p>
+<p> </p>
+<p>Sl.No</p>
+<p> </p>
+<p>Serial Number.</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>6 </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>7 </p>
+<p><b>Table of Contents </b></p>
+<p><b> </b></p>
+<p><b>Chapter 1</b></p>
+<p> </p>
+<p><b>Introduction ........................................................................................... 9</b></p>
+<p> </p>
+<p><b>1.1</b></p>
+<p> </p>
+<p><b>Document Overview .................................................................................................................. 9</b></p>
+<p> </p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p><b>Reference ............................................................................................. 11</b></p>
+<p> </p>
+<p><b>2.1</b></p>
+<p> </p>
+<p><b>Reference Documents ............................................................................................................. 11</b></p>
+<p> </p>
+<p><b>2.2</b></p>
+<p> </p>
+<p><b>Trademark Notice .................................................................................................................... 11</b></p>
+<p> </p>
+<p><b>Chapter 3</b></p>
+<p> </p>
+<p><b>Code Generation Overview ................................................................. 13</b></p>
+<p> </p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p><b>Input Files ............................................................................................ 15</b></p>
+<p> </p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p><b>Output Files ......................................................................................... 17</b></p>
+<p> </p>
+<p><b>Chapter 6</b></p>
+<p> </p>
+<p><b>Precautions .......................................................................................... 19</b></p>
+<p> </p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p><b>User Configuration Validation ............................................................ 21</b></p>
+<p> </p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p><b>Configuration Overview ...................................................................... 23</b></p>
+<p> </p>
+<p><b>8.1</b></p>
+<p> </p>
+<p><b>Container Overview ................................................................................................................. 23</b></p>
+<p> </p>
+<p><b>8.2</b></p>
+<p> </p>
+<p><b>Configurable Parameters ........................................................................................................ 23</b></p>
+<p> </p>
+<p><b>Chapter 9 Messages ................................................................................................... 31</b></p>
+<p> </p>
+<p><b>9.1</b></p>
+<p> </p>
+<p><b>Error Messages ........................................................................................................................ 31</b></p>
+<p> </p>
+<p><b>9.2         Warning Messages .................................................................................................................. 36</b></p>
+<p> </p>
+<p><b>9.3          Information Messages ............................................................................................................ 36</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>8 </p>
+<p><b>List of Figures </b></p>
+<p><b> </b></p>
+<p>Figure 3-1</p>
+<p>       </p>
+<p>Overview of Code Generation ............................................................................................ 13</p>
+<p> </p>
+<p>Figure 3-2       Flow-Diagram of Code Generation .................................................................................... 14</p>
+<p> </p>
+<p>Figure 8-1       Container Overview ............................................................................................................ 23</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>List of Tables </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p>Table 5-1</p>
+<p> </p>
+<p>Output Files Description ........................................................................................................ 17</p>
+<p> </p>
+<p>Table 8-1</p>
+<p> </p>
+<p>Configurable Parameters ....................................................................................................... 23</p>
+<p> </p>
+<p>Table 9-1</p>
+<p> </p>
+<p>Error ID related to error ERR_59_92_003 ............................................................................. 31</p>
+<p> </p>
+<p>Table 9-2</p>
+<p> </p>
+<p>Parameters and Container related to error ERR_59_92_017 ............................................... 32</p>
+<p> </p>
+<p>Table 9-3</p>
+<p> </p>
+<p>Device Name related to error error ERR_59_92_018 ........................................................... 32</p>
+<p> </p>
+<p>Table 9-4</p>
+<p> </p>
+<p>Device Name related to error ERR_59_92_020 .................................................................... 33</p>
+<p> </p>
+<p>Table 9-5</p>
+<p> </p>
+<p>Device Name related to error ERR_59_92_026 .................................................................... 33</p>
+<p> </p>
+<p>Table 9-6</p>
+<p> </p>
+<p>Parameters and Container related to error ERR_59_92_1008 ............................................. 34</p>
+<p> </p>
+<p>Table 9-7</p>
+<p> </p>
+<p>Device Name related to error ERR_59_92_031 .................................................................... 34</p>
+<p> </p>
+<p>Table 9-8</p>
+<p> </p>
+<p>Parameters and Container related to error ERR_59_92_034 ............................................... 35</p>
+<p> </p>
+<p>Table 9-9</p>
+<p> </p>
+<p>Parameters and Container related to error ERR_59_92_035 ............................................... 35</p>
+<p> </p>
+<p>Table 9-1     Parameters and Container related to error ERR_59_92_036............................................... 35</p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b> Introduction </b></p>
+<p><b>Chapter 1</b></p>
+<p> </p>
+<p> </p>
+<p>9 </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p><b>Chapter 1  Introduction </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>The  FLS  Software  component  provides  the  service  for  initializing  the  whole </p>
+<p>FLS structure of the microcontroller. </p>
+<p>The </p>
+<p>FLS </p>
+<p>Software </p>
+<p>Component </p>
+<p>comprises </p>
+<p>of </p>
+<p>two </p>
+<p>sections </p>
+<p>as </p>
+<p>Embedded </p>
+<p>Software  and  the  MCAL  Code  Generator  Tool  to  achieve  scalability  and </p>
+<p>configurability. </p>
+<p>The  document  describes  the  FLS  module  specific  inputs  and  outputs  of  the </p>
+<p>MCAL Code Generator Tool that is the common code generator engine used </p>
+<p>for  the  generation  of  the  configuration  code  for  all  MCAL  modules. </p>
+<p>The </p>
+<p>document  is  intended  for  the  developers  of  ECU  software  using  Application </p>
+<p>Programming  Interfaces  provided  by  the  AUTOSAR.  MCAL  Code  Generator </p>
+<p>Tool is a command line tool that extracts information from ECU Configuration </p>
+<p>Description File and generates FLS Software C Header files and Source Files </p>
+<p>(Fls_Cbk.h, Fls_Cfg.h, Fls_Hardware.h, Fls_Hardware.c and Fls_PBcfg.c). </p>
+<p>This document contains information on the options, input and output files of the </p>
+<p>MCAL  Code  Generator  Tool.  In  addition,  this  manual  covers  a  step-by-step </p>
+<p>procedure for the usage of tool. </p>
+<p> </p>
+<p> </p>
+<p><b>1.1 </b></p>
+<p><b>Document Overview </b></p>
+<p> </p>
+<p> </p>
+<p>This user manual is organized as given in the table below: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Section</b></p>
+<p> </p>
+<p><b>Contents</b></p>
+<p> </p>
+<p>Section 1 (Introduction)</p>
+<p> </p>
+<p>Provides an introduction to the document and explains how information </p>
+<p>is organized in this manual.</p>
+<p> </p>
+<p>Section 2 (Reference)</p>
+<p> </p>
+<p>Provides a list of documents referred while developing this document.</p>
+<p> </p>
+<p>Section 3 (Code Generation </p>
+<p>Overview)</p>
+<p> </p>
+<p>Provides the component overview of FLS Driver.</p>
+<p> </p>
+<p>Section 4 (Input Files)</p>
+<p> </p>
+<p>Provides information about ECU Configuration Description File.</p>
+<p> </p>
+<p>Section 5 (Output Files)</p>
+<p> </p>
+<p>Explains the output files that are generated by the MCAL Code </p>
+<p>Generator Tool.</p>
+<p> </p>
+<p>Section 6 (Precautions)</p>
+<p> </p>
+<p>Contains precautions to be taken during configuration of ECU </p>
+<p>Configuration Description File.</p>
+<p> </p>
+<p>Section 7 (User Configuration </p>
+<p>Validation)</p>
+<p> </p>
+<p>Describes about user configuration validation done by the MCAL Code </p>
+<p>Generator Tool.</p>
+<p> </p>
+<p>Section 8 (Configuration </p>
+<p>Overview)</p>
+<p> </p>
+<p>Describes all the containers and configurable parameters.</p>
+<p> </p>
+<p>Section 9 (Messages)</p>
+<p> </p>
+<p>Explain the steps to generate the output files.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1                                                                                                                              Introduction </b></p>
+<p> </p>
+<p>10 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Reference </b></p>
+<p><b>Chapter 2</b></p>
+<p> </p>
+<p> </p>
+<p>11 </p>
+<p><b> </b></p>
+<p><b>Chapter 2  Reference </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>2.1 </b></p>
+<p><b>Reference Documents </b></p>
+<p> </p>
+<p> </p>
+<p>The following table lists the documents referred to develop this document: </p>
+<p> </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Title</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p>1</p>
+<p> </p>
+<p>AUTOSAR_SWS_FlashDriver.pdf</p>
+<p> </p>
+<p>3.2.0</p>
+<p> </p>
+<p>2 </p>
+<p>MCAL_CodeGenerator_Tool_UserManual.pdf</p>
+<p> </p>
+<p>1.7 </p>
+<p>3</p>
+<p> </p>
+<p>R20UT3642EJ0100-AUTOSAR.pdf</p>
+<p> </p>
+<p>1.0.2</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>2.2 </b></p>
+<p><b>Trademark Notice </b></p>
+<p> </p>
+<p> </p>
+<p>Microsoft and Windows are trademarks/registered trademarks of Microsoft </p>
+<p>Corporation. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2 </b></p>
+<p><b>Reference </b></p>
+<p> </p>
+<p>12 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p><b>Code Generation Overview </b></p>
+<p><b>Chapter 3 </b></p>
+<p> </p>
+<p> </p>
+<p>13 </p>
+<p><b>Chapter 3  Code Generation Overview </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Code Generation overview is shown below. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 3-1 </b></p>
+<p><b>Overview of Code Generation </b></p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>ECU Configuration Description File (.arxml): </p>
+<p>This  file  will  contain  FLS  Driver  specific  configuration  information. </p>
+<p>This file should be generated by AUTOSAR specified Configuration </p>
+<p>Editor. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>BSWMDT File (.arxml): </p>
+<p>MCAL Code Generator Tool uses “Common Published Information” </p>
+<p>from  FLS  module  specific  BSWMDT  File. </p>
+<p>FLS  module  specific </p>
+<p>BSWMDT  File  should  not  be  updated  manually  since  it  is  “Static </p>
+<p>Configuration” file. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Velocity template files: </p>
+<p>Fls_PBcfg_c.vm, Fls_Cfg_h.vm, Fls_Cbk_h.vm, </p>
+<p>Fls_Hardware_c.vm, Fls_Validate.vm,</p>
+<p> </p>
+<p>Fls_Hardware_h.vm </p>
+<p>They are interpreted by the MCAL Code Generator Tool in order to </p>
+<p>provide  user </p>
+<p>input </p>
+<p>validation </p>
+<p>and  generate  the  final  output  file </p>
+<p>needed by the AUTOSAR configuration chain. They are the &quot;logic&quot; </p>
+<p>of the Code Generator. </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>Configuration XML File (.xml): </p>
+<p>T</p>
+<p>his file is used to specify which velocity template to use and their </p>
+<p>location and the name of the output file generated. </p>
+<p> </p>
+<p>For  the  error  free  input  file,  the  tool  generates  the  following  output  files: </p>
+<p>Fls_Cfg.h,  Fls_PBcfg.c,  Fls_Hardware.c,  Fls_hardware.h  and  Fls_Cbk.h  and </p>
+<p>displays  appropriate  context  sensitive  error  messages  for  wrong  input  and </p>
+<p>exits. </p>
+<p> </p>
+<p> </p>
+<p>ECU Configuration Description File can be created or edited using ECU </p>
+<p>Configuration Editor. </p>
+<p><b>Fls_Cfg.h, </b></p>
+<p><b>Fls_Cbk.h, </b></p>
+<p><b>Fls_PBcfg.c, </b></p>
+<p><b>Fls_Hardware.h, </b></p>
+<p><b>Fls_Hardware.c </b></p>
+<p><b>ECU Configuration </b></p>
+<p><b>Description File </b></p>
+<p><b>and BSWMDT File </b></p>
+<p>                                                                                          </p>
+<p> </p>
+<p><b>MCAL Code </b></p>
+<p><b>Generator Tool </b></p>
+<p><b>Velocity template </b></p>
+<p><b>files for FLS </b></p>
+<p><b>Configuration XML </b></p>
+<p><b>File </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 3                                                                                                  Code Generation Overview </b></p>
+<p> </p>
+<p>14 </p>
+<p> </p>
+<p> </p>
+<p>Concept of execution for MCAL Code Generator Tool </p>
+<p>is as follows: </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 3-2       Flow-Diagram of Code Generation </b></p>
+<p><b> </b></p>
+<p>The module “Validate” will validate the configuration (contents of ECU </p>
+<p>Configuration Description File(s) as input). If there are incorrect values or </p>
+<p>incorrect dependencies, the tool will display error, warning and information </p>
+<p>messages. In case of errors, the tool will abort the execution. </p>
+<p>  </p>
+<p>Fls_Cfg_h.vm will generate compiler switch necessary to the AUTOSAR </p>
+<p>Configuration chain and vendor specific parameters. </p>
+<p> </p>
+<p>Fls_PBcfg_c.vm will generate structures necessary to the AUTOSAR </p>
+<p>Configuration chain and vendor specific parameters </p>
+<p> </p>
+<p>Fls_Cbk_h.vm will generate the callback notification function prototypes. </p>
+<p> </p>
+<p> Fls_Hardware_h.vm / Fls_Hardware_c.vm will generate hardware related info </p>
+<p>(defines number of actual instances / channels used / structure to access to </p>
+<p>the I/O mapped peripheral)</p>
+<p>Generation start </p>
+<p>ECU Configuration </p>
+<p>Description Files </p>
+<p>And BSWMDT file </p>
+<p>(.arxml) </p>
+<p> </p>
+<p>Template files(.vm) </p>
+<p> </p>
+<p>config.xml </p>
+<p>Generate Output Files </p>
+<p>Validation </p>
+<p>successful </p>
+<p>Validate.vm </p>
+<p>Common </p>
+<p>Helper.vm </p>
+<p>Yes </p>
+<p>Display Error </p>
+<p> </p>
+<p>No </p>
+<p>    Generation stop </p>
+<p>MCAL Code Generator </p>
+<p>Tool </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Input Files </b></p>
+<p><b>Chapter 4</b></p>
+<p> </p>
+<p> </p>
+<p>15 </p>
+<p> </p>
+<p><b>Chapter 4  Input Files </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool will accept the config.xml file which has paths </p>
+<p>to the code generator template files for generating FLS Driver files. MCAL </p>
+<p>Code  Generator  Tool  need  ECU  Configuration  Description  File(s)  and </p>
+<p>BSWMDT  File  as  inputs  to  generate  FLS  Driver  specific  source  files. </p>
+<p>Hence ECU Configuration Description File should contain configuration of </p>
+<p>FLS </p>
+<p>Driver </p>
+<p>module. </p>
+<p>MCAL </p>
+<p>Code </p>
+<p>Generator </p>
+<p>Tool </p>
+<p>ignores </p>
+<p>any </p>
+<p>other </p>
+<p>AUTOSAR  component  configured  in  the  ECU  Configuration  Description </p>
+<p>File. </p>
+<p>ECU </p>
+<p>Configuration </p>
+<p>Description </p>
+<p>File </p>
+<p>can </p>
+<p>be </p>
+<p>generated </p>
+<p>using </p>
+<p>configuration editor. </p>
+<p> </p>
+<p>ECU Configuration Description File must comply with AUTOSAR standard </p>
+<p>ECU Configuration Description File format. </p>
+<p> </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>The detailed explanation about the parameters and containers are found in </p>
+<p>Parameter Definition File. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 4                                                                                                                                Input Files </b></p>
+<p> </p>
+<p>16 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Output Files </b></p>
+<p><b>Chapter 5</b></p>
+<p> </p>
+<p> </p>
+<p>17 </p>
+<p> </p>
+<p><b>Chapter 5  Output Files </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>MCAL Code Generator Tool generates configuration details in C Header and C </p>
+<p>Source files (Fls_Cbk.h, </p>
+<p>Fls_Cfg.h, </p>
+<p>Fls_Hardware.c,  </p>
+<p>Fls_Hardware.h, </p>
+<p>Fls_PBcfg.c</p>
+<p>). </p>
+<p> </p>
+<p>The content of each output file is given in the table below: </p>
+<p> </p>
+<p> </p>
+<p><b>Table 5-1 </b></p>
+<p><b>Output Files Description </b></p>
+<p> </p>
+<p><b>Output File</b></p>
+<p> </p>
+<p><b>Details</b></p>
+<p> </p>
+<p>Fls_Cbk.h</p>
+<p> </p>
+<p>This file contains call-back functions prototype declarations.</p>
+<p> </p>
+<p>Fls_Cfg.h</p>
+<p> </p>
+<p>This file contains pre-compile time parameters.</p>
+<p> </p>
+<p>Fls_PBcfg.c</p>
+<p> </p>
+<p>This file contains post-build time parameters.</p>
+<p> </p>
+<p>Fls_Hardware.c </p>
+<p>This file contains hardware information. </p>
+<p>Fls_Hardware.h </p>
+<p>This file contains hardware information. </p>
+<p> </p>
+<p><b>Remark </b></p>
+<p>Output files generated by MCAL Code Generator Tool should not be </p>
+<p>modified or edited manually. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 5                                                                                                                              Output Files </b></p>
+<p> </p>
+<p>18 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Precautions </b></p>
+<p><b>Chapter 6 </b></p>
+<p> </p>
+<p> </p>
+<p>19 </p>
+<p><b>Chapter 6  Precautions </b></p>
+<p><b> </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>• </p>
+<p>ECU Configuration Description File and  BSWMDT File must comply  with </p>
+<p>AUTOSAR  standard  for  R4.0.3  ECU  Configuration  Description  File  and </p>
+<p>BSWMDT File respectively. </p>
+<p>• </p>
+<p>ECU Configuration is dependent on DEM, MCU module description file. </p>
+<p>• </p>
+<p>Configuration XML File should contain the file extension ‘.xml’. </p>
+<p>• </p>
+<p>config.xml  file  should  be  configured  with  the  template  file  location  and </p>
+<p>output file location. </p>
+<p>• </p>
+<p>The input file must contain FLS Driver Dependent configurations. </p>
+<p>• </p>
+<p>All  the  function  names  and  the  string  values  configured  should  follow  C </p>
+<p>syntax for variables. It can only contain alphanumeric characters and “_”. It </p>
+<p>should start with an alphabet. </p>
+<p>• </p>
+<p>If the output files generated by MCAL Code Generator Tool are modified </p>
+<p>externally, then they may not produce the expected results or may lead to </p>
+<p>error/warning/Information messages. </p>
+<p>• </p>
+<p>Short Name for a container should be unique within a name space. </p>
+<p>• </p>
+<p>An </p>
+<p>error </p>
+<p>free </p>
+<p>ECU </p>
+<p>Configuration </p>
+<p>Description </p>
+<p>File </p>
+<p>generated </p>
+<p>from </p>
+<p>configuration  editor </p>
+<p>has  to  be  provided  as  input  to  the </p>
+<p>MCAL  Code </p>
+<p>Generator Tool. Otherwise Tool may not produce the expected results or </p>
+<p>may lead to errors/warnings/information messages. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Remark: </b>Please refer the AUTOSAR_FLS_Component_UserManual.pdf </p>
+<p>(R20UT3641EJ0100-AUTOSAR.pdf) for deviations from AUTOSAR </p>
+<p>Specifications, if any. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 6                                                                                                                              Precautions </b></p>
+<p> </p>
+<p>20 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>User Configuration Validation </b></p>
+<p><b>Chapter 7</b></p>
+<p> </p>
+<p> </p>
+<p>21 </p>
+<p> </p>
+<p><b>Chapter 7  User Configuration Validation </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>This section provides help to analyze the error, warning and information </p>
+<p>messages displayed during the execution of MCAL Code Generator Tool. It </p>
+<p>ensures conformance of input file with syntax and semantics. It also performs </p>
+<p>validation on the input file for correctness of the data. </p>
+<p> </p>
+<p> </p>
+<p>For more details on list of Error/Warning/Information messages that are </p>
+<p>displayed as a result of input file(s) validation, refer Chapter 9 “<i>Messages</i>”. </p>
+<p> </p>
+<p> </p>
+<p>The MCAL Code Generator Tool displays error or warning or information </p>
+<p>when the user has configured incorrect inputs. The format of </p>
+<p>Error/Warning/Information message is as shown below. </p>
+<p> </p>
+<p>&lt;message_type&gt;_&lt;vendor_id&gt;_&lt;module_id&gt;_&lt;message_id&gt;:&lt;message_cont</p>
+<p>ent&gt;.  </p>
+<p> </p>
+<p>                           where, </p>
+<p></p>
+<p> </p>
+<p>&lt;message_type&gt;     : ERR/</p>
+<p> </p>
+<p>WRNINING /INFO   (Error/Warning/Information) </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt; vendor_id &gt;           : vendor Id = 59 </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt; module_id &gt;          : 092 - FLS Driver Module id (92) for user   </p>
+<p>                                   configuration checks. </p>
+<p>    </p>
+<p></p>
+<p> </p>
+<p>&lt; Message_id.&gt;       :  001-026  </p>
+<p> </p>
+<p></p>
+<p> </p>
+<p>&lt;message_content&gt;:   Message content provides information   </p>
+<p>                                    about error or warning or information displayed          </p>
+<p>                                    when the user has configured incorrect inputs. </p>
+<p> </p>
+<p>                                                               </p>
+<p>File Name’ and ‘Path’ need not be present for all      </p>
+<p>                                                                                        Error/Warning/Information messages. </p>
+<p>                   </p>
+<p>                                    File Name: Name of the file in which the error has </p>
+<p>                                    occurred. </p>
+<p> </p>
+<p>                                    Path: Absolute path of the container in which the  </p>
+<p>                                    Parameter that caused the message is present. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 7                                                                                                User Configuration Validation </b></p>
+<p> </p>
+<p>22 </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p>23 </p>
+<p><b>Chapter 8  Configuration Overview </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>8.1  Container Overview </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Figure 8-1 Container Overview </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>8.2  Configurable Parameters </b></p>
+<p> </p>
+<p> </p>
+<p><b>Table 8-1 </b></p>
+<p><b>Configurable Parameters </b></p>
+<p><b>Container Name</b></p>
+<p> </p>
+<p><b>Parameter Name</b></p>
+<p> </p>
+<p><b>Parameter </b></p>
+<p><b>Type </b></p>
+<p><b>Parameter Range </b></p>
+<p><b>Parameter Description  </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FlsGeneral</p>
+<p> </p>
+<p>FlsCancelApi</p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the Fls_Cancel </p>
+<p>function. </p>
+<p>FlsAcLoadOnJobStart </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter specifies </p>
+<p>the flash driver shall load </p>
+<p>the flash access code to </p>
+<p>RAM whenever an erase </p>
+<p>or write job is started and </p>
+<p>unload (overwrite) it after </p>
+<p>that job has been finished </p>
+<p>or canceled. </p>
+<p>This parameter is not used </p>
+<p>for the implementation. </p>
+<p>FlsUseInterrupts </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter specifies </p>
+<p>job processing triggered </p>
+<p>by hardware interrupt. This </p>
+<p>parameter is not used for </p>
+<p>the implementation. </p>
+<p><b>FLS </b></p>
+<p>FlsGeneral </p>
+<p>FlsPublishedInformation </p>
+<p>FlsConfigSet </p>
+<p>FlsDataFlash </p>
+<p>FlsSector </p>
+<p>FlsSectorList </p>
+<p>FlsExternalDriver </p>
+<p>FlsDemEventParameterRefs</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                            Configuration Overview</b></p>
+<p> </p>
+<p><b> </b></p>
+<p> </p>
+<p>24 </p>
+<p> </p>
+<p>FlsCompareApi</p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the Fls_Compare </p>
+<p>function. </p>
+<p>FlsDevErrorDetect </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter specifies </p>
+<p>pre-processor switch to </p>
+<p>enable and disable </p>
+<p>development error </p>
+<p>detection. </p>
+<p>FlsGetJobResultApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the </p>
+<p>Fls_GetJobResult </p>
+<p>function. </p>
+<p>FlsGetStatusApi </p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the Fls_GetStatus </p>
+<p>function. </p>
+<p>FlsSetModeApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the Fls_SetMode </p>
+<p>function. </p>
+<p>FlsVersionInfoApi</p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter specifies </p>
+<p>pre-processor switch to </p>
+<p>enable / disable the API to </p>
+<p>read out the modules </p>
+<p>version information. </p>
+<p>FlsVersionCheckExternalMo</p>
+<p>dules</p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>Enable / disable </p>
+<p>AUTOSAR Version check </p>
+<p>for inter-module </p>
+<p>dependencies. </p>
+<p>FlsBlankCheckApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the </p>
+<p>Fls_BlankCheck function. </p>
+<p>FlsReadImmediateApi </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the </p>
+<p>Fls_ReadImmediate </p>
+<p>function. </p>
+<p>FlsCriticalSectionProtection</p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter specifies if </p>
+<p>the FLS driver CPU load </p>
+<p>can be reduced by </p>
+<p>disabling enter/exit critical </p>
+<p>section functionality by </p>
+<p>adding a precompiled </p>
+<p>configuration parameter to </p>
+<p>the FLS driver </p>
+<p>configuration. </p>
+<p>FlsFaciEccCheck </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter is used to </p>
+<p>enable or disable the </p>
+<p>check to ensure the ECC </p>
+<p>error interrupt enable FACI </p>
+<p>register settings during </p>
+<p>FLS module initialization.If </p>
+<p>the user configures this </p>
+<p>parameter as true, then </p>
+<p>user should configure </p>
+<p>&quot;FLS_E_ECC_FAILED&quot; </p>
+<p>parameter in </p>
+<p>&quot;FlsConfigSet&quot; container. </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p>25 </p>
+<p>FlsWriteVerify </p>
+<p>Enumeratio</p>
+<p>n </p>
+<p>FLS_DISABLED/</p>
+<p> </p>
+<p>FLS_INIT_ONLY/</p>
+<p> </p>
+<p>FLS_INIT_AND_RU</p>
+<p>NTIME </p>
+<p>This parameter enables </p>
+<p>selection and support of </p>
+<p>INIT_ONLY or </p>
+<p>INIT_AND_RUNTIME </p>
+<p>register read-back </p>
+<p>functionality of FACI and </p>
+<p>ECC registers. </p>
+<p>FlsWriteVerifyErrorInterface </p>
+<p>Boolean </p>
+<p>NULL </p>
+<p>This parameter is used to </p>
+<p>configure the name of the </p>
+<p>error notification which </p>
+<p>shall be called with the </p>
+<p>ApiID and ErrorId when </p>
+<p>there is a Write Verify </p>
+<p>error. </p>
+<p>FlsLoopCount </p>
+<p>Integer </p>
+<p>32-255 </p>
+<p>This parameter is used to </p>
+<p>avoid the risk of endless </p>
+<p>loops in FLS driver. The </p>
+<p>loop count can be </p>
+<p>minimum 32 to maximum </p>
+<p>255 </p>
+<p>FlsUseWVErrorInterface </p>
+<p> </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This parameter specifies </p>
+<p>whether user can </p>
+<p>configure error notification </p>
+<p>interface instead of DEM </p>
+<p>error for Write-Verify </p>
+<p>functionality. </p>
+<p> </p>
+<p> </p>
+<p>FlsDriverIndex </p>
+<p>Integer </p>
+<p>0-254 </p>
+<p>This parameter specifies </p>
+<p>index of the driver, used </p>
+<p>by FEE. This parameter is </p>
+<p>not used for </p>
+<p>implementation. </p>
+<p>FlsDeviceName</p>
+<p> </p>
+<p>Enumeratio</p>
+<p>n </p>
+<p>RF701370A, </p>
+<p>RF701372, </p>
+<p>RF701373, </p>
+<p>RF701374 </p>
+<p>This parameter contains </p>
+<p>the supported device </p>
+<p>name to identify the device </p>
+<p>specific C header file </p>
+<p>FlsVirtualBoundaryAddress</p>
+<p> </p>
+<p>integer </p>
+<p> </p>
+<p> </p>
+<p>65536 for </p>
+<p>R7F701373 </p>
+<p>131072 for  </p>
+<p>R7F701372 </p>
+<p>196608 for </p>
+<p>R7F701370A </p>
+<p>This parameter specifies </p>
+<p>the virtual boundary </p>
+<p>address for Data Flash </p>
+<p>and CodeFlash. This </p>
+<p>parameter is used only for </p>
+<p>the validation purpose of </p>
+<p>virtual address range of </p>
+<p>Data Flash and Code </p>
+<p>Flash. </p>
+<p>FlsBaseAddress </p>
+<p>integer </p>
+<p>0 </p>
+<p>This parameter specifies </p>
+<p>the flash memory start </p>
+<p>address. This parameter is </p>
+<p>not used for </p>
+<p>implementation. </p>
+<p>FlsTotalSize </p>
+<p>integer </p>
+<p>0 </p>
+<p>This parameter specifies </p>
+<p>the total amount of flash </p>
+<p>memory in bytes. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FlsTimeoutMonitoring </p>
+<p>Boolean </p>
+<p>TRUE / FALSE </p>
+<p>This Parameter compiles </p>
+<p>switch to enable or disable </p>
+<p>the FlsTimeout </p>
+<p>Supervision. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FlsPublishedInform</p>
+<p>FlsWriteTime</p>
+<p> </p>
+<p>float </p>
+<p> </p>
+<p>0.000530 </p>
+<p> </p>
+<p>FlsErasedValue</p>
+<p> </p>
+<p>Integer </p>
+<p>4294967295 </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                            Configuration Overview</b></p>
+<p> </p>
+<p><b> </b></p>
+<p> </p>
+<p>26 </p>
+<p> </p>
+<p>ation</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FlsBlankCheckTime </p>
+<p>float </p>
+<p>0.000213 </p>
+<p> </p>
+<p>FlsAcLocationErase </p>
+<p>  Integer </p>
+<p>0 </p>
+<p>Position in RAM, to which </p>
+<p>the erase flash access </p>
+<p>code has to be loaded. </p>
+<p>This parameter is not used </p>
+<p>for implementation. </p>
+<p>Only relevant if the erase </p>
+<p>flash access code is not </p>
+<p>position independent. If </p>
+<p>this information is not </p>
+<p>provided it is assumed that </p>
+<p>the erase flash access </p>
+<p>code is position </p>
+<p>independent and that </p>
+<p>therefore the RAM position </p>
+<p>can be freely configured. </p>
+<p>FlsAcLocationWrite </p>
+<p>  Integer</p>
+<p> </p>
+<p>0 </p>
+<p>Position in RAM, to which </p>
+<p>the write flash access </p>
+<p>code has to be loaded. </p>
+<p>This parameter is not used </p>
+<p>for implementation. </p>
+<p>Only relevant if the write </p>
+<p>flash access code is not </p>
+<p>position independent. If </p>
+<p>this information is not </p>
+<p>provided it is assumed that </p>
+<p>the write flash access </p>
+<p>code is position </p>
+<p>independent and that </p>
+<p>therefore the RAM position </p>
+<p>can be freely configured. </p>
+<p>FlsAcSizeErase </p>
+<p>  Integer</p>
+<p> </p>
+<p>0 </p>
+<p>Number of bytes in RAM </p>
+<p>needed for the erase flash </p>
+<p>access code. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FlsAcSizeWrite </p>
+<p>  Integer</p>
+<p> </p>
+<p>0 </p>
+<p>Number of bytes in RAM </p>
+<p>needed for the write flash </p>
+<p>access code. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FlsSuspendTime </p>
+<p>  Float </p>
+<p>0.000300 </p>
+<p>Maximum time (in </p>
+<p>seconds) to perform </p>
+<p>suspend operation. </p>
+<p>FlsCancelTime </p>
+<p>  Float </p>
+<p>0.000050 </p>
+<p>Maximum time (in </p>
+<p>seconds) to do cancel of </p>
+<p>ongoing job for data flash. </p>
+<p>FlsExpectedHwId </p>
+<p>  string</p>
+<p> </p>
+<p>NULL </p>
+<p>Unique identifier of the </p>
+<p>hardware device that is </p>
+<p>expected by this driver </p>
+<p>(the device for which this </p>
+<p>driver has been </p>
+<p>implemented). </p>
+<p>This parameter is not used </p>
+<p>for the implementation. </p>
+<p>Only relevant for external </p>
+<p>flash drivers. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p>27 </p>
+<p>FlsEraseTime </p>
+<p>  Float </p>
+<p>0.004 </p>
+<p>Maximum time (in </p>
+<p>milliseconds) to erase one </p>
+<p>complete data flash block. </p>
+<p>FlsSpecifiedEraseCycles </p>
+<p>Integer </p>
+<p>125000 </p>
+<p>Number of erase cycles </p>
+<p>specified for the flash </p>
+<p>device. This parameter is </p>
+<p>applicable only for Data </p>
+<p>flash. This parameter is </p>
+<p>not used for </p>
+<p>implementation. </p>
+<p> </p>
+<p> </p>
+<p>FlsConfigSet</p>
+<p> </p>
+<p>FlsMaxReadNormalMode</p>
+<p> </p>
+<p>Integer </p>
+<p>4-8192 </p>
+<p>This parameter specifies </p>
+<p>the maximum number of </p>
+<p>bytes to read or compare </p>
+<p>in one cycle of the flash </p>
+<p>driver's job processing </p>
+<p>function in normal mode. </p>
+<p>This parameter is </p>
+<p>applicable for data flash. </p>
+<p>FlsMaxWriteNormalMode</p>
+<p> </p>
+<p>Integer </p>
+<p>4-8192 </p>
+<p>This parameter specifies </p>
+<p>the maximum number of </p>
+<p>bytes to write in one cycle </p>
+<p>of the flash driver's job </p>
+<p>processing function in </p>
+<p>normal mode. This </p>
+<p>parameter is applicable for </p>
+<p>data flash. </p>
+<p>FlsMaxEraseNormalMode</p>
+<p> </p>
+<p>Integer </p>
+<p>64-8192 </p>
+<p>This parameter specifies </p>
+<p>the maximum number of </p>
+<p>bytes to erase in one cycle </p>
+<p>of the flash driver's job </p>
+<p>processing function in </p>
+<p>normal mode. This value </p>
+<p>should be multiple of 64 </p>
+<p>bytes. This parameter is </p>
+<p>applicable only for Data </p>
+<p>Flash. </p>
+<p>FlsAcErase</p>
+<p> </p>
+<p>Integer </p>
+<p>0 </p>
+<p>This parameter specifies </p>
+<p>address offset in RAM to </p>
+<p>which the erase flash </p>
+<p>access code shall be </p>
+<p>loaded. </p>
+<p>Used as function pointer to </p>
+<p>access the erase flash </p>
+<p>access code. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FlsAcWrite </p>
+<p>Integer </p>
+<p>0 </p>
+<p>This parameter specifies </p>
+<p>address offset in RAM to </p>
+<p>which the write flash </p>
+<p>access code shall be </p>
+<p>loaded. </p>
+<p>Used as function pointer to </p>
+<p>access the write flash </p>
+<p>access code. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FlsDefaultMode </p>
+<p>Enumeratio</p>
+<p>n </p>
+<p>NOT_USED </p>
+<p>This parameter is the </p>
+<p>default FLS device mode </p>
+<p>after initialization. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                            Configuration Overview</b></p>
+<p> </p>
+<p><b> </b></p>
+<p> </p>
+<p>28 </p>
+<p> </p>
+<p>FlsJobEndNotification </p>
+<p>string </p>
+<p>- </p>
+<p>This parameter mapped to </p>
+<p>the job end notification </p>
+<p>routine provided by some </p>
+<p>upper layer module, </p>
+<p>typically the Fee module. </p>
+<p>FlsJobErrorNotification </p>
+<p>string </p>
+<p>- </p>
+<p>This parameter mapped to </p>
+<p>the job error notification </p>
+<p>routine provided by some </p>
+<p>upper layer module, </p>
+<p>typically the Fee module. </p>
+<p>FlsMaxReadFastMode </p>
+<p>Integer </p>
+<p>0 </p>
+<p>This parameter specifies </p>
+<p>the maximum number of </p>
+<p>bytes to read or compare </p>
+<p>in one cycle of the flash </p>
+<p>driver's job processing </p>
+<p>function in fast mode. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FlsMaxWriteFastMode </p>
+<p>Integer </p>
+<p>0 </p>
+<p>This parameter specifies </p>
+<p>the maximum number of </p>
+<p>bytes to write in one cycle </p>
+<p>of the flash driver's job </p>
+<p>processing function in fast </p>
+<p>mode. This parameter is </p>
+<p>not used for </p>
+<p>implementation. </p>
+<p>FlsCallCycle </p>
+<p> Float </p>
+<p>0-1 </p>
+<p>This parameter specifies </p>
+<p>the cycle time of calls of </p>
+<p>the flash driver's main </p>
+<p>function (in seconds). The </p>
+<p>value is calculated for </p>
+<p>160MHz frequency. </p>
+<p>FlsTimeOutCountValue </p>
+<p>Integer </p>
+<p>1-1000000 </p>
+<p>This parameter specifies </p>
+<p>the time out count required </p>
+<p>for erase, write and blank </p>
+<p>check operations during </p>
+<p>interrupt mode.Incorrect </p>
+<p>configuration of this </p>
+<p>parameter shall lead to </p>
+<p>erroneous operations of </p>
+<p>FLS Driver </p>
+<p>FlsProtection </p>
+<p>Integer </p>
+<p>0 </p>
+<p>This parameter uses the </p>
+<p>erase/write protection </p>
+<p>settings. (Only relevant if </p>
+<p>supported by hardware). </p>
+<p>This parameter is not used </p>
+<p>for implementation. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FlsSector</p>
+<p> </p>
+<p>FlsSectorIndex</p>
+<p> </p>
+<p>Integer </p>
+<p>0-2 </p>
+<p>This parameter specifies </p>
+<p>unique index value for </p>
+<p>data flash sector. </p>
+<p>FlsNumberOfSectors</p>
+<p> </p>
+<p>Integer </p>
+<p>1-3072 </p>
+<p>This parameter specifies </p>
+<p>number of continuous </p>
+<p>sectors with identical </p>
+<p>values for FlsSectorSize </p>
+<p>and FlsPageSize. </p>
+<p>FlsPageSize</p>
+<p> </p>
+<p>integer </p>
+<p>4 </p>
+<p>This parameter specifies </p>
+<p>size of one page of this </p>
+<p>sector. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuration Overview </b></p>
+<p><b>Chapter 8 </b></p>
+<p> </p>
+<p>29 </p>
+<p>FlsSectorSize</p>
+<p> </p>
+<p>integer </p>
+<p>64 </p>
+<p>This parameter specifies </p>
+<p>size of this sector in bytes. </p>
+<p> </p>
+<p>If FlsSectorOption is </p>
+<p>selected as </p>
+<p>FLS_DF_SECTOR then </p>
+<p>FlsSectorSize should be </p>
+<p>configured as 64. </p>
+<p>FLS_CF_SMALL_BLK_SE</p>
+<p>CTOR then FlsSectorSize </p>
+<p>should be configured as </p>
+<p>8192. </p>
+<p>FLS_CF_NORMAL_BLK_</p>
+<p>SECTOR then </p>
+<p>FlsSectorSize should be </p>
+<p>configured as 32768. </p>
+<p>FlsSectorStartaddress</p>
+<p> </p>
+<p>integer </p>
+<p>0 - 196607 </p>
+<p> </p>
+<p> </p>
+<p>This parameter specifies </p>
+<p>the start address of this </p>
+<p>sector. This parameter </p>
+<p>specify the virtual start </p>
+<p>address. Implementation </p>
+<p>Type: Fls_AddressType. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FlsDataFlash</p>
+<p> </p>
+<p>FlsDFBaseAddress</p>
+<p> </p>
+<p>integer </p>
+<p>4280287232 </p>
+<p>This parameter specifies </p>
+<p>the data flash memory </p>
+<p>start address. This </p>
+<p>parameter is applicable </p>
+<p>only for Data flash. </p>
+<p>FlsDFBlockSize</p>
+<p> </p>
+<p>integer </p>
+<p>64 </p>
+<p>This parameter specifies </p>
+<p>the block size of data flash </p>
+<p>memory in bytes. This </p>
+<p>parameter is applicable </p>
+<p>only for Data flash. </p>
+<p>FlsDFTotalBlocks</p>
+<p> </p>
+<p>integer </p>
+<p>1024  for R7F701373 </p>
+<p>and RF701374 </p>
+<p>2048 for  R7F701372 </p>
+<p>3072  for </p>
+<p>R7F701370A </p>
+<p>This parameter specifies </p>
+<p>the total number of data </p>
+<p>flash blocks. </p>
+<p>There are 512 64-Byte </p>
+<p>physical blocks in Data </p>
+<p>Flash. This parameter is </p>
+<p>applicable only for Data </p>
+<p>flash. </p>
+<p>FlsEccSedNotification </p>
+<p>function </p>
+<p>- </p>
+<p>This parameter mapped to </p>
+<p>Single-bit error (SED) </p>
+<p>notification routine </p>
+<p>provided by some upper </p>
+<p>layer module. </p>
+<p>FlsDataFlashSize </p>
+<p>integer </p>
+<p>- </p>
+<p>65536-196608 </p>
+<p>FlsResumeApi </p>
+<p>Boolean </p>
+<p>TRUE/FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the Fls_Resume </p>
+<p>function. </p>
+<p> </p>
+<p>FlsSuspendApi </p>
+<p>Boolean </p>
+<p>TRUE/FALSE </p>
+<p>This parameter compiles </p>
+<p>switch to enable and </p>
+<p>disable the Fls_Suspend </p>
+<p>function. </p>
+<p> </p>
+<p>FlsEccDedNotification </p>
+<p>function </p>
+<p>- </p>
+<p>This parameter mapped to </p>
+<p>Double-bit error (DED) </p>
+<p>notification routine </p>
+<p>provided by some upper </p>
+<p>layer module. </p>
+<p>FlsFdlCpuFrequency</p>
+<p> </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>McuPLLClkSetting </p>
+<p>container of MCU </p>
+<p>module. </p>
+<p>Reference to the CPU </p>
+<p>subsystem frequency </p>
+<p>configuration, which is set </p>
+<p>in the MCU driver </p>
+<p>configuration. </p>
+<p>This reference from MCU </p>
+<p>informs the programming </p>
+<p>HW frequency to the </p>
+<p>programming Firmware. </p>
+<p>The clock value in MCU </p>
+<p>must be according to the </p>
+<p>clock supply setting of the </p>
+<p>CPU Subsystem. </p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 8                                                                                                            Configuration Overview</b></p>
+<p> </p>
+<p><b> </b></p>
+<p> </p>
+<p>30 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>FlsDemEventParam</p>
+<p>eterRefs</p>
+<p> </p>
+<p>FLS_E_ERASE_FAILED</p>
+<p> </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash </p>
+<p>erase failed (HW)&quot; has </p>
+<p>occurred. </p>
+<p>FLS_E_READ_FAILED </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash read </p>
+<p>failed (HW)&quot; has occurred. </p>
+<p>FLS_E_WRITE_FAILED </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash write </p>
+<p>failed (HW)&quot; has occurred. </p>
+<p>FLS_E_UNEXPECTED_FLA</p>
+<p>SH_ID </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Expected </p>
+<p>hardware ID not matched&quot; </p>
+<p>has occurred. This </p>
+<p>parameter is not used for </p>
+<p>implementation. </p>
+<p>FLS_E_READ_FAILED_DE</p>
+<p>D </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash read </p>
+<p>failed (HW) due to double </p>
+<p>bit ECC error&quot; has </p>
+<p>occurred. </p>
+<p>FLS_E_INT_INCONSISTEN</p>
+<p>T </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when Interrupt consistency </p>
+<p>error was detected. </p>
+<p>FLS_E_REG_WRITE_VERI</p>
+<p>FY </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash </p>
+<p>register write verification </p>
+<p>failed (HW)&quot; has occurred. </p>
+<p>FLS_E_HW_FAILURE </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash </p>
+<p>Hardware Failure (HW)&quot; </p>
+<p>has occurred. </p>
+<p>FLS_E_ECC_FAILED </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Incorrect </p>
+<p>FACI ECC register </p>
+<p>settings during initialisation </p>
+<p>(HW)&quot; has occurred. </p>
+<p>FLS_E_COMPARE_FAILED </p>
+<p>Reference </p>
+<p>Reference to </p>
+<p>DemEventId of Dem </p>
+<p>module. </p>
+<p>Reference to the </p>
+<p>DemEventParameter </p>
+<p>which shall be issued </p>
+<p>when the error &quot;Flash </p>
+<p>compare failed (HW)&quot; has </p>
+<p>occurred. </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>      Messages </b></p>
+<p><b>    Chapter 10                                                                                           </b></p>
+<p> </p>
+<p>31 </p>
+<p><b>Chapter 9 Messages </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>The messages help to identify the syntax or semantic errors in the ECU </p>
+<p>Configuration Description File. Hence it ensures validity and correctness of the </p>
+<p>information available in the ECU Configuration Description File. </p>
+<p> </p>
+<p>The following section gives the list of error, warning and information messages </p>
+<p>displayed by the MCAL Code Generator Tool. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>9.1 </b></p>
+<p><b>Error Messages </b></p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_001: Parsing of Fls or Dem module is incorrect. </b></p>
+<p><b> </b></p>
+<p>This error occurs when parsing of Fls or Dem module is incorrect. </p>
+<p> </p>
+<p><b>ERR_59_92_003: References path of Parameter &lt;Error ID&gt; is not correct in </b></p>
+<p><b>the container FlsDemEventParameterRefs </b></p>
+<p><b> </b></p>
+<p>This error occurs when the References path for the Parameters &lt;Error ID&gt; is not </p>
+<p>correct in the container FlsDemEventParameterRefs. </p>
+<p> </p>
+<p><b>Table 9-1 </b></p>
+<p><b>Error ID related to error ERR_59_92_003 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>ERR_59_92_004: The value configured for the parameter </b></p>
+<p><b>FlsJobEndNotification/ FlsJobErrorNotification should follow C syntax &lt;[a-</b></p>
+<p><b>zA-Z][a-zA-Z0-9_]&gt; </b></p>
+<p><b> </b></p>
+<p>This error occurs when the value configured for the parameters </p>
+<p>FlsJobEndNotification/ FlsJobErrorNotification in the path </p>
+<p>/Renesas/EcucDefs_Fls/Fls/FlsConfigSet are other than syntax &lt;[a-zA-Z][a-zA-</p>
+<p>Z0-9_]&gt; </p>
+<p> </p>
+<p><b>ERR_59_92_006:</b></p>
+<p> </p>
+<p><b>The parameters FlsJobEndNotification and  </b></p>
+<p><b>FlsJobErrorNotification in the container FlsConfigSet should be configured </b></p>
+<p><b>with different values </b></p>
+<p><b> </b></p>
+<p>This error occurs when the parameters FlsJobEndNotification and </p>
+<p>FlsJobErrorNotification in the path /Renesas/EcucDefs_Fls/Fls/FlsConfigSet are </p>
+<p>configured with same values. </p>
+<p> </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Error ID </b></p>
+<p>1. </p>
+<p>FLS_E_COMPARE_FAILED </p>
+<p>2. </p>
+<p>FLS_E_ERASE_FAILED </p>
+<p>3. </p>
+<p>FLS_E_READ_FAILED </p>
+<p>4. </p>
+<p>FLS_E_READ_FAILED_DED </p>
+<p>5. </p>
+<p>FLS_E_WRITE_FAILED </p>
+<p>6. </p>
+<p>FLS_E_HW_FAILURE </p>
+<p>7. </p>
+<p>FLS_E_ECC_FAILED </p>
+<p>8. </p>
+<p>FLS_E_REG_WRITE_VERIFY </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>      Chapter 10 </b></p>
+<p><b>   Messages                                                                                           </b></p>
+<p>32 </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_016: References path configured for the parameter </b></p>
+<p><b>FlsFdlCpuFrequency is not correct in the path </b></p>
+<p><b>/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsDataFlash. </b></p>
+<p> </p>
+<p>This error occurs when references path configured for the parameter </p>
+<p>FlsFdlCpuFrequency is not correct in the path </p>
+<p>/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsDataFlash. </p>
+<p> </p>
+<p><b>ERR_59_92_017: The value configured for the parameter </b></p>
+<p><b>FlsSectorStartaddress in the container FlsSector should be within the range </b></p>
+<p><b>of &lt;range of value&gt;. </b></p>
+<p> </p>
+<p>This </p>
+<p>error </p>
+<p>occurs, </p>
+<p>if </p>
+<p>the </p>
+<p>value </p>
+<p>configured </p>
+<p>for </p>
+<p>the </p>
+<p>parameter </p>
+<p>FlsSectorStartaddress is not within the below range. </p>
+<p><b> </b></p>
+<p><b>Table 9-2 </b></p>
+<p><b>Parameters and Container related to error ERR_59_92_017 </b></p>
+<p><i> </i></p>
+<p><b>Range of value for FlsSectorStartaddress</b></p>
+<p> </p>
+<p><b>Number of sectors</b></p>
+<p> </p>
+<p>0 to (value configured for (FlsVirtualBoundaryAddress – DFTotalSize)) </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_018:</b></p>
+<p> </p>
+<p><b>The value configured for the parameter </b></p>
+<p><b>FlsVirtualBoundaryAddress in the container FlsGeneral should be </b>&lt;<b>Value&gt;, </b></p>
+<p><b>since the Device Name is &lt;Device Name&gt;. </b></p>
+<p> </p>
+<p>This error occurs when the value configured for the parameter </p>
+<p>FlsVirtualBoundaryAddress in the container FlsGeneral is other than &lt;Value&gt; when </p>
+<p>the Device Name is &lt;Device Name&gt;. </p>
+<p> </p>
+<p><b> Table 9-3 </b></p>
+<p><b>Device Name</b></p>
+<p><b> related to error error ERR_59_92_018 </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>ERR_59_92_019: The value configured for the parameter </b></p>
+<p><b>FlsSectorStartaddress in the container FlsSector should be multiple of </b></p>
+<p><b>FlsSectorSize[64]. </b></p>
+<p> </p>
+<p>This error occurs, if the value configured for the parameter </p>
+<p>FlsSectorStartaddress is not a multiple of FlsSectorSize[64]. </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_020: The value configured for the parameter FlsDFTotalBlocks in </b></p>
+<p><b>the container FlsDataFlash should be </b>&lt;<b>Value&gt;, since the Device Name is </b></p>
+<p><b>&lt;Device Name&gt;. </b></p>
+<p> </p>
+<p>This error occurs when the value configured for the parameter FlsDFTotalBlocks in </p>
+<p>the container FlsDataFlash is other than &lt;Value&gt;, when the Device Name is </p>
+<p>&lt;Device Name&gt;   </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Device Name </b></p>
+<p><b>Value In </b></p>
+<p><b> bytes</b></p>
+<p><b> </b></p>
+<p>1. </p>
+<p>R7F701370A </p>
+<p>195904</p>
+<p> </p>
+<p>2. </p>
+<p>R7F701371 </p>
+<p>195904</p>
+<p> </p>
+<p>3. </p>
+<p>R7F701372 </p>
+<p>130368</p>
+<p> </p>
+<p>4. </p>
+<p>R7F701373 </p>
+<p>64832</p>
+<p> </p>
+<p>5. </p>
+<p>R7F701374 </p>
+<p>64832</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>      Messages </b></p>
+<p><b>    Chapter 10                                                                                           </b></p>
+<p> </p>
+<p>33 </p>
+<p> </p>
+<p> </p>
+<p><b>Table 9-4 </b></p>
+<p><b>Device Name</b></p>
+<p><b> related to error ERR_59_92_020 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_023: The value configured for the parameter FlsUseInterrupts in </b></p>
+<p><b>the container FlsGeneral should be FALSE, since interrupt based job </b></p>
+<p><b>handling is not supported by P1x-C FLS driver. </b></p>
+<p> </p>
+<p>This error occurs when the value configured for the parameter FlsUseInterrupts in </p>
+<p>the container FlsGeneral isn’t FALSE when interrupt based job handling is not </p>
+<p>supported by P1x-C FLS driver. </p>
+<p> </p>
+<p><b>ERR_59_92_026: The device variant selected: &lt;Device Name&gt; is not </b></p>
+<p><b>supported by the P1X-C family. </b></p>
+<p> </p>
+<p>This error occurs when the device variant selected: &lt;Device Name&gt; is not </p>
+<p>supported by the P1X-C family. </p>
+<p> </p>
+<p><b>Table 9-5 </b></p>
+<p><b>Device Name</b></p>
+<p><b> related to error ERR_59_92_026 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_027: The value configured for the parameter FlsCallCycle in the </b></p>
+<p><b>container FlsConfigSet</b></p>
+<p>&lt;</p>
+<p><b>config_index&gt; should be same across the multiple </b></p>
+<p><b>configuration set. </b></p>
+<p> </p>
+<p>This error occurs when value configured for the parameter FlsCallCycle in the </p>
+<p>container FlsConfigSet are different across the multiple configuration set. </p>
+<p> </p>
+<p><b>ERR_59_92_028: </b></p>
+<p><b>The </b></p>
+<p><b>value </b></p>
+<p><b>configured </b></p>
+<p><b>for </b></p>
+<p><b>the </b></p>
+<p><b>parameter </b></p>
+<p><b>FlsTimeOutCountValue  in  the  container  FlsConfigSet</b></p>
+<p>&lt;</p>
+<p><b>config_index&gt;  should </b></p>
+<p><b>be same across the multiple configuration set. </b></p>
+<p> </p>
+<p>This error occurs when value configured for the parameter FlsTimeOutCountValue </p>
+<p>in the container FlsConfigSet are different across the multiple configuration set. </p>
+<p> </p>
+<p><b>ERR_59_92_029: </b></p>
+<p><b>The </b></p>
+<p><b>value </b></p>
+<p><b>configured </b></p>
+<p><b>for </b></p>
+<p><b>the </b></p>
+<p><b>parameter </b></p>
+<p><b>FlsWriteVerifyErrorInterface </b></p>
+<p><b>in </b></p>
+<p><b>the </b></p>
+<p><b>container </b></p>
+<p><b>FlsConfigSet</b></p>
+<p>&lt;</p>
+<p><b>config_index&gt; </b></p>
+<p><b>shall not be  Empty or NULL,since FlsUseWVErrorInterface is configured  as </b></p>
+<p><b>True. </b></p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Device Name </b></p>
+<p><b>Value In </b></p>
+<p><b> bytes</b></p>
+<p><b> </b></p>
+<p>1. </p>
+<p>R7F701370A </p>
+<p>3061</p>
+<p> </p>
+<p>2. </p>
+<p>R7F701371 </p>
+<p>3061</p>
+<p> </p>
+<p>3. </p>
+<p>R7F701372 </p>
+<p>2037</p>
+<p> </p>
+<p>4. </p>
+<p>R7F701373 </p>
+<p>1013</p>
+<p> </p>
+<p>5. </p>
+<p>R7F701374 </p>
+<p>1013</p>
+<p> </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Device Name </b></p>
+<p>1. </p>
+<p>R7F701370A </p>
+<p>2. </p>
+<p>R7F701371 </p>
+<p>3. </p>
+<p>R7F701372 </p>
+<p>4. </p>
+<p>R7F701373 </p>
+<p>5. </p>
+<p>R7F701374 </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>      Chapter 10 </b></p>
+<p><b>   Messages                                                                                           </b></p>
+<p>34 </p>
+<p> </p>
+<p> </p>
+<p>This </p>
+<p>error </p>
+<p>occurs </p>
+<p>when </p>
+<p>value </p>
+<p>configured </p>
+<p>for </p>
+<p>the </p>
+<p>parameter </p>
+<p>FlsWriteVerifyErrorInterface  in  the  container  FlsConfigSet  shall  not  be  Empty  or </p>
+<p>NULL,since FlsUseWVErrorInterface is configured as True. </p>
+<p> </p>
+<p><b>ERR_59_92_1008:  The  Value  of  the  Boolean  Parameter  &lt;</b></p>
+<p><b>Parameter  Name</b></p>
+<p><b>&gt; </b></p>
+<p><b>configured is not a valid one. </b></p>
+<p> </p>
+<p>This error occurs when any of the Boolean Parameters mentioned below are not </p>
+<p>configured  in ECU Configuration Description File. The list of boolean parameters </p>
+<p>with respect to container is listed below: </p>
+<p><b> </b></p>
+<p><b>Table 9-6 </b></p>
+<p><b>Parameters and Container related to error ERR_59_92_1008 </b></p>
+<p><b> </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Container Name </b></p>
+<p><b>FlsDevErrorDetect </b></p>
+<p><b>FlsGeneral </b></p>
+<p><b>FlsCompareApi </b></p>
+<p><b>FlsCancelApi </b></p>
+<p><b>FlsSetModeApi </b></p>
+<p><b>FlsGetStatusApi </b></p>
+<p><b>FlsGetJobResultApi </b></p>
+<p><b>FlsBlankCheckApi </b></p>
+<p><b>FlsReadImmediateApi </b></p>
+<p><b>FlsVersionInfoApi </b></p>
+<p><b>FlsVersionCheckExternalModules </b></p>
+<p><b>FlsCriticalSectionProtection </b></p>
+<p><b>FlsFaciEccCheck </b></p>
+<p><b>FlsTimeoutMonitoring </b></p>
+<p><b>FlsUseWVErrorInterface </b></p>
+<p><b>FlsSuspendApi </b></p>
+<p><b>FlsDataFlash </b></p>
+<p><b>FlsResumeApi </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>ERR_59_92_031: </b></p>
+<p><b>The </b></p>
+<p><b>value </b></p>
+<p><b>configured </b></p>
+<p><b>for </b></p>
+<p><b>the </b></p>
+<p><b>parameter </b></p>
+<p><b>FlsNumberOfSectors </b></p>
+<p><b>in </b></p>
+<p><b>the </b></p>
+<p><b>container </b></p>
+<p><b>FlsSector </b></p>
+<p><b>should </b></p>
+<p><b>be </b></p>
+<p><b>within </b></p>
+<p><b>1-max </b></p>
+<p><b>range for the device &lt;Device Name&gt;. </b></p>
+<p> </p>
+<p>This error occurs when value configured for the parameter FlsNumberOfSectors in </p>
+<p>the container FlsSector is not within 1-max range for the device &lt;Device Name&gt;. </p>
+<p> </p>
+<p><b>Table 9-7 </b></p>
+<p><b>Device Name</b></p>
+<p><b> related to error ERR_59_92_031 </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>ERR_59_92_032: </b></p>
+<p><b>If </b></p>
+<p><b>the </b></p>
+<p><b>parameter </b></p>
+<p><b>FlsWriteVerify </b></p>
+<p><b>is </b></p>
+<p><b>configured </b></p>
+<p><b>as </b></p>
+<p><b>FLS_INIT_ONLY </b></p>
+<p><b>or </b></p>
+<p><b>FLS_INIT_AND_RUNTIME, </b></p>
+<p><b>then </b></p>
+<p><b>the </b></p>
+<p><b>parameter </b></p>
+<p><b>'FLS_E_REG_WRITE_VERIFY'  in  the  container  FlsDemEventParameterRefs </b></p>
+<p><b>should be configured. </b></p>
+<p> </p>
+<p>This  error  will  occur  if  no  reference  path  is  provided  for  the  DEM  parameter </p>
+<p>FLS_E_REG_WRITE_VERIFY in the container FlsDemEventParameterRefs when </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Device Name </b></p>
+<p><b>Value In </b></p>
+<p><b> bytes</b></p>
+<p><b> </b></p>
+<p>1. </p>
+<p>R7F701370A </p>
+<p>3061</p>
+<p> </p>
+<p>2. </p>
+<p>R7F701371 </p>
+<p>3061</p>
+<p> </p>
+<p>3. </p>
+<p>R7F701372 </p>
+<p>2037</p>
+<p> </p>
+<p>4. </p>
+<p>R7F701373 </p>
+<p>1013</p>
+<p> </p>
+<p>5. </p>
+<p>R7F701374 </p>
+<p>1013</p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>      Messages </b></p>
+<p><b>    Chapter 10                                                                                           </b></p>
+<p> </p>
+<p>35 </p>
+<p>the parameter FlsUseWVErrorInterface is configured as true. </p>
+<p> </p>
+<p><b>ERR_59_92_033: </b></p>
+<p><b>The </b></p>
+<p><b>notification </b></p>
+<p><b>function </b></p>
+<p><b>configured </b></p>
+<p><b>for </b></p>
+<p><b>the </b></p>
+<p><b>parameter </b></p>
+<p><b>FlsEccDedNotification </b></p>
+<p><b>and </b></p>
+<p><b>FlsEccSedNotification </b></p>
+<p><b>in </b></p>
+<p><b>the </b></p>
+<p><b>FlsGeneral </b></p>
+<p><b>container should be unique. </b></p>
+<p><b> </b></p>
+<p>This  error  occurs  when  the  notification  function  configured  for  the  parameter </p>
+<p>FlsEccDedNotification </p>
+<p>and </p>
+<p>FlsEccSedNotification </p>
+<p>in </p>
+<p>the </p>
+<p>FlsGeneral </p>
+<p>container </p>
+<p>should be unique. </p>
+<p> </p>
+<p><b>ERR_59_92_034: </b></p>
+<p><b>The </b></p>
+<p><b>values </b></p>
+<p><b>configured </b></p>
+<p><b>for </b></p>
+<p><b>the </b></p>
+<p><b>parameters </b></p>
+<p><b>EccSedNotification  and  EccDedNotification  in  the  container  FlsDataFlash </b></p>
+<p><b>and the value configured for the parameter &lt;Parameter Name&gt; in any of the </b></p>
+<p><b>ConfigSet </b></p>
+<p><b>container </b></p>
+<p><b>should </b></p>
+<p><b>be </b></p>
+<p><b>unique, </b></p>
+<p><b>which </b></p>
+<p><b>is </b></p>
+<p><b>not </b></p>
+<p><b>followed </b></p>
+<p><b>in </b></p>
+<p><b>FlsConfigSet</b></p>
+<p>&lt;</p>
+<p><b>config_index&gt; </b></p>
+<p><b> </b></p>
+<p>This </p>
+<p>error </p>
+<p>occurs </p>
+<p>when </p>
+<p>the </p>
+<p>values </p>
+<p>configured </p>
+<p>for </p>
+<p>the </p>
+<p>parameters </p>
+<p>EccSedNotification and EccDedNotification in the container FlsDataFlash and the </p>
+<p>value  configured  for  the  parameter  &lt;Parameter  Name&gt;  in  any  of  the  ConfigSet </p>
+<p>container is not unique. </p>
+<p><b> </b></p>
+<p><b>Table 9-8 </b></p>
+<p><b>Parameters and Container related to error ERR_59_92_034 </b></p>
+<p><b> </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Container Name </b></p>
+<p><b>FlsJobEndNotification</b></p>
+<p><b> </b></p>
+<p><b>FlsGeneral </b></p>
+<p><b>FlsJobErrorNotification</b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b> </b></p>
+<p><b>ERR_59_92_035:</b></p>
+<p>  </p>
+<p><b>Mandatory Parameter &lt;Parameter Name&gt; in the container </b></p>
+<p><b>FlsSector of FlsConfigSet</b></p>
+<p>&lt;</p>
+<p><b>config_index&gt; should be configured. </b></p>
+<p><b> </b></p>
+<p>This error occurs when mandatory Parameter &lt;Parameter Name&gt; in the container </p>
+<p>FlsSector of FlsConfigSet</p>
+<p>&lt;</p>
+<p>config_index&gt; is not configured. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Table 9-9 </b></p>
+<p><b>Parameters and Container related to error ERR_59_92_035 </b></p>
+<p><b> </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Container Name </b></p>
+<p><b>FlsNumberOfSectors</b></p>
+<p><b> </b></p>
+<p><b>FlsSector </b></p>
+<p><b>FlsSectorStartaddress </b></p>
+<p> </p>
+<p><b>ERR_59_92_036:</b></p>
+<p><b>  The value configured for the parameter </b></p>
+<p><b>&lt;Parameter Name&gt; </b></p>
+<p><b>in the container FlsSector of </b></p>
+<p><b>FlsConfigSet</b></p>
+<p>&lt;</p>
+<p><b>config_index&gt; </b></p>
+<p><b>should be same for </b></p>
+<p><b>the FlsSectorIndex across the multiple configuration set. </b></p>
+<p> </p>
+<p>This  error  occurs  when  the  value  configured  for  the  parameter </p>
+<p>&lt;Parameter </p>
+<p>Name&gt; </p>
+<p>in the container FlsSector of </p>
+<p>FlsConfigSet</p>
+<p>&lt;</p>
+<p>config_index&gt; </p>
+<p>is not same for </p>
+<p>the FlsSectorIndex across the multiple configuration set.</p>
+<p> </p>
+<p><b> </b></p>
+<p><b>Table 9-10  Parameters and Container related to error ERR_59_92_036 </b></p>
+<p><b> </b></p>
+<p><b>Parameter Name </b></p>
+<p><b>Container Name </b></p>
+<p><b>FlsNumberOfSectors</b></p>
+<p><b> </b></p>
+<p><b>FlsSector </b></p>
+<p><b>FlsSectorStartaddress </b></p>
+<p> </p>
+<p><b>ERR_59_92_037:</b></p>
+<p><b>  User shall not configure multiple sectors. Since data flash is a </b></p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>      Chapter 10 </b></p>
+<p><b>   Messages                                                                                           </b></p>
+<p>36 </p>
+<p> </p>
+<p><b>monolithic  on-chip  NV  memory  with  homogeneous  block  size,  it  is  not </b></p>
+<p><b>required </b></p>
+<p><b>to </b></p>
+<p><b>have </b></p>
+<p><b>multiple </b></p>
+<p><b>sectors </b></p>
+<p><b>with </b></p>
+<p><b>the </b></p>
+<p><b>same </b></p>
+<p><b>sector </b></p>
+<p><b>sizes. </b></p>
+<p><b>This </b></p>
+<p><b>is </b></p>
+<p><b>not </b></p>
+<p><b>followed in </b></p>
+<p><b>FlsConfigSet</b></p>
+<p><b>&lt;</b></p>
+<p><b>config_index&gt; </b></p>
+<p><b> </b></p>
+<p>This  error  occurs  when  u</p>
+<p>ser  configure  multiple  sectors.  Since  data  flash  is  a </p>
+<p>monolithic    on-chip    NV    memory    with    homogeneous    block    size,    it    is    not </p>
+<p>required to have multiple sectors with the same sector sizes.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>9.2 Warning Messages </b></p>
+<p><b> </b></p>
+<p> </p>
+<p>None </p>
+<p> </p>
+<p> </p>
+<p><b>9.3 Information Messages </b></p>
+<p> </p>
+<p><b>INF_59_092_001: The parameter FlsJobEndNotification in the container </b></p>
+<p><b>FlsConfigSet is not configured </b></p>
+<p> </p>
+<p>This information occurs when the parameter FlsJobEndNotification in the container </p>
+<p>FlsConfigSet is not configured. </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p>37 </p>
+<p><b> </b></p>
+<p><b>Revision History </b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>Sl.No.</b></p>
+<p> </p>
+<p><b>Description</b></p>
+<p> </p>
+<p><b>Version</b></p>
+<p> </p>
+<p><b>Date</b></p>
+<p> </p>
+<p>1.</p>
+<p> </p>
+<p>Initial Version</p>
+<p> </p>
+<p>1.0.0</p>
+<p> </p>
+<p>12-Aug-2015</p>
+<p> </p>
+<p>2. </p>
+<p>Following changes are done: </p>
+<p>1. </p>
+<p>Section 8.1 is updated. </p>
+<p>2. </p>
+<p>Details related to code flash is removed. </p>
+<p>3. </p>
+<p>Chapter 10 updated. </p>
+<p>4. </p>
+<p>R Number is added. </p>
+<p>1.0.1 </p>
+<p>13-May-2016 </p>
+<p>3. </p>
+<p>Following changes are done: </p>
+<p>1. </p>
+<p>INF_59_092_001 is added in section 9.3 </p>
+<p>2. </p>
+<p>Chapter 1, Updated Introduction. </p>
+<p>3. </p>
+<p>Section 2.1, Updated reference document details. </p>
+<p>4. </p>
+<p>Chapter 3, Updated the Heading Code Generation Overview with </p>
+<p>MCAL Code Generator overview  </p>
+<p>5. </p>
+<p>Chapter 5, Updated description of output files. </p>
+<p>6. </p>
+<p>Chapter 6, Added one more point in precautions. </p>
+<p>7. </p>
+<p>Section 8.1, Updated Pre-Compile Configurable Parameters </p>
+<p>8. </p>
+<p>Section 8.2, Updated Post Build Time Configurable Parameters </p>
+<p>9. </p>
+<p>Chapter 4, Updated description of Input files. </p>
+<p>10.  Removed chapter 9, MCAL Code Generator Tool </p>
+<p>11.  Removed Chapter 11 - Notes,  </p>
+<p>12.  Replaced the words Tool, Generator Tool, FLS Driver Generator </p>
+<p>tool with MCAL Code Generator Tool in this document. </p>
+<p>13.  Chapter 3, Added remark for common MCAL Code Generator </p>
+<p>Tool user manual. </p>
+<p>14.  Updated Chapter 2, Chapter 3, Chapter 4 and Chapter 8 for </p>
+<p>maintaining consistency.  </p>
+<p>15.  MCAL Code Generator Tool Overview to Code Generation </p>
+<p>Overview </p>
+<p>16.  Removed parameters from Figure 8-1, Configuration Overview  </p>
+<p>17.  Removed Error Messages from chapter 9. </p>
+<p>18.  Added Error Messages in Chapter 9. </p>
+<p>19.  Removed parameters FlsInterruptConsistencyCheck and </p>
+<p>FlsFaciUnit from section 8.2 </p>
+<p> </p>
+<p> </p>
+<p>1.0.2 </p>
+<p>27-Feb-2017 </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>AUTOSAR MCAL R4.0.3 User's Manual </b></p>
+<p><b>FLS Driver Component Ver.1.0.2 </b></p>
+<p><b>Generation Tool User's Manual </b></p>
+<p> </p>
+<p>Publication Date: Rev.1.00, February 27, 2017 </p>
+<p> </p>
+<p> </p>
+<p>Published by: Renesas Electronics Corporation </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>SALES </b></p>
+<p><b>OFFICES</b></p>
+<p> </p>
+<p>http://www.renesas.com</p>
+<p> </p>
+<p>Refer  to </p>
+<p>&quot;http://www.renesas.com/&quot; </p>
+<p>for the latest  and detailed </p>
+<p>information.</p>
+<p> </p>
+<p><b>Renesas Electronics America Inc. </b></p>
+<p>2801 Scott Boulevard Santa Clara, CA 95050-2549, U.S.A. </p>
+<p>Tel: +1-408-588-6000, Fax: +1-408-588-6130 </p>
+<p><b>Renesas Electronics Canada Limited</b></p>
+<p><b> </b></p>
+<p>9251 Yonge Street, Suite 8309 Richmond Hill, Ontario Canada L4C 9T3 </p>
+<p>Tel: +1-905-237-2004 </p>
+<p><b>Renesas Electronics Europe Limited </b></p>
+<p>Dukes Meadow, Millboard Road, Bourne End, Buckinghamshire, SL8 5FH, U.K </p>
+<p>Tel: +44-1628-585-100, Fax: +44-1628-585-900 </p>
+<p><b>Renesas Electronics Europe GmbH </b></p>
+<p>Arcadiastrasse 10, 40472 Düsseldorf, Germany </p>
+<p>Tel: +49-211-6503-0, Fax: +49-211-6503-1327 </p>
+<p><b>Renesas Electronics (China) Co., Ltd. </b></p>
+<p>Room 1709, Quantum Plaza, No.27 ZhiChunLu Haidian District, Beijing 100191, P.R.China </p>
+<p>Tel: +86-10-8235-1155, Fax: +86-10-8235-7679 </p>
+<p><b>Renesas Electronics (Shanghai) Co., Ltd. </b></p>
+<p>Unit 301, Tower A, Central Towers, 555 Langao Road, Putuo District, Shanghai, P. R. China 200333 </p>
+<p>Tel: +86-21-2226-0888, Fax: +86-21-2226-0999 </p>
+<p><b>Renesas Electronics Hong Kong Limited</b></p>
+<p><b> </b></p>
+<p>Unit 1601-1611, 16/F., Tower 2, Grand Century Place, 193 Prince Edward Road West, Mongkok, Kowloon, Hong Kong </p>
+<p>Tel: +852-2265-6688, Fax: +852 2886-9022 </p>
+<p><b>Renesas Electronics Taiwan Co., Ltd. </b></p>
+<p>13F, No. 363, Fu Shing North Road, Taipei 10543, Taiwan </p>
+<p>Tel: +886-2-8175-9600, Fax: +886 2-8175-9670 </p>
+<p><b>Renesas Electronics Singapore Pte. Ltd. </b></p>
+<p>80 Bendemeer Road, Unit #06-02 Hyflux Innovation Centre, Singapore 339949 </p>
+<p>Tel: +65-6213-0200, Fax: +65-6213-0300 </p>
+<p><b>Renesas Electronics Malaysia Sdn.Bhd. </b></p>
+<p>Unit 1207, Block B, Menara Amcorp, Amcorp Trade Centre, No. 18, Jln Persiaran Barat, 46050 Petaling Jaya, Selangor Darul Ehsan, Malaysia </p>
+<p>Tel: +60-3-7955-9390, Fax: +60-3-7955-9510 </p>
+<p><b>Renesas Electronics India Pvt. Ltd. </b></p>
+<p>No.777C, 100 Feet Road, HAL II Stage, Indiranagar, Bangalore, India </p>
+<p>Tel: +91-80-67208700, Fax: +91-80-67208777 </p>
+<p><b>Renesas Electronics Korea Co., Ltd. </b></p>
+<p>12F., 234 Teheran-ro, Gangnam-Gu, Seoul, 135-080, Korea </p>
+<p>Tel: +82-2-558-3737, Fax: +82-2-558-5141 </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>© 2006-2017 Renesas Electronics Corporation. All rights reserved. </p>
+<p>Colophon 4.1 </p>
+<h1 style="page-break-before:always; "></h1>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>AUTOSAR MCAL R4.0.3 </p>
+<p> </p>
+<p>User’s Manual </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> R20UT3642EJ0100 </p>
+</body>
+</html>
+{% endraw %}

@@ -1,0 +1,1991 @@
+---
+layout: default
+title: probe_start
+nav_order: 194
+parent: Cplr (TL120A)
+---
+{% raw %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+<p><b>Getting Started with the Green Hills</b></p>
+<p><b>Probe</b></p>
+<p><b>Green Hills Software</b></p>
+<p><b>30 West Sola Street</b></p>
+<p><b>Santa Barbara, California 93101</b></p>
+<p><b>USA</b></p>
+<p><b>Tel: 805-965-6044</b></p>
+<p><b>Fax: 805-965-6343</b></p>
+<p><b>www.ghs.com</b></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>DISCLAIMER</b></p>
+<p>GREEN HILLS SOFTWARE MAKES NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THE</p>
+<p>CONTENTS HEREOF AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY</p>
+<p>OR FITNESS FOR ANY PARTICULAR PURPOSE. Further, Green Hills Software reserves the right to revise this</p>
+<p>publication and to make changes from time to time in the content hereof without obligation of Green Hills Software to</p>
+<p>notify any person of such revision or changes.</p>
+<p>Copyright © 1983-2014 by Green Hills Software. All rights reserved. No part of this publication may be reproduced, stored</p>
+<p>in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or</p>
+<p>otherwise, without prior written permission from Green Hills Software.</p>
+<p>Green Hills, the Green Hills logo, CodeBalance, GMART, GSTART, INTEGRITY, MULTI, and Slingshot are registered</p>
+<p>trademarks of Green Hills Software. AdaMULTI, Built with INTEGRITY, EventAnalyzer, G-Cover, GHnet, GHnetLite,</p>
+<p>Green Hills Probe, Integrate, ISIM, u-velOSity, PathAnalyzer, Quick Start, ResourceAnalyzer, Safety Critical Products,</p>
+<p>SuperTrace Probe, TimeMachine, TotalDeveloper, DoubleCheck, and velOSity are trademarks of Green Hills Software.</p>
+<p>All other company, product, or service names mentioned in this book may be trademarks or service marks of their respective</p>
+<p>owners.</p>
+<p>For a partial listing of Green Hills Software and periodically updated patent marking information, please visit</p>
+<p>http://www.ghs.com/copyright_patent.html.</p>
+<p>PubID: probe_start-525955</p>
+<p>Branch: http://toolsvc/branches/probe-branch-5.2</p>
+<p>Date: February 19, 2015</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Contents</b></p>
+<p><b>1. Installing Your Probe</b></p>
+<p><b>1</b></p>
+<p>About This Book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Terms You Should Know . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>When You Encounter Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Verifying Components . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Installing Green Hills Probe Software . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Connecting Your Probe to Your Target . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Determining Your Cabling System . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>8</p>
+<p>Connecting with TraceEverywhere . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>9</p>
+<p>Connecting with Legacy Cables . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>10</p>
+<p>Connecting Your Host to Your Probe Over the Serial Port . . . .</p>
+<p>14</p>
+<p><b>2. Configuring Your Probe</b></p>
+<p><b>17</b></p>
+<p>Connecting to Your Probe Over Ethernet . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Configuring a Dynamic IP Address with DHCP . . . . . . . . . .</p>
+<p>19</p>
+<p>Configuring a Static IP Address . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>20</p>
+<p>Testing Your Probe's Ethernet Connection . . . . . . . . . . . . . . . .</p>
+<p>22</p>
+<p>Connecting to Your Probe Over USB . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Connecting the Probe Administrator to Your Probe . . . . . . . . . . .</p>
+<p>25</p>
+<p>Detecting Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Configuring Probe Options with a Configuration File . . . . . . . . .</p>
+<p>27</p>
+<p>Running Diagnostics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<p><b>3. Creating and Debugging a Program</b></p>
+<p><b>29</b></p>
+<p>Creating a Top Project for Your Program . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>Top Project Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Building a Program from the Top Project . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Connecting MULTI to Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p><i>iii</i></p>
+<p><i>Green Hills Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Downloading and Debugging a Program . . . . . . . . . . . . . . . . . . . . .</p>
+<p>37</p>
+<p><b>A. Troubleshooting</b></p>
+<p><b>39</b></p>
+<p>Setting Up Your Hardware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>The Supplied Ribbon Cable or Pod Does Not Fit in the</p>
+<p>Target's JTAG Header . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p>TraceEverywhere Target Adapter Status Light Is Red or</p>
+<p>Off . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p>The Probe Banner in the Serial Terminal Does Not Appear</p>
+<p>or Is Incomplete . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>41</p>
+<p>Corrupted Data is Printed to the Serial Terminal . . . . . . . . . .</p>
+<p>43</p>
+<p>Cannot Type Commands Into the Serial Terminal . . . . . . . . .</p>
+<p>43</p>
+<p>Configuring Your Probe to Connect to MULTI . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Cannot Find Telnet On Windows Vista and Later . . . . . . . . .</p>
+<p>44</p>
+<p>Cannot Connect to Probe Over Telnet . . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Cannot Connect to Probe Over USB . . . . . . . . . . . . . . . . . . . . .</p>
+<p>46</p>
+<p>Windows is Unable to Start Probe as a USB Device . . . . . .</p>
+<p>47</p>
+<p>Configuring Your Probe for Your Target . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>detect Issues Error 60 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>detect Does Not Display a Processor Table . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>detect Issues Error 71 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>detect Sets the Target Processors and then Issues an</p>
+<p>Error</p>
+<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>49</p>
+<p>detect Sets the Target Processor to other . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<p>detect Lists Devices Connected to the Probe, but Sets the</p>
+<p>Target Type to other . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>50</p>
+<p>detect Sets the Target Processor Incorrectly . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>detect Passes but vb Fails . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>51</p>
+<p>tr Does Not Reset the Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>vr Fails or Issues Error 18 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>52</p>
+<p>General Configuration Instructions . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Diagnosing Low-Level JTAG Connection Problems . . . . . .</p>
+<p>54</p>
+<p>Configuring the Probe's Logic High Level . . . . . . . . . . . . . . . .</p>
+<p>56</p>
+<p>Recovering a Probe That Does Not Boot Properly . . . . . . . .</p>
+<p>57</p>
+<p>Uninstalling Probe Software . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<p><b>Index</b></p>
+<p><b>59</b></p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>iv</i></p>
+<p><i>Contents</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 1</b></p>
+<p><b>Installing Your Probe</b></p>
+<p><b>Contents</b></p>
+<p>About This Book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>Terms You Should Know . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>2</p>
+<p>When You Encounter Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>3</p>
+<p>Verifying Components . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>4</p>
+<p>Installing Green Hills Probe Software . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>5</p>
+<p>Connecting Your Probe to Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>7</p>
+<p>Connecting Your Host to Your Probe Over the Serial Port . . . . . . . .</p>
+<p>14</p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>About This Book</b></p>
+<p>This book explains how to install and configure your probe. You will</p>
+<p>learn how to:</p>
+<p>•</p>
+<p>Connect your probe to your hardware and host machine</p>
+<p>•</p>
+<p>Configure your probe for use with your hardware and MULTI</p>
+<p>•</p>
+<p>Create and build a project for an example program</p>
+<p>•</p>
+<p>Download the program to your hardware and debug it</p>
+<p>For reference information, detailed information about commands and</p>
+<p>options, and advanced topics, see the<i> Green Hills Debug Probes User's</i></p>
+<p><i>Guide</i>.</p>
+<p><b>Requirements</b></p>
+<p>Before installing and configuring your Green Hills Probe, you must</p>
+<p>install MULTI and the Green Hills Compiler for each architecture that</p>
+<p>you plan to use. If you have not installed MULTI yet, do so now. For</p>
+<p>information about installing MULTI, see the installation document</p>
+<p>located in the root directory of the installation CD. The instructions in</p>
+<p>this guide cover installation with MULTI 6. If you are using another</p>
+<p>version, some instructions may differ.</p>
+<p><b>Terms You Should Know</b></p>
+<p>•</p>
+<p><b>Host</b> — The computer on which you are running MULTI.</p>
+<p>•</p>
+<p><b>Target</b> — The hardware for which you are developing programs.</p>
+<p>•</p>
+<p><b>Target Adapter</b> — An adapter that connects your probe to your</p>
+<p>target. Target adapters can connect both debug and trace signals to</p>
+<p>a debug probe, and are used by both Green Hills Probe and</p>
+<p>SuperTrace Probe.</p>
+<p>•</p>
+<p><b>Target Transition Module (TTM)</b> — A simple target adapter that</p>
+<p>connects to the probe's<b> Target Interface</b> port, for use with a ribbon</p>
+<p>cable.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>2</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p><b>Active Pod</b> — A powered target adapter and cable that connects the</p>
+<p>probe's<b> Target Interface</b> port to the debug port on your target. The</p>
+<p>active pod has both a plug and socket, either of which can be used</p>
+<p>to connect to your target's debug port. The socket will require an</p>
+<p>extension cable, and can be useful when the plug does not fit due to</p>
+<p>board clearance. The active pod always connects to the probe via a</p>
+<p>TTM that is marked</p>
+<p>DB-EXTEND</p>
+<p>.</p>
+<p>•</p>
+<p><b>TraceEverywhere (TE)</b> — The Green Hills interface for trace port</p>
+<p>adapters that carry trace and debugging signals. TE trace adapters</p>
+<p>adapt a specific target trace port to TE so that the SuperTrace Probe</p>
+<p>can trace different targets by just changing the TE trace adapter. The</p>
+<p>Green Hills Probe also uses TE trace adapters to connect to various</p>
+<p>debugging ports, such as Nexus, ARM CoreSight, and other</p>
+<p>JTAG-based ports.</p>
+<p><b>When You Encounter Problems</b></p>
+<p>If at any time you receive an error or are unable to continue, see</p>
+<p>Appendix A, “Troubleshooting” on page 39. For more information about</p>
+<p>any of the options or procedures described in this book, see the<i> Green</i></p>
+<p><i>Hills Debug Probes User's Guide</i>.</p>
+<p><i>3</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>When You Encounter Problems</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Verifying Components</b></p>
+<p>The box for your Green Hills Probe should contain the following items:</p>
+<p>Green Hills Probe CD</p>
+<p>Screwdriver</p>
+<p>Serial cable</p>
+<p>Power supply</p>
+<p>Green Hills Probe</p>
+<p>TE target adapter ‡</p>
+<p>USB cable</p>
+<p>Ethernet cable</p>
+<p>TTM*</p>
+<p>TE cable ‡</p>
+<p>Active pod (JTAG</p>
+<p>COP and ColdFire</p>
+<p>targets) ‡</p>
+<p>Shielded COP cable</p>
+<p>(JTAG COP targets) ‡</p>
+<p>Ribbon cable ‡</p>
+<p>* Your box might contain multiple TTMs. If it contains a single TTM, the TTM and ribbon cable</p>
+<p>may already be attached to the probe.</p>
+<p>‡ Your box either contains legacy cabling (ribbon cables and active pods) or TE cabling. TE target</p>
+<p>adapters vary by target.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>4</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Installing Green Hills Probe Software</b></p>
+<p>Before using your Green Hills Probe with MULTI, you must install the</p>
+<p>software on the Green Hills Probe CD. The software on the CD includes:</p>
+<p>•</p>
+<p>USB drivers (Windows only).</p>
+<p>•</p>
+<p>Probe firmware for the release marked on the CD. This firmware is</p>
+<p>installed in<i><b> install_directory</i>/ghprobe</b>.</p>
+<p>•</p>
+<p><b>Project Wizard</b> files that add support for new boards.</p>
+<p>•</p>
+<p>Documentation, as PDF files and in the MULTI help viewer.</p>
+<p>To install the software, follow the instructions provided for your operating</p>
+<p>system:</p>
+<p><b>Windows</b></p>
+<p>1.</p>
+<p>Log in to Windows using an account with administrative privileges.</p>
+<p>Close MULTI and any other Green Hills Software applications.</p>
+<p>Make sure that the probe is not connected to your host machine.</p>
+<p>2.</p>
+<p>Insert the Green Hills Probe CD for your target into the CD-ROM</p>
+<p>drive of your host machine. If the installation program does not start</p>
+<p>automatically, run<b> ginstall_win32.exe</b>.</p>
+<p>3.</p>
+<p>The installer will suggest an installation directory. If this is the</p>
+<p>directory you would like to install to, click the<b> Easy Install</b> button;</p>
+<p>otherwise, click<b> Advanced Install</b> to specify an installation</p>
+<p>directory. The probe should be installed in the directory where the</p>
+<p>Green Hills Compiler is located (for example,</p>
+<p><b>C:\ghs\comp_201354</b>). If you are using MULTI 5 or older, specify</p>
+<p>the directory where MULTI is installed.</p>
+<p><b>Linux or Solaris</b></p>
+<p>1.</p>
+<p>Close MULTI and any other Green Hills Software applications.</p>
+<p>2.</p>
+<p>Insert the Green Hills Probe CD for your target into the CD-ROM</p>
+<p>drive of your host machine. If the installation program does not start</p>
+<p>automatically, run one of the following programs, depending on</p>
+<p>your operating system:</p>
+<p>•</p>
+<p><b>ginstall_solaris2</b></p>
+<p><i>5</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Installing Green Hills Probe Software</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p><b>ginstall_linux86</b></p>
+<p>3.</p>
+<p>The installer will suggest an installation directory. If this is the</p>
+<p>directory you would like to install to, click the<b> Easy Install</b> button;</p>
+<p>otherwise, click<b> Advanced Install</b> to specify an installation</p>
+<p>directory. The probe should be installed in the directory where the</p>
+<p>Green Hills Compiler is located (for example,</p>
+<p><b>/usr/ghs/comp_201354</b>). If you are using MULTI 5 or older, specify</p>
+<p>the directory where MULTI is installed.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>6</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Connecting Your Probe to Your Target</b></p>
+<p>After checking the contents of the box and installing the necessary</p>
+<p>software, you are ready to set up your Green Hills Probe. This section</p>
+<p>explains how to connect the probe to your target using current cabling</p>
+<p>systems.</p>
+<p><i>7</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting Your Probe to Your Target</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Determining Your Cabling System</b></p>
+<p>Your Green Hills Probe comes with one of two different cabling systems:</p>
+<p>•</p>
+<p>TraceEverywhere (TE) — supported on Green Hills Probe v3 with</p>
+<p>firmware 3.8.0 and higher.</p>
+<p>•</p>
+<p>Legacy cabling — supported on all probes.</p>
+<p>To determine which cabling system you have, check your box for a TE</p>
+<p>cable:</p>
+<p>•</p>
+<p>If you have a TE cable, continue to</p>
+<p>“Connecting with TraceEverywhere”</p>
+<p>on page 9.</p>
+<p>•</p>
+<p>If you do not, skip to “Connecting</p>
+<p>with Legacy Cables” on page 10.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>8</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Connecting with TraceEverywhere</b></p>
+<p>1.</p>
+<p>Before continuing, make sure that the power switch on the back of</p>
+<p>the probe is in the off (</p>
+<p>O</p>
+<p>) position.</p>
+<p>2.</p>
+<p>If your probe already has the TraceEverywhere (TE) cable attached,</p>
+<p>skip to step 3. Otherwise, if there are screws in the holes on either</p>
+<p>side of the<b> Target Interface</b> port, remove them. Attach the target</p>
+<p>transition module (TTM) to your probe, using the screws to fasten</p>
+<p>it in place:</p>
+<p>3.</p>
+<p>Attach the TE cable to the TTM:</p>
+<p><i>9</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting with TraceEverywhere</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>4.</p>
+<p>Attach the cable to the target adapter (this adapter varies by target</p>
+<p>board). If the adapter consists of multiple parts, do not disconnect</p>
+<p>those parts from one another; they are not designed to be plugged</p>
+<p>and unplugged several times.</p>
+<p>5.</p>
+<p>Attach the target adapter to the debug header on your target board,</p>
+<p>being careful to orient the adapter correctly. If you are uncertain</p>
+<p>about the location of the debug header, refer to your target's</p>
+<p>reference manual.</p>
+<p>6.</p>
+<p>Connect the power supply to the power input connector on the back</p>
+<p>of the probe and to an AC power outlet.</p>
+<p>Your probe is now connected to your target and ready to connect to your</p>
+<p>host for configuration. Skip to “Connecting Your Host to Your Probe</p>
+<p>Over the Serial Port” on page 14.</p>
+<p><b>Connecting with Legacy Cables</b></p>
+<p>1.</p>
+<p>Before continuing, make sure that the power switch on the back of</p>
+<p>the probe is in the off (</p>
+<p>O</p>
+<p>) position.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>10</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>2.</p>
+<p>If your probe already has a target adapter attached, skip to step 6.</p>
+<p>Otherwise, determine whether you will use a TTM and ribbon cable</p>
+<p>or an active pod to connect your probe to your target. If you could</p>
+<p>use either, the active pod has a longer cable, while the ribbon cable</p>
+<p>may be faster.</p>
+<p>Active Pod</p>
+<p>Ribbon cable and TTM</p>
+<p><i>11</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting with Legacy Cables</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>3.</p>
+<p>If you are using a ribbon cable and TTM, make sure that you are</p>
+<p>using the correct TTM for your target board. The type of adapter is</p>
+<p>printed on the upper-right corner of the target side of the module:</p>
+<p>4.</p>
+<p>If your probe already has a target adapter attached, continue to the</p>
+<p>next step. If there are screws in the holes on either side of the<b> Target</b></p>
+<p><b>Interface</b> port, remove them. Attach the target transition module</p>
+<p>(TTM) to your probe, using the screws to fasten it in place (a TTM</p>
+<p>connection is illustrated below):</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>12</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>5.</p>
+<p>If you are connecting your probe to your target with a TTM and</p>
+<p>ribbon cable, connect one end of the supplied ribbon cable to the</p>
+<p>TTM.</p>
+<p>6.</p>
+<p>Make sure that your target board is powered off, and connect the</p>
+<p>other end of the ribbon cable or active pod to the debug header on</p>
+<p>the target board, being careful to orient the cable correctly. If you</p>
+<p>are uncertain about the location of the debug header, refer to your</p>
+<p>target's reference manual.</p>
+<p>7.</p>
+<p>Connect the power supply to the power input connector on the back</p>
+<p>of the probe and to an AC power outlet.</p>
+<p>8.</p>
+<p>Make sure to put your probe in a location that provides good airflow,</p>
+<p>where none of the vents are blocked.</p>
+<p><i>13</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting with Legacy Cables</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Connecting Your Host to Your Probe Over the Serial Port</b></p>
+<p>Now that you have connected your probe to your target, you can connect</p>
+<p>to the probe from your host machine over an RS-232 serial connection</p>
+<p>to confirm that it is operational. To establish a serial connection:</p>
+<p>1.</p>
+<p>Connect a null modem cable to the serial port on the back of your</p>
+<p>probe and to a serial port on your host PC:</p>
+<p>2.</p>
+<p>On your host machine, open a connection to your serial port with</p>
+<p>a serial terminal emulator (such as TeraTerm) using the following</p>
+<p>settings:</p>
+<p>•</p>
+<p><b>Baud Rate</b> — 9600</p>
+<p>•</p>
+<p><b>Data Bits</b> — 8</p>
+<p>•</p>
+<p><b>Parity</b> — none</p>
+<p>•</p>
+<p><b>Stop Bits</b> — 1</p>
+<p>•</p>
+<p><b>Flow Control</b> — none</p>
+<p>3.</p>
+<p>Set the probe's power switch to the on position (</p>
+<p>|</p>
+<p>).</p>
+<p>4.</p>
+<p>If you see the following banner in the serial terminal, the serial</p>
+<p>connection was successful (the banner may vary depending on your</p>
+<p>firmware revision):</p>
+<p>[?] % ghBootloader</p>
+<p>Green Hills Probe, Version 3</p>
+<p>Unit Serial Number 1337</p>
+<p>Booting...</p>
+<p>Probe Firmware Release Version 5.0.8</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>14</i></p>
+<p><i>Chapter 1. Installing Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>Module core built Tue Oct 29 18:40:23 2013</p>
+<p>Serial No: 13030</p>
+<p>Green Hills Probe v3</p>
+<p>Part number 520-GP350-03x</p>
+<p>Green Hills Software, Inc</p>
+<p>http://www.ghs.com</p>
+<p>Serial: 9600</p>
+<p>USB: Enabled</p>
+<p>Ethernet: Enabled</p>
+<p>IP: DHCP</p>
+<p>Gateway: DHCP</p>
+<p>Netmask: DHCP</p>
+<p>MAC Addr: 00:12:5c:00:2d:e6</p>
+<p>Starting the initialization sequence.</p>
+<p>01234567 done.</p>
+<p>Type 'info' to list probe information.</p>
+<p>Type 'setup' to set the current configuration.</p>
+<p>Type 'help' to list the online help.</p>
+<p>[?] %</p>
+<p>The prompt after the banner indicates that booting has finished, and</p>
+<p>displays both the target setting and state (</p>
+<p>ppc5567</p>
+<p>is provided as</p>
+<p>an example).</p>
+<p>5.</p>
+<p>If you are using TraceEverywhere (TE) cabling, check for a green</p>
+<p>status light on the target adapter after the banner prints in the serial</p>
+<p>terminal. This light indicates that the adapter is plugged in and</p>
+<p>functioning correctly. If the light is red or off, see “TraceEverywhere</p>
+<p>Target Adapter Status Light Is Red or Off” on page 41.</p>
+<p><b>Note</b></p>
+<p>You may power on your target after it is plugged into to the</p>
+<p>probe and the probe is turned on, but you do not need to do so</p>
+<p>until you are ready to communicate with it.</p>
+<p><i>15</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting Your Host to Your Probe Over the Serial Port</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 2</b></p>
+<p><b>Configuring Your Probe</b></p>
+<p><b>Contents</b></p>
+<p>Connecting to Your Probe Over Ethernet . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>18</p>
+<p>Connecting to Your Probe Over USB . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>24</p>
+<p>Connecting the Probe Administrator to Your Probe . . . . . . . . . . . . . . .</p>
+<p>25</p>
+<p>Detecting Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>26</p>
+<p>Configuring Probe Options with a Configuration File . . . . . . . . . . . . .</p>
+<p>27</p>
+<p>Running Diagnostics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>28</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Your Green Hills probe is equipped with gigabit Ethernet and USB 2.0</p>
+<p>ports for high-speed connections to your host computer. Although</p>
+<p>connecting to your probe through the serial port is a good way to confirm</p>
+<p>that it is operational, you must connect to your probe over Ethernet or</p>
+<p>USB to use it with MULTI.</p>
+<p>•</p>
+<p>If you want to connect to your probe over Ethernet, see “Connecting</p>
+<p>to Your Probe Over Ethernet” on page 18</p>
+<p>•</p>
+<p>If you want to connect to your probe over USB, see “Connecting to</p>
+<p>Your Probe Over USB” on page 24</p>
+<p><b>Connecting to Your Probe Over Ethernet</b></p>
+<p>The probe can detect network settings automatically using DHCP. To</p>
+<p>connect your probe to a network using this feature, see “Configuring a</p>
+<p>Dynamic IP Address with DHCP” on page 19.</p>
+<p>If your network does not support DHCP or you want your probe to use</p>
+<p>a static IP address, you can configure the settings manually using the</p>
+<p>instructions in “Configuring a Static IP Address” on page 20.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>18</i></p>
+<p><i>Chapter 2. Configuring Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring a Dynamic IP Address with DHCP</b></p>
+<p>In the serial terminal window, type</p>
+<p>setup net</p>
+<p>. The probe presents the</p>
+<p>following settings with their default values.</p>
+<p>1.</p>
+<p>dhcp</p>
+<p>— Press Enter to accept the default setting (</p>
+<p>on</p>
+<p>).</p>
+<p>2.</p>
+<p>dhcp_lease</p>
+<p>— Press Enter to accept the default setting. This</p>
+<p>setting specifies number of days that the probe retains its DHCP</p>
+<p>settings. The default is</p>
+<p>0</p>
+<p>, meaning that the network settings never</p>
+<p>expire.</p>
+<p>3.</p>
+<p>hostname</p>
+<p>— Type the hostname for your probe and press Enter.</p>
+<p>The DHCP server associates this hostname with your probe so that</p>
+<p>you can connect to your probe by specifying its hostname instead</p>
+<p>of its IP address. By default, the probe's hostname is</p>
+<p>ghprobe<i>serial</i></p>
+<p>, where<i> serial</i> is your probe's serial number (for</p>
+<p>example,</p>
+<p>ghprobe1234</p>
+<p>). The probe's serial number is located on</p>
+<p>a sticker affixed to the bottom of the probe.</p>
+<p>You have now configured your probe to obtain an IP address using</p>
+<p>DHCP. Skip to “Testing Your Probe's Ethernet Connection” on page 22.</p>
+<p><i>19</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring a Dynamic IP Address with DHCP</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring a Static IP Address</b></p>
+<p>If you want to configure your probe to have a static IP address, you might</p>
+<p>need to contact your network administrator to obtain the following</p>
+<p>settings:</p>
+<p>•</p>
+<p>IP address</p>
+<p>•</p>
+<p>Gateway</p>
+<p>•</p>
+<p>Netmask</p>
+<p>If you set the IP address incorrectly, you could disrupt other devices on</p>
+<p>your network.</p>
+<p>In the serial terminal window, type</p>
+<p>setup net</p>
+<p>. The probe presents the</p>
+<p>following settings with their default values.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>20</i></p>
+<p><i>Chapter 2. Configuring Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>1.</p>
+<p>dhcp</p>
+<p>— Type</p>
+<p>off</p>
+<p>and press Enter.</p>
+<p>2.</p>
+<p>ip</p>
+<p>— Type an IP address in dotted quad form and press Enter (for</p>
+<p>example,</p>
+<p>192.168.1.150)</p>
+<p>.</p>
+<p>3.</p>
+<p>netmask</p>
+<p>— Type the netmask in dotted quad form and press Enter.</p>
+<p>The default setting is appropriate for class C networks (most</p>
+<p>networks are class C). Use a different setting if you are not on a</p>
+<p>class C network.</p>
+<p>4.</p>
+<p>gateway</p>
+<p>— Type the gateway's IP address in dotted quad form and</p>
+<p>press Enter.</p>
+<p>5.</p>
+<p>hostname</p>
+<p>— Press enter to accept the default setting. This setting</p>
+<p>is not used when DHCP is off; it is provided for future protocol</p>
+<p>support. When transporting your probe between networks with and</p>
+<p>without DHCP, your probe retains its hostname.</p>
+<p>6.</p>
+<p>When the probe asks if you want to reboot, press Enter to reboot</p>
+<p>the probe.</p>
+<p>You have now configured your probe to use a static IP address.</p>
+<p><i>21</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring a Static IP Address</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Testing Your Probe's Ethernet Connection</b></p>
+<p>After configuring your probe for your network, test the Ethernet</p>
+<p>connection with Telnet. To connect to the probe through Telnet:</p>
+<p>1.</p>
+<p>Plug one end of an Ethernet cable into your probe and the other end</p>
+<p>into a switch or hub that is attached to your network. If the probe</p>
+<p>detects that it is connected to a network, the Ethernet link status</p>
+<p>light turns on:</p>
+<p>2.</p>
+<p>In the serial terminal window, type</p>
+<p>reboot</p>
+<p>to reboot your probe.</p>
+<p>3.</p>
+<p>After your probe reboots, type</p>
+<p>set ip</p>
+<p>to confirm that your probe</p>
+<p>has an IP address.</p>
+<p>4.</p>
+<p>If you are using Windows, select<b> Run</b> from the<b> Start</b> menu, type</p>
+<p>telnet</p>
+<p>, and click<b> OK</b>. If you are using Linux, open a shell and</p>
+<p>type</p>
+<p>telnet</p>
+<p>.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>22</i></p>
+<p><i>Chapter 2. Configuring Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>5.</p>
+<p>At the Telnet prompt, type</p>
+<p>open<i> ip_address</i></p>
+<p>, where<i> ip_address</i></p>
+<p>is your probe's IP address. If Telnet can connect to the probe, you</p>
+<p>should see the following screen:</p>
+<p><b>Note</b></p>
+<p>If you are using DHCP and your network supports dynamic</p>
+<p>hostnames, you can also open a connection with</p>
+<p>open</p>
+<p><i>hostname</i></p>
+<p>, where<i> hostname</i> is your probe's hostname.</p>
+<p>You can now connect to your probe over Ethernet. Continue to</p>
+<p>“Connecting the Probe Administrator to Your Probe” on page 25.</p>
+<p><i>23</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Testing Your Probe's Ethernet Connection</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Connecting to Your Probe Over USB</b></p>
+<p>This section explains how to connect your probe to your host machine</p>
+<p>over USB. USB connections are supported on Windows only.</p>
+<p>1.</p>
+<p>Connect a USB cable to the USB connector on the back of your</p>
+<p>probe and to a USB port on your host machine (or a USB hub</p>
+<p>connected to your host machine). The USB link status light should</p>
+<p>turn on:</p>
+<p>2.</p>
+<p>If Windows reports that it has found a new USB device and asks to</p>
+<p>search for the appropriate drivers, click<b> Yes</b>. Windows will locate</p>
+<p>and use the driver you installed from the Green Hills Probe CD.</p>
+<p><b>Note</b></p>
+<p>If Windows cannot find the driver and the<b> Install New</b></p>
+<p><b>Hardware Wizard</b> appears, run the installer on the Green Hills</p>
+<p>Probe CD. For more information, see “Installing Green Hills</p>
+<p>Probe Software” on page 5.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>24</i></p>
+<p><i>Chapter 2. Configuring Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Connecting the Probe Administrator to Your Probe</b></p>
+<p>Now that the probe can connect to MULTI, you can use MULTI's<b> Probe</b></p>
+<p><b>Administrator</b> to configure the probe for your target. The<b> Probe</b></p>
+<p><b>Administrator</b> is a program that lists all available probes and allows</p>
+<p>you to perform basic tasks such as setting options and updating firmware.</p>
+<p>To connect to the<b> Probe Administrator</b>:</p>
+<p>1.</p>
+<p>On your host machine, run MULTI.</p>
+<p>2.</p>
+<p>In the MULTI Launcher, select<b> Utilities</b> →<b> Probe Administrator</b>.</p>
+<p>3.</p>
+<p>In the<b> Probe Administrator</b>, select<b> File</b> →<b> New Probe</b> to open the</p>
+<p><b>New Probe</b> dialog box.</p>
+<p>4.</p>
+<p>In the<b> Probe Name</b> box, type a name for your probe that is easy to</p>
+<p>remember. This name is for your convenience only and is unrelated</p>
+<p>to the probe's hostname.</p>
+<p>5.</p>
+<p>If you connected to your probe over USB, select the<b> USB</b> radio</p>
+<p>button. If you connected to your probe over Ethernet, select the</p>
+<p><b>Ethernet</b> radio button and type your probe's IP address in the<b> IP</b></p>
+<p><b>Address</b> box.</p>
+<p>6.</p>
+<p>Click<b> OK</b>.</p>
+<p>7.</p>
+<p>In the<b> Probe Administrator</b>, double-click your probe's name to</p>
+<p>open a<b> Probe Administration</b> window. You are now connected to</p>
+<p>your probe with the<b> Probe Administrator</b>.</p>
+<p><i>25</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting the Probe Administrator to Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Detecting Your Target</b></p>
+<p>The<b> Probe Administrator</b> contains a prompt that you can use to send</p>
+<p>commands to your probe. To use this prompt to configure your probe</p>
+<p>for your target board:</p>
+<p>1.</p>
+<p>Power on your target.</p>
+<p>2.</p>
+<p>In the<b> Probe Administration</b> window, click the<b> Prompt</b> tab.</p>
+<p>3.</p>
+<p>At the prompt, type</p>
+<p>detect</p>
+<p>. This command configures the Green</p>
+<p>Hills Probe for the processors on your target board. It is useful even</p>
+<p>if the prompt indicates that the probe knows what target you are</p>
+<p>using, because it confirms that the probe is able to see your target</p>
+<p>and that the target is configured correctly. If the command prints</p>
+<p>the following message:</p>
+<p>Target has been detected and set to<i> target_string</i></p>
+<p>where<i> target_string</i> is the name of your target, the detection was</p>
+<p>successful.</p>
+<p>4.</p>
+<p>Type</p>
+<p>save</p>
+<p>to save the settings changed by<b> detect</b>.</p>
+<p>If you have problems detecting your processors, see Appendix A,</p>
+<p>“Troubleshooting” on page 39.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>26</i></p>
+<p><i>Chapter 2. Configuring Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring Probe Options with a Configuration File</b></p>
+<p>Green Hills provides probe configuration files for many different target</p>
+<p>boards. These files contain tested settings for all target-related</p>
+<p>configuration options. When you create a new project using MULTI 6.0</p>
+<p>or later and Green Hills Probe v5.2 or later, a copy of this file will be</p>
+<p>added to your new project and will be automatically loaded when you</p>
+<p>connect MULTI to your target. If you have an earlier version of probe</p>
+<p>or MULTI software, you can find and load this configuration file</p>
+<p>manually. To determine if one of these files exists for your board, and</p>
+<p>to use that file to configure your probe:</p>
+<p>1.</p>
+<p>In a terminal window or command prompt, navigate to your MULTI</p>
+<p>install directory for MULTI 5, or your tools install directory for</p>
+<p>MULTI 6 or newer. Inside that directory, navigate to</p>
+<p><b>target\<i>architecture</b></i>.</p>
+<p>2.</p>
+<p>If there is a directory that is named after your board, navigate to</p>
+<p>that directory and look for a file that ends in<b> .cfg</b> or<b> .ghpcfg</b>. When</p>
+<p>you find the file, run one of the following commands:</p>
+<p>&gt;<i> tools_install</i>\mpadmin -cfgload<i> hostname config_file</i></p>
+<p>&gt;<i> tools_install</i>\mpadmin -cfgload -usb<i> config_file</i></p>
+<p>If there is no directory named after your board, or if the directory</p>
+<p>exists but it does not contain a configuration file, continue to the</p>
+<p>next section.</p>
+<p><i>27</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Configuring Probe Options with a Configuration File</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Running Diagnostics</b></p>
+<p>Now that you have detected your target, run the following diagnostics</p>
+<p>to make sure that you can communicate with it:</p>
+<p>1.</p>
+<p>Type</p>
+<p>vb</p>
+<p>to tests the bypass register of all devices on the JTAG scan</p>
+<p>chain.<b> vb</b> is not applicable for PowerPC 5xx, PowerPC 8xx and</p>
+<p>ColdFire targets. If you are using one of those targets, skip this step.</p>
+<p>2.</p>
+<p>If your target has multiple cores, type</p>
+<p>tl</p>
+<p>(as in “target list”) to</p>
+<p>obtain a list of cores and IDs. Then, type</p>
+<p>t<i> core_id</i></p>
+<p>to select a</p>
+<p>core. Most subsequent commands, including the following</p>
+<p>diagnostics, control or configure just that core.</p>
+<p>3.</p>
+<p>Type</p>
+<p>tr</p>
+<p>to reset your target. This command verifies that you can</p>
+<p>reset your target, and is necessary for some targets after testing</p>
+<p>bypass mode.</p>
+<p>4.</p>
+<p>Type</p>
+<p>rr</p>
+<p>to confirm that the probe can read your target's registers.</p>
+<p>When successful, this command returns a list of registers, similar</p>
+<p>to the following output:</p>
+<p>ppc5200[H] % rr</p>
+<p>gpr0=0xac5658ad</p>
+<p>gpr9=0x805000a0 gpr18=0x24444889 gpr27=0x04100821</p>
+<p>gpr1=0x845008a1 gpr10=0x04400880 gpr19=0x8816102c gpr28=0x0446088c</p>
+<p>gpr2=0x08421084 gpr11=0x04000801 gpr20=0x2c5058a0 gpr29=0x08101021</p>
+<p>gpr3=0x24004800 gpr12=0x04020804 gpr21=0xa0404080 gpr30=0x2c425885</p>
+<p>gpr4=0x8c001800 gpr13=0x08001001 gpr22=0x8c041808 gpr31=0xa0024005</p>
+<p>gpr5=0x28005000 gpr14=0x2006400d gpr23=0x24144829</p>
+<p>lr=0x00000000</p>
+<p>gpr6=0xa0044008 gpr15=0x80120024 gpr24=0x885610ad</p>
+<p>iar=0x00003ffc</p>
+<p>gpr7=0x88141029 gpr16=0x00440089 gpr25=0x205240a4</p>
+<p>gpr8=0x205640ac gpr17=0x08121024 gpr26=0x84440888</p>
+<p>ppc5200[H] %</p>
+<p>5.</p>
+<p>Type</p>
+<p>vr 100</p>
+<p>to test the probe's ability to write to registers and read</p>
+<p>back the values. This command runs the test 100 times.</p>
+<p>6.</p>
+<p>Close the<b> Probe Administration</b> window. If you leave the window</p>
+<p>open, other applications may not be able to connect to your probe</p>
+<p>over USB.</p>
+<p>If you are able to run all of the above commands without errors, your</p>
+<p>probe is able to communicate with your target and is ready for use with</p>
+<p>the MULTI Debugger. If any of the diagnostics fail, see Appendix A,</p>
+<p>“Troubleshooting” on page 39.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>28</i></p>
+<p><i>Chapter 2. Configuring Your Probe</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Chapter 3</b></p>
+<p><b>Creating and Debugging a</b></p>
+<p><b>Program</b></p>
+<p><b>Contents</b></p>
+<p>Creating a Top Project for Your Program . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>30</p>
+<p>Top Project Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>33</p>
+<p>Building a Program from the Top Project . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>34</p>
+<p>Connecting MULTI to Your Target . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>35</p>
+<p>Downloading and Debugging a Program . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>37</p>
+<h1 style="page-break-before:always; "></h1>
+<p>Before beginning your first MULTI debugging session using your Green</p>
+<p>Hills Probe, you must ensure that your target board is configured</p>
+<p>properly. This section explains how to create a Top Project that you can</p>
+<p>use to configure your target, test your debugging environment, and</p>
+<p>download and debug a “Hello World” program.</p>
+<p><b>Creating a Top Project for Your Program</b></p>
+<p>The<b> Project Wizard</b> is a tool that prompts you for information about</p>
+<p>your target board and creates a Top Project that contains:</p>
+<p>•</p>
+<p>Connection Methods that you use to connect to your target through</p>
+<p>your Green Hills Probe.</p>
+<p>•</p>
+<p>A MULTI board setup (<b>.mbs</b>) script that configures your target.</p>
+<p>•</p>
+<p>Linker directives files that define memory maps for your target.</p>
+<p>To use the<b> Project Wizard</b> to create a<b> Top Project</b>:</p>
+<p>1.</p>
+<p>On your host machine, open MULTI.</p>
+<p>2.</p>
+<p>From the MULTI Launcher, click</p>
+<p>and select<b> Create Project</b> to</p>
+<p>open the<b> Project Wizard</b>.</p>
+<p>3.</p>
+<p>Leave the default value in the<b> Name</b> box, and enter a directory for</p>
+<p>your Top Project in the<b> Directory</b> box. Click the<b> Next</b> button.</p>
+<p>4.</p>
+<p>In the<b> Operating System</b> list, select<b> Stand-Alone</b>. Click the<b> Next</b></p>
+<p>button.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>30</i></p>
+<p><i>Chapter 3. Creating and Debugging a Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>5.</p>
+<p>In the<b> Processor Family</b> list, select the processor family to which</p>
+<p>your target's processor belongs. If you have only installed one</p>
+<p>processor family for MULTI, the wizard does not display this screen.</p>
+<p>Click the<b> Next</b> button.</p>
+<p>6.</p>
+<p>In the<b> Target Board</b> list, select your target board. If your target</p>
+<p>board is not listed or you are using custom hardware, click the plus</p>
+<p>sign to the left of the<b> Generic</b> item at the top of the list and select</p>
+<p>your processor. In this case, you will probably need to customize</p>
+<p>the board setup script and linker directives files the wizard creates</p>
+<p>for your target. Click the<b> Finish</b> button to create your Top Project.</p>
+<p><i>31</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Creating a Top Project for Your Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>7.</p>
+<p>When the<b> Project Wizard</b> closes, a dialog box may open to inform</p>
+<p>you about the newly created Top Project. If so, click the<b> OK</b> button</p>
+<p>to continue.</p>
+<p>8.</p>
+<p>After you create a new Top Project, the<b> Add Item to Project</b> dialog</p>
+<p>box opens. If you are creating a Stand-Alone project, select<b> Hello</b></p>
+<p><b>World (C)</b> and click the<b> Finish</b> button. This adds an example “Hello</p>
+<p>World” project to your Top Project.</p>
+<p>You have now created a Top Project for your target.</p>
+<p>For more information about<b> Project Wizard</b> screens and options, see</p>
+<p>the documentation about creating a new project in the<i> MULTI: Building</i></p>
+<p><i>Applications</i> book for your processor family.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>32</i></p>
+<p><i>Chapter 3. Creating and Debugging a Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Top Project Structure</b></p>
+<p>After you create a Top Project, the MULTI Project Manager opens. It</p>
+<p>should look similar to the following window:</p>
+<p>There are three projects in the window:</p>
+<p>•</p>
+<p><i><b>dir</i>\default.gpj</b> — The Top Project.</p>
+<p>•</p>
+<p><b>src_hello\hello.gpj</b> — The example “Hello World” project you</p>
+<p>added with the<b> Add Item to Project</b> dialog box.</p>
+<p>•</p>
+<p><b>tgt\resources.gpj</b> — The<i> Target Resources project</i>. This project</p>
+<p>contains files necessary to configure and connect to your target (such</p>
+<p>as setup scripts and linker directives files).</p>
+<p>○</p>
+<p><b>mpserv_standard.mbs</b> — The board setup script for your target.</p>
+<p>This script prepares your target for downloading and running a</p>
+<p>program. You may need to customize this script if you are using</p>
+<p>custom hardware.</p>
+<p>○</p>
+<p><i><b>name</i>.ld</b> — Linker directives files for your target. These files</p>
+<p>help determine how your program is laid out in memory. You</p>
+<p>may need to customize these files if you are using custom</p>
+<p>hardware.</p>
+<p><i>33</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Top Project Structure</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>In this example, the<b> src_hello\hello.gpj</b> project is linked using</p>
+<p><b>standalone_ram.ld</b>. The<b> tgt\standalone_ram.ld</b> item in the</p>
+<p><b>src_hello\hello.gpj</b> project represents the same file as the</p>
+<p><b>standalone_ram.ld</b> item in the Target Resources project.</p>
+<p>○</p>
+<p><b>board_info.txt</b> (not available for all targets) — Additional notes</p>
+<p>about your target. If your project contains this file, read its</p>
+<p>contents before proceeding to the next section.</p>
+<p><b>Building a Program from the Top Project</b></p>
+<p>After you create a Top Project with the<b> Project Wizard</b>, you should test</p>
+<p>your debugging environment by downloading and running the example</p>
+<p>“Hello World” program. Before downloading the program, you must</p>
+<p>build your project.</p>
+<p>To build the “Hello World” example project:</p>
+<p>1.</p>
+<p>Select<b> src_hello\hello.gpj</b> in the Project Manager.</p>
+<p>2.</p>
+<p>Click</p>
+<p>.</p>
+<p>If the build was successful, you should see text similar to the following</p>
+<p>in the<b> Status</b> pane:</p>
+<p>Building hello</p>
+<p>Compiling hello.c because hello.o does not exist</p>
+<p>Linking hello because it does not exist</p>
+<p>Done</p>
+<p>Build successful (Mon Jul 25 12:30:00 2011)</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>34</i></p>
+<p><i>Chapter 3. Creating and Debugging a Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Connecting MULTI to Your Target</b></p>
+<p>To connect MULTI to your target:</p>
+<p>1.</p>
+<p>Verify that all hardware connections are tight and secure, and that</p>
+<p>both the board and your probe are powered.</p>
+<p>2.</p>
+<p>In the Project Manager, select<b> src_hello\hello.gpj</b> and click</p>
+<p>to</p>
+<p>open the MULTI Debugger.</p>
+<p>3.</p>
+<p>In the Debugger window, click</p>
+<p>to open a<b> Connection Chooser</b></p>
+<p>window.</p>
+<p>4.</p>
+<p>In the<b> Connect to a Target</b> list, select the<b> Green Hills Debug</b></p>
+<p><b>Probe (mpserv)</b> connection for your target. For example:</p>
+<p>5.</p>
+<p>Click the<b> Connect</b> button. When the<b> Connection Chooser</b> prompts</p>
+<p>you to enter a Probe Name for the new connection, click<b> OK</b>. The</p>
+<p><b>Connection Editor</b> window opens.</p>
+<p><i>35</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Connecting MULTI to Your Target</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>6.</p>
+<p>In the<b> Connection Editor</b> window:</p>
+<p>a.</p>
+<p>In the<b> Connection</b> tab, select the radio button that corresponds</p>
+<p>to your connection type (Ethernet or USB). If you connect to</p>
+<p>your probe over Ethernet, type the probe's hostname or IP</p>
+<p>address in the<b> Probe Name or IP Address</b> box. If you connect</p>
+<p>to multiple probes over USB, type the probe's serial number</p>
+<p>in the<b> Probe Serial Number or USB Index</b> box to specify</p>
+<p>which probe you want to connect to, and make sure that there</p>
+<p>are no active connections to that probe (such as the<b> Probe</b></p>
+<p><b>Administrator</b>).</p>
+<p>b.</p>
+<p>In the<b> Target Setup script</b> box, leave the default value</p>
+<p>(<b>mpserv_standard.mbs</b>). This file is the setup script that the</p>
+<p><b>Project Wizard</b> generated and placed in your Target Resources</p>
+<p>project.</p>
+<p>c.</p>
+<p>Click<b> OK</b>.</p>
+<p>The MULTI Debugger is now connected to your target.</p>
+<p>For more information about the<b> Connection Editor</b>, see the</p>
+<p>documentation about the Connection Editor in the<i> MULTI: Configuring</i></p>
+<p><i>Connections</i> book.</p>
+<p><b>Warning</b></p>
+<p>Do not unplug the USB cable while MULTI is connected to</p>
+<p>your target over USB.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>36</i></p>
+<p><i>Chapter 3. Creating and Debugging a Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Downloading and Debugging a Program</b></p>
+<p>To download and run the “Hello World” program:</p>
+<p>1.</p>
+<p>In the MULTI Debugger, click</p>
+<p>. The<b> Prepare Target</b> dialog box</p>
+<p>opens.</p>
+<p>2.</p>
+<p>In the<b> Prepare Target</b> dialog box, leave the settings at their default</p>
+<p>values. The project is configured to download the program to RAM.</p>
+<p>Click<b> OK</b>.</p>
+<p>3.</p>
+<p>The<b> Initializing Target</b> dialog box opens. This dialog box shows</p>
+<p>progress as MULTI runs your setup script and downloads the</p>
+<p>program. It closes when the progress is complete.</p>
+<p>If the download and execution of the program are successful, your</p>
+<p>debugger should show output similar to the following:</p>
+<p>I/O: Hello world.</p>
+<p>I/O: -----------------------------</p>
+<p>If the download was not successful, the<b> Prepare Target</b> dialog opens</p>
+<p>and displays any errors that occurred during the setup script or while</p>
+<p>downloading the program. If you are using custom hardware and have</p>
+<p>not modified the default setup script and/or linker directives files, you</p>
+<p>should expect some errors in red text in the<b> Prepare Target</b> dialog box.</p>
+<p>If this happens, you must modify the default setup script and linker</p>
+<p>directives files in your Target Resources project to configure your target</p>
+<p>properly. For more information, see Chapter 2, “Configuring Target</p>
+<p>Resources” in the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p><i>37</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Downloading and Debugging a Program</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Appendix A</b></p>
+<p><b>Troubleshooting</b></p>
+<p><b>Contents</b></p>
+<p>Setting Up Your Hardware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>40</p>
+<p>Configuring Your Probe to Connect to MULTI . . . . . . . . . . . . . . . . . . .</p>
+<p>44</p>
+<p>Configuring Your Probe for Your Target . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>48</p>
+<p>General Configuration Instructions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>54</p>
+<p>Uninstalling Probe Software . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+<p>57</p>
+<h1 style="page-break-before:always; "></h1>
+<p>This section explains how to troubleshoot problems you may encounter</p>
+<p>when configuring your probe to detect and communicate with your target.</p>
+<p>Before looking at a specific topic, make sure that:</p>
+<p>•</p>
+<p>Your target is powered on.</p>
+<p>•</p>
+<p>Your probe is powered on.</p>
+<p>•</p>
+<p>All connections are tight and secure.</p>
+<p>•</p>
+<p>The supplied ribbon cable is plugged into your target in the proper</p>
+<p>orientation, in the correct port. Also, check that it is properly aligned</p>
+<p>(not shifted over by one pin).</p>
+<p><b>Note</b></p>
+<p>On shielded COP cables, the red stripe on the cable</p>
+<p>indicates pin 16, not pin 1.</p>
+<p>If you have checked all the items in the previous list and are still having</p>
+<p>trouble setting up your Green Hills Probe, consult one of the following</p>
+<p>sections.</p>
+<p><b>Setting Up Your Hardware</b></p>
+<p>This section provides troubleshooting steps for initial probe setup.</p>
+<p>•</p>
+<p>“The Supplied Ribbon Cable or Pod Does Not Fit in the Target's</p>
+<p>JTAG Header” on page 41</p>
+<p>•</p>
+<p>“TraceEverywhere Target Adapter Status Light Is Red or Off”</p>
+<p>on page 41</p>
+<p>•</p>
+<p>“The Probe Banner in the Serial Terminal Does Not Appear or Is</p>
+<p>Incomplete” on page 41</p>
+<p>•</p>
+<p>“Corrupted Data is Printed to the Serial Terminal” on page 43</p>
+<p>•</p>
+<p>“Cannot Type Commands Into the Serial Terminal” on page 43</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>40</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>The Supplied Ribbon Cable or Pod Does Not Fit in the Target's JTAG Header</b></p>
+<p>If the supplied ribbon cable or pod does not fit in one of your target's</p>
+<p>JTAG ports:</p>
+<p>•</p>
+<p>Do not attempt to physically modify the cable or pod.</p>
+<p>•</p>
+<p>Some targets have more than one JTAG header. Look for a different</p>
+<p>JTAG header that fits.</p>
+<p>•</p>
+<p>If your Green Hills Probe shipped with adapters for the ribbon cable</p>
+<p>or pod, try using one of them.</p>
+<p><b>TraceEverywhere Target Adapter Status Light Is Red or Off</b></p>
+<p>If you are using TraceEverywhere (TE) cabling, you have powered on</p>
+<p>your probe, and the TE target adapter's status light is red or turned off,</p>
+<p>there may be a problem with your connection. If this happens:</p>
+<p>1.</p>
+<p>Turn your probe off.</p>
+<p>2.</p>
+<p>Check to make sure all connections are tight and secure.</p>
+<p>3.</p>
+<p>Turn your probe on, and enter the following command in a serial</p>
+<p>terminal:</p>
+<p>set adapter auto</p>
+<p>4.</p>
+<p>Check the adapter setting to make sure it has changed to</p>
+<p>auto</p>
+<p>:</p>
+<p>set adapter</p>
+<p>If the adapter setting is correct and the cables are secure, the status light</p>
+<p>should turn green. If the adapter type is</p>
+<p>error</p>
+<p>or the light does not turn</p>
+<p>green, there may be a problem with the TE target adapter. Contact Green</p>
+<p>Hills support.</p>
+<p><b>The Probe Banner in the Serial Terminal Does Not Appear or Is Incomplete</b></p>
+<p>When you boot your probe while connected to a serial terminal, if the</p>
+<p>complete probe banner does not display, try loading a new firmware</p>
+<p><i>41</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>The Supplied Ribbon Cable or Pod Does Not Fit in the Target's JTAG Header</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>image (see “Recovering a Probe That Does Not Boot Properly”</p>
+<p>on page 57).</p>
+<p>If the probe banner does not display at all, check to see if the power LED</p>
+<p>on the front of the probe is illuminated. If it is not illuminated:</p>
+<p>•</p>
+<p>Verify that the power supply is connected to the probe, and that the</p>
+<p>power switch is in the on position.</p>
+<p>•</p>
+<p>Turn the power switch off and then back on again.</p>
+<p>•</p>
+<p>Try using a different power outlet and/or supply.</p>
+<p>If you have a beige probe, the power supply must have a voltage</p>
+<p>between 7 and 15 volts and provide at least 500mA of current. The</p>
+<p>polarity of the power supply (center-positive or outside-positive)</p>
+<p>does not matter.</p>
+<p>If you have a black probe, the power supply must have a voltage of</p>
+<p>9 volts and provide at least 3A of current. The polarity must be</p>
+<p>center-positive.</p>
+<p>•</p>
+<p>If the power LED still does not illuminate, contact Green Hills</p>
+<p>support.</p>
+<p>If the power LED illuminates but no text appears in the serial terminal:</p>
+<p>1.</p>
+<p>Turn the probe off.</p>
+<p>2.</p>
+<p>Press and hold the<b> User</b> button on the front of the probe.</p>
+<p>3.</p>
+<p>While holding the<b> User</b> button, turn the probe on.</p>
+<p>•</p>
+<p>If the probe does not print any text to the serial terminal, this</p>
+<p>indicates a problem with your cable or COM port. Try using a</p>
+<p>different COM port on your host computer, or a different null</p>
+<p>modem serial cable.</p>
+<p>•</p>
+<p>If the probe does print text to the serial terminal, try loading a</p>
+<p>new firmware image (see “Recovering a Probe That Does Not</p>
+<p>Boot Properly” on page 57).</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>42</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Corrupted Data is Printed to the Serial Terminal</b></p>
+<p>If your serial terminal emulator is displaying corrupted data when</p>
+<p>connected to the probe, your terminal's baud rate is probably incorrect.</p>
+<p>The probe's serial port is configured at 9600 baud for a few seconds after</p>
+<p>it is power cycled, after which it changes to its configured baud rate</p>
+<p>setting. If the configured setting is not 9600 baud, the probe prints the</p>
+<p>following message in the terminal before changing the baud rate. For</p>
+<p>example, if the probe's baud rate is set to 38400, it would print the</p>
+<p>following message:</p>
+<p>Switching baud rate to 38400, press the space bar to remain</p>
+<p>at 9600.</p>
+<p>If you need to change the rate back to 9600 baud:</p>
+<p>1.</p>
+<p>Press the space bar when the probe prints this message.</p>
+<p>2.</p>
+<p>After you are connected to the probe, type:</p>
+<p>set baud 9600</p>
+<p>If you want to continue using the new baud rate (for example, 38400</p>
+<p>baud), change the baud rate setting in your terminal program to 38400.</p>
+<p><b>Cannot Type Commands Into the Serial Terminal</b></p>
+<p>If you cannot type commands into the serial terminal:</p>
+<p>•</p>
+<p>Make sure serial flow control is turned off in your serial terminal.</p>
+<p>•</p>
+<p>Use a different null modem serial cable.</p>
+<p><b>Note</b></p>
+<p>Certain versions of the HyperTerminal application exhibit</p>
+<p>problems communicating with target systems in general. If you</p>
+<p>are experiencing problems, restart HyperTerminal. If this does</p>
+<p>not remedy the problem, try a different host machine, upgrade</p>
+<p>HyperTerminal, or switch to a different application.</p>
+<p><i>43</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Corrupted Data is Printed to the Serial Terminal</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring Your Probe to Connect to MULTI</b></p>
+<p>This section provides troubleshooting steps for configuring your probe</p>
+<p>to connect to your host machine.</p>
+<p>•</p>
+<p>“Cannot Find Telnet On Windows Vista and Later” on page 44</p>
+<p>•</p>
+<p>“Cannot Connect to Probe Over Telnet” on page 44</p>
+<p>•</p>
+<p>“Cannot Connect to Probe Over USB” on page 46</p>
+<p>•</p>
+<p>“Windows is Unable to Start Probe as a USB Device” on page 47</p>
+<p><b>Cannot Find Telnet On Windows Vista and Later</b></p>
+<p>The Telnet application is not installed by default on Windows Vista and</p>
+<p>later systems. To install the Telnet application:</p>
+<p>1.</p>
+<p>Click the<b> Start</b> button and click<b> Control Panel</b>.</p>
+<p>•</p>
+<p>If your control panel has the normal view:</p>
+<p>a.</p>
+<p>Click<b> Programs</b>.</p>
+<p>b.</p>
+<p>In the<b> Programs and Features</b> group, click Turn</p>
+<p><b>Windows Features On or Off</b>.</p>
+<p>•</p>
+<p>If your control panel has the classic view:</p>
+<p>a.</p>
+<p>Click<b> Programs and Features</b>.</p>
+<p>b.</p>
+<p>Click<b> Turn Windows Features On or Off</b>.</p>
+<p>2.</p>
+<p>Select the<b> Telnet Client</b> check box and click<b> OK</b>.</p>
+<p><b>Cannot Connect to Probe Over Telnet</b></p>
+<p>If you cannot connect to your Green Hills Probe over Telnet, your</p>
+<p>Ethernet settings are probably incorrect. The easiest way to determine</p>
+<p>if your probe Ethernet settings are correct is to ping it from your host</p>
+<p>machine. To ping your probe, from a command prompt, type:</p>
+<p>$ ping<i> hostname</i></p>
+<p>where<i> hostname</i> is your probe's hostname, or</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>44</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>$ ping<i> ip_address</i></p>
+<p>where<i> ip_address</i> is your probe's IP address.</p>
+<p>If<b> ping</b> is successful, it prints a report similar to the following:</p>
+<p>$ ping ghprobe11111</p>
+<p>Pinging ghprobe11111.ghs.com [192.168.100.111] with 32 bytes of data:</p>
+<p>Reply from 192.168.100.111: bytes=32 time&lt;10ms TTL=29</p>
+<p>Reply from 192.168.100.111: bytes=32 time=10ms TTL=29</p>
+<p>Reply from 192.168.100.111: bytes=32 time&lt;10ms TTL=29</p>
+<p>Reply from 192.168.100.111: bytes=32 time&lt;10ms TTL=29</p>
+<p>Ping statistics for 192.168.100.111:</p>
+<p>Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),</p>
+<p>Approximate round trip times in milli-seconds:</p>
+<p>Minimum = 0ms, Maximum =</p>
+<p>10ms, Average =</p>
+<p>2ms</p>
+<p>If<b> ping</b> is unsuccessful, it prints a report similar to the following:</p>
+<p>$ ping ghprobe11111</p>
+<p>Pinging ghprobe11111.ghs.com [192.168.100.111] with 32 bytes of data:</p>
+<p>Request timed out.</p>
+<p>Request timed out.</p>
+<p>Request timed out.</p>
+<p>Request timed out.</p>
+<p>Ping statistics for 192.168.100.111:</p>
+<p>Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),</p>
+<p>Approximate round trip times in milli-seconds:</p>
+<p>Minimum = 0ms, Maximum =</p>
+<p>0ms, Average =</p>
+<p>0ms</p>
+<p>•</p>
+<p>If<b> ping</b> is unsuccessful, verify that an Ethernet cable is plugged in</p>
+<p>and that the green connection light in the upper-right corner of the</p>
+<p>probe's Ethernet port is illuminated.</p>
+<p>○</p>
+<p>If it is illuminated, watch the light in the upper-left corner of</p>
+<p>the Ethernet port. On beige probes this light is orange, and on</p>
+<p>black probes it is green. If the light on the left is not flashing</p>
+<p>periodically, you may need to reconfigure your IP address,</p>
+<p>netmask, and/or gateway (see “Connecting to Your Probe Over</p>
+<p>Ethernet” on page 18 for instructions).</p>
+<p>○</p>
+<p>If it is not illuminated, try a different cable or connect to a</p>
+<p>different port on your hub or switch.</p>
+<p><i>45</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Cannot Connect to Probe Over Telnet</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>•</p>
+<p>If<b> ping</b> is successful but you cannot connect to the probe over Telnet,</p>
+<p>unplug the Ethernet cable from the probe and ping it again, with the</p>
+<p>cable unattached.</p>
+<p>○</p>
+<p>If<b> ping</b> is still successful, another device on your network</p>
+<p>probably has the same hostname or IP address as your probe.</p>
+<p>Obtain a unique address and hostname from your network</p>
+<p>administrator and reconfigure the probe (see “Connecting to</p>
+<p>Your Probe Over Ethernet” on page 18 for instructions).</p>
+<p>○</p>
+<p>If<b> ping</b> is no longer successful, or if you have a unique IP</p>
+<p>address and still have problems, open a Telnet connection from</p>
+<p>a different host machine. If the problem still persists, contact</p>
+<p>Green Hills technical support.</p>
+<p><b>Cannot Connect to Probe Over USB</b></p>
+<p>USB is only supported on Windows.</p>
+<p>Only one software program can connect to a probe over USB at a time.</p>
+<p>If you have connected to the probe over USB before, but now are unable</p>
+<p>to, check that there are no other active USB connections to the probe,</p>
+<p>such as<b> mpadmin</b>,<b> gpadmin</b>,<b> mpserv</b>, or the<b> Probe Administrator</b>. If</p>
+<p>there are, close them.</p>
+<p>The USB link LED should illuminate when the host machine and the</p>
+<p>probe have both been booted. If this does not happen:</p>
+<p>1.</p>
+<p>Check that you have properly installed the USB cable between your</p>
+<p>host machine and the probe.</p>
+<p>2.</p>
+<p>If the previous steps do not solve the problem, unplug the USB</p>
+<p>cable from the probe and plug it back in again.</p>
+<p>3.</p>
+<p>If the LED still does not illuminate, unplug the USB cable from the</p>
+<p>probe, re-install the drivers by running the installation application</p>
+<p><b>setup.exe</b>, and then reattach the USB cable.</p>
+<p>4.</p>
+<p>If the problem persists, contact Green Hills technical support.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>46</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Windows is Unable to Start Probe as a USB Device</b></p>
+<p>On some hosts, Windows may report that it is unable to start your device</p>
+<p>(with error 10) the first time you plug in a probe to the USB port. If this</p>
+<p>happens, unplug the USB cable and plug it back in. Windows should</p>
+<p>now be able to start it as a USB device.</p>
+<p><i>47</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Windows is Unable to Start Probe as a USB Device</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring Your Probe for Your Target</b></p>
+<p>This section provides troubleshooting steps for configuring your probe</p>
+<p>to connect to your target, detect its processors, and read registers. To</p>
+<p>follow the instructions in this section, your probe must be connected to</p>
+<p>your target, and your host must be connected to the probe over the serial</p>
+<p>port. For instructions that explain how to connect to your probe, see</p>
+<p>“Connecting Your Host to Your Probe Over the Serial Port” on page 14.</p>
+<p>If the troubleshooting steps in this section do not address your problem,</p>
+<p>your target may require extra configuration. For more information, see</p>
+<p>“Usage Notes” in Appendix D, “Troubleshooting and Usage Notes” in</p>
+<p>the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p>•</p>
+<p>“detect Issues Error 60” on page 48</p>
+<p>•</p>
+<p>“detect Does Not Display a Processor Table” on page 49</p>
+<p>•</p>
+<p>“detect Issues Error 71” on page 49</p>
+<p>•</p>
+<p>“detect Sets the Target Processors and then Issues an Error”</p>
+<p>on page 49</p>
+<p>•</p>
+<p>“detect Sets the Target Processor to other” on page 50</p>
+<p>•</p>
+<p>“detect Lists Devices Connected to the Probe, but Sets the Target</p>
+<p>Type to other” on page 50</p>
+<p>•</p>
+<p>“detect Sets the Target Processor Incorrectly” on page 51</p>
+<p>•</p>
+<p>“detect Passes but vb Fails” on page 51</p>
+<p>•</p>
+<p>“tr Does Not Reset the Target” on page 52</p>
+<p>•</p>
+<p>“vr Fails or Issues Error 18” on page 52</p>
+<p><b>detect Issues Error 60</b></p>
+<p>If the<b> detect</b> command returns the following:</p>
+<p>ERROR 60: Target power off</p>
+<p>1.</p>
+<p>Check to make sure that your target's power is turned on and your</p>
+<p>connections are tightly seated.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>48</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>2.</p>
+<p>If your target's power is on, the probe's logic high level may be</p>
+<p>configured too low or too high for your target. See “Configuring</p>
+<p>the Probe's Logic High Level” on page 56.</p>
+<p>3.</p>
+<p>After configuring the logic high level, run<b> detect</b> again.</p>
+<p><b>detect Does Not Display a Processor Table</b></p>
+<p>If the<b> detect</b> command does not display a processor table, but returns</p>
+<p>output similar to the following:</p>
+<p>ERROR 1 (general error): Unable to detect target. (jtag_ir_length=0; TDO</p>
+<p>held low?) Please use the &quot;set target&quot; command to configure manually.</p>
+<p>ERROR 1 (general error): Timeout while trying to determine number</p>
+<p>of cores.</p>
+<p>The logic high level of the probe may be set incorrectly for your target.</p>
+<p>See “Configuring the Probe's Logic High Level” on page 56.</p>
+<p>If the<b> detect</b> command continues to fail, there may be a low-level JTAG</p>
+<p>connection problem. See “Diagnosing Low-Level JTAG Connection</p>
+<p>Problems” on page 54.</p>
+<p><b>detect Issues Error 71</b></p>
+<p>If the<b> detect</b> command returns the following:</p>
+<p>ERROR 71: probe output pins are disabled</p>
+<p>look at the LEDs on the front of the probe on the right side. If they are</p>
+<p>blinking:</p>
+<p>1.</p>
+<p>In a serial terminal, type</p>
+<p>jp on</p>
+<p>or press the<b> User</b> button on the</p>
+<p>front of your probe.</p>
+<p>2.</p>
+<p>If the LEDs stop blinking, run<b> detect</b> again.</p>
+<p><b>detect Sets the Target Processors and then Issues an Error</b></p>
+<p>If the<b> detect</b> command is able to set your target string but then returns</p>
+<p>an error, it is likely that the probe cannot reset the target. For more</p>
+<p>information, see “tr Does Not Reset the Target” on page 52.</p>
+<p><i>49</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>detect Does Not Display a Processor Table</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>detect Sets the Target Processor to other</b></p>
+<p>If the<b> detect</b> command sets your target string to</p>
+<p>other</p>
+<p>, enter the</p>
+<p>following command in the serial terminal:</p>
+<p>set target ?</p>
+<p>Look for your processor in the resulting list. If your processor is listed:</p>
+<p>1.</p>
+<p>Configure the probe's target setting manually with the following</p>
+<p>command:</p>
+<p>set target<i> target_string</i></p>
+<p>where<i> target_string</i> is the string listed for your processor.</p>
+<p>2.</p>
+<p>Configure the probe's endianness setting:</p>
+<p>set endianness<i> mode</i></p>
+<p>where<i> mode</i> is either</p>
+<p>big</p>
+<p>or</p>
+<p>little</p>
+<p>.</p>
+<p>If your processor is not listed, it may not be supported. Contact your</p>
+<p>Green Hills sales representative for more information.</p>
+<p><b>detect Lists Devices Connected to the Probe, but Sets the Target Type to</b></p>
+<p><b>other</b></p>
+<p>If the<b> detect</b> command lists devices connected to the Probe, but sets the</p>
+<p>target type to</p>
+<p>other</p>
+<p>, it may be accompanied by one of the following</p>
+<p>messages:</p>
+<p>* - Indicates a core that requires a Probe feature key to debug.</p>
+<p>If you receive this message, it indicates that you are connected to a target</p>
+<p>that is not supported by the default Probe configuration. Access to the</p>
+<p>debug features of this core may be enabled with a feature key (generally</p>
+<p>available through an early access agreement or a specific license</p>
+<p>agreement). If you have received a feature key, install the key, reboot</p>
+<p>your Probe, and try again. If you are entitled to a key but do not have</p>
+<p>one, contact Green Hills support.</p>
+<p>+ - Indicates a core whose detected jtag idcode is known to be shared</p>
+<p>by many cores, and detect failed to distinguish among them.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>50</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>If you receive this message, it indicates that you are connected to a target</p>
+<p>that shares an</p>
+<p>idcode</p>
+<p>with several other devices, and the Probe could</p>
+<p>not determine which one you have. In this case, there are two possibilities:</p>
+<p>•</p>
+<p>Your target is supported, but you need to specify it manually using</p>
+<p>the<b> set target</b> command.</p>
+<p>•</p>
+<p>Your target is not supported, in which case you can contact your</p>
+<p>sales team to learn when the device will be supported.</p>
+<p><b>detect Sets the Target Processor Incorrectly</b></p>
+<p>Because multiple processors within the same family sometimes have the</p>
+<p>same</p>
+<p>PVR</p>
+<p>or</p>
+<p>idcode</p>
+<p>,<b> detect</b> might not set the target to the correct</p>
+<p>processor. If this happens, set your target processor manually using the</p>
+<p>instructions in “detect Sets the Target Processor to other” on page 50.</p>
+<p><b>detect Passes but vb Fails</b></p>
+<p>PowerPC 5xx, PowerPC 8xx, and ColdFire targets do not support the</p>
+<p><b>vb</b> command. Do not use this command if you have one of these targets.</p>
+<p>If your target does support the<b> vb</b> command, but it fails, the error message</p>
+<p>should look similar to:</p>
+<p>ERROR 13 (test failed): Test failed: in=<i>input</i>, out=<i>output</i>,</p>
+<p>i=<i>iter</i></p>
+<p>If you receive this error:</p>
+<p>1.</p>
+<p>The JTAG clock may be set too fast. The probe<b> detect</b> command</p>
+<p>uses a clock setting of 10kHz, while the default clock setting is</p>
+<p>10MHz. Set the clock to 1MHz by typing the following command</p>
+<p>in the serial terminal:</p>
+<p>set clock 1MHz</p>
+<p>If<b> vb</b> works after you decrease the clock speed, you can try</p>
+<p>increasing it slowly to find higher speeds that still work reliably. If</p>
+<p>1MHz does not work, try clock settings that are between 10kHz and</p>
+<p>1MHz.</p>
+<p><i>51</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>detect Sets the Target Processor Incorrectly</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>2.</p>
+<p>You may need to set the probe's logic high level. See “Configuring</p>
+<p>the Probe's Logic High Level” on page 56.</p>
+<p>3.</p>
+<p>If<b> vb</b> continues to fail after you have configured the probe's clock</p>
+<p>speed and high logic level, your target processor may have been set</p>
+<p>incorrectly. For information about solving this problem, see “detect</p>
+<p>Sets the Target Processor Incorrectly” on page 51.</p>
+<p><b>tr Does Not Reset the Target</b></p>
+<p>If your target does not reset when you enter the<b> tr</b> command, the JTAG</p>
+<p>clock speed might not be set correctly. To adjust the clock speed:</p>
+<p>1.</p>
+<p>In a serial terminal, type</p>
+<p>set clock 1MHz</p>
+<p>to set the clock speed</p>
+<p>to 1MHz.</p>
+<p>2.</p>
+<p>Type</p>
+<p>tr</p>
+<p>to reset your target.</p>
+<p>If<b> tr</b> still does not reset your target:</p>
+<p>•</p>
+<p>The nHRESET and nTRST lines may be tied together. For more</p>
+<p>information, see “Diagnosing JTAG TAP and CPU Reset Line</p>
+<p>Problems” in Appendix D, “Troubleshooting and Usage Notes” in</p>
+<p>the<i> Green Hills Debug Probes User's Guide</i>.</p>
+<p>•</p>
+<p>The JTAG reset pin may be connected to an open-drain connection,</p>
+<p>meaning that your target must have a pull-up resistor in order to</p>
+<p>drive it HIGH. For more information, see “Diagnosing Low-Level</p>
+<p>JTAG Connection Problems” on page 54. If your target does have</p>
+<p>a pull-up resistor and your probe has a serial number less than 2500,</p>
+<p>try increasing the strength of the pull-up on reset.</p>
+<p><b>vr Fails or Issues Error 18</b></p>
+<p>If<b> vb</b> passes, but<b> vr</b> fails or returns an error such as:</p>
+<p>ERROR 18: the target is not stopped</p>
+<p>the JTAG clock speed may be set too high. To fix this problem:</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>52</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>1.</p>
+<p>In a serial terminal, type the following command to lower the clock</p>
+<p>speed:</p>
+<p>set clock 1MHz</p>
+<p>2.</p>
+<p>Type</p>
+<p>vb</p>
+<p>to confirm that you can communicate with the target. If</p>
+<p>you are using a BDM target, type</p>
+<p>tr</p>
+<p>instead of</p>
+<p>vb</p>
+<p>.</p>
+<p>3.</p>
+<p>Type</p>
+<p>vr 100</p>
+<p>to perform the register test again.</p>
+<p><i>53</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>vr Fails or Issues Error 18</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>General Configuration Instructions</b></p>
+<p>While the previous sections explained how to fix specific problems that</p>
+<p>you may encounter while configuring your probe, this section explains</p>
+<p>how to troubleshoot probe problems that are more general in nature.</p>
+<p>•</p>
+<p>“Diagnosing Low-Level JTAG Connection Problems” on page 54</p>
+<p>•</p>
+<p>“Configuring the Probe's Logic High Level” on page 56</p>
+<p>•</p>
+<p>“Recovering a Probe That Does Not Boot Properly” on page 57</p>
+<p>•</p>
+<p>“Uninstalling Probe Software” on page 57</p>
+<p><b>Diagnosing Low-Level JTAG Connection Problems</b></p>
+<p>Use the<b> vta</b> command to troubleshoot low-level JTAG connection</p>
+<p>problems.<b> vta</b> verifies that the probe can individually control each pin</p>
+<p>on the target by individually setting each pin HIGH and LOW, checking</p>
+<p>for shorts, opens, and stuck-at conditions. For example,<b> vta</b> can detect</p>
+<p>if the TCK pin is shorted to GND, or if the TMS pin is not making contact</p>
+<p>with the probe.</p>
+<p>To run this test:</p>
+<p>1.</p>
+<p>If you are using legacy cabling, unplug the ribbon cable or pod from</p>
+<p>your target in case there is a shorted pin or other problem that could</p>
+<p>cause damage. If you are using TraceEverywhere (TE), unplug the</p>
+<p>target adapter from your target.</p>
+<p>2.</p>
+<p>In the serial terminal, type</p>
+<p>vta</p>
+<p>.</p>
+<p>The results of a successful test look similar to the following output (only</p>
+<p>a few lines are shown here):</p>
+<p>&gt;vta</p>
+<p>Testing arm-20 adapter pins:</p>
+<p>VTREF passed. [100%]</p>
+<p>VSUPPLY passed. [100%]</p>
+<p>NTRST passed. [100%]</p>
+<p>GND passed. [100%]</p>
+<p>TDI passed. [100%]</p>
+<p>GND passed. [100%]</p>
+<p>TMS passed. [100%]</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>54</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p>If a pin has a connection problem, the probe issues an error. For example,</p>
+<p>if the probe could not bring</p>
+<p>TDO</p>
+<p>low, it would print:</p>
+<p>TDO was not initially low.</p>
+<p>If you are using legacy cabling, check that target adapter type shown in</p>
+<p>the results correctly matches the adapter on the probe's front panel. If</p>
+<p>this test fails and the adapter type is correct, there may be a problem with</p>
+<p>the adapter on the probe. In this situation:</p>
+<p>•</p>
+<p>If you are using legacy cabling, repeat the test with the ribbon cable</p>
+<p>unplugged from the adapter.</p>
+<p>•</p>
+<p>Verify that the adapter is plugged in securely, and the screws are</p>
+<p>snug.</p>
+<p>•</p>
+<p>Remove the adapter, inspect it for damage or contaminants, re-install</p>
+<p>it, and repeat the test.</p>
+<p>If the test still fails, the probe or target adapter may be damaged. In this</p>
+<p>situation:</p>
+<p>•</p>
+<p>Try a different target adapter</p>
+<p>•</p>
+<p>If you are using legacy cabling, try a different cable. If using an</p>
+<p>active COP pod, try a passive COP cable or a shielded COP cable.</p>
+<p>•</p>
+<p>Contact Green Hills technical support.</p>
+<p><b>Note</b></p>
+<p>Some JTAG pins controlled by the probe (for example, reset</p>
+<p>lines) are connected to open-drain connections with more than</p>
+<p>one driver, meaning that the probe cannot drive them HIGH.</p>
+<p>When you run<b> vta</b> with your target unplugged, it issues the</p>
+<p>following message for each of these pins, because there is no</p>
+<p>pull-up resistor on the target adapter to bring the signal HIGH:</p>
+<p><i>PIN</i> could not be brought high.</p>
+<p>If<i> PIN</i> is connected to an open-drain connection, this does not</p>
+<p>necessarily mean that there is a problem with the adapter, but</p>
+<p>it indicates that there should be a pull-up resistor on the target</p>
+<p>board for this pin.</p>
+<p><i>55</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Diagnosing Low-Level JTAG Connection Problems</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Configuring the Probe's Logic High Level</b></p>
+<p>To configure the logic high level for your probe:</p>
+<p>•</p>
+<p>For TraceEverywhere and HSST connections, type</p>
+<p>dlh</p>
+<p>in a serial</p>
+<p>terminal to detect the correct logic high level for your target.</p>
+<p>To set the logic high level manually:</p>
+<p>1.</p>
+<p>Consult your target's reference manual to confirm its logic high</p>
+<p>level.</p>
+<p>2.</p>
+<p>Type the following command in the serial terminal:</p>
+<p>set logic_high<i> level</i></p>
+<p>where<i> level</i> is the logic high level for your target. To confirm that</p>
+<p>the probe has updated this setting, type:</p>
+<p>set logic_high</p>
+<p>If your adapter does not support logic high level detection, you may see</p>
+<p>the following error message:</p>
+<p>This adapter does not support logic_high detection.</p>
+<p>If this is the case:</p>
+<p>1.</p>
+<p>Set the logic high level manually.</p>
+<p>2.</p>
+<p>Type the following command to disable power detection:</p>
+<p>set power_detect off</p>
+<p>3.</p>
+<p>After disabling power detection, before turning your target's power</p>
+<p>on or off, type the following command to tri-state the probe:</p>
+<p>jp off</p>
+<p>After your target is on, type:</p>
+<p>jp on</p>
+<p>Perform this step each time you turn your target on.</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>56</i></p>
+<p><i>Appendix A. Troubleshooting</i></p>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Recovering a Probe That Does Not Boot Properly</b></p>
+<p>If your probe is not booting properly, you can recover it using the serial</p>
+<p>port with the instructions below:</p>
+<p>1.</p>
+<p>Turn your probe off.</p>
+<p>2.</p>
+<p>On your host machine, run MULTI. In the MULTI Launcher, select</p>
+<p><b>Utilities</b> →<b> Probe Administrator</b>.</p>
+<p>3.</p>
+<p>In the<b> Probe Administrator</b> window, select<b> Probe</b> →<b> Recover</b></p>
+<p><b>Probe</b>. A dialog box opens to confirm that you want to update your</p>
+<p>firmware. Click<b> OK</b>.</p>
+<p>4.</p>
+<p>The<b> Update Probe Firmware</b> window opens. Enter the full path</p>
+<p>to a firmware file in the<b> Firmware File</b> box, or click the</p>
+<p>button</p>
+<p>and select it in the file chooser. Click the<b> Flash Probe</b> button.</p>
+<p>5.</p>
+<p>The<b> Serial Boot</b> dialog box opens. If the correct serial port is not</p>
+<p>already displayed, type the name of the serial port to which your</p>
+<p>probe is connected. Click<b> OK</b>.</p>
+<p>6.</p>
+<p>A dialog box opens. Turn your probe on while holding down the</p>
+<p><b>User</b> button (as instructed by the dialog). After turning on your</p>
+<p>probe, click the<b> OK</b> button.</p>
+<p>7.</p>
+<p>The<b> Reloading Probe Firmware</b> dialog box opens and displays</p>
+<p>the status of the update. When it is finished, click<b> Done</b>.</p>
+<p>8.</p>
+<p>Power cycle your probe. The new firmware is now loaded and</p>
+<p>running.</p>
+<p><b>Note</b></p>
+<p>For information about updating probe firmware, see “Updating</p>
+<p>Probe Firmware” in Chapter 1, “Administering Your Probe” in</p>
+<p><i>Green Hills Debug Probes User's Guide</i>.</p>
+<p><b>Uninstalling Probe Software</b></p>
+<p>To uninstall probe software on Linux/Solaris, follow the instructions for</p>
+<p>using<b> gpatch</b> located at<i><b> install_dir</i>/restore/readme.txt</b>.</p>
+<p>To uninstall probe software on Windows, use the<b> Add/Remove</b></p>
+<p><b>Programs</b> feature in your version of Windows.</p>
+<p><i>57</i></p>
+<p><i>Green Hills Software</i></p>
+<p><i>Recovering a Probe That Does Not Boot Properly</i></p>
+<h1 style="page-break-before:always; "></h1>
+<h1 style="page-break-before:always; "></h1>
+<p><b>Index</b></p>
+<p><b>A</b></p>
+<p>Add Item to Project dialog box, 32</p>
+<p><b>B</b></p>
+<p>baud rate</p>
+<p>configuring, 43</p>
+<p>default, 14</p>
+<p>build, performing, 34</p>
+<p><b>C</b></p>
+<p>commands</p>
+<p>detect, 26, 48, 49, 50, 51</p>
+<p>dlh, 56</p>
+<p>rr, 28</p>
+<p>set baud, 43</p>
+<p>set clock, 52</p>
+<p>set ip, 22</p>
+<p>set logic_high, 56</p>
+<p>setup net, 19, 20</p>
+<p>tl, 28</p>
+<p>tr, 28, 52</p>
+<p>vb, 28, 51</p>
+<p>vr, 28, 52</p>
+<p>vta, 51, 54</p>
+<p>compile (see build, performing)</p>
+<p>components, 4</p>
+<p>configuration</p>
+<p>baud rate, 43</p>
+<p>detecting your target, 26</p>
+<p>DHCP, 19</p>
+<p>gateway, 21</p>
+<p>hostname, 19</p>
+<p>loading from a file, 27</p>
+<p>logic high level, 56</p>
+<p>netmask, 21</p>
+<p>static IP address, 20</p>
+<p>troubleshooting, 48</p>
+<p>connection</p>
+<p>MULTI to target, 35</p>
+<p>probe to host machine</p>
+<p>Ethernet, 18</p>
+<p>serial terminal, 14</p>
+<p>Telnet, 22</p>
+<p>troubleshooting, 44</p>
+<p>USB, 24</p>
+<p>probe to MULTI, 25</p>
+<p>testing</p>
+<p>Ethernet, 22</p>
+<p>Connection Chooser, 35</p>
+<p>Connection Editor, 35</p>
+<p>core, selecting, 28</p>
+<p><b>D</b></p>
+<p>debugging, 37</p>
+<p>detect command, 26, 48, 49, 50, 51</p>
+<p>DHCP, configuring, 19</p>
+<p>diagnostics, running, 28</p>
+<p>dlh command, 56</p>
+<p>downloading programs, 37</p>
+<p>drivers, installing USB, 5, 24</p>
+<p><b>E</b></p>
+<p>Ethernet connection</p>
+<p>setting up, 18</p>
+<p>testing, 22</p>
+<p>example project, adding, 32</p>
+<p><b>F</b></p>
+<p>firmware, recovering, 57</p>
+<p><b>G</b></p>
+<p>gateway, configuring, 21</p>
+<p><b>H</b></p>
+<p>hostname, configuring, 19</p>
+<p>HyperTerminal, 43</p>
+<p><b>I</b></p>
+<p>installation</p>
+<p>hardware, 7</p>
+<p>Linux, 5</p>
+<p>Solaris, 5</p>
+<p>Windows, 5</p>
+<p>IP address, checking, 22</p>
+<p><b>J</b></p>
+<p>JTAG bypass mode, testing, 28</p>
+<p>JTAG troubleshooting, 54</p>
+<p><b>L</b></p>
+<p>linker directives files</p>
+<h1 style="page-break-before:always; "></h1>
+<p>created by Project Wizard, 30</p>
+<p>logic high level, 56</p>
+<p><b>M</b></p>
+<p>MULTI</p>
+<p>connecting to target, 35</p>
+<p>Debugger, 37</p>
+<p>installing, 2</p>
+<p><b>N</b></p>
+<p>netmask, configuring, 21</p>
+<p><b>P</b></p>
+<p>ping, 44</p>
+<p>Prepare Target dialog box, 37</p>
+<p>Probe Administrator, 25</p>
+<p>Project Manager</p>
+<p>configuring target hardware with, 30</p>
+<p>Project Wizard</p>
+<p>testing target configuration with, 30</p>
+<p><b>R</b></p>
+<p>registers</p>
+<p>obtaining names and values of, 28</p>
+<p>testing reads and writes, 28</p>
+<p>requirements, system, 2</p>
+<p>resetting the target board, 28</p>
+<p>rr command, 28</p>
+<p><b>S</b></p>
+<p>serial terminal</p>
+<p>baud rate, 43</p>
+<p>connecting to, 14</p>
+<p>settings for, 14</p>
+<p>troubleshooting, 41, 43</p>
+<p>set baud command, 43</p>
+<p>set clock command, 52</p>
+<p>set ip command, 22</p>
+<p>set logic_high command, 56</p>
+<p>setup net command, 19, 20</p>
+<p>setup script, board</p>
+<p>specifying, 36</p>
+<p>setup scripts, board</p>
+<p>created by Project Wizard, 30</p>
+<p>static IP address, configuring, 20</p>
+<p>system requirements, 2</p>
+<p><b>T</b></p>
+<p>target</p>
+<p>detecting, 26</p>
+<p>target board</p>
+<p>configuring, 30</p>
+<p>connecting to, 35</p>
+<p>resetting, 28</p>
+<p>setup script for, 36</p>
+<p>Target Resources project, 33</p>
+<p>Target Transition Module</p>
+<p>definition, 2</p>
+<p>testing, 54</p>
+<p>Telnet connection, 22</p>
+<p>tl command, 28</p>
+<p>Top Project</p>
+<p>contents, 30</p>
+<p>structure, 33</p>
+<p>tr command, 28, 52</p>
+<p>troubleshooting</p>
+<p>configuration, probe, 48</p>
+<p>detect command, 48, 49, 50, 51</p>
+<p>Ethernet connections, 44</p>
+<p>hardware connection, 41</p>
+<p>hardware setup, 40</p>
+<p>HyperTerminal, 43</p>
+<p>JTAG, 54</p>
+<p>overview, 40</p>
+<p>resetting target board, 52</p>
+<p>serial terminal connection, 43</p>
+<p>serial terminal connections, 41</p>
+<p>Telnet connections, 44</p>
+<p>USB connections, 46</p>
+<p><b>U</b></p>
+<p>USB connections, 24, 46</p>
+<p>USB drivers, installing, 5, 24</p>
+<p><b>V</b></p>
+<p>vb command, 28, 51</p>
+<p>vr command, 28, 52</p>
+<p>vta command, 51, 54</p>
+<p><b>W</b></p>
+<p>Windows Install New Hardware Wizard, 24</p>
+<p><i>Getting Started with the Green Hills Probe</i></p>
+<p><i>60</i></p>
+<p><i>linker directives files (continued)</i></p>
+</body>
+</html>
+{% endraw %}
